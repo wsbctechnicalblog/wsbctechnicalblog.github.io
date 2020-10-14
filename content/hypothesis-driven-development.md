@@ -1,12 +1,11 @@
 Title: Hypothesis-Driven Development
 Date: 2020-10-13 12:20
-Category: Software, Change, Hypothesis
 Tags: TDD, CI
 Slug: hypothesis-driven-development
 Author: Alex Bunardzic
 Summary: Developing a feature without formulating a hypothesis is like shooting in the dark
 
-“The only way it’s all going to go according to plan is if you don’t learn anything.” -Kent Beck
+_“The only way it’s all going to go according to plan is if you don’t learn anything.”_ -Kent Beck
 
 Experimentation is the foundation of the scientific method, which is a systematic means of exploring the world around us. But experimentation is not only reserved for the field of scientific research. It has its central place in the world of business too.
 
@@ -84,26 +83,43 @@ The above structure is based on the strong belief that all software that works i
 
 The new breakdown for hypothesis-driven development looks something like this:
 
-| **Ideas backlog** | **Analysis**               | **In progress**   | **Shipped**       | **Achieved desired outcome** |
-
-|---------------|------------------------|---------------|---------------|--------------------------|
-
-| Hypothesis 11 | Hypothesis 20          | Hypothesis 26 | Hypothesis 2  | Hypothesis 1 |
-
-| Hypothesis 12 | Hypothesis 21          |               | Hypothesis 5  | Hypothesis 5 |
-
-| Hypothesis 13 |                        |               | Hypothesis 10 |
-
-| Hypothesis 14 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-
-| Hypothesis 15 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-
-| Hypothesis 16 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-
-| Hypothesis 17 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-
-| Hypothesis 18 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
-
-| Hypothesis 19 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
+<table>
+<tr>
+  <th>
+    <td><strong>Ideas backlog</strong></td>
+    <td><strong>Analysis</strong></td>
+    <td><strong>In progress</strong></td>
+    <td><strong>Shipped</strong></td>
+    <td><strong>Achieved desired outcome</strong></td>
+  </th>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 11</td><td>Hypothesis 20</td><td>Hypothesis 2</td><td>Hypothesis 1</td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 12</td><td>Hypothesis 21</td><td>Hypothesis 5</td><td>Hypothesis 5</td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 13</td><td></td><td></td><td>Hypothesis 10</td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 14</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 15</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 16</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 17</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 18</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td>&nbsp;</td>
+  <td>Hypothesis 19</td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
 
 All eyes must remain peeled on the **Achieved desired outcome**.
