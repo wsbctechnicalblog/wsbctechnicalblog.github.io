@@ -2,7 +2,7 @@
 
 ## What is WorkSafeBC Technical Blog?
 
-A publishing platform focued on showcasing cutting edge accomplishments on WorkSafeBC Software engineers.
+A publishing platform focused on showcasing cutting edge accomplishments of WorkSafeBC Software Engineering Teams.
 
 ## Can I contribute to WorkSafeBC Technical Blog?
 
@@ -12,7 +12,7 @@ WorkSafeBC Technical Blog is an open source platform that is open for collaborat
 
 To begin, you need Git installed on your computer. 
 
-Also, install Pelican (https://github.com/getpelican/pelican) on your computer.
+Also, install Pelican (https://github.com/getpelican/pelican) on your computer (make sure you also instal markdown module wit Pelican).
 
 You can then clone WorkSafeBC Technical Blog by running the following command:
 
@@ -23,3 +23,17 @@ Change directory to where you cloned the repo and create a new branch:
 `git checkout -b my-branch`
 
 Make changes to it (i.e. create a new blog post), add changed files, and commit to your local repo. Then push changes to the remote repo, and open a Pull Request.
+
+## How do I write a blog post for WorkSafeBC Technical Blog?
+
+It is mandatory that a blog post staets with _meat information_ (i.e. Title, Date, Catgory, Tags, Slug, Author and Summary):
+
+Title: My super title
+Date: 2020-10-03 10:20 
+Category: Software, TDD, etc.
+Tags: software-engineering, dot-net, etc.
+Slug: my-super-post
+Author: Your Name 
+Summary: Short version for index and feeds
+
+For the post body, use markdown (you can also mix markdown with HTML).

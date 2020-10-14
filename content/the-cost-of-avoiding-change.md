@@ -1,10 +1,10 @@
-Title: My super title
-Date: 2010-12-03 10:20
-Category: Python
-Tags: pelican, publishing
-Slug: my-super-post
-Author: Alexis Metaireau
-Summary: Short version for index and feeds
+Title: The cost of avoiding change
+Date: 2020-10-03 10:20
+Category: Software, Change
+Tags: TDD, CI, software
+Slug: the-cost-of-avoiding-change
+Author: Alex Bunardzic
+Summary: Change is stressful and risky, but avoing it is even riskier
 
 Software engineers are notorious for being averse to change. We prefer the steady state, stability. The reason we prefer steady state lies in the fact that systems we are building tend to be complex. Complexity breeds brittleness, and so we are keen on doing everything possible to avoid building brittle systems. Who could blame us?
 
