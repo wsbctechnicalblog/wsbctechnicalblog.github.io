@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Alex Bunardzic'
-SITENAME = 'WorkSafeBC Tech Blog'
+SITENAME = ''
 SITEURL = ''
 
 PATH = 'content'
@@ -19,8 +19,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('WorkSafeBC', 'https://www.worksafebc.com/en'),)
+LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),
+         ('Pelican', 'https://getpelican.com/'),)
 
 # Social widget
 SOCIAL = (('WorkSafeBC on Twitter', 'https://twitter.com/WorkSafeBC'),
