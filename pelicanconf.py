@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'Alex'
-SITENAME = 'WorkSafeBC Demo Tech Blog'
+AUTHOR = 'Alex Bunardzic'
+SITENAME = 'WorkSafeBC Tech Blog'
 SITEURL = ''
 
 PATH = 'content'
@@ -20,13 +20,11 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+         ('WorkSafeBC', 'https://www.worksafebc.com/en'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('WorkSafeBC on Twitter', 'https://twitter.com/WorkSafeBC'),
+          ('WorSafeBC on LinkedIn', 'https://www.linkedin.com/company/worksafebc/'),)
 
 DEFAULT_PAGINATION = False
 

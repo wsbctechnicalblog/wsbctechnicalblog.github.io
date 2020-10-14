@@ -16,7 +16,7 @@ Also, install Pelican (https://github.com/getpelican/pelican) on your computer (
 
 You can then clone WorkSafeBC Technical Blog by running the following command:
 
-`https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io.git`
+`git clone https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io.git`
 
 Change directory to where you cloned the repo and create a new branch:
 
@@ -26,14 +26,14 @@ Make changes to it (i.e. create a new blog post), add changed files, and commit 
 
 ## How do I write a blog post for WorkSafeBC Technical Blog?
 
-It is mandatory that a blog post staets with _meat information_ (i.e. Title, Date, Catgory, Tags, Slug, Author and Summary):
+It is mandatory that a blog post starts with _meta information_ (i.e. **Title**, **Date**, **Catgory**, **Tags**, **Slug**, **Author** and **Summary**):
 
-Title: My super title
-Date: 2020-10-03 10:20 
-Category: Software, TDD, etc.
-Tags: software-engineering, dot-net, etc.
-Slug: my-super-post
-Author: Your Name 
-Summary: Short version for index and feeds
+- **Title:** My super title
+- **Date:** 2020-10-03 10:20 
+- **Category:** Software, TDD, etc.
+- **Tags:** software-engineering, dot-net, etc.
+- **Slug:** my-super-post
+- **Author:** Your Name 
+- **Summary:** Short version for index and feeds
 
 For the post body, use markdown (you can also mix markdown with HTML).

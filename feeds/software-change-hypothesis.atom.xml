@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>WorkSafeBC Demo Tech Blog - Software, Change, Hypothesis</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/software-change-hypothesis.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2020-10-13T12:20:00-07:00</updated><entry><title>Hypothesis-Driven Development</title><link href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html" rel="alternate"></link><published>2020-10-13T12:20:00-07:00</published><updated>2020-10-13T12:20:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-13:/hypothesis-driven-development.html</id><summary type="html">&lt;p&gt;Developing a feature without formulating a hypothesis is like shooting in the dark&lt;/p&gt;</summary><content type="html">&lt;p&gt;“The only way it’s all going to go according to plan is if you don’t learn anything.” -Kent Beck&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WorkSafeBC Tech Blog - Software, Change, Hypothesis</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/software-change-hypothesis.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2020-10-13T12:20:00-07:00</updated><entry><title>Hypothesis-Driven Development</title><link href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html" rel="alternate"></link><published>2020-10-13T12:20:00-07:00</published><updated>2020-10-13T12:20:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-13:/hypothesis-driven-development.html</id><summary type="html">&lt;p&gt;Developing a feature without formulating a hypothesis is like shooting in the dark&lt;/p&gt;</summary><content type="html">&lt;p&gt;“The only way it’s all going to go according to plan is if you don’t learn anything.” -Kent Beck&lt;/p&gt;
 &lt;p&gt;Experimentation is the foundation of the scientific method, which is a systematic means of exploring the world around us. But experimentation is not only reserved for the field of scientific research. It has its central place in the world of business too.&lt;/p&gt;
 &lt;p&gt;Most of us are by now familiar with the business methodology called Minimum Viable Product (&lt;strong&gt;MVP&lt;/strong&gt;). This Minimum Viable Product is basically just an experiment. By building and launching MVPs, business operations are engaging in a systematic means of exploring the markets.&lt;/p&gt;
 &lt;p&gt;If we look at market leaders today, we learn that they’re not doing projects anymore. The only thing they’re doing is experiments. &lt;strong&gt;Customer discover&lt;/strong&gt;y&lt;strong&gt; and &lt;/strong&gt;Lean strategies&lt;strong&gt; are used to test assumptions about the markets. Such approach is equivalent to Test-Driven Development (&lt;/strong&gt;TDD**), which is the process we are intimately familiar with. In TDD, we write the hypothesis first (the test). We then use that test to guide our implementation. Ultimately, product or service development is no different than TDD – we first write a hypothesis, that hypothesis guides our implementation which serves as measurable validation of the hypothesis.&lt;/p&gt;
@@ -73,21 +73,10 @@
 &lt;p&gt;| Hypothesis 11 | Hypothesis 20          | Hypothesis 26 | Hypothesis 2  | Hypothesis 1 |&lt;/p&gt;
 &lt;p&gt;| Hypothesis 12 | Hypothesis 21          |               | Hypothesis 5  | Hypothesis 5 |&lt;/p&gt;
 &lt;p&gt;| Hypothesis 13 |                        |               | Hypothesis 10 |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 14 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 15 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 16 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 17 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 18 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 19 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;All eyes must remain peeled on the &lt;strong&gt;Achieved desired outcome&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;| &lt;strong&gt;Ideas backlog&lt;/strong&gt; | &lt;strong&gt;Analysis&lt;/strong&gt; | &lt;strong&gt;In progress&lt;/strong&gt; | &lt;strong&gt;Shipped&lt;/strong&gt; | &lt;strong&gt;Achieved desired outcome&lt;/strong&gt; |&lt;/p&gt;
-&lt;p&gt;|---------------|------------------------|---------------|---------------|--------------------------|&lt;/p&gt;
-&lt;p&gt;| Hypothesis 11 | H 20 | H 26 | H 2 | H 1 |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 12 | H 21 |  | H 5  | H 5 |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 13 |  |  | H 10 |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 14 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 15 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 16 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 17 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 18 |  |  |  |  |&lt;/p&gt;
-&lt;p&gt;| Hypothesis 19 |  |  |  |  |&lt;/p&gt;</content><category term="Software, Change, Hypothesis"></category><category term="TDD"></category><category term="CI"></category><category term="software"></category><category term="hypothesis"></category></entry></feed>
+&lt;p&gt;| Hypothesis 14 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;| Hypothesis 15 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;| Hypothesis 16 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;| Hypothesis 17 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;| Hypothesis 18 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;| Hypothesis 19 |&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&amp;nbsp;|&lt;/p&gt;
+&lt;p&gt;All eyes must remain peeled on the &lt;strong&gt;Achieved desired outcome&lt;/strong&gt;.&lt;/p&gt;</content><category term="Software, Change, Hypothesis"></category><category term="TDD"></category><category term="CI"></category></entry></feed>
