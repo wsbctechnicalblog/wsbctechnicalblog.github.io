@@ -1,5 +1,6 @@
 Title: The cost of avoiding change
 Date: 2020-10-03 10:20
+Category: Posts
 Tags: TDD, CI
 Slug: the-cost-of-avoiding-change
 Author: Alex Bunardzic

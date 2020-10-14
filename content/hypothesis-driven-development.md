@@ -1,5 +1,6 @@
 Title: Hypothesis-Driven Development
 Date: 2020-10-13 12:20
+Category: Posts
 Tags: TDD, CI
 Slug: hypothesis-driven-development
 Author: Alex Bunardzic
@@ -94,10 +95,10 @@ The new breakdown for hypothesis-driven development looks something like this:
   </th>
   </tr>
   <tr><td>&nbsp;</td>
-  <td>Hypothesis 11</td><td>Hypothesis 20</td><td>Hypothesis 2</td><td>Hypothesis 1</td><td></td>
+  <td>Hypothesis 11</td><td>Hypothesis 20</td><td>Hypothesis 26</td><td>Hypothesis 1</td><td>Hypothesis 1</td>
   </tr>
   <tr><td>&nbsp;</td>
-  <td>Hypothesis 12</td><td>Hypothesis 21</td><td>Hypothesis 5</td><td>Hypothesis 5</td><td></td>
+  <td>Hypothesis 12</td><td>Hypothesis 21</td><td>Hypothesis 5</td><td>Hypothesis 5</td><td>Hypothesis 5</td>
   </tr>
   <tr><td>&nbsp;</td>
   <td>Hypothesis 13</td><td></td><td></td><td>Hypothesis 10</td><td></td>
