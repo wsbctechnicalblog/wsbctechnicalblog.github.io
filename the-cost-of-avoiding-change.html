@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>The cost of avoiding change</title>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/main.css" />
+        <link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WorkSafeBC Demo Tech Blog Atom Feed" />
+        <meta name="description" content="Software engineers are notorious for being averse to change. We prefer the steady state, stability. The reason we prefer steady state lies in the..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://wsbctechnicalblog.github.io/">WorkSafeBC Demo Tech Blog</a></h1>
+                <nav><ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/software.html">software</a></li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/software-tdd.html">software, TDD</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://wsbctechnicalblog.github.io/the-cost-of-avoiding-change.html" rel="bookmark"
+           title="Permalink to The cost of avoiding change">The cost of avoiding change</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-10-03T10:20:00-07:00">
+                Published: Sat 03 October 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
+        </address>
+<p>In <a href="https://wsbctechnicalblog.github.io/category/software-tdd.html">software, TDD</a>.</p>
+<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> </p>
+</footer><!-- /.post-info -->      <p>Software engineers are notorious for being averse to change. We prefer the steady state, stability. The reason we prefer steady state lies in the fact that systems we are building tend to be complex. Complexity breeds brittleness, and so we are keen on doing everything possible to avoid building brittle systems. Who could blame us?</p>
+<p>## City on the Hill</p>
+<p>When engineering a system, we tend to think about it in terms of an endpoint (let’s call that endpoint City on the Hill). This idealized city needs to be defined rigorously. After all, that’s what engineering is all about – rigor.</p>
+<p>After we’ve defined it, we optimize the process of building it offline. Once it’s built, we confirm that it’s done (using our Definition of Done yardstick). We then push it online, move into it, and never change it again (if we need to make any changes, we’d be admitting that we haven’t defined it rigorously to begin with).</p>
+<p>## Efficiency</p>
+<p>The central idea of efficiency is that changing something is a waste. Why did we build the thing in the first place if we are to turn around and change it? Wouldn’t doing that mean that we didn’t actually know how to build our City on the Hill? Why not build our system correctly to begin with? Anything else would be grossly inefficient.</p>
+<p>## Change is bad</p>
+<p>According to the above reasoning, change is bad. It is wasteful and inefficient. Pushed to its limit, this ‘change is bad’ sentiment blossoms into full-blown ‘change is to be feared’ mindset.</p>
+<p>Our City on the Hill ideal implies finality. Upon reaching our final destination, the reason to ever consider change is only if we realize that we have hit the wrong target. And that means utmost defeat (the ultimate inefficiency and waste).</p>
+<p>## All complexity at the beginning and all reward at the end</p>
+<p>The City on the Hill approach to software engineering makes our profession extremely hard. We frontload all the complexity at the very beginning of the project. We ‘kitchen sink’ the project: since we only get one shot to make it right, we’d better create a laundry list of all the features we will ever need.</p>
+<p>Working on the detailed laundry list of all the features is a complex process. And it does not deliver any rewards. It may take days, weeks, even months to get to the end of job. And once we get there, we reap no rewards. All we have to show for is a pile of documents and diagrams – zero shippable software. The work on building shippable software has yet to commence. And it is only at the very end, once we ship the finished City on the Hill product, that we get any rewards for this gargantuan effort.</p>
+<p>## Gold-plating the parts</p>
+<p>The pressure of having only one shot at building our City on the Hill forces us to gold-plate all parts we’re building. We feel compelled to make each part better than it has to be in order to do its job. We are at that point playing the prediction game – maybe in the future this function will have to be integrated with another system, and because we won’t be making any changes to it later on, let’s make sure now it is sufficiently generalized. Or, add those bells and whistles that only one in thousand users ever notices, let alone makes any use of it.</p>
+<p>## Fear of imperfections</p>
+<p>The ‘kitchen sink’ laundry list of features, where each part must be gold-plated, results in code that is far more complex than it needs to be. That naturally leads to lack of understanding. Lack of understanding leads to lack of confidence. That lack of confidence makes development slower because of the looming finality – do it once and make sure you do it right!</p>
+<p>Such attitude results in the fear of imperfection. The fear of being wrong tends to lead to paralysis. Suddenly, the stakes of any decision made by the engineers seem incredibly high. Trying things and experimenting is viewed as wasting precious time and resources.</p>
+<p>## Death march</p>
+<p>The finality of the City on the Hill approach leads to very late validation. By the time we catch any issues with our gold-plated parts and how they struggle to integrate, the goodwill has already been largely spent. All the hard work invested in taming considerable complexities rarely pays off if we adopt the ‘failure is not an option’ mentality.</p>
+<p>We cannot confirm whether the code we’re building actually implements our City until all pieces are in. Five-to-midnight is the worst time to discover we have problems. That is the point of maximum stress, as we are on the collision course to our deadline.</p>
+<p>## Break the workload into parallel chunks?</p>
+<p>To avoid the looming death march described above, we often see workload being divided into independent chunks to be worked on in parallel. Sounds reasonable on the surface, until we take a closer look and factor-in the cost of control needed to coordinate and synchronize independent strains of work. Managing that kind of parallelism is a tall order. Out of sheer necessity, management introduces ‘wait states’ and ‘sync points’. The independent development suddenly ceases to be independent, as it must become strictly lockstep. Copious documents, emails, tickets and handoffs start proliferating, slowing everything down to a crawl.</p>
+<p>## Rework Avoidance</p>
+<p>Avoiding change leads to avoiding rework. Any attempt at making something must be done in such a way that there would never be any need for rework. Make it right from the get go, on the first attempt.</p>
+<p>The cost of avoiding rework is best expressed in the cost of late failures. Those dreadful five-to-midnight failures are extremely costly; not only that, but they leave very little room for rework. By the time we realize that things are not gelling as expected, it is often too late for attempting any rework.</p>
+<p>## Switch to partial delivery</p>
+<p>In order to evade the exorbitant cost of rework avoidance, we must pivot and embrace change via partial delivery. Embracing change necessitates innovation, experimenting, trying things out. The only way to do that effectively is to cultivate the ‘fail early’ mindset. Failure is desirable because it prompts us to fix it while it is still easy to do so.</p>
+<p>## Conclusion</p>
+<p>Avoiding change, while very tempting and perfectly natural, usually ends up being very costly. Fear of failure is preventing innovation and experimentation by stifling change. The only way to avoid paying such exorbitant price is to embrace the change, embrace failure, but do it in an incremental fashion. Small steps, each one focused on partial delivery. That way, success is assured.</p>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
