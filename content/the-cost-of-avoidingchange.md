@@ -1,11 +1,10 @@
-First post
-------------------
-:title: The cost of avoiding change
-:date: 2020-10-03 10:20
-:tags: CI, TDD
-:category: software, TDD
-:author: Alex Bunardzic
-:excerpt: Cost of change is the most impotant metric in software engineering.
+Title: My super title
+Date: 2010-12-03 10:20
+Category: Python
+Tags: pelican, publishing
+Slug: my-super-post
+Author: Alexis Metaireau
+Summary: Short version for index and feeds
 
 Software engineers are notorious for being averse to change. We prefer the steady state, stability. The reason we prefer steady state lies in the fact that systems we are building tend to be complex. Complexity breeds brittleness, and so we are keen on doing everything possible to avoid building brittle systems. Who could blame us?
 
