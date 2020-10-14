@@ -1,7 +1,7 @@
 Title: Hypothesis-Driven Development
 Date: 2020-10-13 12:20
 Category: Software, Change, Hypothesis
-Tags: TDD, CI, software, hypothesis
+Tags: TDD, CI
 Slug: hypothesis-driven-development
 Author: Alex Bunardzic
 Summary: Developing a feature without formulating a hypothesis is like shooting in the dark
@@ -94,39 +94,16 @@ The new breakdown for hypothesis-driven development looks something like this:
 
 | Hypothesis 13 |                        |               | Hypothesis 10 |
 
-| Hypothesis 14 |  |  |  |  |
+| Hypothesis 14 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
-| Hypothesis 15 |  |  |  |  |
+| Hypothesis 15 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
-| Hypothesis 16 |  |  |  |  |
+| Hypothesis 16 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
-| Hypothesis 17 |  |  |  |  |
+| Hypothesis 17 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
-| Hypothesis 18 |  |  |  |  |
+| Hypothesis 18 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
-| Hypothesis 19 |  |  |  |  |
+| Hypothesis 19 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
 All eyes must remain peeled on the **Achieved desired outcome**.
-
-
-| **Ideas backlog** | **Analysis** | **In progress** | **Shipped** | **Achieved desired outcome** |
-
-|---------------|------------------------|---------------|---------------|--------------------------|
-
-| Hypothesis 11 | H 20 | H 26 | H 2 | H 1 |
-
-| Hypothesis 12 | H 21 |  | H 5  | H 5 |
-
-| Hypothesis 13 |  |  | H 10 |
-
-| Hypothesis 14 |  |  |  |  |
-
-| Hypothesis 15 |  |  |  |  |
-
-| Hypothesis 16 |  |  |  |  |
-
-| Hypothesis 17 |  |  |  |  |
-
-| Hypothesis 18 |  |  |  |  |
-
-| Hypothesis 19 |  |  |  |  |

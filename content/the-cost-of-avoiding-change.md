@@ -1,7 +1,7 @@
 Title: The cost of avoiding change
 Date: 2020-10-03 10:20
 Category: Software, Change
-Tags: TDD, CI, software
+Tags: TDD, CI
 Slug: the-cost-of-avoiding-change
 Author: Alex Bunardzic
 Summary: Change is stressful and risky, but avoing it is even riskier
