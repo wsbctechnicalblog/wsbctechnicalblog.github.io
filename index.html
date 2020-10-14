@@ -12,31 +12,116 @@
         <header id="banner" class="body">
                 <h1><a href="https://wsbctechnicalblog.github.io/">WorkSafeBC Demo Tech Blog</a></h1>
                 <nav><ul>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/python.html">Python</a></li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/software.html">software</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/software-change.html">Software, Change</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/software-change-hypothesis.html">Software, Change, Hypothesis</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://wsbctechnicalblog.github.io/alexs-fourth-post.html">Alex's Fourth Post</a></h1>
+                    <h1 class="entry-title"><a href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html">Hypothesis-Driven Development</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2020-10-23T11:20:00-07:00">
-                Published: Fri 23 October 2020
+        <abbr class="published" title="2020-10-13T12:20:00-07:00">
+                Published: Tue 13 October 2020
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex.html">Alex</a>
+                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
         </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/software.html">software</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> </p>
-</footer><!-- /.post-info --><dl class="docutils">
-<dt>Use <tt class="docutils literal">double backticks</tt> for inline literals —</dt>
-<dd>characters displayed in a monospace font and often used to indicate code.
-This is a little confusing after Markdown, which uses a single backtick for literals.
-But RST uses those for <cite>interpreted text</cite>.</dd>
-</dl>
-                </article>
+<p>In <a href="https://wsbctechnicalblog.github.io/category/software-change-hypothesis.html">Software, Change, Hypothesis</a>.</p>
+<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/software.html">software</a> <a href="https://wsbctechnicalblog.github.io/tag/hypothesis.html">hypothesis</a> </p>
+</footer><!-- /.post-info --><p>“The only way it’s all going to go according to plan is if you don’t learn anything.” -Kent Beck</p>
+<p>Experimentation is the foundation of the scientific method, which is a systematic means of exploring the world around us. But experimentation is not only reserved for the field of scientific research. It has its central place in the world of business too.</p>
+<p>Most of us are by now familiar with the business methodology called Minimum Viable Product (<strong>MVP</strong>). This Minimum Viable Product is basically just an experiment. By building and launching MVPs, business operations are engaging in a systematic means of exploring the markets.</p>
+<p>If we look at market leaders today, we learn that they’re not doing projects anymore. The only thing they’re doing is experiments. <strong>Customer discover</strong>y<strong> and </strong>Lean strategies<strong> are used to test assumptions about the markets. Such approach is equivalent to Test-Driven Development (</strong>TDD**), which is the process we are intimately familiar with. In TDD, we write the hypothesis first (the test). We then use that test to guide our implementation. Ultimately, product or service development is no different than TDD – we first write a hypothesis, that hypothesis guides our implementation which serves as measurable validation of the hypothesis.</p>
+<h2>Information discovery</h2>
+<p>Back in the pre-agile days, requirements gathering was an important activity that used to always kick-off the project. A bunch of SMEs used to get assigned on the project, and were tasked with gathering the requirements. After a prolonged period of upfront information discovery, the gathered requirements got reviewed and, if agreed upon, signed off and frozen. No more changes allowed!</p>
+<p>Back then it seemed a perfectly reasonable thing to do. The fly in the ointment always kicked in once the build phase commenced. Sooner or later, as the project progresses, new information comes into the light of day. Suddenly, what we initially held as incontrovertible truth, gets challenged by the newly acquired information and evidence.</p>
+<p>But the clincher was in the gated phases. Remember, once requirements get signed off, they get frozen. No more changes, no scope creep allowed. Which means, newly obtained market insights get willfully ignored.</p>
+<p>Well, that’s kind of a foolish neglect. More often than not, the newly emerging evidence could be of critical importance to the health of the business operation. Can we afford to ignore it? You be we cannot! We have no recourse other than to embrace the change.</p>
+<p>It is after a number of prominent fiascos in the industry that many software development projects switched to the agile approach. With agile, information discovery is partial. With agile we never claim that we have gathered the requirements, and are now ready to implement them. We keep discovering information and implementing it at the same time (we embrace the change). We do it in tiny steps, keeping our efforts interruptible and steerable at all times.</p>
+<p>How to leverage the scientific method</p>
+<p>Scientific method is empirical and consists of performing the following steps:</p>
+<ul>
+<li>
+<p>Step 1: make and record careful observations</p>
+</li>
+<li>
+<p>Step 2: perform orientation with regards to observed evidence</p>
+</li>
+<li>
+<p>Step 3: formulate a hypothesis, including measurable indicators for hypothesis evaluation</p>
+</li>
+<li>
+<p>Step 4: design an experiment that will enable us to test the hypothesis</p>
+</li>
+<li>
+<p>Step 5: conduct the experiment (i.e. release the partial implementation)</p>
+</li>
+<li>
+<p>Step 6: collect the telemetry that results from running the experiment</p>
+</li>
+<li>
+<p>Step 7: evaluate the results of the experiment</p>
+</li>
+<li>
+<p>Step 8: accept or reject the hypothesis</p>
+</li>
+<li>
+<p>Step 9: go to Step 1</p>
+</li>
+</ul>
+<h2>How to formulate a hypothesis</h2>
+<p>When switching from projects to experiments, traditional user story framework (As a/I want to/So that) is proving insufficient. The traditional user story format does not expose the signals needed in order to evaluate the outcomes. Instead, old school user story format is focused on outputs.</p>
+<p>The problem with doing an experiment without first formulating a hypothesis is that there is a danger of introducing a bias when interpreting the results of an experiment. Defining the measurable signals that will enable us to corroborate our hypothesis must be done before we conduct the experiment. That way, we can remain completely impartial when interpreting the results of the experiment. We cannot be swayed by wishful thinking.</p>
+<p>The best way to proceed with formulating a hypothesis is to use the following format:</p>
+<p><strong>We believe</strong> [this capability]</p>
+<p><strong>Will result in</strong> [this outcome]</p>
+<p><strong>We will have the confidence to proceed when</strong> [we see a measurable signal]</p>
+<h2>Working software is not a measure of progress</h2>
+<p>Output-based metrics and concepts (Definition of Done, acceptance criteria, burndown charts, and velocity) are good for detecting working software, but fall miserably when it comes to detecting if working software adds value.</p>
+<p>“Done” only matters if it adds value. Working software that doesn’t add value cannot be declared “done”.</p>
+<h2>The forgotten column</h2>
+<p>Technology-centric projects break activities down into four columns:</p>
+<ol>
+<li>
+<p>Backlog of ideas</p>
+</li>
+<li>
+<p>Analysis</p>
+</li>
+<li>
+<p>In progress</p>
+</li>
+<li>
+<p>Shipped</p>
+</li>
+</ol>
+<p>The above structure is based on the strong belief that all software that works is valuable. That focus must now shift toward continuously delivering real value, something that serves customers. Agilists value outcomes (value to the customers) over features.</p>
+<p>The new breakdown for hypothesis-driven development looks something like this:</p>
+<p>| <strong>Ideas backlog</strong> | <strong>Analysis</strong>               | <strong>In progress</strong>   | <strong>Shipped</strong>       | <strong>Achieved desired outcome</strong> |</p>
+<p>|---------------|------------------------|---------------|---------------|--------------------------|</p>
+<p>| Hypothesis 11 | Hypothesis 20          | Hypothesis 26 | Hypothesis 2  | Hypothesis 1 |</p>
+<p>| Hypothesis 12 | Hypothesis 21          |               | Hypothesis 5  | Hypothesis 5 |</p>
+<p>| Hypothesis 13 |                        |               | Hypothesis 10 |</p>
+<p>| Hypothesis 14 |  |  |  |  |</p>
+<p>| Hypothesis 15 |  |  |  |  |</p>
+<p>| Hypothesis 16 |  |  |  |  |</p>
+<p>| Hypothesis 17 |  |  |  |  |</p>
+<p>| Hypothesis 18 |  |  |  |  |</p>
+<p>| Hypothesis 19 |  |  |  |  |</p>
+<p>All eyes must remain peeled on the <strong>Achieved desired outcome</strong>.</p>
+<p>| <strong>Ideas backlog</strong> | <strong>Analysis</strong> | <strong>In progress</strong> | <strong>Shipped</strong> | <strong>Achieved desired outcome</strong> |</p>
+<p>|---------------|------------------------|---------------|---------------|--------------------------|</p>
+<p>| Hypothesis 11 | H 20 | H 26 | H 2 | H 1 |</p>
+<p>| Hypothesis 12 | H 21 |  | H 5  | H 5 |</p>
+<p>| Hypothesis 13 |  |  | H 10 |</p>
+<p>| Hypothesis 14 |  |  |  |  |</p>
+<p>| Hypothesis 15 |  |  |  |  |</p>
+<p>| Hypothesis 16 |  |  |  |  |</p>
+<p>| Hypothesis 17 |  |  |  |  |</p>
+<p>| Hypothesis 18 |  |  |  |  |</p>
+<p>| Hypothesis 19 |  |  |  |  |</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -45,76 +130,23 @@ But RST uses those for <cite>interpreted text</cite>.</dd>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://wsbctechnicalblog.github.io/alex-has-some-ideas.html" rel="bookmark"
-                           title="Permalink to Alex has some ideas">Alex has some ideas</a></h1>
+                    <h1><a href="https://wsbctechnicalblog.github.io/the-cost-of-avoiding-change.html" rel="bookmark"
+                           title="Permalink to The cost of avoiding change">The cost of avoiding change</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2020-10-23T10:20:00-07:00">
-                Published: Fri 23 October 2020
+        <abbr class="published" title="2020-10-03T10:20:00-07:00">
+                Published: Sat 03 October 2020
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex.html">Alex</a>
+                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
         </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/software.html">software</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> </p>
-</footer><!-- /.post-info -->                <dl class="docutils">
-<dt>It all starts with paragraphs.</dt>
-<dd><p class="first">Plain text, separated by empty lines.
-The text lines of a paragraph are wrapped together.</p>
-<blockquote>
-Indent your paragraph if you want a nice blockquote.</blockquote>
-<p class="last">You can <em>emphasize</em> text in a paragraph using asterisks.
-Double asterisks give <strong>more</strong> emphasis.
-You can wrap multiple words to <em>emphasize …</em></p></dd></dl>
-                <a class="readmore" href="https://wsbctechnicalblog.github.io/alex-has-some-ideas.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://wsbctechnicalblog.github.io/second-title.html" rel="bookmark"
-                           title="Permalink to Second title">Second title</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-10-23T10:20:00-07:00">
-                Published: Fri 23 October 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex.html">Alex</a>
-        </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/software.html">software</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> </p>
-</footer><!-- /.post-info -->                <p>Here is the second content.</p>
-
-                <a class="readmore" href="https://wsbctechnicalblog.github.io/second-title.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://wsbctechnicalblog.github.io/my-super-post.html" rel="bookmark"
-                           title="Permalink to My super title">My super title</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2010-12-03T10:20:00-08:00">
-                Published: Fri 03 December 2010
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alexis-metaireau.html">Alexis Metaireau</a>
-        </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/python.html">Python</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/pelican.html">pelican</a> <a href="https://wsbctechnicalblog.github.io/tag/publishing.html">publishing</a> </p>
-</footer><!-- /.post-info -->                <p>Short version for index and feeds</p>
-                <a class="readmore" href="https://wsbctechnicalblog.github.io/my-super-post.html">read more</a>
+<p>In <a href="https://wsbctechnicalblog.github.io/category/software-change.html">Software, Change</a>.</p>
+<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> <a href="https://wsbctechnicalblog.github.io/tag/software.html">software</a> </p>
+</footer><!-- /.post-info -->                <p>Change is stressful and risky, but avoing it is even riskier</p>
+                <a class="readmore" href="https://wsbctechnicalblog.github.io/the-cost-of-avoiding-change.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
