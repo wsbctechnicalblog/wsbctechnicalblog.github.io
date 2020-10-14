@@ -1,9 +1,9 @@
-First post
+Episode 53 post
 ------------------
 :title: The cost of avoiding change
-:date: 2020-10-03 10:20
-:tags: CI, TDD
-:category: software, TDD
+:date: 2020-10-13 19:20
+:tags: CI, TDD, change-management
+:category: software, TDD, change
 :author: Alex Bunardzic
 :excerpt: Cost of change is the most impotant metric in software engineering.
 
