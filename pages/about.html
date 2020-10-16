@@ -1,23 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
         <title>About</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta charset="utf-8" />
+        
 </head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/"></a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/pages/about.html">About</a></li>
-                    <li><a href="/category/posts.html">Posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-    <h1 class="entry-title">About</h1>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li  class="active"><a href="/pages/about.html">About</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+            <div id="title-block">
+            <h1>About</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <section class="article">
     
+
     <p>&nbsp;</p>
 <h2>What is WorkSafeBC Technical Blog?</h2>
 <p>A publishing platform focused on showcasing cutting edge accomplishments of WorkSafeBC Software Engineering Teams.</p>
@@ -25,14 +41,13 @@
 <p>WorkSafeBC Technical Blog is an open source platform that is open for collaboration. To propose an article to be published on WorkSafeBC Technical Blog, you need to be an engineer who works at WorkSafeBC.</p>
 <h2>How can I contribute to WorkSafeBC Technical Blog?</h2>
 <p>To begin, you need Git installed on your computer. </p>
-<p>Also, install Pelican (https://github.com/getpelican/pelican) on your computer (make sure you also instal markdown module wit Pelican).</p>
 <p>You can then clone WorkSafeBC Technical Blog by running the following command:</p>
 <p><code>git clone https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io.git</code></p>
 <p>Change directory to where you cloned the repo and create a new branch:</p>
 <p><code>git checkout -b my-branch</code></p>
 <p>Make changes to it (i.e. create a new blog post), add changed files, and commit to your local repo. Then push changes to the remote repo, and open a Pull Request.</p>
 <h2>How do I write a blog post for WorkSafeBC Technical Blog?</h2>
-<p>It is mandatory that a blog post starts with <em>meta information</em> (i.e. <strong>Title</strong>, <strong>Date</strong>, <strong>Catgory</strong>, <strong>Tags</strong>, <strong>Slug</strong>, <strong>Author</strong> and <strong>Summary</strong>):</p>
+<p>It is mandatory that a blog post starts with <em>meta information</em> (i.e. <strong>Title</strong>, <strong>Date</strong>, <strong>Category</strong>, <strong>Tags</strong>, <strong>Slug</strong>, <strong>Author</strong> and <strong>Summary</strong>):</p>
 <ul>
 <li><strong>Title:</strong> My super title</li>
 <li><strong>Date:</strong> 2020-10-03 10:20 </li>
@@ -43,32 +58,42 @@
 <li><strong>Summary:</strong> Short version for index and feeds</li>
 </ul>
 <p>For the post body, use markdown (you can also mix markdown with HTML).</p>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="https://twitter.com/WorkSafeBC">WorkSafeBC on Twitter</a></li>
-                            <li><a href="https://www.linkedin.com/company/worksafebc/">WorSafeBC on LinkedIn</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+    </section>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://getpelican.com/">Pelican</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="">Terms and Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/tdd.html">TDD</a>(3)</li>
+                    <li><a href="/tag/ci.html">CI</a>(3)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/posts.html">Posts</a> (3)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
 </body>
 </html>

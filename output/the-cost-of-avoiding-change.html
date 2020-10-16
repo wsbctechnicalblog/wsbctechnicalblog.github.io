@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>The cost of avoiding change</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/the-cost-of-avoiding-change.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Change is stressful and risky, but avoing it is even riskier">
+
+    <meta name="author" content="Alex Bunardzic">
+
+    <meta name="tags" content="TDD">
+    <meta name="tags" content="CI">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content=""/>
+<meta property="og:title" content="The cost of avoiding change"/>
+<meta property="og:description" content="Change is stressful and risky, but avoing it is even riskier"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/the-cost-of-avoiding-change.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-10-03 10:20:00-07:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/alex-bunardzic.html">
+<meta property="article:section" content="Posts"/>
+<meta property="article:tag" content="TDD"/>
+<meta property="article:tag" content="CI"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "The cost of avoiding change",
+  "headline": "The cost of avoiding change",
+  "datePublished": "2020-10-03 10:20:00-07:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Alex Bunardzic",
+    "url": "/author/alex-bunardzic.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/the-cost-of-avoiding-change.html",
+  "description": "Change is stressful and risky, but avoing it is even riskier"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="/pages/about.html">About</a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">The cost of avoiding change</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/alex-bunardzic.html">Alex Bunardzic</a>
+            | <time datetime="Sat 03 October 2020">Sat 03 October 2020</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>Software engineers are notorious for being averse to change. We prefer the steady state, stability. The reason we prefer steady state lies in the fact that systems we are building tend to be complex. Complexity breeds brittleness, and so we are keen on doing everything possible to avoid building brittle systems. Who could blame us?</p>
+<h2>City on the Hill</h2>
+<p>When engineering a system, we tend to think about it in terms of an endpoint (let’s call that endpoint City on the Hill). This idealized city needs to be defined rigorously. After all, that’s what engineering is all about – rigor.</p>
+<p>After we’ve defined it, we optimize the process of building it offline. Once it’s built, we confirm that it’s done (using our Definition of Done yardstick). We then push it online, move into it, and never change it again (if we need to make any changes, we’d be admitting that we haven’t defined it rigorously to begin with).</p>
+<h2>Efficiency</h2>
+<p>The central idea of efficiency is that changing something is a waste. Why did we build the thing in the first place if we are to turn around and change it? Wouldn’t doing that mean that we didn’t actually know how to build our City on the Hill? Why not build our system correctly to begin with? Anything else would be grossly inefficient.</p>
+<h2>Change is bad</h2>
+<p>According to the above reasoning, change is bad. It is wasteful and inefficient. Pushed to its limit, this ‘change is bad’ sentiment blossoms into full-blown ‘change is to be feared’ mindset.</p>
+<p>Our City on the Hill ideal implies finality. Upon reaching our final destination, the reason to ever consider change is only if we realize that we have hit the wrong target. And that means utmost defeat (the ultimate inefficiency and waste).</p>
+<h2>All complexity at the beginning and all reward at the end</h2>
+<p>The City on the Hill approach to software engineering makes our profession extremely hard. We frontload all the complexity at the very beginning of the project. We ‘kitchen sink’ the project: since we only get one shot to make it right, we’d better create a laundry list of all the features we will ever need.</p>
+<p>Working on the detailed laundry list of all the features is a complex process. And it does not deliver any rewards. It may take days, weeks, even months to get to the end of job. And once we get there, we reap no rewards. All we have to show for is a pile of documents and diagrams – zero shippable software. The work on building shippable software has yet to commence. And it is only at the very end, once we ship the finished City on the Hill product, that we get any rewards for this gargantuan effort.</p>
+<h2>Gold-plating the parts</h2>
+<p>The pressure of having only one shot at building our City on the Hill forces us to gold-plate all parts we’re building. We feel compelled to make each part better than it has to be in order to do its job. We are at that point playing the prediction game – maybe in the future this function will have to be integrated with another system, and because we won’t be making any changes to it later on, let’s make sure now it is sufficiently generalized. Or, add those bells and whistles that only one in thousand users ever notices, let alone makes any use of it.</p>
+<h2>Fear of imperfections</h2>
+<p>The ‘kitchen sink’ laundry list of features, where each part must be gold-plated, results in code that is far more complex than it needs to be. That naturally leads to lack of understanding. Lack of understanding leads to lack of confidence. That lack of confidence makes development slower because of the looming finality – do it once and make sure you do it right!</p>
+<p>Such attitude results in the fear of imperfection. The fear of being wrong tends to lead to paralysis. Suddenly, the stakes of any decision made by the engineers seem incredibly high. Trying things and experimenting is viewed as wasting precious time and resources.</p>
+<h2>Death march</h2>
+<p>The finality of the City on the Hill approach leads to very late validation. By the time we catch any issues with our gold-plated parts and how they struggle to integrate, the goodwill has already been largely spent. All the hard work invested in taming considerable complexities rarely pays off if we adopt the ‘failure is not an option’ mentality.</p>
+<p>We cannot confirm whether the code we’re building actually implements our City until all pieces are in. Five-to-midnight is the worst time to discover we have problems. That is the point of maximum stress, as we are on the collision course to our deadline.</p>
+<h2>Break the workload into parallel chunks?</h2>
+<p>To avoid the looming death march described above, we often see workload being divided into independent chunks to be worked on in parallel. Sounds reasonable on the surface, until we take a closer look and factor-in the cost of control needed to coordinate and synchronize independent strains of work. Managing that kind of parallelism is a tall order. Out of sheer necessity, management introduces ‘wait states’ and ‘sync points’. The independent development suddenly ceases to be independent, as it must become strictly lockstep. Copious documents, emails, tickets and handoffs start proliferating, slowing everything down to a crawl.</p>
+<h2>Rework Avoidance</h2>
+<p>Avoiding change leads to avoiding rework. Any attempt at making something must be done in such a way that there would never be any need for rework. Make it right from the get go, on the first attempt.</p>
+<p>The cost of avoiding rework is best expressed in the cost of late failures. Those dreadful five-to-midnight failures are extremely costly; not only that, but they leave very little room for rework. By the time we realize that things are not gelling as expected, it is often too late for attempting any rework.</p>
+<h2>Switch to partial delivery</h2>
+<p>In order to evade the exorbitant cost of rework avoidance, we must pivot and embrace change via partial delivery. Embracing change necessitates innovation, experimenting, trying things out. The only way to do that effectively is to cultivate the ‘fail early’ mindset. Failure is desirable because it prompts us to fix it while it is still easy to do so.</p>
+<h2>Conclusion</h2>
+<p>Avoiding change, while very tempting and perfectly natural, usually ends up being very costly. Fear of failure is preventing innovation and experimentation by stifling change. The only way to avoid paying such exorbitant price is to embrace the change, embrace failure, but do it in an incremental fashion. Small steps, each one focused on partial delivery. That way, success is assured.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=The cost of avoiding change&amp;url=/the-cost-of-avoiding-change.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/the-cost-of-avoiding-change.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/the-cost-of-avoiding-change.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/tdd.html">TDD</a><a href="/tag/ci.html">CI</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

@@ -1,144 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
         <title></title>
-        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/main.css" />
-        <link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title=" Atom Feed" />
+        <meta charset="utf-8" />
+        
 </head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+        </ul>
+    </div>
+    <div class="hp-header">
+        <div class="page-header">
+            <div class="content-header">
+                <div id="title-block">
+                <h1><a href="/"></a></h1>
+                <p class="blurb"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <div><img src="home-bg.jpg" alt="WSBC Blog"></div>
-                <nav><ul>
-                        <li><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://wsbctechnicalblog.github.io/benefits-of-frequent-deployments.html">Benefits of frequent deployments</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2020-10-15T10:20:00-07:00">
-                Published: Thu 15 October 2020
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
-        </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> </p>
-</footer><!-- /.post-info --><p>I come from the old school software engineering (started my first programming job back in 1990). Thirty years ago, we were building software the same way we always build high rise buildings. We first obtain the fully fleshed budget and the permission to build. We then wait on the blueprints (requirements) to be signed, sealed and delivered, and then start our ‘brick laying’ work. When we finish building, we ask building inspectors to perform due diligence and confirm if the building is suitable to be put on the market.</p>
-<p>Only after all the above activities get successfully completed do we open up our brand new building. We now let people move in.</p>
-<p>In the world of software engineering, the equivalent of moving in would be the event of deploying our app to production. Naturally, the grand opening can happen only once, after which we move into the ‘keeping the lights on’ phase (i.e. maintenance).</p>
-<p>We call this development model “waterfall” (or, “Big Plan Upfront”).</p>
-<h2>Current situation</h2>
-<p>I’ve tried to plot the workflow that may come close to how we are dealing with the deployment workflow today. We start by pulling a story from our backlog. We estimate the story, schedule it for development, and then develop (implement) it. Once we’re ‘code complete’ we commit the code and push it. We then open a PR and if there are issues/problems, the PR gets rejected and the task of fixing the issue goes back to development.</p>
-<p>Eventually, when the PR gets approved and the branch merged, if there are no issues the merged code (release candidate) goes into UAT. If there are no problems in UAT, release candidate gets deployed to production.</p>
-<p>The real headaches occur when we encounter problems in UAT or in production. These problems must be handled manually (with tedious manual verifications), and the fix to the problem is always very disruptive. To apply the fix, we must stop the server(s) in order to deploy the code. That event destroys all users’ sessions; all user data gets irrevocably lost at that moment. After fixing and re-deploying, we force users to sign in again and start all over, and in general the team goes through a very stressful, even traumatic episode.</p>
-<p><img alt="Old school deploymeny workflow" src="/images/old-school-deployment.png"></p>
-<h2>Why high levels of stress?</h2>
-<p>Regardless of the circumstances, it always feels terrible to kick users out of the app while they are in the middle of doing important processing. For that reason, we always prefer to schedule deployments for afterhours. However, that’s often times out of the question because the bug is causing terrible damage to production data and needs to be fixed right away.</p>
-<p>Even if we can afford to wait for the afterhours deployment, it is still stressful because we need to schedule for overtime operations staff to work long hours.</p>
-<h2>What is causing this stressful situation?</h2>
-<p>The reason we find ourselves in an unenviable position of having to fix the defects by harming the end user experience lies in the waterfall model. Unlike the engineering workflow that manages the building of physical objects (such as a high rise building), software is not well suited for the waterfall approach. When building physical objects, it is intuitively obvious that there must be an orderly sequence of events (i.e. impossible to work on building a roof of the house if the foundation and the walls are not finished). When developing software, those concerns are not a constraint.</p>
-<p>Still, the classical engineering mentality tends to get carried over to software engineering. Same as we cannot deliver a partially completed foundation and then deliver partially completed walls etc., the mindset that gets carried over to software engineering insists that all the constituent parts of the solution must be fully fleshed out. That means that rework is not allowed – rework is extremely risky.</p>
-<p>In the world of software development, it is actually advisable to focus on partial delivery. Partial delivery implies rework (if something is partial, that means we need to work some more on it).</p>
-<p>The waterfall workflow denies rework, and is therefore very disturbed if, after delivering a fully fleshed product, something turns out to be defective. This is due to the fact that in the world of waterfall workflow, failure is not an option. Everything must be delivered fully completed on the first try, because there won’t be any second chance (i.e. second chance was not factored in the budget). Therefore, when something malfunctions, all hell breaks loose. It wasn’t part of the original plan!</p>
-<h2>How to remove stress from deployment?</h2>
-<p>In order to minimize and even remove the stress, we must modify the deployment workflow. We must move away from the waterfall model, and into a full blown rework model (where second chances are baked in from the get go).</p>
-<p>Let’s examine an aspirational deployment workflow (something I sketched while wearing my optimistic hat):</p>
-<p><img alt="Deployment workflow" src="/images/deployment-workflow.png"></p>
-<p>The process starts from the hypothesis (supplied by the business in the form of a user story). We pull one high priority story from the backlog and slice it vertically. We then work on implementing the vertical slice by doing full blown CI/TDD. If we encounter any problems we go back to the user story and refine it. We do all that work by making sure we perform very frequent commits.</p>
-<p>When done, we push the changed code to the remote repo and open a PR. If there is a problem with our PR (problem detected by automated tests and linters), it’s back to the drawing board. Eventually our PR gets approved and merged. The merge event signals to the team that absolutely all quality checks have been cleared; our code is good to go.</p>
-<p>Next step is to automatically deploy the code to production. Gasp! No, it’s not a typo – we should be free, at any time, to deploy fully tested code to production. However, just because the code is deployed doesn’t automatically mean it is available to end users. We always hide the changes from the users behind feature flags.</p>
-<p>Now that our newly minted code is in production, we engage in monitoring its behaviour. We do it by optimizing system observability (collecting and logging telemetry). The production logs should give us sufficient transparency to know whether the code is a solid release candidate or not.</p>
-<p>If we discover the problem in production (luckily, no skin off anyone’s nose thanks to feature flags), we open a ticket/spec to go back to development. Write more tests, write more imposters, fix the problem and push the fix through the automated gatekeepers.</p>
-<p>Eventually, once the problem is resolved, we release to production. And if despite all precautions we still encounter issues in production, we quickly repeat the automated workflow.</p>
-<p>And because all the fixes to the production bugs are going in via feature flags, there is no need to stop and restart the servers. Also, no user session data gets lost; users merely get rerouted to the new code by flipping the feature flags.</p>
-<h2>Why are frequent deployments so beneficial?</h2>
-<p>Finally, let’s discuss the merits of frequent deployments. Once we remove the stress factor from the deployment process, we should freely engage in deploying as often as possible.</p>
-<p>Why would we want to do that? Frequent deployments teach us invaluable lessons about our market, about our system, about our features. We cannot know whether our changes make sense or not unless we put them out in the field. No focus group can give us accurate prediction on how will a change to the system behave once it goes live.</p>
-<p>As the saying goes, the proof is in the pudding.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html" rel="bookmark"
-                           title="Permalink to Hypothesis-Driven Development">Hypothesis-Driven Development</a></h1>
-                </header>
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Thu 15 October 2020</div>
+ 
+                <h2><a href="/benefits-of-frequent-deployments.html" rel=Bookmark title="Permalink to Benefits of frequent deployments">Benefits of frequent deployments</a></h2>
+                <p>
+                <p>The longer the wait to deploy, the bigger the risk of things going south</p>            
+                </p>
+                   
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-10-13T12:20:00-07:00">
-                Published: Tue 13 October 2020
-        </abbr>
+            </div>
+    
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Tue 13 October 2020</div>
+ 
+                <h2><a href="/hypothesis-driven-development.html" rel=Bookmark title="Permalink to Hypothesis-Driven Development">Hypothesis-Driven Development</a></h2>
+                <p>
+                <p>Developing a feature without formulating a hypothesis is like shooting in the dark</p>            
+                </p>
+                   
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
-        </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> </p>
-</footer><!-- /.post-info -->                <p>Developing a feature without formulating a hypothesis is like shooting in the dark</p>
-                <a class="readmore" href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+            </div>
+    
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Sat 03 October 2020</div>
+ 
+                <h2><a href="/the-cost-of-avoiding-change.html" rel=Bookmark title="Permalink to The cost of avoiding change">The cost of avoiding change</a></h2>
+                <p>
+                <p>Change is stressful and risky, but avoing it is even riskier</p>            
+                </p>
+                   
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://wsbctechnicalblog.github.io/the-cost-of-avoiding-change.html" rel="bookmark"
-                           title="Permalink to The cost of avoiding change">The cost of avoiding change</a></h1>
-                </header>
+            </div>
+    
+</ul>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-10-03T10:20:00-07:00">
-                Published: Sat 03 October 2020
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://wsbctechnicalblog.github.io/author/alex-bunardzic.html">Alex Bunardzic</a>
-        </address>
-<p>In <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>.</p>
-<p>tags: <a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a> <a href="https://wsbctechnicalblog.github.io/tag/ci.html">CI</a> </p>
-</footer><!-- /.post-info -->                <p>Change is stressful and risky, but avoing it is even riskier</p>
-                <a class="readmore" href="https://wsbctechnicalblog.github.io/the-cost-of-avoiding-change.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/WorkSafeBC">WorkSafeBC on Twitter</a></li>
-                            <li><a href="https://www.linkedin.com/company/worksafebc/">WorSafeBC on LinkedIn</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://getpelican.com/">Pelican</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="">Terms and Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/tdd.html">TDD</a>(3)</li>
+                    <li><a href="/tag/ci.html">CI</a>(3)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/posts.html">Posts</a> (3)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
 </body>
 </html>
