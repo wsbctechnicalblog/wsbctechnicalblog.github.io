@@ -1,7 +1,7 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 html {
-    font-family: verdana;
+    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -9,13 +9,6 @@ html {
 body {
     margin: 0
 }
-
-.header-img {
-    width: 100%;
-    height: 400px;
-    background: url('images/home-bg.jpg');
-    background-size: cover;
-  }
 
 article,
 aside,
