@@ -21,8 +21,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),
-         ('Pelican', 'https://getpelican.com/'),)
+LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),)
 
 # Social widget
 SOCIAL = (('WorkSafeBC on Twitter', 'https://twitter.com/WorkSafeBC'),
