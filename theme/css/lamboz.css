@@ -171,7 +171,7 @@ div.hp-header {
   max-height: 55;
   position:relative;
   /*background:url('/theme/img/lego_background.jpg') no-repeat center center fixed;*/
-  background-image:url('/theme/img/lego_background.jpg');
+  background-image:url('/theme/img/header.jpg');
   background-size: 1300px;
   width: 1300px;
   height: 280px;
@@ -185,7 +185,7 @@ div.hp-header-inner {
   height:30%;
   position:relative;
   /*background:url('/theme/img/lego_background.jpg') no-repeat center center fixed;*/
-  background-image:url('/theme/img/lego_background.jpg');
+  background-image:url('/theme/img/header.jpg');
   background-size: 1300px;
   width: 1300px;
   height: 280px;
@@ -260,7 +260,7 @@ div#title-block P.blurb {
 }
 
  .footer {
-    background-color:#FF8C00;
+    background-color:#599bae;
     color: #FFF;
   }
   
@@ -305,7 +305,7 @@ div.hp-header {
   height:100%;
   position:relative;
   /*background:url('/theme/img/lego_background.jpg') no-repeat center center fixed;*/
-  background-image:url('/theme/img/lego_background.jpg');
+  background-image:url('/theme/img/header.jpg');
   background-size: 1300px;
   width: 1300px;
   height: 280px;
@@ -319,7 +319,7 @@ div.hp-header-inner {
   height:30%;
   position:relative;
   /*background:url('/theme/img/lego_background.jpg') no-repeat center center fixed;*/
-  background-image:url('/theme/img/lego_background.jpg');
+  background-image:url('/theme/img/header.jpg');
   background-size: 1300px;
   width: 1300px;
   height: 280px;
