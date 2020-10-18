@@ -12,8 +12,6 @@ WorkSafeBC Technical Blog is an open source platform that is open for collaborat
 
 To begin, you need Git installed on your computer. 
 
-Also, install Pelican (https://github.com/getpelican/pelican) on your computer (make sure you also instal markdown module wit Pelican).
-
 You can then clone WorkSafeBC Technical Blog by running the following command:
 
 `git clone https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io.git`
