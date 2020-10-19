@@ -63,3 +63,5 @@ In order to evade the exorbitant cost of rework avoidance, we must pivot and emb
 ## Conclusion
 
 Avoiding change, while very tempting and perfectly natural, usually ends up being very costly. Fear of failure is preventing innovation and experimentation by stifling change. The only way to avoid paying such exorbitant price is to embrace the change, embrace failure, but do it in an incremental fashion. Small steps, each one focused on partial delivery. That way, success is assured.
+
+<br /><br />

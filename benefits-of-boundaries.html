@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Benefits of boundaries - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+            <div id="title-block">
+            <h1>  <a href="/benefits-of-boundaries.html" rel="bookmark"
+                    title="Permalink to Benefits of boundaries">Benefits of boundaries</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Postedby by Alex Bunardzic on Mon 19 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Simple isn't easy, but it is the only way to build anti-fragile systems</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><em>Things break on a small scale all the time, in order to avoid large-scale generalized catastrophes.”</em> — Nassim Nicholas Taleb</p>
+<p>Right on the heels of our PI Planning session, I’d like to continue the discussion on the merits of imposing and maintaining boundaries. To recapitulate what we talked about thus far:</p>
+<ul>
+<li>Systems are under constant stress (regulatory changes, market shifts, pandemics, customer expectations drift, and also plain old digital rot)</li>
+<li>Monoliths are brittle, and are first to crumble under the stresses and shocks of relentless change</li>
+<li>System resilience is 100% dependent on the system architecture</li>
+<li>System architecture can enable a system to survive stress</li>
+<li>Three main types of system architecture:</li>
+<li><strong>Robust architecture</strong></li>
+<li><strong>Agile architecture</strong></li>
+<li><strong>Anti-fragile architecture</strong></li>
+<li>Anti-fragile architecture is the most advanced/biggest bang for the buck</li>
+<li>It hinges on boundaries</li>
+<li>It is anti-fragile because it enables the system to function by safely engaging in trial-and-error</li>
+<li>It focuses on small problems</li>
+<li>It allows only small errors to occur</li>
+<li>It puts pressure on the system without jeopardizing it</li>
+<li>When the pressure gets fixed and removed, the system grows stronger than before (e.g. Netflix Chaos Monkey anti-fragile architecture)</li>
+<li>It enables the business to embrace change</li>
+</ul>
+<h2>Why bother introducing boundaries?</h2>
+<p>There is plenty of field evidence illustrating the fact that any large, complex system that works according to expectations was once a small, simple system that gradually evolved into a larger one. Conversely, there is no evidence that a system that started as large and complex ever reached the point of being fully functional.</p>
+<p>As a small, simple system evolves and grows, it can only do so by containment. The most fundamental principle of software design is to separate things that change from things that stay the same. This isolation (containment) is not a one-time event. Keeping things contained/isolated is an ongoing design activity which must occur every step of the way.</p>
+<p>And the only way to keep things contained is to introduce and maintain boundaries.</p>
+<h2>Would any boundaries do?</h2>
+<p>The short (and not so sweet) answer is: no. The hardest (and most powerful) trick is knowing where and how to erect boundaries. That knowledge is what separates experienced experts from dilettante software designers.</p>
+<p>Let's have a quick look into a system that was architected using the wrong boundaries pattern:</p>
+<p><img alt="Incorrect boundaries pattern" src="/images/boundaries1.png"> </p>
+<p>What is wrong with the above picture? Infrastructure layers should never be used to create boundaries for top level modules.</p>
+<p>Let’s now look into a system that was architected using proper boundaries pattern:</p>
+<p><img alt="Proper boundaries pattern" src="/images/boundaries2.png"> </p>
+<h2>Boundary fitness</h2>
+<p>As difficult as it often may be to create proper boundaries (it takes a lot of experience before one is capable of designing the system correctly), it is much, much harder to keep the boundaries intact.</p>
+<p>As the system evolves, there is a strong tendency to break the boundaries. It is very tempting, as we are developing new features (or extending existing features) to take shortcuts and try to access modules that belong to isolated layers. Any time we do that, we are diluting the separation of concerns.</p>
+<p>Boundary fitness is therefore expressed as a metric of how much of the important architectural characteristics remain preserved as the system evolves. Protecting the purity of the boundaries is of paramount importance. Whenever we encounter a system that is flakey and riddled with defects, upon closer examination we see that many, sometimes all architectural boundaries have been violated.</p>
+<p>For example, a typical anti-pattern often goes like this:</p>
+<p><img alt="Boundaries anti-pattern" src="/images/boundaries2.png"> </p>
+<p>We must never make cross-boundary calls. But that is easier said than done, because in the heat of the battle, we reach for an easy solution and see that crossing over to another domain is a quick win. We do it, and thus incur technical debt. And more likely than not, that debt never gets paid off.</p>
+<h2>Conclusion</h2>
+<p>It is important to avoid the Big Plan Upfront approach to building software systems. It is much more advisable to start small, and maintain small isolated parts of a larger system. Correctly choosing the boundaries ensures we start on the right footing. The biggest challenge, however, is maintaining the pristine domains within the system. It takes strong discipline to resist the urge to cross the boundaries in order to accomplish quick and dirty wins.</p>
+<p><br /><br /></p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/tdd.html">TDD </a><a href="/tag/ci.html">CI </a>
+        | <a href="/benefits-of-boundaries.html" rel="bookmark"
+         title="Permalink to Benefits of boundaries">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
+                    <li><a href="/tag/ci.html">CI</a>(4)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (7)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
