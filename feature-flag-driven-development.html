@@ -66,6 +66,7 @@
 <p>Much as Martin Fowler et al claim that branching is poor man’s modularization, it is also possible to say that branching is poor man’s feature flags. So what are feature flags?</p>
 <p>Feature flags could be viewed as logical branching. While physical branches, as they are practiced in modern engineering mostly using git, require making a physical copy of the repo and giving it a unique name, feature flags could be used without necessarily having to make a physical copy. When using Feature-Flag Driven Development (FFDD), we simply leave the existing code intact and write new modules that get conditionally called. The conditional logic is binary, and is governed by the feature flag (which could be either in on or in off state). If the flag is in the on state, the new code will get executed. Otherwise, execution continues as usual (old code runs).</p>
 <p>FFDD enables us to add potentially risky changes to the healthy codebase, without going through the song and dance of trying to merge the changes and risking merge conflicts. This technique then enables us to quickly ship new features in stealth mode. Our regular customer population will not get affected, since they will still be using the old, tested codebase. But our QA can then safely assess and evaluate the risks and potential merits of the new code. That activity would be the equivalent of the Pull Request in the branch-driven development discipline. If the PR of the code under the feature flag passes the muster, the old code gets decommissioned and the new code becomes the healthy version of the codebase.</p>
+<p><br /><br /></p>
         </div>
     </section>
     <footer class="footer-article">
@@ -84,6 +85,8 @@
                 <h3>Links</h3>
                 <ul>
                     <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
                 </ul>
             </div>
          </div>
@@ -100,15 +103,18 @@
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
-                    <li><a href="/tag/tdd.html">TDD</a>(4)</li>
-                    <li><a href="/tag/ci.html">CI</a>(3)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
+                    <li><a href="/tag/ci.html">CI</a>(4)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
                     <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
                 </ul>
             </div>
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (5)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (7)</li>
                 </ul>
              
             </div>

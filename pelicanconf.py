@@ -21,11 +21,14 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),)
+LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),
+         ('WorkSafeBC IT is hiring','https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference'),
+         ('Careers', 'https://www.worksafebc.com/en/about-us/careers'),)
+
+
 
 # Social widget
-SOCIAL = (('WorkSafeBC on Twitter', 'https://twitter.com/WorkSafeBC'),
-          ('WorSafeBC on LinkedIn', 'https://www.linkedin.com/company/worksafebc/'),)
+SOCIAL = (('WorkSafeBC on Twitter', 'https://twitter.com/WorkSafeBC'),('WorkSafeBC on LinkedIn', 'https://www.linkedin.com/company/worksafebc/'))
 
 DEFAULT_PAGINATION = False
 

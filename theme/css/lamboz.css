@@ -1,12 +1,12 @@
 BODY,P,DIV, UL LI, OL LI, TD {
-  font-family:"Exo 2",sans-serif;
+  font-family:"Verdana",sans-serif;
   font-size: 12pt;
   margin: 0;
 }
 
 
 H1,H2,H3,H4,H5,H6 {
-  font-family:"Exo 2",sans-serif;
+  font-family:"Verdana",sans-serif;
   font-weight: 600;
   color: #777;
 }
@@ -222,7 +222,7 @@ div#title-block H1 A {
 }
 
 div#title-block P.blurb {
-  font-family:"Exo 2",sans-serif;
+  font-family:"Verdana",sans-serif;
   color: white;
   font-size: 1.5em;
   text-shadow: 1px 1px 3px #000;

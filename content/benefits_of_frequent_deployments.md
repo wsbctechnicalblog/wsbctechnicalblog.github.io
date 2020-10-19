@@ -68,3 +68,5 @@ Finally, let’s discuss the merits of frequent deployments. Once we remove the 
 Why would we want to do that? Frequent deployments teach us invaluable lessons about our market, about our system, about our features. We cannot know whether our changes make sense or not unless we put them out in the field. No focus group can give us accurate prediction on how will a change to the system behave once it goes live.
 
 As the saying goes, the proof is in the pudding.
+
+<br /><br />
