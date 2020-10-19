@@ -4,7 +4,7 @@ Category: Posts
 Tags: Code-quality, legacy-code, extract-method, TDD
 Slug: why-extract-methods
 Author: Alex Bunardzic
-Summary: Legacy code is had to test, so extract methods by writing micro tests
+Summary: Legacy code is hard to test, so extract methods by writing micro tests
 
 Allow me a bit of introspection. I’ve been in Software Engineering field for 30 years. During those 30 years I modified a lot of legacy software. Here is how I would typically do it:
 
@@ -58,7 +58,7 @@ Here is where extract method and naming come to the rescue. Take the complex sta
 
 `public bool IsEligible(bool b, bool x, bool y, int z) {`
 
-&nbsp;&nbsp;`return ((x && !y) && !b) || (b && y) && !(z >= 65);`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`return ((x && !y) && !b) || (b && y) && !(z >= 65);`
 
 `}`
 

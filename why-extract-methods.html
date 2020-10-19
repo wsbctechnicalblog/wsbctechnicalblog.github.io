@@ -42,7 +42,7 @@
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Legacy code is had to test, so extract methods by writing micro tests</p>
+            <p>Legacy code is hard to test, so extract methods by writing micro tests</p>
         </div>
     
         <div class="entry-content">
@@ -72,7 +72,7 @@
 <p>It would be literally impossible to understand the meaning and the intention of the above statement without actually running the code and stepping through it with a debugger. Such activity is what we call GAK (Geek at Keyboard). It is 100% unproductive, and is quite wasteful.</p>
 <p>Here is where extract method and naming come to the rescue. Take the complex statement contained within the if statement, extract it into its own method, and give that method a meaningful name. For example:</p>
 <p><code>public bool IsEligible(bool b, bool x, bool y, int z) {</code></p>
-<p>&nbsp;&nbsp;<code>return ((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65);</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>return ((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65);</code></p>
 <p><code>}</code></p>
 <p>Now replace the ugly if statement with a more readable statement:</p>
 <p><code>if(IsEligible(b, x, y, z))</code></p>
