@@ -2,7 +2,7 @@ Title: Pull Request is your friend not foe!
 Date: 2020-10-19 13:13
 Category: Posts
 Tags: AzDO, Azure Repos, Git
-Slug: Pull Requests
+Slug: pull-requests-friend
 Author: Willy-Peter Schaub
 Summary: There is a debate around the value of pull requests (PR), fueled by unfortunate misunderstandings.
 
