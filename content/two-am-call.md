@@ -36,7 +36,9 @@ Automation is key to the **shift left** practice allowing us to integrate the ta
 
 ![Quick Poll](/images/two-am-call-4.png)
 
-The above snippet is from a pull request validation build that shows that 71,283 unit tests were validated in less than 7 minutes.  Similarly, continuous integration builds can perform credential, security, and other scans, allowing us to validate the quality of a feature early and continuously, identify issues early, and either fix or fail fast before we commit ourselves to a deployment.
+The above snippet is from a pull request validation build that shows that 71,283 unit tests were validated in less than 7 minutes. It can be done!
+
+Similarly, continuous integration builds can perform credential, security, and other scans, allowing us to validate the quality of a feature early and continuously, identify issues early, and either fix or fail fast before we commit ourselves to a deployment.
 
 ## SHIFT RIGHT
 
