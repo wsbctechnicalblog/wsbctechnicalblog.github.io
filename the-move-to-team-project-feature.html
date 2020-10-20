@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Use the move to team project feature with cuation! - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+            <div id="title-block">
+            <h1>  <a href="/the-move-to-team-project-feature.html" rel="bookmark"
+                    title="Permalink to Use the move to team project feature with cuation!">Use the move to team project feature with cuation!</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Postedby by Willy-Peter Schaub on Tue 20 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The "Move to Team Project" feature nukes your work item state and dates</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>There are two valuable features in the Azure Boards service, one to change the work item type and the other to move work items between projects. But ... there is always a but ... the second comes with a few gotchas that turned a simple migration into a mind-numbing slog.</p>
+<p><img alt="Move to Team project featute" src="/images/move-to-team-project-warning-1.png"></p>
+<p>The "<strong>Move to team project</strong>" allows you to select one, more, or all of the work items on a backlog or from a work item query language (WIQL) result set and move them to another Azure DevOps project, within the same Azure DevOps organization.</p>
+<blockquote>
+<p>Quick and simple!</p>
+</blockquote>
+<p>But ... here we go again ... when you look at the migrated data you will notice two things:</p>
+<ul>
+<li>The work item state is reset to New</li>
+<li>The Change Date is set to the migration date and time</li>
+</ul>
+<p>Why? Do not know, but would love to understand the reasoning behind the state and date changes. If you have not planned your migration you will not have to single step through hundreds to thousands of work items to determine the correct state and dates - mind numbing!</p>
+<h1>Pre-migration planning</h1>
+<p>After staring at the updated work item data in disbelief a few times, we have created a simple pre-migration checklist:</p>
+<ul>
+<li>Export all work items to an Excel workbook to have a reference snapshot.</li>
+<li>Tag the work items with the state, iteration, board column, and board lane.</li>
+<li>Verify that target has all of the work item types for the set of items  you need to migrate</li>
+<li>Grab a can of your favourite brew ... you will need it!</li>
+</ul>
+<h1>Post-migration grooming</h1>
+<p>After using the "Move to team project" feature to migrate all of the work items, we process the post-migration checklist:</p>
+<ul>
+<li>Set the correct state of the work items, based on the state tag. Once done, remove tag.</li>
+<li>Set the correct Iteration Path, based on the state tag. Once done, remove tag.</li>
+<li>Move cards to the correct column and swim lane, based on the column and lane tags. Once done, remove tags.</li>
+</ul>
+<p>If needed, set the correct Activated and Closed dates, which are now set to the date and time when you corrected the work item state :(
+PowerShell Script to the Rescue</p>
+<h1>Samples</h1>
+<p>Here are two sample scripts we added to our ever growing library of automation and maintenance scripts to update the read-only Closed Date field. We want to change the dates back to the post migration dates, which we can extract from the Excel workbook we created in pre-migration step 1, so that the data on boards and the backlog looks valid.</p>
+<h2>Set Changed Date Script</h2>
+<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span>
+<span class="na">param(</span>
+  <span class="na">[string]   $orgName</span>       <span class="o">=</span> <span class="s">&quot;&lt;ORG&gt;&quot;,</span>
+<span class="s">  [string]   $patToken      = &quot;&lt;PAT&gt;&quot;,</span>
+<span class="s">  [string]   $workItemID    = &quot;&lt;invalid&gt;&quot;,</span>
+<span class="s">  [string]   $dateTime      = &quot;&lt;invalid&gt;&quot;</span>
+<span class="na">)</span>
+
+<span class="c1"># Authentication header</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">[System.Convert]::ToBase64String($basicAuth)</span>
+<span class="na">$headers</span>   <span class="o">=</span> <span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span>
+
+<span class="c1"># Setup Request</span>
+<span class="na">$request</span>   <span class="o">=</span> <span class="s">&quot;https://dev.azure.com/&quot; + $orgName + &quot;/&quot; + &quot;_apis/wit/workitems/&quot; + $workItemID + &quot;?bypassRules=true&amp;api-version=6.0&quot;</span>
+
+<span class="c1"># Setup Body</span>
+<span class="na">$json</span> <span class="o">=</span> 
+<span class="na">&#39;[</span>
+<span class="na">{&quot;op&quot;:&quot;add&quot;,&quot;path&quot;:&quot;/fields/Microsoft.VSTS.Common.ClosedDate&quot;,&quot;value&quot;:&quot;&#39; + $dateTime + &#39;&quot;},</span>
+<span class="na">{&quot;op&quot;:&quot;add&quot;,&quot;path&quot;:&quot;/fields/System.History&quot;,&quot;value&quot;:&quot;Post-migration Closed Date correction to reflect original, not migration, date.&quot;}</span>
+<span class="na">]&#39;</span>
+
+<span class="c1"># Call Request</span>
+<span class="na">try</span>
+<span class="na">{</span>
+  <span class="na">Write-Host &quot;Updating work item: $workItemID&quot;</span>
+  <span class="na">$response</span> <span class="o">=</span> <span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method PATCH -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="na">}</span>
+<span class="na">catch </span>
+<span class="na">{</span>
+    <span class="na">Write-Host &quot;Error setting date - &quot; $PSItem.Exception.Message</span>
+    <span class="na">Write-Host  $_.Exception|format-list -force</span>
+<span class="na">}</span>
+</code></pre></div>
+
+<h2>Calling Script</h2>
+<div class="highlight"><pre><span></span><code><span class="err"># Batch 1</span>
+<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
+<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
+</code></pre></div>
+
+<p>Migrating data is not an easy task, especially if you also need to migrate Test Plans, Suites, and Cases ... that is another turbulent topic for another day. </p>
+<p><img alt="Migration Tools for Azure DevOps" src="/images/move-to-team-project-warning-2.png"></p>
+<p>We are busy investigating the open source Migration Tools for Azure DevOps, by Martin Hinshelwood, which will hopefully allow us to further automate and reduce the number of state changes during work item migrations. I will be back with an update!</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azdo.html">AzDO </a><a href="/tag/azure-boards.html">Azure Boards </a>
+        | <a href="/the-move-to-team-project-feature.html" rel="bookmark"
+         title="Permalink to Use the move to team project feature with cuation!">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/tip.html">Tip</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
+                    <li><a href="/tag/ci.html">CI</a>(4)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (11)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

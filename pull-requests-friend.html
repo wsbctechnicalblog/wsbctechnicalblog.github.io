@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Pull Request is your friend not foe! - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+            <div id="title-block">
+            <h1>  <a href="/pull-requests-friend.html" rel="bookmark"
+                    title="Permalink to Pull Request is your friend not foe!">Pull Request is your friend not foe!</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Postedby by Willy-Peter Schaub on Mon 19 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>There is a debate around the value of pull requests (PR), fueled by unfortunate misunderstandings.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><em>"The primary reason we use PRs is to encourage quality in the commits that are made to our code repositories"</em> - <a href="https://gist.github.com/mikepea/863f63d6e37281e329f8">GitHub Pull request Etiguette</a></p>
+<h1>Start simple</h1>
+<p>Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trynk), and a short-lived feature branch, as shown below.</p>
+<p><img alt="Feature Branch" src="/images/Pull-Request-is-your-friend-not-foe-1.jpg"></p>
+<ol>
+<li>Create a short-lived feature branch.</li>
+<li>Work on new work or a bug fix.</li>
+<li>Merge (commit) changes to the target branch.</li>
+<li>Continuous Integration (CI) build is triggered.</li>
+</ol>
+<p><img alt="Caution" src="/images/Pull-Request-is-your-friend-not-foe-2.png"></p>
+<p>Simple, but potentially dangerous. As the CI build is triggered after changes have been committed to the target branch, we could have a broken build and an undeployable branch. To make matters worse, anyone creating a new feature branch from an undeployable branch has just inherited a lot of unproductive pain!</p>
+<h1>Embrace the four-eyes principle</h1>
+<p><img alt="Four-Eyes Principle" src="/images/Pull-Request-is-your-friend-not-foe-3.jpg"></p>
+<p>The four-eyes principle requires that any change is validated by at least four eyes, in other words, by at least two people. With <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops">Azure DevOps</a> we can define <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> to protect target branches, such as requiring:</p>
+<ul>
+<li>Minimum number of reviewers (required and optional)</li>
+<li>Linked work items (adds the context and traceability)</li>
+<li>Resolved comments (all discussions and recommendations actioned)</li>
+<li>Limited merge types</li>
+<li>Successful build (which includes security scans, tests, etc.)</li>
+<li>Thumbs up from other services</li>
+</ul>
+<blockquote>
+<p>We can require some or all of the above policies.</p>
+</blockquote>
+<h1>Welcome Pull Request</h1>
+<blockquote>
+<p>Pull Request is a change validation workflow, not a feature of the version control service.</p>
+</blockquote>
+<p><img alt="Welcome" src="/images/Pull-Request-is-your-friend-not-foe-4.png"></p>
+<p>When we define one or more branch policies, we enforce them on <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.</p>
+<blockquote>
+<p>By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. But, that is a topic for another day.</p>
+</blockquote>
+<p>Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.</p>
+<p><img alt="Pull Request Workflow" src="/images/Pull-Request-is-your-friend-not-foe-5.jpg"></p>
+<ol>
+<li>Create a short-lived feature branch.</li>
+<li>Work on new work or a bug fix.</li>
+<li>Create a <strong>DRAFT</strong> pull request, which enables collaboration, work item linking, and manual build validation policies.</li>
+<li>When we are ready to have our pull request reviewed and completed, we can <strong>PUBLISH</strong> our draft pull request.</li>
+<li>Pre-defined optional and required reviewers are assigned and notified, policies are evaluated, and voting is enabled. The validation builds are triggered and perform a pre-merge validation - if the build(s) fail, the Pull Request cannot be completed.</li>
+<li>When all policies are met, the Pull Request can be completed.</li>
+<li>Associated changes are merged to the target branch.</li>
+<li>Which, as before, triggers the continuous integration (CI) build.</li>
+</ol>
+<p>We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 and 4 above.</p>
+<blockquote>
+<p>Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!</p>
+<p>Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build as we need the results to review the changes effectively. See YAML sample below.</p>
+</blockquote>
+<p>The advantages of Pull Requests are evident:
+- Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
+- Guardrail are validated and enforced
+- Automation of validations, which could (or not) include humanoid involvement</p>
+<h1>YAML Sample</h1>
+<p>Last, but not least, here is the above mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span>  <span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span> <span class="s1">&#39;merge&#39;</span><span class="p">)</span> <span class="p">}}:</span>    
+  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+
+<p>Thoughts?</p>
+<p><br /></p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azdo.html">AzDO </a><a href="/tag/azure-repos.html">Azure Repos </a><a href="/tag/git.html">Git </a>
+        | <a href="/pull-requests-friend.html" rel="bookmark"
+         title="Permalink to Pull Request is your friend not foe!">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/tip.html">Tip</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
+                    <li><a href="/tag/ci.html">CI</a>(4)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (11)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
