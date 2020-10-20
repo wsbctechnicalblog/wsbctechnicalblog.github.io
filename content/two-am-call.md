@@ -1,4 +1,4 @@
-Title: Shift LEFT and RIGHT to take yourself off the humbling 2AM calls.
+Title: Shift LEFT and RIGHT to take yourself off the humbling 2AM calls
 Date: 2020-10-24 13:13
 Category: Posts
 Tags: DevOps, DevOps Mindset
