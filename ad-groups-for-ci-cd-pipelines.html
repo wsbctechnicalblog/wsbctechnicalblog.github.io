@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Use Active Directory Groups in your unified classic CI/CD pipelines - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
+            title="Permalink to Use Active Directory Groups in your unified classic CI/CD pipelines">Use Active Directory Groups in your unified classic CI/CD pipelines</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 20 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Instead of managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>The CI/CD pipeline is a DevOps practice for delivering code changes more frequently, consistently, and reliably. It enables Agile teams to increase deployment frequency, decrease lead time for change, change failure rate, and mean time to recovery key performance indicators, thereby improving quality and delivering value faster.</p>
+<h1>Let us use Active Directory (AD) security groups</h1>
+<p>After our dream for One CI/CD pipeline to rule them all we decided to go one-step further and simplify the classic release pipeline security using Active Directory (AD) groups. Instead of assigning and managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions. For example, we have project specific super users AD groups that grant elevated permissions to edit release pipelines and the development and system test stages.</p>
+<p><img alt="Classic Pipeline" src="/images/use-ad-groups-with-CI-CD-pipelines-1.png"></p>
+<blockquote>
+<p>Empower the Agile Development Team to own development and system test stages</p>
+</blockquote>
+<p>Bookmark the Azure DevOps DRIFT project, which will enable you to monitor and remediate configuration drift, for example to automatically remove explicit user accounts added to an AD driven security model.</p>
+<h1>Why AD groups?</h1>
+<p>The value of using AD groups depends on your environment. In our case the benefits are:</p>
+<ul>
+<li>AD groups and memberships are centrally <strong>managed</strong> and <strong>audited</strong>.</li>
+<li>AD group membership is track than individual user accounts spread across multiple Azure DevOps services and projects.</li>
+<li>Azure DevOps users are empowered to request group membership using an existing process, rather than relying on the Azure DevOps project collection and project administrators.</li>
+<li>Simplifies automation of pipeline generation and configuration.</li>
+</ul>
+<p><img alt="Simplicity" src="/images/use-ad-groups-with-CI-CD-pipelines-2.png"></p>
+<h1>Let us use email-enabled Active Directory (AD) security groups</h1>
+<p>However, wait, we can go a step further and use mail-enabled AD security groups for pre- and post-stage pipeline approvals.</p>
+<p><img alt="Post deployment conditionse" src="/images/use-ad-groups-with-CI-CD-pipelines-3.png"></p>
+<p>Use email-enables security groups for stage approvals
+We replace the individual users highlighted in yellow with Release Approval AD groups.</p>
+<p><img alt="CI CD pipelines" src="/images/use-ad-groups-with-CI-CD-pipelines-4.png"></p>
+<blockquote>
+<p>Simplify stage approvals with email-enabled AD security groups</p>
+</blockquote>
+<p>Why are there no stage approval notifications?
+We realized that some of our email-enabled AD security groups received no notifications and spend time with Microsoft support to identify the root cause(s).</p>
+<p>You have to ensure that the AD security groups:</p>
+<ul>
+<li>Are <strong>mail-enabled</strong> and authorized to receive external emails.</li>
+<li>Have <strong>View Releases</strong> permissions on release and definitions.</li>
+<li>Have a subscription that is enabled for the group(s).</li>
+</ul>
+<p>The second bullet is the one that caught us off guard. If the permission is missing the Azure DevOps Pipeline event/notification service filters out the account's notifications. When notifications are filtered, no email is sent for impacted group(s) - silence prevails.</p>
+<p>Make sure that your email-enabled AD security groups are members of your project <strong>Contributors or Readers</strong>, which by default, have the View Releases permission.</p>
+<h1>What Is Next?</h1>
+<p>This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-ad.html">Azure AD </a><a href="/tag/azure-pipelines.html">Azure Pipelines </a>
+        | <a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
+         title="Permalink to Use Active Directory Groups in your unified classic CI/CD pipelines">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devops.html">DevOps</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/tip.html">Tip</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (14)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
