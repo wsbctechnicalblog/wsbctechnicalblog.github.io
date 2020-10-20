@@ -4,13 +4,13 @@ Category: Posts
 Tags: DevOps, DevOps Mindset
 Slug: shifft-left-2am-call
 Author: Willy-Peter Schaub
-Summary: Three DevOps mindset epiphanies reference the infamous 2AM call!
+Summary: Three DevOps mindset epiphanies that reference the infamous 2AM call!
 
 During the **Getting started with a DevOps mindset session** at the CSI Lab in January 2019, we discussed four epiphanies. Three referenced the infamous 2AM call, as shown below.
 
 ![Epihanies](/images/two-am-call-1.png)
 
-# What's the 2AM call?
+# What is the 2AM call?
 
 When a user reports an issue, telemetry insights identifies an anomaly, or a circuit breaker detects a potential overload, an incident is generated. On detection of the incident a call is initiated to engineers on call, also referred to as designated response individuals, who jump on the call to identify the root cause, capture vital evidence, work on a mitigation hot fix, document the incident transparently, and work with the feature teams (pods, tribes,...) to ensure that the incident never re-occurs. The reason it is called the 2AM call is that it usually happens when we're entering the REM sleep at 2AM.
 
