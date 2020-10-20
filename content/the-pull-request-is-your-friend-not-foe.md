@@ -10,7 +10,7 @@ _"The primary reason we use PRs is to encourage quality in the commits that are 
 
 # Start simple
 
-Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trynk), and a short-lived feature branch, as shown below.
+Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trunk), and a short-lived feature branch, as shown below.
 
 ![Feature Branch](/images/Pull-Request-is-your-friend-not-foe-1.jpg)
 
@@ -27,7 +27,7 @@ Simple, but potentially dangerous. As the CI build is triggered after changes ha
 
 ![Four-Eyes Principle](/images/Pull-Request-is-your-friend-not-foe-3.jpg)
 
-The four-eyes principle requires that any change is validated by at least four eyes, in other words, by at least two people. With [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops) we can define [Branch Policies](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops) to protect target branches, such as requiring:
+The four-eyes principle requires that at least four eyes, in other words, validate any change by at least two people. With [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops) we can define [Branch Policies](https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops) to protect target branches, such as requiring:
 
 - Minimum number of reviewers (required and optional)
 - Linked work items (adds the context and traceability)
@@ -46,7 +46,7 @@ The four-eyes principle requires that any change is validated by at least four e
 
 When we define one or more branch policies, we enforce them on [Pull Requests](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops), making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.
 
-> By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. But, that is a topic for another day.
+> By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. However, that is a topic for another day.
 
 Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.
 
@@ -65,7 +65,7 @@ We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 a
 
 > Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!
 
-> Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build as we need the results to review the changes effectively. See YAML sample below.
+> Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build, as we need the results to review the changes effectively. See YAML sample below.
 
 The advantages of Pull Requests are evident:
 - Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
@@ -73,7 +73,7 @@ The advantages of Pull Requests are evident:
 - Automation of validations, which could (or not) include humanoid involvement
 
 # YAML Sample
-Last, but not least, here is the above mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.
+Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.
 
 ```
 # VALIDATIONS
@@ -83,4 +83,4 @@ Last, but not least, here is the above mentioned extract from one of our YAML pi
 
 Thoughts?
 
-<br />
+

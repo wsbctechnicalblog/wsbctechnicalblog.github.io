@@ -4,11 +4,11 @@ Category: Posts
 Tags: AzDO, Azure Boards
 Slug: shared-area-paths
 Author: Willy-Peter Schaub
-Summary: Used in the land of shared Area Paths they can introduce inconsistency and confusion..
+Summary: Shared area paths can introduce inconsistency and confusion.
 
-Azure Boards Kanban fields are powerful and valuable. Used in the land of shared Area Paths they can, however, introduce inconsistency and confusion.
+Azure Boards Kanban fields are powerful and valuable. Used in the land of shared Area Paths they can, however, introduce inconsistency and confusion that are hard to isolate and explain.
 
-# Let us explore  a simple example 
+# Let us explore a simple example 
 
 We define a few area paths for a hypothetical project, named **Boards Chaos**. The Board Chaos area and its sub-paths are allocated to the default Boards Chaos team. Area A1, with sub-paths, and area A2, with sub-paths, are assigned to team A and B respectively. 
 
@@ -44,7 +44,7 @@ When the team looks at their product backlog, the anomaly becomes evident. Why a
 
 ![Incorrect Board Column Values](/images/clash-of-azdo-kanban-fields-and-shared-area-paths-7.png)
 
-Here is a view of Team A and the default team next to each other. Now take a look at the **Board C** ... field on the cards, all of which point to Team A's **Active** column.
+Here is a view of Team A and the default team next to each other. Now look at the **Board C** ... field on the cards, all of which point to Team A's **Active** column.
 
 ![Team A and Chaos side by side](/images/clash-of-azdo-kanban-fields-and-shared-area-paths-8.png)
 
@@ -52,7 +52,7 @@ What is going on?!?
 
 # Works as designed
 
-By design, the team with the longest area path wins the clash and dictates the values for the Kanban Board Column, Done, and Lane fields. In our setup teams A and B have the longer area paths and win. **Board Chaos/A1** from team A, for example, is longer than Board Chaos/ from the default team.
+By design, the team with the longest area path wins the clash and dictates the values for the Kanban Board Column, Done, and Lane fields. In our setup, teams A and B have the longer area paths and win. **Board Chaos/A1** from team A, for example, is longer than Board Chaos/ from the default team.
 
 If we have a scenario of shared area paths of equal depth, we will have non-deterministic results. Not in scope for this simple walk-through.
 
@@ -72,13 +72,14 @@ Stay away away from overlapping area path ownership. As this behavior is "as exp
 
 ## Share read-only areas
 
-Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example (3) to raise awareness of and triage bugs, use it as a read-only area and (4) reassign bugs to their respective area paths.
+Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example, (3) to raise awareness of and triage bugs use it as a read-only area and (4) reassign bugs to their respective area paths.
 
 ![X](/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png)
 
 ## Focus on your context
 
-Focus on the work item types that are relevant to you and your team. If you are doing portfolio planning you should restrict your views of shared areas to **Initiatives**, **Epics**, and **Features**. If you are part of the development you should focus on Stories or Backlog Items.
+Focus on the work item types that are relevant to you and your team. If you are doing portfolio planning you should restrict your views of shared areas to **Initiatives**, **Epics**, and **Features**. If you are part of the development, you should focus on Stories or Backlog Items.
 
 In other words **keep it simple***!
+
 
