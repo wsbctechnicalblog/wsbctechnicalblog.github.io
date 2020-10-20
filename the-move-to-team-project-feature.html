@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Use the move to team project feature with cuation! - </title>
+        <title>Use the move to team project feature with caution! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -31,7 +31,7 @@
         <div class="row">
            <div class="large-10 content-column column">
     <h2><a href="/the-move-to-team-project-feature.html" rel="bookmark"
-            title="Permalink to Use the move to team project feature with cuation!">Use the move to team project feature with cuation!</a></h2>
+            title="Permalink to Use the move to team project feature with caution!">Use the move to team project feature with caution!</a></h2>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
@@ -42,17 +42,17 @@
     <section class='article'>
         
         <div class="entry-summary">
-            <p>The "Move to Team Project" feature nukes your work item state and dates</p>
+            <p>The "Move to Team Project" feature can reset your work item state and dates</p>
         </div>
     
         <div class="entry-content">
-            <p>There are two valuable features in the Azure Boards service, one to change the work item type and the other to move work items between projects. But ... there is always a but ... the second comes with a few gotchas that turned a simple migration into a mind-numbing slog.</p>
+            <p>There are two valuable features in the Azure Boards service, one to change the work item type and the other to move work items between projects. However ... there is always a but ... the second comes with a few gotchas that turned a simple migration into a mind-numbing slog.</p>
 <p><img alt="Move to Team project featute" src="/images/move-to-team-project-warning-1.png"></p>
 <p>The "<strong>Move to team project</strong>" allows you to select one, more, or all of the work items on a backlog or from a work item query language (WIQL) result set and move them to another Azure DevOps project, within the same Azure DevOps organization.</p>
 <blockquote>
 <p>Quick and simple!</p>
 </blockquote>
-<p>But ... here we go again ... when you look at the migrated data you will notice two things:</p>
+<p>However ... here we go again ... when you look at the migrated data you will notice two things:</p>
 <ul>
 <li>The work item state is reset to New</li>
 <li>The Change Date is set to the migration date and time</li>
@@ -63,7 +63,7 @@
 <ul>
 <li>Export all work items to an Excel workbook to have a reference snapshot.</li>
 <li>Tag the work items with the state, iteration, board column, and board lane.</li>
-<li>Verify that target has all of the work item types for the set of items  you need to migrate</li>
+<li>Verify that target has all of the work item types for the set of items you need to migrate</li>
 <li>Grab a can of your favourite brew ... you will need it!</li>
 </ul>
 <h1>Post-migration grooming</h1>
@@ -76,7 +76,7 @@
 <p>If needed, set the correct Activated and Closed dates, which are now set to the date and time when you corrected the work item state :(
 PowerShell Script to the Rescue</p>
 <h1>Samples</h1>
-<p>Here are two sample scripts we added to our ever growing library of automation and maintenance scripts to update the read-only Closed Date field. We want to change the dates back to the post migration dates, which we can extract from the Excel workbook we created in pre-migration step 1, so that the data on boards and the backlog looks valid.</p>
+<p>Here are two sample scripts we added to our ever-growing library of automation and maintenance scripts to update the read-only Closed Date field. We want to change the dates back to the post migration dates, which we can extract from the Excel workbook we created in pre-migration step 1, so that the data on boards and the backlog looks valid.</p>
 <h2>Set Changed Date Script</h2>
 <div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span>
 <span class="na">param(</span>
@@ -117,8 +117,8 @@ PowerShell Script to the Rescue</p>
 
 <h2>Calling Script</h2>
 <div class="highlight"><pre><span></span><code><span class="err"># Batch 1</span>
-<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
-<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
+<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
+<span class="err">..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;</span>
 </code></pre></div>
 
 <p>Migrating data is not an easy task, especially if you also need to migrate Test Plans, Suites, and Cases ... that is another turbulent topic for another day. </p>
@@ -130,7 +130,7 @@ PowerShell Script to the Rescue</p>
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
         | Tagged: <a href="/tag/azdo.html">AzDO </a><a href="/tag/azure-boards.html">Azure Boards </a>
         | <a href="/the-move-to-team-project-feature.html" rel="bookmark"
-         title="Permalink to Use the move to team project feature with cuation!">Permalink</a>            
+         title="Permalink to Use the move to team project feature with caution!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
@@ -162,13 +162,13 @@ PowerShell Script to the Rescue</p>
                 <ul>
                     <li><a href="/tag/devops.html">DevOps</a>(1)</li>
                     <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
                     <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
                     <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
                     <li><a href="/tag/tip.html">Tip</a>(1)</li>
                     <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
                     <li><a href="/tag/git.html">Git</a>(1)</li>
-                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
-                    <li><a href="/tag/ci.html">CI</a>(4)</li>
                     <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
                     <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
                     <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
@@ -178,7 +178,7 @@ PowerShell Script to the Rescue</p>
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (12)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (13)</li>
                 </ul>
              
             </div>

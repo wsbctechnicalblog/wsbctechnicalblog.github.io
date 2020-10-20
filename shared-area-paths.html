@@ -42,12 +42,12 @@
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Used in the land of shared Area Paths they can introduce inconsistency and confusion..</p>
+            <p>Shared area paths can introduce inconsistency and confusion.</p>
         </div>
     
         <div class="entry-content">
-            <p>Azure Boards Kanban fields are powerful and valuable. Used in the land of shared Area Paths they can, however, introduce inconsistency and confusion.</p>
-<h1>Let us explore  a simple example</h1>
+            <p>Azure Boards Kanban fields are powerful and valuable. Used in the land of shared Area Paths they can, however, introduce inconsistency and confusion that are hard to isolate and explain.</p>
+<h1>Let us explore a simple example</h1>
 <p>We define a few area paths for a hypothetical project, named <strong>Boards Chaos</strong>. The Board Chaos area and its sub-paths are allocated to the default Boards Chaos team. Area A1, with sub-paths, and area A2, with sub-paths, are assigned to team A and B respectively. </p>
 <p><img alt="Board Chaos" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-1.png"></p>
 <blockquote>
@@ -67,11 +67,11 @@
 <h1>Oh, Oh, we have a problem</h1>
 <p>When the team looks at their product backlog, the anomaly becomes evident. Why are the Board Column values for B.1, A.1, and A.2 Active and not <strong>In-flight</strong>, <strong>Area 51</strong>, or <strong>Answer 42</strong>?!? </p>
 <p><img alt="Incorrect Board Column Values" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-7.png"></p>
-<p>Here is a view of Team A and the default team next to each other. Now take a look at the <strong>Board C</strong> ... field on the cards, all of which point to Team A's <strong>Active</strong> column.</p>
+<p>Here is a view of Team A and the default team next to each other. Now look at the <strong>Board C</strong> ... field on the cards, all of which point to Team A's <strong>Active</strong> column.</p>
 <p><img alt="Team A and Chaos side by side" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-8.png"></p>
 <p>What is going on?!?</p>
 <h1>Works as designed</h1>
-<p>By design, the team with the longest area path wins the clash and dictates the values for the Kanban Board Column, Done, and Lane fields. In our setup teams A and B have the longer area paths and win. <strong>Board Chaos/A1</strong> from team A, for example, is longer than Board Chaos/ from the default team.</p>
+<p>By design, the team with the longest area path wins the clash and dictates the values for the Kanban Board Column, Done, and Lane fields. In our setup, teams A and B have the longer area paths and win. <strong>Board Chaos/A1</strong> from team A, for example, is longer than Board Chaos/ from the default team.</p>
 <p>If we have a scenario of shared area paths of equal depth, we will have non-deterministic results. Not in scope for this simple walk-through.</p>
 <p>As a result the cards show the Kanban field value Active for Team A on Board Chaos' board, not values <strong>In-flight</strong>, <strong>Area 51</strong>, <strong>Answer 42</strong> as expected. </p>
 <p>So, how can we avoid this unexpected feature?</p>
@@ -83,10 +83,10 @@
 <p>See https://msdn.microsoft.com/Library/vs/alm/Work/scale/scaled-agile-framework on guidance to setup enterprise projects.</p>
 </blockquote>
 <h2>Share read-only areas</h2>
-<p>Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example (3) to raise awareness of and triage bugs, use it as a read-only area and (4) reassign bugs to their respective area paths.</p>
-<p><img alt="X" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png"></p>
+<p>Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example, (3) to raise awareness of and triage bugs use it as a read-only area and (4) reassign bugs to their respective area paths.</p>
+<p><img alt="Shared Area Paths" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png"></p>
 <h2>Focus on your context</h2>
-<p>Focus on the work item types that are relevant to you and your team. If you are doing portfolio planning you should restrict your views of shared areas to <strong>Initiatives</strong>, <strong>Epics</strong>, and <strong>Features</strong>. If you are part of the development you should focus on Stories or Backlog Items.</p>
+<p>Focus on the work item types that are relevant to you and your team. If you are doing portfolio planning you should restrict your views of shared areas to <strong>Initiatives</strong>, <strong>Epics</strong>, and <strong>Features</strong>. If you are part of the development, you should focus on Stories or Backlog Items.</p>
 <p>In other words <strong>keep it simple</strong>*!</p>
         </div>
     </section>
@@ -126,13 +126,13 @@
                 <ul>
                     <li><a href="/tag/devops.html">DevOps</a>(1)</li>
                     <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
                     <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
                     <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
                     <li><a href="/tag/tip.html">Tip</a>(1)</li>
                     <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
                     <li><a href="/tag/git.html">Git</a>(1)</li>
-                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
-                    <li><a href="/tag/ci.html">CI</a>(4)</li>
                     <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
                     <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
                     <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
@@ -142,7 +142,7 @@
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (12)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (13)</li>
                 </ul>
              
             </div>

@@ -48,7 +48,7 @@
         <div class="entry-content">
             <p><em>"The primary reason we use PRs is to encourage quality in the commits that are made to our code repositories"</em> - <a href="https://gist.github.com/mikepea/863f63d6e37281e329f8">GitHub Pull request Etiguette</a></p>
 <h1>Start simple</h1>
-<p>Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trynk), and a short-lived feature branch, as shown below.</p>
+<p>Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trunk), and a short-lived feature branch, as shown below.</p>
 <p><img alt="Feature Branch" src="/images/Pull-Request-is-your-friend-not-foe-1.jpg"></p>
 <ol>
 <li>Create a short-lived feature branch.</li>
@@ -60,7 +60,7 @@
 <p>Simple, but potentially dangerous. As the CI build is triggered after changes have been committed to the target branch, we could have a broken build and an undeployable branch. To make matters worse, anyone creating a new feature branch from an undeployable branch has just inherited a lot of unproductive pain!</p>
 <h1>Embrace the four-eyes principle</h1>
 <p><img alt="Four-Eyes Principle" src="/images/Pull-Request-is-your-friend-not-foe-3.jpg"></p>
-<p>The four-eyes principle requires that any change is validated by at least four eyes, in other words, by at least two people. With <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops">Azure DevOps</a> we can define <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> to protect target branches, such as requiring:</p>
+<p>The four-eyes principle requires that at least four eyes, in other words, validate any change by at least two people. With <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops">Azure DevOps</a> we can define <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> to protect target branches, such as requiring:</p>
 <ul>
 <li>Minimum number of reviewers (required and optional)</li>
 <li>Linked work items (adds the context and traceability)</li>
@@ -79,7 +79,7 @@
 <p><img alt="Welcome" src="/images/Pull-Request-is-your-friend-not-foe-4.png"></p>
 <p>When we define one or more branch policies, we enforce them on <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.</p>
 <blockquote>
-<p>By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. But, that is a topic for another day.</p>
+<p>By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. However, that is a topic for another day.</p>
 </blockquote>
 <p>Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.</p>
 <p><img alt="Pull Request Workflow" src="/images/Pull-Request-is-your-friend-not-foe-5.jpg"></p>
@@ -96,21 +96,20 @@
 <p>We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 and 4 above.</p>
 <blockquote>
 <p>Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!</p>
-<p>Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build as we need the results to review the changes effectively. See YAML sample below.</p>
+<p>Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build, as we need the results to review the changes effectively. See YAML sample below.</p>
 </blockquote>
 <p>The advantages of Pull Requests are evident:
 - Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
 - Guardrail are validated and enforced
 - Automation of validations, which could (or not) include humanoid involvement</p>
 <h1>YAML Sample</h1>
-<p>Last, but not least, here is the above mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
+<p>Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span>
 <span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span>  <span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span> <span class="s1">&#39;merge&#39;</span><span class="p">)</span> <span class="p">}}:</span>    
   <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span>
 </code></pre></div>
 
 <p>Thoughts?</p>
-<p><br /></p>
         </div>
     </section>
     <footer class="footer-article">
@@ -149,13 +148,13 @@
                 <ul>
                     <li><a href="/tag/devops.html">DevOps</a>(1)</li>
                     <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
                     <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
                     <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
                     <li><a href="/tag/tip.html">Tip</a>(1)</li>
                     <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
                     <li><a href="/tag/git.html">Git</a>(1)</li>
-                    <li><a href="/tag/tdd.html">TDD</a>(6)</li>
-                    <li><a href="/tag/ci.html">CI</a>(4)</li>
                     <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
                     <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
                     <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
@@ -165,7 +164,7 @@
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (12)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (13)</li>
                 </ul>
              
             </div>
