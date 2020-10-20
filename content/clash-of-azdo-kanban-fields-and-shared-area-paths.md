@@ -74,7 +74,7 @@ Stay away away from overlapping area path ownership. As this behavior is "as exp
 
 Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example, (3) to raise awareness of and triage bugs use it as a read-only area and (4) reassign bugs to their respective area paths.
 
-![X](/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png)
+![Shared Area Paths](/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png)
 
 ## Focus on your context
 
