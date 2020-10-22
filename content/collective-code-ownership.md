@@ -41,11 +41,11 @@ In case of mob programming, collaboration between engineers happens in real time
 
 It may not be advisable to jump in head first into collective code ownership before establishing rules of the game. In a nutshell, here are the minimum requirements for teams to successfully engage in collective code ownership:
 
-•	The team has collectively created and agreed upon the coding standards
-•	The team is fully committed to using code management tool (git!)
-•	The team is doing full-on TDD, ideally also doing stringent mutation testing
-•	The team is using powerful IDE (Visual Studio or VS Code)
-•	The team is actively pursuing continuous integration (CI)
+- The team has collectively created and agreed upon the coding standards
+- The team is fully committed to using code management tool (git!)
+- The team is doing full-on TDD, ideally also doing stringent mutation testing
+- The team is using powerful IDE (Visual Studio or VS Code)
+- The team is actively pursuing continuous integration (CI)
 
 In addition to the above, it is important for all engineers on the team to agree to participate/contribute to the work needed to implement aspects of the functionality that may not be everyone’s area of interest. For example, a back-end engineer may not be interested in some front-end technologies, but is agreeable to participate and pick up some skills by working with domain experts on the team. Cross-training/cross-pollination goes a long way toward creating a highly performing team.
 
@@ -55,3 +55,5 @@ Collective code ownership works best for small size teams, famously described as
 
 DevOps software engineering discipline is founded on the team concept. A team is not a group. A team is based on the concept of collective responsibility. And since each team works with user stories and turns those stories into shipping code, team collectively owns user stories as well as the code that implements them.
 In a healthy team, when something goes wrong it is never “I thought SHE was going to take care of that!” Rather, it is “What do we have to do to fix that/take care of that?”
+
+<br /><br />
