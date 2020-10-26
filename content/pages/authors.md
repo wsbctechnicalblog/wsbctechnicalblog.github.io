@@ -19,4 +19,4 @@ Move fast to delight customers!
 
 ![Willy Schaub](/images/willy-schaub.jpg)
 
-<br />
+<br /><br />
