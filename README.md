@@ -44,7 +44,7 @@ Goals of this blog are to foster education in the field of software engineering 
 
 The blog posts should adhere to the prescribed best practices, such as in-depth technical articles containing step-by-step instructions on how to solve given set of problems. In addition to in-depth articles, the blog publishes interesting interviews featuring senior practitioners.
 
-While blog articles are not restricted by the maximum number of words, it is expected to not submit bloated content that contains very long narrtives.
+While blog articles are not restricted by the maximum number of words, it is expected to not submit bloated content that contains very long narratives. A good rule of thumb is a post that amasses approximately 400 words.
 
 It is very important to provide full disclosure on any sourcing of the material published on the blog (such as photos or graphics, as well as citations from other publications).
 
@@ -56,10 +56,7 @@ Upon receiving the request to review submitted article, manager or supervisor mu
 
 The approval process to publish a post on WorkSafeBC Technical Blog consists of two (minimum) or more reviewers who must carefully examine content submitted in the form of Pull Request. Only if all involved reviewers approve the Pull Request will the blog post get published.
 
-The 4 specific ethics in the guide will have to be followed: 
-
-
-Thing to keep in mind when submitting/reviewing blog posts: 
+The following specific ethics will have to be followed: 
 
 - Address sharing of intellectual property must be made transparent
 
@@ -68,3 +65,9 @@ Thing to keep in mind when submitting/reviewing blog posts:
 - Conflicts of interest will not be allowed/tolerated
 
 - Privacy/confidentiality must be observed at all times
+
+## The Originality Clause
+
+WorkSafeBC will only consider original content for publishing. Please make sure not to regurgitate something that has already been published at large and is a well known problem or issue for which there is an effective solution provided by the community.
+
+We are striving for highest possible quality content. A quality blog post is expected to propose an issue or a problem (or a set of problems) for which the author may have found an elegant, simple solution.
