@@ -13,10 +13,14 @@ Alex has been doing software development since 1990. His professional passion is
 
 In order to make sure that software we are building is flexible, we must evolve it one step at a time. Each step (and the smaller that step is, the better) must get verified by automated testing. Early failures are welcome, because they are small and they force us to fix them right away. In the software engineering discipline, giant steps are foolish steps. It is more prudent to stay with small steps (many, many small steps) on our journey to deliver value to customer satisfaction.
 
-Move fast to delight customers!
+> _Move fast to delight customers!_
 
 ## Willy Schaub
 
 ![Willy Schaub](/images/willy-schaub.jpg)
 
-<br /><br />
+Willy-Peter began his IT career in the early 1980s, during his electrical engineering studies, focusing on the BTOS/CTOS operating systems until he moved over to Microsoft technologies in the early ‘90s. Since then, his passion has been to investigate, research, and evangelize technology and best practises, striving for _simplicity_ and _maintainability_ in software engineering. Apart from sharing technology and transformation learnings in [tweets](https://www.twitter.com/wpschaub), blogs, [articles](https://www.opensource.com/user_articles/180826), and books such as [.NET Enterprise Solutions - Best Practises](https://1drv.ms/b/s!AoTKFn7kQntwmahQJlHkxzgjlzQv4w), [.NET Enterprise Solutions - Interoperability for the Connoisseur](https://1drv.ms/b/s!AoTKFn7kQntwmahS9OnZ20IB2aecYg), and [Software Engineers on their way to Pluto](https://1drv.ms/b/s!AoTKFn7kQntwmahRBJUVSZWpWXnDAg), his varied and extreme interests include scuba diving, cycling, science fiction, astronomy, and, most importantly, his family. 
+
+> _Enable engineering and business to continuously deliver value to delighted customers!_
+
+<br/><br/>
