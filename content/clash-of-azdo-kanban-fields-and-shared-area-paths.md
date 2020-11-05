@@ -1,7 +1,7 @@
 Title: The clash of Azure DevOps Kanban fields and Shared Area Paths
 Date: 2020-10-22 13:13
 Category: Posts
-Tags: AzDO, Azure Boards
+Tags: AzDO, Azure-Boards
 Slug: shared-area-paths
 Author: Willy-Peter Schaub
 Summary: Shared area paths can introduce inconsistency and confusion.

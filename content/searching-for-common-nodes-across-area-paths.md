@@ -1,7 +1,7 @@
 Title: Searching for common nodes across area paths
 Date: 2020-10-21 13:13
 Category: Posts
-Tags: AzDO, Azure Boards, Tip
+Tags: AzDO, Azure-Boards, Tips
 Slug: area-paths-and-nodes
 Author: Willy-Peter Schaub
 Summary: How can we find area path with specific text in their name?
