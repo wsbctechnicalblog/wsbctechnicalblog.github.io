@@ -10,14 +10,14 @@ Summary: Technical Blog Demonstration
 
 **Welcome** to the _technical_ blog demo.
 
-> ![alert](/images/alert.png)
+> ![Alert](/images/willy-schaub.jpg)
 
 ---
 
-| TOPICS | CONATACT |
+| TOPICS | CONTACT |
 |--------|---------:|
 | CeS | Willy |
-| MIcro Learning | ? |
+| Micro Learning | Alex |
 | Security | Kevin |
 
 1. Enjoy the rest of the demo.
