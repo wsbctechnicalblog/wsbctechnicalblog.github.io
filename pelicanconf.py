@@ -13,8 +13,6 @@ DEFAULT_LANG = 'en'
 
 THEME = '/Users/alexbunardzic/Documents/worksafeblog/pelican-themes/bricks'
 
-GOOGLE_ANALYTICS = "G-23L7QXSDYM"
-
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
