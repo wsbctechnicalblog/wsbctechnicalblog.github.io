@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Feature-flag Driven Development (FFDD) - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/feature-flag-driven-development.html" rel="bookmark"
+            title="Permalink to Feature-flag Driven Development (FFDD)">Feature-flag Driven Development (FFDD)</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Fri 04 September 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Replace physical modularity with logical modularity</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Experts say that repo branching workflow is poor man’s modularization (by experts I mostly refer to Martin Fowler and his team of deep thinkers). What do we mean by branching being poor man’s modularization?</p>
+<h2>Well modularized repo</h2>
+<p>Let’s examine how change management propagates in a repo that has been properly modularized from the get go:</p>
+<p>A new feature needs to be added to the product, which necessitates change to the codebase. Because the code is fully modularized, it is closed to any changes related to the new feature, but is at the same time open for any changes that would extend its feature set (the Open/Closed Principle, part of the SOLID package).</p>
+<p>The new feature will thus be coded by adding brand new modules. Barely any line of existing code will have to be modified, since the new feature would be a plugin.</p>
+<h2>Poorly modularized repo</h2>
+<p>A code that is poorly modularized will have to be modified (sometimes heavily) in order to introduce a new feature into the product.</p>
+<p>Any time two or more people are working on the same block of code, they introduce a moving target. Changes made to the same codebase may result in a conflict. That conflict potentially arises at the time when we are trying to retrofit new code into the existing codebase. Those are the dreaded merge conflicts.</p>
+<h2>Why do we branch in the first place?</h2>
+<p>The main reason we copy the existing code base and turn it into a feature branch is to protect the healthy master branch from getting corrupted. Teamwork often necessitates that two or more feature branches get created during sprint, and that means that there is an ongoing work that is happening in parallel. When the time comes to bring the new changes to the healthy branch, some of those new changes may mutually collide.</p>
+<p>So the caution we exercise by branching is introducing unwanted risks of creating merge conflicts.</p>
+<h2>How to avoid merge conflicts?</h2>
+<p>During the workflow described above, it is not really possible to avoid potential merge conflicts. But we can certainly minimize potential conflicts.</p>
+<p>It all boils down to timing. When we take a copy of the healthy branch and go away and begin making changes to the code, the clock starts ticking. The longer we wait to bring our changes to the healthy branch, the greater that chances that someone else had already made changes to it that may collide with our changes.</p>
+<p>That is one of the main reasons why best practices advocate short-lived branches. The shorter the lifespan of a branch, the smaller the risk of having merge conflicts. And lesser merge conflicts mean quicker value delivery and lesser churn.</p>
+<p>And of course, merge conflicts are of much lower possibility in well modularized codebases, as we have already discussed above.</p>
+<h2>Feature flags</h2>
+<p>Much as Martin Fowler et al claim that branching is poor man’s modularization, it is also possible to say that branching is poor man’s feature flags. So what are feature flags?</p>
+<p>Feature flags could be viewed as logical branching. While physical branches, as they are practiced in modern engineering mostly using git, require making a physical copy of the repo and giving it a unique name, feature flags could be used without necessarily having to make a physical copy. When using Feature-Flag Driven Development (FFDD), we simply leave the existing code intact and write new modules that get conditionally called. The conditional logic is binary, and is governed by the feature flag (which could be either in on or in off state). If the flag is in the on state, the new code will get executed. Otherwise, execution continues as usual (old code runs).</p>
+<p>FFDD enables us to add potentially risky changes to the healthy codebase, without going through the song and dance of trying to merge the changes and risking merge conflicts. This technique then enables us to quickly ship new features in stealth mode. Our regular customer population will not get affected, since they will still be using the old, tested codebase. But our QA can then safely assess and evaluate the risks and potential merits of the new code. That activity would be the equivalent of the Pull Request in the branch-driven development discipline. If the PR of the code under the feature flag passes the muster, the old code gets decommissioned and the new code becomes the healthy version of the codebase.</p>
+<p><br /><br /></p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/feature-flag.html">Feature-flag </a>
+        | <a href="/feature-flag-driven-development.html" rel="bookmark"
+         title="Permalink to Feature-flag Driven Development (FFDD)">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devops.html">DevOps</a>(2)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (15)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
