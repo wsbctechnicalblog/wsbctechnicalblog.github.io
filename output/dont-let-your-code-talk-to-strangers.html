@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Don’t let your code talk to strangers - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/dont-let-your-code-talk-to-strangers.html" rel="bookmark"
+            title="Permalink to Don’t let your code talk to strangers">Don’t let your code talk to strangers</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Sat 24 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Closer look into the principle of least knowledge</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We have discussed the crucial effect that cost of change has on the quality of the delivered business value. If the delivered value is expensive to change, it loses its attractiveness. In such cases, it quickly morphs from an asset into liability. We certainly don’t want to find ourselves in such disadvantageous position.</p>
+<p>Generally speaking, the most frequent cause of unchangeable code is tight coupling. During the early stages of development, coupling comes naturally, almost spontaneously. And at that stage, it appears quite harmless. We continue adding capabilities to our solution, and things appear to be going swimmingly.</p>
+<p>But there often comes a moment when we realize that we need to rearrange our code due to the newly arrived requirements or findings. It is at that point that tight coupling rears its ugly head and makes us realize that we have all but painted ourselves into a proverbial corner.</p>
+<p>Tight coupling has many underlying causes and anti-patterns. Today, we are going to take a closer look into one such anti-pattern – code talking to strangers.</p>
+<h2>Principle of least knowledge</h2>
+<p>Tight coupling happens when our code knows way more than is needed in order to do the job. At a first glance, knowing more than is needed doesn’t sound undesirable. What could be wrong with possessing excessive knowledge?</p>
+<p>Let’s try to illustrate what could get wrong by indulging in excessive knowledge by following a trivial example. Suppose we have a line of code that looks something like this:</p>
+<p><code>objectA.GetObjectB().GetObjectC().DoSomeSpecificThing();</code></p>
+<p>In the line above, we see <code>objectA</code> (i.e. an instance of <code>classA</code>) getting <code>objectB</code> (an instance of <code>classB</code>). That’s perfectly fine, but the issue now arises due to the fact that <code>objectA</code> is using <code>objectB</code> not because <code>objectB</code> can provide some useful capability/service to <code>objectA</code> (which would be the normal case). <code>objectA</code> is getting <code>objectB</code> merely in order to expressly get to <code>objectC</code>. Once <code>objectA</code> gets a handle on <code>objectC</code>, it can ask <code>objectC</code> to do some specific thing.</p>
+<p>Why is that problematic? Granted, it is obvious that to <code>objectA</code> a once or twice removed <code>objectC</code> is a stranger. We do we say that <code>objectC</code> is a stranger to <code>objectA</code>? If <code>objectC</code> was a friend to <code>objectA</code>, there clearly would be no need for <code>objectA</code> to get to talk to <code>objectC</code> by first talking to <code>objectB</code>. But in this case, objectA can only engage in a ‘friend of a friend’ type of interaction. And that’s when the problem with tight coupling begins!</p>
+<p>We see therefore that tight coupling materializes when we endow our code with unnecessary knowledge. In our code, objectA has the absolutely necessary knowledge of how to talk to its friend, <code>objectB</code>. But instead of leaving it like that, we succumbed to the temptation to teach our code that there exists another object, <code>objectC</code>, and although that object is not immediately available to our <code>objectA</code>, it is available via our network of friends. So now our objectA gets saddled with excessive knowledge of having to know how to get to <code>objectC</code> and how to ask it to perform some specific action.</p>
+<p>This is too much knowledge, and such excessive knowledge is making things tightly coupled, bloated and brittle.</p>
+<h2>Where is brittleness coming from?</h2>
+<p>In the above example, we perceive tight coupling in the form of an underlying assumption: every <code>objectB</code> has access to <code>objectC</code>. That is a dangerous assumption, as we may discover later on, after we’ve created a lot of code that relies on the above chaining of method calls that in some instances <code>objectB</code> may not have access to <code>objectC</code>. Maybe someone had refactored the code and had completely removed the association between <code>objectB</code> and <code>objectC</code>. Having to go and find all instances of the legacy code and adjust them to the new situation is a potential breeding ground for bugs. Often times there are slight variation in how are instantiated objects called (no one is guaranteeing that every developer will consistently name instance of <code>classA</code> <code>objectA</code> etc.) No regex on earth could be crafted that will guarantee to fish all these minor variations out. So we’d be left to manually pour over reams of code, trying to find all instances of such chained calls and then fix them manually.</p>
+<p>That’s brittleness to the umpteenth degree. And a vast breeding ground for all kinds of bugs.</p>
+<h2>Only talk to your immediate friends</h2>
+<p>To avoid the terrible anti-pattern of promiscuously talking to strangers, our code should embrace a very important constraint – talk only to your immediate friends.</p>
+<p>In the above case, <code>objectA</code> should only confine itself to talking to objectB. If there is some useful capability/functionality that some stranger (e.g. <code>objectC</code>) possesses that <code>objectA</code> desperately needs, let <code>objectB</code> be the broker between <code>objectA</code> and <code>objectC</code>. That way, our code becomes simple, future proof, unperturbable (and also easy testable).</p>
+<p>Let’s indulge in another quick example. Suppose we have an instance of a class <code>Driver</code>, and that driver is steering an instance of a class <code>Vehicle</code>). The way we implement steering is to allow the driver to talk to strangers; for example, if the driver wants to steer left, the code looks like this:</p>
+<p><code>driver.GetVehicle().GetSteeringMechanism().SteerLeft();</code></p>
+<p>The <code>driver</code> is talking to its immediate friend (<code>vehicle</code>) in order to gain access to a stranger (an instance of the class <code>SteeringMechanism</code>), so that the driver can directly manipulate the steering mechanism by sending it the command to steer left.</p>
+<p>This is the illustration of tight coupling in action. Suppose later on the instance of class SteeringMechanism (which was an instance of an automobile steering mechanism) gets replaced by an instance of a sail boat. On a sail boat, the steer left command has the opposite effect from the same command sent to a steering wheel in the car. Which means, we have inadvertently created a bug.</p>
+<p>So it is important to avoid tight coupling. Always limit the amount of knowledge your objects have. That way, your code will be clean, testable, deterministic and bug free.</p>
+<p><br /><br /></p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/tdd.html">TDD </a><a href="/tag/ci.html">CI </a>
+        | <a href="/dont-let-your-code-talk-to-strangers.html" rel="bookmark"
+         title="Permalink to Don’t let your code talk to strangers">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devops.html">DevOps</a>(2)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (15)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

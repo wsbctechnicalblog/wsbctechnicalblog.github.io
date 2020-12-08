@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Collective code ownership - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/collective-code-ownership.html" rel="bookmark"
+            title="Permalink to Collective code ownership">Collective code ownership</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Thu 22 October 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Teams share collective responsibility and therefore collectively own the code</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><em>"In XP we don't do what we believe, we do what our measurements tell us.”</em> Ron Jeffries</p>
+<p>Value stream delivery is largely based on automating business processes. In order to continuously deliver value, businesses invest in functionality. DevOps engineers are largely responsible for implementing desired functionality.
+So we see that functionality is an asset. Businesses are willing to invest heavily in optimizing that asset. And the way the asset (i.e. functionality) is delivered is via shipping code.</p>
+<p>Now for the twist of lime: while functionality is obviously an asset, shipping code isn’t. Not only is shipping code not an asset, it is actually a liability. Once shipped, code needs constant babysitting. If code is not engineered properly, babysitting the shipped code may result in spiraling costs. No business will ever feel comfortable with such liability.</p>
+<p>In Extreme Programming (XP) we have a slightly different mantra (that basically talks about the same equation): Code is nothing, stories are everything.</p>
+<h2>Who does the code belong to?</h2>
+<p>In DevOps, code belongs to the product (i.e. a bundle of functionalities). Code never belongs to an individual engineer. Code may shortly belong to a project, but a product typically outlives any project, so it’s more accurate to say that code belongs to the product.
+Collective ownership is often a counter-intuitive concept in software engineering, as it annuls the authorship. In traditional software development shops, workload is divvied up among engineers, and each engineer writes their own code in complete isolation. And because they write their own code, they are responsible for it, they own it, they run with it, they live and die by it.</p>
+<p>In software development shops that have evolved from the traditional shops, workload is not compartmentalized into mini silos. No silos, no turfs, no fiefdoms. In such shops, workload is centered on user stories. And each user story belongs to the entire team. That way, we avoid painting ourselves in a corner by isolating engineers from each other and then having to herd cats (with all the frightening overhead of coordinating, overseeing, synchronizing, judging and implementing correctional actions).</p>
+<p>And since each user story belongs to the team (i.e. there is no individual, named author of a user story), the code implementing that user story also belongs to the team. That way, there are no individual authors of any line of code, of any code statement.</p>
+<h2>How does that work in daily practice?</h2>
+<p>Collective code ownership may play out in variety of scenarios:</p>
+<ol>
+<li>Engineers work in isolation</li>
+<li>Engineers engage in pair programming (each pair works in isolation)</li>
+<li>Engineers engage in mob programing</li>
+</ol>
+<p>In case where engineers work in isolation (i.e. each engineers goes away and spends some time coding in complete isolation from the team), collective ownership manifests in the full freedom to access, open and modify any block of code in the product repo. There are no silos, no barriers – we are talking full blown open source paradigm.</p>
+<p>In case of pair programming, similar concept applies: the repo is fully open for examination, modification and merging the changes. Same as an individual engineer doesn’t own any part of the code pulled from the repo, a pair of engineers also do not own any part of the code.
+In case of mob programming, collaboration between engineers happens in real time. Coding happens in brief spurts (governed by the ‘musical chairs’ rotation where the person making the changes by typing and the person navigating the changes typically spend no more than 5 minutes per mini session). As the driver (i.e. person entering the changes) and the navigator (person, or persons instructing the driver) keep rotating, at the end of the coding session pretty much every team member has touched the code. Collectively, the team has made the most optimal decisions regarding which changes to the code to commit, push and merge to the trunk. Authorship becomes moot in such practice.</p>
+<h2>What are the prerequisites of collective code ownership?</h2>
+<p>It may not be advisable to jump in head first into collective code ownership before establishing rules of the game. In a nutshell, here are the minimum requirements for teams to successfully engage in collective code ownership:</p>
+<ul>
+<li>The team has collectively created and agreed upon the coding standards</li>
+<li>The team is fully committed to using code management tool (git!)</li>
+<li>The team is doing full-on TDD, ideally also doing stringent mutation testing</li>
+<li>The team is using powerful IDE (Visual Studio or VS Code)</li>
+<li>The team is actively pursuing continuous integration (CI)</li>
+</ul>
+<p>In addition to the above, it is important for all engineers on the team to agree to participate/contribute to the work needed to implement aspects of the functionality that may not be everyone’s area of interest. For example, a back-end engineer may not be interested in some front-end technologies, but is agreeable to participate and pick up some skills by working with domain experts on the team. Cross-training/cross-pollination goes a long way toward creating a highly performing team.</p>
+<p>Collective code ownership works best for small size teams, famously described as “two pizzas teams”. Any team that cannot be fed with two pizzas brings along added complexity; the overhead needed for maintaining team cohesion may exceed the benefits of cultivating collective code ownership.</p>
+<h2>Conclusion</h2>
+<p>DevOps software engineering discipline is founded on the team concept. A team is not a group. A team is based on the concept of collective responsibility. And since each team works with user stories and turns those stories into shipping code, team collectively owns user stories as well as the code that implements them.
+In a healthy team, when something goes wrong it is never “I thought SHE was going to take care of that!” Rather, it is “What do we have to do to fix that/take care of that?”</p>
+<p><br /><br /></p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/devops.html">DevOps </a><a href="/tag/code.html">code </a>
+        | <a href="/collective-code-ownership.html" rel="bookmark"
+         title="Permalink to Collective code ownership">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devops.html">DevOps</a>(2)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (15)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
