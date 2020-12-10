@@ -1,4 +1,4 @@
-Title: My super title
+Title: We are committed to our technical blog!
 Date: 2020-12-07
 Category: Engineering
 Tags: 
