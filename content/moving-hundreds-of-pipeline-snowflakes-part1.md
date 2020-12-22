@@ -1,5 +1,5 @@
 Title: Part 1: Pipelines - Why bother and what are our nightmares and options?
-Date: 2020-12-17
+Date: 2020-12-19
 Category: Posts
 Tags: Azure-Pipelines, DevOps 
 Slug: why-pipelines
