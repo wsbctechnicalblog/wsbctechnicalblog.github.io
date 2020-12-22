@@ -64,9 +64,9 @@ What followed was a mind-numbing and expensive era of aligning all snowflakes to
 
 We managed to persue our goals of **aligning** with architecture and security guardrails; **consistency** through design practices, automation, and collaboration; **simplicity** to create maintainable pipelines; and **enabling** and **empowering** our common engineering system.
 
-# Hackathon brings a course change
+# Hackathon triggers a course change
 
-A radical hackathon idea in 2019 investigated latest technology trends that promised pipeline-as-code, templates, and other facinating features that promise to enable our ultimate goal of self-service automation. Our hackathon idea was not amongst the winners, but is probably one of the few ideas that continued to simmer and change the world of our continuous delivery pipelines.
+A radical hackathon idea in 2019 investigated latest technology trends that promised pipeline-as-code, templates, and other facinating features that promise to enable our ultimate goal of self-service automation. Our hackathon idea was not amongst the winners, but is one of the few ideas that continued to simmer and change the world of our continuous delivery pipelines.
 
 It triggered a pipeline working group, awareness workshops, and even four laptop stickers to highlight unified pipeline, multi-stage, CI+CD, and self-service automation champions.
 
