@@ -2,7 +2,7 @@ Title: Part 1: Pipelines - Why bother and what are our nightmares and options?
 Date: 2020-12-19
 Category: Posts
 Tags: Azure-Pipelines, DevOps 
-Slug: why-pipelines
+Slug: why-pipelines-part1
 Author: Willy-Peter Schaub
 Summary: Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.
 
