@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 1: Pipelines - Why bother and what are our nightmares and options? - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/why-pipelines-part1.html" rel="bookmark"
+            title="Permalink to Part 1: Pipelines - Why bother and what are our nightmares and options?">Part 1: Pipelines - Why bother and what are our nightmares and options?</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Sat 19 December 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:</p>
+<ul>
+<li>Part 1: Pipelines - Why bother and what are our nightmares and options? (this)</li>
+<li>Coming soon:</li>
+<li>Part 2: Pipelines - Introduction, variables and why spaces matter</li>
+<li>Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</li>
+<li>Part 4: Pipelines - Magic of queue time assembly</li>
+<li>Part 5: Pipelines - Blueprints to fuel consistency and enablement</li>
+<li>Part 6: Pipelines - From CI to CD and beyond in one pipeline</li>
+<li>Part 7: Self-service automation - A dream turns into reality</li>
+</ul>
+<hr>
+<h1>Why Pipelines?</h1>
+<blockquote>
+<p><em>"Continuous Delivery Pipeline Value Stream Mapping The Continuous Delivery Pipeline (CDP) represents the workflows, activities, and automation needed to shepherd a new piece of functionality from ideation to an on-demand release of value to the end user."</em> - © Scaled Agile, Inc.</p>
+</blockquote>
+<p>As elluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.</p>
+<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-1.png"></p>
+<p>Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.</p>
+<h1>Snowflakes</h1>
+<p>A healthy DevOps mindset promotes the line of autonomy. Above the line the organization defines its vision and governance to ensure alignment with regulatory, legal, and other requirements. Below the line the engineering teams own their process, with full autonomy to plan WHO, WHEN, and HOW they will accomplish their work.</p>
+<p>If, however, there is a lack of blueprints, design practices, and governance, each team will design and develop their pipelines slightly differently. </p>
+<p>The outcome are unique <strong>snowflakes</strong> that promote rapid evolution (positive) and a diversity of pipelines that can become hard to maintain, support, and innovate (negative).</p>
+<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-2.jpg"></p>
+<p>With hundreds of continuous delivery pipelines the <strong>Sec</strong> and <strong>Ops</strong> in DevSecOps began to buckle detecting and fixing vulnerabilities and other guardrail leaks.</p>
+<h1>Emergence of Unified Pipelines</h1>
+<p>In 2018 we decided to grab the pipelines by their valves to tackle the spread of unique pipeline patterns by defining an <strong>Unified</strong> <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=%20Does%20Azure%20Pipelines%20work%20with%20my%20language,code%20to%20multiple%20targets.%20Targets%20include...%20More%20">Azure Pipeline</a> design pattern. The pattern promoted the following principles:</p>
+<ul>
+<li>Automate everything automatable</li>
+<li>Build once<blockquote>
+<p>We encourage engineering teams to create a <strong>release</strong> build artifact, with debug symbols published to our symbol server.</p>
+</blockquote>
+</li>
+<li>Continuous integration and delivery</li>
+<li>Continuous streamlining and improvement</li>
+<li>Maintain one build definition<blockquote>
+<p>Instead of a developer and release pipeline, create <strong>one</strong> unified pipeline that locks down the higher environments.</p>
+</blockquote>
+</li>
+<li>Maintain one release pipeline definition</li>
+<li>Scan for vulnerabilities early, often, and fail fast</li>
+<li>Streamlined approvals<blockquote>
+<p>By optimising our approvals, we cut down on the complexity and delay, we inherited from previous years, decades, ... </p>
+</blockquote>
+</li>
+<li>Test early, often, and fail fast</li>
+<li>Traceability and observability of releases<blockquote>
+<p>Nobody wants a <em>"where did this build come from"</em> treasure hunt when joining a 2AM incident call.</p>
+</blockquote>
+</li>
+</ul>
+<p>What followed was a mind-numbing and expensive era of aligning all snowflakes to the unified design pattern, using the Azure Pipelines GUI editor to manipulate the pipeline json-based configuration. Even though we are using re-usable <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops#:~:text=In%20Azure%20Pipelines%2C%20you%20can%20version%20your%20own,is%20appended%20to%20the%20task%20group%20version%20number.">Task Groups</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&amp;tabs=yaml">Variable Groups</a> we had to invest thousands of error-prone clicks - there has to be a better way!?!</p>
+<p>We managed to persue our goals of <strong>aligning</strong> with architecture and security guardrails; <strong>consistency</strong> through design practices, automation, and collaboration; <strong>simplicity</strong> to create maintainable pipelines; and <strong>enabling</strong> and <strong>empowering</strong> our common engineering system.</p>
+<h1>Hackathon triggers a course change</h1>
+<p>A radical hackathon idea in 2019 investigated latest technology trends that promised pipeline-as-code, templates, and other facinating features that promise to enable our ultimate goal of self-service automation. Our hackathon idea was not amongst the winners, but is one of the few ideas that continued to simmer and change the world of our continuous delivery pipelines.</p>
+<p>It triggered a pipeline working group, awareness workshops, and even four laptop stickers to highlight unified pipeline, multi-stage, CI+CD, and self-service automation champions.</p>
+<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-3.png"></p>
+<p>Welcome YAML based pipelines, which we will introduce in Part 2 of this series.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/why-pipelines-part1.html" rel="bookmark"
+         title="Permalink to Part 1: Pipelines - Why bother and what are our nightmares and options?">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(2)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(3)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (16)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
