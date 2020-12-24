@@ -9,10 +9,10 @@ Summary: Pipelines enable engineering to continuously deliver value, map and imp
 In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:
 
 - Part 1: Pipelines - Why bother and what are our nightmares and options? (this)
+- [Part 2: Pipelines - Introduction, variables and why spaces matter](/why-pipelines-part2.html)
 
 Coming soon:
 
-- Part 2: Pipelines - Introduction, variables and why spaces matter
 - Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
 - Part 4: Pipelines - Magic of queue time assembly
 - Part 5: Pipelines - Blueprints to fuel consistency and enablement
