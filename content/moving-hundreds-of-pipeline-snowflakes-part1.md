@@ -11,6 +11,7 @@ In this series we are going to invite you on our journey of grappling with hundr
 - Part 1: Pipelines - Why bother and what are our nightmares and options? (this)
 
 Coming soon:
+
 - Part 2: Pipelines - Introduction, variables and why spaces matter
 - Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
 - Part 4: Pipelines - Magic of queue time assembly
