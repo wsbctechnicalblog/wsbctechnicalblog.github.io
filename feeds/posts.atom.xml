@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2020-12-19T00:00:00-08:00</updated><entry><title>Part 1: Pipelines - Why bother and what are our nightmares and options?</title><link href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="alternate"></link><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-19:/why-pipelines-part1.html</id><summary type="html">&lt;p&gt;Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Part 1: Pipelines - Why bother and what are our nightmares and options? (this)&lt;/li&gt;
-&lt;li&gt;Coming soon:&lt;/li&gt;
-&lt;li&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/li&gt;
-&lt;li&gt;Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry&lt;/li&gt;
-&lt;li&gt;Part 4: Pipelines - Magic of queue time assembly&lt;/li&gt;
-&lt;li&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/li&gt;
-&lt;li&gt;Part 6: Pipelines - From CI to CD and beyond in one pipeline&lt;/li&gt;
-&lt;li&gt;Part 7: Self-service automation - A dream turns into reality&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Coming soon:
+- Part 2: Pipelines - Introduction, variables and why spaces matter
+- Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
+- Part 4: Pipelines - Magic of queue time assembly
+- Part 5: Pipelines - Blueprints to fuel consistency and enablement
+- Part 6: Pipelines - From CI to CD and beyond in one pipeline
+- Part 7: Self-service automation - A dream turns into reality&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Why Pipelines?&lt;/h1&gt;
 &lt;blockquote&gt;
