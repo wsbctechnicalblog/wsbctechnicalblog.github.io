@@ -3,13 +3,15 @@
 &lt;ul&gt;
 &lt;li&gt;Part 1: Pipelines - Why bother and what are our nightmares and options? (this)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:
-- Part 2: Pipelines - Introduction, variables and why spaces matter
-- Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
-- Part 4: Pipelines - Magic of queue time assembly
-- Part 5: Pipelines - Blueprints to fuel consistency and enablement
-- Part 6: Pipelines - From CI to CD and beyond in one pipeline
-- Part 7: Self-service automation - A dream turns into reality&lt;/p&gt;
+&lt;p&gt;Coming soon:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/li&gt;
+&lt;li&gt;Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry&lt;/li&gt;
+&lt;li&gt;Part 4: Pipelines - Magic of queue time assembly&lt;/li&gt;
+&lt;li&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/li&gt;
+&lt;li&gt;Part 6: Pipelines - From CI to CD and beyond in one pipeline&lt;/li&gt;
+&lt;li&gt;Part 7: Self-service automation - A dream turns into reality&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h1&gt;Why Pipelines?&lt;/h1&gt;
 &lt;blockquote&gt;
