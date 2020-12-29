@@ -1,0 +1,346 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 2: Pipelines - Introduction, variables and why spaces matter - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part2.html" rel="bookmark"
+            title="Permalink to Part 2: Pipelines - Introduction, variables and why spaces matter">Part 2: Pipelines - Introduction, variables and why spaces matter</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 21 December 2020</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The new Azure DevOps YAML pipelines have been the focus of innovation, enabling engineering to treat pipelines as code.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We continue our continuous delivery pipeline journey by switching gears from the unified pipelines to the new YAML-syntax pipelines. </p>
+<hr>
+<h1>Why the YAML course change?</h1>
+<p>Do not get me wrong, the Unified pipelines introduced in <a href="/why-pipelines-part1.html">Part 1: Pipelines - Why bother and what are our nightmares and options</a> are phenomenal and will continue to serve us for quite some time. However, we realised that the unified pipelines are based on the json-based user interface pipelines. Microsoft refers to these pipelines as <strong>classic interface</strong> and there have been no improvements for many sprints in the Azure DevOps <a href="https://docs.microsoft.com/en-us/azure/devops/release-notes/features-timeline">timeline</a>. This is a <strong>RISK</strong> as the technology is becoming stale.</p>
+<p><img alt="Classic Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-1.png"></p>
+<p>In turn, the new Azure DevOps YAML-syntax pipelines have been the focus of innovation, enabling engineering to treat pipelines as code, use templates to promote consistency, efficiency, innovation, and quality, and last, but not least, combine continuous integration and deployment into one pipeline.</p>
+<p><img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-2.png"></p>
+<hr>
+<h1>YAML Overview</h1>
+<p>YAML is a mature human-readable data-serialization language, originally proposed by Clark Evans in 2001. It is often referred to as “yet another markup language” and “YAML ain’t markup language.</p>
+<p>When we look at the <a href="https://aka.ms/yaml">Azure DevOps YAML</a> pipelines, the pipeline configuration language has been kept structurally YAML. That is exciting!</p>
+<blockquote>
+<p>BOOKMARK the gem <a href="https://aka.ms/yaml">https://aka.ms/yaml</a> URL!</p>
+</blockquote>
+<hr>
+<h1>YAML Basics</h1>
+<p>Let us ask Azure Pipelines for a new YAML-syntax pipeline to explore. By default, Azure DevOps generates the following starter pipeline for us:</p>
+<h2>Our first pipeline</h2>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">Starter</span> <span class="n">pipeline</span>
+<span class="o">#</span> <span class="k">Start</span> <span class="k">with</span> <span class="n">a</span> <span class="n">minimal</span> <span class="n">pipeline</span> <span class="n">that</span> <span class="n">you</span> <span class="n">can</span> <span class="n">customize</span> <span class="k">to</span> <span class="n">build</span> <span class="k">and</span> <span class="n">deploy</span> <span class="n">your</span> <span class="n">code</span><span class="p">.</span>
+<span class="o">#</span> <span class="k">Add</span> <span class="n">steps</span> <span class="n">that</span> <span class="n">build</span><span class="p">,</span> <span class="n">run</span> <span class="n">tests</span><span class="p">,</span> <span class="n">deploy</span><span class="p">,</span> <span class="k">and</span> <span class="k">more</span><span class="p">:</span>
+<span class="o">#</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aka</span><span class="p">.</span><span class="n">ms</span><span class="o">/</span><span class="n">yaml</span>
+
+<span class="k">trigger</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">main</span>
+
+<span class="n">pool</span><span class="p">:</span>
+  <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;ubuntu-latest&#39;</span>
+
+<span class="n">steps</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="s1">&#39;Run a one-line script&#39;</span>
+
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="o">|</span>
+    <span class="n">echo</span> <span class="k">Add</span> <span class="n">other</span> <span class="n">tasks</span> <span class="k">to</span> <span class="n">build</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="k">and</span> <span class="n">deploy</span> <span class="n">your</span> <span class="n">project</span><span class="p">.</span>
+    <span class="n">echo</span> <span class="n">See</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aka</span><span class="p">.</span><span class="n">ms</span><span class="o">/</span><span class="n">yaml</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="s1">&#39;Run a multi-line script&#39;</span>
+</code></pre></div>
+
+<p>It is evident that:
+- It is triggered on changes on the <strong>master</strong> branch.
+- It is queued on the latest <strong>ubuntu</strong> agent pool - other options include macOS and Windows.
+- It runs two steps, hosted in one stage, containing one job.</p>
+<p>Simple!</p>
+<h2>Variables</h2>
+<p>Next, we will explore two key YAML topics: <strong>Variables</strong> and <strong>Parameters</strong>.</p>
+<ul>
+<li>Every variable is really a key:value pair.</li>
+<li>Simple variable syntax example
+    <code>yml
+    variables:
+      name: WSBC</code></li>
+<li>Explicit key:value syntax example
+    ```yml
+    variables:<ul>
+<li>name:  myvariable
+  value: WSBC 
+```</li>
+</ul>
+</li>
+<li>The key is the name of the variable, and it has a <strong>string</strong> value. </li>
+<li>The variable is processed at <strong>run</strong> time.</li>
+<li>To dereference a variable, simply wrap the key in <code>$()</code>.</li>
+<li>There are several types of variables, whereby pipelines do not distinguish between these types. </li>
+<li>Inline variables</li>
+<li>Variable groups</li>
+<li>Template variables</li>
+<li>Pipeline variables</li>
+<li>Predefined Azure DevOps agent and build <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&amp;tabs=yaml">variables</a></li>
+</ul>
+<blockquote>
+<p><strong>NOTE</strong> - Explicit syntax is required when you mix variable types. For example:</p>
+<p><code>yml
+ variables:
+ - name:     myvariable
+   value:    WSBC
+ - group:    myVariableGroup
+ - template: myVariableTemplate.yml</code></p>
+</blockquote>
+<h2>Parameters</h2>
+<ul>
+<li>Parameters can be used in templates and pipelines. They allow us to deal with complex objects and combine parameters and expressions to create complex scenarios.</li>
+</ul>
+<p><code>yml
+  parameters:
+  - name: parameterSample
+    type: string
+    default: sunshine
+    values:
+    - sunshine
+    - moonlight
+    - aurora</code>
+- Unlike variables, parameters are defined as key value pairs where the value can be of <strong>any type</strong>.
+- To dereference a parameter, simply wrap the key in <code>${{}}</code>.
+- The variable is processed at <strong>queue</strong> time.</p>
+<p>Powerful magic!</p>
+<h2>Our second YAML pipeline</h2>
+<p>Now that we understand variables and parameters, let us create our second YAML pipeline and first template. No need to panic, you have not missed anything - we will explore templates in more detail in Part 3 of this series.</p>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="o">:</span>
+  <span class="n">keyFinal</span><span class="o">:</span> <span class="s1">&#39;Bingo!&#39;</span>
+  <span class="n">keyRef</span><span class="o">:</span>   <span class="s1">&#39;keyFinal&#39;</span>
+
+<span class="n">steps</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">$</span><span class="o">{{</span><span class="n">variables</span><span class="o">.</span><span class="na">keyRef</span><span class="o">}})</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">$</span><span class="o">{{</span> <span class="n">variables</span><span class="o">.</span><span class="na">keyRef</span> <span class="o">}})</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">$</span><span class="o">{{</span> <span class="n">variables</span><span class="o">.</span><span class="na">keyRef</span> <span class="o">}}</span> <span class="o">)</span>
+  <span class="o">-</span> <span class="n">template</span><span class="o">:</span> <span class="n">template</span><span class="o">.</span><span class="na">yml</span>
+    <span class="n">parameters</span><span class="o">:</span>
+      <span class="n">test</span><span class="o">:</span> <span class="n">$</span><span class="o">{{</span><span class="n">variables</span><span class="o">.</span><span class="na">keyRef</span><span class="o">}}</span>
+</code></pre></div>
+
+<p>Did you notice that we assigned the value to the keyFinal variable, but are using keyRef throughout the sample? By using the queue-time ${{}} resolution, we are changing the first script to the following during queue time:</p>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="o">:</span>
+  <span class="n">keyFinal</span><span class="o">:</span> <span class="s1">&#39;Bingo!&#39;</span>
+  <span class="n">keyRef</span><span class="o">:</span>   <span class="s1">&#39;keyFinal&#39;</span>
+
+<span class="n">steps</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">keyFinal</span><span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">keyFinal</span><span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">keyFinal</span> <span class="o">)</span>
+  <span class="o">-</span> <span class="n">template</span><span class="o">:</span> <span class="n">template</span><span class="o">.</span><span class="na">yml</span>
+    <span class="n">parameters</span><span class="o">:</span>
+      <span class="n">test</span><span class="o">:</span> <span class="n">keyFinal</span>
+</code></pre></div>
+
+<h2>Our first template</h2>
+<p>Like parameters the template is injected and processed at <strong>queue</strong> time.</p>
+<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="o">:</span>
+  <span class="n">test</span> <span class="o">:</span> <span class="s1">&#39;defaultKey&#39;</span>  
+
+<span class="n">steps</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">here</span> <span class="n">we</span> <span class="n">go</span>
+
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">{{</span> <span class="n">parameters</span><span class="o">.</span><span class="na">test</span> <span class="o">}}</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">parameters</span><span class="o">.</span><span class="na">test</span> <span class="o">)</span> 
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">keyRef</span><span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">keyRef</span> <span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">KeyRef</span> <span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span> <span class="n">$</span><span class="o">{{</span> <span class="n">parameters</span><span class="o">.</span><span class="na">test</span> <span class="o">}}</span> <span class="o">)</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">$</span><span class="o">{{</span> <span class="n">parameters</span><span class="o">.</span><span class="na">test</span> <span class="o">}})</span>
+  <span class="o">-</span> <span class="n">script</span><span class="o">:</span> <span class="n">echo</span> <span class="n">$</span><span class="o">(</span><span class="n">$</span><span class="o">{{</span><span class="n">parameters</span><span class="o">.</span><span class="na">test</span><span class="o">}})</span>
+</code></pre></div>
+
+<p>I recommend that you create the sample pipeline and run it. Does it display what you expected? If yes, you can skip the YAML Gotchas, otherwise read on.</p>
+<h2>Generated echo output</h2>
+<p>Take note of the fourth, fifth, and sixth echo in the template. You may expect that the output will be the same ... but:</p>
+<ul>
+<li>Fourth <code>echo $(keyRef)</code> displays <code>keyFinal</code> as expected.</li>
+<li>Fifth  <code>echo $( keyRef )</code> displays <code>command not found</code> ... too many spaces. </li>
+<li>Sixth  <code>echo $( KeyRef )</code> displays <code>command not found</code> ... YAML is case-sensitive and too many spaces.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="err">Bingo!</span>
+<span class="err">Bingo!</span>
+<span class="err">... command not found</span>
+<span class="err">here we go</span>
+<span class="err">keyFinal</span>
+<span class="err">... command not found</span>
+<span class="err">keyFinal</span>
+<span class="c">keyRef: command not found</span>
+<span class="c">KeyRef: command not found</span>
+<span class="err">keyFinal command not found</span>
+<span class="err">Bingo!</span>
+<span class="err">Bingo!</span>
+</code></pre></div>
+
+<hr>
+<h1>YAML Gotchas, such as spaces</h1>
+<p>For example, alignment of your definition is critical. Just like in the Cobol and Fortran days, a space too many or too few will throw errors, that are often difficult to decipher. As shown in the simple example, these two statements look the same, however, the second has too many spaces and fails:</p>
+<div class="highlight"><pre><span></span><code>  <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span> <span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span> <span class="p">}})</span>
+  <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span> <span class="o">$</span><span class="p">{{</span> <span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span> <span class="p">}}</span> <span class="p">)</span>
+</code></pre></div>
+
+<p>Likewise, the following example looks innocent at a quick glance, but the first and third script will fail as it is indented few and one too many spaces respectively:</p>
+<div class="highlight"><pre><span></span><code><span class="n">steps</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span>
+  <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span>
+   <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span>
+</code></pre></div>
+
+<p>Yaml is a very positional and pedantic language!</p>
+<blockquote>
+<p><strong>TIP</strong> - Use the <strong>validate</strong> feature in the Azure Pipeline editor to help you unearth some of the gremlins.</p>
+</blockquote>
+<p><img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-4.png"></p>
+<hr>
+<h1>Common language</h1>
+<p>With the various names popping up - classic, unified, YAML, and multi-stage - it is important to define and use a common language when talking about pipelines. Within the context of Azure DevOps pipelines, we suggest and use the following in these technical blogs:</p>
+<table>
+<thead>
+<tr>
+<th>TERMINOLOGY</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classic Unified Pipeline</td>
+<td>Unified pipeline design practice, defined by WSBC, based on the user interface (Classic) Azure Pipeline to promote a consistent CICD pipeline.</td>
+</tr>
+<tr>
+<td>Multi-stage YAML-syntax Pipeline</td>
+<td>Unified YAML experience to create an Azure Pipeline to do CI, CD, or CI and CD, and store the pipeline configuration as part of the source code.</td>
+</tr>
+<tr>
+<td>Multi-stage Blueprint-based Pipeline</td>
+<td>Unified pipeline design practice, defined by WSBC, based on the multi-stage YAML-syntax pipeline to promote a consistent, secure, and extensible CI/CD pipeline.</td>
+</tr>
+<tr>
+<td>Continuous Exploration (CE)</td>
+<td>Continuous analysis of an idea or hypothesis, customer feedback, or market research through rapid prototyping. OODA – Observe, Orient, Decide, Act.</td>
+</tr>
+<tr>
+<td>Continuous Integration (CI)</td>
+<td>Continuously collaboration, validation, and merging of code changes. Also known as a continuous and automated “Build”.</td>
+</tr>
+<tr>
+<td>Continuous Deployment (CD)</td>
+<td>Ability to use the output from the CI to build and deploy the new known good build to <strong>one</strong> environment automatically – for example, deploy straight to production.</td>
+</tr>
+<tr>
+<td>Continuous Delivery (CD)</td>
+<td>Ability to use the output from the CI to build and deploy the new known good build to <strong>one</strong> or <strong>more</strong> environments automatically – for example, deploy to multiple rings.</td>
+</tr>
+<tr>
+<td>Release on Demand (RoD)</td>
+<td>Ability to make changes available to customers all at once, or selectively in response to feedback or business needs.</td>
+</tr>
+</tbody>
+</table>
+<h1>What is next?</h1>
+<p>If erroneous spaces do not rattle you, we are ready to jump into Part 3 to explore the power of templates and how we are cooking up a storm of re-usable magic.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/yaml-pipelines-part2.html" rel="bookmark"
+         title="Permalink to Part 2: Pipelines - Introduction, variables and why spaces matter">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(3)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(4)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (17)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

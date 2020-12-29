@@ -1,11 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2020-12-19T00:00:00-08:00</updated><entry><title>Part 1: Pipelines - Why bother and what are our nightmares and options?</title><link href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="alternate"></link><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-19:/why-pipelines-part1.html</id><summary type="html">&lt;p&gt;Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2020-12-21T00:00:00-08:00</updated><entry><title>Part 2: Pipelines - Introduction, variables and why spaces matter</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part2.html" rel="alternate"></link><published>2020-12-21T00:00:00-08:00</published><updated>2020-12-21T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-21:/yaml-pipelines-part2.html</id><summary type="html">&lt;p&gt;The new Azure DevOps YAML pipelines have been the focus of innovation, enabling engineering to treat pipelines as code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We continue our continuous delivery pipeline journey by switching gears from the unified pipelines to the new YAML-syntax pipelines. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why the YAML course change?&lt;/h1&gt;
+&lt;p&gt;Do not get me wrong, the Unified pipelines introduced in &lt;a href="/why-pipelines-part1.html"&gt;Part 1: Pipelines - Why bother and what are our nightmares and options&lt;/a&gt; are phenomenal and will continue to serve us for quite some time. However, we realised that the unified pipelines are based on the json-based user interface pipelines. Microsoft refers to these pipelines as &lt;strong&gt;classic interface&lt;/strong&gt; and there have been no improvements for many sprints in the Azure DevOps &lt;a href="https://docs.microsoft.com/en-us/azure/devops/release-notes/features-timeline"&gt;timeline&lt;/a&gt;. This is a &lt;strong&gt;RISK&lt;/strong&gt; as the technology is becoming stale.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Classic Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;In turn, the new Azure DevOps YAML-syntax pipelines have been the focus of innovation, enabling engineering to treat pipelines as code, use templates to promote consistency, efficiency, innovation, and quality, and last, but not least, combine continuous integration and deployment into one pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-2.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;YAML Overview&lt;/h1&gt;
+&lt;p&gt;YAML is a mature human-readable data-serialization language, originally proposed by Clark Evans in 2001. It is often referred to as “yet another markup language” and “YAML ain’t markup language.&lt;/p&gt;
+&lt;p&gt;When we look at the &lt;a href="https://aka.ms/yaml"&gt;Azure DevOps YAML&lt;/a&gt; pipelines, the pipeline configuration language has been kept structurally YAML. That is exciting!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;BOOKMARK the gem &lt;a href="https://aka.ms/yaml"&gt;https://aka.ms/yaml&lt;/a&gt; URL!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;YAML Basics&lt;/h1&gt;
+&lt;p&gt;Let us ask Azure Pipelines for a new YAML-syntax pipeline to explore. By default, Azure DevOps generates the following starter pipeline for us:&lt;/p&gt;
+&lt;h2&gt;Our first pipeline&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Starter&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;Start&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;minimal&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;customize&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;Add&lt;/span&gt; &lt;span class="n"&gt;steps&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;more&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;aka&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;
+
+&lt;span class="k"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
+
+&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ubuntu-latest&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Run a one-line script&amp;#39;&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+    &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;Add&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt; &lt;span class="n"&gt;tasks&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+    &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;See&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;aka&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;
+  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Run a multi-line script&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It is evident that:
+- It is triggered on changes on the &lt;strong&gt;master&lt;/strong&gt; branch.
+- It is queued on the latest &lt;strong&gt;ubuntu&lt;/strong&gt; agent pool - other options include macOS and Windows.
+- It runs two steps, hosted in one stage, containing one job.&lt;/p&gt;
+&lt;p&gt;Simple!&lt;/p&gt;
+&lt;h2&gt;Variables&lt;/h2&gt;
+&lt;p&gt;Next, we will explore two key YAML topics: &lt;strong&gt;Variables&lt;/strong&gt; and &lt;strong&gt;Parameters&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every variable is really a key:value pair.&lt;/li&gt;
+&lt;li&gt;Simple variable syntax example
+    &lt;code&gt;yml
+    variables:
+      name: WSBC&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Explicit key:value syntax example
+    ```yml
+    variables:&lt;ul&gt;
+&lt;li&gt;name:  myvariable
+  value: WSBC 
+```&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The key is the name of the variable, and it has a &lt;strong&gt;string&lt;/strong&gt; value. &lt;/li&gt;
+&lt;li&gt;The variable is processed at &lt;strong&gt;run&lt;/strong&gt; time.&lt;/li&gt;
+&lt;li&gt;To dereference a variable, simply wrap the key in &lt;code&gt;$()&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;There are several types of variables, whereby pipelines do not distinguish between these types. &lt;/li&gt;
+&lt;li&gt;Inline variables&lt;/li&gt;
+&lt;li&gt;Variable groups&lt;/li&gt;
+&lt;li&gt;Template variables&lt;/li&gt;
+&lt;li&gt;Pipeline variables&lt;/li&gt;
+&lt;li&gt;Predefined Azure DevOps agent and build &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&amp;amp;tabs=yaml"&gt;variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; - Explicit syntax is required when you mix variable types. For example:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yml
+ variables:
+ - name:     myvariable
+   value:    WSBC
+ - group:    myVariableGroup
+ - template: myVariableTemplate.yml&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Parameters&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Parameters can be used in templates and pipelines. They allow us to deal with complex objects and combine parameters and expressions to create complex scenarios.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;yml
+  parameters:
+  - name: parameterSample
+    type: string
+    default: sunshine
+    values:
+    - sunshine
+    - moonlight
+    - aurora&lt;/code&gt;
+- Unlike variables, parameters are defined as key value pairs where the value can be of &lt;strong&gt;any type&lt;/strong&gt;.
+- To dereference a parameter, simply wrap the key in &lt;code&gt;${{}}&lt;/code&gt;.
+- The variable is processed at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/p&gt;
+&lt;p&gt;Powerful magic!&lt;/p&gt;
+&lt;h2&gt;Our second YAML pipeline&lt;/h2&gt;
+&lt;p&gt;Now that we understand variables and parameters, let us create our second YAML pipeline and first template. No need to panic, you have not missed anything - we will explore templates in more detail in Part 3 of this series.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
+  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;}})&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;}})&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yml&lt;/span&gt;
+    &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Did you notice that we assigned the value to the keyFinal variable, but are using keyRef throughout the sample? By using the queue-time ${{}} resolution, we are changing the first script to the following during queue time:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
+  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;keyFinal&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yml&lt;/span&gt;
+    &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;keyFinal&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Our first template&lt;/h2&gt;
+&lt;p&gt;Like parameters the template is injected and processed at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;defaultKey&amp;#39;&lt;/span&gt;  
+
+&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;
+
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt; 
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;KeyRef&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}})&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt;&lt;span class="o"&gt;}})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I recommend that you create the sample pipeline and run it. Does it display what you expected? If yes, you can skip the YAML Gotchas, otherwise read on.&lt;/p&gt;
+&lt;h2&gt;Generated echo output&lt;/h2&gt;
+&lt;p&gt;Take note of the fourth, fifth, and sixth echo in the template. You may expect that the output will be the same ... but:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fourth &lt;code&gt;echo $(keyRef)&lt;/code&gt; displays &lt;code&gt;keyFinal&lt;/code&gt; as expected.&lt;/li&gt;
+&lt;li&gt;Fifth  &lt;code&gt;echo $( keyRef )&lt;/code&gt; displays &lt;code&gt;command not found&lt;/code&gt; ... too many spaces. &lt;/li&gt;
+&lt;li&gt;Sixth  &lt;code&gt;echo $( KeyRef )&lt;/code&gt; displays &lt;code&gt;command not found&lt;/code&gt; ... YAML is case-sensitive and too many spaces.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Bingo!&lt;/span&gt;
+&lt;span class="err"&gt;Bingo!&lt;/span&gt;
+&lt;span class="err"&gt;... command not found&lt;/span&gt;
+&lt;span class="err"&gt;here we go&lt;/span&gt;
+&lt;span class="err"&gt;keyFinal&lt;/span&gt;
+&lt;span class="err"&gt;... command not found&lt;/span&gt;
+&lt;span class="err"&gt;keyFinal&lt;/span&gt;
+&lt;span class="c"&gt;keyRef: command not found&lt;/span&gt;
+&lt;span class="c"&gt;KeyRef: command not found&lt;/span&gt;
+&lt;span class="err"&gt;keyFinal command not found&lt;/span&gt;
+&lt;span class="err"&gt;Bingo!&lt;/span&gt;
+&lt;span class="err"&gt;Bingo!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1&gt;YAML Gotchas, such as spaces&lt;/h1&gt;
+&lt;p&gt;For example, alignment of your definition is critical. Just like in the Cobol and Fortran days, a space too many or too few will throw errors, that are often difficult to decipher. As shown in the simple example, these two statements look the same, however, the second has too many spaces and fails:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="p"&gt;}})&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Likewise, the following example looks innocent at a quick glance, but the first and third script will fail as it is indented few and one too many spaces respectively:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+ &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
+   &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Yaml is a very positional and pedantic language!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt; - Use the &lt;strong&gt;validate&lt;/strong&gt; feature in the Azure Pipeline editor to help you unearth some of the gremlins.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-4.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Common language&lt;/h1&gt;
+&lt;p&gt;With the various names popping up - classic, unified, YAML, and multi-stage - it is important to define and use a common language when talking about pipelines. Within the context of Azure DevOps pipelines, we suggest and use the following in these technical blogs:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;TERMINOLOGY&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Classic Unified Pipeline&lt;/td&gt;
+&lt;td&gt;Unified pipeline design practice, defined by WSBC, based on the user interface (Classic) Azure Pipeline to promote a consistent CICD pipeline.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multi-stage YAML-syntax Pipeline&lt;/td&gt;
+&lt;td&gt;Unified YAML experience to create an Azure Pipeline to do CI, CD, or CI and CD, and store the pipeline configuration as part of the source code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multi-stage Blueprint-based Pipeline&lt;/td&gt;
+&lt;td&gt;Unified pipeline design practice, defined by WSBC, based on the multi-stage YAML-syntax pipeline to promote a consistent, secure, and extensible CI/CD pipeline.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Continuous Exploration (CE)&lt;/td&gt;
+&lt;td&gt;Continuous analysis of an idea or hypothesis, customer feedback, or market research through rapid prototyping. OODA – Observe, Orient, Decide, Act.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Continuous Integration (CI)&lt;/td&gt;
+&lt;td&gt;Continuously collaboration, validation, and merging of code changes. Also known as a continuous and automated “Build”.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Continuous Deployment (CD)&lt;/td&gt;
+&lt;td&gt;Ability to use the output from the CI to build and deploy the new known good build to &lt;strong&gt;one&lt;/strong&gt; environment automatically – for example, deploy straight to production.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Continuous Delivery (CD)&lt;/td&gt;
+&lt;td&gt;Ability to use the output from the CI to build and deploy the new known good build to &lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;more&lt;/strong&gt; environments automatically – for example, deploy to multiple rings.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Release on Demand (RoD)&lt;/td&gt;
+&lt;td&gt;Ability to make changes available to customers all at once, or selectively in response to feedback or business needs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;What is next?&lt;/h1&gt;
+&lt;p&gt;If erroneous spaces do not rattle you, we are ready to jump into Part 3 to explore the power of templates and how we are cooking up a storm of re-usable magic.&lt;/p&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 1: Pipelines - Why bother and what are our nightmares and options?</title><link href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="alternate"></link><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-19:/why-pipelines-part1.html</id><summary type="html">&lt;p&gt;Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Part 1: Pipelines - Why bother and what are our nightmares and options? (this)&lt;/li&gt;
+&lt;li&gt;&lt;a href="/why-pipelines-part2.html"&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Coming soon:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/li&gt;
 &lt;li&gt;Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry&lt;/li&gt;
 &lt;li&gt;Part 4: Pipelines - Magic of queue time assembly&lt;/li&gt;
 &lt;li&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/li&gt;
