@@ -232,7 +232,7 @@
 &lt;p&gt;If erroneous spaces do not rattle you, we are ready to jump into Part 3 to explore the power of templates and how we are cooking up a storm of re-usable magic.&lt;/p&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 1: Pipelines - Why bother and what are our nightmares and options?</title><link href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="alternate"></link><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-19:/why-pipelines-part1.html</id><summary type="html">&lt;p&gt;Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Part 1: Pipelines - Why bother and what are our nightmares and options? (this)&lt;/li&gt;
-&lt;li&gt;&lt;a href="/why-pipelines-part2.html"&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/yaml-pipelines-part2.html"&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Coming soon:&lt;/p&gt;
 &lt;ul&gt;
