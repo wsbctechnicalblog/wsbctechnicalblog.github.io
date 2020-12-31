@@ -15,6 +15,10 @@ In order to make sure that software we are building is flexible, we must evolve 
 
 > _Move fast to delight customers!_
 
+Read Alex's posts [here](/author/alex-bunardzic.html)
+
+<br />
+
 ## Willy-Peter Schaub
 
 ![Willy-Peter Schaub](/images/willy-schaub.png)
@@ -23,4 +27,5 @@ Willy-Peter began his IT career in the early 1980s, during his electrical engine
 
 > _Enable engineering and business to continuously deliver value to delighted customers!_
 
+Read Willy's posts [here](/author/willy-peter-schaub.html)
 <br/><br/>
