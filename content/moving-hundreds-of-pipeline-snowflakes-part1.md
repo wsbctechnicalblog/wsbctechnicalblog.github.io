@@ -10,10 +10,9 @@ In this series we are going to invite you on our journey of grappling with hundr
 
 - Part 1: Pipelines - Why bother and what are our nightmares and options? (this)
 - [Part 2: Pipelines - Introduction, variables and why spaces matter](/yaml-pipelines-part2.html)
+- [Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry](/yaml-pipelines-part3.html)
 
 Coming soon:
-
-- Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
 - Part 4: Pipelines - Magic of queue time assembly
 - Part 5: Pipelines - Blueprints to fuel consistency and enablement
 - Part 6: Pipelines - From CI to CD and beyond in one pipeline
@@ -25,7 +24,7 @@ Coming soon:
 
 > *"Continuous Delivery Pipeline Value Stream Mapping The Continuous Delivery Pipeline (CDP) represents the workflows, activities, and automation needed to shepherd a new piece of functionality from ideation to an on-demand release of value to the end user."* - © Scaled Agile, Inc.
 
-As elluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.
+As eluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.
 
 ![CICD Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part1-1.png)
 
