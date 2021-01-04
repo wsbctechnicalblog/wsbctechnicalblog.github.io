@@ -1,0 +1,249 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part3.html" rel="bookmark"
+            title="Permalink to Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 04 January 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>With the support from all <strong>people</strong>, YAML templates support our five (5) core goals and pillars of our common engineering system.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to the world of pipelines. In <a href="/why-pipelines-part1.html">part1</a> we discussed "why" pipelines are valuable and introduced the new Azure DevOps YAML-based pipelines in <a href="/yaml-pipelines-part2.html">part2</a>. In this post we explore templates as invaluable building blocks and telemetry to gather essential insights.</p>
+<hr>
+<h1>What is a YAML template?</h1>
+<p>Templates allow us to define reusable content, logic, and parameters, keeping our main pipeline definitions razor focused on the application and sharing common logic. Another advantage of templates, which we will exploit in part 7 of this adventure, is the ability to script and assemble pipelines at “queue” time.</p>
+<p>Essentially, we can define reusable code in separate templates. We can include templates within templates and define four types of templates:
+- <strong>Stage</strong> to define a set of stages of related jobs
+- <strong>Job</strong> to define a collection of steps run by an agent
+- <strong>Step</strong> to define a linear sequence of operations for a job
+- <strong>Variable</strong> as an alternative to hard coded values or variable groups</p>
+<blockquote>
+<p><strong>NOTE</strong> - Azure Pipelines currently support a maximum of 50 unique template files in a pipeline.</p>
+</blockquote>
+<p>Here is an example template, that defines the reusable code to download a universal artifact containing configuration files, download and run the <a href="https://www.whitesourcesoftware.com/">WhiteSource</a> unified code scanning agent:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">parameters</span><span class="p">:</span>
+  <span class="nl">portfolioName</span><span class="p">:</span>         <span class="err">&#39;</span><span class="n">unknown</span><span class="err">&#39;</span>
+  <span class="nl">productName</span><span class="p">:</span>           <span class="err">&#39;</span><span class="n">unknown</span><span class="err">&#39;</span>
+  <span class="nl">urlUnifiedAgent</span><span class="p">:</span>       <span class="err">&#39;</span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar&#39;</span>
+  <span class="nl">apiKeyAPI</span><span class="p">:</span>             <span class="err">&#39;</span><span class="o">&lt;</span><span class="n">DEMO</span><span class="o">-</span><span class="n">KEY</span><span class="o">&gt;</span><span class="err">&#39;</span>
+
+<span class="nl">steps</span><span class="p">:</span>
+
+<span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">UniversalPackages</span><span class="mi">@0</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Download</span> <span class="n">pipeline</span> <span class="n">universal</span> <span class="n">artifact</span>
+  <span class="nl">inputs</span><span class="p">:</span>
+    <span class="nl">command</span><span class="p">:</span>            <span class="err">&#39;</span><span class="n">download</span><span class="err">&#39;</span>
+    <span class="nl">downloadDirectory</span><span class="p">:</span>  <span class="err">&#39;</span><span class="n">$</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DefaultWorkingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Artifact</span><span class="err">&#39;</span>
+    <span class="nl">feedsToUse</span><span class="p">:</span>         <span class="err">&#39;</span><span class="n">internal</span><span class="err">&#39;</span>
+    <span class="nl">vstsFeed</span><span class="p">:</span>           <span class="err">&#39;</span><span class="o">&lt;</span><span class="n">DEMO</span><span class="o">-</span><span class="n">GUID</span><span class="o">&gt;/&lt;</span><span class="n">DEMO</span><span class="o">-</span><span class="n">GUID</span><span class="o">&gt;</span><span class="err">&#39;</span> <span class="err">#</span> <span class="n">automation</span> <span class="n">templates</span>
+    <span class="nl">vstsFeedPackage</span><span class="p">:</span>    <span class="err">&#39;</span><span class="o">&lt;</span><span class="n">DEMO</span><span class="o">-</span><span class="n">GUID</span><span class="o">&gt;</span><span class="err">&#39;</span>             <span class="err">#</span> <span class="n">toolbox</span>
+    <span class="nl">vstsPackageVersion</span><span class="p">:</span> <span class="sc">&#39;*&#39;</span>
+
+<span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">curl</span> <span class="o">-</span><span class="n">LJO</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">urlUnifiedAgent</span><span class="p">}}</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">Download</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">WhiteSource</span> <span class="n">Unified</span> <span class="n">Agent</span><span class="err">&#39;</span>
+  <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">true</span>
+
+<span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">wss</span><span class="o">-</span><span class="n">unified</span><span class="o">-</span><span class="n">agent</span><span class="p">.</span><span class="n">jar</span> <span class="o">-</span><span class="n">c</span> <span class="n">$</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DefaultWorkingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Artifact</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">wss</span><span class="o">-</span><span class="n">unified</span><span class="o">-</span><span class="n">agent</span><span class="p">.</span><span class="n">config</span> <span class="o">-</span><span class="n">apiKey</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">apiKeyAPI</span><span class="p">}}</span> <span class="o">-</span><span class="n">product</span> <span class="n">WorkSafeBC</span> <span class="o">-</span><span class="n">project</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">portfolioName</span><span class="p">}}.</span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">productName</span><span class="p">}}</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">WhiteSource</span> <span class="n">Unified</span> <span class="n">Agent</span> <span class="n">Scan</span><span class="err">&#39;</span>
+  <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">true</span>
+</code></pre></div>
+
+<p>Including the reusable code in your pipeline is simple:</p>
+<div class="highlight"><pre><span></span><code><span class="err">  - template: Templates/DevSecOps/Whitesource.yml@AzDOTemplates</span>
+<span class="err">    parameters:</span>
+<span class="err">      portfolioName: &#39;DEMO.Samples&#39;</span>
+<span class="err">      productName:   &#39;WhiteSource&#39;</span>
+</code></pre></div>
+
+<h1>Why are we excited about YAML templates?</h1>
+<p>As discussed at the <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/270150093/">DevOps Vancouver Meetup: April 2020</a>, anyone going through a digital transformation will acknowledge that we need to focus on products, process, and people. </p>
+<blockquote>
+<p>“<em>DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.</em>” – Donovan Brown</p>
+</blockquote>
+<p>Our mandate is to <strong>empower</strong> people, standardize on the best products, and continuously improve processes to raise quality and security bars, efficiency, and reliability. We considered three options to drive a culture change with our continuous delivery pipeline infrastructure:</p>
+<p><img alt="Rules Apply" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-1.png"> We can enforce strict governance, standards, and rules, quickly stifling innovation and personal satisfaction.</p>
+<p><img alt="Rebellion" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-2.png"> We can continue to promote complete autonomy, leading to a product and process rebellion and creating a pile of technology mess that is hard and expensive to maintain.</p>
+<p><img alt="YingYang" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-3.png"> We can listen to what motivates and enables our Agile teams and work together to embrace organizational governance.</p>
+<p>We opted for the latter to enable and inspire engineering teams to learn, grow, and innovate by sharing and encouraging proven patterns and practices through guardrails.</p>
+<p><img alt="CeS Balance" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-4.png"></p>
+<p>But, let us get back to the core question - "<em>Why are we excited about YAML templates?</em>". </p>
+<p>With the support from all <strong>people</strong>, which implies down (organizational leadership) and bottom up (engineering), YAML templates support our five (5) core goals and pillars of our common engineering system:</p>
+<ul>
+<li>
+<p>Continuously <strong>innovate</strong> and enable users, with alignment to architecture, security and development <strong>guardrails</strong>.</p>
+</li>
+<li>
+<p><strong>Automation</strong> to provide speed, consistency, and repeatable processes.
+ </p>
+</li>
+<li>
+<p><strong>Enable</strong> and <strong>empower</strong> users to create business value from ideation to production.</p>
+</li>
+<li>
+<p>Align with <strong>security</strong> guardrails to minimize vulnerabilities and enforce a secure collaboration and engineering system.  </p>
+</li>
+<li>
+<p>Keep it <strong>simple</strong> to create a system that can be supported, maintained, and improved with ease. </p>
+</li>
+</ul>
+<hr>
+<h1>Reusable templates</h1>
+<p>As shown in the illustration below, from my rough notes, we defined two base blueprints. One that defines one stage, <strong>multiple jobs</strong> allowing parallel runs on separate agents, each with multiple steps.</p>
+<p>The simpler and more recommended blueprint defines one stage, one job, with <strong>multiple steps</strong>.** It keeps things simple, running everything on one agent within the same context.</p>
+<p>We are working on application-type specific quick-start blueprints, for example Angular, .NET Core, iOS application, and Azure Function application to make it even easier to get started and to encourage consistency.</p>
+<p><img alt="Blueprints and Templates Sketch" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-5.png"></p>
+<p>All our blueprints inject and rely on several templates, which are maintained in a secure repository - anyone can view, and anyone can suggest a change through a pull request.</p>
+<p>Like the WhiteSource sample mentioned before, we have two <strong>DevSecOps.yml</strong> and <strong>DevSecOpsInit.yml</strong> templates which define the use of Dev<strong>Sec</strong>Ops tasks, such as SonarQube and WhiteSource tasks.</p>
+<p>The <strong>BuildingCode.yml</strong> template defines the use of building code validations, such as duplicate code, end of life validations, and detection of surviving <a href="https://stryker-mutator.io/">Stryker</a> mutants.</p>
+<p>Lastly, the <strong>bootstrap</strong> template is the HEART of our new pipelines, using parameters and expressions to call the right validations for the known application types, which in turn injects the relevant templates and tasks when a pipeline is queued.</p>
+<div class="highlight"><pre><span></span><code><span class="err">    - template: Templates/Bootstrap.yml@CDTemplates</span>
+<span class="err">      parameters:</span>
+<span class="err">        bootstrapMode:    &#39;init&#39;</span>
+<span class="err">        applicationType:  &#39;dotnet&#39;</span>
+<span class="err">        applicationGuid:  $(productGuid)</span>
+<span class="err">        portfolioName:    $(portfolioName)</span>
+<span class="err">        productName:      $(productName)</span>
+<span class="err">        sourcesDirectory: $(Build.SourcesDirectory)</span>
+</code></pre></div>
+
+<hr>
+<h1>Remember to keep it simple</h1>
+<p>The power of YAML enables us to create invaluable pipeline definitions and abstract re-usable code in templates, as discussed. <strong>BUT</strong> we always urge our pipeline working group and our pipeline users to keep things <strong>SIMPLE</strong>, to ensure that we can innovate, scale, maintain the new world of continuous delivery pipelines, and empower both development and operations.</p>
+<p>We hide the complexity in our bootstrap.yml template, which can be embraced in two ways:</p>
+<ol>
+<li>Start with one of our blueprints and insert … COPY PASTE … the application specific YAML code.</li>
+<li>Insert the blueprint template calls into existing YAML pipeline.</li>
+</ol>
+<p><img alt="Blueprints and Context" src="/images/moving-hundreds-of-pipeline-snowflakes-part3-6.png"></p>
+<blockquote>
+<p><strong>GOTCHA</strong> -There is a need to run specific tasks within the same context. </p>
+</blockquote>
+<p>It is one of the reasons we call the blueprints differently in single-job and multi-job sample blueprints, as shown above. We need to ensure that SonarQube tasks, for example, run within the same job context as the build, and the building code after the test. When we run within the same context, we can also be more efficient by loading dependencies, such as source code, extensions, and configuration once.</p>
+<hr>
+<h1>Telemetry gives us insight</h1>
+<p>To monitor, troubleshoot, and understand the flow of value in our continuous delivery pipelines we explored a few ways to extend the Azure Pipeline analytics with metrics from our pipeline blueprints and templates. The telemetry will enable us to measure <strong>lead time</strong>, <strong>cycle time</strong>, and <strong>efficiency</strong>, uncover waste, and continuously improve as discussed in <a href="https://www.tactec.ca/value-stream-mapping-vsm/">value stream mapping</a>.</p>
+<p>We opted for Azure <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview">Application Insights</a>, calling a reusable PowerShell Core script in our templates to send the pipeline events, actions, and other data for future analysis.</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="p">.</span><span class="n">previews</span><span class="p">,</span> <span class="err">&#39;</span><span class="nb">true</span><span class="err">&#39;</span> <span class="p">)</span> <span class="p">}}</span><span class="o">:</span>
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">Building</span> <span class="n">Code</span> <span class="n">SonarQube</span> <span class="n">Duplicate</span> <span class="n">Code</span> <span class="n">Validation</span> <span class="n">Telemetry</span><span class="err">&#39;</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">filePath</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">$</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DefaultWorkingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Toolbox</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">AI</span><span class="o">/</span><span class="n">logBootstrapEventToAI</span><span class="p">.</span><span class="n">ps1</span><span class="err">&#39;</span>
+      <span class="nl">arguments</span><span class="p">:</span> <span class="o">-</span><span class="n">OperationId</span>   <span class="s">&quot;$(Build.BuildNumber).$(Build.BuildId)&quot;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">Event</span>         <span class="err">&#39;</span><span class="n">Building</span> <span class="n">Code</span><span class="err">&#39;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">Action</span>        <span class="err">&#39;</span><span class="n">Duplicate</span> <span class="n">Code</span><span class="err">&#39;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">DuplicateCode</span> <span class="s">&quot;$(SQDCVars.codeMetricesTaskVar)&quot;</span>
+      <span class="nl">pwsh</span><span class="p">:</span> <span class="nb">true</span>
+    <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">true</span>     
+</code></pre></div>
+
+<blockquote>
+<p><strong>NOTE</strong> - The extract above shows how we use conditional <code>${{ if ... }}</code> to introduce previews into our operational pipelines. If <code>parameters.previews</code> is set to true, indicating that we are embracing preview logic, the telemetry script is included in our pipeline and called at run-time.</p>
+</blockquote>
+<hr>
+<h1>What is next?</h1>
+<p>Now that we understand templates, we will look at the magic that has our Sec, in DevSecOps, smiling from ear to ear. See you in part 4.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/yaml-pipelines-part3.html" rel="bookmark"
+         title="Permalink to Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(4)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(5)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (18)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
