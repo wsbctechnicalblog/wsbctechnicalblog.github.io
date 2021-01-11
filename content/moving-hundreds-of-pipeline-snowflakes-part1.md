@@ -11,9 +11,10 @@ In this series we are going to invite you on our journey of grappling with hundr
 - Part 1: Pipelines - Why bother and what are our nightmares and options? (this)
 - [Part 2: Pipelines - Introduction, variables and why spaces matter](/yaml-pipelines-part2.html)
 - [Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry](/yaml-pipelines-part3.html)
+- [Part 4: Pipelines - Magic of queue time assembly](/yaml-pipelines-part4.html)
 
 Coming soon:
-- Part 4: Pipelines - Magic of queue time assembly
+
 - Part 5: Pipelines - Blueprints to fuel consistency and enablement
 - Part 6: Pipelines - From CI to CD and beyond in one pipeline
 - Part 7: Self-service automation - A dream turns into reality
