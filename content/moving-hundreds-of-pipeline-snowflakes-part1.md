@@ -11,10 +11,10 @@ In this series we are going to invite you on our journey of grappling with hundr
 - Part 1: Pipelines - Why bother and what are our nightmares and options? (this)
 - [Part 2: Pipelines - Introduction, variables and why spaces matter](/yaml-pipelines-part2.html)
 - [Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry](/yaml-pipelines-part3.html)
+- [Part 4: Pipelines - Magic of queue time assembly](/yaml-pipelines-part4.html)
 
 Coming soon:
 
-- Part 4: Pipelines - Magic of queue time assembly
 - Part 5: Pipelines - Blueprints to fuel consistency and enablement
 - Part 6: Pipelines - From CI to CD and beyond in one pipeline
 - Part 7: Self-service automation - A dream turns into reality
@@ -49,17 +49,24 @@ In 2018 we decided to grab the pipelines by their valves to tackle the spread of
 
 - Automate everything automatable
 - Build once
+
 > We encourage engineering teams to create a **release** build artifact, with debug symbols published to our symbol server.
+
 - Continuous integration and delivery
 - Continuous streamlining and improvement
 - Maintain one build definition
+
 > Instead of a developer and release pipeline, create **one** unified pipeline that locks down the higher environments.
+
 - Maintain one release pipeline definition
 - Scan for vulnerabilities early, often, and fail fast
 - Streamlined approvals
+
 > By optimising our approvals, we cut down on the complexity and delay, we inherited from previous years, decades, ... 
+
 - Test early, often, and fail fast
 - Traceability and observability of releases
+
 > Nobody wants a *"where did this build come from"* treasure hunt when joining a 2AM incident call.
 
 What followed was a mind-numbing and expensive era of aligning all snowflakes to the unified design pattern, using the Azure Pipelines GUI editor to manipulate the pipeline json-based configuration. Even though we are using re-usable [Task Groups](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops#:~:text=In%20Azure%20Pipelines%2C%20you%20can%20version%20your%20own,is%20appended%20to%20the%20task%20group%20version%20number.) and [Variable Groups](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml) we had to invest thousands of error-prone clicks - there has to be a better way!?!
