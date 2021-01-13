@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 4: Pipelines - Magic of queue time assembly - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part4.html" rel="bookmark"
+            title="Permalink to Part 4: Pipelines - Magic of queue time assembly">Part 4: Pipelines - Magic of queue time assembly</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 13 January 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>We can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to our exciting pipeline journey, as outlined in <a href="/why-pipelines-part1.html">part1</a>. It is time to move from theory to practice and explore some of the magic that is pushing us from the classic to the new YAML-based Azure Pipelines.</p>
+<hr>
+<h1>Re-usable Templates</h1>
+<p>In <a href="/yaml-pipelines-part3.html">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a> we covered YAML pipelines and why they are so exciting. Ardent classic pipeline supporters will argue that <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops">Task Groups</a> offer the same feature as YAML templates - I would argue similar, but not the same. Why? Both allow us to abstract pipeline logic into re-usable containers, which can be included in pipeline definitions.</p>
+<p>Where the YAML-template take us a huge stride further is magic #2 we are covering later in this post and the fact that template are version controlled and exposed to change, review, and collaboration through <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>.</p>
+<p>For example, when we plan to make fundamental and potentially pipeline breaking changes to our pipelines, we can build and test the change continuously, while collaborating with the rest of the pipeline working group in an all-embracing pull request. Only once all guardrails are met and everyone is satisfied that we have a quality change, will the pull request be approved, and the changes merged into our master branch to be consumed.</p>
+<hr>
+<h1>Magic #1 - Parameter driven pipeline</h1>
+<p>Let us start looking at some of the magic, starting with a small, yet powerful feature of parameters.</p>
+<p><img alt="Master PR Merge" src="/images/moving-hundreds-of-pipeline-snowflakes-part4-3.png"></p>
+<p>You can define parameters in your main template, as shown in the above illustration on the left. As discussed in <a href="/yaml-pipelines-part2.html">Part 2</a> we define parameters as key/value paid and optionally add a list of values, as well as a default.</p>
+<p>The magic appears when you run the pipeline. As shown on the right in the above illustration, the parameter(s) are included as run-time and editable pipelines values. So cool!</p>
+<hr>
+<h1>Magic #2 - Queue Time Pipeline Assembly</h1>
+<p>With classic pipelines what you design and what you see in the pipeline editor, is what you will queue and what the agent pools get to process. And yes, we can add conditional steps by using custom conditions, such as <code>ne(variables['Agent.JobStatus'], 'SuceededWithIssues)</code>, but whether the conditions are met, the tasks will be included in the queued pipeline.</p>
+<p>With the multi-stage pipelines this is where magic #2 enters the building, because conditional expressions are validated at queue time to <strong>inject</strong> or <strong>ignore</strong> parts of the templates. The following image shows the <strong>same</strong> pipeline queued - on the left (1) it runs with 14 steps and on the right (2) with 24 steps. The same pipeline ... what is going on?!?</p>
+<blockquote>
+<p>Same pipeline, same definition, different context!
+<img alt="Master PR Merge" src="/images/moving-hundreds-of-pipeline-snowflakes-part4-1.png"></p>
+</blockquote>
+<p>Upon closer inspection we notice a (3) <strong>Bootstrap Validation Suppression Alert</strong> in the first (1) pipeline run, which is our current behaviour for builds run outside a pull request. On the right we see the same pipeline run (2) within the context of a pull request validation build, which <strong>injects</strong> (4) SonarQube, (5) WhiteSource, and (6) our Building Code. It is important to emphasise that the pipeline on the left does not include the additional steps, optimising the runtime processing and keeping the logs focused and simple.</p>
+<p>The magic is based on conditional expressions, as the following extract I pulled from our bootstrap template. It instructs the Azure Pipeline queuing feature to only inject the template if ( we are in the "run" mode, and ( the source branch is "merge" or forceCheck is true ) ). </p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">bootstrapMode</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span> <span class="p">),</span> <span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span> <span class="s1">&#39;merge&#39;</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">forceCheck</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">)))</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="n">SampleFolder</span><span class="o">/</span><span class="n">SampleTemplate</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+
+<p>If the conditional expression is not met, the template is <strong>not</strong> injected, and the template contents omitted from the queued pipeline. </p>
+<hr>
+<h1>Magic #3 - Cannot override guardrails</h1>
+<p>Remember <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-multiple-branches?view=azure-devops#:~:text=Azure%20Pipelines%20%7C%20Azure%20DevOps%20Server%202019%20Artifact,stage%20only%20when%20those%20filter%20conditions%20are%20met.">artifact filters</a>? A great way to protect deployment stages in classic pipelines from artifacts built from untrusted branches - "<em>Applying the artifact filter to a specific branch results in the artifact deploying to a specific stage only when those filter conditions are met.</em>" - docs.microsoft.com</p>
+<p>Unfortunately, as our security engineers remind us on a regular basis, these can be overridden by users with the right permission. Something that promises to be and should be immutable, can mutate as needed - not cool!</p>
+<p>Looking forward, however, we can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear ... and that is no easy feat!</p>
+<p>Watch this quick video for a demo of the power, sorry magic, of the new pipelines.</p>
+<p><a href="https://youtu.be/DWuDqCM1t6A"><img alt="Master PR Merge" src="/images/moving-hundreds-of-pipeline-snowflakes-part4-2.png"></a> [1:52]</p>
+<p>Here is an extract from our demo pipeline. Note that unlike in prior examples, we have no conditional expression to determine whether to inject the template or not.</p>
+<div class="highlight"><pre><span></span><code><span class="err"># DEV Stage</span>
+<span class="err">#</span>
+<span class="err"># EXAMPLE - INJECT STAGE</span>
+<span class="err">- template: Templates/Samples/DeploymentStage.yml@CDTemplates</span>
+<span class="err">  parameters:</span>
+<span class="err">    stageID:         &#39;CD_Development&#39;</span>
+<span class="err">    stageName:       &#39;CD Development&#39;</span>
+<span class="err">    vmImage:         &#39;ubuntu-latest&#39;</span>
+<span class="err">    envName:         &#39;DPMSDP Development Environment&#39;</span>
+<span class="err"># SY Stage</span>
+<span class="err">#</span>
+<span class="err"># EXAMPLE - INJECT STAGE</span>
+<span class="err">- template: Templates/Samples/DeploymentStage.yml@CDTemplates</span>
+<span class="err">  parameters:</span>
+<span class="err">    stageID:         &#39;CD_System_Test&#39;</span>
+<span class="err">    stageName:       &#39;CD System Test&#39;</span>
+<span class="err">    vmImage:         &#39;windows-latest&#39;</span>
+<span class="err">    envName:         &#39;DPMSDP System Test Environment&#39;</span>
+<span class="err"># ST Stage</span>
+<span class="err">#</span>
+<span class="err"># EXAMPLE - INJECT STAGE</span>
+<span class="err">- template: Templates/Samples/DeploymentStageR.yml@CDTemplates</span>
+<span class="err">  parameters:</span>
+<span class="err">    stageID:         &#39;CD_Stage&#39;</span>
+<span class="err">    stageName:       &#39;CD Stage&#39;</span>
+<span class="err">    vmImage:         &#39;ubuntu-latest&#39;</span>
+<span class="err">    envName:         &#39;DPMSDP Stage Environment&#39;</span>
+<span class="err"># PROD Stage</span>
+<span class="err">#</span>
+<span class="err"># EXAMPLE - INJECT STAGE</span>
+<span class="err">- template: Templates/Samples/DeploymentStageR.yml@CDTemplates</span>
+<span class="err">  parameters:</span>
+<span class="err">    stageID:         &#39;CD_Production&#39;</span>
+<span class="err">    stageName:       &#39;CD Production&#39;</span>
+<span class="err">    vmImage:         &#39;macOS-latest&#39;</span>
+<span class="err">    envName:         &#39;DPMSDP Production Environment&#39;</span>
+</code></pre></div>
+
+<blockquote>
+<p><img alt="Alert" src="/images/alert-tiny.png"></p>
+<p>The last deployment uses the macOS pool, which created a few migraines for us that are worth pointing out. If you peruse <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&amp;tabs=yaml#networking">Microsoft-hosted agents</a> you will note two potential issues:</p>
+<ul>
+<li>"<em>Agents that run macOS images are provisioned on Mac pros. These agents always run in US and Europe irrespective of the location of your Azure DevOps organization. If data sovereignty is important to you and if your organization is not in one of these geographies, then you should not use macOS images</em>"</li>
+<li>"<em>Our Mac IP ranges are not included in the Azure IPs above, though we are investigating options to publish these in the future.</em>"</li>
+</ul>
+<p>Not a DevSecOps friendly agent pool - we have an open support ticket. If you want to know more or have more information, ping me!</p>
+</blockquote>
+<p>In this case we are using conditional expressions in the DeploymentStage<strong>R</strong>.yml template, which protects the higher environments ending with <strong>Stage</strong> and <strong>Production</strong> from all branches other than the <strong>release</strong> branch. In the following conditional expression example we only allow deployments to the higher environments from the release branch. </p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span> <span class="ow">or</span><span class="p">(</span> <span class="n">endsWith</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stageName</span><span class="p">,</span><span class="s1">&#39;Stage&#39;</span><span class="p">),</span> <span class="n">endsWith</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stageName</span><span class="p">,</span><span class="s1">&#39;Production&#39;</span><span class="p">)),</span> <span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span> <span class="s1">&#39;release&#39;</span><span class="p">))</span> <span class="p">}}:</span>
+</code></pre></div>
+
+<blockquote>
+<p><img alt="Alert" src="/images/alert-tiny.png"></p>
+<p>If you are using release/* as your release branch, for example release/1.0.13, you need to change the last part of the conditional statement to something like <code>startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')</code>.</p>
+</blockquote>
+<p>Combined with <strong>Approvals and checks</strong> of <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&amp;tabs=yaml">Service connections</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">Environments</a> the demonstrated magic allows us to align our pipelines with all our goals, such as alignment, consistency, enablement, and <strong>security</strong>. </p>
+<p>Simplicity is a goal that will drive our future pipeline endeavors and define our success, because with all the power and flexibility of YAML, it is all too easy to create another ocean of complex and potentially unmaintainable pipelines.</p>
+<hr>
+<h1>What is next?</h1>
+<p>Now that we appreciate the power and some of the magic, we can shift gears to our blueprints. See you in part 5.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/yaml-pipelines-part4.html" rel="bookmark"
+         title="Permalink to Part 4: Pipelines - Magic of queue time assembly">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(5)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(6)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (19)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
