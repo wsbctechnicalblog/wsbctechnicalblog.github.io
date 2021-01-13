@@ -52,12 +52,14 @@
 <li>Part 1: Pipelines - Why bother and what are our nightmares and options? (this)</li>
 <li><a href="/yaml-pipelines-part2.html">Part 2: Pipelines - Introduction, variables and why spaces matter</a></li>
 <li><a href="/yaml-pipelines-part3.html">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a></li>
+<li><a href="/yaml-pipelines-part4.html">Part 4: Pipelines - Magic of queue time assembly</a></li>
 </ul>
-<p>Coming soon:
-- Part 4: Pipelines - Magic of queue time assembly
-- Part 5: Pipelines - Blueprints to fuel consistency and enablement
-- Part 6: Pipelines - From CI to CD and beyond in one pipeline
-- Part 7: Self-service automation - A dream turns into reality</p>
+<p>Coming soon:</p>
+<ul>
+<li>Part 5: Pipelines - Blueprints to fuel consistency and enablement</li>
+<li>Part 6: Pipelines - From CI to CD and beyond in one pipeline</li>
+<li>Part 7: Self-service automation - A dream turns into reality</li>
+</ul>
 <hr>
 <h1>Why Pipelines?</h1>
 <blockquote>
@@ -76,28 +78,34 @@
 <p>In 2018 we decided to grab the pipelines by their valves to tackle the spread of unique pipeline patterns by defining an <strong>Unified</strong> <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=%20Does%20Azure%20Pipelines%20work%20with%20my%20language,code%20to%20multiple%20targets.%20Targets%20include...%20More%20">Azure Pipeline</a> design pattern. The pattern promoted the following principles:</p>
 <ul>
 <li>Automate everything automatable</li>
-<li>Build once<blockquote>
+<li>Build once</li>
+</ul>
+<blockquote>
 <p>We encourage engineering teams to create a <strong>release</strong> build artifact, with debug symbols published to our symbol server.</p>
 </blockquote>
-</li>
+<ul>
 <li>Continuous integration and delivery</li>
 <li>Continuous streamlining and improvement</li>
-<li>Maintain one build definition<blockquote>
+<li>Maintain one build definition</li>
+</ul>
+<blockquote>
 <p>Instead of a developer and release pipeline, create <strong>one</strong> unified pipeline that locks down the higher environments.</p>
 </blockquote>
-</li>
+<ul>
 <li>Maintain one release pipeline definition</li>
 <li>Scan for vulnerabilities early, often, and fail fast</li>
-<li>Streamlined approvals<blockquote>
+<li>Streamlined approvals</li>
+</ul>
+<blockquote>
 <p>By optimising our approvals, we cut down on the complexity and delay, we inherited from previous years, decades, ... </p>
 </blockquote>
-</li>
+<ul>
 <li>Test early, often, and fail fast</li>
-<li>Traceability and observability of releases<blockquote>
+<li>Traceability and observability of releases</li>
+</ul>
+<blockquote>
 <p>Nobody wants a <em>"where did this build come from"</em> treasure hunt when joining a 2AM incident call.</p>
 </blockquote>
-</li>
-</ul>
 <p>What followed was a mind-numbing and expensive era of aligning all snowflakes to the unified design pattern, using the Azure Pipelines GUI editor to manipulate the pipeline json-based configuration. Even though we are using re-usable <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops#:~:text=In%20Azure%20Pipelines%2C%20you%20can%20version%20your%20own,is%20appended%20to%20the%20task%20group%20version%20number.">Task Groups</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&amp;tabs=yaml">Variable Groups</a> we had to invest thousands of error-prone clicks - there has to be a better way!?!</p>
 <p>We managed to persue our goals of <strong>aligning</strong> with architecture and security guardrails; <strong>consistency</strong> through design practices, automation, and collaboration; <strong>simplicity</strong> to create maintainable pipelines; and <strong>enabling</strong> and <strong>empowering</strong> our common engineering system.</p>
 <h1>Hackathon triggers a course change</h1>
@@ -141,8 +149,8 @@
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
-                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(4)</li>
-                    <li><a href="/tag/devops.html">DevOps</a>(5)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(5)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(6)</li>
                     <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
                     <li><a href="/tag/tdd.html">TDD</a>(7)</li>
                     <li><a href="/tag/ci.html">CI</a>(5)</li>
@@ -162,7 +170,7 @@
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (18)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (19)</li>
                 </ul>
              
             </div>
