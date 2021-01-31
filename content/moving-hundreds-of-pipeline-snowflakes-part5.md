@@ -266,7 +266,7 @@ We recently received a request from DevSecOps to change all our pipelines to alw
 
 # Enabling automation 
 
-Lastly, we realised that our self-service automation goal is also no longer a distant dream. The app-type templates enable us to ask the engineering teams a few questions and run automation that creates a new application repository and pipeline in seconds - and consistently! 
+Lastly, we realised that our self-service automation goal is also no longer a distant dream. The app-type templates enable us to ask the engineering teams a few questions, then run automation that creates a new application repository and pipeline in seconds - and consistently! 
 
 ---
 
