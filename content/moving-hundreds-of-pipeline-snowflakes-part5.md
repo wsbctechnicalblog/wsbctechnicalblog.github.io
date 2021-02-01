@@ -22,7 +22,7 @@ Like the building-blueprint counterpart, our **generic** and **application-type*
 
 We have defined two generic blueprints. One defines a one stage, multiple jobs pipeline, allowing parallel runs on separate agents, each with multiple steps. The simpler and more recommended blueprint defines a one stage, one job, with multiple steps pipeline. It keeps things simple, running everything on one agent. 
 
-Both blueprints call our **bootstrap** template, which in injects other templates introducing DevSecOps scans such as SonarQube and WhiteSource, as well as custom built **building code** scripts and products, based on queue-time parameters.
+Both blueprints call our **bootstrap** template, which injects other templates introducing DevSecOps scans such as SonarQube and WhiteSource, as well as custom built **building code** scripts and products, based on queue-time parameters.
 
 > Azure-Pipeline-Steps.yml flow
 > ![Azure-Pipeline-Steps.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png)
@@ -178,7 +178,7 @@ To summarise, we are trying to simplify our pipeline environment and empower bot
 
 # App-type Blueprints 
 
-With application-type, in short app-type, blueprints we are taking the continuous integration (CI) pipelines light-years further in terms of our goals for **simplicity**, **security**, **enablement**, and **consistency**. Each app-type blueprint consists of a **starter** template, an **app-type** template, and a reference **sample** implementation, as shown below.
+With application-type, in short app-type, blueprints we are taking the continuous integration (CI) pipelines light-years further in terms of our goals for **simplicity**, **security**, **enablement**, and **consistency**. Each app-type blueprint, based on our pipeline champion Said Akram's (@said-akram-wcbbc) ingenious proof-of-concept, consists of a **starter** template, an **app-type** template, and a reference **sample** implementation, as shown below.
 
 > App-type blueprint parts
 >
