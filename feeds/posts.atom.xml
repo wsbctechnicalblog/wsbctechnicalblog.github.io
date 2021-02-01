@@ -1,5 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-01-13T00:00:00-08:00</updated><entry><title>Part 4: Pipelines - Magic of queue time assembly</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html" rel="alternate"></link><published>2021-01-13T00:00:00-08:00</published><updated>2021-01-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-01-13:/yaml-pipelines-part4.html</id><summary type="html">&lt;p&gt;We can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to our exciting pipeline journey, as outlined in &lt;a href="/why-pipelines-part1.html"&gt;part1&lt;/a&gt;. It is time to move from theory to practice and explore some of the magic that is pushing us from the classic to the new YAML-based Azure Pipelines.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-01-28T00:00:00-08:00</updated><entry><title>Part 5: Pipelines - Blueprints to fuel consistency and enablement</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html" rel="alternate"></link><published>2021-01-28T00:00:00-08:00</published><updated>2021-01-28T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-01-28:/yaml-pipelines-part5.html</id><summary type="html">&lt;p&gt;Think of &lt;strong&gt;blueprints&lt;/strong&gt; and associated &lt;strong&gt;templates&lt;/strong&gt; as re-usable LEGO blocks, ranging from a bag of "do it yourself" blocks, to complex and detailed kits, such as the Imperial Star Destroyer.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to another installment of our exciting pipeline journey, as outlined in &lt;a href="/why-pipelines-part1.html"&gt;part 1&lt;/a&gt;. After covering some of the gems and magic in &lt;a href="/yaml-pipelines-part5.html"&gt;part 5&lt;/a&gt; we will peek at our pipeline blueprints.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;What do we mean with pipeline blueprints?&lt;/h1&gt;
+&lt;p&gt;If you ask 13 software engineers to cook a continuous delivery pipeline, you are likely to get more than 13 variations. Although this enables innovation, it distracts the engineers from their core responsibility to continuously delivering functional code and value. More concerning the variations of artworks (pipelines) hamper reuse and bloat support and maintenance costs.&lt;/p&gt;
+&lt;p&gt;Like the building-blueprint counterpart, our &lt;strong&gt;generic&lt;/strong&gt; and &lt;strong&gt;application-type&lt;/strong&gt; pipeline blueprints define templates that allow rapid and consistent creation of unlimited number of continuous delivery pipeline copies. Let us have a look at a few of our blueprints.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Generic blueprints&lt;/h1&gt;
+&lt;p&gt;We have defined two generic blueprints. One defines a one stage, multiple jobs pipeline, allowing parallel runs on separate agents, each with multiple steps. The simpler and more recommended blueprint defines a one stage, one job, with multiple steps pipeline. It keeps things simple, running everything on one agent. &lt;/p&gt;
+&lt;p&gt;Both blueprints call our &lt;strong&gt;bootstrap&lt;/strong&gt; template, which injects other templates introducing DevSecOps scans such as SonarQube and WhiteSource, as well as custom built &lt;strong&gt;building code&lt;/strong&gt; scripts and products, based on queue-time parameters.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure-Pipeline-Steps.yml flow
+&lt;img alt="Azure-Pipeline-Steps.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As shown, the blueprint defines a pipeline that runs within the same &lt;strong&gt;job&lt;/strong&gt; context, in a single &lt;strong&gt;stage&lt;/strong&gt;. It injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with an &lt;strong&gt;init&lt;/strong&gt; parameter, to inject initialisation templates, with tasks such as &lt;strong&gt;SonarQube Prepare&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: SonarQube Prepare for .NET applications&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# SONARQUBE - dotnet&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="nf"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;applicationType&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;dotnet&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SonarQubePrepare&lt;/span&gt;&lt;span class="mi"&gt;@4&lt;/span&gt;
+    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SonarQube&lt;/span&gt; &lt;span class="n"&gt;Prepare&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nl"&gt;SonarQube&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;      &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sonarQubeService&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+      &lt;span class="nl"&gt;scannerMode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MSBuild&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+      &lt;span class="nl"&gt;projectKey&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;     &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sonarQubeProjectKey&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+      &lt;span class="nl"&gt;projectName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sonarQubeProjectName&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+    &lt;span class="nl"&gt;continueOnError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At the end of the continuous integration (CI) part of the pipeline, the blueprints injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with a &lt;strong&gt;run&lt;/strong&gt; parameter, to inject tasks such as &lt;strong&gt;SonarQube Analyze&lt;/strong&gt;, &lt;strong&gt;SonarQube Publish&lt;/strong&gt;, &lt;strong&gt;WhiteSource&lt;/strong&gt;, and &lt;strong&gt;Building Code&lt;/strong&gt; validations. Single jobs are the most efficient as dependencies, such as source code, extensions, and the bootstrap toolbox only need to be loaded once.&lt;/p&gt;
+&lt;p&gt;Here is the latest version of this blueprint:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure-Pipeline-Steps.yml source code&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nl"&gt;batch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+  &lt;span class="nl"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;include&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+  &lt;span class="nl"&gt;paths&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;exclude&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Semantic version as per Azure DevOps Naming Conventions.&lt;/span&gt;
+&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GITVERSION_MAJORMINORPATCH&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yyyyMMdd&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;HHmmss&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SourceBranchName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Configure the default agent pool and image to use for your pipeline&lt;/span&gt;
+&lt;span class="nl"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;                 &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Azure&lt;/span&gt; &lt;span class="n"&gt;Pipelines&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+  &lt;span class="nl"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;              &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;windows&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Variables&lt;/span&gt;
+&lt;span class="nl"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nl"&gt;BuildConfiguration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;   &lt;span class="n"&gt;Release&lt;/span&gt;
+  &lt;span class="nl"&gt;BuildPlatform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Any&lt;/span&gt; &lt;span class="n"&gt;CPU&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+  &lt;span class="nl"&gt;templateVersion&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;      &lt;span class="mf"&gt;1.0.9&lt;/span&gt;
+  &lt;span class="nl"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TODO&lt;/span&gt; &lt;span class="n"&gt;REPLACE&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;PORTFOLIO&lt;/span&gt; &lt;span class="n"&gt;NAME&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+  &lt;span class="nl"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;          &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TODO&lt;/span&gt; &lt;span class="n"&gt;REPLACE&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;PRODUCT&lt;/span&gt; &lt;span class="n"&gt;NAME&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+  &lt;span class="nl"&gt;productGuid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;          &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TODO&lt;/span&gt; &lt;span class="n"&gt;REPLACE&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;NEW&lt;/span&gt; &lt;span class="n"&gt;GUID&lt;/span&gt; &lt;span class="n"&gt;WITHOUT&lt;/span&gt; &lt;span class="n"&gt;BRACKETS&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+
+&lt;span class="cp"&gt;# Repository resources&lt;/span&gt;
+&lt;span class="nl"&gt;resources&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nl"&gt;repositories&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="cp"&gt;# =======================================================================&lt;/span&gt;
+  &lt;span class="cp"&gt;# SKULL &amp;amp; CROSS-BONES - DO NOT COMMENT OUT, OR REMOVE THIS SECTION&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;repository&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;CDTemplates&lt;/span&gt;
+    &lt;span class="nl"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
+    &lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Common&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Engineering&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;AzureDevOps&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Automation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Pipeline&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Templates&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+  &lt;span class="cp"&gt;# =======================================================================&lt;/span&gt;
+
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# START OF BUILD and TEST STAGE&lt;/span&gt;
+&lt;span class="cp"&gt;# - GitVersion task looks at your Git history and works out the semantic &lt;/span&gt;
+&lt;span class="cp"&gt;#   version of the commit being built.&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="nl"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ContinuousIntegration&lt;/span&gt;
+  &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Continuous&lt;/span&gt; &lt;span class="n"&gt;Integration&lt;/span&gt;
+  &lt;span class="nl"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;job&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ContinuousIntegration&lt;/span&gt;
+    &lt;span class="nl"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gitversion&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="mi"&gt;@0&lt;/span&gt;
+      &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Install&lt;/span&gt; &lt;span class="n"&gt;GitVersion&lt;/span&gt;
+      &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nl"&gt;versionSpec&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gitversion&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="mi"&gt;@0&lt;/span&gt;
+      &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Use&lt;/span&gt; &lt;span class="n"&gt;GitVersion&lt;/span&gt;
+
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# PREREQUISITES&lt;/span&gt;
+&lt;span class="cp"&gt;# - Run steps that have to run before the build here, for example NPM, NuGet&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;#   TODO Insert your scripts, steps, and tasks here and remove this comment&lt;/span&gt;
+
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+&lt;span class="cp"&gt;# BOOTSTRAP VALIDATION, STAGE: CI_BOOTSTRAP_INIT&lt;/span&gt;
+&lt;span class="cp"&gt;# SKULL &amp;amp; CROSS-BONES - DO NOT COMMENT OUT, OR REMOVE THIS SECTION&lt;/span&gt;
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;template&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Templates&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;CDTemplates&lt;/span&gt;
+      &lt;span class="nl"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nl"&gt;bootstrapMode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;init&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+        &lt;span class="nl"&gt;applicationType&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TODO&lt;/span&gt; &lt;span class="n"&gt;REPLACE&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;SUPPORTED&lt;/span&gt; &lt;span class="n"&gt;TYPE&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;dotnet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;angular&lt;/span&gt;
+        &lt;span class="nl"&gt;applicationGuid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productGuid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;      &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;sourcesDirectory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SourcesDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# CONTINUOUS INTEGRATION BUILD&lt;/span&gt;
+&lt;span class="cp"&gt;# - Run steps/tasks to build your solution here. &lt;/span&gt;
+&lt;span class="cp"&gt;# - Move initialisations (NPM, NuGet,...) to PREREQUISITES section&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;#  TODO Insert your scripts, steps, and tasks here and remove these comments&lt;/span&gt;
+
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# CONTINUOUS INTEGRATION TEST&lt;/span&gt;
+&lt;span class="cp"&gt;# - Run steps/tasks to test your solution here&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;#   TODO Insert your scripts, steps, and tasks here and remove this comment&lt;/span&gt;
+
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;# PUBLISH&lt;/span&gt;
+&lt;span class="cp"&gt;# - Publish the build and test artifacts&lt;/span&gt;
+&lt;span class="cp"&gt;# --------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="cp"&gt;#   TODO Insert build and test artifact publication tasks&lt;/span&gt;
+
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+&lt;span class="cp"&gt;# BOOTSTRAP VALIDATION, STAGE: CI_BOOTSTRAP&lt;/span&gt;
+&lt;span class="cp"&gt;# SKULL &amp;amp; CROSS-BONES - DO NOT COMMENT OUT, OR REMOVE THIS SECTION&lt;/span&gt;
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;template&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Templates&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;CDTemplates&lt;/span&gt;
+      &lt;span class="nl"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nl"&gt;bootstrapMode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+        &lt;span class="nl"&gt;applicationType&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TODO&lt;/span&gt; &lt;span class="n"&gt;REPLACE&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;SUPPORTED&lt;/span&gt; &lt;span class="n"&gt;TYPE&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;dotnet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;angular&lt;/span&gt;
+        &lt;span class="nl"&gt;applicationGuid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productGuid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;      &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nl"&gt;sourcesDirectory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SourcesDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="cp"&gt;# ==========================================================================&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Engineers can &lt;strong&gt;copy-paste&lt;/strong&gt; this blueprint into their application repository, look for &lt;strong&gt;TODO&lt;/strong&gt;s, update and fine-tune the pipeline as needed. Sections which should not be deleted or changed are enclosed in skull &amp;amp; cross-bones markers. &lt;strong&gt;Simple!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The other &lt;strong&gt;generic&lt;/strong&gt; template, Azure-Pipeline-Jobs.yml, enables engineers to craft multi-job pipelines, enabling features such as parallelism. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure-Pipeline-Jobs.yml flow
+&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As shown, the blueprint defines two jobs, one including the &lt;strong&gt;initialisation&lt;/strong&gt; and &lt;strong&gt;build&lt;/strong&gt; sections, and the other the &lt;strong&gt;test&lt;/strong&gt; section. Some tasks, such as the &lt;strong&gt;SonarQube&lt;/strong&gt; tasks have to run within the same job context, which is why the blueprint injects the bootstrap template three times. As before, the first injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with an &lt;strong&gt;init&lt;/strong&gt; parameter, to inject initialisation templates, with tasks such as &lt;strong&gt;SonarQube Prepare&lt;/strong&gt;. The second injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with a &lt;strong&gt;devsecopsonly&lt;/strong&gt; parameter, which magically injects all of the DevSecOps scans, such as &lt;strong&gt;SonarQube Analyse&lt;/strong&gt;, &lt;strong&gt;SonarQube Publish&lt;/strong&gt;, and &lt;strong&gt;WhiteSource&lt;/strong&gt;. The remaining templates, such as the &lt;strong&gt;Building Code&lt;/strong&gt; are only injected at the end when the third call is made to the &lt;strong&gt;bootstrap&lt;/strong&gt; template with the &lt;strong&gt;buildingcodeonly&lt;/strong&gt; parameter.&lt;/p&gt;
+&lt;p&gt;To summarise, we are trying to simplify our pipeline environment and empower both development and operations with these blueprints. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But&lt;/strong&gt;, we can do better!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;App-type Blueprints&lt;/h1&gt;
+&lt;p&gt;With application-type, in short app-type, blueprints we are taking the continuous integration (CI) pipelines light-years further in terms of our goals for &lt;strong&gt;simplicity&lt;/strong&gt;, &lt;strong&gt;security&lt;/strong&gt;, &lt;strong&gt;enablement&lt;/strong&gt;, and &lt;strong&gt;consistency&lt;/strong&gt;. Each app-type blueprint, based on our pipeline champion Said Akram's (@said-akram-wcbbc) ingenious proof-of-concept, consists of a &lt;strong&gt;starter&lt;/strong&gt; template, an &lt;strong&gt;app-type&lt;/strong&gt; template, and a reference &lt;strong&gt;sample&lt;/strong&gt; implementation, as shown below.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;App-type blueprint parts&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-7.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;starter&lt;/strong&gt; template allows our engineers to configure their continuous integration pipeline, after they &lt;strong&gt;copy-paste&lt;/strong&gt; it into their application repository. This is the only moving part that is copied and becomes part of the application code base.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SAMPLE - Azure Function &lt;strong&gt;starter&lt;/strong&gt; template&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;batch&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;batch&lt;/span&gt; &lt;span class="n"&gt;changes&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;every&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+  &lt;span class="n"&gt;branches&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;include&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="n"&gt;branches&lt;/span&gt;
+
+&lt;span class="n"&gt;resources&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;repositories&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;repository&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;CDAppTemplates&lt;/span&gt;
+    &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;       &lt;span class="n"&gt;git&lt;/span&gt;
+    &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;       &lt;span class="s1"&gt;&amp;#39;Common-Engineering-System/AzureDevOps.Automation.Pipeline.AppTemplates&amp;#39;&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Semantic&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;Common&lt;/span&gt; &lt;span class="n"&gt;Engineering&lt;/span&gt; &lt;span class="n"&gt;Naming&lt;/span&gt; &lt;span class="n"&gt;Conventions&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GITVERSION_MAJORMINORPATCH&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yyyyMMdd&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;HHmmss&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;SourceBranchName&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;VARIABLES&lt;/span&gt;
+&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;    &lt;span class="s1"&gt;&amp;#39;TODO REPLACE WITH PORTFOLIO NAME&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;StarWars&lt;/span&gt;
+  &lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;      &lt;span class="s1"&gt;&amp;#39;TODO REPLACE WITH PRODUCT NAME&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Imperial&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Star&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Destroyer&lt;/span&gt;
+
+&lt;span class="kd"&gt;extends&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Templates&lt;/span&gt;&lt;span class="sr"&gt;/AzureFunction/&lt;/span&gt;&lt;span class="n"&gt;azureFunctionTemplate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yml&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;CDAppTemplates&lt;/span&gt;
+  &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;updateAssemblyInfo&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;     &lt;span class="kc"&gt;false&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Options&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Whether&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="n"&gt;versions&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;AssemblyInfo&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;
+    &lt;span class="n"&gt;netCoreVersion&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;         &lt;span class="s1"&gt;&amp;#39;TODO REPLACE WITH .NET CORE VERSION&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="mf"&gt;3.1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt;
+    &lt;span class="n"&gt;applicationGuid&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;        &lt;span class="s1"&gt;&amp;#39;TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="mi"&gt;257929&lt;/span&gt;&lt;span class="n"&gt;e89c69471083efb51899b42bdb&lt;/span&gt;
+    &lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;          &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;portfolioName&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;            &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;productName&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;restoreBuildProjects&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;**/*.csproj&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;vstsFeed&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;               &lt;span class="s1"&gt;&amp;#39;11111111-2222-3333-4444-555555555555&amp;#39;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;_NuGet&lt;/span&gt; &lt;span class="n"&gt;feed&lt;/span&gt;
+    &lt;span class="n"&gt;buildConfiguration&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;     &lt;span class="s1"&gt;&amp;#39;Release&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;strong&gt;starter&lt;/strong&gt; template &lt;strong&gt;extends&lt;/strong&gt; the pipeline with the &lt;strong&gt;app-type&lt;/strong&gt; template, in our example the azureFunctionTemplate.yml. With this &lt;strong&gt;magic&lt;/strong&gt; we introduce the template &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/security/templates?view=azure-devops#use-extends-templates"&gt;&lt;strong&gt;extend&lt;/strong&gt;&lt;/a&gt; feature, which sprinkles a dash of &lt;strong&gt;security&lt;/strong&gt; on our pipelines, as we can now check that a pipeline is extended from a trusted template in &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops"&gt;environment&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&amp;amp;tabs=yaml"&gt;service connection&lt;/a&gt; approvals and checks. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Required template checks&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-4.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;app-type&lt;/strong&gt; template is visible, but not modifiable for the owner of the pipeline. We abstract the entire continuous integration (CI) process from the engineers, which promotes &lt;strong&gt;consistency&lt;/strong&gt;, delegates &lt;strong&gt;responsibility&lt;/strong&gt; for the implementation to our common engineering system team, and &lt;strong&gt;encourages&lt;/strong&gt; engineers to be razor-focused on their application. The complexity of injecting our &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates, task sequence, stage and job context, and pipeline plumbing we discussed in previous parts, is abstracted (hidden). &lt;/p&gt;
+&lt;p&gt;Let us briefly review this with a visual.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure-Pipeline-Steps.yml Custom Template&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-5.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With the &lt;strong&gt;custom&lt;/strong&gt; blueprints the starter template presents a much larger exposure area, where we can observe template drift, vulnerability injections, and complexity that the engineering teams should not have to worry about. As discussed, the latest &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates are pulled from the &lt;code&gt;*.Templates&lt;/code&gt; repository and injected into the pipeline instance at queue time.&lt;/p&gt;
+&lt;p&gt;Time to reiterate ... we can do better!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AzureFunctionTemplate.yml Starter Template&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-6.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With the &lt;strong&gt;app-type&lt;/strong&gt; blueprints, the starter template has a much smaller exposure area. The latest &lt;strong&gt;app-type&lt;/strong&gt; template is pulled from the &lt;code&gt;*.AppTemplates&lt;/code&gt; repository, which in turn injects the latest &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates from the &lt;code&gt;*.Templates&lt;/code&gt; repository.&lt;/p&gt;
+&lt;p&gt;You should appreciate the magic of the YAML pipelines by now!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Enabling continuous innovation and rapid change&lt;/h1&gt;
+&lt;p&gt;We always start our YAML awareness and training workshops with the following scenario and question: "&lt;em&gt;Assume we have 1000 classic pipelines and 1000 YAML pipelines, and we need to make a change to one of the pipeline tasks that takes approximately 1 minute. How long will it take us to change all of the classic pipelines and all of the YAM pipelines?&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;We then give everyone 5 minutes to discuss and place their bets. Discussions vary, but usually include reference to mind-numbing classic pipeline editor, &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops"&gt;Task groups&lt;/a&gt;, code search and replace, followed by vibrant debates and eventually stunned silence ... the proverbial "room full of crickets."&lt;/p&gt;
+&lt;p&gt;It is a trick question, because it depends on how the pipelines are designed, which can vary from minutes to days of effort. &lt;/p&gt;
+&lt;p&gt;What should be evident, however, is that any change will be &lt;strong&gt;faster&lt;/strong&gt;, &lt;strong&gt;simpler&lt;/strong&gt;, and &lt;strong&gt;safer&lt;/strong&gt; to make if the &lt;strong&gt;consistency&lt;/strong&gt; of our pipelines is high, and the &lt;strong&gt;exposure area&lt;/strong&gt; is small. &lt;/p&gt;
+&lt;p&gt;We recently received a request from DevSecOps to change all our pipelines to always run the DevSecOps scans, instead of just as part of pull request validation builds. It literally took us minute to create a feature branch, tweak the bootstrap template, and validate the change with a collaborative pull request. Once merged into the *.Templates repository, all new pipeline instances showcased the new default behaviour. DevSecOps were happy and the engineering teams unaware of any change.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Enabling automation&lt;/h1&gt;
+&lt;p&gt;Lastly, we realised that our self-service automation goal is also no longer a distant dream. The app-type templates enable us to ask the engineering teams a few questions, then run automation that creates a new application repository and pipeline in seconds - and consistently! That, however, is a story for another day in Part 7: Self-service automation - A dream turns into reality q;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;What is next?&lt;/h1&gt;
+&lt;p&gt;We have now covered the continuous integration (CI), also referred to as build, pipeline though the lens of YAML. You can think of the &lt;strong&gt;blueprints&lt;/strong&gt; and associated &lt;strong&gt;templates&lt;/strong&gt; as re-usable LEGO blocks, ranging from a bag of "do it yourself" blocks, to complex and detailed kits, such as the Imperial Star Destroyer.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LEGO Imperial Star Destroyer kit
+&lt;img alt="LEGO Image" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Next, we will explore continuous deployment (CD). See you in part 6.&lt;/p&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 4: Pipelines - Magic of queue time assembly</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html" rel="alternate"></link><published>2021-01-13T00:00:00-08:00</published><updated>2021-01-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-01-13:/yaml-pipelines-part4.html</id><summary type="html">&lt;p&gt;We can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to our exciting pipeline journey, as outlined in &lt;a href="/why-pipelines-part1.html"&gt;part1&lt;/a&gt;. It is time to move from theory to practice and explore some of the magic that is pushing us from the classic to the new YAML-based Azure Pipelines.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Re-usable Templates&lt;/h1&gt;
 &lt;p&gt;In &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry&lt;/a&gt; we covered YAML pipelines and why they are so exciting. Ardent classic pipeline supporters will argue that &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops"&gt;Task Groups&lt;/a&gt; offer the same feature as YAML templates - I would argue similar, but not the same. Why? Both allow us to abstract pipeline logic into re-usable containers, which can be included in pipeline definitions.&lt;/p&gt;
@@ -462,10 +698,10 @@
 &lt;li&gt;&lt;a href="/yaml-pipelines-part2.html"&gt;Part 2: Pipelines - Introduction, variables and why spaces matter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/yaml-pipelines-part3.html"&gt;Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/yaml-pipelines-part4.html"&gt;Part 4: Pipelines - Magic of queue time assembly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/yaml-pipelines-part5.html"&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Coming soon:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/li&gt;
 &lt;li&gt;Part 6: Pipelines - From CI to CD and beyond in one pipeline&lt;/li&gt;
 &lt;li&gt;Part 7: Self-service automation - A dream turns into reality&lt;/li&gt;
 &lt;/ul&gt;
