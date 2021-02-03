@@ -82,3 +82,8 @@ It triggered a pipeline working group, awareness workshops, and even four laptop
 ![CICD Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part1-3.png)
 
 Welcome YAML based pipelines, which we will introduce in [part 2](yaml-pipelines-part2.html) of this series.
+
+---
+
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | 
+
