@@ -133,5 +133,9 @@ Simplicity is a goal that will drive our future pipeline endeavors and define ou
 
 # What is next?
 
-Now that we appreciate the power and some of the magic, we can shift gears to our blueprints. See you in part 5.
+Now that we appreciate the power and some of the magic, we can shift gears to our blueprints. See you in [part 5](yaml-pipelines-part5.html).
+
+---
+
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | 
 
