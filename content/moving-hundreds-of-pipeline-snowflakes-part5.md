@@ -275,6 +275,12 @@ Lastly, we realised that our self-service automation goal is also no longer a di
 We have now covered the continuous integration (CI), also referred to as build, pipeline though the lens of YAML. You can think of the **blueprints** and associated **templates** as re-usable LEGO blocks, ranging from a bag of "do it yourself" blocks, to complex and detailed kits, such as the Imperial Star Destroyer.
 
 > LEGO Imperial Star Destroyer kit
+>
 > ![LEGO Image](/images/moving-hundreds-of-pipeline-snowflakes-part5-3.png) 
 
-Next, we will explore continuous deployment (CD). See you in part 6.
+Next, we will explore continuous deployment (CD). See you in part 6 (coming soon).
+
+---
+
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | Part 5 | 
+

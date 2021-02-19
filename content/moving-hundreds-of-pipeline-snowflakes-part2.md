@@ -248,5 +248,9 @@ With the various names popping up - classic, unified, YAML, and multi-stage - it
 
 # What is next?
 
-If erroneous spaces do not rattle you, we are ready to jump into Part 3 to explore the power of templates and how we are cooking up a storm of re-usable magic.
+If erroneous spaces do not rattle you, we are ready to jump into [part 3](yaml-pipelines-part3.html) to explore the power of templates and how we are cooking up a storm of re-usable magic.
+
+---
+
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | Part 2 | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | 
 
