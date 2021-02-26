@@ -12,32 +12,50 @@ Welcome back to another installment of our exciting pipeline journey, as outline
 
 # Why this post?
 
-@TBD@
+We have received feedback from the engineering teams and our inspect and adapt workshops, that YAML pipelines are complex and require a steep learning curve. 
+
+Perhaps I am biased, but I disagree. My four cents (points):
+
+- YAML pipelines are more intuitive to engineers familiar with code.
+- Apart from the visual value, the Classic pipeline editor adds no value to the editing experience. Adding a step in a YAML pipeline is as simple  (similar) as adding a step in a classic pipeline.
+- If all else fails, create your Azure Pipeline in your editor of choice and export to YAML. That is how we started many moons ago and a great way to get familiar with the [YAML schema](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema).
+- When you start using pre-packaged templates, covered in [part 4](/yaml-pipelines-part4.html), [part 5](/yaml-pipelines-part5.html) and revisited herein, the adoption of YAML pipelines becomes a no-brainer. 
+
+> "_Simplicity is the ultimate sophistication_" - Leonardo da Vinci
 
 ---
 
 # Generic pipeline value streams
 
+Let us take a few steps back and take a quick look at an Azure Pipeline from a high altitude. Each pipeline is made of one or more stages, each of which is a collection of related jobs, each of which is a collection of steps.
+
+> Azure Pipeline from space
+> ![Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-0.png)
+
+Let us skip stages, zoom in, and start at the point of jobs, as shown above.
+
 "_*_A job is a collection of steps run by an agent or on a server. Jobs can run conditionally and might depend on earlier jobs._*_" - [yaml-schema](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#job)
 
 When you add SonarQube to your pipeline, you know (or will find out) that the SonarQube **Prepare**, **Analyse**, and **Publish** steps must run in the same job context as the **build**. This is not a new constraint and applies to the **Classic**, **YAML out-of-the-box**, and our **Blueprint-based** Azure Pipelines.
 
-The **simplest** pipeline you can configure is a single-job pipeline, which runs your **build**and **test** steps, the **DevSecOps** steps (SonarQube, WhiteSource), and the **BuildingCode** steps within one and the same job 1 context, as shown below.
+The **simplest** pipeline you can configure is a single-job pipeline, which runs your **build** and **test** steps, the **DevSecOps** steps (SonarQube, WhiteSource), and the **BuildingCode** steps within one and the same job 1 context, as shown below.
 
 > Single Job Pipeline
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png)
 
-When you split your pipeline into two jJobs you have two separate job contexts. Similar to the single-job you could run both the **DevSecOps** and the **BuildingCode** steps within the same job 1 context. Alternatively you could run the **DevSecOps** in the job 1 context and the **BuildingCode** steps in the job 2 context, as shown below. 
+When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the **DevSecOps** and the **BuildingCode** steps within the same job 1 context. Alternatively you could run the **DevSecOps** in the job 1 context and the **BuildingCode** steps in the job 2 context, as shown below. 
 
 > Dual Job Pipeline
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png)
-
-The same strategies apply to pipelines with 3 or more jobs. As you increase the number of jobs, you can embrace parallelism, introduce job dependencies, and isolate steps in separate contexts. 
+With multiple jobs you can embrace parallelism, introduce job dependencies and flows, isolate steps in separate job contexts, and run steps on different agent specifications (Linux, Windows, macOS) - all in one pipeline.
 
 > Multi Job Pipeline
 > ![Multi Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-3.png)
 
-Remember, "_with power, comes great responsibility_" and we inherit complexity and throw simplicity out of the window. In fact, you can create a really powerful, but also complex and hard to maintain and support pipeline. The choice is **yours**!
+Remember, "_with power, comes great responsibility_". As we embrace complexity, we throw simplicity out of the window. In fact, as with the pile of LEGO blocks analogy we used in [part 5](/yaml-pipelines-part5.html), you can create really powerful, but also complex and hard to evolve and maintain pipelines. The choice is **yours**!
+
+> WHAT and HOW you build is up to you...
+> ![LEGO](/images/moving-hundreds-of-pipeline-snowflakes-part6-7.jpg)
 
 ---
 
@@ -47,19 +65,19 @@ We covered the basics and the power of YAML templates in previous parts of this 
 
  Our **Bootstrap** template is a standard YAML template with conditional statements. Visualise the internals as a **switch** statement, which injects templates containing steps, based on the **bootstrapMode** parameter passed.
 
-The following table summarises the currently available **bootstrapmode**s, the template and associated steps it injects into your pipeline at queue time.
+The following table summarises the currently available bootstrap **modes**, the **templates** and associated **steps** it injects into your pipeline at queue time.
 
-| BOOTSTRAPMODE    | INJECT TEMPLATE   | RUN STEPS                                             |
-|------------------|-------------------|-------------------------------------------------------|
-| init             | DevSecOpsInit.yml | SonarQube Prepare                                     |
-| devsecopsonly    | DevSecOps.yml     | SonarQube Analyse, SonarQube Publish, and WhiteSource |
-| buildingcodeonly | BuildingCode.yml  | BuildingCode Scripts, such as Stryker                 |
-| run              | DevSecOps.yml **and** BuildingCode.yml | SonarQube Analyse, SonarQube Publish, WhiteSource, and BuildCode |
+| BOOTSTRAPMODE    | INJECT TEMPLATE   | RUN STEPS                                             | TEMPLATE OWNED BY  |
+|------------------|-------------------|-------------------------------------------------------|--------------------|
+| init             | DevSecOpsInit.yml | SonarQube Prepare                                     | DevSecOps |
+| devsecopsonly    | DevSecOps.yml     | SonarQube Analyse, SonarQube Publish, and WhiteSource | DevSecOps |
+| buildingcodeonly | BuildingCode.yml  | BuildingCode Scripts, such as Stryker                 | Engineering Practices | 
+| run              | DevSecOps.yml **+** BuildingCode.yml | SonarQube Analyse, SonarQube Publish, WhiteSource, and BuildCode | DevSecOps and Engineering Practices |
 
 Here is a visualisation of the above table for the visual minds.
 
 > Bootstrap Template and Bootstrap Modes
-> ![Bootstrap](/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png)
+> ![Bootstrap](/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png) 
 
 > **TIP** <br/>
 > Our Bootstrap.yml templates is a standard YAML-template, as are the templates it injects at queue time. There is no hidden cloak and dagger technology or additional complexity! 
