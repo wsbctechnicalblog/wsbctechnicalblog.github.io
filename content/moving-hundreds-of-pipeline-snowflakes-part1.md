@@ -13,11 +13,13 @@ In this series we are going to invite you on our journey of grappling with hundr
 - [Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry](/yaml-pipelines-part3.html)
 - [Part 4: Pipelines - Magic of queue time assembly](/yaml-pipelines-part4.html)
 - [Part 5: Pipelines - Blueprints to fuel consistency and enablement](/yaml-pipelines-part5.html)
+- [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part5.html)
 
 Coming soon:
 
-- Part 6: Pipelines - From CI to CD and beyond in one pipeline
-- Part 7: Self-service automation - A dream turns into reality
+- Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines
+- Part TBD: Pipelines - From CI to CD and beyond in one pipeline
+- Part TBD: Self-service automation - A dream turns into reality
 
 ---
 
@@ -85,5 +87,5 @@ Welcome YAML based pipelines, which we will introduce in [part 2](yaml-pipelines
 
 ---
 
-> Series Bread Crumbs | Part 1, TOC | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | 
+> Series Bread Crumbs | Part 1, TOC | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | 
 

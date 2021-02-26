@@ -6,7 +6,7 @@ Slug: yaml-pipelines-part5
 Author: Willy-Peter Schaub
 Summary: Think of **blueprints** and associated **templates** as re-usable LEGO blocks, ranging from a bag of "do it yourself" blocks, to complex and detailed kits, such as the Imperial Star Destroyer.
 
-Welcome back to another installment of our exciting pipeline journey, as outlined in [part 1](/why-pipelines-part1.html). After covering some of the gems and magic in [part 5](/yaml-pipelines-part5.html) we will peek at our pipeline blueprints.
+Welcome back to another installment of our exciting pipeline journey, as outlined in [part 1](/why-pipelines-part1.html). After covering some of the gems and magic in [part 4](/yaml-pipelines-part4.html) we will peek at our pipeline blueprints.
 
 ---
 
