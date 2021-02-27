@@ -43,7 +43,7 @@ The **simplest** pipeline you can configure is a single-job pipeline, which runs
 > Single Job Pipeline
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png)
 
-When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the **DevSecOps** and the **BuildingCode** steps within the same job 1 context. Alternatively you could run the **DevSecOps** in the job 1 context and the **BuildingCode** steps in the job 2 context, as shown below. 
+When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the **DevSecOps** and the **BuildingCode** steps within the same job 1 context. Alternatively, you could run the **DevSecOps** in the job 1 context and the **BuildingCode** steps in the job 2 context, as shown below. 
 
 > Dual Job Pipeline
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png)
@@ -65,7 +65,7 @@ We covered the basics and the power of YAML templates in previous parts of this 
 
  Our **Bootstrap** template is a standard YAML template with conditional statements. Visualise the internals as a **switch** statement, which injects templates containing steps, based on the **bootstrapMode** parameter passed.
 
-The following table summarises the currently available bootstrap **modes**, the **templates** and associated **steps** it injects into your pipeline at queue time.
+The following table summarises the currently available bootstrap **modes**, the **templates**, and associated **steps** it injects into your pipeline at queue time.
 
 | BOOTSTRAPMODE    | INJECT TEMPLATE   | RUN STEPS                                             | TEMPLATE OWNED BY  |
 |------------------|-------------------|-------------------------------------------------------|--------------------|
@@ -106,90 +106,7 @@ Our **Azure-Pipeline-Steps.yml** is a generic blueprint that implements the sing
 > Single Job Pipeline
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png)
 
-All you need to to, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps.
-
-```yml
-trigger:
-  batch: true
-  branches:
-    include:
-    - '*'
-  paths:
-    exclude:
-    - pipeline
-
-name:
-  $(portfolioName)_$(productName)_$(GITVERSION_MAJORMINORPATCH)_$(date:yyyyMMdd).$(date:HHmmss).$(Build.SourceBranchName)
-
-# Configure the default agent pool and image to use for your pipeline
-pool:
-  name:                 'Azure Pipelines'
-  vmImage:              'windows-latest'
-
-# Variables
-variables:
-  BuildConfiguration:   Release
-  BuildPlatform:        'Any CPU'
-  templateVersion:      1.0.9
-  portfolioName:        'TODO REPLACE WITH PORTFOLIO NAME'
-  productName:          'TODO REPLACE WITH PRODUCT NAME'
-  productGuid:          'TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS'
-
-# Repository resources
-resources:
-  repositories:
-  - repository: CDTemplates
-    type: git
-    name: 'Common-Engineering-System/AzureDevOps.Automation.Pipeline.Templates'
-
-stages:
-- stage: ContinuousIntegration
-  displayName: Continuous Integration
-  jobs:
-  - job: ContinuousIntegration
-    steps:
-    - task: gitversion/setup@0
-      displayName: Install GitVersion
-      inputs:
-        versionSpec: '5.x'
-
-    - task: gitversion/execute@0
-      displayName: Use GitVersion
-        
-    # --------------------------------------------------------------------------
-    # PREREQUISITES
-    # - Run steps that have to run before the build here, for example NPM, NuGet
-
-    - template: Templates/Bootstrap.yml@CDTemplates
-      parameters:
-        bootstrapMode:    'init'
-        applicationType:  'TODO REPLACE WITH SUPPORTED TYPE' # dotnet, angular
-        applicationGuid:  $(productGuid)
-        portfolioName:    $(portfolioName)
-        productName:      $(productName)
-        sourcesDirectory: $(Build.SourcesDirectory)
-
-    # --------------------------------------------------------------------------
-    # CONTINUOUS INTEGRATION BUILD
-    #  TODO Insert your scripts, steps, and tasks here and remove these comments
-
-    # --------------------------------------------------------------------------
-    # CONTINUOUS INTEGRATION TEST
-    #   TODO Insert your scripts, steps, and tasks here and remove this comment
-
-    # --------------------------------------------------------------------------
-    # PUBLISH
-    #   TODO Insert build and test artifact publication tasks
-  
-    - template: Templates/Bootstrap.yml@CDTemplates
-      parameters:
-        bootstrapMode:    'run'
-        applicationType:  'TODO REPLACE WITH SUPPORTED TYPE' # dotnet, angular
-        applicationGuid:  $(productGuid)
-        portfolioName:    $(portfolioName)
-        productName:      $(productName)
-        sourcesDirectory: $(Build.SourcesDirectory)
-```
+All you need to do, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps. You can explore the **Azure-Pipeline-Steps.yml** blueprint in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html).
 
 Our **Azure-Pipeline-Jobs.yml** is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and run the **devseconlyinit** within the same job context. Lastly, it runs the **buildingcodeonly** steps in a different job context.
 
@@ -198,7 +115,7 @@ Our **Azure-Pipeline-Jobs.yml** is a generic blueprint that implements the multi
 
 As with the Azure-Pipeline-Steps.yml blueprint, you then search for the **TODO** placeholders and update relevant parameters and insert your build and test steps. It is that simple!
 
-The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.ym,l template into your existing pipeline. THe choice is **yours**!
+The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is **yours**!
 
 ---
 
