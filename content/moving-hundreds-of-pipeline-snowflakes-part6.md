@@ -119,6 +119,24 @@ The genetic blueprints work well for new pipelines. If you already have a YAML-b
 
 ---
 
+# Blueprint-related questions
+
+Here are a few of the top questions we have received from engineering to date.
+
+## Q1: Who owns our blueprints?
+
+TBD **WORK IN PROGRESS**
+
+## Q2: How can engineers make changes to the blueprints?
+
+TBD **WORK IN PROGRESS**
+
+## Q3: Why are we so fixated on the consistency and simplicity goals?
+
+TBD **WORK IN PROGRESS**
+
+---
+
 # What is next?
 
 Now that we all agree that neither the bootstrap nor generic templates are rocket science, and that YAML-based pipelines are as complex as **you** make them, we can move ahead with the adoption of our new pipelines. 
