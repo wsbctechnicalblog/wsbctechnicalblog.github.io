@@ -123,17 +123,29 @@ The genetic blueprints work well for new pipelines. If you already have a YAML-b
 
 Here are a few of the top questions we have received from engineering to date.
 
-## Q1: Who owns our blueprints?
+## Q1: Who owns our pipeline blueprints?
 
-TBD **WORK IN PROGRESS**
+![Pull Request](/images/moving-hundreds-of-pipeline-snowflakes-part6-8.png)
+
+Our common engineering system pipeline working group, a cluster of engineers representing architecture, development, operations, and security have joint forces to pursue our quest for **automation**, **consistency**, **security**, **simplicity**, and **alignment** with our guardrails (a friendlier term for governance). While we are all accountable for the blueprints and templates dscussed herein, DevSecOps owns the DevSecOps*.yml templates and Engineering Practices the BuildingCode templates and associated scripts.
 
 ## Q2: How can engineers make changes to the blueprints?
 
-TBD **WORK IN PROGRESS**
+![Pull Request](/images/moving-hundreds-of-pipeline-snowflakes-part6-9.png)
+
+Using the [pull request](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests) workflow, engineers can can discuss blueprint and template changes and agree to merge them once all stakeholders approve. We strive for complete transparency, allowing everyone to view the blueprints and associated templates, and contribute towards the continuous innovation of our YAML templates.
 
 ## Q3: Why are we so fixated on the consistency and simplicity goals?
 
-TBD **WORK IN PROGRESS**
+![Pull Request](/images/moving-hundreds-of-pipeline-snowflakes-part6-10.png)
+
+Infrastructure as code (IaC) is typically associated with the process of managing and provisioning computer data centers through machine-readable configuration files. The aim is to deprecate physical hardware configuration and interactive configuration tools. 
+
+Within the context of our common engineering system, we are striving to use infrastructure as code to provision our continuous delivery pipelines and associated services as well. While the classic Azure Pipelines are powerful and well established, they are configured using a graphical configuration tool and tend to become hard to maintain and enhance over time.
+
+The switch to YAML-based Azure Pipelines is enabling us to version control and store the pipelines as machine- and human-readable configuration code. If and only if we manage to create a consistent infrastructure of pipelines, using templates and blueprints, we not only enable our engineering teams, but take the first steps towards self service automation.
+
+But, that is a vast topic for another day. Back to our YAML pipelines.
 
 ---
 
