@@ -95,21 +95,110 @@ Here is a visualisation of the above table for the visual minds.
 
 You now have the **option** of including the Bootstrap.yml template instead of explicitly including SonarQube, WhiteSource, and Building Code steps. Note I say **option**, not that you must do it one way or the other. 
 
-Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps and accountability to the Bootstrap.yml template, which is enhanced, maintained and supported by our pipeline working group. The choice is **yours**!
+Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps and accountability to the Bootstrap.yml template, which is continuously enhanced, maintained and supported by our pipeline working group. The choice is **yours**!
 
 ---
 
 # Generic Blueprint templates demystified
 
-@TBD@
+Our **Azure-Pipeline-Steps.yml** is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and to **run** the DevSecOps and Building code steps.
 
 > Single Job Pipeline
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png)
 
-@TBD@
+All you need to to, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps.
+
+```yml
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+  paths:
+    exclude:
+    - pipeline
+
+name:
+  $(portfolioName)_$(productName)_$(GITVERSION_MAJORMINORPATCH)_$(date:yyyyMMdd).$(date:HHmmss).$(Build.SourceBranchName)
+
+# Configure the default agent pool and image to use for your pipeline
+pool:
+  name:                 'Azure Pipelines'
+  vmImage:              'windows-latest'
+
+# Variables
+variables:
+  BuildConfiguration:   Release
+  BuildPlatform:        'Any CPU'
+  templateVersion:      1.0.9
+  portfolioName:        'TODO REPLACE WITH PORTFOLIO NAME'
+  productName:          'TODO REPLACE WITH PRODUCT NAME'
+  productGuid:          'TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS'
+
+# Repository resources
+resources:
+  repositories:
+  - repository: CDTemplates
+    type: git
+    name: 'Common-Engineering-System/AzureDevOps.Automation.Pipeline.Templates'
+
+stages:
+- stage: ContinuousIntegration
+  displayName: Continuous Integration
+  jobs:
+  - job: ContinuousIntegration
+    steps:
+    - task: gitversion/setup@0
+      displayName: Install GitVersion
+      inputs:
+        versionSpec: '5.x'
+
+    - task: gitversion/execute@0
+      displayName: Use GitVersion
+        
+    # --------------------------------------------------------------------------
+    # PREREQUISITES
+    # - Run steps that have to run before the build here, for example NPM, NuGet
+
+    - template: Templates/Bootstrap.yml@CDTemplates
+      parameters:
+        bootstrapMode:    'init'
+        applicationType:  'TODO REPLACE WITH SUPPORTED TYPE' # dotnet, angular
+        applicationGuid:  $(productGuid)
+        portfolioName:    $(portfolioName)
+        productName:      $(productName)
+        sourcesDirectory: $(Build.SourcesDirectory)
+
+    # --------------------------------------------------------------------------
+    # CONTINUOUS INTEGRATION BUILD
+    #  TODO Insert your scripts, steps, and tasks here and remove these comments
+
+    # --------------------------------------------------------------------------
+    # CONTINUOUS INTEGRATION TEST
+    #   TODO Insert your scripts, steps, and tasks here and remove this comment
+
+    # --------------------------------------------------------------------------
+    # PUBLISH
+    #   TODO Insert build and test artifact publication tasks
+  
+    - template: Templates/Bootstrap.yml@CDTemplates
+      parameters:
+        bootstrapMode:    'run'
+        applicationType:  'TODO REPLACE WITH SUPPORTED TYPE' # dotnet, angular
+        applicationGuid:  $(productGuid)
+        portfolioName:    $(portfolioName)
+        productName:      $(productName)
+        sourcesDirectory: $(Build.SourcesDirectory)
+```
+
+Our **Azure-Pipeline-Jobs.yml** is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and run the **devseconlyinit** within the same job context. Lastly, it runs the **buildingcodeonly** steps in a different job context.
 
 > Dual Job Pipeline
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png)
+
+As with the Azure-Pipeline-Steps.yml blueprint, you then search for the **TODO** placeholders and update relevant parameters and insert your build and test steps. It is that simple!
+
+The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.ym,l template into your existing pipeline. THe choice is **yours**!
 
 ---
 
