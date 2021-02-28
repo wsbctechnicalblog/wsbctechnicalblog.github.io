@@ -143,7 +143,7 @@ Infrastructure as code (IaC) is typically associated with the process of managin
 
 Within the context of our common engineering system, we are striving to use infrastructure as code to provision our continuous delivery pipelines and associated services as well. While the classic Azure Pipelines are powerful and well established, they are configured using a graphical configuration tool and tend to become hard to maintain and enhance over time.
 
-The switch to YAML-based Azure Pipelines is enabling us to version control and store the pipelines as machine- and human-readable configuration code. If and only if we manage to create a consistent infrastructure of pipelines, using templates and blueprints, we not only enable our engineering teams, but take the first steps towards self service automation.
+The switch to YAML-based Azure Pipelines is enabling us to version control and store the pipelines as machine- and human-readable configuration code. We refer to this as **pipeline as code (PaC)**. If and only if we manage to create a consistent infrastructure of pipelines, using templates and blueprints, we not only enable our engineering teams, but take the first steps towards self service automation.
 
 But, that is a vast topic for another day. Back to our YAML pipelines.
 
