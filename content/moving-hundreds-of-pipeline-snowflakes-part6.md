@@ -127,13 +127,13 @@ Here are a few of the top questions we have received from engineering to date.
 
 ![Pull Request](/images/moving-hundreds-of-pipeline-snowflakes-part6-8.png)
 
-Our common engineering system pipeline working group, a cluster of engineers representing architecture, development, operations, and security have joint forces to pursue our quest for **automation**, **consistency**, **security**, **simplicity**, and **alignment** with our guardrails (a friendlier term for governance). While we are all accountable for the blueprints and templates dscussed herein, DevSecOps owns the DevSecOps*.yml templates and Engineering Practices the BuildingCode templates and associated scripts.
+Our common engineering system pipeline working group, a cluster of engineers representing architecture, development, operations, and security have joint forces to pursue our quest for **automation**, **consistency**, **security**, **simplicity**, and **alignment** with our guardrails (a friendlier term for governance). While we are all accountable for the blueprints and templates discussed herein, DevSecOps owns the DevSecOps*.yml templates and Engineering Practices the BuildingCode templates and associated scripts.
 
 ## Q2: How can engineers make changes to the blueprints?
 
 ![Pull Request](/images/moving-hundreds-of-pipeline-snowflakes-part6-9.png)
 
-Using the [pull request](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests) workflow, engineers can can discuss blueprint and template changes and agree to merge them once all stakeholders approve. We strive for complete transparency, allowing everyone to view the blueprints and associated templates, and contribute towards the continuous innovation of our YAML templates.
+Using the [pull request](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests) workflow, engineers can discuss blueprint and template changes and agree to merge them once all stakeholders approve. We strive for complete transparency, allowing everyone to view the blueprints and associated templates, and contribute towards the continuous innovation of our YAML templates.
 
 ## Q3: Why are we so fixated on the consistency and simplicity goals?
 
