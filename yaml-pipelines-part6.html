@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part6.html" rel="bookmark"
+            title="Permalink to Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 02 March 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Neither the bootstrap nor generic templates are rocket science, and the YAML-based pipelines are as complex as <strong>you</strong> make them.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to another installment of our exciting pipeline journey, as outlined in <a href="/why-pipelines-part1.html">part 1</a>. After introducing the blueprint templates on <a href="/yaml-pipelines-part5.html">part 5</a>, it is time to emphasise that these new YAML-based pipelines are not complex if applied correctly.</p>
+<hr>
+<h1>Why this post?</h1>
+<p>We have received feedback from the engineering teams and our inspect and adapt workshops, that YAML pipelines are complex and require a steep learning curve. </p>
+<p>Perhaps I am biased, but I disagree. My four cents (points):</p>
+<ul>
+<li>YAML pipelines are more intuitive to engineers familiar with code.</li>
+<li>Apart from the visual value, the Classic pipeline editor adds no value to the editing experience. Adding a step in a YAML pipeline is as simple  (similar) as adding a step in a classic pipeline.</li>
+<li>If all else fails, create your Azure Pipeline in your editor of choice and export to YAML. That is how we started many moons ago and a great way to get familiar with the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema">YAML schema</a>.</li>
+<li>When you start using pre-packaged templates, covered in <a href="/yaml-pipelines-part4.html">part 4</a>, <a href="/yaml-pipelines-part5.html">part 5</a> and revisited herein, the adoption of YAML pipelines becomes a no-brainer. </li>
+</ul>
+<blockquote>
+<p>"<em>Simplicity is the ultimate sophistication</em>" - Leonardo da Vinci</p>
+</blockquote>
+<hr>
+<h1>Generic pipeline value streams</h1>
+<p>Let us take a few steps back and take a quick look at an Azure Pipeline from a high altitude. Each pipeline is made of one or more stages, each of which is a collection of related jobs, each of which is a collection of steps.</p>
+<blockquote>
+<p>Azure Pipeline from space
+<img alt="Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-0.png"></p>
+</blockquote>
+<p>Let us skip stages, zoom in, and start at the point of jobs, as shown above.</p>
+<p>"<em><em><em>A job is a collection of steps run by an agent or on a server. Jobs can run conditionally and might depend on earlier jobs.</em></em></em>" - <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#job">yaml-schema</a></p>
+<p>When you add SonarQube to your pipeline, you know (or will find out) that the SonarQube <strong>Prepare</strong>, <strong>Analyse</strong>, and <strong>Publish</strong> steps must run in the same job context as the <strong>build</strong>. This is not a new constraint and applies to the <strong>Classic</strong>, <strong>YAML out-of-the-box</strong>, and our <strong>Blueprint-based</strong> Azure Pipelines.</p>
+<p>The <strong>simplest</strong> pipeline you can configure is a single-job pipeline, which runs your <strong>build</strong> and <strong>test</strong> steps, the <strong>DevSecOps</strong> steps (SonarQube, WhiteSource), and the <strong>BuildingCode</strong> steps within one and the same job 1 context, as shown below.</p>
+<blockquote>
+<p>Single Job Pipeline
+<img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png"></p>
+</blockquote>
+<p>When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the <strong>DevSecOps</strong> and the <strong>BuildingCode</strong> steps within the same job 1 context. Alternatively, you could run the <strong>DevSecOps</strong> in the job 1 context and the <strong>BuildingCode</strong> steps in the job 2 context, as shown below. </p>
+<blockquote>
+<p>Dual Job Pipeline
+<img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png">
+With multiple jobs you can embrace parallelism, introduce job dependencies and flows, isolate steps in separate job contexts, and run steps on different agent specifications (Linux, Windows, macOS) - all in one pipeline.</p>
+<p>Multi Job Pipeline
+<img alt="Multi Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-3.png"></p>
+</blockquote>
+<p>Remember, "<em>with power, comes great responsibility</em>". As we embrace complexity, we throw simplicity out of the window. In fact, as with the pile of LEGO blocks analogy we used in <a href="/yaml-pipelines-part5.html">part 5</a>, you can create really powerful, but also complex and hard to evolve and maintain pipelines. The choice is <strong>yours</strong>!</p>
+<blockquote>
+<p>WHAT and HOW you build is up to you...
+<img alt="LEGO" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-7.jpg"></p>
+</blockquote>
+<hr>
+<h1>Bootstrap template demystified</h1>
+<p>We covered the basics and the power of YAML templates in previous parts of this pipeline series.</p>
+<p>Our <strong>Bootstrap</strong> template is a standard YAML template with conditional statements. Visualise the internals as a <strong>switch</strong> statement, which injects templates containing steps, based on the <strong>bootstrapMode</strong> parameter passed.</p>
+<p>The following table summarises the currently available bootstrap <strong>modes</strong>, the <strong>templates</strong>, and associated <strong>steps</strong> it injects into your pipeline at queue time.</p>
+<table>
+<thead>
+<tr>
+<th>BOOTSTRAPMODE</th>
+<th>INJECT TEMPLATE</th>
+<th>RUN STEPS</th>
+<th>TEMPLATE OWNED BY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>init</td>
+<td>DevSecOpsInit.yml</td>
+<td>SonarQube Prepare</td>
+<td>DevSecOps</td>
+</tr>
+<tr>
+<td>devsecopsonly</td>
+<td>DevSecOps.yml</td>
+<td>SonarQube Analyse, SonarQube Publish, and WhiteSource</td>
+<td>DevSecOps</td>
+</tr>
+<tr>
+<td>buildingcodeonly</td>
+<td>BuildingCode.yml</td>
+<td>BuildingCode Scripts, such as Stryker</td>
+<td>Engineering Practices</td>
+</tr>
+<tr>
+<td>run</td>
+<td>DevSecOps.yml <strong>+</strong> BuildingCode.yml</td>
+<td>SonarQube Analyse, SonarQube Publish, WhiteSource, and BuildCode</td>
+<td>DevSecOps and Engineering Practices</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a visualisation of the above table for the visual minds.</p>
+<blockquote>
+<p>Bootstrap Template and Bootstrap Modes
+<img alt="Bootstrap" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png"> </p>
+<p><strong>TIP</strong> <br/>
+Our Bootstrap.yml templates is a standard YAML-template, as are the templates it injects at queue time. There is no hidden cloak and dagger technology or additional complexity! </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="err">- template: Templates/Bootstrap.yml@CDTemplates</span>
+<span class="err">  parameters:</span>
+<span class="err">    bootstrapMode:    &#39;init&#39;</span>
+<span class="err">    applicationType:  &#39;TODO REPLACE WITH SUPPORTED TYPE&#39; # dotnet, angular</span>
+<span class="err">    applicationGuid:  $(productGuid)</span>
+<span class="err">    portfolioName:    $(portfolioName)</span>
+<span class="err">    productName:      $(productName)</span>
+<span class="err">    sourcesDirectory: $(Build.SourcesDirectory)</span>
+</code></pre></div>
+
+<p>You now have the <strong>option</strong> of including the Bootstrap.yml template instead of explicitly including SonarQube, WhiteSource, and Building Code steps. Note I say <strong>option</strong>, not that you must do it one way or the other. </p>
+<p>Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps and accountability to the Bootstrap.yml template, which is continuously enhanced, maintained and supported by our pipeline working group. The choice is <strong>yours</strong>!</p>
+<hr>
+<h1>Generic Blueprint templates demystified</h1>
+<p>Our <strong>Azure-Pipeline-Steps.yml</strong> is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and to <strong>run</strong> the DevSecOps and Building code steps.</p>
+<blockquote>
+<p>Single Job Pipeline
+<img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png"></p>
+</blockquote>
+<p>All you need to do, is find the <strong>TODO</strong> placeholders to update relevant parameters and insert your build and test steps. You can explore the <strong>Azure-Pipeline-Steps.yml</strong> blueprint in <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a>.</p>
+<p>Our <strong>Azure-Pipeline-Jobs.yml</strong> is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and run the <strong>devseconlyinit</strong> within the same job context. Lastly, it runs the <strong>buildingcodeonly</strong> steps in a different job context.</p>
+<blockquote>
+<p>Dual Job Pipeline
+<img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png"></p>
+</blockquote>
+<p>As with the Azure-Pipeline-Steps.yml blueprint, you then search for the <strong>TODO</strong> placeholders and update relevant parameters and insert your build and test steps. It is that simple!</p>
+<p>The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is <strong>yours</strong>!</p>
+<hr>
+<h1>Blueprint-related questions</h1>
+<p>Here are a few of the top questions we have received from engineering to date.</p>
+<h2>Q1: Who owns our pipeline blueprints?</h2>
+<p><img alt="Pull Request" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-8.png"></p>
+<p>Our common engineering system pipeline working group, a cluster of engineers representing architecture, development, operations, and security have joint forces to pursue our quest for <strong>automation</strong>, <strong>consistency</strong>, <strong>security</strong>, <strong>simplicity</strong>, and <strong>alignment</strong> with our guardrails (a friendlier term for governance). While we are all accountable for the blueprints and templates discussed herein, DevSecOps owns the DevSecOps*.yml templates and Engineering Practices the BuildingCode templates and associated scripts.</p>
+<h2>Q2: How can engineers make changes to the blueprints?</h2>
+<p><img alt="Pull Request" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-9.png"></p>
+<p>Using the <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests">pull request</a> workflow, engineers can discuss blueprint and template changes and agree to merge them once all stakeholders approve. We strive for complete transparency, allowing everyone to view the blueprints and associated templates, and contribute towards the continuous innovation of our YAML templates.</p>
+<h2>Q3: Why are we so fixated on the consistency and simplicity goals?</h2>
+<p><img alt="Pull Request" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-10.png"></p>
+<p>Infrastructure as code (IaC) is typically associated with the process of managing and provisioning computer data centers through machine-readable configuration files. The aim is to deprecate physical hardware configuration and interactive configuration tools. </p>
+<p>Within the context of our common engineering system, we are striving to use infrastructure as code to provision our continuous delivery pipelines and associated services as well. While the classic Azure Pipelines are powerful and well established, they are configured using a graphical configuration tool and tend to become hard to maintain and enhance over time.</p>
+<p>The switch to YAML-based Azure Pipelines is enabling us to version control and store the pipelines as machine- and human-readable configuration code. We refer to this as <strong>pipeline as code (PaC)</strong>. If and only if we manage to create a consistent infrastructure of pipelines, using templates and blueprints, we not only enable our engineering teams, but take the first steps towards self service automation.</p>
+<p>But, that is a vast topic for another day. Back to our YAML pipelines.</p>
+<hr>
+<h1>What is next?</h1>
+<p>Now that we all agree that neither the bootstrap nor generic templates are rocket science, and that YAML-based pipelines are as complex as <strong>you</strong> make them, we can move ahead with the adoption of our new pipelines. </p>
+<ul>
+<li>[X] Consistent pipelines</li>
+<li>[X] Enable engineers</li>
+<li>[X] Simple pipelines</li>
+</ul>
+<p>But wait, there is more ... in the next part 7, my colleague Said will introduce the next generation of blueprints which are even simpler, supporting our goals for consistency and enablement. </p>
+<p>See you in part 7 (coming soon).</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | Part 6 | </p>
+</blockquote>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/yaml-pipelines-part6.html" rel="bookmark"
+         title="Permalink to Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(7)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(9)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (22)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
