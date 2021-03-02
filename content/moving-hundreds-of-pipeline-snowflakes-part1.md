@@ -13,7 +13,7 @@ In this series we are going to invite you on our journey of grappling with hundr
 - [Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry](/yaml-pipelines-part3.html)
 - [Part 4: Pipelines - Magic of queue time assembly](/yaml-pipelines-part4.html)
 - [Part 5: Pipelines - Blueprints to fuel consistency and enablement](/yaml-pipelines-part5.html)
-- [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part5.html)
+- [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part6.html)
 
 Coming soon:
 
