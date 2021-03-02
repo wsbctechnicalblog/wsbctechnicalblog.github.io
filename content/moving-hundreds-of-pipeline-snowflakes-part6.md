@@ -1,5 +1,5 @@
 Title: Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity
-Date: 2021-02-28
+Date: 2021-03-02
 Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: yaml-pipelines-part6
