@@ -16,7 +16,7 @@ Experience has shown that the majority of end users prefer to do self-serve task
  
 When it comes to offering workflow solutions, it has also been demonstrated that end users prefer to do the self-serve activities via Graphical User Interfaces. The flow of various documents and forms gets represented with artifacts or simulacra resembling real world pipes. Those pipes, when put together in certain configurations, form various pipelines.
  
-Many users are by getting familiar with the concept of manipulating pipelines in order to perform the self-serve activities of configuring non-trivial workflows.
+Many users are now getting familiar with the concept of manipulating pipelines in order to perform the self-serve activities of configuring non-trivial workflows.
  
 ## Problem statement
  
@@ -46,6 +46,6 @@ It is therefore urgent to rush and get rid of all GUI tools that enable software
  
 ## What are the advantages of workflow-as-code?
  
-Just by the virtue of disabling engineers from touching the workflow machinery directly, we ensure that any changes to the workflow get implemented through official channels. When a team decides to make changes to the workflow, they cannot do it directly. They must first create a workflow feature branch, make proposed changes in isolation, test them, then open a Pull Request (PR), proposing these changes get merged to the main trunk. The PR gets reviewed by the stakeholders on the CI/CD workflow, and if approved, they will get merged and then materialized as an implemented workflow.
+Just by the virtue of disabling engineers from touching the workflow machinery directly, we ensure that any changes to the workflow get implemented through official channels. When a team decides to make changes to the workflow, they cannot do it directly. They must first create a workflow feature branch, make proposed changes in isolation, test them, then open a Pull Request (PR), proposing these changes get merged to the main trunk. The PR gets reviewed by the stakeholders on the CI/CD workflow, and if approved, the changes will get merged and then materialized as an implemented workflow.
 <br /><br />
  
