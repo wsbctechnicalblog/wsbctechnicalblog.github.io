@@ -74,9 +74,9 @@ You need to investigate and create your own opinion, but here are a few highligh
 
 # Two epiphanies
 
-> ![Pipeline](/images/memory-lane-feature-flags-6.png)
+> ![Pipeline](/images/memory-lane-feature-flags-6b.png)
 >
-> ![Pipeline](/images/memory-lane-feature-flags-7.png)
+> ![Pipeline](/images/memory-lane-feature-flags-7b.png)
 
 ---
 
