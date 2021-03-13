@@ -16,11 +16,34 @@ TBD
 
 TBD
 
+> Capabilities of a privately hosted agent
+>
+> ![AzDO Agent Details](/images/azuredevops-agent-info-1.png)
+
+> Capabilities of a hosted agent
+>
+> ![AzDO Agent LAck of Details](/images/azuredevops-agent-info-2.png)
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
+
+> Azure DevOps Agent Documentation
+>
+> ![AzDO Agent Documentation](/images/azuredevops-agent-info-3.png)
+
+> Azure DevOps Agent Capabilities Documentation
+>
+> ![AzDO Agent Capabilties Documentation](/images/azuredevops-agent-info-4.png)
+
 ---
 
 # How to determine the IP addresses of an Azure DevOps Agent
 
 TBD
+
+
+> macOS Addresses are a mystery
+>
+> ![acOS Address Mystery](/images/azuredevops-agent-info-5.png)
 
 ---
 
