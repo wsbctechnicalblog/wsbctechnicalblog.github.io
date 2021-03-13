@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Wandering down memory lane - feature flags - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/memory-lane-feature-flags.html" rel="bookmark"
+            title="Permalink to Wandering down memory lane - feature flags">Wandering down memory lane - feature flags</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 12 March 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Re-sharing the memories of feature flag sessions, before I pull the plug on my personal blog</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.</p>
+<hr>
+<h1>DevOps vancouver Meetup January 2019</h1>
+<p>We had a really great turnout and a vibrant meetup hosted by <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/members/44231812/">Andre Kaminski</a>, featuring three topics in January 2019:</p>
+<ul>
+<li>Entropy in DevOps Teams: Andrew Rose</li>
+<li>The Virtues of Being T-shaped: Kyle Young</li>
+<li>Progressive Exposure Using Feature Flags: <a href="https://wsbctechnicalblog.github.io/pages/authors.html">Willy Schaub</a></li>
+</ul>
+<blockquote>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-3.png"></p>
+</blockquote>
+<p>You can find a copy of my feature flags presentation <a href="https://1drv.ms/b/s!AoTKFn7kQntwmop6lYMUH2ki07YkpA">HERE</a>. Ping me if the link is blocked by your firewall.</p>
+<hr>
+<h1>Top 6 FAQs from my talk</h1>
+<h2>What's DevOps and what's the link to the session?</h2>
+<blockquote>
+<p>DevOps, by <a href="https://www.donovanbrown.com/post/what-is-devops">Donovan Brown</a></p>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-5.png"></p>
+</blockquote>
+<p>Link to the <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/257318843/">January 2019</a> session and <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/photos/29645676/">photos</a>.</p>
+<h2>When should I use rings versus feature flags?</h2>
+<p>I think of a <strong>package</strong> when using the ring-based deployment model to deploy a release and a small <strong>screwdriver</strong> to "tweak" feature flags to fine-tune the release. See <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> for more details.</p>
+<h2>How do I manage the technical debt introduced by feature flags?</h2>
+<p><strong>KEEP IT SIMPLE!</strong> Define technical governance to clearly define who owns the feature flags, when and how to remove feature flags and the associated technical debt,  and scenarios that are suitable for feature flags. See <a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost">What's the cost of feature flags?</a> for more details.</p>
+<h2>Who owns feature flags?</h2>
+<blockquote>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-2.png"></p>
+</blockquote>
+<p>Most feature flags are scoped to a business feature, backed by a business case, and delivering value, which places the ownership of the feature flag switch with the business. Some feature flags are scoped to an operational feature, which places the ownership with operations (Ops).</p>
+<h2>What do we mean with "Do not hide non-production ready code behind feature flags"?</h2>
+<p>Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breeches by mistake</p>
+<h2>Why the product we introduced at the meetup?</h2>
+<p>You need to investigate and create your own opinion, but here are a few highlights from our evaluation:</p>
+<ul>
+<li>It's a Software as a Service (<strong>SaaS</strong>)</li>
+<li><strong>Simple</strong> administration</li>
+<li>Support for <strong>experimentation</strong></li>
+<li>Feature flag <strong>dependency management</strong></li>
+<li>Identify <strong>stale flags</strong></li>
+<li><strong>Rules</strong> to manage exposure and blast radius</li>
+<li>... and much more!</li>
+</ul>
+<h2>Can you tell me more about circuit breakers?</h2>
+<blockquote>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-4.png"></p>
+</blockquote>
+<p><a href="https://github.com/Netflix/Hystrix/wiki">Hystrix</a> evolved out of resilience engineering work that the Netflix API team began in 2011. See <a href="https://aka.ms/bh-ff-sos">A Rough Path</a>, by Brian Harry for an example, where circuit breakers could have protected us from an Operational meltdown, caused by simply "flipping a flag".</p>
+<hr>
+<h1>Two epiphanies</h1>
+<blockquote>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-6b.png"></p>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-7b.png"></p>
+</blockquote>
+<hr>
+<h1>Last, but not least, our feature flag manifesto</h1>
+<p>On our common engineering site, we have a collection of verbal declaration of intentions, motives, or views of the issuer, for processes and products.</p>
+<p>Here is a copy of our feature flag manifesto.</p>
+<blockquote>
+<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-1.png"></p>
+</blockquote>
+<p>The worlds of our <a href="/why-pipelines-part1.html">pipelines</a> and feature flags are likely to collide when we innovate our ability to <strong>release on demand</strong>. See you there!</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/memory-lane-feature-flags.html" rel="bookmark"
+         title="Permalink to Wandering down memory lane - feature flags">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(8)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(11)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(4)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (24)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

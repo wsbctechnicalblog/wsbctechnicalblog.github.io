@@ -1,5 +1,5 @@
 Title: Wandering down memory lane - feature flags
-Date: 2021-03-09
+Date: 2021-03-12
 Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: memory-lane-feature-flags
