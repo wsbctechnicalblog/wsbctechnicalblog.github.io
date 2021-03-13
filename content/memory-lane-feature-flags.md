@@ -4,7 +4,7 @@ Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: memory-lane-feature-flags
 Author: Willy-Peter Schaub
-Summary: Re-sharing the memories of feature flag sessions, before I pull the plug on my personal blog
+Summary: Use feature flags to fine-tune each release in production.
 
 More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.
 
