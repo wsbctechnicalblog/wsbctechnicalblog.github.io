@@ -81,7 +81,7 @@ To define a pipeline to build, test, and scan an Azure Function requires roughly
 >
 >  ![Information is Beautiful](/images/pipelines-as-code-wrapped-with-prs-2.png)
 
-The difference is an astounding 927 * 272 = 252,144 lines of pipeline code, which could be invested in delivering user-value or solutions such as Photoshop v1.0.
+The difference is an astounding 927 * 272 = 252,144 lines of pipeline code, which could be invested in delivering user-value or solutions such as Photoshop v1.0. We have barely scratched the surface of our continuous deployment (CD) pipelines, which is a topic for another day and a few posts; one of my goals is to increase the 28 lines of pipeline code owner by the engineering team by no more than a handful to add CD to our app-type blueprint-based pipelines.
 
 > We enable our engineers to be razor-focused on their solution and avoid investing their precious time in **wasteful** pipeline code.
 
