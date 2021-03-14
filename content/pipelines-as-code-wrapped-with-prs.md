@@ -40,7 +40,7 @@ With [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelin
 
 The [Azure Repos](https://azure.microsoft.com/en-us/services/devops/repos/), which we used to store our pipeline code, allow us to set a wide range of branch policies to protect our master (trunk) branch that always reflects a production-ready state. One of the policies enforces the use of [Pull Requests](https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops), which allows our common engineering team to review and give actionable and constructive feedback to all proposed pipeline code changes.
 
-> More importantly, we enable our engineers to **contribute** to our common engineering system by submitting pipeline changes and innovations through the pull request workflow. All without the need for elevated privileges or specialized roles, such as Super Users, which complicate our classic pipeline infrastructure.
+> More importantly, we enable our engineers to **contribute** to our common engineering system by submitting pipeline changes and innovations through the pull request workflow. All without the need for elevated privileges or specialized roles, such as Super Users, which complicate the administration of our classic pipeline infrastructure and security.
 
 ---
 
