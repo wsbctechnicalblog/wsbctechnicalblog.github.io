@@ -4,7 +4,7 @@ Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: memory-lane-feature-flags
 Author: Willy-Peter Schaub
-Summary: Re-sharing the memories of feature flag sessions, before I pull the plug on my personal blog
+Summary: Use feature flags to fine-tune each release in production.
 
 More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.
 
@@ -50,7 +50,7 @@ Most feature flags are scoped to a business feature, backed by a business case, 
 
 ## What do we mean with "Do not hide non-production ready code behind feature flags"?
 
-Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breeches by mistake
+Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breaches by mistake.
 
 ## Why the product we introduced at the meetup?
 
