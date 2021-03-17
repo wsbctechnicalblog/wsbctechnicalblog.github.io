@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-03-12T00:00:00-08:00</updated><entry><title>Wandering down memory lane - feature flags</title><link href="https://wsbctechnicalblog.github.io/memory-lane-feature-flags.html" rel="alternate"></link><published>2021-03-12T00:00:00-08:00</published><updated>2021-03-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-12:/memory-lane-feature-flags.html</id><summary type="html">&lt;p&gt;Re-sharing the memories of feature flag sessions, before I pull the plug on my personal blog&lt;/p&gt;</summary><content type="html">&lt;p&gt;More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-03-12T00:00:00-08:00</updated><entry><title>Find the capabilities and IP addresses of an Azure DevOps agent</title><link href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="alternate"></link><published>2021-03-12T00:00:00-08:00</published><updated>2021-03-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-12:/azure-devops-agent-capabilities.html</id><summary type="html">&lt;p&gt;How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Why should we care about an Azure DevOps Agent?&lt;/h1&gt;
+&lt;p&gt;To use our &lt;a href="https://wsbctechnicalblog.github.io/index.html"&gt;Azure Pipelines&lt;/a&gt;, we need the agents. Every time one of our pipelines is triggered, it comes to life on one or more jobs, which are hosted and run an agent.&lt;/p&gt;
+&lt;p&gt;Azure DevOps offers two types of agents. &lt;strong&gt;Microsoft-hosted&lt;/strong&gt; agents are a software as a service (SaaS) offering, where maintenance and upgrades are taken care of for you. Our recommended type of agents!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Self-hosted agents&lt;/strong&gt; give you more control of access and installed software needed for special builds and deployments. For example, we have a self-hosted pool to service our good old &lt;strong&gt;Cobol&lt;/strong&gt; builds.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;How to determine the capabilities of an Azure DevOps Agent&lt;/h1&gt;
+&lt;p&gt;We often get the question: "What software is installed on the agent?" In other words, how do we determine the capabilities of each Azure DevOPs agent.&lt;/p&gt;
+&lt;p&gt;For self-hosted agents you can go to your Azure DevOps &lt;strong&gt;organizational&lt;/strong&gt; setting, Agent pools, select &lt;strong&gt;pool&lt;/strong&gt;, select &lt;strong&gt;Agents&lt;/strong&gt;, select an &lt;strong&gt;agent&lt;/strong&gt;, and finally, select &lt;strong&gt;Capabilities&lt;/strong&gt;. You will be presented with the agent's system capabilities, variables, paths, and installed software, as shown below.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Capabilities of a &lt;strong&gt;self-hosted&lt;/strong&gt; agent&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AzDO Agent Details" src="/images/azuredevops-agent-info-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When you select a Microsoft-hosted agent and pool, the presented capabilities are less exciting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Capabilities of a &lt;strong&gt;Microsoft-hosted&lt;/strong&gt; agent&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AzDO Agent LAck of Details" src="/images/azuredevops-agent-info-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You need to visit the &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted Agents&lt;/a&gt; documentation and scroll down to the &lt;strong&gt;Software&lt;/strong&gt; section. Peruse a list of hosted agents, classic pipeline editor specifications, YAML image labels, and links to software available on each type of agent.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure DevOps Agent Documentation&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AzDO Agent Documentation" src="/images/azuredevops-agent-info-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Select your agent, click on the included software hyperlink, and voila, you have a detailed report of the agent's capabilities.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure DevOps Agent Capabilities Documentation&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AzDO Agent Capabilties Documentation" src="/images/azuredevops-agent-info-4.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;How to determine the IP addresses of an Azure DevOps Agent&lt;/h1&gt;
+&lt;p&gt;The &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted Agents&lt;/a&gt; documentation also gives you information on how to identify possible IP ranges for Microsoft-hosted agents. This information is pivotal if you need to allow the agents to make their way from the public internet, through your firewall, to collaborate with one of your services.&lt;/p&gt;
+&lt;p&gt;Unfortunately, you will also find some small print ... well, it is the same sized font and the note is placed on a prominent Indigo background. It is easy to miss the highlighted part, as shown below, that mentions that the IP addresses for the macOS agents are not included.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;macOS Addresses are a mystery&lt;/p&gt;
+&lt;p&gt;&lt;img alt="macOS Address Mystery" src="/images/azuredevops-agent-info-5.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;First thought is to queue a investigative pipeline on one of the macOS agents and run the &lt;strong&gt;ipconfig getifaddr en0&lt;/strong&gt; command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.&lt;/p&gt;
+&lt;p&gt;Try this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="nf"&gt;task:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;&lt;span class="mi"&gt;@2&lt;/span&gt;
+  &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;targetType&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="kr"&gt;inline&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nl"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="n"&gt;ipecho&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nl"&gt;errorActionPreference&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nl"&gt;pwsh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It reveals the public IP address:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
+100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
+
+... SNIPPED FOR BLOG POST ...
+
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;main&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text-align: center; flex: 1; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Your IP is 13.105.49.13&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+
+...SNIPPED FOR BLOG POST...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lastly, who owns the IP address we just found?&lt;/p&gt;
+&lt;p&gt;Visit &lt;a href="https://ipinfo.io/13.105.49.13"&gt;13.105.49.13 IP Address Details - IPinfo.io&lt;/a&gt; for the answer:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;IP address "BINGO!"&lt;/p&gt;
+&lt;p&gt;&lt;img alt="IPinfo.io" src="/images/azuredevops-agent-info-6.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;A big thank you to &lt;a href="https://www.linkedin.com/in/lukas-wilson-8792ba172/"&gt;Lukas Wilson&lt;/a&gt;, one of our resident Azure gurus, who helped with the IP address exploration. &lt;/p&gt;
+&lt;h1&gt;Reference Information&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/index.html"&gt;Part 1: Pipelines - Why bother and what are our nightmares and options?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="AzDO"></category><category term="Azure-Pipelines"></category><category term="Tips"></category></entry><entry><title>Wandering down memory lane - feature flags</title><link href="https://wsbctechnicalblog.github.io/memory-lane-feature-flags.html" rel="alternate"></link><published>2021-03-12T00:00:00-08:00</published><updated>2021-03-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-12:/memory-lane-feature-flags.html</id><summary type="html">&lt;p&gt;Use feature flags to fine-tune each release in production.&lt;/p&gt;</summary><content type="html">&lt;p&gt;More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;DevOps vancouver Meetup January 2019&lt;/h1&gt;
 &lt;p&gt;We had a really great turnout and a vibrant meetup hosted by &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/members/44231812/"&gt;Andre Kaminski&lt;/a&gt;, featuring three topics in January 2019:&lt;/p&gt;
@@ -30,7 +104,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Most feature flags are scoped to a business feature, backed by a business case, and delivering value, which places the ownership of the feature flag switch with the business. Some feature flags are scoped to an operational feature, which places the ownership with operations (Ops).&lt;/p&gt;
 &lt;h2&gt;What do we mean with "Do not hide non-production ready code behind feature flags"?&lt;/h2&gt;
-&lt;p&gt;Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breeches by mistake&lt;/p&gt;
+&lt;p&gt;Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breaches by mistake.&lt;/p&gt;
 &lt;h2&gt;Why the product we introduced at the meetup?&lt;/h2&gt;
 &lt;p&gt;You need to investigate and create your own opinion, but here are a few highlights from our evaluation:&lt;/p&gt;
 &lt;ul&gt;
@@ -1161,41 +1235,4 @@ In a healthy team, when something goes wrong it is never “I thought SHE was go
 operator. Imagine you walk up to a project containing hundreds of area paths and you need to build such a query from scratch ... run!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Stop!&lt;/strong&gt; There is another way, using the Node Name:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Node Names" src="/images/searching-for-common-nodes-across-area-paths-2.png"&gt;&lt;/p&gt;
-&lt;p&gt;Go &lt;a href="https://docs.microsoft.com/en-us/azure/devops/boards/queries/query-by-area-iteration-path?view=azure-devops#node-name-and-keyword-based-queries"&gt;here&lt;/a&gt; for more related gems and information!&lt;/p&gt;</content><category term="Posts"></category><category term="AzDO"></category><category term="Azure-Boards"></category><category term="Tips"></category></entry><entry><title>Use Active Directory Groups in your unified classic CI CD pipelines</title><link href="https://wsbctechnicalblog.github.io/ad-groups-for-ci-cd-pipelines.html" rel="alternate"></link><published>2020-10-20T13:13:00-07:00</published><updated>2020-10-20T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-20:/ad-groups-for-ci-cd-pipelines.html</id><summary type="html">&lt;p&gt;Instead of managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions&lt;/p&gt;</summary><content type="html">&lt;p&gt;The CI/CD pipeline is a DevOps practice for delivering code changes more frequently, consistently, and reliably. It enables Agile teams to increase deployment frequency, decrease lead time for change, change failure rate, and mean time to recovery key performance indicators, thereby improving quality and delivering value faster.&lt;/p&gt;
-&lt;h1&gt;Let us use Active Directory (AD) security groups&lt;/h1&gt;
-&lt;p&gt;After our dream for One CI/CD pipeline to rule them all we decided to go one-step further and simplify the classic release pipeline security using Active Directory (AD) groups. Instead of assigning and managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions. For example, we have project specific super users AD groups that grant elevated permissions to edit release pipelines and the development and system test stages.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Classic Pipeline" src="/images/use-ad-groups-with-CI-CD-pipelines-1.png"&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Empower the Agile Development Team to own development and system test stages&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Bookmark the Azure DevOps DRIFT project, which will enable you to monitor and remediate configuration drift, for example to automatically remove explicit user accounts added to an AD driven security model.&lt;/p&gt;
-&lt;h1&gt;Why AD groups?&lt;/h1&gt;
-&lt;p&gt;The value of using AD groups depends on your environment. In our case the benefits are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;AD groups and memberships are centrally &lt;strong&gt;managed&lt;/strong&gt; and &lt;strong&gt;audited&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;AD group membership is track than individual user accounts spread across multiple Azure DevOps services and projects.&lt;/li&gt;
-&lt;li&gt;Azure DevOps users are empowered to request group membership using an existing process, rather than relying on the Azure DevOps project collection and project administrators.&lt;/li&gt;
-&lt;li&gt;Simplifies automation of pipeline generation and configuration.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="Simplicity" src="/images/use-ad-groups-with-CI-CD-pipelines-2.png"&gt;&lt;/p&gt;
-&lt;h1&gt;Let us use email-enabled Active Directory (AD) security groups&lt;/h1&gt;
-&lt;p&gt;However, wait, we can go a step further and use mail-enabled AD security groups for pre- and post-stage pipeline approvals.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Post deployment conditionse" src="/images/use-ad-groups-with-CI-CD-pipelines-3.png"&gt;&lt;/p&gt;
-&lt;p&gt;Use email-enables security groups for stage approvals
-We replace the individual users highlighted in yellow with Release Approval AD groups.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="CI CD pipelines" src="/images/use-ad-groups-with-CI-CD-pipelines-4.png"&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Simplify stage approvals with email-enabled AD security groups&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Why are there no stage approval notifications?
-We realized that some of our email-enabled AD security groups received no notifications and spend time with Microsoft support to identify the root cause(s).&lt;/p&gt;
-&lt;p&gt;You have to ensure that the AD security groups:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Are &lt;strong&gt;mail-enabled&lt;/strong&gt; and authorized to receive external emails.&lt;/li&gt;
-&lt;li&gt;Have &lt;strong&gt;View Releases&lt;/strong&gt; permissions on release and definitions.&lt;/li&gt;
-&lt;li&gt;Have a subscription that is enabled for the group(s).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The second bullet is the one that caught us off guard. If the permission is missing the Azure DevOps Pipeline event/notification service filters out the account's notifications. When notifications are filtered, no email is sent for impacted group(s) - silence prevails.&lt;/p&gt;
-&lt;p&gt;Make sure that your email-enabled AD security groups are members of your project &lt;strong&gt;Contributors or Readers&lt;/strong&gt;, which by default, have the View Releases permission.&lt;/p&gt;
-&lt;h1&gt;What Is Next?&lt;/h1&gt;
-&lt;p&gt;This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.&lt;/p&gt;</content><category term="Posts"></category><category term="Azure AD"></category><category term="Azure-Pipelines"></category></entry></feed>
+&lt;p&gt;Go &lt;a href="https://docs.microsoft.com/en-us/azure/devops/boards/queries/query-by-area-iteration-path?view=azure-devops#node-name-and-keyword-based-queries"&gt;here&lt;/a&gt; for more related gems and information!&lt;/p&gt;</content><category term="Posts"></category><category term="AzDO"></category><category term="Azure-Boards"></category><category term="Tips"></category></entry></feed>
