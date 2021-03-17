@@ -1,0 +1,195 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Find the capabilities and IP addresses of an Azure DevOps agent - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/azure-devops-agent-capabilities.html" rel="bookmark"
+            title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Find the capabilities and IP addresses of an Azure DevOps agent</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 12 March 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.</p>
+        </div>
+    
+        <div class="entry-content">
+            <h1>Why should we care about an Azure DevOps Agent?</h1>
+<p>To use our <a href="https://wsbctechnicalblog.github.io/index.html">Azure Pipelines</a>, we need the agents. Every time one of our pipelines is triggered, it comes to life on one or more jobs, which are hosted and run an agent.</p>
+<p>Azure DevOps offers two types of agents. <strong>Microsoft-hosted</strong> agents are a software as a service (SaaS) offering, where maintenance and upgrades are taken care of for you. Our recommended type of agents!</p>
+<p><strong>Self-hosted agents</strong> give you more control of access and installed software needed for special builds and deployments. For example, we have a self-hosted pool to service our good old <strong>Cobol</strong> builds.</p>
+<hr>
+<h1>How to determine the capabilities of an Azure DevOps Agent</h1>
+<p>We often get the question: "What software is installed on the agent?" In other words, how do we determine the capabilities of each Azure DevOPs agent.</p>
+<p>For self-hosted agents you can go to your Azure DevOps <strong>organizational</strong> setting, Agent pools, select <strong>pool</strong>, select <strong>Agents</strong>, select an <strong>agent</strong>, and finally, select <strong>Capabilities</strong>. You will be presented with the agent's system capabilities, variables, paths, and installed software, as shown below.</p>
+<blockquote>
+<p>Capabilities of a <strong>self-hosted</strong> agent</p>
+<p><img alt="AzDO Agent Details" src="/images/azuredevops-agent-info-1.png"></p>
+</blockquote>
+<p>When you select a Microsoft-hosted agent and pool, the presented capabilities are less exciting.</p>
+<blockquote>
+<p>Capabilities of a <strong>Microsoft-hosted</strong> agent</p>
+<p><img alt="AzDO Agent LAck of Details" src="/images/azuredevops-agent-info-2.png"></p>
+</blockquote>
+<p>You need to visit the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation and scroll down to the <strong>Software</strong> section. Peruse a list of hosted agents, classic pipeline editor specifications, YAML image labels, and links to software available on each type of agent.</p>
+<blockquote>
+<p>Azure DevOps Agent Documentation</p>
+<p><img alt="AzDO Agent Documentation" src="/images/azuredevops-agent-info-3.png"></p>
+</blockquote>
+<p>Select your agent, click on the included software hyperlink, and voila, you have a detailed report of the agent's capabilities.</p>
+<blockquote>
+<p>Azure DevOps Agent Capabilities Documentation</p>
+<p><img alt="AzDO Agent Capabilties Documentation" src="/images/azuredevops-agent-info-4.png"></p>
+</blockquote>
+<hr>
+<h1>How to determine the IP addresses of an Azure DevOps Agent</h1>
+<p>The <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation also gives you information on how to identify possible IP ranges for Microsoft-hosted agents. This information is pivotal if you need to allow the agents to make their way from the public internet, through your firewall, to collaborate with one of your services.</p>
+<p>Unfortunately, you will also find some small print ... well, it is the same sized font and the note is placed on a prominent Indigo background. It is easy to miss the highlighted part, as shown below, that mentions that the IP addresses for the macOS agents are not included.</p>
+<blockquote>
+<p>macOS Addresses are a mystery</p>
+<p><img alt="macOS Address Mystery" src="/images/azuredevops-agent-info-5.png"></p>
+</blockquote>
+<p>First thought is to queue a investigative pipeline on one of the macOS agents and run the <strong>ipconfig getifaddr en0</strong> command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.</p>
+<p>Try this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">task:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+  <span class="nl">inputs</span><span class="p">:</span>
+    <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+    <span class="nl">script</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">curl</span> <span class="n">ipecho</span><span class="p">.</span><span class="n">net</span><span class="err">&#39;</span>
+    <span class="nl">errorActionPreference</span><span class="p">:</span> <span class="err">&#39;</span><span class="k">continue</span><span class="err">&#39;</span>
+    <span class="nl">pwsh</span><span class="p">:</span> <span class="nb">true</span>
+</code></pre></div>
+
+<p>It reveals the public IP address:</p>
+<div class="highlight"><pre><span></span><code>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
+100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
+
+... SNIPPED FOR BLOG POST ...
+
+<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center; flex: 1; &quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Your IP is 13.105.49.13<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+...SNIPPED FOR BLOG POST...
+</code></pre></div>
+
+<p>Lastly, who owns the IP address we just found?</p>
+<p>Visit <a href="https://ipinfo.io/13.105.49.13">13.105.49.13 IP Address Details - IPinfo.io</a> for the answer:</p>
+<blockquote>
+<p>IP address "BINGO!"</p>
+<p><img alt="IPinfo.io" src="/images/azuredevops-agent-info-6.png"></p>
+</blockquote>
+<hr>
+<p>A big thank you to <a href="https://www.linkedin.com/in/lukas-wilson-8792ba172/">Lukas Wilson</a>, one of our resident Azure gurus, who helped with the IP address exploration. </p>
+<h1>Reference Information</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted agents</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/index.html">Part 1: Pipelines - Why bother and what are our nightmares and options?</a></li>
+</ul>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azdo.html">AzDO </a><a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/tips.html">Tips </a>
+        | <a href="/azure-devops-agent-capabilities.html" rel="bookmark"
+         title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(9)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(11)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (25)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
