@@ -23,7 +23,8 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('WorkSafeBC', 'https://www.worksafebc.com/en'),
          ('WorkSafeBC IT is hiring','https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference'),
-         ('Careers', 'https://www.worksafebc.com/en/about-us/careers'),)
+         ('Careers', 'https://www.worksafebc.com/en/about-us/careers'),
+         ('ATOM/RSS Feed', 'https://wsbctechnicalblog.github.io/feeds/posts.atom.xml'),)
 
 
 
