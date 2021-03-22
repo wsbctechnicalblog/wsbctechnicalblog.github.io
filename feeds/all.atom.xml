@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-03-19T00:00:00-07:00</updated><entry><title>Incremental and Iterative Development – what’s the diff?</title><link href="https://wsbctechnicalblog.github.io/incremental-and-iterative-development.html" rel="alternate"></link><published>2021-03-19T00:00:00-07:00</published><updated>2021-03-19T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-19:/incremental-and-iterative-development.html</id><summary type="html">&lt;p&gt;Visual example illustrating the fundamental differences between incremental and iterative development process.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I oftentimes hear people discuss development methodologies and mention incremental and iterative approaches. When I ask for further clarification, it surprises me how frequently people conflate the two methodologies. I hear “well, they’re just two words denoting the same thing”.&lt;/p&gt;
-&lt;p&gt;Which is far from being true. Let’s now examine what makes one development process iterative and another development process incremental, and let’s then look into what makes them so fundamentally different.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Which is far from being true. Let’s now examine what makes one development process iterative and another development process incremental, and let’s then look into what makes them so fundamentally different.&lt;/p&gt;
 &lt;h2&gt;Iterative development&lt;/h2&gt;
 &lt;p&gt;According to the dictionary, to iterate implies “to perform or utter repeatedly”. Repetition is the essence of iteration. In software engineering, we often call iteration by another name – rework.&lt;/p&gt;
 &lt;p&gt;This distinction sometimes gets misinterpreted, so I’d like to illustrate what is meant by the expression ‘iterative development’, and I’d like to use a series of visual examples.&lt;/p&gt;
@@ -13,7 +12,7 @@
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 3" src="/images/monalisa/monalisa3.png"&gt;&lt;/p&gt;
 &lt;p&gt;A bit better, yeah? Still, quite fuzzy. Let’s do the fourth iteration:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 4" src="/images/monalisa/monalisa4.png"&gt;&lt;/p&gt;
-&lt;p&gt;Ah okay, maybe now with the fourth iteration some eagle-eyed people can already recognized what are we making? Still, needs more rework. On to the fifth iteration:&lt;/p&gt;
+&lt;p&gt;Ah okay, maybe now with the fourth iteration some eagle-eyed people can already recognize what are we making? Still, needs more rework. On to the fifth iteration:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 5" src="/images/monalisa/monalisa5.png"&gt;&lt;/p&gt;
 &lt;p&gt;Oh, that kind of looks familiar. Just to be sure, let’s do more rework; iteration 6:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 6" src="/images/monalisa/monalisa6.png"&gt;&lt;/p&gt;
@@ -29,8 +28,7 @@
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 11" src="/images/monalisa/monalisa11.png"&gt;&lt;/p&gt;
 &lt;p&gt;Almost there! Still somewhat pixelated, we will circle back one more time to increase the resolution. Iteration 12:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mona Lisa Iteration 12" src="/images/monalisa/monalisa12.png"&gt;&lt;/p&gt;
-&lt;p&gt;Voila! That’s it. Gradual refinement delivers the masterpiece!
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Voila! That’s it. Gradual refinement delivers the masterpiece!&lt;/p&gt;
 &lt;h2&gt;Incremental development&lt;/h2&gt;
 &lt;p&gt;According to the dictionary, to increment means “an increase or addition, especially one of a series on a fixed scale”.&lt;/p&gt;
 &lt;p&gt;Let’s illustrate incremental development using Da Vinci’s Mona Lisa.&lt;/p&gt;
@@ -46,16 +44,14 @@
 &lt;p&gt;&lt;img alt="Mona Lisa Increment 5" src="/images/monalisa/monalisaincrement5.png"&gt;&lt;/p&gt;
 &lt;p&gt;Sixth increment:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mona Lisa Increment 6" src="/images/monalisa/monalisaincrement6.png"&gt;&lt;/p&gt;
-&lt;p&gt;And so on…
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;And so on…&lt;/p&gt;
 &lt;h2&gt;What are the differences between iterative and incremental development?&lt;/h2&gt;
 &lt;p&gt;I hope that the visual illustrations above are helpful in driving the salient points home. Let’s enumerate the differences:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Unlike iterative development, which starts with the whole picture (the whole system), incremental development starts from one fixed part of the system&lt;/li&gt;
 &lt;li&gt;Unlike iterative development, which outlines the whole system in very crude strokes, incremental development works on an isolated fixed part of the system until is fully done (following the Definition of Done, or DoD)&lt;/li&gt;
 &lt;li&gt;Unlike iterative development, which is based on relentless rework, incremental development forbids rework, and only moves on to work on the next part of the system once the previous part is fully fleshed out and frozen for any further changes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><category term="Posts"></category><category term="Incremental-development"></category><category term="Iterative-development"></category><category term="Agile"></category><category term="DevOps"></category></entry><entry><title>Pipeline-as-code wrapped with Pull Requests</title><link href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="alternate"></link><published>2021-03-13T00:00:00-08:00</published><updated>2021-03-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-13:/pipelines-as-code-pr.html</id><summary type="html">&lt;p&gt;This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the past three program increments, which amounts to a staggering 30 iterations, or 300 days, we have been working on our quest to convert our legacy classic pipelines to YAML-based pipelines, as outlined in our &lt;a href="/why-pipelines-part1.html"&gt;Pipelines - Why bother and what are our nightmares and options&lt;/a&gt; series. More importantly, we have been working in parallel to elaborate on the value to our stakeholders. &lt;/p&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="Agile"></category><category term="DevOps"></category></entry><entry><title>Pipeline-as-code wrapped with Pull Requests</title><link href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="alternate"></link><published>2021-03-13T00:00:00-08:00</published><updated>2021-03-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-13:/pipelines-as-code-pr.html</id><summary type="html">&lt;p&gt;This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For the past three program increments, which amounts to a staggering 30 iterations, or 300 days, we have been working on our quest to convert our legacy classic pipelines to YAML-based pipelines, as outlined in our &lt;a href="/why-pipelines-part1.html"&gt;Pipelines - Why bother and what are our nightmares and options&lt;/a&gt; series. More importantly, we have been working in parallel to elaborate on the value to our stakeholders. &lt;/p&gt;
 &lt;p&gt;A tough challenge, because there is no visual value in continuous integration and deployment pipelines to business, our delighted end-users, or our engineers who want full control of our common engineering system. &lt;/p&gt;
 &lt;p&gt;A recent awareness and prioritisation push by our &lt;a href="https://www.scaledagileframework.com/release-train-engineer-and-solution-train-engineer/"&gt;Release Train Engineers&lt;/a&gt; have raised a few interesting questions. This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.&lt;/p&gt;
 &lt;h1&gt;Pipelines as code ... what?&lt;/h1&gt;
