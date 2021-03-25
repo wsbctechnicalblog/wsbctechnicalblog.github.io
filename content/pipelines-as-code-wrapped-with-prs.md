@@ -75,7 +75,7 @@ Instead, let me try using [this clean visualization](https://www.informationisbe
 To define a pipeline to build, test, and scan an Azure Function requires roughly 300 lines of pipeline code. The 927 production pipelines are a mix of simpler, but also more complex pipelines, adding up to an astounding 927 * 300 = **278,100** lines of pipeline code.
 
 - If engineers embrace our first-generation generic blueprints, as discussed in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](/yaml-pipelines-part5.html) and [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part6.html), the lines of pipeline code are reduced to 122 for an Azure Function pipeline. 927 * 122 = **113,094** lines of pipeline code. A lot less, but still a lot of code.
-- If engineers embrace our second-generation app-type blueprints, which @said-akram-wcbbc will discuss in the upcoming **Part 7** shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.
+- If engineers embrace our second-generation app-type blueprints, which [Said](https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc)] will discuss in the upcoming **Part 7** shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.
 
 > Extract from Infographic: How Many Lines Of Code Is Your Favorite App?
 >
