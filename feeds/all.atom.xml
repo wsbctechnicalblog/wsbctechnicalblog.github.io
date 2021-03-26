@@ -97,7 +97,7 @@
 &lt;p&gt;To define a pipeline to build, test, and scan an Azure Function requires roughly 300 lines of pipeline code. The 927 production pipelines are a mix of simpler, but also more complex pipelines, adding up to an astounding 927 * 300 = &lt;strong&gt;278,100&lt;/strong&gt; lines of pipeline code.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;If engineers embrace our first-generation generic blueprints, as discussed in &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/a&gt; and &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity&lt;/a&gt;, the lines of pipeline code are reduced to 122 for an Azure Function pipeline. 927 * 122 = &lt;strong&gt;113,094&lt;/strong&gt; lines of pipeline code. A lot less, but still a lot of code.&lt;/li&gt;
-&lt;li&gt;If engineers embrace our second-generation app-type blueprints, which @said-akram-wcbbc will discuss in the upcoming &lt;strong&gt;Part 7&lt;/strong&gt; shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.&lt;/li&gt;
+&lt;li&gt;If engineers embrace our second-generation app-type blueprints, which &lt;a href="https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc"&gt;Said&lt;/a&gt;] will discuss in the upcoming &lt;strong&gt;Part 7&lt;/strong&gt; shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Extract from Infographic: How Many Lines Of Code Is Your Favorite App?&lt;/p&gt;
@@ -284,29 +284,29 @@
 &lt;h1&gt;Generic pipeline value streams&lt;/h1&gt;
 &lt;p&gt;Let us take a few steps back and take a quick look at an Azure Pipeline from a high altitude. Each pipeline is made of one or more stages, each of which is a collection of related jobs, each of which is a collection of steps.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Azure Pipeline from space
-&lt;img alt="Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-0.png"&gt;&lt;/p&gt;
+&lt;p&gt;Azure Pipeline from space&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-0.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Let us skip stages, zoom in, and start at the point of jobs, as shown above.&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;&lt;em&gt;&lt;em&gt;A job is a collection of steps run by an agent or on a server. Jobs can run conditionally and might depend on earlier jobs.&lt;/em&gt;&lt;/em&gt;&lt;/em&gt;" - &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#job"&gt;yaml-schema&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;When you add SonarQube to your pipeline, you know (or will find out) that the SonarQube &lt;strong&gt;Prepare&lt;/strong&gt;, &lt;strong&gt;Analyse&lt;/strong&gt;, and &lt;strong&gt;Publish&lt;/strong&gt; steps must run in the same job context as the &lt;strong&gt;build&lt;/strong&gt;. This is not a new constraint and applies to the &lt;strong&gt;Classic&lt;/strong&gt;, &lt;strong&gt;YAML out-of-the-box&lt;/strong&gt;, and our &lt;strong&gt;Blueprint-based&lt;/strong&gt; Azure Pipelines.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;simplest&lt;/strong&gt; pipeline you can configure is a single-job pipeline, which runs your &lt;strong&gt;build&lt;/strong&gt; and &lt;strong&gt;test&lt;/strong&gt; steps, the &lt;strong&gt;DevSecOps&lt;/strong&gt; steps (SonarQube, WhiteSource), and the &lt;strong&gt;BuildingCode&lt;/strong&gt; steps within one and the same job 1 context, as shown below.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Single Job Pipeline
-&lt;img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;Single Job Pipeline&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the &lt;strong&gt;DevSecOps&lt;/strong&gt; and the &lt;strong&gt;BuildingCode&lt;/strong&gt; steps within the same job 1 context. Alternatively, you could run the &lt;strong&gt;DevSecOps&lt;/strong&gt; in the job 1 context and the &lt;strong&gt;BuildingCode&lt;/strong&gt; steps in the job 2 context, as shown below. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Dual Job Pipeline
-&lt;img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png"&gt;
+&lt;p&gt;Dual Job Pipeline&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png"&gt;
 With multiple jobs you can embrace parallelism, introduce job dependencies and flows, isolate steps in separate job contexts, and run steps on different agent specifications (Linux, Windows, macOS) - all in one pipeline.&lt;/p&gt;
-&lt;p&gt;Multi Job Pipeline
-&lt;img alt="Multi Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-3.png"&gt;&lt;/p&gt;
+&lt;p&gt;Multi Job Pipeline&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Multi Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-3.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Remember, "&lt;em&gt;with power, comes great responsibility&lt;/em&gt;". As we embrace complexity, we throw simplicity out of the window. In fact, as with the pile of LEGO blocks analogy we used in &lt;a href="/yaml-pipelines-part5.html"&gt;part 5&lt;/a&gt;, you can create really powerful, but also complex and hard to evolve and maintain pipelines. The choice is &lt;strong&gt;yours&lt;/strong&gt;!&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;WHAT and HOW you build is up to you...
-&lt;img alt="LEGO" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-7.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;WHAT and HOW you build is up to you...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="LEGO" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-7.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Bootstrap template demystified&lt;/h1&gt;
@@ -351,8 +351,8 @@ With multiple jobs you can embrace parallelism, introduce job dependencies and f
 &lt;/table&gt;
 &lt;p&gt;Here is a visualisation of the above table for the visual minds.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Bootstrap Template and Bootstrap Modes
-&lt;img alt="Bootstrap" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png"&gt; &lt;/p&gt;
+&lt;p&gt;Bootstrap Template and Bootstrap Modes&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bootstrap" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png"&gt; &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt; &lt;br/&gt;
 Our Bootstrap.yml templates is a standard YAML-template, as are the templates it injects at queue time. There is no hidden cloak and dagger technology or additional complexity! &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -372,14 +372,14 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;h1&gt;Generic Blueprint templates demystified&lt;/h1&gt;
 &lt;p&gt;Our &lt;strong&gt;Azure-Pipeline-Steps.yml&lt;/strong&gt; is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and to &lt;strong&gt;run&lt;/strong&gt; the DevSecOps and Building code steps.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Single Job Pipeline
-&lt;img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;Single Job Pipeline&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;All you need to do, is find the &lt;strong&gt;TODO&lt;/strong&gt; placeholders to update relevant parameters and insert your build and test steps. You can explore the &lt;strong&gt;Azure-Pipeline-Steps.yml&lt;/strong&gt; blueprint in &lt;a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html"&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Our &lt;strong&gt;Azure-Pipeline-Jobs.yml&lt;/strong&gt; is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and run the &lt;strong&gt;devseconlyinit&lt;/strong&gt; within the same job context. Lastly, it runs the &lt;strong&gt;buildingcodeonly&lt;/strong&gt; steps in a different job context.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Dual Job Pipeline
-&lt;img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png"&gt;&lt;/p&gt;
+&lt;p&gt;Dual Job Pipeline&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;As with the Azure-Pipeline-Steps.yml blueprint, you then search for the &lt;strong&gt;TODO&lt;/strong&gt; placeholders and update relevant parameters and insert your build and test steps. It is that simple!&lt;/p&gt;
 &lt;p&gt;The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is &lt;strong&gt;yours&lt;/strong&gt;!&lt;/p&gt;
@@ -406,11 +406,11 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;li&gt;[X] Enable engineers&lt;/li&gt;
 &lt;li&gt;[X] Simple pipelines&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;But wait, there is more ... in the next part 7, my colleague Said will introduce the next generation of blueprints which are even simpler, supporting our goals for consistency and enablement. &lt;/p&gt;
+&lt;p&gt;But wait, there is more ... in the next part 7, my colleague &lt;a href="https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc"&gt;Said&lt;/a&gt; will introduce the next generation of blueprints which are even simpler, supporting our goals for consistency and enablement. &lt;/p&gt;
 &lt;p&gt;See you in part 7 (coming soon).&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | Part 6 | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | Part 6 | Part 7 Coming Soon |&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>WorkSafeBC DevOps Celebrate 100th Sprint</title><link href="https://wsbctechnicalblog.github.io/wsbc-devops-celebrate-hundredth-sprint.html" rel="alternate"></link><published>2021-02-19T00:00:00-08:00</published><updated>2021-02-19T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-02-19:/wsbc-devops-celebrate-hundredth-sprint.html</id><summary type="html">&lt;p&gt;WorkSafeBC DevOps 100th sprint celebration coincided with the 20th anniversary of the Agile Manifesto&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Navigating the Future&lt;/h2&gt;
 &lt;p&gt;A happy coincidence of celebrating WorkSafeBC DevOps 100th sprint at the same time when we are celebrating 20th anniversary of the Agile Movement, provided an opportunity to host &lt;a href="https://wingman-sw.com/about"&gt;James Grenning&lt;/a&gt;, the original signatory of the Agile Manifesto.&lt;/p&gt;
 &lt;p&gt;A regular &lt;strong&gt;Navigating the Future&lt;/strong&gt; session, which DevOps is holding every PI, served as a good platform to usher the celebrations.&lt;/p&gt;
@@ -666,7 +666,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;Next, we will explore continuous deployment (CD). See you in part 6 (coming soon).&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | Part 5 | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | Part7 Coming Soon | &lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 4: Pipelines - Magic of queue time assembly</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html" rel="alternate"></link><published>2021-01-13T00:00:00-08:00</published><updated>2021-01-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-01-13:/yaml-pipelines-part4.html</id><summary type="html">&lt;p&gt;We can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to our exciting pipeline journey, as outlined in &lt;a href="/why-pipelines-part1.html"&gt;part1&lt;/a&gt;. It is time to move from theory to practice and explore some of the magic that is pushing us from the classic to the new YAML-based Azure Pipelines.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Re-usable Templates&lt;/h1&gt;
@@ -764,7 +764,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;Now that we appreciate the power and some of the magic, we can shift gears to our blueprints. See you in &lt;a href="yaml-pipelines-part5.html"&gt;part 5&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | Part 4 | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | Part 4 | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | Part7 Coming Soon | &lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part3.html" rel="alternate"></link><published>2021-01-04T00:00:00-08:00</published><updated>2021-01-04T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-01-04:/yaml-pipelines-part3.html</id><summary type="html">&lt;p&gt;With the support from all &lt;strong&gt;people&lt;/strong&gt;, YAML templates support our five (5) core goals and pillars of our common engineering system.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to the world of pipelines. In &lt;a href="/why-pipelines-part1.html"&gt;part1&lt;/a&gt; we discussed "why" pipelines are valuable and introduced the new Azure DevOps YAML-based pipelines in &lt;a href="/yaml-pipelines-part2.html"&gt;part2&lt;/a&gt;. In this post we explore templates as invaluable building blocks and telemetry to gather essential insights.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;What is a YAML template?&lt;/h1&gt;
@@ -901,7 +901,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;Now that we understand templates, we will look at the magic that has our Sec, in DevSecOps, smiling from ear to ear. See you in &lt;a href="yaml-pipelines-part4.html"&gt;part 4&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | Part 3 | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | Part 3 | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | Part7 Coming Soon | &lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 2: Pipelines - Introduction, variables and why spaces matter</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part2.html" rel="alternate"></link><published>2020-12-21T00:00:00-08:00</published><updated>2020-12-21T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-21:/yaml-pipelines-part2.html</id><summary type="html">&lt;p&gt;The new Azure DevOps YAML pipelines have been the focus of innovation, enabling engineering to treat pipelines as code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We continue our continuous delivery pipeline journey by switching gears from the unified pipelines to the new YAML-syntax pipelines. &lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Why the YAML course change?&lt;/h1&gt;
@@ -1135,7 +1135,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;If erroneous spaces do not rattle you, we are ready to jump into &lt;a href="yaml-pipelines-part3.html"&gt;part 3&lt;/a&gt; to explore the power of templates and how we are cooking up a storm of re-usable magic.&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | Part 2 | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | Part 2 | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | Part7 Coming Soon |&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Part 1: Pipelines - Why bother and what are our nightmares and options?</title><link href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="alternate"></link><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-19:/why-pipelines-part1.html</id><summary type="html">&lt;p&gt;Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Part 1: Pipelines - Why bother and what are our nightmares and options? (this)&lt;/li&gt;
@@ -1206,7 +1206,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;Welcome YAML based pipelines, which we will introduce in &lt;a href="yaml-pipelines-part2.html"&gt;part 2&lt;/a&gt; of this series.&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | Part 1, TOC | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | &lt;/p&gt;
+&lt;p&gt;Series Bread Crumbs | Part 1, TOC | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | Part7 Coming Soon |&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="Azure-Pipelines"></category><category term="DevOps"></category></entry><entry><title>Shift LEFT and RIGHT to take yourself off the humbling 2AM calls</title><link href="https://wsbctechnicalblog.github.io/shift-left-2am-call.html" rel="alternate"></link><published>2020-10-24T13:13:00-07:00</published><updated>2020-10-24T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-24:/shift-left-2am-call.html</id><summary type="html">&lt;p&gt;We need to avoid the infamous 2AM call!&lt;/p&gt;</summary><content type="html">&lt;p&gt;During the &lt;strong&gt;Getting started with a DevOps mindset session&lt;/strong&gt; at the CSI Lab in January 2019, we discussed a number of epiphanies. Three referenced the 2AM call, as shown below.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Epiphanies" src="/images/two-am-call-1.png"&gt;&lt;/p&gt;
 &lt;h1&gt;What is the 2AM call?&lt;/h1&gt;
