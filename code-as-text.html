@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Code-as-text - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/code-as-text.html" rel="bookmark"
+            title="Permalink to Code-as-text">Code-as-text</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Fri 26 March 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Programming computers by feeding them plain text is very slow and needs to be sped up.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><em>Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.</em> — <strong>Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship</strong></p>
+<p>The only way we know how to program computer is by feeding them text. In the olden days, we used to program computers differently (e.g. by directly rewiring the computing machinery or by crafting punched cards – figures 1 and 2).</p>
+<p><img alt="Programming by rewiring" src="/images/early-programming.png"></p>
+<p><strong>Figure 1.</strong> <em>Programming computers by manually rewiring them.</em></p>
+<p><img alt="Punched card" src="/images/punched-card.png"></p>
+<p><strong>Figure 2.</strong> <em>Programming computers by producing punched cards.</em></p>
+<p>To bring the challenge of computer programming closer to the human level of comprehension, we have collectively decided, some 70 years ago, to introduce a level of indirection and let programmers encode their intentions using pure text. Text is more intuitively accessible to humans than complicated mechanical contraptions or obtuse punched cards, so the new technology stuck.</p>
+<p>Today, everyone programs computers by using nothing else but plain text.</p>
+<h2>What’s the problem?</h2>
+<p>Computer programs, written as plain text (i.e. source code) differ significantly from natural human languages. In what ways?</p>
+<p>Firstly, computer source code is lexically different from natural languages. Computer programming languages are composed of severely limited vocabulary (some words used as programming language keywords, or reserved words), while other words remain free-form in order to act as unique identifiers that help name program constructs (variables, methods, modules, etc.)</p>
+<p>Secondly, computer source code is syntactically laid out and organized differently than natural languages. Formally defined structures play much more important role in computer programming languages than they play in natural languages. Furthermore, almost all programming languages feature multiple forms of indented layouts (horizontal and vertical). Such layout is seldom, if ever, encountered in written natural languages.</p>
+<p>Thirdly, and most importantly, there is the difference in semantics: text written in a natural language is typically understood in two simultaneous (concurrent) phases. Those phases denote:</p>
+<ol>
+<li>Text (how it is written down)</li>
+<li>Domain (what does the text mean)</li>
+</ol>
+<p>These two phases of simultaneous comprehension are insufficient when reading a computer program (code-as-text). To understand the computer source code, we need a third dimension: execution.</p>
+<p>To discover the operational semantics of the program’s source code, we are required to trace the source code execution.</p>
+<p>Easier said than done. Oftentimes, opening a file containing code-as-text does not give as an easy access to grasping what is that program supposed to be doing. Unlike with natural language written down as text, where we can safely start from the top of the page/screen and follow the story as it unfolds, row by row, paragraph by paragraph, computer source code does not necessarily proceed in that fashion.</p>
+<p>The problem therefore lies in the fact that code-as-text cannot provide us with clear understanding of how the program will behave. We can only know for sure how the program works and what does the program execute if we execute it.</p>
+<h2>Why is that a problem?</h2>
+<p>Seeing how code-as-text is an intermediary layer between human programmer and the machine that runs the program, we observe that there is an unavoidable lag between the moment when we make a change (a diff) to the source code and the moment when we learn about the impact of the change we’ve made. This lag is the crux of the problem.</p>
+<p>In many environments, it takes a considerable amount of time between us making a diff and seeing the effects of that diff. This inevitable slowdown is negatively affecting the quality of our work.</p>
+<p>In contrast, almost any other crafting activity is free of this annoying lag. If we’re building a cabinet, for example, the material and the tools we’re using will inform us, instantaneously, about the effects of the change we’re making. We get feedback in real time, and that feedback is ensuring that we proceed without making serious mistakes.</p>
+<p>None such real time feedback is available in the activity of software engineering. When writing software, we work with code-as-text, which is incapable of giving us real time feedback. Once we introduce some change into the source code, we have to do a lot of acrobatics before we can see the result of that change. This is considerably slowing us down and therefore poses a serious problem when it comes to ensuring quality of our delivery.</p>
+<h2>Is there a solution?</h2>
+<p>Currently the only mainstream solution that exists for addressing the above problem is Test Driven Development (TDD). As we have seen in our TDD Dojo, when doing TDD we focus on executing our program as frequently as possible. The only way to gain insight and understanding about the effect of the changes we make to the source code is to execute the program. And because TDD is based on writing micro tests, the time lag between the moment when we make the change and the moment we execute the program and witness the effects of that change is as short as it can get.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/agile.html">Agile </a><a href="/tag/devops.html">DevOps </a><a href="/tag/programming.html">Programming </a>
+        | <a href="/code-as-text.html" rel="bookmark"
+         title="Permalink to Code-as-text">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/agile.html">Agile</a>(4)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(14)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(10)</li>
+                    <li><a href="/tag/iac.html">IaC</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (28)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
