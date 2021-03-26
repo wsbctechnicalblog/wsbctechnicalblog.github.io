@@ -8,7 +8,7 @@ Summary: Programming computers by feeding them plain text is very slow and needs
 
 _Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder._ — **Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship**
 
-The only way we know how to program computer is by feeding them text. In the olden days, we used to program computers differently (e.g. by directly rewiring the computing machinery or by crafting punched cards – figures 1 and 2).
+The only way we know how to program computers is by feeding them text. In the olden days, we used to program computers differently (e.g. by directly rewiring the computing machinery or by crafting punched cards – figures 1 and 2).
 
 ![Programming by rewiring](/images/early-programming.png)
 
