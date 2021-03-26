@@ -30,6 +30,7 @@ Perhaps I am biased, but I disagree. My four cents (points):
 Let us take a few steps back and take a quick look at an Azure Pipeline from a high altitude. Each pipeline is made of one or more stages, each of which is a collection of related jobs, each of which is a collection of steps.
 
 > Azure Pipeline from space
+>
 > ![Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-0.png)
 
 Let us skip stages, zoom in, and start at the point of jobs, as shown above.
@@ -41,20 +42,24 @@ When you add SonarQube to your pipeline, you know (or will find out) that the So
 The **simplest** pipeline you can configure is a single-job pipeline, which runs your **build** and **test** steps, the **DevSecOps** steps (SonarQube, WhiteSource), and the **BuildingCode** steps within one and the same job 1 context, as shown below.
 
 > Single Job Pipeline
+>
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-1.png)
 
 When you split your pipeline into two jobs you have two separate job contexts. Similar to the single-job you could run both the **DevSecOps** and the **BuildingCode** steps within the same job 1 context. Alternatively, you could run the **DevSecOps** in the job 1 context and the **BuildingCode** steps in the job 2 context, as shown below. 
 
 > Dual Job Pipeline
+>
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-2.png)
 With multiple jobs you can embrace parallelism, introduce job dependencies and flows, isolate steps in separate job contexts, and run steps on different agent specifications (Linux, Windows, macOS) - all in one pipeline.
 
 > Multi Job Pipeline
+>
 > ![Multi Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-3.png)
 
 Remember, "_with power, comes great responsibility_". As we embrace complexity, we throw simplicity out of the window. In fact, as with the pile of LEGO blocks analogy we used in [part 5](/yaml-pipelines-part5.html), you can create really powerful, but also complex and hard to evolve and maintain pipelines. The choice is **yours**!
 
 > WHAT and HOW you build is up to you...
+>
 > ![LEGO](/images/moving-hundreds-of-pipeline-snowflakes-part6-7.jpg)
 
 ---
@@ -77,6 +82,7 @@ The following table summarises the currently available bootstrap **modes**, the 
 Here is a visualisation of the above table for the visual minds.
 
 > Bootstrap Template and Bootstrap Modes
+>
 > ![Bootstrap](/images/moving-hundreds-of-pipeline-snowflakes-part6-6.png) 
 
 > **TIP** <br/>
@@ -104,6 +110,7 @@ Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps a
 Our **Azure-Pipeline-Steps.yml** is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and to **run** the DevSecOps and Building code steps.
 
 > Single Job Pipeline
+>
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png)
 
 All you need to do, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps. You can explore the **Azure-Pipeline-Steps.yml** blueprint in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html).
@@ -111,6 +118,7 @@ All you need to do, is find the **TODO** placeholders to update relevant paramet
 Our **Azure-Pipeline-Jobs.yml** is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and run the **devseconlyinit** within the same job context. Lastly, it runs the **buildingcodeonly** steps in a different job context.
 
 > Dual Job Pipeline
+>
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png)
 
 As with the Azure-Pipeline-Steps.yml blueprint, you then search for the **TODO** placeholders and update relevant parameters and insert your build and test steps. It is that simple!
@@ -157,11 +165,11 @@ Now that we all agree that neither the bootstrap nor generic templates are rocke
 - [X] Enable engineers
 - [X] Simple pipelines
 
-But wait, there is more ... in the next part 7, my colleague Said will introduce the next generation of blueprints which are even simpler, supporting our goals for consistency and enablement. 
+But wait, there is more ... in the next part 7, my colleague [Said](https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc) will introduce the next generation of blueprints which are even simpler, supporting our goals for consistency and enablement. 
 
 See you in part 7 (coming soon).
 
 ---
 
-> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | Part 6 | 
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | Part 6 | Part 7 Coming Soon |
 
