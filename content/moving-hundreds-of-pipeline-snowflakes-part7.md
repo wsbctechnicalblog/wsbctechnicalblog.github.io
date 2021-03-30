@@ -1,10 +1,10 @@
 Title: Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines
-Date: 2021-03-08
+Date: 2021-03-30
 Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: yaml-pipelines-part7
 Author: Said Akram
-Summary: @TBD@.
+Summary: Do you want to own two or seventy five dozen lines of pipeline code per application? The choice is yours!
 
 Welcome back to another installment of pipeline wizardry. In [part 6](/yaml-pipelines-part6.html) we covered the simplicity of the generic blueprint-based YAML pipeline and mentioned that there is more magic. Welcome to our application-type blueprints!
 
