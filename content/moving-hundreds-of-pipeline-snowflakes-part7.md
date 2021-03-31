@@ -24,6 +24,17 @@ That said, we are surprised at the outcome of a poll on Twitter and a LinkedIn, 
 >
 > ![Pipeline ownership](/images/moving-hundreds-of-pipeline-snowflakes-part7-1.png)
 
+Some conspiracies we noticed in the polls and discussions with engineering:
+
+- *You are influencing engineering on how they should work by centralizing pipeline templates!*
+  - **No**, we are allowing engineering to collaborate, innovate, and influence each other.
+  - In fact, we are enabling the organization to package your hard earned experience and guardrails in re-usable templates.
+- *You cannot possibly create a template for every scenario!*
+  - **Fully agree**, especially as we are continuously innovating.
+  - But, we can create templates and blueprints for common scenarios and re-use templates to quick-start the outliers. 
+- *You should not abstract and hide the pipelines from engineering!*
+  - **Quite the contrary**. As covered in [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html), everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.
+
 Let us get back on track. Why are we taking our generic blueprints, covered in [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part6.html) and [Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines](/yaml-pipelines-part7.html), to another level? To reduce the engineering effort to ~28 lines of pipeline configuration. That is a saving of 97% of repetitive and often mind-numbing configuration engineering.
 
 Have we caught your attention? If yes, read on.
