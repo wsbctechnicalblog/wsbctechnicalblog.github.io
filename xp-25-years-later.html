@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Extreme Programming 25 Years Later - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/xp-25-years-later.html" rel="bookmark"
+            title="Permalink to Extreme Programming 25 Years Later">Extreme Programming 25 Years Later</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Wed 31 March 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Extreme programming keeps going strong 25 years after its launch</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Extreme Programming (XP) was a revolutionary movement launched by Kent Beck in 1996. According to Beck, XP was a political statement. Back in the mid-1990s, software quality was being outsourced to the QA departments. Programmers were doing their part by writing software to the best of their ability but would then delegate the quality of their products to testers.</p>
+<p>Beck disagreed with that approach and felt that quality is everyone’s responsibility. He launched Extreme Programming as a political statement which expresses full and unreserved commitment to unwavering high quality and professionalism in software engineering.</p>
+<h2>How did XP improve software engineering discipline?</h2>
+<p>Today, 25 years after Beck launched his political statement, we are seeing incredibly impressive improvements in our profession. The initial launch made strong waves which are being felt to this day. Let’s look at some of the obvious improvements that XP brought to the table.</p>
+<h3>Continuous deployment (CD)</h3>
+<p>Back in the 1990s, deployment was sporadic (non-continuous). Teams working under the waterfall development paradigm were being driven by the Big Plan Upfront. That upfront plan was fleshed out to such levels of detail that it would predict the exact deployment date. That date was typically scheduled far into the future (oftentimes 6, 8, 12 or even 24 months in the future).</p>
+<p>Beck had raised many eyebrows at Chrysler in 1996 when he was put in charge of their software engineering and declared that teams will be deploying every three weeks. Such aggressive schedule was unheard of (the most daring teams were deploying every three to six months at best). But he pushed through and stuck to his guns and demonstrated that it was possible to do the regular deployments on a three weeks cadence. How did he manage to do that? He instigated the discipline of Extreme Programming.</p>
+<p>25 years ago, deploying software every three weeks did seem extreme indeed, so the name Extreme Programming stuck (today, Beck somewhat regrets choosing that name, but that’s a discussion for another micro learning episode).</p>
+<p>Today, we see many teams deploying much more frequently than every three weeks. Many manage to do it every week, or even every day. Some even do it more than once per day. In the most extreme cases of Extreme Programming, we see teams deploying code every second! (https://www.zdnet.com/article/how-amazon-handles-a-new-software-deployment-every-second/)</p>
+<h3>Testing in production</h3>
+<p>Continuous deployment presents an opportunity to test changes in production. If we’re deploying to production many times per day, we get a chance to truly run our software through its paces right there, in the real world.</p>
+<p>When Beck was formulating his Extreme Programming approach, he said he was guided by one simple principle:</p>
+<p>“I want the code to run all the time!”</p>
+<p>What better way to fulfill that guiding principle than to run and test the code in a live environment?</p>
+<p>Yes, but what about potential defects? Wouldn’t deploying changes to production so that we could test them potentially harm us? The answer lies in mastering feature flags (we already discussed this topic in another micro learning episode).</p>
+<h3>No bugs</h3>
+<p>Rather than chasing bugs, our time is better spent not writing them in the first place. TDD and shift left are methodologies that underpin XP and are our best weapon against bugs. All bugs are authored and minimizing/eliminating sloppy authorship inevitably results in minimizing/preventing bugs.</p>
+<p>Consequently, we cannot consider any story actually completed until the code that implements the story is in production, tested, and proven to be bug free.</p>
+<h3>No backlog</h3>
+<p>XP teams adopt a default answer to any feature request. That default answer is “No”. The rationale is that if ideas for features (i.e. hypotheses) are indeed important, they will</p>
+<p>come up again. Only in such cases is the request for feature (hypothesis) going to be taken up for work.</p>
+<p>This approach eliminates bloat. The rationale is that maintaining a long backlog is a waste. Identify the most important thing right now and then work on it. If while working on it something more important emerges, stop working on the current thing and attend to the more important one. Keep going in the same fashion. Iterate.</p>
+<h3>No estimates</h3>
+<p>Estimating a required effort by counting story points amounts to measuring the output instead of measuring the outcome. Wrong metric.</p>
+<p>Some teams switch from counting story points to counting number of stories delivered. Which is also a meaningless metric.</p>
+<p>If teams are already doing the best they can, and are working on the most important thing that the time, and are deploying as soon as possible, what’s the point in estimating? Time spent estimating is a waste, and that time could be better spent attending to most important things (i.e. working software that meets customers’ needs).</p>
+<h3>Data driven</h3>
+<p>System cannot evolve in the absence of business hypotheses. What are the sources of those hypotheses? Backlogs, predictions, Big Plan Upfront? A better, more reliable option is to use data. Collecting data by interviewing customers and end-users, exploring logs and devising razor-sharp telemetry is a better way to evolve the business.</p>
+<h3>Improvement boards</h3>
+<p>Improvement boards are based on the improvement kata (pioneered in Toyota). Improvement kata is based on the discoveries that occur along the way. This approach requires that participants do not hold on to the sense of certainty that is based on any prescribed perspective. Rather, the emphasis is on innovation and experimentation. The experiments are published on the Improvement board, which then serves as a reminder, an inspiration, an invitation to collaboration, lessons learned, etc.</p>
+<h3>Mob programming</h3>
+<p>The original collaboration model that XP introduced (pair programming) has been expanded and improved by introducing mob programming. Mob programming is not possible without practicing TDD.</p>
+<h3>Throwing code away</h3>
+<p>Functionality is an asset; code is a liability. In XP, functionality gets encoded in test scripts. As such, those test scripts are a definitive asset. In TDD, test scripts drive the implementation of the code.</p>
+<p>Testability is the highest value, while code is disposable. Some teams are discovering that it helps if we stop viewing implementation code as an asset, and if we often dispose of it and write it again guided by the tests.</p>
+<h3>Limit work-in-progress</h3>
+<p>When teams adopt a ‘no bugs’ mindset, they work following Edward Deming’s formula: “Quality comes not from inspection, but from improvement of the production process.” The only way to improve the production process is to limit work in progress. Limiting work in progress means eliminating interruptions.</p>
+<p>When teams have full control of their work environment (i.e. teams own their work), there is no need to multitask.</p>
+<h3>Hackathons</h3>
+<p>Incremental improvements are not giving organizations much needed competitive edge. To survive and thrive, organizations need to continuously engage in experimenting with completely new ideas. Innovations are mandatory, and our InnoFest is an excellent illustration of the viability and the importance of that approach.</p>
+<h3>DevOps</h3>
+<p>As developers start doing daily deployments, they get heavily involved with operations. By doing that, DevOps quickly turn into product support team. There is then only one small step from working as a product support team to becoming THE product team.</p>
+<h3>Conclusion</h3>
+<p>Extreme Programming has proven not only that it has amazing staying power (25 years and going strongly) but also that it can evolve in unexpected and surprisingly powerful ways. All the major improvements that happened in XP during the past 25 years serve one single purpose: running the code all the time.</p>
+<p>The future of XP looks bright. By speeding up the delivery while minimizing/eliminating defects, it is poised to continue enabling business automation and offering unprecedented competitive advantage through increased flexibility.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/extreme-programming.html">Extreme Programming </a><a href="/tag/xp.html">XP </a><a href="/tag/agile.html">Agile </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/xp-25-years-later.html" rel="bookmark"
+         title="Permalink to Extreme Programming 25 Years Later">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(1)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(5)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(15)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(10)</li>
+                    <li><a href="/tag/iac.html">IaC</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (29)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
