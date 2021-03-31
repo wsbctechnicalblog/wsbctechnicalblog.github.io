@@ -20,7 +20,7 @@ Our pipeline working group, made up of passionate engineers from architecture, s
 
 That said, we are surprised at the outcome of a poll on Twitter and a LinkedIn, where we asked engineers if they want full or partial ownership of their pipelines, or self-service. Less than 50% are interested in self-service automation!?!
 
-> Combined results from Twitter and LinkedIn quick polls
+> Combined results from Twitter and LinkedIn quick polls as at 2021.03.30 23:13
 >
 > ![Pipeline ownership](/images/moving-hundreds-of-pipeline-snowflakes-part7-1.png)
 
@@ -33,7 +33,10 @@ Some conspiracies we noticed in the polls and discussions with engineering:
   - **Fully agree**, especially as we are continuously innovating.
   - But, we can create templates and blueprints for common scenarios and re-use templates to quick-start the outliers. 
 - *You should not abstract and hide the pipelines from engineering!*
-  - **Quite the contrary**. As covered in [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html), everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.
+  - **Fully agree**. As covered in [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html), everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.
+
+
+![Back on track](/images/moving-hundreds-of-pipeline-snowflakes-part7-3.png)
 
 Let us get back on track. Why are we taking our generic blueprints, covered in [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part6.html) and [Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines](/yaml-pipelines-part7.html), to another level? To reduce the engineering effort to ~28 lines of pipeline configuration. That is a saving of 97% of repetitive and often mind-numbing configuration engineering.
 
@@ -98,6 +101,8 @@ Another nugget you may have missed in the platter of configuration code, is the 
 
 This is where both the effort of creating new continuous integration (CI) build pipelines and writing this post becomes **simple**.
 
+![How-to](/images/moving-hundreds-of-pipeline-snowflakes-part7-4.png)
+
 1. Copy the content of the **starter** template from the CeS/AzureDevOps.Automation.Pipeline.Templates repository (aka the sample above).
 2. Rename the app-type template from azure-pipelines-<TYPE>.yml as needed (an optional step).
 3. Look for TODO and update / fine-tune as needed.
@@ -111,6 +116,8 @@ Other than running your pipeline, you are **DONE**!
 If our pipeline working group achieves a 75% coverage of all our current pipeline scenarios, such as Azure Artifact packages, .NET Core, or Angular applications, we will start celebrating. 
 
 In the meantime, and to cover the remaining 25% there will always be an application type for which there is no blueprint, or a snowflake that requires a something special.
+
+![404](/images/moving-hundreds-of-pipeline-snowflakes-part7-5.png)
 
 Our engineers have a simple flowchart if they cannot find a suitable blueprint in our template repository:
 
