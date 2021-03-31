@@ -12,7 +12,7 @@ Welcome back to another installment of pipeline wizardry. In [part 6](/yaml-pipe
 
 # Why we teleported our generic blueprints one level higher
 
-In [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html) we explore infrastructure-as-code and the concept of pipeline-as-code and mention that each engineer building an continuous integration pipeline write an average of 900+ lines of json or YAML configuration ... per pipeline. Using generic blueprints, we managed to reduce this repetitive and thus wasted effort of engineering to 100+ lines of configuration code. A massive improvement, not only in terms of engineering effort, but also re-use and consistency of an ever-growing infrastructure of pipelines that needs to be nurtured and innovated continuously.
+In [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html) we explore infrastructure-as-code and the concept of pipeline-as-code and mention that each engineer building a continuous integration pipeline write an average of 900+ lines of json or YAML configuration ... per pipeline. Using generic blueprints, we managed to reduce this repetitive and thus wasted effort of engineering to 100+ lines of configuration code. A massive improvement, not only in terms of engineering effort, but also re-use and consistency of an ever-growing infrastructure of pipelines that needs to be nurtured and innovated continuously.
 
 Our pipeline working group, made up of passionate engineers from architecture, security, development, infrastructure, release management, and site reliability engineering, agreed that we need to do better. As we have a handful of application architecture and technology-stacks, we also agreed that consistency, automation, and continuous innovation should form the foundation to self-service automation. 
 
@@ -35,6 +35,7 @@ Some conspiracies we noticed in the polls and discussions with engineering:
 - *You should not abstract and hide the pipelines from engineering!*
   - **Fully agree**. As covered in [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html), everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.
 
+We will explore the real clincher, self-service automation, in a future planned post "*Self-service automation - A dream turns into reality*". In the meantime, rest assured that engineers are free to use their creativity to craft their precious snowflakes till the cows come home. We here to enable and guide through continuous innovation, manifestos, and guardrails.
 
 ![Back on track](/images/moving-hundreds-of-pipeline-snowflakes-part7-3.png)
 
