@@ -6,7 +6,7 @@ Slug: xp-25-years-later
 Author: Alex Bunardzic
 Summary: Extreme programming keeps going strong 25 years after its launch
 
-Extreme Programming (XP) was a revolutionary movement launched by Kent Beck in 1996. According to Beck, XP was a political statement. Back in the mid-1990s, software quality was being outsourced to the QA departments. Programmers were doing their part by writing software to the best of their ability but would then delegate the quality of their products to testers.
+Extreme Programming (XP) was a revolutionary movement launched by [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck) in 1996. According to Beck, XP was a political statement. Back in the mid-1990s, software quality was being outsourced to the QA departments. Programmers were doing their part by writing software to the best of their ability but would then delegate the quality of their products to testers.
 
 Beck disagreed with that approach and felt that quality is everyone’s responsibility. He launched Extreme Programming as a political statement which expresses full and unreserved commitment to unwavering high quality and professionalism in software engineering.
 
@@ -22,7 +22,7 @@ Beck had raised many eyebrows at Chrysler in 1996 when he was put in charge of t
 
 25 years ago, deploying software every three weeks did seem extreme indeed, so the name Extreme Programming stuck (today, Beck somewhat regrets choosing that name, but that’s a discussion for another micro learning episode).
 
-Today, we see many teams deploying much more frequently than every three weeks. Many manage to do it every week, or even every day. Some even do it more than once per day. In the most extreme cases of Extreme Programming, we see teams deploying code every second! (https://www.zdnet.com/article/how-amazon-handles-a-new-software-deployment-every-second/)
+Today, we see many teams deploying much more frequently than every three weeks. Many manage to do it every week, or even every day. Some even do it more than once per day. In the most extreme cases of Extreme Programming, we see teams deploying code [every second!](https://www.zdnet.com/article/how-amazon-handles-a-new-software-deployment-every-second/)
 
 ### Testing in production
 
@@ -44,9 +44,7 @@ Consequently, we cannot consider any story actually completed until the code tha
 
 ### No backlog
 
-XP teams adopt a default answer to any feature request. That default answer is “No”. The rationale is that if ideas for features (i.e. hypotheses) are indeed important, they will
-
-come up again. Only in such cases is the request for feature (hypothesis) going to be taken up for work.
+XP teams adopt a default answer to any feature request. That default answer is “No”. The rationale is that if ideas for features (i.e. hypotheses) are indeed important, they will come up again. Only in such cases is the request for feature (hypothesis) going to be taken up for work.
 
 This approach eliminates bloat. The rationale is that maintaining a long backlog is a waste. Identify the most important thing right now and then work on it. If while working on it something more important emerges, stop working on the current thing and attend to the more important one. Keep going in the same fashion. Iterate.
 
