@@ -18,7 +18,7 @@ Today, 25 years after Beck launched his political statement, we are seeing incre
 
 Back in the 1990s, deployment was sporadic (non-continuous). Teams working under the waterfall development paradigm were being driven by the Big Plan Upfront. That upfront plan was fleshed out to such levels of detail that it would predict the exact deployment date. That date was typically scheduled far into the future (oftentimes 6, 8, 12 or even 24 months in the future).
 
-Beck had raised many eyebrows at Chrysler in 1996 when he was put in charge of their software engineering and declared that teams will be deploying every three weeks. Such aggressive schedule was unheard of (the most daring teams were deploying every three to six months at best). But he pushed through and stuck to his guns and demonstrated that it was possible to do the regular deployments on a three weeks cadence. How did he manage to do that? He instigated the discipline of Extreme Programming.
+Beck had raised many eyebrows at Chrysler in 1996 when he was put in charge of their software engineering and declared that teams will be deploying every three weeks. Such aggressive schedule was unheard of (the most daring teams were deploying every three to six months at best). But he pushed through and stuck to his guns and demonstrated that it was possible to do regular deployments on a three weeks cadence. How did he manage to do that? He instigated the discipline of Extreme Programming.
 
 25 years ago, deploying software every three weeks did seem extreme indeed, so the name Extreme Programming stuck (today, Beck somewhat regrets choosing that name, but that’s a discussion for another micro learning episode).
 
@@ -56,7 +56,7 @@ Estimating a required effort by counting story points amounts to measuring the o
 
 Some teams switch from counting story points to counting number of stories delivered. Which is also a meaningless metric.
 
-If teams are already doing the best they can, and are working on the most important thing that the time, and are deploying as soon as possible, what’s the point in estimating? Time spent estimating is a waste, and that time could be better spent attending to most important things (i.e. working software that meets customers’ needs).
+If teams are already doing the best they can, and are working on the most important thing at the time, and are deploying as soon as possible, what’s the point in estimating? Time spent estimating is a waste, and that time could be better spent attending to most important things (i.e. working software that meets customers’ needs).
 
 ### Data driven
 
@@ -92,6 +92,6 @@ As developers start doing daily deployments, they get heavily involved with oper
 
 ### Conclusion
 
-Extreme Programming has proven not only that it has amazing staying power (25 years and going strongly) but also that it can evolve in unexpected and surprisingly powerful ways. All the major improvements that happened in XP during the past 25 years serve one single purpose: running the code all the time.
+Extreme Programming has proven not only that it has amazing staying power (25 years and going strong) but also that it can evolve in unexpected and surprisingly powerful ways. All the major improvements that happened in XP during the past 25 years serve one single purpose: running the code all the time.
 
 The future of XP looks bright. By speeding up the delivery while minimizing/eliminating defects, it is poised to continue enabling business automation and offering unprecedented competitive advantage through increased flexibility.
