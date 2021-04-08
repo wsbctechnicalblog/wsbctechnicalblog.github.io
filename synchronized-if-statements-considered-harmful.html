@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Synchronized 'if' statements considered harmful - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/synchronized-if-statements-considered-harmful.html" rel="bookmark"
+            title="Permalink to Synchronized 'if' statements considered harmful">Synchronized 'if' statements considered harmful</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Thu 08 April 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Duplicated imperative conditional logic leads to proliferation of bugs</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger Dijkstra's</a> famous letter <a href="https://dl.acm.org/doi/10.1145/362929.362947">"Go To Statement Considered Harmful"</a> was published 53 years ago in the March 1968 <em>Communications of the Association for Computing Machinery (ACM)</em>.</p>
+<p>Today, no one uses <strong>go to</strong> statements anymore. The practice was proven harmful, and the pernicious <strong>go</strong> to statement was replaced by more appropriate statements as part of the structured programming vocabulary.</p>
+<p>Upon closer inspection, though, it turns out that <strong>go to</strong> statement by itself is not that harmful, after all. It simply implements a jump from one statement in the code to another statement in the code. But, so do structured programming language constructs that replaced the <strong>go</strong> to statement. Statements such as <strong>return</strong>, <strong>break</strong>, <strong>continue</strong>. Those statements also implement a jump from one statement in the code to another statement in the code.</p>
+<p>Knowing that, why did Dijkstra think <strong>go to</strong> was so harmful, while <strong>return</strong>/<strong>break</strong>/<strong>continue</strong> etc. aren’t harmful?</p>
+<h2>Cognitive dissonance</h2>
+<p>What Dijkstra had noticed back in 1968 is the discrepancy between how we think and how computers work. We seem to focus most of our thinking toward orienting ourselves in space. We like to read and draw maps, and indicate things that are near or far, over here or over there, etc.</p>
+<p>On the other hand, we don’t seem that well versed in thinking along temporal dimension. Time indicates change, and we mostly dislike change, as it threatens to unsettle us from our familiar comfort zones. We prefer spatial coordinates as they indicate something solid, firm, unchangeable, non-threatening.</p>
+<p>Computers work in the exact opposite fashion. When a computer program runs, it unfolds in time. First this statement gets executed, then that statement, and so on. But these execution steps do not necessarily follow in linear fashion.</p>
+<p>Still, when we read a source code that comprises a computer program, we reason in spatial terms. We start from the top of the page (or top of the screen) and then we parse the code-as-text one line at the time, going sequentially. Until we reach the end of the source code file.</p>
+<p>Trouble is, that’s not how the program behaves. When a program runs, it makes all kinds of hyper-space leaps and bounds. It does not follow any neatly laid out spatial map.</p>
+<p>Imagine a dancing competition where contestants would take snapshots of them dancing and would then send those snapshots to the jury. The jury would review the submitted snapshots and would then announce the winner of the dancing competition.</p>
+<p>Or, imagine a cooking competition where contestants would take snapshots of them making food and would then send those snapshots to the jury. The jury would review the submitted snapshots and would then announce the best chef.</p>
+<p>When we are reviewing a snapshot of the source code, we are equally reducing a very dynamic situation (i.e. a running program) to the set of static freeze-frame snapshots. It gives us a very unrealistic picture of how the program behaves and what is it capable of (this is especially obvious when we examine static snapshots of the code that is doing asynchronous processing).</p>
+<h2>Go to is only harmful when combined with if statements</h2>
+<p><strong>Go to</strong> statement by itself is no different than other control flow statements. It interrupts the linear flow (i.e. after executing current statement, it steps into the statement on the next line below). But so do other flow control statements that were introduced as part of structured programming with the intent to eliminate <strong>go to</strong> statements.</p>
+<p>So, why is it then that Dijkstra considered <strong>go to</strong> harmful? The reason is that only when <strong>go to</strong> gets combined with <strong>if</strong> statements that we create a fertile breeding ground for bugs. For example, if we say:</p>
+<div class="highlight"><pre><span></span><code><span class="err">if(orderTotal &gt; 500.00 go to line 10)</span>
+</code></pre></div>
+
+<p>that type of control flow has the potential to result in buggy code.</p>
+<p>Without the conditional statement (the <strong>if</strong>) having a simple statement:</p>
+<div class="highlight"><pre><span></span><code><span class="err">go to line 10</span>
+</code></pre></div>
+
+<p>is not problematic. Why? Because it is not conditionally controlling the flow of execution. It is simply directing the flow without checking for any specific values.</p>
+<p>Knowing this, one wonders why is it that Dijkstra did not declare <strong>if</strong> statements harmful? The reason is probably that back in 1968, Dijkstra was able to clearly define structured programming discipline, but he did not have the tools at his disposal that would enable him to define the discipline needed for removing the <strong>if</strong> statements. Back then, the concept of object programming was still nascent.</p>
+<p>Today, we have well entrenched knowledge of object-oriented programming, and have great methodologies for replacing imperative <strong>if</strong> statements with more sophisticated code constructs.</p>
+<h2>Business policy rules must be declared in very visible places</h2>
+<p>The most volatile (and most critical) parts of the app code are the parts that automate business policy rules. Those policy rules are governed by conditional logic (i.e. <em>if in this moment the state of the app is such-and-such, then the following expected transformation of values must occur</em>). Because business policy rules are in constant flux, teams are incessantly making changes to the already changed code.</p>
+<p>It is those changes that offer the most fruitful opportunity for authoring bugs. What is the reason for this frequent bug authoring?</p>
+<p>Most of the time the unwanted effects of the change to the code happen if the conditional logic is duplicated. The same logic gets implemented in more than one module/method. This duplication creates opportunities for missing or misplacing the necessary changes.</p>
+<p>If we have implemented imperative conditional logic by using <strong>if-else</strong> statements in some module or method, chances are that there will be some other module or method where the exact same conditional logic will be needed. As the program runs, at various times it will need to make a processing decision based on that specific conditional logic.</p>
+<p>The trouble begins when those varying modules and methods need to be maintained. The business policy rule has changed, and now our code must mirror that change. Being able to make the necessary change in all the affected methods and/or modules is often riskier than it may seem.</p>
+<p>We often call these duplicate instances of conditional logic <strong>synchronized ifs</strong>. If one <strong>if</strong> statement needs to change, all other synchronized <strong>if</strong> statements must change at the same time. Which could quite often be a challenge.</p>
+<p>We must therefore abandon synchronized <strong>ifs</strong> and abstract conditional logic away into a single source of truth. The trick is choosing proper abstraction to accomplish that task. Which is the topic for another blog post.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/extreme-programming.html">Extreme Programming </a>
+        | <a href="/synchronized-if-statements-considered-harmful.html" rel="bookmark"
+         title="Permalink to Synchronized 'if' statements considered harmful">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(5)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(15)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(10)</li>
+                    <li><a href="/tag/iac.html">IaC</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (30)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
