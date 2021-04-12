@@ -139,7 +139,7 @@ In the meantime, and to cover the remaining 25% there will always be an applicat
 Our engineers have a simple flowchart if they cannot find a suitable blueprint in our template repository:
 
 1. Create a custom **starter** and **app-type** blueprint from scratch or tweaking an existing blueprint. Latter is recommended.
-1. Submit a **Pull-Request** with your **starter** template to our CeS Templates repo. .
+1. Submit a **Pull-Request** with your **starter** template to our CeS Templates repo.
 1. Submit a **Pull-Request** with your **app-type** template to our CeS AppTemplates repo. 
 1. Collaborate with the pipeline working group to release your changes with the common engineering system.
 
