@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part7.html" rel="bookmark"
+            title="Permalink to Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines">Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Said Akram on Mon 12 April 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Do you want to own two or seventy five dozen lines of pipeline code per application? The choice is yours!</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to another installment of pipeline wizardry. In <a href="/yaml-pipelines-part6.html">part 6</a> we covered the simplicity of the generic blueprint-based YAML pipeline and mentioned that there is more magic. Welcome to our application-type blueprints!</p>
+<hr>
+<h1>Why we teleported our generic blueprints one level higher</h1>
+<p>In <a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a> we explore infrastructure-as-code and the concept of pipeline-as-code and mention that each engineer building a continuous integration pipeline write an average of 900+ lines of json or YAML configuration ... per pipeline. Using generic blueprints, we managed to reduce this repetitive and thus wasted effort of engineering to 100+ lines of configuration code. A massive improvement, not only in terms of engineering effort, but also re-use and consistency of an ever-growing infrastructure of pipelines that needs to be nurtured and innovated continuously.</p>
+<p>Our pipeline working group, made up of passionate engineers from architecture, security, development, infrastructure, release management, and site reliability engineering, agreed that we need to do better. As we have a handful of application architecture and technology-stacks, we also agreed that consistency, automation, and continuous innovation should form the foundation to self-service automation. </p>
+<blockquote>
+<p>When we want to power up an electronic device, we plug it into the power grid and flip the on switch. None of us are interested in generating the power ourselves, or the local substation with an autonomy mindset.</p>
+</blockquote>
+<p>That said, we are surprised at the outcome of a poll on Twitter and a LinkedIn, where we asked engineers if they want full or partial ownership of their pipelines, or self-service. Less than 50% are interested in self-service automation!?!</p>
+<blockquote>
+<p>Combined results from Twitter and LinkedIn quick polls as at 2021.03.30 23:13</p>
+<p><img alt="Pipeline ownership" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-1.png"></p>
+</blockquote>
+<p>Some conspiracies we noticed in the polls and discussions with engineering:</p>
+<ul>
+<li><em>You are influencing engineering on how they should work by centralizing pipeline templates!</em></li>
+<li><strong>No</strong>, we are allowing engineering to collaborate, innovate, and influence each other.</li>
+<li>In fact, we are enabling the organization to package your hard earned experience and guardrails in re-usable templates.</li>
+<li><em>You cannot possibly create a template for every scenario!</em></li>
+<li><strong>Fully agree</strong>, especially as we are continuously innovating.</li>
+<li>But, we can create templates and blueprints for common scenarios and re-use templates to quick-start the outliers. </li>
+<li><em>You should not abstract and hide the pipelines from engineering!</em></li>
+<li><strong>Fully agree</strong>. As covered in <a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a>, everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.</li>
+</ul>
+<p>We will explore the real clincher, self-service automation, in a future planned post "<em>Self-service automation - A dream turns into reality</em>". In the meantime, rest assured that engineers are free to use their creativity to craft their precious snowflakes till the cows come home. We are here to enable and guide through continuous innovation, manifestos, and guardrails.</p>
+<p><img alt="Back on track" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-3.png"></p>
+<p>Let us get back on track. Why are we taking our generic blueprints, covered in <a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a> and <a href="/yaml-pipelines-part7.html">Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</a>, to another level? To reduce the engineering effort to ~28 lines of pipeline configuration. That is a saving of 97% of repetitive and often mind-numbing configuration engineering.</p>
+<p>Have we caught your attention? If yes, read on.</p>
+<hr>
+<h1>Unveiling our Application-Type Blueprints</h1>
+<p>With application-type, in short app-type, blueprints we are taking the continuous integration (CI) pipelines light-years further in terms of our goals for simplicity, security, enablement, and consistency. Each app-type blueprint, consists of a <strong>starter</strong> template, an <strong>app-type</strong> template, and a reference <strong>sample</strong> implementation, as shown below.</p>
+<blockquote>
+<p>Blueprint Architecture</p>
+<p><img alt="Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-2.png"></p>
+</blockquote>
+<ul>
+<li>The <strong>starter</strong> template allows you to configure your continuous integration pipeline. This is the only moving part that is copied and becomes part of your application code base, protected by your branch policies and your team-level pull request workflow.</li>
+<li>The <strong>app-type</strong> template abstracts the entire continuous integration (CI) process, our generic blueprints and integration with our bootstrap template, promoting consistency, delegates responsibility for the implementation to our common engineering system team, and encourages you to be razor-focused on your application. Anyone can view the blueprints (transparency) and everyone can submit a pipeline working group pull request to continuously innovate the blueprints (we are one).</li>
+<li>The <strong>example</strong> implementation of a starter and app-type template, sample application, and pipeline is self-explanatory. Handy awareness and validation aid.</li>
+</ul>
+<p>Here is an example of our Azure Function starter template:</p>
+<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="o">:</span>
+  <span class="n">batch</span><span class="o">:</span> <span class="kc">true</span> <span class="err">#</span> <span class="n">batch</span> <span class="n">changes</span> <span class="k">if</span> <span class="kc">true</span><span class="o">;</span> <span class="n">start</span> <span class="n">a</span> <span class="k">new</span> <span class="n">build</span> <span class="k">for</span> <span class="n">every</span> <span class="n">push</span> <span class="k">if</span> <span class="kc">false</span>
+  <span class="n">branches</span><span class="o">:</span>
+    <span class="k">include</span><span class="o">:</span>
+    <span class="o">-</span> <span class="s1">&#39;*&#39;</span> <span class="err">#</span> <span class="n">Trigger</span> <span class="n">on</span> <span class="n">all</span> <span class="n">branches</span>
+
+<span class="n">resources</span><span class="o">:</span>
+  <span class="n">repositories</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">repository</span><span class="o">:</span> <span class="n">AppTemplates</span>
+    <span class="n">type</span><span class="o">:</span>       <span class="n">git</span>
+    <span class="n">name</span><span class="o">:</span>       <span class="s1">&#39;CeS/AzureDevOps.Automation.Pipeline.AppTemplates&#39;</span>
+
+<span class="err">#</span> <span class="n">Semantic</span> <span class="n">version</span> <span class="k">as</span> <span class="n">per</span> <span class="n">Azure</span> <span class="n">DevOps</span> <span class="n">Naming</span> <span class="n">Conventions</span><span class="o">.</span>
+<span class="n">name</span><span class="o">:</span>
+  <span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">GITVERSION_MAJORMINORPATCH</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">yyyyMMdd</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">HHmmss</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">SourceBranchName</span><span class="o">)</span>
+
+<span class="err">#</span> <span class="n">VARIABLES</span>
+<span class="n">variables</span><span class="o">:</span>
+  <span class="n">portfolioName</span><span class="o">:</span>    <span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="n">CeS</span>
+  <span class="n">productName</span><span class="o">:</span>      <span class="s1">&#39;TODO REPLACE WITH PRODUCT NAME&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="n">Samples</span><span class="o">.</span><span class="na">AzureFunction</span>
+
+<span class="kd">extends</span><span class="o">:</span>
+  <span class="n">template</span><span class="o">:</span> <span class="n">Templates</span><span class="sr">/AzureFunction/</span><span class="n">AzureFunctionTemplate</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">AppTemplates</span>
+  <span class="n">parameters</span><span class="o">:</span>
+    <span class="n">netCoreVersion</span><span class="o">:</span>         <span class="s1">&#39;TODO REPLACE WITH .NET CORE VERSION&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="mf">3.1</span><span class="o">.</span><span class="na">x</span>
+    <span class="n">applicationGuid</span><span class="o">:</span>        <span class="s1">&#39;TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="mi">257929</span><span class="n">e89c69471083efb51899b42bdb</span>
+    <span class="n">portfolioName</span><span class="o">:</span>          <span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span>
+    <span class="n">productName</span><span class="o">:</span>            <span class="n">$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span>
+</code></pre></div>
+
+<p>In case you have not counted yourself: A mere twenty-two (22) lines of configuration code, with only four (4) TODO that require minimal effort!</p>
+<blockquote>
+<p>"<em>It took me a few minutes to setup our entire continuous deployment (CD) proof-of-concept (PoC) environment, after which I was able to focus on the CD experiments. I am Said's App-type blueprints #1 fan!</em>" - <a href="https://www.linkedin.com/in/wpschaub/">Willy Schaub</a></p>
+</blockquote>
+<p>Another nugget you may have missed in the platter of configuration code, is the <strong>extends</strong> template. It enables <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/security/templates?view=azure-devops">Security through templates</a> and allows us to set a required template check gate for resources and environments. More on that when we share our CD PoC results.</p>
+<hr>
+<h1>Don't repeat yourself</h1>
+<p>As software engineers, we try to avoid code duplication. Each time we spot a code used in two or more methods, we fix it by moving the code into its own method and calling that method from all of the places where it was originally used.</p>
+<p>The same DRY principle can be applied to Continuous Integration (CI) build pipelines. As covered in <a href="/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a>, we use pipeline blueprints to define reusable content.</p>
+<p>Even if we have thousands of build pipelines, we only have a few application architectures. Our app-type templates can serve a big part of the applications we have. For the rest of the applications, we can create custom YAML based pipelines.</p>
+<h1>Pipeline As a Service</h1>
+<p>As a software developer, do I want to own (i.e. create and maintain) the pipelines to build and deploy my application? My answer is <strong>NO</strong>.</p>
+<p>I will be glad to let another team take that responsibility while I focus on creating value for the business by delivering quality software.</p>
+<p>As long as I have access to the build pipeline templates and able to suggest changes, I will not lose my ability to do my work and troubleshoot issues if any.</p>
+<h1>How to implement your pipeline using the App-Type Blueprints</h1>
+<p>This is where both the effort of creating new continuous integration (CI) build pipelines and writing this post becomes <strong>simple</strong>.</p>
+<p><img alt="How-to" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-4.png"></p>
+<ol>
+<li>Copy the content of the <strong>starter</strong> template from the CeS/AzureDevOps.Automation.Pipeline.Templates repository (aka the sample above).</li>
+<li>Rename the app-type template from azure-pipelines-<TYPE>.yml as needed (an optional step).</li>
+<li>Look for TODO and update / fine-tune as needed.</li>
+</ol>
+<p>Other than running your pipeline, you are <strong>DONE</strong>! </p>
+<hr>
+<h1>What if an App-Type Blueprint is not available?</h1>
+<p>If our pipeline working group achieves a 75% coverage of all our current pipeline scenarios, such as Azure Artifact packages, .NET Core, or Angular applications, we will start celebrating. </p>
+<p>In the meantime, and to cover the remaining 25% there will always be an application type for which there is no blueprint, or a snowflake that requires something special.</p>
+<p><img alt="404" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-5.png"></p>
+<p>Our engineers have a simple flowchart if they cannot find a suitable blueprint in our template repository:</p>
+<ol>
+<li>Create a custom <strong>starter</strong> and <strong>app-type</strong> blueprint from scratch or tweaking an existing blueprint. Latter is recommended.</li>
+<li>Submit a <strong>Pull Request</strong> with your <strong>starter</strong> template to our CeS Templates repo.</li>
+<li>Submit a <strong>Pull Request</strong> with your <strong>app-type</strong> template to our CeS AppTemplates repo. </li>
+<li>Collaborate with the pipeline working group to release your changes with the common engineering system.</li>
+</ol>
+<p><strong>SIMPLE</strong>, yet powerful wizardry!</p>
+<hr>
+<h1>What is next?</h1>
+<p>We will report back on our proof-of-concept and associated experiments to extend the app-type continuous integration (CI) build pipeline blueprints to include continuous deployment (CD).</p>
+<p>See you soon in Part 8: Pipelines - From CI to CD and beyond in one pipeline.</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | Part 7 |  </p>
+</blockquote>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure-Pipelines </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/yaml-pipelines-part7.html" rel="bookmark"
+         title="Permalink to Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure-Pipelines</a>(11)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(16)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(5)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(1)</li>
+                    <li><a href="/tag/iac.html">IaC</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">infrastructure as code</a>(1)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps-Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure-Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure-Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flag.html">Feature-flag</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (31)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

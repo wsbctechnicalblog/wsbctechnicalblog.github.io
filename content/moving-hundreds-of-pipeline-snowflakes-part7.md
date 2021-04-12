@@ -1,5 +1,5 @@
 Title: Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines
-Date: 2021-03-30
+Date: 2021-04-12
 Category: Posts
 Tags: Azure-Pipelines, DevOps
 Slug: yaml-pipelines-part7
