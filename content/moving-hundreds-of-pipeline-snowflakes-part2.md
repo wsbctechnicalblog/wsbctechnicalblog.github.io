@@ -252,6 +252,6 @@ If erroneous spaces do not rattle you, we are ready to jump into [part 3](yaml-p
 
 ---
 
-> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | Part 2 | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | Part7 Coming Soon |
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | Part 2 | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | [Part 7](/yaml-pipelines-part7.html) |
 
 
