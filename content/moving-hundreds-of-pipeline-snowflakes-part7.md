@@ -35,7 +35,7 @@ Some conspiracies we noticed in the polls and discussions with engineering:
 - *You should not abstract and hide the pipelines from engineering!*
   - **Fully agree**. As covered in [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html), everyone can view the templates and blueprints and anyone can submit changes to existing templates or recommend new ones. The only thing we mandate is the use of pull requests to guard the template and blueprint repositories.
 
-We will explore the real clincher, self-service automation, in a future planned post "*Self-service automation - A dream turns into reality*". In the meantime, rest assured that engineers are free to use their creativity to craft their precious snowflakes till the cows come home. We here to enable and guide through continuous innovation, manifestos, and guardrails.
+We will explore the real clincher, self-service automation, in a future planned post "*Self-service automation - A dream turns into reality*". In the meantime, rest assured that engineers are free to use their creativity to craft their precious snowflakes till the cows come home. We are here to enable and guide through continuous innovation, manifestos, and guardrails.
 
 ![Back on track](/images/moving-hundreds-of-pipeline-snowflakes-part7-3.png)
 
@@ -98,6 +98,22 @@ Another nugget you may have missed in the platter of configuration code, is the 
  
 --- 
 
+# Don't repeat yourself
+
+As software engineers, we try to avoid code duplication. Each time we spot a code used in two or more methods, we fix it by moving the code into its own method and calling that method from all of the places where it was originally used.
+
+The same DRY principle can be applied to Continuous Integration (CI) build pipelines. As covered in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](/yaml-pipelines-part5.html), we use pipeline blueprints to define reusable content.
+
+Even if we have thousands of build pipelines, we only have a few application architectures. Our app-type templates can serve a big part of the applications we have. For the rest of the applications, we can create custom YAML based pipelines.
+
+# Pipeline As a Service
+
+As a software developer, do I want to own (i.e. create and maintain) the pipelines to build and deploy my application? My answer is **NO**.
+
+I will be glad to let another team take that responsibility while I focus on creating value for the business by delivering quality software.
+
+As long as I have access to the build pipeline templates and able to suggest changes, I will not lose my ability to do my work and troubleshoot issues if any.
+
 # How to implement your pipeline using the App-Type Blueprints
 
 This is where both the effort of creating new continuous integration (CI) build pipelines and writing this post becomes **simple**.
@@ -116,7 +132,7 @@ Other than running your pipeline, you are **DONE**!
 
 If our pipeline working group achieves a 75% coverage of all our current pipeline scenarios, such as Azure Artifact packages, .NET Core, or Angular applications, we will start celebrating. 
 
-In the meantime, and to cover the remaining 25% there will always be an application type for which there is no blueprint, or a snowflake that requires a something special.
+In the meantime, and to cover the remaining 25% there will always be an application type for which there is no blueprint, or a snowflake that requires something special.
 
 ![404](/images/moving-hundreds-of-pipeline-snowflakes-part7-5.png)
 
