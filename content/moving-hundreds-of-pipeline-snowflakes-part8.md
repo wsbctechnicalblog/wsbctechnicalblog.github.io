@@ -22,6 +22,18 @@ TBD
 
 ---
 
+# Making sure our Security Engineers are happy
+
+TBD
+
+---
+
+# Mulling over environments and/or service connection approvals
+
+TBD
+
+---
+
 # Are our engineers losing control over their pipeline?
 
 TBD
