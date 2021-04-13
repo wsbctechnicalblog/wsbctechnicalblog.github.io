@@ -24,5 +24,7 @@ The quick reference poster introduces:
 >
 > DOWNLOAD >> [PDF](/documents/multi-stage-blueprint-based-1st-gen-pipelines-poster.pdf)
 
+Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!
+
 ---
 
