@@ -6,7 +6,7 @@ Slug: moving-hundreds-of-pipeline-snowflakes-qr-1
 Author: Willy Schaub
 Summary: Summarising the main points of YAML syntax, within the context of our generic blueprint-based pipelines.
 
-Quick Reference Posters help us foster collaboration, visualise and get across key points of specific topics. They also serve as handy cheat sheets!
+Quick Reference Posters help us foster collaboration, visualise and get across key points for specific topics. They also serve as handy cheat sheets!
 
 ---
 
