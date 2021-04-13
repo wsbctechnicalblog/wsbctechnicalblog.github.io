@@ -1,7 +1,7 @@
 Title: Use Active Directory Groups in your unified classic CI CD pipelines
 Date: 2020-10-20 13:13
 Category: Posts
-Tags: Azure AD, Azure-Pipelines
+Tags: Azure AD, Azure Pipelines
 Slug: ad-groups-for-ci-cd-pipelines
 Author: Willy-Peter Schaub
 Summary: Instead of managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions

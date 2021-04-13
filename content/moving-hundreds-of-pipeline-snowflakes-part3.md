@@ -1,7 +1,7 @@
 Title: Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry
 Date: 2021-01-04
 Category: Posts
-Tags: Azure-Pipelines, DevOps
+Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part3
 Author: Willy-Peter Schaub
 Summary: With the support from all **people**, YAML templates support our five (5) core goals and pillars of our common engineering system.

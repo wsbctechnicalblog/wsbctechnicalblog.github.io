@@ -1,7 +1,7 @@
 Title: Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity
 Date: 2021-03-02
 Category: Posts
-Tags: Azure-Pipelines, DevOps
+Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part6
 Author: Willy-Peter Schaub
 Summary: Neither the bootstrap nor generic templates are rocket science, and the YAML-based pipelines are as complex as **you** make them.

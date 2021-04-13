@@ -1,7 +1,7 @@
 Title: Part 5: Pipelines - Blueprints to fuel consistency and enablement
 Date: 2021-01-28
 Category: Posts
-Tags: Azure-Pipelines, DevOps
+Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part5
 Author: Willy-Peter Schaub
 Summary: Think of **blueprints** and associated **templates** as re-usable LEGO blocks, ranging from a bag of "do it yourself" blocks, to complex and detailed kits, such as the Imperial Star Destroyer.

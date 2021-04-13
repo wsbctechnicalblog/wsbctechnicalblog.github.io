@@ -1,7 +1,7 @@
 Title: Part 8: Pipelines - From CI to CD and beyond in one pipeline
 Date: 2021-04-13
 Category: Posts
-Tags: Azure-Pipelines, DevOps
+Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part8
 Author: Willy-Peter Schaub
 Summary: TBD

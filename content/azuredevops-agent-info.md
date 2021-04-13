@@ -1,7 +1,7 @@
 Title: Find the capabilities and IP addresses of an Azure DevOps agent
 Date: 2021-03-12
 Category: Posts
-Tags: AzDO, Azure-Pipelines, Tips
+Tags: AzDO, Azure Pipelines, Tips
 Slug: azure-devops-agent-capabilities
 Author: Willy-Peter Schaub
 Summary: How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.
