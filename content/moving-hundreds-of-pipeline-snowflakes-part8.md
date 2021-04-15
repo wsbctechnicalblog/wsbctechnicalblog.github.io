@@ -6,7 +6,7 @@ Slug: yaml-pipelines-part8
 Author: Willy-Peter Schaub
 Summary: TBD
 
-Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipelines-part7.html) we wrapped up our application-type continuous integration (CI) pipeline. What about continuous deployment (CD)?
+Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipelines-part7.html) we wrapped up our application-type continuous integration (CI) pipeline. OK, we have nailed the build, but what about continuous deployment (CD)?
 
 ---
 
