@@ -20,7 +20,7 @@ When I reviewed a pull request with a few commits focused on regular expression 
 |-------------|----------------|----------------|
 | Special Characters | .<br/>\\.<br/>\\n<br/>\\f<br/>\\t<br/>\\xhhhh | any character<br/>dot<br/>newline character<br/>form feed character<br/>tab character<br/>Unicode character as hexadecimal number, i.e. \xFFFF | 
 | Quantifiers | +<br/>?<br/>\*<br/>{x,y} | 1 or more<br/>0 or one<br/>0 or more<br/>at least ‘x’ but no more that ‘y’ occurrences | 
-| Character Sets | \\s<br/>\\S<br/>\\d<br/>\\D<br/>\\w<br/>\\W<br/> [a-x] <br/>[^a-x] | whitespace character<br/>non-whitespace character<br/>digit character (0-9) <br/>non-digit character<br/>any letter (a-zA-Z) or digit (0-9) or underscore (\\_) character <br/>non-word character<br/>characters in the range of a to x, excluding yz<br/>characters except in the range of a to x, i.e. y and z | 
+| Character Sets | \\s<br/>\\S<br/>\\d<br/>\\D<br/>\\w<br/>\\W<br/> [a-x] <br/>[^a-x] | whitespace character<br/>non-whitespace character<br/>digit character (0-9) <br/>non-digit character<br/>any letter (a-zA-Z) or digit (0-9) or underscore (_) character <br/>non-word character<br/>characters in the range of a to x, excluding yz<br/>characters except in the range of a to x, i.e. y and z | 
 | Anchoring | ^<br/>$<br/>\\b<br/>\\B | if first char, indicates that match starts at start of  string<br/>match must continue to end of string<br/>word boundary<br/>non-word boundary |
 
 ---
@@ -32,7 +32,7 @@ When I reviewed a pull request with a few commits focused on regular expression 
 >  ![Regular Expression Example](/images/peek-into-regular-expressions-2.png)
 
 | #   | EXPRESSION  | DESCRIPTION |
-|:---:|------------:|-------------|
+|:---:|:-----------:|-------------|
 | 1   | ^           | The first character ^ indicates that the next match (19\|20) starts at beginning of string. |
 | 2   | (19\|20)    | We either need a 19 or a 20 at the beginning of the string. |
 | 3   | \\d\\d        | Next we have two digit character (0-9). |
