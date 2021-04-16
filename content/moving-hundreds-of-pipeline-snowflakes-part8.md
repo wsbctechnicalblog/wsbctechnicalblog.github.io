@@ -14,7 +14,9 @@ Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipe
 
 In previous posts we covered the world of Continuous Integration (CI), which builds and validates your latest code in your source control repository. With Continuous Delivery (CD) we deploy the artifact from the CI build to one or more environments. 
 
-In the MSDN article, [Applying DevOps to a Software Development Project](https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project), I emphasised the subtle difference between Continuous Delivery (CD) and Continuous Deployment (CD): "_The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through several environments, ultimately ending up in production, which may include automated user interface (UI), load and performance tests and approvals along the way._" Note that both have the TLA (two|three lettered acronym) CD ... confusing, right? Oh, how I loathe acronyms q;-(
+In the MSDN article, [Applying DevOps to a Software Development Project](https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project), I emphasised the subtle difference between Continuous Delivery (CD) and Continuous Deployment (CD): "_The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through several environments, ultimately ending up in production, which may include automated user interface (UI), load and performance tests and approvals along the way._" 
+
+Note that both have the dreaded TLA (two|three lettered acronym) CD? ... confusing, right? Oh, how I loathe IT (information technology) acronyms q;-(
 
 OK, so Continuous Deployment seems important. It **deploys** new features, bug and hot fixes, which we can **release** to our delighted customers on demand.
 
