@@ -76,7 +76,7 @@
 <tr>
 <td>Character Sets</td>
 <td>\s<br/>\S<br/>\d<br/>\D<br/>\w<br/>\W<br/> [a-x] <br/>[^a-x]</td>
-<td>whitespace character<br/>non-whitespace character<br/>digit character (0-9) <br/>non-digit character<br/>any letter (a-zA-Z) or digit (0-9) or underscore (\_) character <br/>non-word character<br/>characters in the range of a to x, excluding yz<br/>characters except in the range of a to x, i.e. y and z</td>
+<td>whitespace character<br/>non-whitespace character<br/>digit character (0-9) <br/>non-digit character<br/>any letter (a-zA-Z) or digit (0-9) or underscore (_) character <br/>non-word character<br/>characters in the range of a to x, excluding yz<br/>characters except in the range of a to x, i.e. y and z</td>
 </tr>
 <tr>
 <td>Anchoring</td>
@@ -95,59 +95,59 @@
 <thead>
 <tr>
 <th align="center">#</th>
-<th align="right">EXPRESSION</th>
+<th align="center">EXPRESSION</th>
 <th>DESCRIPTION</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">1</td>
-<td align="right">^</td>
+<td align="center">^</td>
 <td>The first character ^ indicates that the next match (19|20) starts at beginning of string.</td>
 </tr>
 <tr>
 <td align="center">2</td>
-<td align="right">(19|20)</td>
+<td align="center">(19|20)</td>
 <td>We either need a 19 or a 20 at the beginning of the string.</td>
 </tr>
 <tr>
 <td align="center">3</td>
-<td align="right">\d\d</td>
+<td align="center">\d\d</td>
 <td>Next we have two digit character (0-9).</td>
 </tr>
 <tr>
 <td align="center">4</td>
-<td align="right">[- /.]</td>
+<td align="center">[- /.]</td>
 <td>Next we have a range of valid characters, in this case minus, slash, space and dot.</td>
 </tr>
 <tr>
 <td align="center">5.1</td>
-<td align="right">(0[1-9]</td>
+<td align="center">(0[1-9]</td>
 <td>Either we have a 0, followed by a digit in the range of 1-9, i.e. 01 to 09.</td>
 </tr>
 <tr>
 <td align="center">5.2</td>
-<td align="right">|1[012])</td>
+<td align="center">|1[012])</td>
 <td><strong>OR</strong> we have a 1, followed by a zero, one or two, i.e. 10, 11 or 12.</td>
 </tr>
 <tr>
 <td align="center">6.1</td>
-<td align="right">(0[1-9]</td>
+<td align="center">(0[1-9]</td>
 <td>Either we have a 0, followed by a digit in the range of 1-9, i.e. 01 to 09.</td>
 </tr>
 <tr>
 <td align="center">6.2</td>
-<td align="right">|[12][0-9)</td>
+<td align="center">|[12][0-9)</td>
 <td><strong>OR</strong> we have a 1 or a 2, followed by a digit in the range of 0-9, i.e. 10 to 29.</td>
 </tr>
 <tr>
 <td align="center">6.3</td>
-<td align="right">|3[01])</td>
+<td align="center">|3[01])</td>
 <td><strong>OR</strong>** we have a three, followed by a zero or a one, i.e. 30 - 31.</td>
 </tr>
 <tr>
 <td align="center">7</td>
-<td align="right">$</td>
+<td align="center">$</td>
 <td>The last character $ indicates that the next match must continue to end of string.</td>
 </tr>
 </tbody>
