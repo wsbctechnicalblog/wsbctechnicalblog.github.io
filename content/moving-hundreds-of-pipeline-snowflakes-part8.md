@@ -254,7 +254,7 @@ With our application-type blueprints we are pursuing the best of the autonomy an
 
 > ![Light bulb](/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
 >
-> What is the point (value) of allowing software engineers five different ways of building and deploying an Azure Function? More importantly, why would we want to impose different solutions for the same solution for operations and site reliability engineering to maintain and support? 
+> What is the point (value) of allowing software engineers diverse ways of building and deploying an Azure Function? More importantly, why would we want to impose different solutions for the same solution for operations and site reliability engineering to maintain and support? 
 
 I am looking forward to a storm of feedback, comments, and discussions. Let us focus on the question "_Are our engineers losing control over their pipeline?_"
 
