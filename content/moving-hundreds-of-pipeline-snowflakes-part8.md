@@ -266,14 +266,13 @@ As discussed in this and previous posts, we are storing all our **starter**, **b
 >
 > ![Pipeline Repository](/images/moving-hundreds-of-pipeline-snowflakes-part8-8.png)
 
-That said, our security engineer Kevin, said so!
+That said, not all ideas and proposals neatly packaged in a pull request will be accepted by the team(s) accountable for the impacted templates. We have a responsibility to maintain and uphold our common engineering system manifestos and guardrails. If you wander outside the guardrails and are unwilling to discuss the WHAT, WHY. and HOW your pull request will be rejected. Why? 'cause our security engineer Kevin, said so! Security is not only pivotal to our healthy DevOps mindset, it is non-negotiable.
 
 > Build Artifact triggered by non-release branch
 >
 > ![Kevin Said So](/images/moving-hundreds-of-pipeline-snowflakes-part8-9.png)
-@MISSING ILLUSTRATION@TBD@
 
-An in-house joke, sorry!
+An in-house ~~joke~~ reality, sorry!
 
 ---
 
