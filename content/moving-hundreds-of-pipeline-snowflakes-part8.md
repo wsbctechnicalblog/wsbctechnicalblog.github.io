@@ -4,9 +4,9 @@ Category: Posts
 Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part8
 Author: Willy-Peter Schaub
-Summary: Continuous Deployment seems important. It deploys new features, bug and hot fixes, which we can release to our delighted customers on demand.
+Summary: Continuous Deployment seems important. It deploys new features, bugs, and hot fixes, which we can release to our delighted customers on demand.
 
-Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipelines-part7.html) we wrapped up our application-type continuous integration (CI) pipeline. OK, we have nailed the build, but what about continuous deployment (CD)?
+Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipelines-part7.html) we wrapped up our application-type continuous integration (CI) pipeline. OK, we have nailed the build, but what about the release, aka continuous deployment (CD)?
 
 ---
 
@@ -18,9 +18,11 @@ In the MSDN article, [Applying DevOps to a Software Development Project](https:/
 
 Note that both have the dreaded TLA (two|three lettered acronym) CD? ... confusing, right? Oh, how I loathe IT (information technology) acronyms q;-(
 
-Back to Continuous Deployment, which seems important. It **deploys** new features, bug and hot fixes, which we can **release** to our delighted customers on demand.
+Back to Continuous Deployment, which seems important. It **deploys** new features, bugs, and hot fixes, which we can **release** to our delighted customers on demand.
 
-> **NOTE** - The use of "continuous" implies that both the continuous integration and continuous deployment engineering processes embrace the "automate everything automatable" motto!
+> ![Light bulb](/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+>
+> The use of "continuous" implies that both the continuous integration and continuous deployment engineering processes embrace the "automate everything automatable" motto!
 
 After being flabbergasted with the innovation, [simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines](/yaml-pipelines-part7.html), I expected a world of frustration and pain to embrace the blueprints within the context of Continuous Deployment.
 
@@ -49,9 +51,9 @@ We add two templates to the CI Blueprint Architecture to create our CICD Bluepri
 >
 > ![CICD Blueprint Architecture](/images/moving-hundreds-of-pipeline-snowflakes-part8-1.png)
 
-It took us minutes to create a fully functional CICD pipeline using the App-Type CI Blueprint. In fact it is was so painless and quick, that I repeated the exercise to verify the process.
+It took us minutes to create a fully functional CI/CD pipeline using the App-Type CI Blueprint. In fact, it is was so painless and quick, that I repeated the exercise to verify the process.
 
-I hope, that you have appreciate the simplicity, power, and prospects that the YAML templates and our app-type blueprints are bringing to the party.
+I hope that you have appreciate the simplicity, power, and prospects that the YAML templates and our app-type blueprints are bringing to the party. Now let us explore what we had to change since my engineering colleague [Said Akram](https://wsbctechnicalblog.github.io/pages/authors.html) published [_Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines_](/yaml-pipelines-part7.html).
 
 ## **Starter** template tweaks
 
@@ -65,7 +67,7 @@ variables:
   productName:   'TODO REPLACE WITH PRODUCT NAME' 
 ```
 
-... to the key:value notation. The variable template name is assembled from the portfolio and program name, and pulled from the same repository as the other templates.
+... to the key:value notation. The variable template name is assembled from the portfolio and program name and pulled from the same repository as the other templates.
 
 > SAMPLE: Variables using key:value pair notation and variable template extract
 
@@ -105,7 +107,7 @@ parameters:
 
 We are experimenting and fine tuning our variable and CD templates and therefore it would be overzealous to include them in entirety. 
 
-As mentioned the variable template is a list of key:value pairs to define configuration for the associated deployment jobs and environments.
+As mentioned, the variable template is a list of key:value pairs to define configuration for the associated deployment jobs and environments.
 
 > SAMPLE: Variable template extract
 
@@ -165,51 +167,127 @@ But, how do they map out at queue time and are our security engineers contempt w
 
 ---
 
+# Mulling over environments and/or service connection approvals
+
+We can define approvals and checks to [service connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml) or [environments](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops). The jury is still out whether we will use the one or the other, or both. We opted to start with and validate Environments, which are collections of resources for our typical Development, System Test, Staging, and Production environments.
+
+![Thumbs up](/images/moving-hundreds-of-pipeline-snowflakes-part8-4.png)
+
+Environments have the following advantages:
+
+- Deployment history is maintained for each environment.
+- Insight into jobs, tasks, and gate results
+- Ability to lock-down environments by specifying which users and pipelines can target an environment.
+- Environments can be shared across pipelines. For example, we only need one Security Review environment stage, configured once, and mapped to all pipelines.
+
+![Thumbs down](/images/moving-hundreds-of-pipeline-snowflakes-part8-5.png)
+
+Unfortunately, approvals and checks can only be configured as pre-environment rules, unlike classic release pipeline where we have pre- and post-stage gates. Unfortunately? It forces us to re-think our deployment approvals, which will bring down the per-stage and total lead times for our pipelines.
+
+See [Create and target an environment](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops#:~:text=%20Create%20and%20target%20an%20environment%20%201,You%20can%20use%20approval%20checks%20to...%20More%20) for more details.
+
+--
+
 # Making sure our Security Engineers are happy
 
-TBD
+With classic Azure Pipelines we use Artifact filters with release triggers to deploy from multiple branches and disable deployment to higher stages, such as production, if the filters are not met. Our security engineers, however, are not fans of Artifact filters, as they can be overridden by users with elevated permissions.
+
+> ![Light bulb](/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+>
+> "Though shalt not pass" - Gandalf, Lord of the Rings 
+
+In comparison our blueprint-based pipelines use conditional logic, ensures that higher stages are injected, or not, when a pipeline is queued. Remember this quick video from [Part 4: Pipelines - Magic of queue time assembly](/yaml-pipelines-part4.html), which reveals the magic. 
+
+[![Master PR Merge](/images/moving-hundreds-of-pipeline-snowflakes-part4-2.png)](https://youtu.be/DWuDqCM1t6A) [1:52] 
+
+As shown below, our pipeline contains the continuous integration, development, system test, and security scan stages when the source branch is anything but **release*** or **hotfix**. No-one, even our security engineers and cloud engineers with god-like permissions can override, as the higher stages are simply not available.
+
+So simple, yet so powerful!
 
 > Build Artifact triggered by non-release branch
 >
 > ![CICD Blueprint Architecture](/images/moving-hundreds-of-pipeline-snowflakes-part8-2.png)
 
-TBD
+Running the same pipeline where the source branch is either **release*** or **hotfix**, the higher security review, staging, and production are included.
 
 > Build Artifact triggered by release branch
 >
 > ![CICD Blueprint Architecture](/images/moving-hundreds-of-pipeline-snowflakes-part8-3.png)
 
-TBD
+The actual conditional logic is trivial. Here is an example:
 
 ```yml
 # STAGING STAGE
 - ${{ if or( eq(variables['Build.SourceBranch'], 'refs/heads/hotfix'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release')) }}:
-  - stage:         'Staging'
+  - stage: 'Staging'
     dependsOn:
     - SecurityScans
     - SecurityReview
   ...
 ```
 
-TBD
-
----
-
-# Mulling over environments and/or service connection approvals
-
-TBD
+Mission accomplished :) Happy ~~wife~~ Security engineers, happy life! 
 
 ---
 
 # Are our engineers losing control over their pipeline?
 
-TBD
+Then again, we received harsh feedback from a recent poll, where we asked our engineers and the community if they want full control, partial control, or pipeline as a service. Only 41% of all engineers support the idea of pipeline as a service and some comments made us take a few steps back and re-think our strategy. For example:
+
+- _Well, autonomy is important, with centralizing the templates, you are creating impositions (you are imposing workflow, so how they work) in the teams, while you should focus on the outcomes._
+- _Organizations that think they can cover 80% or even 90% of pipeline use cases always seem to miss the mark. I think folks that feel that this can be pulled off have been working at the same place or same vertical for too long._
+- _Not all software developers are the same._
+- ... and so forth.
+
+> Engineers want partial or full control of CICD pipelines
+>
+> ![CICD Blueprint Architecture](/images/moving-hundreds-of-pipeline-snowflakes-part8-6.png)
+
+After a lot of soul searching, discussions with software, security, and operation engineers, and considering that we have less than two handful of different system and technology architectures, I said: "Exactly!"
+
+With our application-type blueprints we are pursuing the best of the autonomy and governance world. We are enabling our: 
+
+- Software engineers to be razor focused on delivering value to their customers.
+- Security engineers to define and inject guardrails into all our pipelines.
+- Operations and site reliability engineers to focus on our infrastructure, maintenance, and support.
+- Architecture engineers to define a consistent way to deploy each application architecture.
+
+> ![Light bulb](/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+>
+> What is the point (value) of allowing software engineers five different ways of building and deploying an Azure Function? More importantly, why would we want to impose different solutions for the same solution for operations and site reliability engineering to maintain and support? 
+
+I am looking forward to a storm of feedback, comments, and discussions. Let us focus on the question "_Are our engineers losing control over their pipeline?_"
+
+The answer is a bold and blinking **NO**! 
+
+As discussed in this and previous posts, we are storing all our **starter**, **bootstrap**, **blueprint**, and **guardrail** templates in a common Git repository that anyone can **view**. There is more. Everyone can submit a pull request with proposed changes, innovations, and bug fixes and thereby **update** the templates.
+
+> Build Artifact triggered by non-release branch
+>
+> ![Pipeline Repository](/images/moving-hundreds-of-pipeline-snowflakes-part8-8.png)
+
+That said, our security engineer Kevin, said so!
+
+> Build Artifact triggered by non-release branch
+>
+> ![Kevin Said So](/images/moving-hundreds-of-pipeline-snowflakes-part8-9.png)
+@MISSING ILLUSTRATION@TBD@
+
+An in-house joke, sorry!
 
 ---
 
 # What is next?
 
-TBD
+We are working on rolling our first two CI/CD blueprints for Azure Artifact and Azure Function pipelines, we will run ample workshops and awareness sessions to introduce all stakeholders to the new age of pipelines, we will lean on the observe-orient-decide-act (OODA) loop, by John Boyd, to fine-tune both blueprints and supporting infrastructure, before we embrace our other solution architectures.
+
+We may share our experience and learnings in more posts in this series if there is an interest or jump straight to the last planned post of this series "_Self-service automation - A dream turns into reality_". 
+
+> ![Light bulb](/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+>
+> The consistent, secure, and simple blueprint-print based pipelines enable our automation goal!
+
+If you have any questions, feedback, or would like to start a discussion on anything we have discussed in this series, please ping me on [twitter](https://twitter.com/wpschaub) or [linkedin](https://www.linkedin.com/in/wpschaub/).
 
 ---
 
