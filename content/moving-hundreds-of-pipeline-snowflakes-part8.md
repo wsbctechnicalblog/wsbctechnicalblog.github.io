@@ -4,7 +4,7 @@ Category: Posts
 Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part8
 Author: Willy-Peter Schaub
-Summary: Continuous Deployment seems important. It deploys new features, bugs, and hot fixes, which we can release to our delighted customers on demand.
+Summary: Continuous Deployment is a pivotal ingredient of a healthy DevOps mindset and our ability to delight end-users with continuous value. It is the holy grail of our profession.
 
 Welcome back to another installment of pipeline wizardry. In [part 7](/yaml-pipelines-part7.html) we wrapped up our application-type continuous integration (CI) pipeline. OK, we have nailed the build, but what about the release, aka continuous deployment (CD)?
 
