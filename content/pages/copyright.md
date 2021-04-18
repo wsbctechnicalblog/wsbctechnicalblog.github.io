@@ -5,4 +5,4 @@ Slug: copyright
 Author: WorkSafeBC
 Summary: Copyright license
 
-All content published on this blog is copyrighted by WorkSafeBc.
+All content published on this blog is copyrighted by WorkSafeBC.
