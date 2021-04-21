@@ -17,7 +17,19 @@ In order to make sure that software we are building is flexible, we must evolve 
 
 Read Alex's posts [here](/author/alex-bunardzic.html)
 
-<br />
+---
+
+## Kevin Schwantje
+
+![Kevin Schwantje](/images/Kevin-mug.jpeg)
+
+Kevin has been working in cybersecurity for the past nine years, attacking and defending everything from networks to virtual machines. In his current iteration, he’s a DevSecOps security engineer safeguarding web apps from today’s scary modern threat landscape. At WorkSafeBC, Kevin has found a passion for integrating security practices into every level of software development practices, from Agile principles all the way to Azure DevOps and CI/CD pipelines and processes. He believes in pushing left, purple teaming, favouring a human approach over spreadsheets and always saying “no”.
+
+> _“The purpose and intent of DevSecOps, is to build on the mindset that ‘everyone is responsible for security’ with the goal of safely distributing security decisions at speed and scale to those who hold the highest level of context without sacrificing the safety required.” - Shannon Lietz_
+
+Read Kevin's posts [here](/author/kevin-schwantje.html)
+
+---
 
 ## Willy-Peter Schaub
 
