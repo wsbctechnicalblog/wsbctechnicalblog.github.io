@@ -4,7 +4,7 @@ Category: Posts
 Tags: Azure Pipelines, Tips
 Slug: sharing-variables-amongst-agents
 Author: Willy-Peter Schaub
-Summary: According to documentation, output variables can be used across stages in an Azure YAML-based pipeline. We will share a few turbulent moments we experienced while troubleshooting our pipeline.
+Summary: According to documentation, output variables can be used across stages in an Azure YAML-based pipeline. We will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.
 
 The Azure Pipelines have evolved at a rapid pace during the past 2-3 years. Features we dreamt of, like passing variables between [stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml), was a big NO-NO in 2019; unless you used a convoluted workaround to save variables to disk and reloading them in the upstream stages. In May 2020, the following text raised a lot of eyebrows of joy: "_Output variables may now be used across stages in a YAML-based pipeline._."
 
