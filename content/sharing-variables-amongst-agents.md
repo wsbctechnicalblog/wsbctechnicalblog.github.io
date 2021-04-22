@@ -4,17 +4,20 @@ Category: Posts
 Tags: Azure Pipelines, Tips
 Slug: sharing-variables-amongst-agents
 Author: Willy-Peter Schaub
-Summary: According to documentation, output variables can be used across stages in an Azure YAML-based pipeline. We will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.
+Summary: As per documentation, output variables can be used across stages in an Azure YAML-based pipeline. I will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.
 
-The Azure Pipelines have evolved at a rapid pace during the past 2-3 years. Features we dreamt of, like passing variables between [stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml), was a big NO-NO in 2019; unless you used a convoluted workaround to save variables to disk and reloading them in the upstream stages. In May 2020, the following text raised a lot of eyebrows of joy: "_Output variables may now be used across stages in a YAML-based pipeline._."
+The Azure Pipelines have evolved at a blistering pace during the past 2-3 years. Features we dreamt of, like passing variables between [stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml), was a big NO-NO in 2019. We had to use convoluted workarounds to save variables to storage and reloading them in the upstream stages. Not supportive of our goal for simplicity. 
 
 ---
 
 # Opportunity leads to requirement
 
-This opened a lot of opportunities for us, such as retrieving the solution's semantic version using the [GitTools](https://github.com/GitTools), and sharing it with upstream stages.
+> ![Breaking News](/images/sharing-variables-amongst-agents-2.png)
+> In May 2020, the following release notes created excitement: "_Output variables may now be used across stages in a YAML-based pipeline._"
 
-> here is our git-tools-git-version.yml template
+This opened exciting opportunities for us, such as retrieving the solution's semantic version using the [GitTools](https://github.com/GitTools), and sharing it with upstream stages.
+
+> Our git-tools-git-version.yml template
 
 ```yml
 parameters:
@@ -55,7 +58,7 @@ Here is a visual of our hypothetical pipeline.
 >
 > ![Pipeline ownership](/images/sharing-variables-amongst-agents-1.png)
 
-We retrieve the semantic version using the git-tools-git-version.yml template in our **ContinuousIntegration** (CI) stage. The upstream Development, Staging, and Production stages need the variable to set the version of the universal artifact we are updating as part of the continuous deployment (CD) phase.
+We retrieve the semantic version using the git-tools-git-version.yml template in our **ContinuousIntegration** (CI) stage. Now that we can share the version with our continuous deployment (CD) pipeline stages, we have a requirement to pass the version for tasks, such as updating a Universal Artifact, as shown below.
 
 > Publish Universal Artifact using the version
 
@@ -74,13 +77,13 @@ We retrieve the semantic version using the git-tools-git-version.yml template in
                 versionPublish:         $(versionToolbox)
 ```
 
-Sounds simple, right?
-
 ---
 
 # Setting the versionToolbox Variable
 
-After retrieving the semantic version, we run an inline PowerShell Core script to create an output variable, called **versionToolkit**.
+After retrieving the semantic version, we run an inline PowerShell Core script to create an output variable, called **versionToolkit**, in the **ContinuousIntegration** stage.
+
+> Create Development stage-specific versionToolkit version
 
 ```yml
     - task: PowerShell@2
@@ -91,9 +94,9 @@ After retrieving the semantic version, we run an inline PowerShell Core script t
         script: Write-Host "##vso[task.setvariable variable=versionToolkit;isOutput=true]$(GitVersion.MajorMinorPatch)"
 ```
 
-So far so good, we are nearly done :)
+Next, we move to the **Development** stage and create a stage variable, which is set to the value of versionToolkit calculated in the **ContinuousIntegration** stage.
 
-Before we leave, we implement some YAML magic to create a stage variable in the **Development** stage, which is set to the value of the above versionToolkit.
+As per documentation, the output variables are produced by steps inside of jobs and the format of the dependency variable is: **stageDependencies.\<stageName\>.\<jobName\>.outputs['\<stepName\>.\<variableName\>']**
 
 > Create **Development** stage-specific versionToolkit version
 
@@ -105,17 +108,26 @@ Before we leave, we implement some YAML magic to create a stage variable in the 
     versionToolkit: $[ stageDependencies.ContinuousIntegration.ContinuousIntegration.outputs['setToolkitVersion.toolkitVersion'] ]
 ```
 
-Output variables are produced by steps inside of jobs and the  format of the dependency variable is **stageDependencies.\<stageName\>.\<jobName\>.outputs['stepName.variableName']**. In our case the originating stage and its job share the same name ContinuousIntegration; hence the ...ContinuousIntegration.ContinuousIntegration... stutter.
+In our case the originating stage and job share the same name **ContinuousIntegration**, hence the ...ContinuousIntegration.ContinuousIntegration... repetition.
 
-The solution worked like a charm. Today, we can go home (or leave our home office) on time.
+The **versionToolkit** version is then passed to the deployment steps, such as the Universal Artifact update task mentioned earlier on. 
+
+The relatively simple solution works like a charm :)
 
 ---
 
 # Frustration reigns
 
-But, when we implemented the same logic in the **Production** stage, we got an empty **versionToolkit** variable. 
+Next we move to the **Production** stage and implement the same (identical) logic.
 
-During troubleshooting I also tried to pass the variable from stage to stage, but ran into more challenges when using [Deployment Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops) ... which is an interesting story for another blog post.
+Unfortunately, we get an empty **versionToolkit** variable. 
+
+![WHY](/images/sharing-variables-amongst-agents-3.png)
+Why is the version not flowing, as expected?
+
+I dabbled with several options, such as passing the variable from stage to stage. While some worked with normal jobs, they crumbled with the use of [Deployment Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops), and failed our simplicity rule. A few trying stories for another day.
+
+Back to our **production** stage.
 
 > **Production** Stage
 
@@ -132,13 +144,15 @@ During troubleshooting I also tried to pass the variable from stage to stage, bu
     - deployment:  'Production'
 ```
 
-Spotted the issue yet?
+Can you spot the issue?
 
 ---
 
 # After rain comes sunshine
 
-It dawned on me that the stageDependency was broken, so I tried the following change:
+I was pacing up and down our marina, sipping a hot chocolate, when a background thread triggered. “_How does the pipeline know that Production stage has a dependency on ContinuousIntegration stage?_”
+
+I tried the following change:
 
 ```yml
   - stage:         'Production'
@@ -153,9 +167,11 @@ It dawned on me that the stageDependency was broken, so I tried the following ch
     jobs:
 ```
 
-BINGO! It worked. Adding line 3, ```- ContinuousIntegration``` fixed the stageDependency and the **versionToolbox** was set to the version set in the **ContinuousIntegration** stage.
+**BINGO!** Adding line 3, ```- ContinuousIntegration```, fixed the stageDependency and the **versionToolbox** was set to the version set in the **ContinuousIntegration** stage.
 
-To conclude, here is my complete experimentation pipeline I used to try out random ideas and validate assumptions.
+To conclude, here is my complete experimentation pipeline I used to try random ideas and validate assumptions, such as the above-mentioned change.
+
+> Experimentation sample
 
 ```yml
 stages:
