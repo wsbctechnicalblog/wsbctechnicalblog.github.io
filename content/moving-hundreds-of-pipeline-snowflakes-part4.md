@@ -1,7 +1,7 @@
 Title: Part 4: Pipelines - Magic of queue time assembly
 Date: 2021-01-13
 Category: Posts
-Tags: Azure-Pipelines, DevOps
+Tags: Azure Pipelines, DevOps, Pipeline as Code
 Slug: yaml-pipelines-part4
 Author: Willy-Peter Schaub
 Summary: We can use the power of the new multi-stage YAML pipelines to make even our most critical security engineers smile from ear to ear.
@@ -137,5 +137,5 @@ Now that we appreciate the power and some of the magic, we can shift gears to ou
 
 ---
 
-> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | Part 4 | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | [Part 7](/yaml-pipelines-part7.html) | 
+> Series Bread Crumbs | [Part 1, TOC](/why-pipelines-part1.html) | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | Part 4 | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | [Part 7](/yaml-pipelines-part7.html) |  [Part 8](/yaml-pipelines-part8.html) |
 
