@@ -1,0 +1,360 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Part 8: Pipelines - From CI to CD and beyond in one pipeline - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part8.html" rel="bookmark"
+            title="Permalink to Part 8: Pipelines - From CI to CD and beyond in one pipeline">Part 8: Pipelines - From CI to CD and beyond in one pipeline</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 23 April 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Continuous Deployment is a pivotal ingredient of a healthy DevOps mindset and our ability to delight end-users with continuous value. It is the holy grail of our profession.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to another installment of pipeline wizardry. In <a href="/yaml-pipelines-part7.html">part 7</a> we wrapped up our application-type continuous integration (CI) pipeline. OK, we have nailed the build, but what about the release, aka continuous deployment (CD)?</p>
+<hr>
+<h1>Why do we care about continuous deployment?</h1>
+<p>In previous posts we covered the world of Continuous Integration (CI), which builds and validates your latest code in your source control repository. With Continuous Delivery (CD) we deploy the artifact from the CI build to one or more environments. </p>
+<p>In the MSDN article, <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project">Applying DevOps to a Software Development Project</a>, I emphasised the subtle difference between Continuous Delivery (CD) and Continuous Deployment (CD): "<em>The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through several environments, ultimately ending up in production, which may include automated user interface (UI), load and performance tests and approvals along the way.</em>" </p>
+<p>Note that both have the dreaded TLA (two|three lettered acronym) CD? ... confusing, right? Oh, how I loathe IT (information technology) acronyms q;-(</p>
+<p>Back to Continuous Deployment, which seems important. It <strong>deploys</strong> new features, bugs, and hot fixes, which we can <strong>release</strong> to our delighted customers on demand.</p>
+<blockquote>
+<p><img alt="Light bulb" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"></p>
+<p>The use of "continuous" implies that both the continuous integration and continuous deployment engineering processes embrace the "automate everything automatable" motto!</p>
+</blockquote>
+<p>After being flabbergasted with the innovation, <a href="/yaml-pipelines-part7.html">simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</a>, I expected a world of frustration and pain to embrace the blueprints within the context of Continuous Deployment.</p>
+<p>Here is the final chapter in our blueprint-based pipeline adventure.</p>
+<hr>
+<h1>Tweaks to the Application-type CI Blueprints</h1>
+<p>We continue from where we left off with the app-type CI Blueprint Architecture, comprised of the following key elements:</p>
+<ul>
+<li>[ ] <strong>Starter</strong> template, which configures the continuous integration pipeline. </li>
+<li>[ ] <strong>App-type</strong> CI template, which <strong>extends</strong> the starter template and abstracts the continuous integration (CI) process.</li>
+<li>[ ] <strong>Example</strong> of the app-type blueprint, for reference.</li>
+</ul>
+<blockquote>
+<p>App-Type CI Blueprint Architecture</p>
+<p><img alt="CI Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part7-2.png"></p>
+</blockquote>
+<p>We add two templates to the CI Blueprint Architecture to create our CICD Blueprint Architecture. </p>
+<ul>
+<li>[ ] <strong>App-type</strong> CD template, which abstracts and <strong>includes</strong> continuous deployment (CD) process.</li>
+<li>[ ] <strong>Variable</strong> template, which contains all configuration for the various <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs">deployment jobs</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments">environments</a> as key:value pairs.</li>
+</ul>
+<blockquote>
+<p>App-Type CICD Blueprint Architecture</p>
+<p><img alt="CICD Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-1.png"></p>
+</blockquote>
+<p>It took us minutes to create a fully functional CI/CD pipeline using the App-Type CI Blueprint. In fact, it is was so painless and quick, that I repeated the exercise to verify the process.</p>
+<p>I hope that you have appreciate the simplicity, power, and prospects that the YAML templates and our app-type blueprints are bringing to the party. Now let us explore what we had to change since my engineering colleague <a href="https://wsbctechnicalblog.github.io/pages/authors.html">Said Akram</a> published <a href="/yaml-pipelines-part7.html"><em>Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</em></a>.</p>
+<h2><strong>Starter</strong> template tweaks</h2>
+<p>When you include variable groups or variable templates, you need to switch your variable definitions to the sequence syntax. To add the variable template, we changed our <strong>Starter</strong> template from the simple notation ...</p>
+<blockquote>
+<p>SAMPLE: Variables using simple notation</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="o">:</span>
+  <span class="n">portfolioName</span><span class="o">:</span> <span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span> 
+  <span class="n">productName</span><span class="o">:</span>   <span class="s1">&#39;TODO REPLACE WITH PRODUCT NAME&#39;</span> 
+</code></pre></div>
+
+<p>... to the key:value notation. The variable template name is assembled from the portfolio and program name and pulled from the same repository as the other templates.</p>
+<blockquote>
+<p>SAMPLE: Variables using key:value pair notation and variable template extract</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>  <span class="n">portfolioName</span>
+  <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;TODO </span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>  <span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span>
+  <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;TODO REPLACE WITH PROGRAM NAME&#39;</span>
+<span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="n">CD</span><span class="o">/</span><span class="n">Config</span><span class="o">/$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">}}</span><span class="o">.$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">productName</span><span class="p">}}</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
+</code></pre></div>
+
+<h2><strong>CI</strong> template tweaks</h2>
+<p>Changes to the CI template were just as humdrum. An optional parameter allows us to override the app-type CD template, with a custom template on exceptional cases. </p>
+<blockquote>
+<p>SAMPLE: CI template extract</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>parameters:
+...
+- name:     customCDTemplate
+  type:     string
+  default:  &#39;blueprint&#39; 
+
+...
+
+# DEPLOYMENT
+
+- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">ne</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+  - template: CD/Custom/<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="cp">}</span>}.yml@CeSTemplates
+- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+  - template: CD/Blueprints/<span class="nt">&lt;appType&gt;</span>CDTemplate.yml@CeSTemplates
+
+# END OF PIPELINE
+</code></pre></div>
+
+<p>We are experimenting and fine tuning our variable and CD templates and therefore it would be overzealous to include them in entirety. </p>
+<p>As mentioned, the variable template is a list of key:value pairs to define configuration for the associated deployment jobs and environments.</p>
+<blockquote>
+<p>SAMPLE: Variable template extract</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">...</span>
+<span class="c1"># DEVelopment Stage</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>  <span class="n">developmentStageEnvName</span>
+  <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;POC_DEV&#39;</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>  <span class="n">developmentStageVmImage</span>
+  <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;ubuntu-latest&#39;</span>
+</code></pre></div>
+
+<p>For the CD Blueprint, you should explore <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs">deployment jobs</a> and associated strategies. To start, we opted to experiment with the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops#runonce-deployment-strategy">runOnce</a> strategy.</p>
+<blockquote>
+<p>SAMPLE: CD template extract</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">stages</span><span class="p">:</span>
+
+<span class="o">#</span> <span class="n">DEVELOPMENT</span> <span class="n">STAGE</span>
+
+<span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Development&#39;</span>
+  <span class="n">dependsOn</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">ContinuousIntegration</span>
+  <span class="n">pool</span><span class="p">:</span>
+    <span class="n">vmImage</span><span class="p">:</span>     <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span>
+  <span class="n">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">deployment</span><span class="p">:</span>  <span class="s1">&#39;Development&#39;</span>
+    <span class="n">environment</span><span class="p">:</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span>
+    <span class="n">strategy</span><span class="p">:</span>
+      <span class="n">runOnce</span><span class="p">:</span>
+        <span class="n">preDeploy</span><span class="p">:</span>
+          <span class="n">steps</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">PREDEPLOY</span> <span class="o">-</span> <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>
+        <span class="n">deploy</span><span class="p">:</span>
+          <span class="n">steps</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">DEPLOY</span> <span class="o">-</span> <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>
+        <span class="n">routeTraffic</span><span class="p">:</span>
+          <span class="n">steps</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">ROUTETAFFIC</span> <span class="o">-</span>  <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>        
+        <span class="n">postRouteTraffic</span><span class="p">:</span>
+          <span class="n">steps</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">POSTROUTETRAFFIC</span> <span class="o">-</span> <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>
+        <span class="k">on</span><span class="p">:</span>
+          <span class="n">failure</span><span class="p">:</span>
+            <span class="n">steps</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">FAILURE</span> <span class="o">-</span>  <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>          
+          <span class="n">success</span><span class="p">:</span>
+            <span class="n">steps</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Welcome</span> <span class="k">to</span> <span class="n">SUCCESS</span> <span class="o">-</span>  <span class="n">Development</span> <span class="n">stage</span> <span class="n">running</span> <span class="k">on</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageVmImage</span><span class="p">)</span> <span class="n">pool</span> <span class="k">in</span> <span class="n">the</span> <span class="err">$</span><span class="p">(</span><span class="n">developmentStageEnvName</span><span class="p">)</span> <span class="n">environment</span>   
+</code></pre></div>
+
+<p>OK, the template revisions to include continuous deployment are straightforward. Apart from many upcoming refinements, we now have a functional application-type CICD blueprint-based pipeline.</p>
+<p>But, how do they map out at queue time and are our security engineers contempt with the new pipelines?</p>
+<hr>
+<h1>Mulling over environments and/or service connection approvals</h1>
+<p>We can define approvals and checks to <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&amp;tabs=yaml">service connections</a> or <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">environments</a>. The jury is still out whether we will use the one or the other, or both. We opted to start with and validate Environments, which are collections of resources for our typical Development, System Test, Staging, and Production environments.</p>
+<p><img alt="Thumbs up" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-4.png"></p>
+<p>Environments have the following advantages:</p>
+<ul>
+<li>Deployment history is maintained for each environment.</li>
+<li>Insight into jobs, tasks, and gate results</li>
+<li>Ability to lock-down environments by specifying which users and pipelines can target an environment.</li>
+<li>Environments can be shared across pipelines. For example, we only need one Security Review environment stage, configured once, and mapped to all pipelines.</li>
+</ul>
+<p><img alt="Thumbs down" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-5.png"></p>
+<p>Unfortunately, approvals and checks can only be configured as pre-environment rules, unlike classic release pipeline where we have pre- and post-stage gates. Unfortunately? It forces us to re-think our deployment approvals, which will bring down the per-stage and total lead times for our pipelines.</p>
+<p>See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops#:~:text=%20Create%20and%20target%20an%20environment%20%201,You%20can%20use%20approval%20checks%20to...%20More%20">Create and target an environment</a> for more details.</p>
+<p>--</p>
+<h1>Making sure our Security Engineers are happy</h1>
+<p>With classic Azure Pipelines we use Artifact filters with release triggers to deploy from multiple branches and disable deployment to higher stages, such as production, if the filters are not met. Our security engineers, however, are not fans of Artifact filters, as they can be overridden by users with elevated permissions.</p>
+<blockquote>
+<p><img alt="Light bulb" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"></p>
+<p>"Though shalt not pass" - Gandalf, Lord of the Rings </p>
+</blockquote>
+<p>In comparison our blueprint-based pipelines use conditional logic, ensures that higher stages are injected, or not, when a pipeline is queued. Remember this quick video from <a href="/yaml-pipelines-part4.html">Part 4: Pipelines - Magic of queue time assembly</a>, which reveals the magic. </p>
+<p><a href="https://youtu.be/DWuDqCM1t6A"><img alt="Master PR Merge" src="/images/moving-hundreds-of-pipeline-snowflakes-part4-2.png"></a> [1:52] </p>
+<p>As shown below, our pipeline contains the continuous integration, development, system test, and security scan stages when the source branch is anything but <strong>release</strong><em> or </em><em>hotfix</em>*. No-one, even our security engineers and cloud engineers with god-like permissions can override, as the higher stages are simply not available.</p>
+<p>So simple, yet so powerful!</p>
+<blockquote>
+<p>Build Artifact triggered by non-release branch</p>
+<p><img alt="CICD Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-2.png"></p>
+</blockquote>
+<p>Running the same pipeline where the source branch is either <strong>release</strong><em> or </em><em>hotfix</em>*, the higher security review, staging, and production are included.</p>
+<blockquote>
+<p>Build Artifact triggered by release branch</p>
+<p><img alt="CICD Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-3.png"></p>
+</blockquote>
+<p>The actual conditional logic is trivial. Here is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># STAGING STAGE</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">or</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/hotfix&#39;</span><span class="p">),</span> <span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release&#39;</span><span class="p">))</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">stage</span><span class="p">:</span> <span class="s1">&#39;Staging&#39;</span>
+    <span class="n">dependsOn</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">SecurityScans</span>
+    <span class="o">-</span> <span class="n">SecurityReview</span>
+  <span class="o">...</span>
+</code></pre></div>
+
+<p>Mission accomplished :) Happy ~~wife~~ Security engineers, happy life! </p>
+<hr>
+<h1>Are our engineers losing control over their pipeline?</h1>
+<p>Then again, we received harsh feedback from a recent poll, where we asked our engineers and the community if they want full control, partial control, or pipeline as a service. Only 41% of all engineers support the idea of pipeline as a service and some comments made us take a few steps back and re-think our strategy. For example:</p>
+<ul>
+<li><em>Well, autonomy is important, with centralizing the templates, you are creating impositions (you are imposing workflow, so how they work) in the teams, while you should focus on the outcomes.</em></li>
+<li><em>Organizations that think they can cover 80% or even 90% of pipeline use cases always seem to miss the mark. I think folks that feel that this can be pulled off have been working at the same place or same vertical for too long.</em></li>
+<li><em>Not all software developers are the same.</em></li>
+<li>... and so forth.</li>
+</ul>
+<blockquote>
+<p>Engineers want partial or full control of CICD pipelines</p>
+<p><img alt="CICD Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-6.png"></p>
+</blockquote>
+<p>After a lot of soul searching, discussions with software, security, and operation engineers, and considering that we have less than two handful of different system and technology architectures, I said: "Exactly!"</p>
+<p>With our application-type blueprints we are pursuing the best of the autonomy and governance world. We are enabling our: </p>
+<ul>
+<li>Software engineers to be razor focused on delivering value to their customers.</li>
+<li>Security engineers to define and inject guardrails into all our pipelines.</li>
+<li>Operations and site reliability engineers to focus on our infrastructure, maintenance, and support.</li>
+<li>Architecture engineers to define a consistent way to deploy each application architecture.</li>
+</ul>
+<blockquote>
+<p><img alt="Light bulb" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"></p>
+<p>What is the point (value) of allowing software engineers diverse ways of building and deploying an Azure Function? More importantly, why would we want to impose different solutions for the same solution for operations and site reliability engineering to maintain and support? </p>
+</blockquote>
+<p>I am looking forward to a storm of feedback, comments, and discussions. Let us focus on the question "<em>Are our engineers losing control over their pipeline?</em>"</p>
+<p>The answer is a bold and blinking <strong>NO</strong>! </p>
+<p>As discussed in this and previous posts, we are storing all our <strong>starter</strong>, <strong>bootstrap</strong>, <strong>blueprint</strong>, and <strong>guardrail</strong> templates in a common Git repository that anyone can <strong>view</strong>. There is more. Everyone can submit a pull request with proposed changes, innovations, and bug fixes and thereby <strong>update</strong> the templates.</p>
+<blockquote>
+<p>Build Artifact triggered by non-release branch</p>
+<p><img alt="Pipeline Repository" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-8.png"></p>
+</blockquote>
+<p>That said, not all ideas and proposals neatly packaged in a pull request will be accepted by the team(s) accountable for the impacted templates. We have a responsibility to maintain and uphold our common engineering system manifestos and guardrails. If you wander outside the guardrails and are unwilling to discuss the WHAT, WHY. and HOW your pull request will be rejected. Why? 'cause our security engineer Kevin, said so! Security is not only pivotal to our healthy DevOps mindset, it is non-negotiable.</p>
+<blockquote>
+<p>Build Artifact triggered by non-release branch</p>
+<p><img alt="Kevin Said So" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-9.png"></p>
+</blockquote>
+<p>An in-house ~~joke~~ reality, sorry!</p>
+<hr>
+<h1>What is next?</h1>
+<p>We are working on rolling our first two CI/CD blueprints for Azure Artifact and Azure Function pipelines, we will run ample workshops and awareness sessions to introduce all stakeholders to the new age of pipelines, we will lean on the observe-orient-decide-act (OODA) loop, by John Boyd, to fine-tune both blueprints and supporting infrastructure, before we embrace our other solution architectures.</p>
+<p>We may share our experience and learnings in more posts in this series if there is an interest or jump straight to the last planned post of this series "<em>Self-service automation - A dream turns into reality</em>". </p>
+<blockquote>
+<p><img alt="Light bulb" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"></p>
+<p>The consistent, secure, and simple blueprint-print based pipelines enable our automation goal!</p>
+</blockquote>
+<p>If you have any questions, feedback, or would like to start a discussion on anything we have discussed in this series, please ping me on <a href="https://twitter.com/wpschaub">twitter</a> or <a href="https://www.linkedin.com/in/wpschaub/">linkedin</a>.</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | <a href="/yaml-pipelines-part7.html">Part 7</a> | Part 8 |  </p>
+</blockquote>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure Pipelines </a><a href="/tag/devops.html">DevOps </a><a href="/tag/pipeline-as-code.html">Pipeline as Code </a>
+        | <a href="/yaml-pipelines-part8.html" rel="bookmark"
+         title="Permalink to Part 8: Pipelines - From CI to CD and beyond in one pipeline">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(12)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(17)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(6)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(2)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(2)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (35)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
