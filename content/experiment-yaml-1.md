@@ -1,14 +1,14 @@
-Title: Experimenting with Azure Pipelines - YAML Conditionals, Parameters, and Triggers 
+Title: Azure DevOps Snippets - YAML Conditionals, Parameters, and Triggers
 Date: 2021-04-22 13:13
 Category: Posts
 Tags: Azure Pipelines, Tips
 Slug: experiment-yaml-1
 Author: Willy-Peter Schaub
-Summary: Sharing common questions and issues that emerge from Azure Pipeline workshops and support. Todays menu includes conditionals, parameters, and triggers. 
+Summary: Snippets of common questions and issues from Azure Pipeline workshops and support calls. Today's snippet includes conditionals, parameters, and triggers. 
 
-If you are an avid user of the YAML-based Azure Pipelines, you will be aware that the language can be very pedantic when it comes to too many or too few spaces. In fact, we have been mulling over a pipeline for (what seemed like) hours, only to realise that we were missing **one** space. Fortunately both the YAML editor in both Azure DevOps and Visual Studio Code, as well as the **Validate** features are continuously improving.
+If you are an avid user of the YAML-based Azure Pipelines, you will be aware that the language can be very pedantic when it comes to too many or too few spaces. In fact, we have been mulling over a broken pipeline for (what felt like) hours, only to realise that we were misaligned by **one** space. Fortunately, both the YAML editor in both Azure DevOps and Visual Studio Code, as well as the **Validate** features are continuously improving.
 
-Let us skip the spaces topic and focus on conditionals, parameters, and triggers, using this simple sample code.
+Let us park the spaces topic and focus on conditionals, parameters, and triggers, using this simple sample code.
 
 > Experimentation Sample Code
 
@@ -63,7 +63,7 @@ You can configure a trigger to fire **manually**, **never**, or as **changes** a
 > ![Learning](/images/experiment-yaml-1-1.jpg)
 
 - If you remove the trigger all together, the pipeline will be triggered if **any** change is made to any **folder** or **branch**. 
-- If you want to have a **manually** triggered pipeline, you must configure ```- none```, as in todays sample code.
+- If you want to have a **manually** triggered pipeline, you must configure ```- none```, as in today's sample code.
 
 See [Triggers](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#triggers) for details.
 
@@ -75,7 +75,8 @@ You can use parameters in templates and pipelines, as visualised on our [YAML Ge
 
 > ![Learning](/images/experiment-yaml-1-1.jpg)
 
-- You can define a pipeline parameter, as in todays sample code.
+- Parameter key:value pairs are evaluated at **queue** time.
+- You can define a pipeline parameter, as in the sample code above.
 - When you run the sample pipeline, you can select from the available values, as shown:
 
 > ![Run pipeline](/images/experiment-yaml-1-2.png)
@@ -90,9 +91,12 @@ You can add static values, reference variable groups, or insert  variable templa
 
 > ![Learning](/images/experiment-yaml-1-1.jpg)
 
+- Variable key:value pairs are evaluated at **run** time.
 - Echo 1 is boring, but we must say hello!
-- Echo 2 displays the value of **keyTest**, which was set to the same value as **keyRef**. Output:**keyFinal**.
-- Echo 3 is the one that is a bit more interesting. It is changed to $(keyFinal) at queue time, which demonstrates a rudimentary use of **reference** values. I had to write and run the sample to get my head around the code - try it yourself! Output: **Bingo!**
+- Echo 2 displays the value of **keyTest**, which was set to the same value as **keyRef**
+  > Output:**keyFinal**.
+- Echo 3 is the one that is a bit more interesting. It is changed to $(keyFinal) at queue time, which demonstrates a rudimentary use of **reference** values. I had to write and run the sample to get my head around the code - try it yourself! 
+  > Output: **Bingo!**
 
 See [Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#variables) for details.
 
@@ -100,7 +104,7 @@ See [Variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-sch
 
 # Conditionals
 
-Lastly, let us have a peek at conditions which can be used to determine whether tasks should execute or if code or entire template are injected into the pipeline at queue time.
+Lastly, conditions can be used to determine whether tasks should execute or if code or entire template are injected into the pipeline at queue time.
 
 > ![Learning](/images/experiment-yaml-1-1.jpg)
 
@@ -114,9 +118,9 @@ See [Expressions](https://docs.microsoft.com/en-us/azure/devops/pipelines/proces
 
 ---
 
-That is it for today. 
+We are done for today. 
 
-Hope these YAML-bits are adding value and looking forward to your candid feedback. See you in the next experiment.
+Hope these snippets are adding value and looking forward to your candid feedback. See you in the next experiment.
 
 ```
 
