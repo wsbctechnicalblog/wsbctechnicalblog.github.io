@@ -1,4 +1,4 @@
-Title: Azure DevOps Snippets - YAML Conditionals, Parameters, and Triggers
+Title: Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers
 Date: 2021-04-22 13:13
 Category: Posts
 Tags: Azure Pipelines, Tips
