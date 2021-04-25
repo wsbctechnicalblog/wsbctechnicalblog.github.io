@@ -4,7 +4,7 @@ Category: Posts
 Tags: AzDO, Azure Boards
 Slug: agile-planning-choice
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: Use Azure Boards to visualise a variety of **processes** using the **Agile** process in a single Azure DevOps project.
 
 When you create an Azure DevOps project you must select Basic, Agile, Scrum, or CMMI as the process that all teams within the process will be working with. If you peruse the documentation you will read that Basic is the most lightweight, Scrum is the next most light-weight, Agile supports many Agile method terms, and Capability Maturity Model Integration (CMMI) supports formality. Give CMMI a miss and select **Agile** as your process!
 
