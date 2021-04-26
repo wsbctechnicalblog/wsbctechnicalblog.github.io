@@ -1,5 +1,5 @@
 Title: How to share variables amongst Azure Pipeline agents
-Date: 2021-04-21
+Date: 2021-04-26
 Category: Posts
 Tags: Azure Pipelines, Tips
 Slug: sharing-variables-amongst-agents
