@@ -1,0 +1,367 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>How to share variables amongst Azure Pipeline agents - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/sharing-variables-amongst-agents.html" rel="bookmark"
+            title="Permalink to How to share variables amongst Azure Pipeline agents">How to share variables amongst Azure Pipeline agents</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 26 April 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>As per documentation, output variables can be used across stages in an Azure YAML-based pipeline. I will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>The Azure Pipelines have evolved at a blistering pace during the past 2-3 years. Features we dreamt of, like passing variables between <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&amp;tabs=yaml">stages</a>, was a big NO-NO in 2019. We had to use convoluted workarounds to save variables to storage and reloading them in the upstream stages. Not supportive of our goal for simplicity. </p>
+<hr>
+<h1>Opportunity leads to requirement</h1>
+<blockquote>
+<p><img alt="Breaking News" src="/images/sharing-variables-amongst-agents-2.png">
+In May 2020, the following release notes created excitement: "<em>Output variables may now be used across stages in a YAML-based pipeline.</em>"</p>
+</blockquote>
+<p>This opened exciting opportunities for us, such as retrieving the solution's semantic version using the <a href="https://github.com/GitTools">GitTools</a>, and sharing it with upstream stages.</p>
+<blockquote>
+<p>Our git-tools-git-version.yml template</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nl">parameters</span><span class="p">:</span>
+<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">versionSpec</span>
+  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
+  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;</span><span class="mf">5.</span><span class="n">x</span><span class="err">&#39;</span>
+<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">useConfigFile</span>
+  <span class="nl">type</span><span class="p">:</span>     <span class="n">boolean</span>
+  <span class="k">default</span><span class="o">:</span>  <span class="nb">false</span>
+<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">configFilePath</span>
+  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
+  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;&#39;</span>
+<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">updateAssemblyInfo</span>
+  <span class="nl">type</span><span class="p">:</span>     <span class="n">boolean</span>
+  <span class="k">default</span><span class="o">:</span>  <span class="nb">false</span>
+<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">updateAssemblyInfoFilename</span>
+  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
+  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;&#39;</span>
+
+<span class="nl">steps</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Install</span> <span class="n">GitVersion</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">versionSpec</span><span class="p">:</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">versionSpec</span><span class="p">}}</span>
+
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Use</span> <span class="n">GitVersion</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">useConfigFile</span><span class="p">:</span>                <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">useConfigFile</span><span class="p">}}</span>
+      <span class="nl">configFilePath</span><span class="p">:</span>               <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">configFilePath</span><span class="p">}}</span>
+      <span class="nl">updateAssemblyInfo</span><span class="p">:</span>           <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfo</span><span class="p">}}</span>
+      <span class="nl">updateAssemblyInfoFilename</span><span class="p">:</span>   <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfoFilename</span><span class="p">}}</span>
+</code></pre></div>
+
+<p>Here is a visual of our hypothetical pipeline. </p>
+<blockquote>
+<p>Core issue - pass versionToolkit variable from CI to CD stages</p>
+<p><img alt="Pipeline ownership" src="/images/sharing-variables-amongst-agents-1.png"></p>
+</blockquote>
+<p>We retrieve the semantic version using the git-tools-git-version.yml template in our <strong>ContinuousIntegration</strong> (CI) stage. Now that we can share the version with our continuous deployment (CD) pipeline stages, we have a requirement to pass the version for tasks, such as updating a Universal Artifact, as shown below.</p>
+<blockquote>
+<p>Publish Universal Artifact using the version</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>          <span class="nl">steps</span><span class="p">:</span>
+            <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Toolkit</span> <span class="n">Version</span> <span class="o">=</span> <span class="n">$</span><span class="p">(</span><span class="n">currentVersion</span><span class="p">)</span>
+            <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">UniversalPackages</span><span class="mi">@0</span>
+              <span class="nl">name</span><span class="p">:</span> <span class="n">Create_DV_Universal_Package</span>
+              <span class="nl">inputs</span><span class="p">:</span>
+                <span class="nl">command</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">publish</span><span class="err">&#39;</span>
+                <span class="nl">publishDirectory</span><span class="p">:</span>       <span class="n">$</span><span class="p">(</span><span class="n">Agent</span><span class="p">.</span><span class="n">BuildDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">drop</span>
+                <span class="nl">feedsToUsePublish</span><span class="p">:</span>      <span class="err">&#39;</span><span class="n">internal</span><span class="err">&#39;</span>
+                <span class="nl">vstsFeedPublish</span><span class="p">:</span>        <span class="n">$</span><span class="p">(</span><span class="n">developmentStageFeedPublish</span><span class="p">)</span>
+                <span class="nl">vstsFeedPackagePublish</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="n">developmentStagePackagePublish</span><span class="p">)</span>
+                <span class="nl">versionOption</span><span class="p">:</span>          <span class="err">&#39;</span><span class="n">custom</span><span class="err">&#39;</span>
+                <span class="nl">versionPublish</span><span class="p">:</span>         <span class="n">$</span><span class="p">(</span><span class="n">versionToolbox</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h1>Setting the versionToolbox Variable</h1>
+<p>After retrieving the semantic version, we run an inline PowerShell Core script to create an output variable, called <strong>versionToolkit</strong>, in the <strong>ContinuousIntegration</strong> stage.</p>
+<blockquote>
+<p>Create Development stage-specific versionToolkit version</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>    <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+      <span class="nl">name</span><span class="p">:</span> <span class="n">setToolkitVersion</span>
+      <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Set Toolkit Version&quot;</span>
+      <span class="nl">inputs</span><span class="p">:</span>
+        <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+        <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=versionToolkit;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span>
+</code></pre></div>
+
+<p>Next, we move to the <strong>Development</strong> stage and create a stage variable, which is set to the value of versionToolkit calculated in the <strong>ContinuousIntegration</strong> stage.</p>
+<p>As per documentation, the output variables are produced by steps inside of jobs and the format of the dependency variable is: <strong>stageDependencies.\&lt;stageName>.\&lt;jobName>.outputs['\&lt;stepName>.\&lt;variableName>']</strong></p>
+<blockquote>
+<p>Create <strong>Development</strong> stage-specific versionToolkit version</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Development&#39;</span>
+  <span class="n">dependsOn</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">ContinuousIntegration</span>
+  <span class="n">variables</span><span class="p">:</span>
+    <span class="n">versionToolkit</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.toolkitVersion&#39;</span><span class="p">]</span> <span class="p">]</span>
+</code></pre></div>
+
+<p>In our case the originating stage and job share the same name <strong>ContinuousIntegration</strong>, hence the ...ContinuousIntegration.ContinuousIntegration... repetition.</p>
+<p>The <strong>versionToolkit</strong> version is then passed to the deployment steps, such as the Universal Artifact update task mentioned earlier on. </p>
+<p>The relatively simple solution works like a charm :)</p>
+<hr>
+<h1>Frustration reigns</h1>
+<p>Next we move to the <strong>Production</strong> stage and implement the same (identical) logic.</p>
+<p>Unfortunately, we get an empty <strong>versionToolkit</strong> variable. </p>
+<p><img alt="WHY" src="/images/sharing-variables-amongst-agents-3.png">
+Why is the version not flowing, as expected?</p>
+<p>I dabbled with several options, such as passing the variable from stage to stage. While some worked with normal jobs, they crumbled with the use of <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops">Deployment Jobs</a>, and failed our simplicity rule. A few trying stories for another day.</p>
+<p>Back to our <strong>production</strong> stage.</p>
+<blockquote>
+<p><strong>Production</strong> Stage</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Production&#39;</span>
+    <span class="n">dependsOn</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">SecurityScans</span>
+    <span class="o">-</span> <span class="n">SecurityReview</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">versionToolbox</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span>     <span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span>
+    <span class="n">jobs</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">deployment</span><span class="p">:</span>  <span class="s1">&#39;Production&#39;</span>
+</code></pre></div>
+
+<p>Can you spot the issue?</p>
+<hr>
+<h1>After rain comes sunshine</h1>
+<p>I was pacing up and down our marina, sipping a hot chocolate, when a background thread triggered. “<em>How does the pipeline know that Production stage has a dependency on ContinuousIntegration stage?</em>”</p>
+<p>I tried the following change:</p>
+<div class="highlight"><pre><span></span><code>  <span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Production&#39;</span>
+    <span class="n">dependsOn</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">ContinuousIntegration</span>
+    <span class="o">-</span> <span class="n">SecurityScans</span>
+    <span class="o">-</span> <span class="n">SecurityReview</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">versionToolbox</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span>     <span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span>
+    <span class="n">jobs</span><span class="p">:</span>
+</code></pre></div>
+
+<p><strong>BINGO!</strong> Adding line 3, <code>- ContinuousIntegration</code>, fixed the stageDependency and the <strong>versionToolbox</strong> was set to the version set in the <strong>ContinuousIntegration</strong> stage.</p>
+<p>To conclude, here is my complete experimentation pipeline I used to try random ideas and validate assumptions, such as the above-mentioned change.</p>
+<blockquote>
+<p>Experimentation sample</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nl">stages</span><span class="p">:</span>
+<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Build</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Build</span> <span class="n">stage</span>
+  <span class="nl">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> <span class="n">Build</span>
+    <span class="nl">pool</span><span class="p">:</span>
+      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Version</span> <span class="n">Check</span>
+    <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">false</span>
+    <span class="nl">steps</span><span class="p">:</span>
+
+      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span>
+        <span class="nl">displayName</span><span class="p">:</span> <span class="n">Install</span> <span class="n">GitVersion</span>
+        <span class="nl">inputs</span><span class="p">:</span>
+              <span class="nl">versionSpec</span><span class="p">:</span> <span class="mf">5.</span><span class="n">x</span>
+      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span>
+        <span class="nl">displayName</span><span class="p">:</span> <span class="n">Use</span> <span class="n">GitVersion</span>
+
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">GitVersion</span><span class="p">.</span><span class="n">SemVer</span><span class="p">)</span>
+
+      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+        <span class="nl">name</span><span class="p">:</span> <span class="n">setCurProjVersion</span>
+        <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Collect Application Version ID&quot;</span>
+        <span class="nl">inputs</span><span class="p">:</span>
+          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(GitVersion.SemVer)&quot;</span>
+
+<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy</span> <span class="n">stage</span>
+  <span class="nl">dependsOn</span><span class="p">:</span> <span class="n">Build</span>
+  <span class="nl">variables</span><span class="p">:</span>
+    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="nl">jobs</span><span class="p">:</span>
+   <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> <span class="n">Deploy</span>
+     <span class="nl">pool</span><span class="p">:</span>
+       <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
+     <span class="nl">steps</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+        <span class="nl">name</span><span class="p">:</span> <span class="n">setCurProjVersion</span>
+        <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Collect Application Version ID&quot;</span>
+        <span class="nl">inputs</span><span class="p">:</span>
+          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(curProjVersion1)&quot;</span>
+      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+        <span class="nl">inputs</span><span class="p">:</span>
+          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Parallel</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Parallel</span>
+  <span class="nl">dependsOn</span><span class="p">:</span> <span class="n">Build</span>
+  <span class="nl">variables</span><span class="p">:</span>
+    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="nl">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
+    <span class="nl">pool</span><span class="p">:</span>
+      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
+    <span class="nl">steps</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy2</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy2</span> <span class="n">stage</span>
+  <span class="nl">dependsOn</span><span class="p">:</span> 
+  <span class="o">-</span> <span class="n">Deploy</span>
+  <span class="o">-</span> <span class="n">Parallel</span>
+  <span class="nl">variables</span><span class="p">:</span>
+    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="nl">curProjVersion2</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="nl">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
+    <span class="nl">pool</span><span class="p">:</span>
+      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
+    <span class="nl">steps</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+      <span class="cp"># next variable is empty as dependsOn is missing  - Build.</span>
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy3</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy3</span> <span class="n">stage</span>
+  <span class="nl">dependsOn</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">Build</span>
+  <span class="o">-</span> <span class="n">Deploy</span>
+  <span class="o">-</span> <span class="n">Parallel</span>
+  <span class="nl">variables</span><span class="p">:</span>
+    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="nl">curProjVersion2</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="nl">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
+    <span class="nl">pool</span><span class="p">:</span>
+      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
+    <span class="nl">steps</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Have fun passing variables!</p>
+<hr>
+<p>Reference information
+- <a href="https://docs.microsoft.com/en-us/azure/devops/release-notes/2020/sprint-168-update#jobs-can-access-output-variables-from-previous-stages">Jobs can access output variables from previous stages</a>.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure Pipelines </a><a href="/tag/tips.html">Tips </a>
+        | <a href="/sharing-variables-amongst-agents.html" rel="bookmark"
+         title="Permalink to How to share variables amongst Azure Pipeline agents">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(13)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(3)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(17)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(6)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(2)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(2)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (36)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
