@@ -31,6 +31,20 @@ Read Kevin's posts [here](/author/kevin-schwantje.html)
 
 ---
 
+## Said Akram
+
+![Said Akram](/images/Said-mug.jpeg)
+
+Said has been working as a full-stack software engineer since the early 2000s. He worked for small and large organizations on a variety of projects. His focus has always been on delivering clean code. He is constantly learning and sharing how to do things in new ways.
+
+At WorkSafeBC, Said works on legacy systems maintenance, cloud migration, cloud and mobile apps, and DevOps practices.
+
+> _“Truth can only be found in one place: the code.” - Robert C. Martin_
+
+Read Said's posts [here](/author/said-akram.html)
+
+---
+
 ## Willy-Peter Schaub
 
 ![Willy-Peter Schaub](/images/willy-schaub.png)
