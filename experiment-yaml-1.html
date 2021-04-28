@@ -1,0 +1,237 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/experiment-yaml-1.html" rel="bookmark"
+            title="Permalink to Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers">Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 28 April 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Snippets of common questions and issues from Azure Pipeline workshops and support calls. Today's snippet includes conditionals, parameters, and triggers.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>If you are an avid user of the YAML-based Azure Pipelines, you will be aware that the language can be very pedantic when it comes to too many or too few spaces. In fact, we have been mulling over a broken pipeline for (what felt like) hours, only to realise that we were misaligned by <strong>one</strong> space. Fortunately, both the YAML editor in both Azure DevOps and Visual Studio Code, as well as the <strong>Validate</strong> features are continuously improving.</p>
+<p>Let us park the spaces topic and focus on conditionals, parameters, and triggers, using this simple sample code.</p>
+<blockquote>
+<p>Experimentation Sample Code</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">none</span>
+
+<span class="n">parameters</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">branch</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="s1">&#39;Branch Name&#39;</span>
+  <span class="n">type</span><span class="p">:</span> <span class="n">string</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">release</span>
+  <span class="n">values</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">rElEaSe</span>
+  <span class="o">-</span> <span class="n">ReLeAsE</span>
+  <span class="o">-</span> <span class="n">Release</span>
+  <span class="o">-</span> <span class="n">release</span>
+  <span class="o">-</span> <span class="k">master</span>
+
+<span class="n">pool</span><span class="p">:</span>
+  <span class="n">vmImage</span><span class="p">:</span> <span class="n">windows</span><span class="o">-</span><span class="n">latest</span>
+
+<span class="n">variables</span><span class="p">:</span>
+  <span class="n">keyFinal</span><span class="p">:</span> <span class="s1">&#39;Bingo!&#39;</span>
+  <span class="n">keyRef</span><span class="p">:</span>   <span class="s1">&#39;keyFinal&#39;</span>
+  <span class="n">keyTest</span><span class="p">:</span>  <span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}}</span>
+
+<span class="n">steps</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="mf">1.</span> <span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="o">!</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="s1">&#39;Welcome&#39;</span>
+
+<span class="c1"># Referencing</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="mf">2.</span> <span class="o">$</span><span class="p">(</span><span class="n">keyTest</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="mf">3.</span> <span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span>
+
+<span class="c1"># Run-time Parameters</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Branch</span> <span class="o">=</span> <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">}}</span>
+
+<span class="c1"># Lower</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">),</span> <span class="s1">&#39;release&#39;</span> <span class="p">)</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Bingo</span><span class="o">!</span>
+
+<span class="c1"># Release only</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">or</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span> <span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Release</span><span class="o">!</span>
+</code></pre></div>
+
+<h1>Triggers</h1>
+<p>You can configure a trigger to fire <strong>manually</strong>, <strong>never</strong>, or as <strong>changes</strong> are made to selected branches, tags, and folders.</p>
+<blockquote>
+<p><img alt="Learning" src="/images/experiment-yaml-1-1.jpg"></p>
+</blockquote>
+<ul>
+<li>If you remove the trigger all together, the pipeline will be triggered if <strong>any</strong> change is made to any <strong>folder</strong> or <strong>branch</strong>. </li>
+<li>If you want to have a <strong>manually</strong> triggered pipeline, you must configure <code>- none</code>, as in today's sample code.</li>
+</ul>
+<p>See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#triggers">Triggers</a> for details.</p>
+<hr>
+<h1>Parameters</h1>
+<p>You can use parameters in templates and pipelines, as visualised on our <a href="https://wsbctechnicalblog.github.io/moving-hundreds-of-pipeline-snowflakes-qr-1.html">YAML Generic Blueprint-based Pipeline Quick Reference</a> and documented in detail in the <a href="https://aka.ms/YAML">YAML Schema</a>.</p>
+<blockquote>
+<p><img alt="Learning" src="/images/experiment-yaml-1-1.jpg"></p>
+</blockquote>
+<ul>
+<li>Parameter key:value pairs are evaluated at <strong>queue</strong> time.</li>
+<li>You can define a pipeline parameter, as in the sample code above.</li>
+<li>When you run the sample pipeline, you can select from the available values, as shown:</li>
+</ul>
+<blockquote>
+<p><img alt="Run pipeline" src="/images/experiment-yaml-1-2.png"></p>
+</blockquote>
+<p>See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#parameters">Parameters</a> for details.</p>
+<hr>
+<h1>Variables</h1>
+<p>You can add static values, reference variable groups, or insert  variable templates into your pipeline.</p>
+<blockquote>
+<p><img alt="Learning" src="/images/experiment-yaml-1-1.jpg"></p>
+</blockquote>
+<ul>
+<li>Variable key:value pairs are evaluated at <strong>run</strong> time.</li>
+<li>Echo 1 is boring, but we must say hello!</li>
+<li>Echo 2 displays the value of <strong>keyTest</strong>, which was set to the same value as <strong>keyRef</strong><blockquote>
+<p>Output:<strong>keyFinal</strong>.</p>
+</blockquote>
+</li>
+<li>Echo 3 is the one that is a bit more interesting. It is changed to $(keyFinal) at queue time, which demonstrates a rudimentary use of <strong>reference</strong> values. I had to write and run the sample to get my head around the code - try it yourself! <blockquote>
+<p>Output: <strong>Bingo!</strong></p>
+</blockquote>
+</li>
+</ul>
+<p>See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#variables">Variables</a> for details.</p>
+<hr>
+<h1>Conditionals</h1>
+<p>Lastly, conditions can be used to determine whether tasks should execute or if code or entire template are injected into the pipeline at queue time.</p>
+<blockquote>
+<p><img alt="Learning" src="/images/experiment-yaml-1-1.jpg"></p>
+</blockquote>
+<ul>
+<li><code># Lower</code> demonstrates how to include tasks if certain conditions are met. In our sample, we check if the selected <code>parameters.branch</code> is equal to 'release'. If yes, Bingo!</li>
+<li>Note how we convert the parameter to lowercase before doing the comparison, so that any combination of casing for <code>release</code> will meet the condition.</li>
+<li><code>Release only</code> demonstrates how to include tasks if and only if the origin source branch matches <code>refs/heads/release</code> or starts with <code>refs/heads/release/</code>.</li>
+</ul>
+<p>We make extensive use of conditions in our blueprints and re-usable toolkit templates. </p>
+<p>See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions">Expressions</a> for details.</p>
+<hr>
+<p>We are done for today. </p>
+<p>Hope these snippets are adding value and looking forward to your candid feedback. See you in the next experiment.</p>
+<p>```</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-pipelines.html">Azure Pipelines </a><a href="/tag/tips.html">Tips </a>
+        | <a href="/experiment-yaml-1.html" rel="bookmark"
+         title="Permalink to Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(17)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(6)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(2)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(2)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(5)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(3)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (37)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
