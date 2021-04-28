@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-04-26T00:00:00-07:00</updated><entry><title>How to share variables amongst Azure Pipeline agents</title><link href="https://wsbctechnicalblog.github.io/sharing-variables-amongst-agents.html" rel="alternate"></link><published>2021-04-26T00:00:00-07:00</published><updated>2021-04-26T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-26:/sharing-variables-amongst-agents.html</id><summary type="html">&lt;p&gt;As per documentation, output variables can be used across stages in an Azure YAML-based pipeline. I will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Azure Pipelines have evolved at a blistering pace during the past 2-3 years. Features we dreamt of, like passing variables between &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&amp;amp;tabs=yaml"&gt;stages&lt;/a&gt;, was a big NO-NO in 2019. We had to use convoluted workarounds to save variables to storage and reloading them in the upstream stages. Not supportive of our goal for simplicity. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-04-28T13:13:00-07:00</updated><entry><title>Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers</title><link href="https://wsbctechnicalblog.github.io/experiment-yaml-1.html" rel="alternate"></link><published>2021-04-28T13:13:00-07:00</published><updated>2021-04-28T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-28:/experiment-yaml-1.html</id><summary type="html">&lt;p&gt;Snippets of common questions and issues from Azure Pipeline workshops and support calls. Today's snippet includes conditionals, parameters, and triggers.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you are an avid user of the YAML-based Azure Pipelines, you will be aware that the language can be very pedantic when it comes to too many or too few spaces. In fact, we have been mulling over a broken pipeline for (what felt like) hours, only to realise that we were misaligned by &lt;strong&gt;one&lt;/strong&gt; space. Fortunately, both the YAML editor in both Azure DevOps and Visual Studio Code, as well as the &lt;strong&gt;Validate&lt;/strong&gt; features are continuously improving.&lt;/p&gt;
+&lt;p&gt;Let us park the spaces topic and focus on conditionals, parameters, and triggers, using this simple sample code.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Experimentation Sample Code&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt;
+
+&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt;
+  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Branch Name&amp;#39;&lt;/span&gt;
+  &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;
+  &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;release&lt;/span&gt;
+  &lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;rElEaSe&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;ReLeAsE&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Release&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;release&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="k"&gt;master&lt;/span&gt;
+
+&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;windows&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;
+
+&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
+  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
+  &lt;span class="n"&gt;keyTest&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+
+&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Welcome&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Referencing&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;2.&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyTest&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;3.&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Run-time Parameters&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Branch&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Lower&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;release&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Bingo&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Release only&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Build.SourceBranch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;refs/heads/release&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;startsWith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Build.SourceBranch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;refs/heads/release/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;}}:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Release&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Triggers&lt;/h1&gt;
+&lt;p&gt;You can configure a trigger to fire &lt;strong&gt;manually&lt;/strong&gt;, &lt;strong&gt;never&lt;/strong&gt;, or as &lt;strong&gt;changes&lt;/strong&gt; are made to selected branches, tags, and folders.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;If you remove the trigger all together, the pipeline will be triggered if &lt;strong&gt;any&lt;/strong&gt; change is made to any &lt;strong&gt;folder&lt;/strong&gt; or &lt;strong&gt;branch&lt;/strong&gt;. &lt;/li&gt;
+&lt;li&gt;If you want to have a &lt;strong&gt;manually&lt;/strong&gt; triggered pipeline, you must configure &lt;code&gt;- none&lt;/code&gt;, as in today's sample code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#triggers"&gt;Triggers&lt;/a&gt; for details.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Parameters&lt;/h1&gt;
+&lt;p&gt;You can use parameters in templates and pipelines, as visualised on our &lt;a href="https://wsbctechnicalblog.github.io/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;YAML Generic Blueprint-based Pipeline Quick Reference&lt;/a&gt; and documented in detail in the &lt;a href="https://aka.ms/YAML"&gt;YAML Schema&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Parameter key:value pairs are evaluated at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/li&gt;
+&lt;li&gt;You can define a pipeline parameter, as in the sample code above.&lt;/li&gt;
+&lt;li&gt;When you run the sample pipeline, you can select from the available values, as shown:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Run pipeline" src="/images/experiment-yaml-1-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#parameters"&gt;Parameters&lt;/a&gt; for details.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Variables&lt;/h1&gt;
+&lt;p&gt;You can add static values, reference variable groups, or insert  variable templates into your pipeline.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Variable key:value pairs are evaluated at &lt;strong&gt;run&lt;/strong&gt; time.&lt;/li&gt;
+&lt;li&gt;Echo 1 is boring, but we must say hello!&lt;/li&gt;
+&lt;li&gt;Echo 2 displays the value of &lt;strong&gt;keyTest&lt;/strong&gt;, which was set to the same value as &lt;strong&gt;keyRef&lt;/strong&gt;&lt;blockquote&gt;
+&lt;p&gt;Output:&lt;strong&gt;keyFinal&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Echo 3 is the one that is a bit more interesting. It is changed to $(keyFinal) at queue time, which demonstrates a rudimentary use of &lt;strong&gt;reference&lt;/strong&gt; values. I had to write and run the sample to get my head around the code - try it yourself! &lt;blockquote&gt;
+&lt;p&gt;Output: &lt;strong&gt;Bingo!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#variables"&gt;Variables&lt;/a&gt; for details.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Conditionals&lt;/h1&gt;
+&lt;p&gt;Lastly, conditions can be used to determine whether tasks should execute or if code or entire template are injected into the pipeline at queue time.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;# Lower&lt;/code&gt; demonstrates how to include tasks if certain conditions are met. In our sample, we check if the selected &lt;code&gt;parameters.branch&lt;/code&gt; is equal to 'release'. If yes, Bingo!&lt;/li&gt;
+&lt;li&gt;Note how we convert the parameter to lowercase before doing the comparison, so that any combination of casing for &lt;code&gt;release&lt;/code&gt; will meet the condition.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Release only&lt;/code&gt; demonstrates how to include tasks if and only if the origin source branch matches &lt;code&gt;refs/heads/release&lt;/code&gt; or starts with &lt;code&gt;refs/heads/release/&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We make extensive use of conditions in our blueprints and re-usable toolkit templates. &lt;/p&gt;
+&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions"&gt;Expressions&lt;/a&gt; for details.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;We are done for today. &lt;/p&gt;
+&lt;p&gt;Hope these snippets are adding value and looking forward to your candid feedback. See you in the next experiment.&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;</content><category term="Posts"></category><category term="Azure Pipelines"></category><category term="Tips"></category></entry><entry><title>How to share variables amongst Azure Pipeline agents</title><link href="https://wsbctechnicalblog.github.io/sharing-variables-amongst-agents.html" rel="alternate"></link><published>2021-04-26T00:00:00-07:00</published><updated>2021-04-26T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-26:/sharing-variables-amongst-agents.html</id><summary type="html">&lt;p&gt;As per documentation, output variables can be used across stages in an Azure YAML-based pipeline. I will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Azure Pipelines have evolved at a blistering pace during the past 2-3 years. Features we dreamt of, like passing variables between &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&amp;amp;tabs=yaml"&gt;stages&lt;/a&gt;, was a big NO-NO in 2019. We had to use convoluted workarounds to save variables to storage and reloading them in the upstream stages. Not supportive of our goal for simplicity. &lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Opportunity leads to requirement&lt;/h1&gt;
 &lt;blockquote&gt;
