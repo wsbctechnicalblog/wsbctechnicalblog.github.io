@@ -107,21 +107,21 @@ Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps a
 
 # Generic Blueprint templates demystified
 
-Our **Azure-Pipeline-Steps.yml** is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and to **run** the DevSecOps and Building code steps.
+Our **azure-pipeline-single-job.yml** is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and to **run** the DevSecOps and Building code steps.
 
 > Single Job Pipeline
 >
 > ![Single Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png)
 
-All you need to do, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps. You can explore the **Azure-Pipeline-Steps.yml** blueprint in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html).
+All you need to do, is find the **TODO** placeholders to update relevant parameters and insert your build and test steps. You can explore the **azure-pipeline-single-job.yml** blueprint in [Part 5: Pipelines - Blueprints to fuel consistency and enablement](https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html).
 
-Our **Azure-Pipeline-Jobs.yml** is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and run the **devseconlyinit** within the same job context. Lastly, it runs the **buildingcodeonly** steps in a different job context.
+Our **azure-pipeline-multiple-jobs.yml** is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the **bootstrap.yml** template to **init**ialise the DevSecOps steps and run the **devseconlyinit** within the same job context. Lastly, it runs the **buildingcodeonly** steps in a different job context.
 
 > Dual Job Pipeline
 >
 > ![Dual Job Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png)
 
-As with the Azure-Pipeline-Steps.yml blueprint, you then search for the **TODO** placeholders and update relevant parameters and insert your build and test steps. It is that simple!
+As with the azure-pipeline-single-job.yml blueprint, you then search for the **TODO** placeholders and update relevant parameters and insert your build and test steps. It is that simple!
 
 The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is **yours**!
 
