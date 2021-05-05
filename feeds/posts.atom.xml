@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-04-29T00:00:00-07:00</updated><entry><title>Introducing the Automation Working Group</title><link href="https://wsbctechnicalblog.github.io/automation-working-group.html" rel="alternate"></link><published>2021-04-29T00:00:00-07:00</published><updated>2021-04-29T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-29:/automation-working-group.html</id><summary type="html">&lt;p&gt;Any system operation we can perform manually can be fully automated by writing scripts&lt;/p&gt;</summary><content type="html">&lt;p&gt;The only reason we make changes to the software is to be able to test the hypothesis. No one makes any changes to software just because they’re bored, or to show signs of inane activity. Changing the software behaviour/functionality is a very risky business, and we must have a very good reason for doing so.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-04-30T00:00:00-07:00</updated><entry><title>Quick Reference Sheet for Application-type Blueprint-based Pipelines</title><link href="https://wsbctechnicalblog.github.io/moving-hundreds-of-pipeline-snowflakes-qr-2.html" rel="alternate"></link><published>2021-04-30T00:00:00-07:00</published><updated>2021-04-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-30:/moving-hundreds-of-pipeline-snowflakes-qr-2.html</id><summary type="html">&lt;p&gt;Summarising the main points of our 2nd generation app-type blueprint-based pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quick Reference Posters help us foster collaboration, visualise and get across key points for specific topics. They also serve as handy cheat sheets :)&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;YAML Application-type Blueprint-based Pipeline Quick Reference&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Poster" src="/images/moving-hundreds-of-pipeline-snowflakes-qr-2-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The quick reference poster introduces:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Left-hand side, introduces our app-type specific starter template, which is the only part engineers have to copy-paste into their application repository to get started, as well as a list of optional parameters we can pass to the extended template.&lt;/li&gt;
+&lt;li&gt;In the centre of the poster, is an extract from our universal artifact app-type specific continuous integration (CI) / build template, which optionally includes the continuous deployment (CD) template once done.&lt;/li&gt;
+&lt;li&gt;On the right-hand side, is an extract from our universal artifact app-type specific continuous deployment (CD) / release template. Note the flow variable, which is a strategy we covered in &lt;a href="/sharing-variables-amongst-agents.html"&gt;How to share variables amongst Azure Pipeline agents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Poster" src="/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png"&gt;&lt;/p&gt;
+&lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/multi-stage-blueprint-based-2nd-gen-pipelines-poster.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!&lt;/p&gt;
+&lt;p&gt;| &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;POSTER 1&lt;/a&gt; | POSTER 2 (this ) |&lt;/p&gt;
+&lt;hr&gt;</content><category term="Posts"></category><category term="Cheat Sheets"></category></entry><entry><title>Introducing the Automation Working Group</title><link href="https://wsbctechnicalblog.github.io/automation-working-group.html" rel="alternate"></link><published>2021-04-29T00:00:00-07:00</published><updated>2021-04-29T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-29:/automation-working-group.html</id><summary type="html">&lt;p&gt;Any system operation we can perform manually can be fully automated by writing scripts&lt;/p&gt;</summary><content type="html">&lt;p&gt;The only reason we make changes to the software is to be able to test the hypothesis. No one makes any changes to software just because they’re bored, or to show signs of inane activity. Changing the software behaviour/functionality is a very risky business, and we must have a very good reason for doing so.&lt;/p&gt;
 &lt;p&gt;Once the behaviour of the software has changed, it cannot be tested for usefulness unless it gets deployed to production. Without deploying changed software to production, our jobs would be meaningless.&lt;/p&gt;
 &lt;p&gt;Knowing that, we furthermore realize that the true measure of software quality is frequency of deployments. The more frequently we deploy changed software to production, the better the chances that we will improve the quality of software.&lt;/p&gt;
 &lt;h2&gt;How to expedite frequency of deployment?&lt;/h2&gt;
@@ -764,6 +782,7 @@ Why is the version not flowing, as expected?&lt;/p&gt;
 &lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/multi-stage-blueprint-based-1st-gen-pipelines-poster.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!&lt;/p&gt;
+&lt;p&gt;| POSTER 1 (this) | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html"&gt;POSTER 2&lt;/a&gt; |&lt;/p&gt;
 &lt;hr&gt;</content><category term="Posts"></category><category term="Cheat Sheets"></category></entry><entry><title>Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part7.html" rel="alternate"></link><published>2021-04-12T00:00:00-07:00</published><updated>2021-04-12T00:00:00-07:00</updated><author><name>Said Akram</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-12:/yaml-pipelines-part7.html</id><summary type="html">&lt;p&gt;Do you want to own two or seventy five dozen lines of pipeline code per application? The choice is yours!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome back to another installment of pipeline wizardry. In &lt;a href="/yaml-pipelines-part6.html"&gt;part 6&lt;/a&gt; we covered the simplicity of the generic blueprint-based YAML pipeline and mentioned that there is more magic. Welcome to our application-type blueprints!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Why we teleported our generic blueprints one level higher&lt;/h1&gt;
@@ -1353,18 +1372,18 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps and accountability to the Bootstrap.yml template, which is continuously enhanced, maintained and supported by our pipeline working group. The choice is &lt;strong&gt;yours&lt;/strong&gt;!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Generic Blueprint templates demystified&lt;/h1&gt;
-&lt;p&gt;Our &lt;strong&gt;Azure-Pipeline-Steps.yml&lt;/strong&gt; is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and to &lt;strong&gt;run&lt;/strong&gt; the DevSecOps and Building code steps.&lt;/p&gt;
+&lt;p&gt;Our &lt;strong&gt;azure-pipeline-single-job.yml&lt;/strong&gt; is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and to &lt;strong&gt;run&lt;/strong&gt; the DevSecOps and Building code steps.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Single Job Pipeline&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;All you need to do, is find the &lt;strong&gt;TODO&lt;/strong&gt; placeholders to update relevant parameters and insert your build and test steps. You can explore the &lt;strong&gt;Azure-Pipeline-Steps.yml&lt;/strong&gt; blueprint in &lt;a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html"&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Our &lt;strong&gt;Azure-Pipeline-Jobs.yml&lt;/strong&gt; is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and run the &lt;strong&gt;devseconlyinit&lt;/strong&gt; within the same job context. Lastly, it runs the &lt;strong&gt;buildingcodeonly&lt;/strong&gt; steps in a different job context.&lt;/p&gt;
+&lt;p&gt;All you need to do, is find the &lt;strong&gt;TODO&lt;/strong&gt; placeholders to update relevant parameters and insert your build and test steps. You can explore the &lt;strong&gt;azure-pipeline-single-job.yml&lt;/strong&gt; blueprint in &lt;a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html"&gt;Part 5: Pipelines - Blueprints to fuel consistency and enablement&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our &lt;strong&gt;azure-pipeline-multiple-jobs.yml&lt;/strong&gt; is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the &lt;strong&gt;bootstrap.yml&lt;/strong&gt; template to &lt;strong&gt;init&lt;/strong&gt;ialise the DevSecOps steps and run the &lt;strong&gt;devseconlyinit&lt;/strong&gt; within the same job context. Lastly, it runs the &lt;strong&gt;buildingcodeonly&lt;/strong&gt; steps in a different job context.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Dual Job Pipeline&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;As with the Azure-Pipeline-Steps.yml blueprint, you then search for the &lt;strong&gt;TODO&lt;/strong&gt; placeholders and update relevant parameters and insert your build and test steps. It is that simple!&lt;/p&gt;
+&lt;p&gt;As with the azure-pipeline-single-job.yml blueprint, you then search for the &lt;strong&gt;TODO&lt;/strong&gt; placeholders and update relevant parameters and insert your build and test steps. It is that simple!&lt;/p&gt;
 &lt;p&gt;The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is &lt;strong&gt;yours&lt;/strong&gt;!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Blueprint-related questions&lt;/h1&gt;
@@ -1420,8 +1439,8 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;We have defined two generic blueprints. One defines a one stage, multiple jobs pipeline, allowing parallel runs on separate agents, each with multiple steps. The simpler and more recommended blueprint defines a one stage, one job, with multiple steps pipeline. It keeps things simple, running everything on one agent. &lt;/p&gt;
 &lt;p&gt;Both blueprints call our &lt;strong&gt;bootstrap&lt;/strong&gt; template, which injects other templates introducing DevSecOps scans such as SonarQube and WhiteSource, as well as custom built &lt;strong&gt;building code&lt;/strong&gt; scripts and products, based on queue-time parameters.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Azure-Pipeline-Steps.yml flow
-&lt;img alt="Azure-Pipeline-Steps.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;azure-pipeline-single-job.yml flow
+&lt;img alt="azure-pipeline-single-job.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;As shown, the blueprint defines a pipeline that runs within the same &lt;strong&gt;job&lt;/strong&gt; context, in a single &lt;strong&gt;stage&lt;/strong&gt;. It injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with an &lt;strong&gt;init&lt;/strong&gt; parameter, to inject initialisation templates, with tasks such as &lt;strong&gt;SonarQube Prepare&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1444,7 +1463,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;At the end of the continuous integration (CI) part of the pipeline, the blueprints injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with a &lt;strong&gt;run&lt;/strong&gt; parameter, to inject tasks such as &lt;strong&gt;SonarQube Analyze&lt;/strong&gt;, &lt;strong&gt;SonarQube Publish&lt;/strong&gt;, &lt;strong&gt;WhiteSource&lt;/strong&gt;, and &lt;strong&gt;Building Code&lt;/strong&gt; validations. Single jobs are the most efficient as dependencies, such as source code, extensions, and the bootstrap toolbox only need to be loaded once.&lt;/p&gt;
 &lt;p&gt;Here is the latest version of this blueprint:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Azure-Pipeline-Steps.yml source code&lt;/p&gt;
+&lt;p&gt;azure-pipeline-single-job.yml source code&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="nl"&gt;batch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
@@ -1557,10 +1576,10 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Engineers can &lt;strong&gt;copy-paste&lt;/strong&gt; this blueprint into their application repository, look for &lt;strong&gt;TODO&lt;/strong&gt;s, update and fine-tune the pipeline as needed. Sections which should not be deleted or changed are enclosed in skull &amp;amp; cross-bones markers. &lt;strong&gt;Simple!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The other &lt;strong&gt;generic&lt;/strong&gt; template, Azure-Pipeline-Jobs.yml, enables engineers to craft multi-job pipelines, enabling features such as parallelism. &lt;/p&gt;
+&lt;p&gt;The other &lt;strong&gt;generic&lt;/strong&gt; template, azure-pipeline-multiple-jobs.yml, enables engineers to craft multi-job pipelines, enabling features such as parallelism. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Azure-Pipeline-Jobs.yml flow
-&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-2.png"&gt;&lt;/p&gt;
+&lt;p&gt;azure-pipeline-multiple-jobs.yml flow
+&lt;img alt="azure-pipeline-multiple-jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-2.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;As shown, the blueprint defines two jobs, one including the &lt;strong&gt;initialisation&lt;/strong&gt; and &lt;strong&gt;build&lt;/strong&gt; sections, and the other the &lt;strong&gt;test&lt;/strong&gt; section. Some tasks, such as the &lt;strong&gt;SonarQube&lt;/strong&gt; tasks have to run within the same job context, which is why the blueprint injects the bootstrap template three times. As before, the first injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with an &lt;strong&gt;init&lt;/strong&gt; parameter, to inject initialisation templates, with tasks such as &lt;strong&gt;SonarQube Prepare&lt;/strong&gt;. The second injects the &lt;strong&gt;bootstrap&lt;/strong&gt; template with a &lt;strong&gt;devsecopsonly&lt;/strong&gt; parameter, which magically injects all of the DevSecOps scans, such as &lt;strong&gt;SonarQube Analyse&lt;/strong&gt;, &lt;strong&gt;SonarQube Publish&lt;/strong&gt;, and &lt;strong&gt;WhiteSource&lt;/strong&gt;. The remaining templates, such as the &lt;strong&gt;Building Code&lt;/strong&gt; are only injected at the end when the third call is made to the &lt;strong&gt;bootstrap&lt;/strong&gt; template with the &lt;strong&gt;buildingcodeonly&lt;/strong&gt; parameter.&lt;/p&gt;
 &lt;p&gt;To summarise, we are trying to simplify our pipeline environment and empower both development and operations with these blueprints. &lt;/p&gt;
@@ -1570,7 +1589,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;With application-type, in short app-type, blueprints we are taking the continuous integration (CI) pipelines light-years further in terms of our goals for &lt;strong&gt;simplicity&lt;/strong&gt;, &lt;strong&gt;security&lt;/strong&gt;, &lt;strong&gt;enablement&lt;/strong&gt;, and &lt;strong&gt;consistency&lt;/strong&gt;. Each app-type blueprint, based on our pipeline champion Said Akram's (@said-akram-wcbbc) ingenious proof-of-concept, consists of a &lt;strong&gt;starter&lt;/strong&gt; template, an &lt;strong&gt;app-type&lt;/strong&gt; template, and a reference &lt;strong&gt;sample&lt;/strong&gt; implementation, as shown below.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;App-type blueprint parts&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-7.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="azure-pipeline-multiple-jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-7.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The &lt;strong&gt;starter&lt;/strong&gt; template allows our engineers to configure their continuous integration pipeline, after they &lt;strong&gt;copy-paste&lt;/strong&gt; it into their application repository. This is the only moving part that is copied and becomes part of the application code base.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1613,19 +1632,19 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;p&gt;The &lt;strong&gt;starter&lt;/strong&gt; template &lt;strong&gt;extends&lt;/strong&gt; the pipeline with the &lt;strong&gt;app-type&lt;/strong&gt; template, in our example the azureFunctionTemplate.yml. With this &lt;strong&gt;magic&lt;/strong&gt; we introduce the template &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/security/templates?view=azure-devops#use-extends-templates"&gt;&lt;strong&gt;extend&lt;/strong&gt;&lt;/a&gt; feature, which sprinkles a dash of &lt;strong&gt;security&lt;/strong&gt; on our pipelines, as we can now check that a pipeline is extended from a trusted template in &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops"&gt;environment&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&amp;amp;tabs=yaml"&gt;service connection&lt;/a&gt; approvals and checks. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Required template checks&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="azure-pipeline-multiple-jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-4.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The &lt;strong&gt;app-type&lt;/strong&gt; template is visible, but not modifiable for the owner of the pipeline. We abstract the entire continuous integration (CI) process from the engineers, which promotes &lt;strong&gt;consistency&lt;/strong&gt;, delegates &lt;strong&gt;responsibility&lt;/strong&gt; for the implementation to our common engineering system team, and &lt;strong&gt;encourages&lt;/strong&gt; engineers to be razor-focused on their application. The complexity of injecting our &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates, task sequence, stage and job context, and pipeline plumbing we discussed in previous parts, is abstracted (hidden). &lt;/p&gt;
 &lt;p&gt;Let us briefly review this with a visual.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Azure-Pipeline-Steps.yml Custom Template&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-5.png"&gt;&lt;/p&gt;
+&lt;p&gt;azure-pipeline-single-job.yml Custom Template&lt;/p&gt;
+&lt;p&gt;&lt;img alt="azure-pipeline-multiple-jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-5.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;With the &lt;strong&gt;custom&lt;/strong&gt; blueprints the starter template presents a much larger exposure area, where we can observe template drift, vulnerability injections, and complexity that the engineering teams should not have to worry about. As discussed, the latest &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates are pulled from the &lt;code&gt;*.Templates&lt;/code&gt; repository and injected into the pipeline instance at queue time.&lt;/p&gt;
 &lt;p&gt;Time to reiterate ... we can do better!&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;AzureFunctionTemplate.yml Starter Template&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Azure-Pipeline-Jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-6.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="azure-pipeline-multiple-jobs.yml" src="/images/moving-hundreds-of-pipeline-snowflakes-part5-6.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;With the &lt;strong&gt;app-type&lt;/strong&gt; blueprints, the starter template has a much smaller exposure area. The latest &lt;strong&gt;app-type&lt;/strong&gt; template is pulled from the &lt;code&gt;*.AppTemplates&lt;/code&gt; repository, which in turn injects the latest &lt;strong&gt;bootstrap&lt;/strong&gt; and associated templates from the &lt;code&gt;*.Templates&lt;/code&gt; repository.&lt;/p&gt;
 &lt;p&gt;You should appreciate the magic of the YAML pipelines by now!&lt;/p&gt;
