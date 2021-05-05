@@ -24,8 +24,8 @@ We have defined two generic blueprints. One defines a one stage, multiple jobs p
 
 Both blueprints call our **bootstrap** template, which injects other templates introducing DevSecOps scans such as SonarQube and WhiteSource, as well as custom built **building code** scripts and products, based on queue-time parameters.
 
-> Azure-Pipeline-Steps.yml flow
-> ![Azure-Pipeline-Steps.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png)
+> azure-pipeline-single-job.yml flow
+> ![azure-pipeline-single-job.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-1.png)
 
 As shown, the blueprint defines a pipeline that runs within the same **job** context, in a single **stage**. It injects the **bootstrap** template with an **init** parameter, to inject initialisation templates, with tasks such as **SonarQube Prepare**.
 
@@ -49,7 +49,7 @@ At the end of the continuous integration (CI) part of the pipeline, the blueprin
 
 Here is the latest version of this blueprint:
 
-> Azure-Pipeline-Steps.yml source code
+> azure-pipeline-single-job.yml source code
 ```yml
 trigger:
   batch: true
@@ -163,10 +163,10 @@ stages:
 
 Engineers can **copy-paste** this blueprint into their application repository, look for **TODO**s, update and fine-tune the pipeline as needed. Sections which should not be deleted or changed are enclosed in skull & cross-bones markers. **Simple!**
 
-The other **generic** template, Azure-Pipeline-Jobs.yml, enables engineers to craft multi-job pipelines, enabling features such as parallelism. 
+The other **generic** template, azure-pipeline-multiple-jobs.yml, enables engineers to craft multi-job pipelines, enabling features such as parallelism. 
 
-> Azure-Pipeline-Jobs.yml flow
-> ![Azure-Pipeline-Jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-2.png)
+> azure-pipeline-multiple-jobs.yml flow
+> ![azure-pipeline-multiple-jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-2.png)
 
 As shown, the blueprint defines two jobs, one including the **initialisation** and **build** sections, and the other the **test** section. Some tasks, such as the **SonarQube** tasks have to run within the same job context, which is why the blueprint injects the bootstrap template three times. As before, the first injects the **bootstrap** template with an **init** parameter, to inject initialisation templates, with tasks such as **SonarQube Prepare**. The second injects the **bootstrap** template with a **devsecopsonly** parameter, which magically injects all of the DevSecOps scans, such as **SonarQube Analyse**, **SonarQube Publish**, and **WhiteSource**. The remaining templates, such as the **Building Code** are only injected at the end when the third call is made to the **bootstrap** template with the **buildingcodeonly** parameter.
 
@@ -182,7 +182,7 @@ With application-type, in short app-type, blueprints we are taking the continuou
 
 > App-type blueprint parts
 >
-> ![Azure-Pipeline-Jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-7.png)
+> ![azure-pipeline-multiple-jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-7.png)
 
 The **starter** template allows our engineers to configure their continuous integration pipeline, after they **copy-paste** it into their application repository. This is the only moving part that is copied and becomes part of the application code base.
 
@@ -226,15 +226,15 @@ The **starter** template **extends** the pipeline with the **app-type** template
 
 > Required template checks
 >
-> ![Azure-Pipeline-Jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-4.png)
+> ![azure-pipeline-multiple-jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-4.png)
 
 The **app-type** template is visible, but not modifiable for the owner of the pipeline. We abstract the entire continuous integration (CI) process from the engineers, which promotes **consistency**, delegates **responsibility** for the implementation to our common engineering system team, and **encourages** engineers to be razor-focused on their application. The complexity of injecting our **bootstrap** and associated templates, task sequence, stage and job context, and pipeline plumbing we discussed in previous parts, is abstracted (hidden). 
 
 Let us briefly review this with a visual.
 
-> Azure-Pipeline-Steps.yml Custom Template
+> azure-pipeline-single-job.yml Custom Template
 >
-> ![Azure-Pipeline-Jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-5.png)
+> ![azure-pipeline-multiple-jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-5.png)
 
 With the **custom** blueprints the starter template presents a much larger exposure area, where we can observe template drift, vulnerability injections, and complexity that the engineering teams should not have to worry about. As discussed, the latest **bootstrap** and associated templates are pulled from the ```*.Templates``` repository and injected into the pipeline instance at queue time.
 
@@ -242,7 +242,7 @@ Time to reiterate ... we can do better!
 
 > AzureFunctionTemplate.yml Starter Template
 >
-> ![Azure-Pipeline-Jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-6.png)
+> ![azure-pipeline-multiple-jobs.yml](/images/moving-hundreds-of-pipeline-snowflakes-part5-6.png)
 
 With the **app-type** blueprints, the starter template has a much smaller exposure area. The latest **app-type** template is pulled from the ```*.AppTemplates``` repository, which in turn injects the latest **bootstrap** and associated templates from the ```*.Templates``` repository.
 
