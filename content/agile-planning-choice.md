@@ -120,7 +120,7 @@ Using the same Plans view, we can visualise the portfolio, program, and team bac
 
 # Conclusion
 
-I hope this quick glimpse into our Azure DevOps based demo project, demonstrates that you can use the **product** to visualise a variety of **processes** using the **Agile** process in a single AzDO project. There are a number of viewswe have not covered, such as the backlog view, taskboard, Feature timeline, and Epic Roadmap. Explore [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards/) for more details.
+I hope this quick glimpse into our Azure DevOps based demo project, demonstrates that you can use the **product** to visualise a variety of **processes** using the **Agile** process in a single AzDO project. There are a number of views we have not covered, such as the backlog view, taskboard, Feature timeline, and Epic Roadmap. Explore [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards/) for more details.
 
 For the sceptics, I will conclude with the complete backlog with the test data, from the one and only backlog within the AzDO project, which we viewed through different team/area path lenses.
 
