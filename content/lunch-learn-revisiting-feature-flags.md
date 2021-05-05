@@ -49,7 +49,7 @@ You need an understanding of feature flags, governance around usage, maintenance
 
 By adding flags, we are adding technical debt to our code, increasing code and test paths as shown. We must steward a feature code path for the ON state and another for the OFF state, and a unit test for both. 
 
-Make sure you understand the implications of flipping a feature flag, so that you can avoid he scars I have from previous feature flag implementations.
+Make sure you understand the implications of flipping a feature flag, so that you can avoid the scars I have from previous feature flag implementations.
 
 - [A Rough Patch | Brian Harry's Blog](https://devblogs.microsoft.com/bharry/a-rough-patch/)
 - [How we checked and fixed the 503 error and Performance issue in our Azure Function](https://docs.microsoft.com/en-us/archive/blogs/visualstudioalmrangers/how-we-checked-and-fixed-the-503-error-and-performance-issue-in-our-azure-function)
