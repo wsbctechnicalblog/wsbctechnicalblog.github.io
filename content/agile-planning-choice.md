@@ -1,5 +1,5 @@
 Title: Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps
-Date: 2021-04-25 13:13
+Date: 2021-05-05 13:13
 Category: Posts
 Tags: AzDO, Azure Boards
 Slug: agile-planning-choice
