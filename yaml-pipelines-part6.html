@@ -152,18 +152,18 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 <p>Similar to Software-as-a-Service (SaaS) solutions you can delegate these steps and accountability to the Bootstrap.yml template, which is continuously enhanced, maintained and supported by our pipeline working group. The choice is <strong>yours</strong>!</p>
 <hr>
 <h1>Generic Blueprint templates demystified</h1>
-<p>Our <strong>Azure-Pipeline-Steps.yml</strong> is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and to <strong>run</strong> the DevSecOps and Building code steps.</p>
+<p>Our <strong>azure-pipeline-single-job.yml</strong> is a generic blueprint that implements the single job pipeline we discussed and includes two calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and to <strong>run</strong> the DevSecOps and Building code steps.</p>
 <blockquote>
 <p>Single Job Pipeline</p>
 <p><img alt="Single Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-4.png"></p>
 </blockquote>
-<p>All you need to do, is find the <strong>TODO</strong> placeholders to update relevant parameters and insert your build and test steps. You can explore the <strong>Azure-Pipeline-Steps.yml</strong> blueprint in <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a>.</p>
-<p>Our <strong>Azure-Pipeline-Jobs.yml</strong> is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and run the <strong>devseconlyinit</strong> within the same job context. Lastly, it runs the <strong>buildingcodeonly</strong> steps in a different job context.</p>
+<p>All you need to do, is find the <strong>TODO</strong> placeholders to update relevant parameters and insert your build and test steps. You can explore the <strong>azure-pipeline-single-job.yml</strong> blueprint in <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a>.</p>
+<p>Our <strong>azure-pipeline-multiple-jobs.yml</strong> is a generic blueprint that implements the multi job pipeline we discussed and includes three calls to the <strong>bootstrap.yml</strong> template to <strong>init</strong>ialise the DevSecOps steps and run the <strong>devseconlyinit</strong> within the same job context. Lastly, it runs the <strong>buildingcodeonly</strong> steps in a different job context.</p>
 <blockquote>
 <p>Dual Job Pipeline</p>
 <p><img alt="Dual Job Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part6-5.png"></p>
 </blockquote>
-<p>As with the Azure-Pipeline-Steps.yml blueprint, you then search for the <strong>TODO</strong> placeholders and update relevant parameters and insert your build and test steps. It is that simple!</p>
+<p>As with the azure-pipeline-single-job.yml blueprint, you then search for the <strong>TODO</strong> placeholders and update relevant parameters and insert your build and test steps. It is that simple!</p>
 <p>The genetic blueprints work well for new pipelines. If you already have a YAML-based pipeline, you can include the bootstrap.yml template into your existing pipeline. The choice is <strong>yours</strong>!</p>
 <hr>
 <h1>Blueprint-related questions</h1>
@@ -231,6 +231,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
                     <li><a href="/tag/automation.html">Automation</a>(1)</li>
                     <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
                     <li><a href="/tag/agile.html">Agile</a>(7)</li>
@@ -242,7 +243,6 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
                     <li><a href="/tag/tips.html">Tips</a>(4)</li>
                     <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
                     <li><a href="/tag/design.html">Design</a>(1)</li>
-                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(2)</li>
                     <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
                     <li><a href="/tag/xp.html">XP</a>(1)</li>
                     <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
@@ -267,7 +267,7 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (38)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (39)</li>
                 </ul>
              
             </div>
