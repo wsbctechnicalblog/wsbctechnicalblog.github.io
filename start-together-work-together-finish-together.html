@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Start together work together finish together - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/start-together-work-together-finish-together.html" rel="bookmark"
+            title="Permalink to Start together work together finish together">Start together work together finish together</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Fri 07 May 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Speed up the delivery process by avoiding queuing and needless looping</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><strong>Note</strong>: This article was inspired by the amazing research <a href="https://blog.amplitude.com/author/john-cutler">John Cutler</a> keeps doing</p>
+<p>Every organization starts any software development initiative by examining the opportunities and then selecting the highest priority ones. Once that selection happens, teams move on to work on formulating the expectations. What is the proposed system supposed to offer to the paying customers/end users?</p>
+<p>Formulated expectations get formalized as user stories, which in turn get vertically sliced and worked on in a typical combination of iterative/incremental fashion. Once fully tested, the expectations get released and the system runs in production environment. Rinse, repeat.</p>
+<h2>Traditional waterfall approach</h2>
+<p>In the familiar waterfall scenario, each of the above described phases get done in strict isolation following the incremental model. At each gated phase, proposed changes get formulated, reviewed, signed off and then frozen. Change management insists that once frozen, expectations cannot be revisited. We move forward in strictly incremental fashion (i.e. we only possibly iterate at the stages 4 and 5). The gated phases typically happen in the following order:</p>
+<ol>
+<li><strong>Opportunity selection</strong> (once selected and signed off, the opportunity gets slated for implementation of the solution which will harvest its potential)</li>
+<li><strong>Formulating the expectations</strong> (typically, the expectations get formulated as a laundry list of features); once formulated, the workload gets planned and then the expectations get handed off to the design team</li>
+<li><strong>Design the solution</strong>; teams take careful approach to design the system which will meet all the signed off and frozen expectations; once the design is finished and reviewed, it gets signed off and frozen – change management precludes any further changes to the signed off design</li>
+<li><strong>The build team gets the design blueprints and commences the build activities</strong>; since no changes to the design nor to the expectations are permitted at that stage, the only team that is busy is the team building the solution</li>
+<li><strong>Once the build team reaches the ‘code complete’ stage, the built solution is handed off to the testing team</strong>; the process waits while the testers examine the solution and if any defects or malfunctioning that are deemed as show-stoppers are found, the built solution is pushed into the queue, looping it back to the build team to fix the issues</li>
+<li>Finally, after obtaining the clearance from the testers and other stakeholders, <strong>the operations team releases the solution to production</strong></li>
+<li>Once in production, the <strong>SRE specialists take over and are running the system</strong></li>
+</ol>
+<h2>Why abandon/revise the waterfall model?</h2>
+<p>Software development industry at large seems to lean aggressively toward abandoning the above described waterfall model. What are the reasons for such abandonment?</p>
+<ol>
+<li><strong>Slow in the making</strong>: waterfall increments take time. Significant effort is needed at each stage of the game. Long stretches of time needed to complete each stage create large overheads necessary to coordinate, synchronize and manage the teams.</li>
+<li><strong>Meagre utilization</strong>: each gated phase takes significant time to complete while blocking all other teams from working on the solution. While teams responsible for opportunity selection are working hard on identifying and prioritizing useful opportunities, business analysts, architects, designers, coders, testers, sysadmins, security specialists, SREs etc. are idling. As the process moves from one gated phase to another, upstream and downstream teams remain underutilized, waiting for their turn to do something useful.</li>
+<li><strong>Unrealistic expectations</strong>: time waits for no one, and while initially it may have seemed that identified opportunities have the potential to strengthen company’s position on the market, if the organization runs on sluggish processes the shift in the market and political climate is at danger of going unnoticed. By the time the organization finally releases the solution, chances are that it lags and the company may discover that the solution is inadequate, sometimes even harmful.</li>
+<li><strong>Insufficient quality</strong>: betting the future on formulating the Big Plan Upfront means that the engineers claim they have all the knowledge necessary to correctly architect, design, implement and test the proposed solution. That is rarely the case and waiting until the very last moment to test the already built solution is not the optimal way to ensure technical excellence.</li>
+</ol>
+<h2>What are the alternatives to the waterfall model?</h2>
+<p>A stock answer is agile processes, but there are several stages of maturity in agile:</p>
+<ol>
+<li><strong>Simplest (or classic) agile</strong>: combine the build and test gated phases into a single phase, run by a single team. Testers/security experts are not waiting on coders to get to the ‘code complete’ stage but are instead working side-by-side with the coders, helping with testing every diff.</li>
+<li><strong>Agile that removes the release silo</strong>: combine the build, test, and release gated phases into a single phase run by a single team. Testers working side-by-side with coders while release specialists move into continuously releasing the tested diffs.</li>
+<li><strong>Agile that includes designers as team members</strong>: all the above specialists (coders, testers, release engineers) work together while also including designers into the team. That way, designers get to respond to the issues discovered by the coders and testers during the process of building and verifying.</li>
+<li><strong>Agile as DevOps</strong>: the above team, consisting of designers, coders, testers, and release engineers, adds SREs and other operations specialists to the team. They all work together on issues discovered along the way.</li>
+<li><strong>Agile as Feature Factory</strong>: the above team begins tight collaboration with business engineers who work on creating and modifying the expectations. As the team moves forward and discovers issues with the current state of design, technical excellence etc., the team feeds the details back into the business engineers who adjust the expectations.</li>
+<li><strong>Agile as Product Team with “mini CEO”</strong>: The last remaining gated phase silo (<strong>Opportunity selection</strong>) gets removed and the “mini CEO” becomes involved in the process of building the system. Selected opportunities are not cast in stone anymore but remain open to be examined by the “mini CEO” and reviewed to accommodate discovered market pressures.</li>
+<li><strong>Product Team</strong>: the entire team (i.e. the Whole Team) collaborates in real time on continually adding value to the organization. The team is actively engaged in seeking valuable opportunities and solving problems that arrive while attempting to provide automated systems that harvest identified opportunities.</li>
+</ol>
+<p>Ideally, the best results and the most optimal utilizations are achieved when the whole team starts together, works together, and finishes together.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/extreme-programming.html">Extreme Programming </a><a href="/tag/xp.html">XP </a><a href="/tag/agile.html">Agile </a><a href="/tag/devops.html">DevOps </a>
+        | <a href="/start-together-work-together-finish-together.html" rel="bookmark"
+         title="Permalink to Start together work together finish together">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(3)</li>
+                    <li><a href="/tag/xp.html">XP</a>(2)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(8)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(20)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(3)</li>
+                    <li><a href="/tag/lunch-and-learn.html">Lunch and Learn</a>(1)</li>
+                    <li><a href="/tag/continuous-learning.html">Continuous Learning</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(6)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(4)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
+                    <li><a href="/tag/automation.html">Automation</a>(1)</li>
+                    <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
+                    <li><a href="/tag/scripting.html">Scripting</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(3)</li>
+                    <li><a href="/tag/sysadmin.html">Sysadmin</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/misc.html">misc</a> (1)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (41)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
