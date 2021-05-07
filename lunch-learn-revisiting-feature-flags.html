@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Lunch & Learn - Revisiting Feature Flags - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/lunch-learn-revisiting-feature-flags.html" rel="bookmark"
+            title="Permalink to Lunch & Learn - Revisiting Feature Flags">Lunch & Learn - Revisiting Feature Flags</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 07 May 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Manage your blast radius through progressive exposure with feature flags</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We have all been there. Minutes after releasing a new application feature, our support phone lines are flooded with calls from frustrated customers. Deploying new features to production can be risky business, especially when our goal is to always have delighted customers.</p>
+<p>What if we could progressively test and validate new features in production, with a small and focused group of early adopters? Would it not be phenomenal to fine-tune the customer’s experience of our product in production, or better, let our customer determine how and when to experience new features? Have we not wished we could revert our release with a flip of a switch as soon as we detect smoke?</p>
+<blockquote>
+<p><img alt="L&amp;L" src="/images/lunch-learn-revisiting-feature-flags-3.png"></p>
+</blockquote>
+<p>We believe in <strong>continuous learning</strong>. Last week we hosted an Azure Pipeline workshop, attracting 74 humanoids from engineering, and this week Christine Ozeroff, Anthony Foli, and I hosted an interactive lunch &amp; learn, to share experiences with Feature Flags, share the pros and cons, and unintentional misuse of feature flags.</p>
+<p>This is a crisp summary of the session.</p>
+<hr>
+<h1>Core theme</h1>
+<h2>WHY</h2>
+<p>With feature flags we have an option to continuously conduct experiments, progressively expose, test, enable and disable features, and pivot on the feedback … all in production. More importantly, we can separate deployments from releases, and release on demand. </p>
+<p>We have one of many ingredients that support a healthy DevOps mindset.</p>
+<blockquote>
+<p>"<em>DevOps is the union of PEOPLE, PROCESS and PRODUCTS to enable the continuous delivery of value to our CUSTOMERS.</em>” - <a href="https://donovanbrown.com/post/what-is-dev">Donovan Brown</a></p>
+</blockquote>
+<p>In other words, Feature flags are one option to decouple feature  deployment from release, and fine-tune feature exposure, down to the individual user.</p>
+<p>When we look at Microsoft Edge and Azure DevOps, we notice another invaluable strategy. Preview features are deployed continuously and hidden by default. Users, like you and I, can  toggle the preview feature flags ourselves and manage our experience of the products. It empowers me, as the end-user, and delivers invaluable metrics to the engineering team. For example, which features are popular <CR> , and which are looked at, but <CR> reverted immediately.</p>
+<h2>WHAT</h2>
+<p>For Product Owners feature flags are an ON OFF switch. For Developers they are an IF ELSE programming construct.</p>
+<blockquote>
+<p>WHAT are feature flags?</p>
+<p><img alt="WHAT" src="/images/lunch-learn-revisiting-feature-flags-2.png"></p>
+</blockquote>
+<h2>HOW</h2>
+<p>I urge everyone to pause, before jumping into the deep end and introducing feature flags in your solution. 
+You need an understanding of feature flags, governance around usage, maintenance, and ownership.</p>
+<p><strong>WHY</strong>? Because progressive exposure (aka feature flags) comes at a cost!</p>
+<p>By adding flags, we are adding technical debt to our code, increasing code and test paths as shown. We must steward a feature code path for the ON state and another for the OFF state, and a unit test for both. </p>
+<p>Make sure you understand the implications of flipping a feature flag, so that you can avoid the scars I have from previous feature flag implementations.</p>
+<ul>
+<li><a href="https://devblogs.microsoft.com/bharry/a-rough-patch/">A Rough Patch | Brian Harry's Blog</a></li>
+<li><a href="https://docs.microsoft.com/en-us/archive/blogs/visualstudioalmrangers/how-we-checked-and-fixed-the-503-error-and-performance-issue-in-our-azure-function">How we checked and fixed the 503 error and Performance issue in our Azure Function</a></li>
+</ul>
+<p>Protect your infrastructure from such unexpected processing surges, by using retry patterns, throttling patterns, and circuit breakers. See <a href="https://opensource.com/article/19/9/transient-faults-devops">3 ways to handle transient faults for DevOps</a> for more information.</p>
+<blockquote>
+<p>OUR FEATURE FLAG MANIFESTO</p>
+<ul>
+<li>All feature flags must support the kill switch.</li>
+<li>Feature Flags are managed by Business, Security, &amp; Quality Assurance … not development.</li>
+<li>Feature Flags are used to protect only production ready code.</li>
+<li>We favour software as a service over custom code.</li>
+</ul>
+</blockquote>
+<p>To summarise the <strong>VALUE</strong> of using feature flags …</p>
+<ul>
+<li>You can ship code when you are ready.</li>
+<li>You can test your code in production.</li>
+<li>In case of an emergency, you can disable a feature.</li>
+<li>You can control your user’s experience or empower users to control their experience.</li>
+<li>And most importantly, you can experiment, learn, and adapt in production.</li>
+</ul>
+<p>Before you commit to feature flags, please ask yourself at least FIVE times, “WHY do we need feature flags?”</p>
+<p>Also, ensure you have an owner for your feature flag solution and associated feature flag configuration. Especially if it is a custom solution! </p>
+<p><strong>Remember, feature flags are not free!</strong></p>
+<hr>
+<h1>Q&amp;A</h1>
+<p><img alt="Question" src="/images/lunch-learn-revisiting-feature-flags-4.png"></p>
+<p>Here are a few of the questions we got during the lunch &amp; learn, shared "as-is" in italic. Plus, the answer and/or my personal thoughts.</p>
+<table>
+<thead>
+<tr>
+<th>QUESTION</th>
+<th>ANSWER / THOUGHT(S)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Feature flags should be short-lived?</em></td>
+<td>Once a feature is released, the associated feature flag should be deprecated and removed from the system. Similarly, once we have completed an experiment and the associated hypothesis has been proven or disproven, the associated feature flag should be retired. <br/> <br/> I recommend the following: <br/> 1. If you do not need feature flags, do not use them! <br/> 2. If you use them, ensure they are short-lived! <br/> 3. Remove all traces of the feature flags from codebase as soon as possible!</td>
+</tr>
+<tr>
+<td><em>What is the development overhead for building feature flags? If i want to compare with the release overhead ..? I do understand Feature flags offer more flexibility. But the governance is very important.</em></td>
+<td>Adding feature flags and toggling feature flags is trivial. Managing feature flags and understanding dependencies is complex, yet pivotal to a healthy solution. It is difficult to quantify the overhead without more context, other than confirming that the overhead is a lot higher and complex, when building your own custom solution. You should not just ask what the overhead is when developing or using feature flag, but also what the overhead is when we release without feature flags to manage the blast radius of new features.</td>
+</tr>
+<tr>
+<td><em>Should specific feature flags be deprecated later down the road if they are a permanent feature?</em></td>
+<td>Feature Flags that represent a short- or long-term feature, should be deprecated as soon as possible. Feature Flags should not create a long-term bond with the feature(s) they represent. The longer you allow feature flags to camp in your code, the less likely it will be that engineering can remove them without risk, raising the likelihood that they will remain permanently, compounding your technical debt.</td>
+</tr>
+<tr>
+<td><em>So sounds like we would need to understand the feature flag configuration for any prod incidents, in case it was a factor in the incident? And then reproduce this config in test environments if we need to reproduce the problem for troubleshooting?</em></td>
+<td>This is part of the challenge of using feature flags. We need to know the exact state of all feature flags during an incident. It is vital evidence for a speedy remediation and root cause analysis during the infamous 2AM call we mention a couple of times in the <a href="https://www.tactec.ca/ndtw-resources/">Navigating DevOps through Waterfalls</a> journey.</td>
+</tr>
+<tr>
+<td><em>Could you give a brief example of how a circuit breaker would function if the need arose - ie. things go wrong after a FF switch is flipped?</em></td>
+<td>As discussed in <a href="https://opensource.com/article/19/9/transient-faults-devops">3 ways to handle transient faults for DevOps</a> the hypothesis of the circuit breaker pattern is that the failed service call is likely to succeed if (and only if) it is automatically retried after a significant delay. If we flip a feature flag and our backend services are experience unexpected load, for example Active Directory is inundated with authentication requests, the circuit breaker can break the circuit (network connection), shield, and allow the backend services to recover.</td>
+</tr>
+<tr>
+<td><em>I think the worst case scenario is if a particular FF config creates a non-trivial data corruption issue which isn’t detected immediately?</em></td>
+<td>Any data corruption is serious. If the act of flipping a feature flag results in data corruption, the kill switch is unlikely to bring any relief. Yes, this is a nightmare scenario, but not limited to feature flags.</td>
+</tr>
+<tr>
+<td><em>I am assuming no code should be sunset to the SRE group with any feature flags in it?</em></td>
+<td>Feature Flags should be short-term, focused on preview features. They are not relevant when a solution enters sustainment, maintenance, or sunset mode. In my opinion, the site reliability engineers (SRE) should <strong>not</strong> accepts a solution that harbours technical debt and stale feature flag logic. <br/> <br/> The only exception are long-lived operations and security feature flags, but only as an exception!</td>
+</tr>
+<tr>
+<td><em>Why do you favour a SaaS solution?</em></td>
+<td>In 2005 I, and many other Microsoft MVPs, had immense fun installing the first versions of Team Foundation Server. It was a painstaking and mind-boggling experience, a drain on engineering resources, and an unrecoverable expense ... but it was fun, for a while. Yes, we had to understand every nut and bolt of the solution and quickly became TFS experts, which resulted in a few of us joining Microsoft. A win for TFS, but a loss for the engineering teams we left behind. Then came Azure DevOps, formerly known as VSO and VSTS, which opened our eyes to the value of Software as a Service (SaaS). No more installations, no more maintenance of hardware, no more patching, and automatic update of features every 3-weeks, <br/> <br/> The above-mentioned experience convinced me of the value of SaaS solutions. In the context of feature flags, it means we do not have to invest precious development and operational resources to build and maintain a solution that will grow with us - basic feature flag management, A/B testing, stale and dependency flag detection and management, metrics, reliability, scalability, ... the list goes on.</td>
+</tr>
+</tbody>
+</table>
+<p>What do you think?</p>
+<hr>
+<blockquote>
+<p>Session presentation thumbnails</p>
+<p><img alt="Thumbnails" src="/images/lunch-learn-revisiting-feature-flags-1.png"></p>
+<p><img alt="Download" src="/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png"></p>
+<p>DOWNLOAD &gt;&gt; <a href="/documents/Revisiting-Feature-Flags-2021.pdf">PDF</a></p>
+</blockquote>
+<hr>
+<h1>Reference Information</h1>
+<ul>
+<li><a href="https://devblogs.microsoft.com/bharry/a-rough-patch/">A Rough Patch | Brian Harry's Blog</a></li>
+<li><a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a></li>
+<li><a href="https://docs.microsoft.com/en-us/archive/blogs/visualstudioalmrangers/how-we-checked-and-fixed-the-503-error-and-performance-issue-in-our-azure-function">How we checked and fixed the 503 error and Performance issue in our Azure Function</a></li>
+<li><a href="https://opensource.com/article/19/9/transient-faults-devops">3 ways to handle transient faults for DevOps</a></li>
+<li><a href="https://opensource.com/article/19/6/why-hypothesis-driven-development-devops">Why hypothesis-driven development is key to DevOps</a></li>
+<li><a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost">What's the cost of feature flags?</a></li>
+<li><a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost">Summary of my publications</a></li>
+</ul>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/misc.html">misc</a>
+        | Tagged: <a href="/tag/devops.html">DevOps </a><a href="/tag/feature-flags.html">Feature Flags </a><a href="/tag/lunch-and-learn.html">Lunch and Learn </a><a href="/tag/continuous-learning.html">Continuous Learning </a>
+        | <a href="/lunch-learn-revisiting-feature-flags.html" rel="bookmark"
+         title="Permalink to Lunch & Learn - Revisiting Feature Flags">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devops.html">DevOps</a>(19)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(3)</li>
+                    <li><a href="/tag/lunch-and-learn.html">Lunch and Learn</a>(1)</li>
+                    <li><a href="/tag/continuous-learning.html">Continuous Learning</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(6)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(4)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
+                    <li><a href="/tag/automation.html">Automation</a>(1)</li>
+                    <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(7)</li>
+                    <li><a href="/tag/scripting.html">Scripting</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(3)</li>
+                    <li><a href="/tag/sysadmin.html">Sysadmin</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(2)</li>
+                    <li><a href="/tag/xp.html">XP</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/misc.html">misc</a> (1)</li>
+                    <li><a href="/category/posts.html">Posts</a> (40)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
