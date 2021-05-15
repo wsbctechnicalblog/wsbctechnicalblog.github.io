@@ -36,6 +36,10 @@ TBD
 
 TBD
 
+> ![DevOps](/images/governance-manifestos-guardrails-3.png)
+
+TBD
+
 ```markdown
 Active Directory Group Names
 
