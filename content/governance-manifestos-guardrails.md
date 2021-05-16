@@ -6,39 +6,41 @@ Slug: governance-manifestos-guardrails
 Author: Willy-Peter Schaub
 Summary: The best way to create an engineering revolt is to enforce governance with the big stick.
 
-TBD
+One of many challenges of pursuing a healthy DevOps mindset is finding harmony between the need for organizational governance and autonomous engineering teams. Merriam-Webster defines **Governance** as “_the act or process of governing or overseeing the control and direction of something_”. It comes in many forms such as architecture, infrastructure, development, security, operations, bureaucracy, and legislation. A healthy portion of governance raises quality and trust, but tends to stifle autonomy and innovation. Rules are rules!
 
---- 
+> ![Governance](/images/moving-hundreds-of-pipeline-snowflakes-part3-1.png)
 
-# Common Language
+On the other hand, if we have minimal or no governance, we can experience an engineering revolt which introduces a variety of engineering snowflakes, duplication of effort, and technical debt that grows like a vicious virus. For example, when we ask engineering why we have hundred of applications and thousands of CI/CD pipelines, we get a shrug of shoulders and everyone moves on. Everyone but the operations and site reliability engineering teams, because they inherit an endless variety of technical solutions, code rot, complexity, and declining return on investments. So, which way should we pivot the scale?
 
-TBD
+> ![Revolt](/images/moving-hundreds-of-pipeline-snowflakes-part3-2.png)
 
-- **Governance** – “_the act or process of governing or overseeing the control and direction of something_” (Merriam-Webster), such as Dev, Sec, and Ops standards.
-- **Manifesto** – “_a written statement declaring publicly the intentions, motives, or views of its issuer_” (Merriam-Webster), such as [Manifesto for Agile Software Development](https://agilemanifesto.org/) and [DevOps Core Values](https://www.tactec.ca/devops-core-values/).
-- **Guardrails** – “_a railing guarding usually against danger_” (Merriam-Webster), such as the sides of a bridge, 200m above a raging George, or naming guidance.
+You guessed it, we must nurture a balance between governance and autonomy. It fuels innovation, risk taking, and passion. Easier said than done!
+
+> ![YingYang](/images/moving-hundreds-of-pipeline-snowflakes-part3-3.png)
 
 ---
 
-# Manifesto Examples
+# Quest for balance
 
-TBD
+![Hat](/images/governance-manifestos-guardrails-4.png)
+
+When I put on my engineering hat, the word **governance** triggers tension and at times even an urge to revolt.
+
+For that reason we prefer using engineering friendlier language such as **manifestos** and **guardrails**.
+
+- **Manifesto** – “_a written statement declaring publicly the intentions, motives, or views of its issuer_” (Merriam-Webster), such as [Manifesto for Agile Software Development](https://agilemanifesto.org/) and [DevOps Core Values](https://www.tactec.ca/devops-core-values/).
 
 > ![Agile](/images/governance-manifestos-guardrails-1.png)
 
-TBD
-
 > ![DevOps](/images/governance-manifestos-guardrails-2.png)
 
----
+- **Guardrails** – “_a railing guarding usually against danger_” (Merriam-Webster), such as the sides of a bridge, 200m above a raging George, or naming guidance.
 
-# Guardrail Examples
-
-TBD
+For our common engineering system we have collaborated with security and operations to define a library of guardrails, such as:
 
 > ![DevOps](/images/governance-manifestos-guardrails-3.png)
 
-TBD
+Here is an extract from our naming guidelines guardrail, with recommendations (not policies, rules, or standards) for Active Directory group names. 
 
 ```markdown
 Active Directory Group Names
@@ -54,7 +56,7 @@ Review AD AAD Security Groups for a list of organizational, project, and team-le
   - AzureDevOps_Training_AgilePlanning_ReleaseApprovers
 ```
 
-TBD so what's the issue, these look like soft guidance?
+So now that we have autonomous engineering teams and are all using ~~politically~~ engineering correct language, we should all be focused on continuously delivering value and delighting our end-users. No?
 
 ---
 
