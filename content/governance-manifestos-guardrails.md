@@ -6,7 +6,7 @@ Slug: governance-manifestos-guardrails
 Author: Willy-Peter Schaub
 Summary: The best way to create an engineering revolt is to enforce governance with the big stick.
 
-One of many challenges of pursuing a healthy DevOps mindset is finding harmony between the need for organizational governance and autonomous engineering teams. Merriam-Webster defines **Governance** as “_the act or process of governing or overseeing the control and direction of something_”. It comes in many forms such as architecture, infrastructure, development, security, operations, bureaucracy, and legislation. A healthy portion of governance raises quality and trust, but tends to stifle autonomy and innovation. Rules are rules!
+One of many challenges of pursuing a healthy DevOps mindset is finding harmony between the need for organizational governance and autonomous engineering teams. Merriam-Webster defines **Governance** as “_the act or process of governing or overseeing the control and direction of something_”. It comes in many forms such as architecture, infrastructure, development, security, operations, bureaucracy, and legislation. A healthy portion of governance raises quality and trust but tends to stifle autonomy and innovation. Rules are rules!
 
 ![Governance](/images/governance-manifestos-guardrails-5.png)
 
@@ -26,7 +26,7 @@ You guessed it, we must nurture a balance between governance and autonomy. It fu
 
 When I put on my engineering hat, the word **governance** triggers tension and at times even an urge to revolt.
 
-For that reason we prefer using engineering friendlier language such as **manifestos** and **guardrails**.
+For that reason, we prefer using engineering friendlier language such as **manifestos** and **guardrails**.
 
 - **Manifesto** – “_a written statement declaring publicly the intentions, motives, or views of its issuer_” (Merriam-Webster), such as [Manifesto for Agile Software Development](https://agilemanifesto.org/) and [DevOps Core Values](https://www.tactec.ca/devops-core-values/).
 
@@ -36,7 +36,7 @@ For that reason we prefer using engineering friendlier language such as **manife
 
 - **Guardrails** – “_a railing guarding usually against danger_” (Merriam-Webster), such as the sides of a bridge, 200m above a raging George, or naming guidance.
 
-For our common engineering system we have collaborated with security and operations to define a library of guardrails, such as:
+For our common engineering system, we have collaborated with security and operations to define a library of guardrails, such as:
 
 ![DevOps](/images/governance-manifestos-guardrails-3.png)
 
@@ -62,7 +62,7 @@ So now that we have autonomous engineering teams and are all using ~~politically
 
 # Manifestos and guardrails are wolves in sheep skins
 
-Yes, we should focus on continuously delivering value and delighting our end-users. I have seen it time and time again that engineering rallies behind **manifestos** and **guardrails**, only to pivot back to doing things the way they have been done for decades, leaving a wake of rotting guidance, knowledge, and learnings. There are a number of reasons that even the most effective and groomed guidance, best practices, manifestos, guardrails, or whatever fancy name you may use, are forgotten, ignored, or abandoned all together.
+Yes, we should focus on continuously delivering value and delighting our end-users. I have seen it time and time again that engineering rallies behind **manifestos** and **guardrails**, only to pivot back to doing things the way they have been done for decades, leaving a wake of rotting guidance, knowledge, and learnings. There are several reasons that even the most effective and groomed guidance, best practices, manifestos, guardrails, or whatever fancy name you may use, are forgotten, ignored, or abandoned all together.
 
 - Hard to discover them in a pile of sites, wikis, and documentation
 - Hard to keep them up-to-date and relevant for engineering
@@ -78,18 +78,20 @@ Once the **manifestos** and **guardrails** meander into the perceived **them** (
 
 ![Failure](/images/governance-manifestos-guardrails-10.png)
 
-I have been observing our test driven development (TDD) and in particular our mob programming dojos for some time. Mob programming is a special process in which an entire team works on the same issue or feature at the same time, in the same environment, and rotating through one and the same computer. It scales up pair programming and inspires a high degree of collaboration, learning, and quality deliverables. It creates trust, enables consistency, and stewards of doing things the right way.
+I have been observing our test-driven development (TDD) and, in particular, our mob programming dojos for some time. Mob programming is a special process in which an entire team works on the same issue or feature at the same time, in the same environment, and rotating through one and the same computer. It scales up pair programming and inspires a high degree of collaboration, learning, and quality deliverables. It creates trust, enables consistency, and stewards of doing things the right way.
 
-In fact, many the great bi-products of mob programming are those we lack with governance, guidance, and guardrails. 
+In fact, many of the bi-products of mob programming, such as collaboration, mind-sharing, and trust, are those we lack with governance, guidance, and guardrails. 
 
 > Which makes me think ... what if we learn from mob programming and embrace mob guardrailing? 
 
-By involving engineering (the mob) in the refinement of our guardrails, we nurture engagement, promote collaboration, and enable advocates to rise from the deep routed cynicism for governance. I propose the following hypothesis to our working groups:
+By involving engineering (the mob) in the refinement of our guardrails, we nurture engagement, promote collaboration, and enable advocates to rise from the deep routed cynicism for governance. I propose the following hypotheses to our working groups:
 
-- X
-- X
-- X
+![Hypothesis](/images/governance-manifestos-guardrails-11.png)
 
-To summarize a long story, if we can prove these hypothesis, we can enact the organizational governance through engineering friendly and trusted manifestos and guardrails!
+> - Hypothesis 1: Engineers being engaged in the formulation of guardrails leads to better **adoption** of the guardrails.
+> - Hypothesis 2: Engineers being engaged in the formulation of guardrails creates champions who will **advocate** the guardrails. 
+> - Hypothesis 3: Involving engineers in the formulation of guardrails promotes guardrails **mobbing**.
+
+To summarize a long story, if we can prove these hypotheses, we can enact the organizational governance through engineering friendly and trusted manifestos and guardrails!
 
 What do YOU think?
