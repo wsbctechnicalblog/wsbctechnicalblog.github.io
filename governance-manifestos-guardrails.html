@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Can we enact governance through engineering friendly manifestos and guardrails? - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/governance-manifestos-guardrails.html" rel="bookmark"
+            title="Permalink to Can we enact governance through engineering friendly manifestos and guardrails?">Can we enact governance through engineering friendly manifestos and guardrails?</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 18 May 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The best way to create an engineering revolt is to enforce governance with the big stick.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>One of many challenges of pursuing a healthy DevOps mindset is finding harmony between the need for organizational governance and autonomous engineering teams. Merriam-Webster defines <strong>Governance</strong> as “<em>the act or process of governing or overseeing the control and direction of something</em>”. It comes in many forms such as architecture, infrastructure, development, security, operations, bureaucracy, and legislation. A healthy portion of governance raises quality and trust but tends to stifle autonomy and innovation. Rules are rules!</p>
+<p><img alt="Governance" src="/images/governance-manifestos-guardrails-5.png"></p>
+<p>On the other hand, if we have minimal or no governance, we can experience an engineering revolt which introduces a variety of engineering snowflakes, duplication of effort, and technical debt that grows like a vicious virus. For example, when we ask engineering why we have hundred of applications and thousands of CI/CD pipelines, we get a shrug of shoulders and everyone moves on. Everyone but the operations and site reliability engineering teams, because they inherit an endless variety of technical solutions, code rot, complexity, and declining return on investments. So, which way should we pivot the scale?</p>
+<p><img alt="Revolt" src="/images/governance-manifestos-guardrails-6.png"></p>
+<p>You guessed it, we must nurture a balance between governance and autonomy. It fuels innovation, risk taking, and passion. Easier said than done!</p>
+<p><img alt="YingYang" src="/images/governance-manifestos-guardrails-7.png"></p>
+<hr>
+<h1>Quest for balance</h1>
+<p><img alt="Hat" src="/images/governance-manifestos-guardrails-4.png"></p>
+<p>When I put on my engineering hat, the word <strong>governance</strong> triggers tension and at times even an urge to revolt.</p>
+<p>For that reason, we prefer using engineering friendlier language such as <strong>manifestos</strong> and <strong>guardrails</strong>.</p>
+<ul>
+<li><strong>Manifesto</strong> – “<em>a written statement declaring publicly the intentions, motives, or views of its issuer</em>” (Merriam-Webster), such as <a href="https://agilemanifesto.org/">Manifesto for Agile Software Development</a> and <a href="https://www.tactec.ca/devops-core-values/">DevOps Core Values</a>.</li>
+</ul>
+<p><img alt="Agile" src="/images/governance-manifestos-guardrails-1.png"></p>
+<p><img alt="DevOps" src="/images/governance-manifestos-guardrails-2.png"></p>
+<ul>
+<li><strong>Guardrails</strong> – “<em>a railing guarding usually against danger</em>” (Merriam-Webster), such as the sides of a bridge, 200m above a raging George, or naming guidance.</li>
+</ul>
+<p>For our common engineering system, we have collaborated with security and operations to define a library of guardrails, such as:</p>
+<p><img alt="DevOps" src="/images/governance-manifestos-guardrails-3.png"></p>
+<p>Here is an extract from our naming guidelines guardrail, with recommendations (not policies, rules, or standards) for Active Directory group names. </p>
+<div class="highlight"><pre><span></span><code><span class="n">Active</span> <span class="n">Directory</span> <span class="k">Group</span> <span class="k">Names</span>
+
+<span class="n">Review</span> <span class="n">AD</span> <span class="n">AAD</span> <span class="k">Security</span> <span class="n">Groups</span> <span class="k">for</span> <span class="n">a</span> <span class="n">list</span> <span class="k">of</span> <span class="n">organizational</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="k">and</span> <span class="n">team</span><span class="o">-</span><span class="k">level</span> <span class="n">groups</span><span class="p">.</span>
+
+<span class="o">-</span> <span class="n">Guidelines</span>
+  <span class="o">-</span> <span class="n">AzureDevOps_</span><span class="o">&lt;</span><span class="n">Department</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">Project</span><span class="o">&gt;</span><span class="p">[</span><span class="n">_</span><span class="o">&lt;</span><span class="n">Team</span><span class="o">&gt;</span><span class="p">]</span><span class="n">_</span><span class="o">&lt;</span><span class="k">Role</span><span class="o">&gt;</span> <span class="n">format</span><span class="p">.</span>
+  <span class="o">-</span> <span class="n">Avoid</span> <span class="n">spaces</span><span class="p">.</span> <span class="n">Use</span> <span class="n">underscore</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">instead</span><span class="p">.</span>
+  <span class="o">-</span> <span class="k">Prefix</span> <span class="k">with</span> <span class="mi">3</span><span class="n">rdParty</span> <span class="k">for</span> <span class="n">artifacts</span> <span class="n">containing</span> <span class="n">third</span><span class="o">-</span><span class="n">party</span> <span class="n">resources</span><span class="p">.</span>
+<span class="o">-</span> <span class="n">Examples</span>
+  <span class="o">-</span> <span class="n">AzureDevOps_IT_CeS_ProjectAdministrators</span>
+  <span class="o">-</span> <span class="n">AzureDevOps_Training_AgilePlanning_ReleaseApprovers</span>
+</code></pre></div>
+
+<p>So now that we have autonomous engineering teams and are all using ~~politically~~ correct engineering language, we should all be focused on continuously delivering value and delighting our end-users. No?</p>
+<hr>
+<h1>Manifestos and guardrails are wolves in sheep skins</h1>
+<p>Yes, we should focus on continuously delivering value and delighting our end-users. I have seen it time and time again that engineering rallies behind <strong>manifestos</strong> and <strong>guardrails</strong>, only to pivot back to doing things the way they have been done for decades, leaving a wake of rotting guidance, knowledge, and learnings. There are several reasons that even the most effective and groomed guidance, best practices, manifestos, guardrails, or whatever fancy name you may use, are forgotten, ignored, or abandoned all together.</p>
+<ul>
+<li>Hard to discover them in a pile of sites, wikis, and documentation</li>
+<li>Hard to keep them up-to-date and relevant for engineering</li>
+<li>Eventually referred to and perceived as <strong>rules</strong> and equated to governance</li>
+</ul>
+<p><img alt="Failure" src="/images/governance-manifestos-guardrails-8.png"></p>
+<p>Once the <strong>manifestos</strong> and <strong>guardrails</strong> meander into the perceived <strong>them</strong> (enforcers, wolves) and <strong>us</strong> (engineers, sheep) territory, their value, advocates, and everyone's trust will evaporate like hot coffee in the arctic. You may as well shred them and walk away.</p>
+<hr>
+<h1>Why not embrace Manifesto and Guardrail Mobbing?</h1>
+<p><img alt="Failure" src="/images/governance-manifestos-guardrails-10.png"></p>
+<p>I have been observing our test-driven development (TDD) and, in particular, our mob programming dojos for some time. Mob programming is a special process in which an entire team works on the same issue or feature at the same time, in the same environment, and rotating through one and the same computer. It scales up pair programming and inspires a high degree of collaboration, learning, and quality deliverables. It creates trust, enables consistency, and stewards of doing things the right way.</p>
+<p>In fact, many of the bi-products of mob programming, such as collaboration, mind-sharing, and trust, are those we lack with governance, guidance, and guardrails. </p>
+<blockquote>
+<p>Which makes me think ... what if we learn from mob programming and embrace mob guardrailing? </p>
+</blockquote>
+<p>By involving engineering (the mob) in the refinement of our guardrails, we nurture engagement, promote collaboration, and enable advocates to rise from the deep routed cynicism for governance. I propose the following hypotheses to our working groups:</p>
+<p><img alt="Hypothesis" src="/images/governance-manifestos-guardrails-11.png"></p>
+<blockquote>
+<ul>
+<li>Hypothesis 1: Engineers being engaged in the formulation of guardrails leads to better <strong>adoption</strong> of the guardrails.</li>
+<li>Hypothesis 2: Engineers being engaged in the formulation of guardrails creates champions who will <strong>advocate</strong> the guardrails. </li>
+<li>Hypothesis 3: Involving engineers in the formulation of guardrails promotes guardrails <strong>mobbing</strong>.</li>
+</ul>
+</blockquote>
+<p>To summarize a long story, if we can prove these hypotheses, we can enact the organizational governance through engineering friendly and trusted manifestos and guardrails!</p>
+<p>What do YOU think?</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/engineering-practices.html">Engineering Practices </a>
+        | <a href="/governance-manifestos-guardrails.html" rel="bookmark"
+         title="Permalink to Can we enact governance through engineering friendly manifestos and guardrails?">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/engineering-practices.html">Engineering Practices</a>(1)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(4)</li>
+                    <li><a href="/tag/xp.html">XP</a>(3)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(9)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(21)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(3)</li>
+                    <li><a href="/tag/lunch-and-learn.html">Lunch and Learn</a>(1)</li>
+                    <li><a href="/tag/continuous-learning.html">Continuous Learning</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(6)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(4)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
+                    <li><a href="/tag/automation.html">Automation</a>(1)</li>
+                    <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
+                    <li><a href="/tag/scripting.html">Scripting</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(3)</li>
+                    <li><a href="/tag/sysadmin.html">Sysadmin</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(7)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/misc.html">misc</a> (1)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (43)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
