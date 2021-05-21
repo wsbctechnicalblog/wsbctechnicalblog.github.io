@@ -19,8 +19,7 @@ requirements, you must find ways to:
 >- Ship value faster! – Shorten the delivery cycle. 
 >- Ship the right value faster! – Monitor, learn, adapt, and pivot. 
 >- Ship the right and better value faster! – Improve quality! 
->- Ship the right and better value faster while reducing cost and 
-efficiency! – Reduce cost and simplify through automation.”
+>- Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”
 
 ---
 
