@@ -1,12 +1,14 @@
-Title: TBD
-Date: 2021-05-18
+Title: Manage your Azure DevOps User Access Levels through automation
+Date: 2021-05-21
 Category: Posts
-Tags: Azure DevOPs, Automation
+Tags: Azure DevOps, Automation
 Slug: azuredevop-automation-stakeholders
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: Quick overview how we automate our Azure DevOps access level audits and management using PowerShell, REST APIs, and Richard's WIKI Updater task.
 
-Three of my top irritations in software engineering are complexity, inconsistency, and waste. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could be re-invested in innovation and learning.
+Three of my top irritations in software engineering are **complexity**, **inconsistency**, and **waste**. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could have beeen re-invested in innovation and learning.
+
+![Agent 13](../images/azuredevop-automation-stakeholders-13.png)
 
 As Agent #13, I made this declaration in [Navigating DevOps through Waterfalls](https://www.tactec.ca/ndtw-resources/):
 
@@ -20,12 +22,19 @@ requirements, you must find ways to:
 >- Ship the right and better value faster while reducing cost and 
 efficiency! – Reduce cost and simplify through automation.”
 
+---
+
+# Context 
 As part of our common engineering system we performed regular user audits to identify **inactive** users, assigned with **Basic** and the expensive **Basic + Test** access levels. You can find details on the Azure DevOps access levels [here](https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops).
 
 Why?
 - Identify inactive users and downgrade them to free stakeholder access level
 - Downgrade helps us **reduce unnecessary costs**
 - Downgrade supports **security** by reducing access and limiting features
+
+---
+
+# The "ding" moment
 
 After doing the painstaking and mind-numbing manual audit a few times, a faithful background thread triggered at the back of my head: "_you have followed the boring audit checklist more than twice - automate!_"
 
@@ -42,6 +51,8 @@ What followed was collaboration with the community, such as the former ALM/DevOp
   - Users who have logged on to Azure DevOps, but have not used any of its services for X months
   - Users who have been assigned an access level, but have never logged on to Azure DevOps for X months
 - Write the weekly report to our knowledgebase wiki
+
+# Automation solution
 
 And voila, here is the PowerShell script that has been running weekly for more than a year.
 
@@ -63,12 +74,12 @@ Write-Host ""
 # Initialise outputfile
 #$logFile = ("{0}-{1}" -f [DateTime]::Now.ToString("yyyyMMdd"), $outputfile)
 $logFile  = $outputfile;
-"|{0}|{1}|{2}|" -f "Organsation", "Months", "Actionset"                               | add-content -path $logFile
-"|---|:-:|:-:|"                                                                       | add-content -path $logFile
-"|{0}|{1}|{2}|" -f $orgName, $months, $actionSet                                      | add-content -path $logFile
-"---"                                                                                 | add-content -path $logFile
+"|{0}|{1}|{2}|" -f "Organsation", "Months", "Actionset" | add-content -path $logFile
+"|---|:-:|:-:|"                                         | add-content -path $logFile
+"|{0}|{1}|{2}|" -f $orgName, $months, $actionSet        | add-content -path $logFile
+"---"                                                   | add-content -path $logFile
 "|{0}|{1}|{2}|{3}|{4}|" -f "Name", "Last Access", "License", "License Name", "Action" | add-content -path $logFile
-"|---|---|---|---|---|"                                                               | add-content -path $logFile
+"|---|---|---|---|---|"                                 | add-content -path $logFile
 
 # Authentication header
 $basicAuth = ("{0}:{1}" -f "",$patToken)
@@ -167,6 +178,14 @@ $response.items | ForEach-Object {
 }
 ```
 
+> REFERENCE INFORMATION
+> - [Azure DevOps Services REST API Reference](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1)
+> - [WIKI Updater Tasks](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks)
+
+---
+
+# Azure DevOps Pipeline
+
 And here is the Azure Pipeline definition, whereby I replace our organization and project with <ORG> and <PROJECT> placeholders:
 
 ```
@@ -187,11 +206,13 @@ jobs:
   - checkout: self
     clean: False
     persistCredentials: True
+
   - task: AzureKeyVault@1
     displayName: 'Azure Key Vault: <RROJECT>-KV'
     inputs:
       ConnectedServiceName: <GUID>
       KeyVaultName: <PROJECT>-KV
+
   - task: PowerShell@2
     displayName: PowerShell
     inputs:
@@ -199,6 +220,7 @@ jobs:
       arguments: -patToken $(PAT-MemberEntitlementManagement) -orgName "<ORG>" -months -3 -actionSet 1 -outputFile $(Build.ArtifactStagingDirectory)/Reset-Idle-Users-To-Stakeholders.md
       failOnStderr: true
       pwsh: true
+
   - task: WikiUpdaterTask@1
     displayName: Git based WIKI
     inputs:
@@ -212,11 +234,13 @@ jobs:
       useAgentToken: true
 ```
 
-The audit is now performed weekly (not ad-hoc), in minutes (not hours), and consistently (not flawed by context switching). In fact I completely forgot about the automation until my colleague, Dennis, asked me whether we can run the same automation in another organization. Response was an easy one, "_yup we can and already have been for the past X months. Checkout the weekly reports in our knowledgebase wiki._"
+# Positive ending
+
+The audit is now performed weekly (not ad-hoc), in minutes (not hours), and consistently (not flawed by boredom or context switching). In fact, I completely forgot about the automation until my colleague, Dennis, asked me whether we can run the same automation in another organization. Response was an easy one, "_yes we can and already have been for the past X months. Checkout the weekly reports in our knowledgebase wiki._"
 
 ![Robots](../images/azuredevop-automation-stakeholders-1.png)
 
-Hope you will join us on our quest to **automate everything automatable** to move the repetitive, mind-numbing and therefore error-prone tasks that our digital colleagues can perform consistently and efficiently. 
+Hope you will join us on our quest to **automate everything automatable** to move the repetitive, mind-numbing, and therefore error-prone tasks that our digital colleagues can perform consistently and efficiently. 
 
 ![Humanoids](../images/azuredevop-automation-stakeholders-2.png)
 
