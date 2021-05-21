@@ -4,7 +4,7 @@ Category: Posts
 Tags: AzDO, Automation
 Slug: azuredevop-automation-stakeholders
 Author: Willy-Peter Schaub
-Summary: Quick overview how we automate our Azure DevOps access level audits and management using PowerShell, REST APIs, and Richard's WIKI Updater task.
+Summary: Quick overview how our Azure DevOps access level audits and management automation using PowerShell, REST APIs, and Richard's WIKI Updater task.
 
 Three of my top irritations in software engineering are **complexity**, **inconsistency**, and **waste**. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could have beeen re-invested in innovation and learning.
 
