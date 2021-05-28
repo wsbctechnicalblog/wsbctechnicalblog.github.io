@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Client-side expressiveness and security - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/client-expressiveness-and-security.html" rel="bookmark"
+            title="Permalink to Client-side expressiveness and security">Client-side expressiveness and security</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Fri 28 May 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The importance of properly securing client-side applications has never been more urgent!</p>
+        </div>
+    
+        <div class="entry-content">
+            <blockquote>
+<p><em>“In the beginning was the hyperlink, and the hyperlink was with the web, and the hyperlink was the web. And it was good.” -Anonymous</em></p>
+</blockquote>
+<p>Modern web development demands heavy client-side processing logic. The days of simple HTML forms with the Submit button are long gone; nowadays, end-users expect feature-rich functionality available in their browsers.</p>
+<p>Sounds great, right? Yes, but what about that pesky little browser? It’s a well-known fact that all browsers are notorious for being <strong>untrusted computing environments</strong>.</p>
+<h2>What do we mean by ‘untrusted computing environment’?</h2>
+<p>If we are to enable client-side expressiveness (i.e. enable front-end developers to implement sophisticated and elaborate processing of business policy rules), we must give developers advanced, powerful tools. So, what’s wrong with that? Giving sophisticated, powerful tools to developers sound like a great way to improve quality and productivity.</p>
+<p>True, however the problem is that giving those tools to our developers also means we are giving the same tools to potentially hostile end-users.</p>
+<p>How is that possible? Well, the inherently untrusted computing environment, such as a web browser, opens the possibility of easily hacking into our system and exploiting various loopholes. Web browser is a very permissive application which allows anyone to inspect and examine what is going on under the hood.</p>
+<h2>How does client-side processing logic work?</h2>
+<p>Front-end applications need to request values that are stored on the back end. Then, once the requested values are delivered in the response, the front-end app displays the values to the end user and awaits further action initiated by the user. The user can make some modifications to the displayed values and then request that those modifications be processed and stored on the back end. The front-end app accomplishes that by sending the request back to the server.</p>
+<p>In the early days of web apps, the above described processing logic on the client was implemented using plain vanilla HTML. Soon after the e-commerce revolution picked up, it became obvious that such static, pedestrian way of processing business policy rules was woefully insufficient and inadequate. The client-side apps had to be enhanced by some custom processing logic. Enter JavaScript in the browser.</p>
+<p>With JavaScript running in the browser, suddenly the sophistication levels of the front-end apps exploded. The old thin client/fat server model got turned on its head and we started building elaborate fat client/thin server models. A <a href="https://en.wikipedia.org/wiki/Single-page_application">Single Page Application (SPA)</a> was born. Endless scrolling. Desktop-like user experience in the browser.</p>
+<h2>Where is the problem?</h2>
+<p>Unlike desktop apps, which execute the processing logic using compiled, binary code that is not publicly available, web apps (SPAs) execute the processing logic using the scripted code that is publicly available. Being publicly available, it becomes exploitable. Security therefore gets easily compromised.</p>
+<p>For example, let’s examine the situation where front-end developers are collaborating with back-end developers who are building APIs. Front-end dev notices: “This page needs <em>customer id</em> and <em>full name</em>; could you please create an API end-point with the response format <code>{first_name; last_name}</code>, given the value of <em>customer_id</em>?”</p>
+<p>The API developers oblige and enable the client to send the query that specifies <em>customer id</em> and returns customers <em>full name</em>. Like so:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="err">customer(id:</span> <span class="err">123456789)</span> <span class="err">{</span>
+        <span class="err">first_name,</span>
+        <span class="err">last_name</span>
+   <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>This expressive power given to the front-end developer is also the expressive power given to the end-users who may be keen on exploring those powers. Some of those end-users could potentially be hostile users. It is difficult to imagine a computing environment that could be less secure than a web browser. Which means that expressive front-end development platforms produce a field day for malicious/hostile end-users.</p>
+<p>This creates a huge problem: almost anything our front-end developer can do hostile users can do as well. A hostile user can easily figure out the API by inspecting HTTP Requests (in general, a very easy task not requiring advanced reverse engineering skills). Once the API has been grasped, hostile user can doctor the above query as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="err">customer(id:</span> <span class="err">123456789)</span> <span class="err">{</span>
+        <span class="err">first_name,</span>
+        <span class="err">last_name,</span>
+        <span class="err">credit_card_number</span>
+   <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>Ouch! Even if the end-user is not hostile (could be merely curious), the properly secured system should never allow such query to be successfully executed.</p>
+<p>But what if it becomes a legitimate query? What if the business policy rule changes and is now allowing for the query to return the credit card number? How does the system prevent users from prying into other users’ credit card numbers?</p>
+<p>The only way to assure proper security is to implement client-side processing logic that is sensitive to the field-level security. The system processing the query must know who is sending the query and what exactly is being asked. May sound simple at first but knowing how typically even a regular business rule may involve a lot of data elements/fields, things quickly mushroom and become exceedingly complicated. Before we know it, we have produced breeding ground for bugs.</p>
+<h2>Increasing client-side expressiveness is risky</h2>
+<p>The more power is given to the client-side UI developers, the more security headaches get produced to worry about. New developments in the client-side technology (<a href="https://graphql.org/">GraphQL</a>, <a href="https://grpc.io/">gRPC</a>, etc.) offer amazing expressive powers to front-end developers. But with that power comes huger risk as well as huge responsibility. The power tools modern front-end developers have at their disposal are a veritable double-edged sword. That sword cuts both ways – enables developers to build amazing client-side apps while those power tools at the same time open a can of security worms.</p>
+<p>One way to gain insight into the dangers of having such power tools running inside the browser is to compare it to the situation where users could send SQL queries direct to the back-end database from the browser. We have extremely valid reason to make such technology illegal on the browser, so how come we don’t have the same or similar concerns with <strong>GraphQL</strong>, <strong>gRPC</strong>, and other similar power tools?</p>
+<h2>Enter DevSecOps</h2>
+<p>The DevOps revolution happened over 10 years ago and nowadays we are seeing regular DevOps teams rapidly evolving to the new levels of maturity -- DevSecOps and CloudOps. This higher level of maturity demands upgrading our engineering skills. One of the absolutely critical skill upgrades must happen in the area of security. The reason for that was, I hope, clearly presented in this article.</p>
+<p>It is therefore paramount that front-end development efforts be closely aligned with the DevSecOps practices. Otherwise organizations are running huge risks of getting compromised by unethical hacking.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/devsecops.html">DevSecOps </a><a href="/tag/frontenddevelopment.html">FrontEndDevelopment </a><a href="/tag/cloudops.html">CloudOps </a><a href="/tag/security.html">Security </a>
+        | <a href="/client-expressiveness-and-security.html" rel="bookmark"
+         title="Permalink to Client-side expressiveness and security">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/devsecops.html">DevSecOps</a>(1)</li>
+                    <li><a href="/tag/frontenddevelopment.html">FrontEndDevelopment</a>(1)</li>
+                    <li><a href="/tag/cloudops.html">CloudOps</a>(1)</li>
+                    <li><a href="/tag/security.html">Security</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(8)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(10)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(22)</li>
+                    <li><a href="/tag/engineering-practices.html">Engineering Practices</a>(1)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(4)</li>
+                    <li><a href="/tag/xp.html">XP</a>(3)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(3)</li>
+                    <li><a href="/tag/lunch-and-learn.html">Lunch and Learn</a>(1)</li>
+                    <li><a href="/tag/continuous-learning.html">Continuous Learning</a>(1)</li>
+                    <li><a href="/tag/azdo.html">AzDO</a>(6)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(4)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
+                    <li><a href="/tag/automation.html">Automation</a>(1)</li>
+                    <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
+                    <li><a href="/tag/scripting.html">Scripting</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(3)</li>
+                    <li><a href="/tag/sysadmin.html">Sysadmin</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/misc.html">misc</a> (1)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (45)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
