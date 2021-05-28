@@ -3,7 +3,7 @@ Date: 2021-05-26
 Category: Posts
 Tags: TDD, Agile, DevOps
 Slug: tdd-for-nontechies
-Author: Alex Bunardzic, Christine Ozeroff
+Author: Alex Bunardzic; Christine Ozeroff
 Summary: TDD explained to non programmers by using the example of writing a short story
 
 Continuous learning is the essential prerequisite for staying competitive in the market. The competitive edge is oftentimes won by innovating. At WorkSafeBC, we take continuous education very seriously. On top of our regular training sessions, coding Dojos, ad hoc coding bootcamps, weekly micro learning episodes, regular blog posts on WorkSafeBC Technical Blog, etc., we also deliver regular Lunch & Learn sessions.
