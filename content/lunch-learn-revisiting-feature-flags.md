@@ -1,5 +1,6 @@
 Title: Lunch & Learn - Revisiting Feature Flags
 Date: 2021-05-07
+Category: Posts
 Tags: DevOps, Feature Flags, Lunch and Learn, Continuous Learning
 Slug: lunch-learn-revisiting-feature-flags
 Author: Willy-Peter Schaub
