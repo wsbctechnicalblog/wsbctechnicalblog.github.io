@@ -1,5 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-05-28T00:00:00-07:00</updated><entry><title>Client-side expressiveness and security</title><link href="https://wsbctechnicalblog.github.io/client-expressiveness-and-security.html" rel="alternate"></link><published>2021-05-28T00:00:00-07:00</published><updated>2021-05-28T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-05-28:/client-expressiveness-and-security.html</id><summary type="html">&lt;p&gt;The importance of properly securing client-side applications has never been more urgent!&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-06-02T00:00:00-07:00</updated><entry><title>Manage your Azure DevOps User Access Levels through automation</title><link href="https://wsbctechnicalblog.github.io/azuredevop-automation-stakeholders.html" rel="alternate"></link><published>2021-06-02T00:00:00-07:00</published><updated>2021-06-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-06-02:/azuredevop-automation-stakeholders.html</id><summary type="html">&lt;p&gt;Quick overview how our Azure DevOps access level audits and management automation using PowerShell, REST APIs, and Richard's WIKI Updater task.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Three of my top irritations in software engineering are &lt;strong&gt;complexity&lt;/strong&gt;, &lt;strong&gt;inconsistency&lt;/strong&gt;, and &lt;strong&gt;waste&lt;/strong&gt;. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could have beeen re-invested in innovation and learning.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Agent 13" src="../images/azuredevop-automation-stakeholders-13.png"&gt;&lt;/p&gt;
+&lt;p&gt;As Agent #13, I made this declaration in &lt;a href="https://www.tactec.ca/ndtw-resources/"&gt;Navigating DevOps through Waterfalls&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To remain competitive and respond to rapidly changing business and 
+technology trends, as well as regulatory and compliance 
+requirements, you must find ways to:
+- Ship value! – Increase the delivery of value to customers. 
+- Ship value faster! – Shorten the delivery cycle. 
+- Ship the right value faster! – Monitor, learn, adapt, and pivot. 
+- Ship the right and better value faster! – Improve quality! 
+- Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Context&lt;/h1&gt;
+&lt;p&gt;As part of our common engineering system we performed regular user audits to identify &lt;strong&gt;inactive&lt;/strong&gt; users, assigned with &lt;strong&gt;Basic&lt;/strong&gt; and the expensive &lt;strong&gt;Basic + Test&lt;/strong&gt; access levels. You can find details on the Azure DevOps access levels &lt;a href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Why?
+- Identify inactive users and downgrade them to free stakeholder access level
+- Downgrade helps us &lt;strong&gt;reduce unnecessary costs&lt;/strong&gt;
+- Downgrade supports &lt;strong&gt;security&lt;/strong&gt; by reducing access and limiting features&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;The "ding" moment&lt;/h1&gt;
+&lt;p&gt;After doing the painstaking and mind-numbing manual audit a few times, a faithful background thread triggered at the back of my head: "&lt;em&gt;you have followed the boring audit checklist more than twice - automate!&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Idea" src="../images/azuredevop-automation-stakeholders-3.png"&gt;&lt;/p&gt;
+&lt;p&gt;What followed was collaboration with the community, such as the former ALM/DevOps Rangers and our automation guru, aka Rodney. We agreed to the following automation requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automate the manual audit using PowerShell Core&lt;/li&gt;
+&lt;li&gt;Schedule the audit weekly using Azure Pipelines&lt;/li&gt;
+&lt;li&gt;Identify users who have been inactive for X months and based on parameters:&lt;/li&gt;
+&lt;li&gt;Only report the inactive users&lt;/li&gt;
+&lt;li&gt;Downgrade the inactive users to stakeholder access level&lt;/li&gt;
+&lt;li&gt;Inactive users are defined as:&lt;/li&gt;
+&lt;li&gt;Users who have logged on to Azure DevOps, but have not used any of its services for X months&lt;/li&gt;
+&lt;li&gt;Users who have been assigned an access level, but have never logged on to Azure DevOps for X months&lt;/li&gt;
+&lt;li&gt;Write the weekly report to our knowledgebase wiki&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Automation solution&lt;/h1&gt;
+&lt;p&gt;And voila, here is the PowerShell script that has been running weekly for more than a year.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[CmdletBinding()]&lt;/span&gt;
+&lt;span class="na"&gt;param(&lt;/span&gt;
+  &lt;span class="na"&gt;[string]   $orgName&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;experimentation-sandbox&amp;quot;,&lt;/span&gt;
+&lt;span class="s"&gt;  [int]      $months        = &amp;quot;-2&amp;quot;,&lt;/span&gt;
+&lt;span class="s"&gt;  [int]      $actionSet     = 0,&lt;/span&gt;
+&lt;span class="s"&gt;  [int]      $purgeUnknown  = 0,&lt;/span&gt;
+&lt;span class="s"&gt;  [string]   $patToken      = &amp;quot;&amp;lt;PAT&amp;gt;,&lt;/span&gt;
+&lt;span class="s"&gt;  [string]   $outputfile    = &amp;quot;Reset-Idle-Users-To-Stakeholders.md&amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;)&lt;/span&gt;
+
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;gt;&amp;gt;&amp;gt; QUERY MEMBER ENTITLEMENTS&amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Initialise outputfile&lt;/span&gt;
+&lt;span class="c1"&gt;#$logFile = (&amp;quot;{0}-{1}&amp;quot; -f [DateTime]::Now.ToString(&amp;quot;yyyyMMdd&amp;quot;), $outputfile)&lt;/span&gt;
+&lt;span class="na"&gt;$logFile&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;$outputfile;&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|&amp;quot; -f &amp;quot;Organsation&amp;quot;, &amp;quot;Months&amp;quot;, &amp;quot;Actionset&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;|---|:-:|:-:|&amp;quot;                                         | add-content -path $logFile&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|&amp;quot; -f $orgName, $months, $actionSet        | add-content -path $logFile&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;---&amp;quot;                                                   | add-content -path $logFile&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f &amp;quot;Name&amp;quot;, &amp;quot;Last Access&amp;quot;, &amp;quot;License&amp;quot;, &amp;quot;License Name&amp;quot;, &amp;quot;Action&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;|---|---|---|---|---|&amp;quot;                                 | add-content -path $logFile&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Authentication header&lt;/span&gt;
+&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;(&amp;quot;{0}:{1}&amp;quot; -f &amp;quot;&amp;quot;,$patToken)&lt;/span&gt;
+&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Text.Encoding]::UTF8.GetBytes($basicAuth)&lt;/span&gt;
+&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Convert]::ToBase64String($basicAuth)&lt;/span&gt;
+&lt;span class="na"&gt;$headers&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;@{Authorization=(&amp;quot;Basic {0}&amp;quot; -f $basicAuth)}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Requests&lt;/span&gt;
+&lt;span class="na"&gt;$request_GetEntitlements&lt;/span&gt;         &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;https://vsaex.dev.azure.com/&amp;quot; + $orgName + &amp;quot;/_apis/userentitlements?top=10000&amp;amp;api-version=5.1-preview.2&amp;quot;;&lt;/span&gt;
+&lt;span class="na"&gt;$request_UpdateEntitlementsPre&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;https://vsaex.dev.azure.com/&amp;quot; + $orgName + &amp;quot;/_apis/userentitlements/&amp;quot;;&lt;/span&gt;
+&lt;span class="na"&gt;$request_UpdateEntitlementsPost&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;?api-version=5.1-preview.2&amp;quot;;&lt;/span&gt;
+&lt;span class="na"&gt;$json&lt;/span&gt;                            &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;[{&amp;quot;from&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;op&amp;quot;: &amp;quot;replace&amp;quot;,&amp;quot;path&amp;quot;: &amp;quot;/accessLevel&amp;quot;,&amp;quot;value&amp;quot;: {&amp;quot;accountLicenseType&amp;quot;: &amp;quot;stakeholder&amp;quot;,&amp;quot;licensingSource&amp;quot;: &amp;quot;account&amp;quot;}}]&amp;#39;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Data&lt;/span&gt;
+&lt;span class="na"&gt;$members&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;New-Object System.Collections.ArrayList&lt;/span&gt;
+&lt;span class="na"&gt;[int] $count&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;0;&lt;/span&gt;
+&lt;span class="na"&gt;[string] $basic&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Basic&amp;quot;;&lt;/span&gt;
+&lt;span class="na"&gt;[string] $basicTest&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Basic + Test Plans&amp;quot;;&lt;/span&gt;
+&lt;span class="na"&gt;[string] $stakeholder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Stakeholder&amp;quot;; &lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get Entitlements&lt;/span&gt;
+&lt;span class="na"&gt;$response&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Invoke-RestMethod -Uri $request_GetEntitlements -headers $headers -Method Get&lt;/span&gt;
+&lt;span class="na"&gt;$response.items | ForEach-Object { $members.add($_.id) | out-null }&lt;/span&gt;
+
+&lt;span class="c1"&gt;# List Members &lt;/span&gt;
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;gt;&amp;gt;&amp;gt; LIST ENTITLEMENTS &amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class="na"&gt;$response.items | ForEach-Object {&lt;/span&gt;
+  &lt;span class="na"&gt;$name&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[string]$_.user.displayName;&lt;/span&gt;
+&lt;span class="s"&gt;  $date    = [DateTime]$_.lastAccessedDate;&lt;/span&gt;
+&lt;span class="s"&gt;  $expired = Get-Date;&lt;/span&gt;
+&lt;span class="s"&gt;  $expired = $expired.AddMonths($months);&lt;/span&gt;
+&lt;span class="s"&gt;  $license = [string]$_.accessLevel.AccountLicenseType;&lt;/span&gt;
+&lt;span class="s"&gt;  $licenseName = [string]$_.accessLevel.LicenseDisplayName;&lt;/span&gt;
+&lt;span class="s"&gt;  $count++;&lt;/span&gt;
+
+  &lt;span class="c1"&gt;# Forcefully remove never activated users&lt;/span&gt;
+  &lt;span class="na"&gt;if ( $purgeUnknown -eq 1 )&lt;/span&gt;
+  &lt;span class="na"&gt;{&lt;/span&gt;
+    &lt;span class="na"&gt;if ( $date.Year -eq 1 ) {&lt;/span&gt;
+      &lt;span class="na"&gt;$date&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[DateTime]$_.dateCreated;&lt;/span&gt;
+&lt;span class="s"&gt;    }&lt;/span&gt;
+&lt;span class="s"&gt;  }&lt;/span&gt;
+
+  &lt;span class="na"&gt;if ( $expired -gt $date ) {&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Prepare request for the expired user&lt;/span&gt;
+    &lt;span class="na"&gt;$request&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;$request_UpdateEntitlementsPre + $_.id + $request_UpdateEntitlementsPost;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# NEVER ACTIVATED&lt;/span&gt;
+    &lt;span class="na"&gt;if ( $date.Year -eq 1 )&lt;/span&gt;
+    &lt;span class="na"&gt;{&lt;/span&gt;
+      &lt;span class="na"&gt;if ( $licenseName -ne $stakeholder ) {&lt;/span&gt;
+        &lt;span class="na"&gt;Write-Host &amp;quot; ** IGNORE NEVER ACCESSED - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Date Created: &amp;quot; $_.dateCreated &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
+      &lt;span class="na"&gt;}&lt;/span&gt;
+    &lt;span class="na"&gt;}&lt;/span&gt;
+    &lt;span class="c1"&gt;# BASIC&lt;/span&gt;
+    &lt;span class="na"&gt;elseif ( $licenseName -eq $basic ) {&lt;/span&gt;
+      &lt;span class="na"&gt;if ( $actionSet -ne 0 ) {&lt;/span&gt;
+        &lt;span class="na"&gt;try {&lt;/span&gt;
+            &lt;span class="na"&gt;Write-Host &amp;quot; ** RESET TO STAKEHOLDER - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
+            &lt;span class="na"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &amp;#39;application/json-patch+json&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;            &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Reset to Stakeholder&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="s"&gt;        }&lt;/span&gt;
+&lt;span class="s"&gt;        catch {&lt;/span&gt;
+&lt;span class="s"&gt;          Write-Host Error updating entitlements&lt;/span&gt;
+&lt;span class="s"&gt;          Write-Host $_.Exception|format-list -force&lt;/span&gt;
+&lt;span class="s"&gt;        }&lt;/span&gt;
+&lt;span class="s"&gt;      }&lt;/span&gt;
+&lt;span class="s"&gt;      else {&lt;/span&gt;
+&lt;span class="s"&gt;        Write-Host &amp;quot; ** EXPIRED ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
+&lt;span class="s"&gt;        &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Expired&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="s"&gt;      }&lt;/span&gt;
+&lt;span class="s"&gt;    }&lt;/span&gt;
+&lt;span class="s"&gt;    # BASIC + TEST&lt;/span&gt;
+&lt;span class="s"&gt;    elseif ( $licenseName -eq $basicTest ) {&lt;/span&gt;
+&lt;span class="s"&gt;      if ( $actionSet -ne 0 ) {&lt;/span&gt;
+&lt;span class="s"&gt;        try {&lt;/span&gt;
+&lt;span class="s"&gt;            Write-Host &amp;quot; ** RESET TO STAKEHOLDER - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
+&lt;span class="s"&gt;            $response = Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &amp;#39;application/json-patch+json&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;            &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Reset to Stakeholder&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="s"&gt;        }&lt;/span&gt;
+&lt;span class="s"&gt;        catch {&lt;/span&gt;
+&lt;span class="s"&gt;          Write-Host Error updating entitlements&lt;/span&gt;
+&lt;span class="s"&gt;          Write-Host $_.Exception|format-list -force&lt;/span&gt;
+&lt;span class="s"&gt;        }&lt;/span&gt;
+&lt;span class="s"&gt;      }&lt;/span&gt;
+&lt;span class="s"&gt;      else {&lt;/span&gt;
+&lt;span class="s"&gt;        Write-Host &amp;quot; ** EXPIRED ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
+&lt;span class="s"&gt;        &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Expired&amp;quot; | add-content -path $logFile&lt;/span&gt;
+&lt;span class="s"&gt;      }&lt;/span&gt;
+&lt;span class="s"&gt;    }&lt;/span&gt;
+&lt;span class="s"&gt;  }&lt;/span&gt;
+&lt;span class="na"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;REFERENCE INFORMATION
+- &lt;a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1"&gt;Azure DevOps Services REST API Reference&lt;/a&gt;
+- &lt;a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks"&gt;WIKI Updater Tasks&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Azure DevOps Pipeline&lt;/h1&gt;
+&lt;p&gt;And here is the Azure Pipeline definition, whereby I replace our organization and project with &lt;ORG&gt; and &lt;PROJECT&gt; placeholders:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;schedules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;cron&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+  &lt;span class="nl"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;include&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;refs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;heads&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;
+  &lt;span class="nl"&gt;always&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yyyyMMdd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Rev&lt;/span&gt;&lt;span class="p"&gt;:.&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nl"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;job&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Weekly_Audit&lt;/span&gt;
+  &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Agent&lt;/span&gt; &lt;span class="n"&gt;Weekly&lt;/span&gt; &lt;span class="n"&gt;Audit&lt;/span&gt;
+  &lt;span class="nl"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;AGENT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nl"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;checkout&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;self&lt;/span&gt;
+    &lt;span class="nl"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
+    &lt;span class="nl"&gt;persistCredentials&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;AzureKeyVault&lt;/span&gt;&lt;span class="mi"&gt;@1&lt;/span&gt;
+    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Azure&lt;/span&gt; &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="nl"&gt;Vault&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;RROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;-&lt;/span&gt;&lt;span class="n"&gt;KV&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nl"&gt;ConnectedServiceName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;GUID&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nl"&gt;KeyVaultName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;-&lt;/span&gt;&lt;span class="n"&gt;KV&lt;/span&gt;
+
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;&lt;span class="mi"&gt;@2&lt;/span&gt;
+    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;
+    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nl"&gt;filePath&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Member&lt;/span&gt; &lt;span class="n"&gt;Entitlement&lt;/span&gt; &lt;span class="n"&gt;Management&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ps1&lt;/span&gt;
+      &lt;span class="nl"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;patToken&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PAT&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;MemberEntitlementManagement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;orgName&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;lt;ORG&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;months&lt;/span&gt; &lt;span class="mi"&gt;-3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;actionSet&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;outputFile&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtifactStagingDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
+      &lt;span class="nl"&gt;failOnStderr&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+      &lt;span class="nl"&gt;pwsh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;WikiUpdaterTask&lt;/span&gt;&lt;span class="mi"&gt;@1&lt;/span&gt;
+    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Git&lt;/span&gt; &lt;span class="n"&gt;based&lt;/span&gt; &lt;span class="n"&gt;WIKI&lt;/span&gt;
+    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="nl"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ORG&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;visualstudio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;/&lt;/span&gt;&lt;span class="n"&gt;_git&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Common&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Engineering&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wiki&lt;/span&gt;
+      &lt;span class="nl"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;/&lt;/span&gt;&lt;span class="n"&gt;Knowledgebase&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Logs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;InactiveUsers&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;wcbbc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BuildNumber&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_Reset_Idle_User_Licenses&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
+      &lt;span class="nl"&gt;dataIsFile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+      &lt;span class="nl"&gt;sourceFile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtifactStagingDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
+      &lt;span class="nl"&gt;message&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Automated&lt;/span&gt; &lt;span class="n"&gt;Idle&lt;/span&gt; &lt;span class="n"&gt;Users&lt;/span&gt; &lt;span class="n"&gt;Report&lt;/span&gt; &lt;span class="n"&gt;Job&lt;/span&gt;
+      &lt;span class="nl"&gt;gitname&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QueuedBy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="nl"&gt;gitemail&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QueuedBy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="nl"&gt;useAgentToken&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Positive ending&lt;/h1&gt;
+&lt;p&gt;The audit is now performed weekly (not ad-hoc), in minutes (not hours), and consistently (not flawed by boredom or context switching). In fact, I completely forgot about the automation until my colleague, Dennis, asked me whether we can run the same automation in another organization. Response was an easy one, "&lt;em&gt;yes we can and already have been for the past X months. Checkout the weekly reports in our knowledgebase wiki.&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Robots" src="../images/azuredevop-automation-stakeholders-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;Hope you will join us on our quest to &lt;strong&gt;automate everything automatable&lt;/strong&gt; to move the repetitive, mind-numbing, and therefore error-prone tasks that our digital colleagues can perform consistently and efficiently. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Humanoids" src="../images/azuredevop-automation-stakeholders-2.png"&gt;&lt;/p&gt;
+&lt;p&gt;Do not see it as the world of robotics taking over humanity, but as robotic colleagues enabling us to focus on other responsibilities, such as ensuring we continuously ship value to our &lt;strong&gt;delighted customers&lt;/strong&gt;.&lt;/p&gt;</content><category term="Posts"></category><category term="AzDO"></category><category term="Automation"></category></entry><entry><title>Client-side expressiveness and security</title><link href="https://wsbctechnicalblog.github.io/client-expressiveness-and-security.html" rel="alternate"></link><published>2021-05-28T00:00:00-07:00</published><updated>2021-05-28T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-05-28:/client-expressiveness-and-security.html</id><summary type="html">&lt;p&gt;The importance of properly securing client-side applications has never been more urgent!&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;“In the beginning was the hyperlink, and the hyperlink was with the web, and the hyperlink was the web. And it was good.” -Anonymous&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Modern web development demands heavy client-side processing logic. The days of simple HTML forms with the Submit button are long gone; nowadays, end-users expect feature-rich functionality available in their browsers.&lt;/p&gt;
@@ -42,7 +259,7 @@
 &lt;p&gt;The more power is given to the client-side UI developers, the more security headaches get produced to worry about. New developments in the client-side technology (&lt;a href="https://graphql.org/"&gt;GraphQL&lt;/a&gt;, &lt;a href="https://grpc.io/"&gt;gRPC&lt;/a&gt;, etc.) offer amazing expressive powers to front-end developers. But with that power comes huger risk as well as huge responsibility. The power tools modern front-end developers have at their disposal are a veritable double-edged sword. That sword cuts both ways – enables developers to build amazing client-side apps while those power tools at the same time open a can of security worms.&lt;/p&gt;
 &lt;p&gt;One way to gain insight into the dangers of having such power tools running inside the browser is to compare it to the situation where users could send SQL queries direct to the back-end database from the browser. We have extremely valid reason to make such technology illegal on the browser, so how come we don’t have the same or similar concerns with &lt;strong&gt;GraphQL&lt;/strong&gt;, &lt;strong&gt;gRPC&lt;/strong&gt;, and other similar power tools?&lt;/p&gt;
 &lt;h2&gt;Enter DevSecOps&lt;/h2&gt;
-&lt;p&gt;The DevOps revolution happened over 10 years ago and nowadays we are seeing regular DevOps teams rapidly evolving to the new levels of maturity -- DevSecOps and CloudOps. This higher level of maturity demands upgrading our engineering skills. One of the absolutely critical upgrade must happen in the area of security. The reason for that was, I hope, clearly presented in this article.&lt;/p&gt;
+&lt;p&gt;The DevOps revolution happened over 10 years ago and nowadays we are seeing regular DevOps teams rapidly evolving to the new levels of maturity -- DevSecOps and CloudOps. This higher level of maturity demands upgrading our engineering skills. One of the absolutely critical skill upgrades must happen in the area of security. The reason for that was, I hope, clearly presented in this article.&lt;/p&gt;
 &lt;p&gt;It is therefore paramount that front-end development efforts be closely aligned with the DevSecOps practices. Otherwise organizations are running huge risks of getting compromised by unethical hacking.&lt;/p&gt;</content><category term="Posts"></category><category term="DevSecOps"></category><category term="FrontEndDevelopment"></category><category term="CloudOps"></category><category term="Security"></category></entry><entry><title>TDD for Non-Techies</title><link href="https://wsbctechnicalblog.github.io/tdd-for-nontechies.html" rel="alternate"></link><published>2021-05-26T00:00:00-07:00</published><updated>2021-05-26T00:00:00-07:00</updated><author><name>Alex Bunardzic; Christine Ozeroff</name></author><id>tag:wsbctechnicalblog.github.io,2021-05-26:/tdd-for-nontechies.html</id><summary type="html">&lt;p&gt;TDD explained to non programmers by using the example of writing a short story&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuous learning is the essential prerequisite for staying competitive in the market. The competitive edge is oftentimes won by innovating. At WorkSafeBC, we take continuous education very seriously. On top of our regular training sessions, coding Dojos, ad hoc coding bootcamps, weekly micro learning episodes, regular blog posts on WorkSafeBC Technical Blog, etc., we also deliver regular Lunch &amp;amp; Learn sessions.
 Last month, Christine Ozeroff (our Manager of Innovation &amp;amp; Technology Learning) organized an experimental Lunch &amp;amp; Learn session to teach Test Driven Development (TDD) to non-technical staff. It was a daring experiment (we don’t know of anyone else ever attempting to do something like that), and the stakes were high – will the session prove to be useful, or will we merely manage to confuse the attendees?&lt;/p&gt;
 &lt;p&gt;We’re happy to report that the outcome of the session exceeded our expectations. Participants were pulled into the presentation and encouraged to interrupt the proceedings by asking very valuable and useful questions. At the end of the session, the overall sense was that the group learned something valuable.&lt;/p&gt;
@@ -330,7 +547,7 @@ You need an understanding of feature flags, governance around usage, maintenance
 &lt;li&gt;&lt;a href="https://opensource.com/article/19/6/why-hypothesis-driven-development-devops"&gt;Why hypothesis-driven development is key to DevOps&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost"&gt;What's the cost of feature flags?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost"&gt;Summary of my publications&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="misc"></category><category term="DevOps"></category><category term="Feature Flags"></category><category term="Lunch and Learn"></category><category term="Continuous Learning"></category></entry><entry><title>Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps</title><link href="https://wsbctechnicalblog.github.io/agile-planning-choice.html" rel="alternate"></link><published>2021-05-05T13:13:00-07:00</published><updated>2021-05-05T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-05-05:/agile-planning-choice.html</id><summary type="html">&lt;p&gt;Use Azure Boards to visualise a variety of &lt;strong&gt;processes&lt;/strong&gt; using the &lt;strong&gt;Agile&lt;/strong&gt; process in a single Azure DevOps project.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you create an Azure DevOps project you must select Basic, Agile, Scrum, or CMMI as the process that all teams within the process will be working with. If you peruse the documentation you will read that Basic is the most lightweight, Scrum is the next most light-weight, Agile supports many Agile method terms, and Capability Maturity Model Integration (CMMI) supports formality. Give CMMI a miss and select &lt;strong&gt;Agile&lt;/strong&gt; as your process!&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="DevOps"></category><category term="Feature Flags"></category><category term="Lunch and Learn"></category><category term="Continuous Learning"></category></entry><entry><title>Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps</title><link href="https://wsbctechnicalblog.github.io/agile-planning-choice.html" rel="alternate"></link><published>2021-05-05T13:13:00-07:00</published><updated>2021-05-05T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-05-05:/agile-planning-choice.html</id><summary type="html">&lt;p&gt;Use Azure Boards to visualise a variety of &lt;strong&gt;processes&lt;/strong&gt; using the &lt;strong&gt;Agile&lt;/strong&gt; process in a single Azure DevOps project.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you create an Azure DevOps project you must select Basic, Agile, Scrum, or CMMI as the process that all teams within the process will be working with. If you peruse the documentation you will read that Basic is the most lightweight, Scrum is the next most light-weight, Agile supports many Agile method terms, and Capability Maturity Model Integration (CMMI) supports formality. Give CMMI a miss and select &lt;strong&gt;Agile&lt;/strong&gt; as your process!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;The choice is yours!&lt;/h1&gt;
 &lt;p&gt;In &lt;a href="https://www.tactec.ca/ndtw-resources/"&gt;Navigate DevOps through Waterfalls&lt;/a&gt; the agents of chaos (AoC) promote a healthy DevOps mindset, which is based on a set of &lt;a href="https://www.tactec.ca/devops-core-values/"&gt;core value&lt;/a&gt;, the script definition "&lt;em&gt;DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.&lt;/em&gt;", by &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan Brown&lt;/a&gt;, and a strong push against talking about Agile DevOps.&lt;/p&gt;

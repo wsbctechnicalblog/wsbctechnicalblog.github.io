@@ -1,0 +1,357 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Manage your Azure DevOps User Access Levels through automation - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/azuredevop-automation-stakeholders.html" rel="bookmark"
+            title="Permalink to Manage your Azure DevOps User Access Levels through automation">Manage your Azure DevOps User Access Levels through automation</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 02 June 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Quick overview how our Azure DevOps access level audits and management automation using PowerShell, REST APIs, and Richard's WIKI Updater task.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Three of my top irritations in software engineering are <strong>complexity</strong>, <strong>inconsistency</strong>, and <strong>waste</strong>. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could have beeen re-invested in innovation and learning.</p>
+<p><img alt="Agent 13" src="../images/azuredevop-automation-stakeholders-13.png"></p>
+<p>As Agent #13, I made this declaration in <a href="https://www.tactec.ca/ndtw-resources/">Navigating DevOps through Waterfalls</a>:</p>
+<blockquote>
+<p>To remain competitive and respond to rapidly changing business and 
+technology trends, as well as regulatory and compliance 
+requirements, you must find ways to:
+- Ship value! – Increase the delivery of value to customers. 
+- Ship value faster! – Shorten the delivery cycle. 
+- Ship the right value faster! – Monitor, learn, adapt, and pivot. 
+- Ship the right and better value faster! – Improve quality! 
+- Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”</p>
+</blockquote>
+<hr>
+<h1>Context</h1>
+<p>As part of our common engineering system we performed regular user audits to identify <strong>inactive</strong> users, assigned with <strong>Basic</strong> and the expensive <strong>Basic + Test</strong> access levels. You can find details on the Azure DevOps access levels <a href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops">here</a>.</p>
+<p>Why?
+- Identify inactive users and downgrade them to free stakeholder access level
+- Downgrade helps us <strong>reduce unnecessary costs</strong>
+- Downgrade supports <strong>security</strong> by reducing access and limiting features</p>
+<hr>
+<h1>The "ding" moment</h1>
+<p>After doing the painstaking and mind-numbing manual audit a few times, a faithful background thread triggered at the back of my head: "<em>you have followed the boring audit checklist more than twice - automate!</em>"</p>
+<p><img alt="Idea" src="../images/azuredevop-automation-stakeholders-3.png"></p>
+<p>What followed was collaboration with the community, such as the former ALM/DevOps Rangers and our automation guru, aka Rodney. We agreed to the following automation requirements:</p>
+<ul>
+<li>Automate the manual audit using PowerShell Core</li>
+<li>Schedule the audit weekly using Azure Pipelines</li>
+<li>Identify users who have been inactive for X months and based on parameters:</li>
+<li>Only report the inactive users</li>
+<li>Downgrade the inactive users to stakeholder access level</li>
+<li>Inactive users are defined as:</li>
+<li>Users who have logged on to Azure DevOps, but have not used any of its services for X months</li>
+<li>Users who have been assigned an access level, but have never logged on to Azure DevOps for X months</li>
+<li>Write the weekly report to our knowledgebase wiki</li>
+</ul>
+<h1>Automation solution</h1>
+<p>And voila, here is the PowerShell script that has been running weekly for more than a year.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span>
+<span class="na">param(</span>
+  <span class="na">[string]   $orgName</span>       <span class="o">=</span> <span class="s">&quot;experimentation-sandbox&quot;,</span>
+<span class="s">  [int]      $months        = &quot;-2&quot;,</span>
+<span class="s">  [int]      $actionSet     = 0,</span>
+<span class="s">  [int]      $purgeUnknown  = 0,</span>
+<span class="s">  [string]   $patToken      = &quot;&lt;PAT&gt;,</span>
+<span class="s">  [string]   $outputfile    = &quot;Reset-Idle-Users-To-Stakeholders.md&quot;</span>
+<span class="na">)</span>
+
+<span class="na">Write-Host &quot;&quot;</span>
+<span class="na">Write-Host &quot;&gt;&gt;&gt; QUERY MEMBER ENTITLEMENTS&quot;</span>
+<span class="na">Write-Host &quot;&quot;</span>
+
+<span class="c1"># Initialise outputfile</span>
+<span class="c1">#$logFile = (&quot;{0}-{1}&quot; -f [DateTime]::Now.ToString(&quot;yyyyMMdd&quot;), $outputfile)</span>
+<span class="na">$logFile</span>  <span class="o">=</span> <span class="s">$outputfile;</span>
+<span class="na">&quot;|{0}|{1}|{2}|&quot; -f &quot;Organsation&quot;, &quot;Months&quot;, &quot;Actionset&quot; | add-content -path $logFile</span>
+<span class="na">&quot;|---|:-:|:-:|&quot;                                         | add-content -path $logFile</span>
+<span class="na">&quot;|{0}|{1}|{2}|&quot; -f $orgName, $months, $actionSet        | add-content -path $logFile</span>
+<span class="na">&quot;---&quot;                                                   | add-content -path $logFile</span>
+<span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f &quot;Name&quot;, &quot;Last Access&quot;, &quot;License&quot;, &quot;License Name&quot;, &quot;Action&quot; | add-content -path $logFile</span>
+<span class="na">&quot;|---|---|---|---|---|&quot;                                 | add-content -path $logFile</span>
+
+<span class="c1"># Authentication header</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span>
+<span class="na">$basicAuth</span> <span class="o">=</span> <span class="s">[System.Convert]::ToBase64String($basicAuth)</span>
+<span class="na">$headers</span>   <span class="o">=</span> <span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span>
+
+<span class="c1"># Requests</span>
+<span class="na">$request_GetEntitlements</span>         <span class="o">=</span> <span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements?top=10000&amp;api-version=5.1-preview.2&quot;;</span>
+<span class="na">$request_UpdateEntitlementsPre</span>   <span class="o">=</span> <span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements/&quot;;</span>
+<span class="na">$request_UpdateEntitlementsPost</span>  <span class="o">=</span> <span class="s">&quot;?api-version=5.1-preview.2&quot;;</span>
+<span class="na">$json</span>                            <span class="o">=</span> <span class="s">&#39;[{&quot;from&quot;: &quot;&quot;,&quot;op&quot;: &quot;replace&quot;,&quot;path&quot;: &quot;/accessLevel&quot;,&quot;value&quot;: {&quot;accountLicenseType&quot;: &quot;stakeholder&quot;,&quot;licensingSource&quot;: &quot;account&quot;}}]&#39;;</span>
+
+<span class="c1"># Data</span>
+<span class="na">$members</span>              <span class="o">=</span> <span class="s">New-Object System.Collections.ArrayList</span>
+<span class="na">[int] $count</span>          <span class="o">=</span> <span class="s">0;</span>
+<span class="na">[string] $basic</span>       <span class="o">=</span> <span class="s">&quot;Basic&quot;;</span>
+<span class="na">[string] $basicTest</span>   <span class="o">=</span> <span class="s">&quot;Basic + Test Plans&quot;;</span>
+<span class="na">[string] $stakeholder</span> <span class="o">=</span> <span class="s">&quot;Stakeholder&quot;; </span>
+
+<span class="c1"># Get Entitlements</span>
+<span class="na">$response</span>          <span class="o">=</span> <span class="s">Invoke-RestMethod -Uri $request_GetEntitlements -headers $headers -Method Get</span>
+<span class="na">$response.items | ForEach-Object { $members.add($_.id) | out-null }</span>
+
+<span class="c1"># List Members </span>
+<span class="na">Write-Host &quot;&quot;</span>
+<span class="na">Write-Host &quot;&gt;&gt;&gt; LIST ENTITLEMENTS &quot;</span>
+<span class="na">Write-Host &quot;&quot;</span>
+
+<span class="na">$response.items | ForEach-Object {</span>
+  <span class="na">$name</span>    <span class="o">=</span> <span class="s">[string]$_.user.displayName;</span>
+<span class="s">  $date    = [DateTime]$_.lastAccessedDate;</span>
+<span class="s">  $expired = Get-Date;</span>
+<span class="s">  $expired = $expired.AddMonths($months);</span>
+<span class="s">  $license = [string]$_.accessLevel.AccountLicenseType;</span>
+<span class="s">  $licenseName = [string]$_.accessLevel.LicenseDisplayName;</span>
+<span class="s">  $count++;</span>
+
+  <span class="c1"># Forcefully remove never activated users</span>
+  <span class="na">if ( $purgeUnknown -eq 1 )</span>
+  <span class="na">{</span>
+    <span class="na">if ( $date.Year -eq 1 ) {</span>
+      <span class="na">$date</span>    <span class="o">=</span> <span class="s">[DateTime]$_.dateCreated;</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+
+  <span class="na">if ( $expired -gt $date ) {</span>
+
+    <span class="c1"># Prepare request for the expired user</span>
+    <span class="na">$request</span> <span class="o">=</span> <span class="s">$request_UpdateEntitlementsPre + $_.id + $request_UpdateEntitlementsPost;</span>
+
+    <span class="c1"># NEVER ACTIVATED</span>
+    <span class="na">if ( $date.Year -eq 1 )</span>
+    <span class="na">{</span>
+      <span class="na">if ( $licenseName -ne $stakeholder ) {</span>
+        <span class="na">Write-Host &quot; ** IGNORE NEVER ACCESSED - ** &quot; &quot; Name: &quot; $name &quot; Date Created: &quot; $_.dateCreated &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+      <span class="na">}</span>
+    <span class="na">}</span>
+    <span class="c1"># BASIC</span>
+    <span class="na">elseif ( $licenseName -eq $basic ) {</span>
+      <span class="na">if ( $actionSet -ne 0 ) {</span>
+        <span class="na">try {</span>
+            <span class="na">Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+            <span class="na">$response</span> <span class="o">=</span> <span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="s">            &quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span>
+<span class="s">        }</span>
+<span class="s">        catch {</span>
+<span class="s">          Write-Host Error updating entitlements</span>
+<span class="s">          Write-Host $_.Exception|format-list -force</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">      else {</span>
+<span class="s">        Write-Host &quot; ** EXPIRED ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="s">        &quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">    # BASIC + TEST</span>
+<span class="s">    elseif ( $licenseName -eq $basicTest ) {</span>
+<span class="s">      if ( $actionSet -ne 0 ) {</span>
+<span class="s">        try {</span>
+<span class="s">            Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="s">            $response = Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="s">            &quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span>
+<span class="s">        }</span>
+<span class="s">        catch {</span>
+<span class="s">          Write-Host Error updating entitlements</span>
+<span class="s">          Write-Host $_.Exception|format-list -force</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">      else {</span>
+<span class="s">        Write-Host &quot; ** EXPIRED ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="s">        &quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="na">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>REFERENCE INFORMATION
+- <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1">Azure DevOps Services REST API Reference</a>
+- <a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks">WIKI Updater Tasks</a></p>
+</blockquote>
+<hr>
+<h1>Azure DevOps Pipeline</h1>
+<p>And here is the Azure Pipeline definition, whereby I replace our organization and project with <ORG> and <PROJECT> placeholders:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">schedules</span><span class="p">:</span>
+<span class="o">-</span> <span class="nl">cron</span><span class="p">:</span> <span class="mi">30</span> <span class="mi">15</span> <span class="o">*</span> <span class="o">*</span> <span class="mi">0</span>
+  <span class="nl">branches</span><span class="p">:</span>
+    <span class="nl">include</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
+  <span class="nl">always</span><span class="p">:</span> <span class="nb">true</span>
+<span class="nl">name</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="nl">Date</span><span class="p">:</span><span class="n">yyyyMMdd</span><span class="p">)</span><span class="n">$</span><span class="p">(</span><span class="nl">Rev</span><span class="p">:.</span><span class="n">r</span><span class="p">)</span>
+
+<span class="nl">jobs</span><span class="p">:</span>
+<span class="o">-</span> <span class="nl">job</span><span class="p">:</span> <span class="n">Weekly_Audit</span>
+  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Agent</span> <span class="n">Weekly</span> <span class="n">Audit</span>
+  <span class="nl">pool</span><span class="p">:</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">AGENT</span><span class="o">&gt;</span>
+  <span class="nl">steps</span><span class="p">:</span>
+  <span class="o">-</span> <span class="nl">checkout</span><span class="p">:</span> <span class="nb">self</span>
+    <span class="nl">clean</span><span class="p">:</span> <span class="n">False</span>
+    <span class="nl">persistCredentials</span><span class="p">:</span> <span class="n">True</span>
+
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">AzureKeyVault</span><span class="mi">@1</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">Azure</span> <span class="n">Key</span> <span class="nl">Vault</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">RROJECT</span><span class="o">&gt;-</span><span class="n">KV</span><span class="err">&#39;</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">ConnectedServiceName</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">GUID</span><span class="o">&gt;</span>
+      <span class="nl">KeyVaultName</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;-</span><span class="n">KV</span>
+
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">PowerShell</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">filePath</span><span class="p">:</span> <span class="n">Member</span> <span class="n">Entitlement</span> <span class="n">Management</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">ps1</span>
+      <span class="nl">arguments</span><span class="p">:</span> <span class="o">-</span><span class="n">patToken</span> <span class="n">$</span><span class="p">(</span><span class="n">PAT</span><span class="o">-</span><span class="n">MemberEntitlementManagement</span><span class="p">)</span> <span class="o">-</span><span class="n">orgName</span> <span class="s">&quot;&lt;ORG&gt;&quot;</span> <span class="o">-</span><span class="n">months</span> <span class="mi">-3</span> <span class="o">-</span><span class="n">actionSet</span> <span class="mi">1</span> <span class="o">-</span><span class="n">outputFile</span> <span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span>
+      <span class="nl">failOnStderr</span><span class="p">:</span> <span class="nb">true</span>
+      <span class="nl">pwsh</span><span class="p">:</span> <span class="nb">true</span>
+
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">WikiUpdaterTask</span><span class="mi">@1</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Git</span> <span class="n">based</span> <span class="n">WIKI</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">repo</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">ORG</span><span class="o">&gt;</span><span class="p">.</span><span class="n">visualstudio</span><span class="p">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">_git</span><span class="o">/</span><span class="n">Common</span><span class="o">-</span><span class="n">Engineering</span><span class="o">-</span><span class="n">System</span><span class="p">.</span><span class="n">wiki</span>
+      <span class="nl">filename</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">Knowledgebase</span><span class="o">/</span><span class="n">Logs</span><span class="o">/</span><span class="n">InactiveUsers</span><span class="o">/</span><span class="n">wcbbc</span><span class="o">/</span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">BuildNumber</span><span class="p">)</span><span class="n">_Reset_Idle_User_Licenses</span><span class="p">.</span><span class="n">md</span>
+      <span class="nl">dataIsFile</span><span class="p">:</span> <span class="nb">true</span>
+      <span class="nl">sourceFile</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span>
+      <span class="nl">message</span><span class="p">:</span> <span class="n">Automated</span> <span class="n">Idle</span> <span class="n">Users</span> <span class="n">Report</span> <span class="n">Job</span>
+      <span class="nl">gitname</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span>
+      <span class="nl">gitemail</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span>
+      <span class="nl">useAgentToken</span><span class="p">:</span> <span class="nb">true</span>
+</code></pre></div>
+
+<h1>Positive ending</h1>
+<p>The audit is now performed weekly (not ad-hoc), in minutes (not hours), and consistently (not flawed by boredom or context switching). In fact, I completely forgot about the automation until my colleague, Dennis, asked me whether we can run the same automation in another organization. Response was an easy one, "<em>yes we can and already have been for the past X months. Checkout the weekly reports in our knowledgebase wiki.</em>"</p>
+<p><img alt="Robots" src="../images/azuredevop-automation-stakeholders-1.png"></p>
+<p>Hope you will join us on our quest to <strong>automate everything automatable</strong> to move the repetitive, mind-numbing, and therefore error-prone tasks that our digital colleagues can perform consistently and efficiently. </p>
+<p><img alt="Humanoids" src="../images/azuredevop-automation-stakeholders-2.png"></p>
+<p>Do not see it as the world of robotics taking over humanity, but as robotic colleagues enabling us to focus on other responsibilities, such as ensuring we continuously ship value to our <strong>delighted customers</strong>.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azdo.html">AzDO </a><a href="/tag/automation.html">Automation </a>
+        | <a href="/azuredevop-automation-stakeholders.html" rel="bookmark"
+         title="Permalink to Manage your Azure DevOps User Access Levels through automation">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azdo.html">AzDO</a>(7)</li>
+                    <li><a href="/tag/automation.html">Automation</a>(2)</li>
+                    <li><a href="/tag/devsecops.html">DevSecOps</a>(1)</li>
+                    <li><a href="/tag/frontenddevelopment.html">FrontEndDevelopment</a>(1)</li>
+                    <li><a href="/tag/cloudops.html">CloudOps</a>(1)</li>
+                    <li><a href="/tag/security.html">Security</a>(1)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(8)</li>
+                    <li><a href="/tag/agile.html">Agile</a>(10)</li>
+                    <li><a href="/tag/devops.html">DevOps</a>(22)</li>
+                    <li><a href="/tag/engineering-practices.html">Engineering Practices</a>(1)</li>
+                    <li><a href="/tag/extreme-programming.html">Extreme Programming</a>(4)</li>
+                    <li><a href="/tag/xp.html">XP</a>(3)</li>
+                    <li><a href="/tag/feature-flags.html">Feature Flags</a>(3)</li>
+                    <li><a href="/tag/lunch-and-learn.html">Lunch and Learn</a>(1)</li>
+                    <li><a href="/tag/continuous-learning.html">Continuous Learning</a>(1)</li>
+                    <li><a href="/tag/azure-boards.html">Azure Boards</a>(4)</li>
+                    <li><a href="/tag/cheat-sheets.html">Cheat Sheets</a>(3)</li>
+                    <li><a href="/tag/workflow.html">Workflow</a>(1)</li>
+                    <li><a href="/tag/scripting.html">Scripting</a>(1)</li>
+                    <li><a href="/tag/programming.html">Programming</a>(3)</li>
+                    <li><a href="/tag/sysadmin.html">Sysadmin</a>(1)</li>
+                    <li><a href="/tag/azure-pipelines.html">Azure Pipelines</a>(14)</li>
+                    <li><a href="/tag/tips.html">Tips</a>(4)</li>
+                    <li><a href="/tag/pipeline-as-code.html">Pipeline as Code</a>(8)</li>
+                    <li><a href="/tag/design.html">Design</a>(1)</li>
+                    <li><a href="/tag/infrastructure-as-code.html">Infrastructure as Code</a>(2)</li>
+                    <li><a href="/tag/workflow-as-code.html">workflow as code</a>(1)</li>
+                    <li><a href="/tag/continuous-integration-ci.html">Continuous Integration (CI)</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery-cd.html">Continuous Delivery (CD)</a>(1)</li>
+                    <li><a href="/tag/devops-mindset.html">DevOps Mindset</a>(1)</li>
+                    <li><a href="/tag/ci.html">CI</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(1)</li>
+                    <li><a href="/tag/azure-ad.html">Azure AD</a>(1)</li>
+                    <li><a href="/tag/azure-repos.html">Azure Repos</a>(1)</li>
+                    <li><a href="/tag/git.html">Git</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">Code-quality</a>(1)</li>
+                    <li><a href="/tag/legacy-code.html">legacy-code</a>(1)</li>
+                    <li><a href="/tag/extract-method.html">extract-method</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (47)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
