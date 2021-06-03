@@ -29,6 +29,7 @@ requirements, you must find ways to:
 As part of our common engineering system we performed regular user audits to identify **inactive** users, assigned with **Basic** and the expensive **Basic + Test** access levels. You can find details on the Azure DevOps access levels [here](https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops).
 
 Why?
+
 - Identify inactive users and downgrade them to free stakeholder access level
 - Downgrade helps us **reduce unnecessary costs**
 - Downgrade supports **security** by reducing access and limiting features
@@ -180,8 +181,10 @@ $response.items | ForEach-Object {
 ```
 
 > REFERENCE INFORMATION
+>
 > - [Azure DevOps Services REST API Reference](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1)
 > - [WIKI Updater Tasks](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks)
+>
 
 ---
 
