@@ -5,20 +5,25 @@
 &lt;blockquote&gt;
 &lt;p&gt;To remain competitive and respond to rapidly changing business and 
 technology trends, as well as regulatory and compliance 
-requirements, you must find ways to:
-- Ship value! – Increase the delivery of value to customers. 
-- Ship value faster! – Shorten the delivery cycle. 
-- Ship the right value faster! – Monitor, learn, adapt, and pivot. 
-- Ship the right and better value faster! – Improve quality! 
-- Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”&lt;/p&gt;
+requirements, you must find ways to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ship value! – Increase the delivery of value to customers. &lt;/li&gt;
+&lt;li&gt;Ship value faster! – Shorten the delivery cycle. &lt;/li&gt;
+&lt;li&gt;Ship the right value faster! – Monitor, learn, adapt, and pivot. &lt;/li&gt;
+&lt;li&gt;Ship the right and better value faster! – Improve quality! &lt;/li&gt;
+&lt;li&gt;Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Context&lt;/h1&gt;
 &lt;p&gt;As part of our common engineering system we performed regular user audits to identify &lt;strong&gt;inactive&lt;/strong&gt; users, assigned with &lt;strong&gt;Basic&lt;/strong&gt; and the expensive &lt;strong&gt;Basic + Test&lt;/strong&gt; access levels. You can find details on the Azure DevOps access levels &lt;a href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Why?
-- Identify inactive users and downgrade them to free stakeholder access level
-- Downgrade helps us &lt;strong&gt;reduce unnecessary costs&lt;/strong&gt;
-- Downgrade supports &lt;strong&gt;security&lt;/strong&gt; by reducing access and limiting features&lt;/p&gt;
+&lt;p&gt;Why?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify inactive users and downgrade them to free stakeholder access level&lt;/li&gt;
+&lt;li&gt;Downgrade helps us &lt;strong&gt;reduce unnecessary costs&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Downgrade supports &lt;strong&gt;security&lt;/strong&gt; by reducing access and limiting features&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h1&gt;The "ding" moment&lt;/h1&gt;
 &lt;p&gt;After doing the painstaking and mind-numbing manual audit a few times, a faithful background thread triggered at the back of my head: "&lt;em&gt;you have followed the boring audit checklist more than twice - automate!&lt;/em&gt;"&lt;/p&gt;
@@ -159,9 +164,12 @@ requirements, you must find ways to:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;REFERENCE INFORMATION
-- &lt;a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1"&gt;Azure DevOps Services REST API Reference&lt;/a&gt;
-- &lt;a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks"&gt;WIKI Updater Tasks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;REFERENCE INFORMATION&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1"&gt;Azure DevOps Services REST API Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks"&gt;WIKI Updater Tasks&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Azure DevOps Pipeline&lt;/h1&gt;
