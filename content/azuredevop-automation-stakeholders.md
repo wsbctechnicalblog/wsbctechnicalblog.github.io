@@ -15,11 +15,13 @@ As Agent #13, I made this declaration in [Navigating DevOps through Waterfalls](
 > To remain competitive and respond to rapidly changing business and 
 technology trends, as well as regulatory and compliance 
 requirements, you must find ways to:
->- Ship value! – Increase the delivery of value to customers. 
->- Ship value faster! – Shorten the delivery cycle. 
->- Ship the right value faster! – Monitor, learn, adapt, and pivot. 
->- Ship the right and better value faster! – Improve quality! 
->- Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”
+>
+> - Ship value! – Increase the delivery of value to customers. 
+> - Ship value faster! – Shorten the delivery cycle. 
+> - Ship the right value faster! – Monitor, learn, adapt, and pivot. 
+> - Ship the right and better value faster! – Improve quality! 
+> - Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”
+>
 
 ---
 
@@ -27,6 +29,7 @@ requirements, you must find ways to:
 As part of our common engineering system we performed regular user audits to identify **inactive** users, assigned with **Basic** and the expensive **Basic + Test** access levels. You can find details on the Azure DevOps access levels [here](https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops).
 
 Why?
+
 - Identify inactive users and downgrade them to free stakeholder access level
 - Downgrade helps us **reduce unnecessary costs**
 - Downgrade supports **security** by reducing access and limiting features
@@ -178,8 +181,10 @@ $response.items | ForEach-Object {
 ```
 
 > REFERENCE INFORMATION
+>
 > - [Azure DevOps Services REST API Reference](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1)
 > - [WIKI Updater Tasks](https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks)
+>
 
 ---
 
