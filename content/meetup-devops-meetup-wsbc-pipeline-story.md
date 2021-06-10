@@ -6,15 +6,15 @@ Slug: meetup-devops-meetup-wsbc-pipeline-story
 Author: Willy-Peter Schaub
 Summary: Enabling engineering to continuously build, validate, and deploy secure solutions to delight our customers
 
-On Tuesday, [June 15th 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/278727555/), we continued our common engineering discussion we started at the [April 2020](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/270150093/) meetup.
+On Tuesday, [June 15th 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/278727555/), we picked-up where we off with the “Common Engineering System at WorkSafeBC“ session, on the [April 2020](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/270150093/) meetup.
 
-> ![INTRO](/images/meetup-devops-meetup-wsbc-pipeline-story-1.png)
+> ![INTRO](/images/meetup-devops-meetup-wsbc-pipeline-story-intro-1.png)
 
  We shared our insight into our ambitious journey to consolidate hundreds of inconsistent continuous delivery pipeline snowflakes into state of the art pipeline-as-code, based on YAML and re-usable templates. Here is our story!
 
 # WHY?
 
-> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-2.png)
+> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2.png)
 
 TBD
 
@@ -22,8 +22,8 @@ TBD
 
 # WHAT?
 
-> ![WHAT.1](/images/meetup-devops-meetup-wsbc-pipeline-story-3.png)
-> ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-4.png)
+> ![WHAT.1](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3.png)
+> ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-what-4.png)
 
 TBD
 
@@ -31,7 +31,7 @@ TBD
 
 # HOW 
 
-> ![HOW](/images/meetup-devops-meetup-wsbc-pipeline-story-5.png)
+> ![HOW](/images/meetup-devops-meetup-wsbc-pipeline-story-how-5.png)
 
 TBD
 
