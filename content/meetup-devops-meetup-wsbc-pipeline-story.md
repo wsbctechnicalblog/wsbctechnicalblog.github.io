@@ -14,13 +14,17 @@ On Tuesday, [June 15th 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/e
 
 # WHY?
 
-> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2.png)
+> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2a.png)
 
 [Donovan Brown](https://www.donovanbrown.com/post/what-is-devops) defines DevOps as the “the union of PEOPLE, PROCESS and PRODUCTS to enable the **continuous** delivery of value to our CUSTOMERS”. The word **continuous** in Donovan's statement implies that we **automate everything automatable**, move repetitive tasks to machines, and enable engineering to focus on delighting our customers with features. 
+
+> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2b.png)
 
 In addition, the [agents of chaos](https://www.tactec.ca/ndtw-resources/) created guardrails defined by five essential values for the DevOps mindset. One of the values encourages us to innovate and improve beyond repeatable processes by **reducing waste** and not doing things with no value or purpose.
 
 As alluded to by the checklist we built up during the session, we are not talking about pipelines to carry oil, but an enabler to automate continuous integration and delivery tasks. We embraced the Azure Pipelines years ago and standardized on what we refer to as the unified pipeline guardrail. It helped us build once, deploy the same build artifact to different environments, and streamline our manual approvals.
+
+> ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2c.png)
 
 We were in technology heaven, until our automated weekly pipeline reports unearthed a scary und unnerving reality. Over 3000 pipeline definitions, growing at an alarming rate, and creating a pile of costly technical debt. Autonomy inspired a variety of snowflakes, some of which introduced vulnerabilities, and more recently, a growing number of release rejections due to security review failures.
 
@@ -32,7 +36,7 @@ We also picked up that Microsoft began referring to the user interface based Azu
 
 # WHAT?
 
-> ![WHAT.1](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3.png)
+> ![WHAT.1](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3a.png)
 
 We fell in love with the potential of new YAML-based Azure Pipelines, based on a mature and human readable data serialization, originally proposed by Clark Evans in 2001. 
 
@@ -47,6 +51,8 @@ Pipeline as code enables us in many ways:
 - All pipeline artifacts are placed in source control repositories, which can be viewed by all our engineers. There are no secrets! 
 - Tick off one of our goals, **transparency**, a core ingredient to Agile and Lean development, as well as a healthy DevOps mindset. It fosters **TRUST**. 
 - Allow our engineers to contribute to our common engineering system by submitting pipeline changes and innovations through the pull request workflow. We are **centralizing**, not standardizing, and enable engineers by injecting re-usable templates.
+
+> ![WHAT.1](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3b.png)
 
 During the hackathons and subsequent proof-of-concepts we highlighted not only the **risk** of rotting technology, but engineering distractions and focus on waste, instead of **value**. For example, a typical YAML-based CI pipeline for an Azure Function requires 300 lines of code. With 927 continuous integration build pipelines, this amounts to a mere 278,100 lines of code that engineering need to craft. More than Photoshop 1.0 and just less than the Quake 3 engine. In my humble opinion, a huge pile of **WASTE**.
 
@@ -68,7 +74,7 @@ Some of the fairy dust is the **extend template** feature in the YAML-based Azur
 
 But, you guessed it, there is more.
 
-> ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-what-4.png)
+> ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3c.png)
 
 If you read [Part 8: Pipelines - Pipelines - From CI to CD and beyond in one pipeline](/yaml-pipelines-part8.html) of pipeline series, on our technical WorkSafeBC blog, you will be amazed with our 2nd generation app-type blueprints, which are in **early preview** in two of our engineering environments.
 
@@ -78,9 +84,9 @@ We have not realized our dream for **self-service automation** yet. However, we 
 
 > Would you prefer working in a manual humanoid driven world, or in an automated humanoid enabled world?
 
-TBD
+> ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3d.png)
 
-> ![SHOCKED](/images/meetup-devops-meetup-wsbc-pipeline-story-shocked-6.png)
+TBD
 
 ---
 
