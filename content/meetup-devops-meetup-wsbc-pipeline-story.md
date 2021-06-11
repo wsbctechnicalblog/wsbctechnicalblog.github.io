@@ -86,7 +86,7 @@ We have not realized our dream for **self-service automation** yet. However, we 
 
 > ![WHAT.2](/images/meetup-devops-meetup-wsbc-pipeline-story-what-3d.png)
 
-TBD
+Looking at the quick poll results (slide 21) from Twitter and LinkedIN I am astounded at the percentage of engineers who tolerate hours to days to get a "walking skeleton" created for them. When I combine the two polls, an average of 33% are experiencing **hours** and another 36% **days**. That adds up to **69%** ... I am gob smacked and shocked! I hope that we can come back to continue this session to share the success stories from our automation working group.
 
 ---
 
