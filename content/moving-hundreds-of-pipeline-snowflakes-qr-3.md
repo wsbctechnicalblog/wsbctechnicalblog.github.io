@@ -23,7 +23,7 @@ The four lifetime quadrants:
 
 TBD
 
-> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-3-1.png)
+> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
 > DOWNLOAD >> [PDF](/documents/multi-stage-blueprint-based-pipeline-terminlogy.pdf)
 
