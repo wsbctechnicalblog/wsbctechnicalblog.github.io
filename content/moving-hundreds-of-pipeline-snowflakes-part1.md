@@ -16,10 +16,11 @@ In this series we are going to invite you on our journey of grappling with hundr
 - [Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity](/yaml-pipelines-part6.html)
 - [Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines](/yaml-pipelines-part7.html)
 - [Part 8: Pipelines - Pipelines - From CI to CD and beyond in one pipeline](/yaml-pipelines-part8.html)
+- [Part 9: Self-service automation - A dream turns into reality](/yaml-pipelines-part9.html)
 
 Coming soon:
 
-- Part TBD: Self-service automation - A dream turns into reality
+- Part 10: Self-service automation - TBD
 
 ---
 

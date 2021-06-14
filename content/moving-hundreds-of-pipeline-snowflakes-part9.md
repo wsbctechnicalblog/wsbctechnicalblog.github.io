@@ -49,7 +49,11 @@ We polled the twitter and LinkedIn community and realized that we are not alone.
 
 TBD
 
-> Hello world automation script
+> Hello world automation demo
+>
+> ![Demo](/images/moving-hundreds-of-pipeline-snowflakes-part9-4.png) TBD
+
+Here is our automation script we used for the demo.
 
 ```
 TBD
