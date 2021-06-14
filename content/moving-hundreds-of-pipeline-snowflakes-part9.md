@@ -47,11 +47,23 @@ We polled the twitter and LinkedIn community and realized that we are not alone.
 
 # Our drop-the-mic demo
 
-TBD
+We demonstrated the following engineering process using a recipe of Git, Azure DevOps REST API, and a PowerShell automation script, developed and mob-reviewed by our automation working group:
+
+- Query Azure DevOps Project information
+- Create an Azure Repo (Git)
+- Clone our AzureDevOps.Automation.Pipeline.Templates and the app-type specific AzureDevOps.Automation.Pipeline.Sample.* repository
+- Clone the newly created repository
+- Add the app-type *-start.yml template to the new repo
+- Add the app-type sample code to the new repo
+- Push local changes to the Azure Repo
+- Create a new pipeline, linked to the *-start.yml template in the new repo
+- Run the new pipeline
+
+When we shared a recording of the demo with engineering, there were a few gob-smacked faces when the penny dropped that our "less 1min dream" could evolve into a "less than 20 seconds engineering process".
 
 > Hello world automation demo
 >
-> ![Demo](/images/moving-hundreds-of-pipeline-snowflakes-part9-4.png) TBD
+> ![Demo](/images/moving-hundreds-of-pipeline-snowflakes-part9-4.png)
 
 Here is our automation script we used for the demo.
 
@@ -63,7 +75,9 @@ TBD
 
 # What is next?
 
-TBD
+We need to expand our library of application-type blueprints and in parallel expand the automation script to support the new app-types. In parallel we need to move the automation script to be run by Azure Pipelines to support queueing, and add a user-friendly service portal to "click the button."
+
+Watch this space for progress.
 
 ---
 
