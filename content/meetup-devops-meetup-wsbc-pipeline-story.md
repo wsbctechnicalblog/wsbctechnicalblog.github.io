@@ -120,5 +120,10 @@ TBD
 
 Hopefully, we will return to the meetup with the automation success stories soon. We will demonstrate that it takes seconds, not minutes, hours to days, to create a new repository, add sample code, 2nd generation app-type blueprint-based CI/CD pipeline, tie everything together, and queue a continuous integration build for the newly created environment.
 
+> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
+>
+> DOWNLOAD >> [devops-meetup-wsbc-pipeline-story deck](/documents/devops-meetup-wsbc-pipeline-story.pdf)
+> DOWNLOAD >> [devsecops-pipeline-presentation.pdf](/documents/devsecops-pipeline-presentation.pdf)
+
 If you have any question or feedback, please ping us on twitter [@saidakram007](https://twitter.com/saidakram007), [@604kev](https://twitter.com/604kev), and [@wpschaub]https://twitter.com/wpschaub)
 
