@@ -119,6 +119,7 @@ Time to invite our security lifeline. Kevin answered two of my questions and muc
 - Could you enlighten us, why you been smiling from ear to ear, ever since the blueprints emerged from the pipeline working group?
 
 > ![DEVSECOPS.1](/images/meetup-devsecops-meetup-wsbc-pipeline-story-1.png)
+
 > ![DEVSECOPS.2](/images/meetup-devsecops-meetup-wsbc-pipeline-story-2.png)
 
 ---
@@ -130,6 +131,7 @@ Hopefully, we will return to the meetup with the automation success stories soon
 > ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
 > DOWNLOAD >> [devops-meetup-wsbc-pipeline-story deck](/documents/devops-meetup-wsbc-pipeline-story.pdf)
+>
 > DOWNLOAD >> [devsecops-pipeline-presentation.pdf](/documents/devsecops-pipeline-presentation.pdf)
 
 If you have any question or feedback, please ping us on twitter [@saidakram007](https://twitter.com/saidakram007), [@604kev](https://twitter.com/604kev), and [@wpschaub]https://twitter.com/wpschaub)
