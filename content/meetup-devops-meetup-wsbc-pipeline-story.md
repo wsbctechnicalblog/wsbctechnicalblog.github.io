@@ -96,13 +96,13 @@ HOW we managed, and at times battled, to grok the intricacies of YAML, evolve th
 
 > ![HOW](/images/meetup-devops-meetup-wsbc-pipeline-story-how-5.png)
 
-Over to my Said. 
-
 ## A peek through a Software Development Engineers' Lens
 
 ![Said Akram](/images/Said-mug.jpeg)
 
-TBD
+Said delivered a great demo of our 2nd Generation App-type CI/CD blueprint, which we are previewing in two engineering environments. It was such a great demo, that I completely forgot to take screenshots.
+
+Watch the recording on [DevOps Vancouver Meetup: June 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/278727555/), once it is published, and auto-forward to Said's demo. You will be mesmerized!
 
 ---
 
@@ -112,7 +112,14 @@ We also asked Kevin, why pipelines are so important to security and why he has b
 
 ![Kevin Schwantje](/images/Kevin-mug.jpeg)
 
-TBD
+
+Time to invite our security lifeline. Kevin answered two of my questions and much more:
+
+- Can you give us an insight into your world and explain why are the pipelines so important to security? 
+- Could you enlighten us, why you been smiling from ear to ear, ever since the blueprints emerged from the pipeline working group?
+
+> ![DEVSECOPS.1](/images/meetup-devsecops-meetup-wsbc-pipeline-story-1.png)
+> ![DEVSECOPS.2](/images/meetup-devsecops-meetup-wsbc-pipeline-story-2.png)
 
 ---
 
