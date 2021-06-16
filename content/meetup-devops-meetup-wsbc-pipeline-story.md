@@ -134,5 +134,5 @@ Hopefully, we will return to the meetup with the automation success stories soon
 >
 > DOWNLOAD >> [devsecops-pipeline-presentation.pdf](/documents/devsecops-pipeline-presentation.pdf)
 
-If you have any question or feedback, please ping us on twitter [@saidakram007](https://twitter.com/saidakram007), [@604kev](https://twitter.com/604kev), and [@wpschaub]https://twitter.com/wpschaub)
+If you have any question or feedback, please ping us on twitter [@saidakram007](https://twitter.com/saidakram007), [@604kev](https://twitter.com/604kev), and [@wpschaub](https://twitter.com/wpschaub)
 
