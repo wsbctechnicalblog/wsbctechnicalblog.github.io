@@ -73,11 +73,19 @@ TBD
 
 ---
 
+# Gob-smacked?
+
+> gob-smacked (excited) yet?
+>
+> ![Gobsmacked](/images/moving-hundreds-of-pipeline-snowflakes-part9-5.png)
+
+---
+
 # What is next?
 
 We need to expand our library of application-type blueprints and in parallel expand the automation script to support the new app-types. In parallel we need to move the automation script to be run by Azure Pipelines to support queueing, and add a user-friendly service portal to "click the button."
 
-Watch this space for progress.
+Watch this space for more exiting progress.
 
 ---
 
