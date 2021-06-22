@@ -1,12 +1,12 @@
 Title: Why we should (not) care about Pipelines!?!
-Date: 2021-06-15
+Date: 2021-06-21
 Category: Posts
 Tags: DevOps, Azure Pipelines
 Slug: meetup-devops-meetup-wsbc-pipeline-story
 Author: Willy-Peter Schaub
 Summary: Enabling engineering to continuously build, validate, and deploy secure solutions to delight our customers
 
-On Tuesday, [June 15th 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/278727555/), we picked-up where we off with the “Common Engineering System at WorkSafeBC“ session, on the [April 2020](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/270150093/) meetup.
+On Tuesday, [June 15th 2021](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/278727555/), we picked-up where we left off with the “Common Engineering System at WorkSafeBC“ session, on the [April 2020](https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/270150093/) meetup.
 
 > ![INTRO](/images/meetup-devops-meetup-wsbc-pipeline-story-intro-1.png)
 
@@ -26,7 +26,7 @@ As alluded to by the checklist we built up during the session, we are not talkin
 
 > ![WHY](/images/meetup-devops-meetup-wsbc-pipeline-story-why-2c.png)
 
-We were in technology heaven, until our automated weekly pipeline reports unearthed a scary und unnerving reality. Over 3000 pipeline definitions, growing at an alarming rate, and creating a pile of costly technical debt. Autonomy inspired a variety of snowflakes, some of which introduced vulnerabilities, and more recently, a growing number of release rejections due to security review failures.
+We were in technology heaven, until our automated weekly pipeline reports unearthed a scary and unnerving reality. Over 3000 pipeline definitions, growing at an alarming rate, and creating a pile of costly technical debt. Autonomy inspired a variety of snowflakes, some of which introduced vulnerabilities, and more recently, a growing number of release rejections due to security review failures.
 
 We also picked up that Microsoft began referring to the user interface based Azure Pipelines as **classic** and stopped investing in the technology. As the classic and deprecated rot was setting in, we started to experiment with YAML-based Azure Pipelines in two consecutive hackathon events. We did not catch the attention of business and won no prize but embarked on an exciting pipeline journey with ambitious goals: alignment, consistency, simplicity, security, flexibility, and transparency.
 
@@ -136,3 +136,14 @@ Hopefully, we will return to the meetup with the automation success stories soon
 
 If you have any question or feedback, please ping us on twitter [@saidakram007](https://twitter.com/saidakram007), [@604kev](https://twitter.com/604kev), and [@wpschaub](https://twitter.com/wpschaub)
 
+# Feedback from the peanut gallery
+
+I had a good fortune to attend the DevOps Meetup session that Willy described above. As an innocent bystander, I'd only like to add a couple of observations:
+
+Willy's explanation regarding minimizing waste is spot on. We do not want to spin off hundreds or thousands unique infrastructure solutions. Computing infrastructure is a commodity (i.e. dime-a-dozen) and it is therefore truly wateful to burn precious engineering cycles in re-inventing the wheel, so to speak. Willy and the crew are working hard on commoditizing all aspects of the infrastructure-as-code so that the engineers could sharpen their focus on making changes that are not available elsewhere (i.e. not commoditized on the market).
+
+Willy did, however, point out the fact that innovation is crucial, and that engineers are empowered (and advised) to work on improving the offered commodities. That's the true value stream delivery -- work smarter, not harder.
+
+Finally, the strongest takeaway from the session (for me, at least) was the conclusion that security concerns must become top of the mind for every engineer. Before making any changes to the system, the first thing we should ask ourselves is: "Is this change secure? Is it testable by running automated tests?" Only after we prove it to ourselves and to our coworkers that the change is secure and fully testable, should we continue making the desired change.
+
+Overall, this was a fantastic session; looking forward to part 2! (Alex Bunardzic)
