@@ -68,8 +68,278 @@ When we shared a recording of the demo with engineering, there were a few gob-sm
 Here is our automation script we used for the demo.
 
 ```
-TBD
+<# 
+  CATEGORY: azure-devops-pipelines
+  LAUNCHED: Demo
+ #>
+
+[CmdletBinding()]
+param (
+ [Parameter (Mandatory= $true)]
+ [string]    $orgName,
+ [Parameter (Mandatory= $true)]
+ [string]    $projectName,
+ [Parameter (Mandatory= $true)]
+ [string]    $portfolioName,
+ [Parameter (Mandatory= $true)]
+ [string]    $productName,
+ [Parameter (Mandatory= $true)]
+ [string]    $blueprintName,
+ [Parameter (Mandatory= $true)]
+ [string]    $patToken
+)
+
+# GET START DATE & TIME
+$startTime = Get-Date
+
+# Security Header
+$basicAuth = ("{0}:{1}" -f "",$patToken)
+$basicAuth = [System.Text.Encoding]::UTF8.GetBytes($basicAuth)
+$basicAuth = [System.Convert]::ToBase64String($basicAuth)
+$headerPAT = @{Authorization=("Basic {0}" -f $basicAuth)}
+
+# Variables
+[string]  $nameTemplates       = 'AzureDevOps.Automation.Pipeline.Templates'
+[string]  $repoTemplates       = 'https://<SOURCE-ORG>@dev.azure.com/<SOURCE-ORG>/<SOURCE-PROJECT>/_git/' + $nameTemplates
+[string]  $nameSamples         = 'AzureDevOps.Automation.Pipeline.Sample.' + $blueprintName
+[string]  $repoSamples         = 'https://<SOURCE-ORG>@dev.azure.com/<SOURCE-ORG>/<SOURCE-PROJECT>/_git/' + $nameSamples
+[string]  $nameRepo            = $portfolioName + '.' + $productName
+[string]  $repoNew             = 'https://' + $orgName + '@dev.azure.com/' + $orgName + '/' + $projectName + '/_git/' + $nameRepo
+[string]  $projID              = 'invalid'
+[string]  $repoID              = 'invalid'
+[string]  $pipeID              = 'invalid'
+[string]  $pathWorking         = Get-Location
+[string]  $pathTemplates       = $pathWorking        + '\' + $nameTemplates
+[string]  $pathSamples         = $pathWorking        + '\' + $nameSamples 
+[string]  $pathRepo            = $pathWorking        + '\' + $nameRepo 
+[string]  $folderSourceSample  = $pathSamples        + '\src'
+[string]  $pathSourceSample    = $folderSourceSample + '\*'
+[string]  $folderTargetSample  = $pathRepo           + '\src'
+[string]  $folderPipeline      = $pathRepo           + '\pipelines'
+[string]  $namePipeline        = $portfolioName      + '-' + $productName + '-start'
+[string]  $namePipelineFile    = 'azure-pipeline-'   + $namePipeline + '.yml'
+[string]  $startPipeSource     = $pathTemplates      + '\Blueprints\' + $blueprintName + '\azure-pipeline-' + $blueprintName + '-start.yml'
+[string]  $startPipeTarget     = $pathRepo           + '\pipelines\' + $namePipelineFile
+[string]  $nameConfigFile      = $portfolioName      + '-' + $productName + '-config.yml'
+[string]  $startConfigSource   = $pathTemplates      + '\Blueprints\' + $blueprintName + '\azure-pipeline-' + $blueprintName + '-config.yml'
+[string]  $startConfigTarget   = $pathTemplates      + '\Operations\Config\' + $nameConfigFile
+[string]  $tokenPortfolio      = '__TODO_PORTFOLIO__'
+[string]  $tokenProduct        = '__TODO_PRODUCT__'
+[Boolean] $debugMode           = $true
+
+try {
+  ##################################################################################################################
+  # 1.1 Get project ID
+  Write-Host ''
+  Write-Host '1.1 - Get ID for project: ' $projectName
+  $uriGetProject = 'https://dev.azure.com/' + $orgName + '/_apis/projects/' +$projectName + '?api-version=6.0'
+  try {
+    $projResult  = Invoke-RestMethod -Uri $uriGetProject -ContentType "application/json" -Headers $headerPAT
+    $projID      = $projResult.id
+    if ( $true -eq $debugMode ) {
+      Write-Host 'ID: ' $projID
+    }
+  }
+  catch {
+    Write-Host 'STEP 1.1 <GET PROJECT ID> FAILURE: ' $_
+    # eject
+    throw $_.Exception
+  }
+
+  ##################################################################################################################
+  # 1.2 Create repo Y.Z in AzDO project X and create local clone.
+  Write-Host ''
+  Write-Host '1.2 - Create New Repository: ' $repoNew
+  $uriCreateRepo  = 'https://dev.azure.com/' + $orgName + '/_apis/git/repositories?api-version=6.1-preview.1'
+  $jsonCreateRepo = 
+  '{
+    "name": "' + $nameRepo +'",
+    "project": {
+    "id": "' + $projID + '"
+    }
+  }'
+  try {
+    $repoResult = Invoke-RestMethod -Uri $uriCreateRepo -Body $jsonCreateRepo -Method Post -ContentType "application/json" -Headers $headerPAT
+    if ( $true -eq $debugMode ) {
+      Write-Host 'Create Repo Result: ' $repoResult
+    }
+  }
+  catch {
+    Write-Host 'STEP 1.2 <CREATE REPO> FAILURE: ' $_
+    # eject
+    throw $_.Exception  
+  }
+
+  ##################################################################################################################
+  # 2. Clone repositories 
+  Write-Host ''
+  Write-Host '2.1 Clone repo ' $repoTemplates ' to local path'
+  git clone $repoTemplates
+  Set-Location -Path $pathTemplates
+  git pull
+  Set-Location -Path $pathWorking
+
+  Write-Host ''
+  Write-Host '2.2 Clone repo ' $repoSamples ' to local path'
+  git clone $repoSamples
+  Set-Location -Path $pathSamples
+  git pull
+  Set-Location -Path $pathWorking
+  
+  Write-Host ''
+  Write-Host '2.3 Clone repo ' $repoNew ' to local path'
+  git clone $repoNew
+  Set-Location -Path $pathRepo
+  git pull
+  Set-Location -Path $pathWorking
+
+  ##################################################################################################################
+  # 3. Add *-start.yml from templates repo
+  Write-Host ''
+  Write-Host '3.1 Add app-type start template to new repo'
+  New-Item -Path $folderPipeline -ItemType Directory
+  Copy-Item $startPipeSource $startPipeTarget
+  Write-Host ''
+  Write-Host '3.2 Add config template to templates repo'
+  New-Item -Path $pathTemplates -ItemType Directory -Force
+  Copy-Item $startConfigSource $startConfigTarget
+
+  ##################################################################################################################
+  # 4. Add src\* from AzureDevOps.Automation.Pipeline.Sample.azure-function repo to local repo.
+  Write-Host ''
+  Write-Host '4.1 Add src folder and sample solution'
+  New-Item -Path $folderTargetSample -ItemType Directory
+  Copy-Item $pathSourceSample $folderTargetSample -recurse
+  Write-Host '4.2 Replace tokens with variables'
+  $rawFile = Get-Content -path $startPipeTarget -raw
+  $step1File = $rawFile.Replace($tokenPortfolio, $portfolioName)
+  $step2File = $step1File.Replace($tokenProduct, $productName)
+  Set-Content $startPipeTarget $step2File
+
+  ##################################################################################################################
+  # 5. Push local changes to X.Y repo.
+  Write-Host ''
+  Write-Host '5.1 Push all new changes to new repo'
+  Set-Location -Path $pathRepo
+  git add --all
+  git commit -m 'Automation: Sample source & app-type blueprint pipeline.' 
+  git push
+  Set-Location -Path $pathWorking
+  Write-Host ''
+  Write-Host '5.2 Push all new changes to new repo'
+  Set-Location -Path $pathTemplates
+  git add --all
+  git commit -m 'Automation: Add new product configuration.' 
+  git push
+  Set-Location -Path $pathWorking
+
+  ##################################################################################################################
+  # 6. Create new pipeline based on the *-start.yml file we committed
+  Write-Host ''
+  Write-Host '6.1 Query repo ID'
+  $uriGetRepo = 'https://dev.azure.com/'+ $orgName + '/' + $projectName + '/_apis/git/repositories/' + $nameRepo + '?api-version=6.0'
+  try {
+    $repoResult = Invoke-RestMethod -Uri $uriGetRepo -ContentType "application/json" -Headers $headerPAT
+    $repoID     = $repoResult.id
+    if ( $true -eq $debugMode ) {
+      Write-Host 'ID: ' $repoID
+    }
+  }
+  catch {
+    Write-Host 'STEP 6.1 <GET REPO ID> FAILURE: ' $_
+    # eject
+    throw $_.Exception
+  }
+
+  Write-Host ''
+  Write-Host '6.2 Create new pipeline'
+  $uriCreatePipe = 'https://dev.azure.com/'+ $orgName + '/' + $projectName + '/_apis/pipelines?api-version=6.0-preview.1'
+  $jsonCreatePipe = 
+'{
+  "folder" : "' + $portfolioName + '",
+  "name": "' + $namePipeline + '",
+  "configuration": {
+      "type" : "yaml",
+      "path" : "/pipelines/' + $namePipelineFile + '",
+      "repository" : {
+        "id" : "' + $repoID + '",
+        "name" : "' + $nameRepo + '",
+        "type" : "azureReposGit"
+      }
+    }
+}'  
+  try {
+    $pipeResult  = Invoke-RestMethod -Uri $uriCreatePipe -Body $jsonCreatePipe -Method Post -ContentType "application/json" -Headers $headerPAT
+    $pipeID = $pipeResult.id
+    if ( $true -eq $debugMode ) {
+      Write-Host 'ID: ' $pipeID
+    }
+  }
+  catch {
+    Write-Host 'STEP 6.2 <LINK PIPELINE> FAILURE: ' $_
+    # eject
+    throw $_.Exception
+  }
+
+  ##################################################################################################################
+  # 7. Run new pipeline.
+  # https://docs.microsoft.com/en-us/rest/api/azure/devops/pipelines/runs/run%20pipeline?view=azure-devops-rest-6.1
+  Write-Host ''
+  Write-Host '7.1 Run pipeline'
+  $uriRunPipe = 'https://dev.azure.com/'+ $orgName + '/' + $projectName + '/_apis/pipelines/' + $pipeID + '/runs?api-version=6.0-preview.1'
+  $jsonRunPipe =
+'{ "variables": {      
+      "customVariable": {
+      }
+    },
+    "process": {
+      "yamlFilename": "' + $namePipelineFile + '",
+      "type":  2
+     },
+    "repository": {
+      "id": "' + $repoID + '",
+      "type": "TfsGit",
+      "name": "' + $nameRepo + '",
+      "defaultBranch": "refs/heads/master",
+      "clean":  null,
+      "checkoutSubmodules":  false
+    },
+    "name": "' + $namePipeline + '",
+    "path": "' + $portfolioName + '",
+    "type": "build",
+    "queueStatus": "enabled",
+    "project":  {
+      "id": "' + $projID + '",
+      "name": "' + $projectName + '"
+    }
+}'
+
+  try {
+    $pipeResult  = Invoke-RestMethod -Uri $uriRunPipe -Body $jsonRunPipe -Method Post -ContentType "application/json" -Headers $headerPAT
+    $pipeID = $pipeResult.id
+    if ( $true -eq $debugMode ) {
+      Write-Host 'ID: ' $pipeID
+    }
+  }
+  catch {
+    Write-Host 'STEP 6.2 <LINK PIPELINE> FAILURE: ' $_
+    # eject
+    throw $_.Exception
+  }
+}
+catch {
+  Write-Host 'OH, OH - FATAL ERROR! ' $_.Exception.Message
+  Write-Host $_
+}
+
+# GET END DATE & TIME
+$endTime = Get-Date
+$micTime = New-Timespan -seconds $(($endTime - $startTime).TotalSeconds)
+Write-Host ''
+Write-Host 'From zero to hello world in >>' $micTime.TotalSeconds '<< seconds q;)'
 ```
+
+> COPY-PASTE and REUSE at your own risk. This was a demo script and will be going through extensive mob-reviews and mob-programming to turn it into a production-ready automation.
 
 ---
 
