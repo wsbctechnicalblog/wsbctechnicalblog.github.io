@@ -1,7 +1,7 @@
 Title: Self-service automation - A dream turns into reality
 Date: 2021-06-30
 Category: Posts
-Tags: Azure Pipelines, DevOps, Pipeline as Code
+Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part9
 Author: Willy-Peter Schaub
 Summary: Automate a “hello world in less than 1min”, also referred to as our “walking skeleton”.
