@@ -1,7 +1,7 @@
 Title: TDD for Non-Techies
 Date: 2021-05-26
 Category: Events
-Tags: agile, code, devops, tdd, testing
+Tags: agile, code, devops, leaning, tdd, testing
 Slug: tdd-for-nontechies
 Author: Alex Bunardzic; Christine Ozeroff
 Summary: TDD explained to non programmers by using the example of writing a short story

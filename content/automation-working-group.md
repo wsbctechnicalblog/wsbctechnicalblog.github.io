@@ -1,7 +1,7 @@
 Title: Introducing the Automation Working Group
 Date: 2021-04-29
 Category: Posts
-Tags: agile, automation, code, devops, workflow
+Tags: agile, automation, code, devops, learning, workflow
 Slug: automation-working-group
 Author: Alex Bunardzic
 Summary: Any system operation we can perform manually can be fully automated by writing scripts
