@@ -1,7 +1,7 @@
 Title: Start together work together finish together
 Date: 2021-05-07 23:59
 Category: Posts
-Tags: Extreme Programming, XP, Agile, DevOps
+Tags: agile, code, xp
 Slug: start-together-work-together-finish-together
 Author: Alex Bunardzic
 Summary: Speed up the delivery process by avoiding queuing and needless looping

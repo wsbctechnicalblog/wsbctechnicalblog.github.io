@@ -1,7 +1,7 @@
 Title: Quick Reference Sheet for Application-type Blueprint-based Pipelines
 Date: 2021-04-30
 Category: Posts
-Tags: Cheat Sheets
+Tags: azure-devops, devops, pipelines, posters, x-as-code 
 Slug: moving-hundreds-of-pipeline-snowflakes-qr-2
 Author: Willy-Peter Schaub
 Summary: Summarising the main points of our 2nd generation app-type blueprint-based pipelines.

@@ -1,7 +1,7 @@
 Title: Incremental and Iterative Development – what’s the diff?
 Date: 2021-03-19
 Category: Posts
-Tags: Agile, DevOps
+Tags: agile, devops
 Slug: incremental-and-iterative-development
 Author: Alex Bunardzic
 Summary: Visual example illustrating the fundamental differences between incremental and iterative development process.

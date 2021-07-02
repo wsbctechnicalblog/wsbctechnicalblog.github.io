@@ -1,7 +1,7 @@
 Title: Shift LEFT and RIGHT to take yourself off the humbling 2AM calls
 Date: 2020-10-24 13:13
 Category: Posts
-Tags: DevOps, DevOps Mindset
+Tags: devops
 Slug: shift-left-2am-call
 Author: Willy-Peter Schaub
 Summary: We need to avoid the infamous 2AM call!

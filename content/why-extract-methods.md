@@ -1,7 +1,7 @@
 Title: Why extract methods when modifying legacy code?
 Date: 2020-10-16 10:20
 Category: Posts
-Tags: Code-quality, legacy-code, extract-method, TDD
+Tags: code, quality, testing
 Slug: why-extract-methods
 Author: Alex Bunardzic
 Summary: Legacy code is hard to test, so extract methods by writing micro tests

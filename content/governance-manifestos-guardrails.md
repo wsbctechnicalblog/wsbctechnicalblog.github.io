@@ -1,7 +1,7 @@
 Title: Can we enact governance through engineering-friendly manifestos and guardrails?
 Date: 2021-05-18
 Category: Posts
-Tags: Engineering Practices
+Tags: engineering
 Slug: governance-manifestos-guardrails
 Author: Willy-Peter Schaub
 Summary: The best way to create an engineering revolt is to enforce governance with the big stick.

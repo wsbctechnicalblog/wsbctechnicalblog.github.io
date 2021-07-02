@@ -1,7 +1,7 @@
 Title: How does it feel to write software when doing TDD?
 Date: 2020-09-17 22:21
 Category: Posts
-Tags: TDD
+Tags: code, testing
 Slug: how-does-it-feel-to-tdd
 Author: Alex Bunardzic
 Summary: Any discipline requires serious investment in time

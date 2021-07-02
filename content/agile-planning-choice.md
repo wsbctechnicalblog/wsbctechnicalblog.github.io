@@ -1,7 +1,7 @@
 Title: Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps
 Date: 2021-05-05 13:13
 Category: Posts
-Tags: AzDO, Azure Boards
+Tags: agile, azure-devops
 Slug: agile-planning-choice
 Author: Willy-Peter Schaub
 Summary: Use Azure Boards to visualise a variety of **processes** using the **Agile** process in a single Azure DevOps project.

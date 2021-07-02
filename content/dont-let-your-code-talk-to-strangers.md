@@ -1,7 +1,7 @@
 Title: Don’t let your code talk to strangers
 Date: 2020-10-24 10:20
 Category: Posts
-Tags: TDD, CI
+Tags: code, pipelines, testing
 Slug: dont-let-your-code-talk-to-strangers
 Author: Alex Bunardzic
 Summary: Closer look into the principle of least knowledge

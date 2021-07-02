@@ -1,7 +1,7 @@
 Title: Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines
 Date: 2021-04-13
 Category: Posts
-Tags: Cheat Sheets
+Tags: azure-devops, devops, pipelines, posters, x-as-code 
 Slug: moving-hundreds-of-pipeline-snowflakes-qr-1
 Author: Willy-Peter Schaub
 Summary: Summarising the main points of YAML syntax, within the context of our generic blueprint-based pipelines.

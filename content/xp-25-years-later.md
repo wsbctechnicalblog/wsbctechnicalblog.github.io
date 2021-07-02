@@ -1,7 +1,7 @@
 Title: Extreme Programming 25 Years Later
 Date: 2021-03-31
 Category: Posts
-Tags: Extreme Programming, XP, Agile, DevOps
+Tags: agile, code, devops, xp
 Slug: xp-25-years-later
 Author: Alex Bunardzic
 Summary: Extreme programming keeps going strong 25 years after its launch
