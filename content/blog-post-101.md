@@ -24,29 +24,30 @@ We **tag** our technical blog posts to allow you, the reader, to find and focus 
 
 Here is a list of tags we use when creating new content:
 
-| TAG | FOCUS   |
-|-----|---------|
-| agile | Agile, Kanban, SAFe, and other frameworks to plan, track, and collaborate across teams. |
-| architecture | Software architecture. | 
-| automation | Automate repetitive tasks and processes. |
-| azure | Microsoft [Azure](https://azure.microsoft.com). |
-| azure-devops | Microsoft [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) services. |
-| code | Software coding.
-| devops | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |
-| engineering | Software engineering. |
-| event | Meetup, training, workshop, and other event gatherings. |
-| feature-flags | Separating deploy from release through feature toggles / flags. |
-| learning | Continuous learning. |
-| pipelines | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
-| posters | Quick reference posters and cheat sheets. |
-| quality | Technical excellence and quality of engineering solutions to add value, not complexity. |
-| security | "Trust, but verify " to avoid and function under malicious attacks. |
-| tdd | Test-driven Development. |
-| testing | Test to raise the quality bar and deploy with confidence. |
-| tips | Tips and tricks. |
-| version-control | Secure, version, and collaborate to build better code. |  
-| workflow | Streamline repetitive tasks and processes.
-| xp | Extreme programming ( XP) software development methodology. |
+| TAG             |~~| FOCUS   |
+|-----------------|--|---------|
+| agile           |  | Agile, Kanban, SAFe, and other frameworks to plan, track, and collaborate across teams. |
+| architecture    |  | Software architecture. | 
+| automation      |  | Automate repetitive tasks and processes. |
+| azure           |  | Microsoft [Azure](https://azure.microsoft.com). |
+| azure-devops    |  | Microsoft [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) services. |
+| code            |  | Software coding.
+| devops          |  | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |
+| engineering     |  | Software engineering. |
+| event           |  | Meetup, training, workshop, and other event gatherings. |
+| feature-flags   |  | Separating deploy from release through feature toggles / flags. |
+| learning        |  | Continuous learning. |
+| pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
+| posters         |  | Quick reference posters and cheat sheets. |
+| quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
+| security        |  | "Trust, but verify " to avoid and function under malicious attacks. |
+| tdd             |  | Test-driven Development. |
+| testing         |  | Test to raise the quality bar and deploy with confidence. |
+| tips            |  | Tips and tricks. |
+| version-control |  | Secure, version, and collaborate to build better code. |  
+| workflow        |  | Streamline repetitive tasks and processes.
+| xp              |  | Extreme programming ( XP) software development methodology. |
+
 
 The list is reviewed as we review new content. Although we are open for change, for example adding new tags or renaming existing tags, we want to keep the churn and number of tags to an absolute minimum.
 
@@ -54,10 +55,11 @@ The list is reviewed as we review new content. Although we are open for change, 
 
 We are starting to also **categorise** our content to add a different lens for you to use to find relevant content. Here is a list of categories we use:
 
-| CATEGORY | MEANING |
-|----------|---------|
-| Events   | Specific updates covering events, such as meetups and workshops. |
-| Posts    | Updates by our engineers and other interesting individuals, sharing their knowledge with the world. |
+| CATEGORY |~~| MEANING |
+|----------|--|---------|
+| Events   |  | Specific updates covering events, such as meetups and workshops. |
+| Posts    |  | Updates by our engineers and other interesting individuals, sharing their knowledge with the world. |
+
 
 Thoughts? How can we improve our tags and categories? Please ping me on [@wpschaub](https://twitter.com/wpschaub) and help us improve our content.
 
@@ -73,7 +75,7 @@ If you are working with or you are a WorkSafeBC engineer, you have invaluable te
 - Collaborate with the **WSBC Technical Blog Content Discussion** working group, which you can locate in Microsoft Teams.
 - Clone our [wsbctechnicalblog-wsbctechnicalblog.github.io](https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io) repository.
 - Create a feature branch ```<yourname>/<title>```, for example willys/blog-post-101. Do not use your primary, 2, or 5-ID!
-- Create a new markdown file in the ```/content```, for example ```/content/blog-post-101.md``` and add the metadata header at the start, which will be used when your gem is converted to a live HTML page.
+- Create a new markdown file in the ```/content```, for example ```/content/blog-post-101.md``` and add the metadata headee at the start, which will be used when your gem is converted to a live HTML page.
 
 ```
 Title: <catchy title>
@@ -85,7 +87,8 @@ Author: <FirstName> <LastName>
 Summary: <Quick summary of what post is about>.
 ```
 
-- Create your content using the editor of your choice n- mine is Visual Studio Code.
+
+- Create your content using the editor of your choice - mine is Visual Studio Code.
 - Create a pull request and submit your changes for review and collaboration.
 
 ![Tags](../images/blog-post-101-5.png) 
