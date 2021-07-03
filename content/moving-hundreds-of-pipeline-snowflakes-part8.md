@@ -1,7 +1,7 @@
 Title: Part 8: Pipelines - From CI to CD and beyond in one pipeline
 Date: 2021-04-23
 Category: Posts
-Tags: Azure Pipelines, DevOps, Pipeline as Code
+Tags: azure-devops, devops, pipelines, x-as-code 
 Slug: yaml-pipelines-part8
 Author: Willy-Peter Schaub
 Summary: Continuous Deployment is a pivotal ingredient of a healthy DevOps mindset and our ability to delight end-users with continuous value. It is the holy grail of our profession.

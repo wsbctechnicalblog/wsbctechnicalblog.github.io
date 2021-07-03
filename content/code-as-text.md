@@ -1,7 +1,7 @@
 Title: Code-as-text
 Date: 2021-03-26
 Category: Posts
-Tags: Agile, DevOps, Programming
+Tags: agile, devops, code, tdd, testing
 Slug: code-as-text
 Author: Alex Bunardzic
 Summary: Programming computers by feeding them plain text is very slow and needs to be sped up.

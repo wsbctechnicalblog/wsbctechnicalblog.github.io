@@ -1,7 +1,7 @@
 Title: Workflow-as-code
 Date: 2021-03-05
 Category: Posts
-Tags: Agile, DevOps, infrastructure as code, workflow as code, Continuous Integration (CI), Continuous Delivery (CD)
+Tags: agile, devops, pipelines, x-as-code
 Slug: workflow-as-code
 Author: Alex Bunardzic
 Summary: Configuring complex workflows that govern Continuous Integration and Continuous Delivery must only be allowed by making changes to the YAML source files; GUI tools must be prohibited

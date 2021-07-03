@@ -1,7 +1,7 @@
 Title: How to share variables amongst Azure Pipeline agents
 Date: 2021-04-26
 Category: Posts
-Tags: Azure Pipelines, Tips
+Tags: azure-devops, pipelines, tips
 Slug: sharing-variables-amongst-agents
 Author: Willy-Peter Schaub
 Summary: As per documentation, output variables can be used across stages in an Azure YAML-based pipeline. I will share a few turbulent moments we experienced while troubleshooting this feature in one of our pipeline blueprints.

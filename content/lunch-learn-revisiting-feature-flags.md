@@ -1,7 +1,7 @@
 Title: Lunch & Learn - Revisiting Feature Flags
 Date: 2021-05-07
-Category: Posts
-Tags: DevOps, Feature Flags, Lunch and Learn, Continuous Learning
+Category: Events
+Tags: devops, events, feature-flags, learning
 Slug: lunch-learn-revisiting-feature-flags
 Author: Willy-Peter Schaub
 Summary: Manage your blast radius through progressive exposure with feature flags

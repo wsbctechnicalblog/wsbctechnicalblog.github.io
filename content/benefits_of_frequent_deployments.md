@@ -1,7 +1,7 @@
 Title: Benefits of frequent deployments
 Date: 2020-10-15 10:20
 Category: Posts
-Tags: TDD, CI
+Tags: code, pipelines, testing
 Slug: benefits-of-frequent-deployments
 Author: Alex Bunardzic
 Summary: The longer the wait to deploy, the bigger the risk of things going south

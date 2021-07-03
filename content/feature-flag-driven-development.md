@@ -1,7 +1,7 @@
 Title: Feature-flag Driven Development (FFDD)
 Date: 2020-09-04 11:10
 Category: Posts
-Tags: Feature Flags
+Tags: code, feature-flags
 Slug: feature-flag-driven-development
 Author: Alex Bunardzic
 Summary: Replace physical modularity with logical modularity

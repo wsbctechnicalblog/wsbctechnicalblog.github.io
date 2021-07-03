@@ -1,7 +1,7 @@
 Title: Client-side expressiveness and security
 Date: 2021-05-28
 Category: Posts
-Tags: DevSecOps, FrontEndDevelopment, CloudOps, Security
+Tags: architecture, code,  devops, code, security
 Slug: client-expressiveness-and-security
 Author: Alex Bunardzic
 Summary: The importance of properly securing client-side applications has never been more urgent!

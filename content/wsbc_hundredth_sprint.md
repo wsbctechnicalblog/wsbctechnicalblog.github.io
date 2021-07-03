@@ -1,7 +1,7 @@
 Title: WorkSafeBC DevOps Celebrate 100th Sprint
 Date: 2021-02-19
-Category: Posts
-Tags: Agile, DevOps
+Category: Events
+Tags: agile, devops, events
 Slug: wsbc-devops-celebrate-hundredth-sprint
 Author: Alex Bunardzic
 Summary: WorkSafeBC DevOps 100th sprint celebration coincided with the 20th anniversary of the Agile Manifesto

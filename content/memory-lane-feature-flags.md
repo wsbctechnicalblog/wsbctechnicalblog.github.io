@@ -1,7 +1,7 @@
 Title: Wandering down memory lane - feature flags
 Date: 2021-03-12
-Category: Posts
-Tags: Azure Pipelines, DevOps, Feature Flags
+Category: Events
+Tags: azure-devops, devops, feature-flags, pipelines
 Slug: memory-lane-feature-flags
 Author: Willy-Peter Schaub
 Summary: Use feature flags to fine-tune each release in production.

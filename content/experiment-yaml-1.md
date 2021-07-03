@@ -1,7 +1,7 @@
 Title: Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers
 Date: 2021-04-28 13:13
 Category: Posts
-Tags: Azure Pipelines, Tips
+Tags: azure-devops, pipelines, tips
 Slug: experiment-yaml-1
 Author: Willy-Peter Schaub
 Summary: Snippets of common questions and issues from Azure Pipeline workshops and support calls. Today's snippet includes conditionals, parameters, and triggers. 
