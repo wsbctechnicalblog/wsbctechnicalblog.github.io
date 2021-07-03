@@ -1,7 +1,7 @@
 Title: Hypothesis-Driven Development
 Date: 2020-10-13 12:20
 Category: Posts
-Tags: TDD, CI
+Tags: code, pipelines, tdd, testing
 Slug: hypothesis-driven-development
 Author: Alex Bunardzic
 Summary: Developing a feature without formulating a hypothesis is like shooting in the dark

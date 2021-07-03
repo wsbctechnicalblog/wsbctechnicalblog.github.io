@@ -1,7 +1,7 @@
 Title: Collective code ownership
 Date: 2020-10-22 16:24
 Category: Posts
-Tags: DevOps, code
+Tags: code, devops
 Slug: collective-code-ownership
 Author: Alex Bunardzic
 Summary: Teams share collective responsibility and therefore collectively own the code

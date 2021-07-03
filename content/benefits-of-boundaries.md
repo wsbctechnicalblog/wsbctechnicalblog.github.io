@@ -1,7 +1,7 @@
 Title: Benefits of boundaries
 Date: 2020-10-19 10:20
 Category: Posts
-Tags: TDD, CI
+Tags: code, pipelines, testing
 Slug: benefits-of-boundaries
 Author: Alex Bunardzic
 Summary: Simple isn't easy, but it is the only way to build anti-fragile systems

@@ -1,7 +1,7 @@
 Title: Only changeable design is good design
 Date: 2021-04-22
 Category: Posts
-Tags: Agile, Design, Programming
+Tags: agile, architecture, code
 Slug: only-changeable-design-is-good-design
 Author: Alex Bunardzic
 Summary: Why is changeable design desirable and what's preventing us from achieving it

@@ -1,7 +1,7 @@
 Title: Quick Reference Sheet for Pipeline Terminology
 Date: 2021-06-13
 Category: Posts
-Tags: Cheat Sheets
+Tags: azure-devops, devops, pipelines, posters, x-as-code 
 Slug: moving-hundreds-of-pipeline-snowflakes-qr-3
 Author: Willy-Peter Schaub
 Summary: Summarising the core terminology and lifetime of our pipelines.

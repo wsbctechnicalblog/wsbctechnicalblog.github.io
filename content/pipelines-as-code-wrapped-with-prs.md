@@ -1,7 +1,7 @@
 Title: Pipeline-as-code wrapped with Pull Requests
 Date: 2021-03-13
 Category: Posts
-Tags: Azure Pipelines, DevOps, Infrastructure as Code, Pipeline as Code
+Tags: azure-devops, devops, pipelines, x-as-code
 Slug: pipelines-as-code-pr
 Author: Willy-Peter Schaub
 Summary: This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.

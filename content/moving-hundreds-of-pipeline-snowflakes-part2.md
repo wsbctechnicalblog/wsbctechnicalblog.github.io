@@ -1,7 +1,7 @@
 Title: Part 2: Pipelines - Introduction, variables and why spaces matter
 Date: 2020-12-21
 Category: Posts
-Tags: Azure Pipelines, DevOps, Pipeline as Code
+Tags: azure-devops, devops, pipelines, x-as-code 
 Slug: yaml-pipelines-part2
 Author: Willy-Peter Schaub
 Summary: The new Azure DevOps YAML pipelines have been the focus of innovation, enabling engineering to treat pipelines as code.

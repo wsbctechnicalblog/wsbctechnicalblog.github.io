@@ -1,7 +1,7 @@
 Title: Quick peek into regular expressions
 Date: 2021-04-13 13:13
 Category: Posts
-Tags: Cheat Sheets
+Tags: code, posters
 Slug: peek-into-regular-expressions
 Author: Willy-Peter Schaub
 Summary: Regular expressions are fundamental to programming

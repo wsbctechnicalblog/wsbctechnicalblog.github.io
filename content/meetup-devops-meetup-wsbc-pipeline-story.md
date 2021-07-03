@@ -1,7 +1,7 @@
 Title: Why we should (not) care about Pipelines!?!
 Date: 2021-06-21
-Category: Posts
-Tags: DevOps, Azure Pipelines
+Category: Events
+Tags: azure-devops, pipelines, devops
 Slug: meetup-devops-meetup-wsbc-pipeline-story
 Author: Willy-Peter Schaub
 Summary: Enabling engineering to continuously build, validate, and deploy secure solutions to delight our customers

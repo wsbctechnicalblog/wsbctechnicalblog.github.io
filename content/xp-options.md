@@ -1,7 +1,7 @@
 Title: Extreme Programming (XP) provides options
 Date: 2021-05-12
 Category: Posts
-Tags: Extreme Programming, XP, Agile, DevOps
+Tags: agile, code, devops, xp
 Slug: xp-options
 Author: Alex Bunardzic
 Summary: What does 'extreme' in Extreme Programming stand for? It stands for extreme interruptability and extreme steerability

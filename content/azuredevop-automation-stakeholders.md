@@ -1,7 +1,7 @@
 Title: Manage your Azure DevOps User Access Levels through automation
 Date: 2021-06-02
 Category: Posts
-Tags: AzDO, Automation
+Tags: automation, azure-devops
 Slug: azuredevop-automation-stakeholders
 Author: Willy-Peter Schaub
 Summary: Quick overview how our Azure DevOps access level audits and management automation using PowerShell, REST APIs, and Richard's WIKI Updater task.

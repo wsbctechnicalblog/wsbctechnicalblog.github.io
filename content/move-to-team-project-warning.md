@@ -1,7 +1,7 @@
 Title: Use the move to team project feature with caution!
 Date: 2020-10-20 13:13
 Category: Posts
-Tags: AzDO, Azure Boards
+Tags: agile, azure-devops, tips
 Slug: the-move-to-team-project-feature
 Author: Willy-Peter Schaub
 Summary: The "Move to Team Project" feature can reset your work item state and dates

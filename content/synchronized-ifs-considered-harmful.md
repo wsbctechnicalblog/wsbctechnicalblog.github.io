@@ -1,7 +1,7 @@
 Title: Synchronized 'if' statements considered harmful
 Date: 2021-04-08
 Category: Posts
-Tags: Extreme Programming
+Tags: code, xp
 Slug: synchronized-if-statements-considered-harmful
 Author: Alex Bunardzic
 Summary: Duplicated imperative conditional logic leads to proliferation of bugs
