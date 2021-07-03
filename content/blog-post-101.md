@@ -102,9 +102,9 @@ Just collaborate with us, ask questions (_the only one that is bad is the one yo
 
 # To conclude
 
-Are you a reader of our technical blog post? Please to not hesitate to give us candid feedback to help us improve our content!
+Are you a reader of our technical blog post? Please do not hesitate to give us candid feedback to help us improve our content!
 
-Are a WorkSafeBC'tonian? Hopefully post will serve as an inspiration for you to start and to keep on blogging. We are waiting for your call and/or your pull request!
+Are a WorkSafeBC'tonian? Hopefully this post will serve as an inspiration for you to start and to keep on blogging. We are waiting for your call and/or your pull request!
 
 ![Tags](../images/blog-post-101-7.png) 
 
