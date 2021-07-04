@@ -75,7 +75,7 @@ If you are working with or you are a WorkSafeBC engineer, you have invaluable te
 - Collaborate with the **WSBC Technical Blog Content Discussion** working group, which you can locate in Microsoft Teams.
 - Clone our [wsbctechnicalblog-wsbctechnicalblog.github.io](https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io) repository.
 - Create a feature branch ```<yourname>/<title>```, for example willys/blog-post-101. Do not use your primary, 2, or 5-ID!
-- Create a new markdown file in the ```/content```, for example ```/content/blog-post-101.md``` and add the metadata headee at the start, which will be used when your gem is converted to a live HTML page.
+- Create a new markdown file in the ```/content```, for example ```/content/blog-post-101.md``` and add the metadata header at the start, which will be used when your gem is converted to a live HTML page.
 
 ```
 Title: <catchy title>
@@ -87,6 +87,8 @@ Author: <FirstName> <LastName>
 Summary: <Quick summary of what post is about>.
 ```
 
+
+...and finally:
 
 - Create your content using the editor of your choice - mine is Visual Studio Code.
 - Create a pull request and submit your changes for review and collaboration.
