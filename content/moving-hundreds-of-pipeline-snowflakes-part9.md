@@ -5,7 +5,7 @@ Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part9
 Author: Willy-Peter Schaub
 Summary: Automate a “hello world in less than 1min”, also referred to as our “walking skeleton”.
-Welcome back to another installment of pipeline wizardry. We are changing gears from the nuts and bolts, to the automation we can achieve using the blueprint-based pipelines. Faster your seat belts!
+Welcome back to another installment of pipeline wizardry. We are changing gears from the nuts and bolts, to the automation we can achieve using the blueprint-based pipelines. Fasten your seat belts!
 
 ---
 
