@@ -1,5 +1,5 @@
 Title: Self-service automation - A dream turns into reality
-Date: 2021-06-30
+Date: 2021-07-05
 Category: Posts
 Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part9
@@ -42,6 +42,8 @@ Our dream, as mentioned, is to enable the engineering team within 1 minute.
 We polled the twitter and LinkedIn community and realized that we are not alone. An average of **33**% of users tolerate hours and **36**% of users days to get a basic project environment assembled. 
 
 **That is unacceptable!**
+
+> ![Manual](/images/moving-hundreds-of-pipeline-snowflakes-part9-6.png)
 
 ---
 
