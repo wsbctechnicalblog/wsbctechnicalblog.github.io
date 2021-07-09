@@ -37,11 +37,11 @@ We define three variables, named secretValue1, secretValue2, and secretValue3 in
     - bash: echo "##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!"
     - bash: echo "##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!"
       name: SetVariable3
-    - task: DutchWorkzToolsAllVariables@1
+    - bash: 'env | sort'
 ```
 
 
-The last task, which unfortunately only runs on a Windows-based agent, uses the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension, which displays all variables that are available during your Build or Release. It is an exceptional troubleshooting companion and we find all three of our variables listed as individual variables, and as part of the VSTS_PUBLIC_VARIABLES collection. 
+The last task, replaces the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension, which unfortunately has been deprecated and only runs on a Windows-based agent. 
 
 > Extract from task log
 
@@ -106,7 +106,7 @@ Next we reference the variables in another job from another stage and echo the v
       var2: $[ stageDependencies.StageOne.StageOneJobOne.outputs['SetVariable1.secretValue1'] ]
       var3: $[ dependencies.StageOne.StageOneJobOne.outputs['SetVariable1.secretValue1'] ]
     steps:
-    - task: DutchWorkzToolsAllVariables@1
+    - bash: 'env | sort'
     - script: echo $(varStage)
     - script: echo $(var2)
     - script: echo $(var3)
@@ -125,7 +125,7 @@ Looking at the job's log file, we immediately notice the GOTCHA.
 When things go belly up with your variables, I recommend that you:
 
 1. Look at the job logs and check if variables have been prepared correctly.
-2. Run on a Windows-based agent and [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables).
+2. Run ```- bash: 'env | sort'``` to display all variables.
 3. Check that your steps creating the variables have a **name**.
 4. Check that your steps referencing the variables use the correct **mapping** as per the mapping tattoo.
 5. Use the new YAML-pipeline editor and highlight the stage, job, task, and variable names. It highlights reoccurrences very nicely. Saved me a lot of time today when the highlighting, or lack thereof, made me realise that job was named job**e** ... easily missed when embedded in mapping hierarchies.
@@ -154,7 +154,7 @@ stages:
     - bash: echo "##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!"
     - bash: echo "##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!"
       name: SetVariable3
-    - task: DutchWorkzToolsAllVariables@1
+    - bash: 'env | sort'
 
   # ------------------------------------------------------------------------------------------------
   # STAGE 1 JOB 2
@@ -213,7 +213,7 @@ stages:
       var2: $[ stageDependencies.StageOne.StageOneJobOne.outputs['SetVariable1.secretValue1'] ]
       var3: $[ dependencies.StageOne.StageOneJobOne.outputs['SetVariable1.secretValue1'] ]
     steps:
-    - task: DutchWorkzToolsAllVariables@1
+    - bash: 'env | sort'
     - script: echo $(varStage)
     - script: echo $(var2)
     - script: echo $(var3)
