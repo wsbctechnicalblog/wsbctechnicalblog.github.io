@@ -40,6 +40,7 @@ We define three variables, named secretValue1, secretValue2, and secretValue3 in
     - task: DutchWorkzToolsAllVariables@1
 ```
 
+
 The last task, which unfortunately only runs on a Windows-based agent, uses the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension, which displays all variables that are available during your Build or Release. It is an exceptional troubleshooting companion and we find all three of our variables listed as individual variables, and as part of the VSTS_PUBLIC_VARIABLES collection. 
 
 > Extract from task log
@@ -55,6 +56,7 @@ VSTS_PUBLIC_VARIABLES: ["agent.TempDirectory",...,"SetVariable1.secretValue1",..
 VSTS_SECRET_VARIABLES: ["system.accessToken"]
 ...
 ```
+
 
 If you cannot resolve a variable, add this task to determine if and in which shape it is included. As you may have noted our three variables are mapped slightly differently. The two generated  by the explicitly names step have inherited the step names ```SetVariable1``` and ```SetVariable3```, whereas the other assumed the default task name, ```Bash```. Assumptions one of the evil roots of the infamous 2AM-calls!
 
@@ -78,6 +80,7 @@ Next we reference  the variables in another job and echo their values.
     - script: echo $(var2)
       name: GOTCHA_1
 ```
+
 
 Looking at the stage log, we immediately notice that our first ```var1``` variable has been resolved as expected, the second ```var2``` variable is blank?!?
 
@@ -110,6 +113,7 @@ Next we reference the variables in another job from another stage and echo the v
       name: GOTCHA_2
 ```
 
+
 Looking at the job's log file, we immediately notice the GOTCHA.
 
 > ![Gotcha2](/images/sharing-variables-with-stages-and-jobs-2.png)
@@ -128,7 +132,7 @@ When things go belly up with your variables, I recommend that you:
 
 ---
 
-Last, but not least, here is the complete sample code for the pipeline we experimented with.
+Last, but not least, here is the complete sample code for the pipeline we experimented with. Enjoy!
 
 ```
 stages:
