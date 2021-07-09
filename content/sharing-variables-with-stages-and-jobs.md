@@ -12,6 +12,8 @@ I assume that you have read our [How to share variables amongst Azure Pipeline a
 
 # Core Syntax
 
+> ![Syntax](/images/sharing-variables-with-stages-and-jobs-3.png)
+
 Here are two reminders to tattoo on your forearm, when referencing variables:
 
 - Within a stage, map variables as: ```dependencies.<stage>.<job>.outputs['<step>.<name>']```
@@ -58,7 +60,7 @@ If you cannot resolve a variable, add this task to determine if and in which sha
 
 ---
 
-#STEP 2: Reference variable in another job with the same stage
+# STEP 2: Reference variable in another job with the same stage
 
 Next we reference  the variables in another job and echo their values.
 
@@ -84,7 +86,7 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 
 ---
 
-#STEP 3: Reference variable in another job in a different stage
+# STEP 3: Reference variable in another job in a different stage
 
 Next we reference the variables in another job from another stage and echo the value. The sample shows the use of a stage and a job variable and highlights the importance of using your second tattoo, which uses **stageDependencies...** instead of **dependencies...** we used before. In fact, the sample intentionally uses both, to welcome GOTCHA #2.
 
