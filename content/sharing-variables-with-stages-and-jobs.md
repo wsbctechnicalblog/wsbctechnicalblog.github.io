@@ -52,9 +52,6 @@ BASH_SECRETVALUE2: BINGO-2!
 SETVARIABLE1_SECRETVALUE1: BINGO-1!
 SETVARIABLE3_SECRETVALUE3: BINGO-3!
 ...
-VSTS_PUBLIC_VARIABLES: ["agent.TempDirectory",...,"SetVariable1.secretValue1",...,"Bash.secretValue2",...,"SetVariable3.secretValue3"...]
-VSTS_SECRET_VARIABLES: ["system.accessToken"]
-...
 ```
 
 
