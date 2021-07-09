@@ -41,7 +41,7 @@ We define three variables, named secretValue1, secretValue2, and secretValue3 in
 ```
 
 
-The last task, replaces the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension, which unfortunately has been deprecated and only runs on a Windows-based agent. 
+The last task, replaces the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension, I commonly used to dump all variables. A bonus is that unlike the extension, the bash task runs on any agent.
 
 > Extract from task log
 
@@ -82,7 +82,7 @@ Next we reference  the variables in another job and echo their values.
 Looking at the stage log, we immediately notice that our first ```var1``` variable has been resolved as expected, the second ```var2``` variable is blank?!?
 
 > ![Gotcha1](/images/sharing-variables-with-stages-and-jobs-1.png)
-If you refer to your forearm and look at the tattoo for mapping a variable within the stage, you realise we are missing the step name. It is fairly easy to pinpoint this GOTCHA when you use the tools at your disposal, such as the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension and the trustworthy log files.
+If you refer to your forearm and look at the tattoo for mapping a variable within the stage, you realise we are missing the step name. It is fairly easy to pinpoint this GOTCHA when you use the tools at your disposal, such as the ```- bash: 'env | sort'``` task and the trustworthy log files.
 
 ---
 
