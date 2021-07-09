@@ -80,14 +80,13 @@ Next we reference  the variables in another job and echo their values.
 Looking at the stage log, we immediately notice that our first ```var1``` variable has been resolved as expected, the second ```var2``` variable is blank?!?
 
 > ![Gotcha1](/images/sharing-variables-with-stages-and-jobs-1.png)
-
-If you refer back to your forearm and look at the tattoo for mapping a variable within the stage, you realise we are missing the step name. It is fairly easy to pinpoint this GOTCHA when you use the tools at your disposal, such as the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension and the trustworthy log files.
+If you refer to your forearm and look at the tattoo for mapping a variable within the stage, you realise we are missing the step name. It is fairly easy to pinpoint this GOTCHA when you use the tools at your disposal, such as the [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables) extension and the trustworthy log files.
 
 ---
 
 #STEP 3: Reference variable in another job in a different stage
 
-Next we reference the variables in another job from another stage and echo the value. The sample shows the use of a stage and a job variable and highlights the importance of using your second tattoo, which uses **stageDependencies...** instead of **dependencies...** we used before. In fact the sample intentionally uses both, to welcome GOTCHA #2.
+Next we reference the variables in another job from another stage and echo the value. The sample shows the use of a stage and a job variable and highlights the importance of using your second tattoo, which uses **stageDependencies...** instead of **dependencies...** we used before. In fact, the sample intentionally uses both, to welcome GOTCHA #2.
 
 ```
 - stage: StageTwo
@@ -122,7 +121,8 @@ When things go belly up with your variables, I recommend that you:
 1. Look at the job logs and check if variables have been prepared correctly.
 2. Run on a Windows-based agent and [Display all variables](https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables).
 3. Check that your steps creating the variables have a **name**.
-4. Check that your steps referencing the variables use the correct **mapping** as per the tattoo on your forearm.
+4. Check that your steps referencing the variables use the correct **mapping** as per the mapping tattoo.
+5. Use the new YAML-pipeline editor and highlight the stage, job, task, and variable names. It highlights reoccurrences very nicely. Saved me a lot of time today when the highlighting, or lack thereof, made me realise that job was named job**e** ... easily missed when embedded in mapping hierarchies.
 
 ---
 
