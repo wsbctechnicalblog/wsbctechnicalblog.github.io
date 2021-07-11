@@ -17,6 +17,13 @@ In this series we are going to invite you on our journey of grappling with hundr
 - [Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines](/yaml-pipelines-part7.html)
 - [Part 8: Pipelines - Pipelines - From CI to CD and beyond in one pipeline](/yaml-pipelines-part8.html)
 
+Other pipeline posts:
+
+- [Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers](/experiment-yaml-1.html)
+- [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html)
+- [Pipeline-as-code wrapped with Pull Requests](/ipelines-as-code-pr.html)
+- [Gotchas when share variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html)
+
 Coming soon:
 
 - Part TBD: Self-service automation - A dream turns into reality
