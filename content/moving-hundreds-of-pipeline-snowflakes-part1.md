@@ -24,6 +24,12 @@ Other pipeline posts:
 - [Pipeline-as-code wrapped with Pull Requests](/ipelines-as-code-pr.html)
 - [Gotchas when share variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html)
 
+Pipeline quick reference poster posts:
+
+- [Quick Reference Sheet for Application-type Blueprint-based Pipelines](/moving-hundreds-of-pipeline-snowflakes-qr-2.html)
+- [Quick Reference Sheet for Pipeline Terminology](/moving-hundreds-of-pipeline-snowflakes-qr-3.html)
+- [Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines](/moving-hundreds-of-pipeline-snowflakes-qr-1.html)
+
 Coming soon:
 
 - Part TBD: Self-service automation - A dream turns into reality
