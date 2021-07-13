@@ -1,0 +1,461 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Self-service automation - A dream turns into reality - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part9.html" rel="bookmark"
+            title="Permalink to Self-service automation - A dream turns into reality">Self-service automation - A dream turns into reality</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 05 July 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Automate a “hello world in less than 1min”, also referred to as our “walking skeleton”.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Welcome back to another installment of pipeline wizardry. We are changing gears from the nuts and bolts, to the automation we can achieve using the blueprint-based pipelines. Fasten your seat belts!</p>
+<hr>
+<h1>The dream</h1>
+<p>Our automation working group had a vision to build an engineering process that could generate a “Hello world in less than 1min”, aka walking skeleton, to decimate engineering process lead lines and enable our engineering teams.</p>
+<blockquote>
+<p>Option 1 - Manual and humanoid driven engineering process</p>
+<p><img alt="Manual" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-1.png"></p>
+</blockquote>
+<p>Our engineering process is not unique. It starts with an idea. Engineering creates a new repository for the code artifacts, and a continuous integration and deployment pipeline. As engineers require elevated permissions to generate the repo and pipeline artifacts, other engineers and departments get engaged as part of the process to ensure consistency, security, and alignment with guardrails (governance). </p>
+<p>As frustrating as it may sound, it can take <strong>hours to days</strong>, until the engineering team can finally start adding and building their code.</p>
+<blockquote>
+<p>Option 2 - Automated and humanoid enabled engineering process</p>
+<p><img alt="Manual" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-2.png"></p>
+</blockquote>
+<p>Our envisaged engineering process is radically different. Engineering visits a self-service portal, captures data to describe what they need, and the <strong>click a button</strong>. The engineering process should be created through automation, the repo should contain an application-type sample, and by the time the engineering team blinks, the pipelines should be running to validate the setup using the sample code. </p>
+<p>Machines (automation) can do repetitive tasks much better and faster than we can, they stick to the instructions to ensure that we do not have to validate consistency and guardrail alignment.</p>
+<p>Our dream, as mentioned, is to enable the engineering team within 1 minute. </p>
+<hr>
+<h1>Community View</h1>
+<blockquote>
+<p>Option 2 - Automated and humanoid enabled engineering process</p>
+<p><img alt="Manual" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-3.png"></p>
+</blockquote>
+<p>We polled the twitter and LinkedIn community and realized that we are not alone. An average of <strong>33</strong>% of users tolerate hours and <strong>36</strong>% of users days to get a basic project environment assembled. </p>
+<p><strong>That is unacceptable!</strong></p>
+<blockquote>
+<p><img alt="Manual" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-6.png"></p>
+</blockquote>
+<hr>
+<h1>Our drop-the-mic demo</h1>
+<p>We demonstrated the following engineering process using a recipe of Git, Azure DevOps REST API, and a PowerShell automation script, developed and mob-reviewed by our automation working group:</p>
+<ul>
+<li>Query Azure DevOps Project information</li>
+<li>Create an Azure Repo (Git)</li>
+<li>Clone our AzureDevOps.Automation.Pipeline.Templates and the app-type specific AzureDevOps.Automation.Pipeline.Sample.* repository</li>
+<li>Clone the newly created repository</li>
+<li>Add the app-type *-start.yml template to the new repo</li>
+<li>Add the app-type sample code to the new repo</li>
+<li>Push local changes to the Azure Repo</li>
+<li>Create a new pipeline, linked to the *-start.yml template in the new repo</li>
+<li>Run the new pipeline</li>
+</ul>
+<p>When we shared a recording of the demo with engineering, there were a few gob-smacked faces when the penny dropped that our "less 1min dream" could evolve into a "less than 20 seconds engineering process".</p>
+<blockquote>
+<p>Hello world automation demo</p>
+<p><img alt="Demo" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-4.png"></p>
+</blockquote>
+<p>Here is our automation script we used for the demo.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="err">#</span><span class="w"> </span>
+<span class="w">  </span><span class="nl">CATEGORY</span><span class="p">:</span><span class="w"> </span><span class="n">azure</span><span class="o">-</span><span class="n">devops</span><span class="o">-</span><span class="n">pipelines</span><span class="w"></span>
+<span class="w">  </span><span class="nl">LAUNCHED</span><span class="p">:</span><span class="w"> </span><span class="n">Demo</span><span class="w"></span>
+<span class="w"> </span><span class="err">#</span><span class="o">&gt;</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">CmdletBinding()</span><span class="o">]</span><span class="w"></span>
+<span class="n">param</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">orgName</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">projectName</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">portfolioName</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">productName</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">blueprintName</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">Parameter (Mandatory= $true)</span><span class="o">]</span><span class="w"></span>
+<span class="w"> </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">    </span><span class="err">$</span><span class="n">patToken</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="k">GET</span><span class="w"> </span><span class="k">START</span><span class="w"> </span><span class="nc">DATE</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nc">TIME</span><span class="w"></span>
+<span class="err">$</span><span class="n">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Get</span><span class="o">-</span><span class="nc">Date</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">Security</span><span class="w"> </span><span class="n">Header</span><span class="w"></span>
+<span class="err">$</span><span class="n">basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;{0}:{1}&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="err">$</span><span class="n">patToken</span><span class="p">)</span><span class="w"></span>
+<span class="err">$</span><span class="n">basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">System.Text.Encoding</span><span class="o">]::</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="err">$</span><span class="n">basicAuth</span><span class="p">)</span><span class="w"></span>
+<span class="err">$</span><span class="n">basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">System.Convert</span><span class="o">]::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="err">$</span><span class="n">basicAuth</span><span class="p">)</span><span class="w"></span>
+<span class="err">$</span><span class="n">headerPAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@{</span><span class="k">Authorization</span><span class="o">=</span><span class="p">(</span><span class="ss">&quot;Basic {0}&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="err">$</span><span class="n">basicAuth</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">Variables</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">nameTemplates</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AzureDevOps.Automation.Pipeline.Templates&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">repoTemplates</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://&lt;SOURCE-ORG&gt;@dev.azure.com/&lt;SOURCE-ORG&gt;/&lt;SOURCE-PROJECT&gt;/_git/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameTemplates</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">nameSamples</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;AzureDevOps.Automation.Pipeline.Sample.&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">blueprintName</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">repoSamples</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://&lt;SOURCE-ORG&gt;@dev.azure.com/&lt;SOURCE-ORG&gt;/&lt;SOURCE-PROJECT&gt;/_git/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameSamples</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">nameRepo</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">productName</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">repoNew</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;@dev.azure.com/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_git/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">projID</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;invalid&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">repoID</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;invalid&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pipeID</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;invalid&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pathWorking</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="k">Get</span><span class="o">-</span><span class="n">Location</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameTemplates</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pathSamples</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameSamples</span><span class="w"> </span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pathRepo</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"> </span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">folderSourceSample</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathSamples</span><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\src&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">pathSourceSample</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">folderSourceSample</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\*&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">folderTargetSample</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathRepo</span><span class="w">           </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\src&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">folderPipeline</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathRepo</span><span class="w">           </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\pipelines&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">namePipeline</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">productName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-start&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">namePipelineFile</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;azure-pipeline-&#39;</span><span class="w">   </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipeline</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;.yml&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">startPipeSource</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\Blueprints\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">blueprintName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\azure-pipeline-&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">blueprintName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-start.yml&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">startPipeTarget</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathRepo</span><span class="w">           </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\pipelines\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipelineFile</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">nameConfigFile</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">productName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-config.yml&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">startConfigSource</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\Blueprints\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">blueprintName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\azure-pipeline-&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">blueprintName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-config.yml&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">startConfigTarget</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\Operations\Config\&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameConfigFile</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">tokenPortfolio</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;__TODO_PORTFOLIO__&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="w">  </span><span class="err">$</span><span class="n">tokenProduct</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;__TODO_PRODUCT__&#39;</span><span class="w"></span>
+<span class="o">[</span><span class="n">Boolean</span><span class="o">]</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"></span>
+
+<span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">1.1</span><span class="w"> </span><span class="k">Get</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">ID</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;1.1 - Get ID for project: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">uriGetProject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://dev.azure.com/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_apis/projects/&#39;</span><span class="w"> </span><span class="o">+</span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;?api-version=6.0&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">projResult</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">uriGetProject</span><span class="w"> </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">headerPAT</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">projID</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">projResult</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;ID: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">projID</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;STEP 1.1 &lt;GET PROJECT ID&gt; FAILURE: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">eject</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="k">Create</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="n">Y</span><span class="p">.</span><span class="n">Z</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">AzDO</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">local</span><span class="w"> </span><span class="n">clone</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;1.2 - Create New Repository: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoNew</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">uriCreateRepo</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://dev.azure.com/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_apis/git/repositories?api-version=6.1-preview.1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">jsonCreateRepo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">  </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;name&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"> </span><span class="o">+</span><span class="s1">&#39;&quot;,</span>
+<span class="s1">    &quot;project&quot;: {</span>
+<span class="s1">    &quot;id&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">  }&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">repoResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">uriCreateRepo</span><span class="w"> </span><span class="o">-</span><span class="n">Body</span><span class="w"> </span><span class="err">$</span><span class="n">jsonCreateRepo</span><span class="w"> </span><span class="o">-</span><span class="k">Method</span><span class="w"> </span><span class="n">Post</span><span class="w"> </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">headerPAT</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;Create Repo Result: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoResult</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;STEP 1.2 &lt;CREATE REPO&gt; FAILURE: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">eject</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="w">  </span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="n">Clone</span><span class="w"> </span><span class="n">repositories</span><span class="w"> </span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;2.1 Clone repo &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoTemplates</span><span class="w"> </span><span class="s1">&#39; to local path&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="err">$</span><span class="n">repoTemplates</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">pull</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;2.2 Clone repo &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoSamples</span><span class="w"> </span><span class="s1">&#39; to local path&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="err">$</span><span class="n">repoSamples</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathSamples</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">pull</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;2.3 Clone repo &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoNew</span><span class="w"> </span><span class="s1">&#39; to local path&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="err">$</span><span class="n">repoNew</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathRepo</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">pull</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="o">*-</span><span class="k">start</span><span class="p">.</span><span class="n">yml</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">templates</span><span class="w"> </span><span class="n">repo</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;3.1 Add app-type start template to new repo&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">folderPipeline</span><span class="w"> </span><span class="o">-</span><span class="n">ItemType</span><span class="w"> </span><span class="n">Directory</span><span class="w"></span>
+<span class="w">  </span><span class="n">Copy</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">$</span><span class="n">startPipeSource</span><span class="w"> </span><span class="err">$</span><span class="n">startPipeTarget</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;3.2 Add config template to templates repo&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w"> </span><span class="o">-</span><span class="n">ItemType</span><span class="w"> </span><span class="n">Directory</span><span class="w"> </span><span class="o">-</span><span class="n">Force</span><span class="w"></span>
+<span class="w">  </span><span class="n">Copy</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">$</span><span class="n">startConfigSource</span><span class="w"> </span><span class="err">$</span><span class="n">startConfigTarget</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">4.</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="n">src</span><span class="err">\</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">AzureDevOps</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">Pipeline</span><span class="p">.</span><span class="n">Sample</span><span class="p">.</span><span class="n">azure</span><span class="o">-</span><span class="k">function</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">local</span><span class="w"> </span><span class="n">repo</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;4.1 Add src folder and sample solution&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">New</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">folderTargetSample</span><span class="w"> </span><span class="o">-</span><span class="n">ItemType</span><span class="w"> </span><span class="n">Directory</span><span class="w"></span>
+<span class="w">  </span><span class="n">Copy</span><span class="o">-</span><span class="n">Item</span><span class="w"> </span><span class="err">$</span><span class="n">pathSourceSample</span><span class="w"> </span><span class="err">$</span><span class="n">folderTargetSample</span><span class="w"> </span><span class="o">-</span><span class="n">recurse</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;4.2 Replace tokens with variables&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">rawFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Get</span><span class="o">-</span><span class="n">Content</span><span class="w"> </span><span class="o">-</span><span class="k">path</span><span class="w"> </span><span class="err">$</span><span class="n">startPipeTarget</span><span class="w"> </span><span class="o">-</span><span class="n">raw</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">step1File</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">rawFile</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="err">$</span><span class="n">tokenPortfolio</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">step2File</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">step1File</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="err">$</span><span class="n">tokenProduct</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">productName</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Content</span><span class="w"> </span><span class="err">$</span><span class="n">startPipeTarget</span><span class="w"> </span><span class="err">$</span><span class="n">step2File</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">5.</span><span class="w"> </span><span class="n">Push</span><span class="w"> </span><span class="k">local</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="n">repo</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;5.1 Push all new changes to new repo&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathRepo</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">--</span><span class="ow">all</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="s1">&#39;Automation: Sample source &amp; app-type blueprint pipeline.&#39;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;5.2 Push all new changes to new repo&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathTemplates</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="o">--</span><span class="ow">all</span><span class="w"></span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="s1">&#39;Automation: Add new product configuration.&#39;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"></span>
+<span class="w">  </span><span class="k">Set</span><span class="o">-</span><span class="n">Location</span><span class="w"> </span><span class="o">-</span><span class="k">Path</span><span class="w"> </span><span class="err">$</span><span class="n">pathWorking</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">6.</span><span class="w"> </span><span class="k">Create</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">*-</span><span class="k">start</span><span class="p">.</span><span class="n">yml</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">committed</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;6.1 Query repo ID&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">uriGetRepo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://dev.azure.com/&#39;</span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_apis/git/repositories/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;?api-version=6.0&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">repoResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">uriGetRepo</span><span class="w"> </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">headerPAT</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">repoID</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">repoResult</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;ID: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">repoID</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;STEP 6.1 &lt;GET REPO ID&gt; FAILURE: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">eject</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;6.2 Create new pipeline&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">uriCreatePipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://dev.azure.com/&#39;</span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_apis/pipelines?api-version=6.0-preview.1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">jsonCreatePipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="s1">&#39;{</span>
+<span class="s1">  &quot;folder&quot; : &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">  &quot;name&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipeline</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">  &quot;configuration&quot;: {</span>
+<span class="s1">      &quot;type&quot; : &quot;yaml&quot;,</span>
+<span class="s1">      &quot;path&quot; : &quot;/pipelines/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipelineFile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">      &quot;repository&quot; : {</span>
+<span class="s1">        &quot;id&quot; : &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">repoID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">        &quot;name&quot; : &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">        &quot;type&quot; : &quot;azureReposGit&quot;</span>
+<span class="s1">      }</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span><span class="w">  </span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">pipeResult</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">uriCreatePipe</span><span class="w"> </span><span class="o">-</span><span class="n">Body</span><span class="w"> </span><span class="err">$</span><span class="n">jsonCreatePipe</span><span class="w"> </span><span class="o">-</span><span class="k">Method</span><span class="w"> </span><span class="n">Post</span><span class="w"> </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">headerPAT</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">pipeID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pipeResult</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;ID: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">pipeID</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;STEP 6.2 &lt;LINK PIPELINE&gt; FAILURE: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">eject</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="err">##################################################################################################################</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mf">7.</span><span class="w"> </span><span class="n">Run</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">pipeline</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">rest</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">azure</span><span class="o">/</span><span class="n">devops</span><span class="o">/</span><span class="n">pipelines</span><span class="o">/</span><span class="n">runs</span><span class="o">/</span><span class="n">run</span><span class="o">%</span><span class="mi">20</span><span class="n">pipeline</span><span class="vm">?</span><span class="k">view</span><span class="o">=</span><span class="n">azure</span><span class="o">-</span><span class="n">devops</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="mf">6.1</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;7.1 Run pipeline&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">uriRunPipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://dev.azure.com/&#39;</span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">orgName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/_apis/pipelines/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">pipeID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/runs?api-version=6.0-preview.1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="err">$</span><span class="n">jsonRunPipe</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="s1">&#39;{ &quot;variables&quot;: {      </span>
+<span class="s1">      &quot;customVariable&quot;: {</span>
+<span class="s1">      }</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;process&quot;: {</span>
+<span class="s1">      &quot;yamlFilename&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipelineFile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">      &quot;type&quot;:  2</span>
+<span class="s1">     },</span>
+<span class="s1">    &quot;repository&quot;: {</span>
+<span class="s1">      &quot;id&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">repoID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">      &quot;type&quot;: &quot;TfsGit&quot;,</span>
+<span class="s1">      &quot;name&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">nameRepo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">      &quot;defaultBranch&quot;: &quot;refs/heads/master&quot;,</span>
+<span class="s1">      &quot;clean&quot;:  null,</span>
+<span class="s1">      &quot;checkoutSubmodules&quot;:  false</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;name&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">namePipeline</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">    &quot;path&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">portfolioName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">    &quot;type&quot;: &quot;build&quot;,</span>
+<span class="s1">    &quot;queueStatus&quot;: &quot;enabled&quot;,</span>
+<span class="s1">    &quot;project&quot;:  {</span>
+<span class="s1">      &quot;id&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;,</span>
+<span class="s1">      &quot;name&quot;: &quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="n">projectName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">pipeResult</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">uriRunPipe</span><span class="w"> </span><span class="o">-</span><span class="n">Body</span><span class="w"> </span><span class="err">$</span><span class="n">jsonRunPipe</span><span class="w"> </span><span class="o">-</span><span class="k">Method</span><span class="w"> </span><span class="n">Post</span><span class="w"> </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">headerPAT</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">pipeID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">pipeResult</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="k">true</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="err">$</span><span class="n">debugMode</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;ID: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">pipeID</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;STEP 6.2 &lt;LINK PIPELINE&gt; FAILURE: &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">eject</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="k">catch</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;OH, OH - FATAL ERROR! &#39;</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="p">.</span><span class="k">Exception</span><span class="p">.</span><span class="n">Message</span><span class="w"></span>
+<span class="w">  </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="k">GET</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="nc">DATE</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nc">TIME</span><span class="w"></span>
+<span class="err">$</span><span class="n">endTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Get</span><span class="o">-</span><span class="nc">Date</span><span class="w"></span>
+<span class="err">$</span><span class="n">micTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="o">-</span><span class="n">Timespan</span><span class="w"> </span><span class="o">-</span><span class="n">seconds</span><span class="w"> </span><span class="err">$</span><span class="p">((</span><span class="err">$</span><span class="n">endTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="n">startTime</span><span class="p">).</span><span class="n">TotalSeconds</span><span class="p">)</span><span class="w"></span>
+<span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="s1">&#39;From zero to hello world in &gt;&gt;&#39;</span><span class="w"> </span><span class="err">$</span><span class="n">micTime</span><span class="p">.</span><span class="n">TotalSeconds</span><span class="w"> </span><span class="s1">&#39;&lt;&lt; seconds q;)&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p>COPY-PASTE and REUSE at your own risk. This was a demo script and will be going through extensive mob-reviews and mob-programming to turn it into a production-ready automation.</p>
+</blockquote>
+<hr>
+<h1>Gob-smacked?</h1>
+<blockquote>
+<p>gob-smacked (excited) yet?</p>
+<p><img alt="Gobsmacked" src="/images/moving-hundreds-of-pipeline-snowflakes-part9-5.png"></p>
+</blockquote>
+<hr>
+<h1>What is next?</h1>
+<p>We need to expand our library of application-type blueprints and in parallel expand the automation script to support the new app-types. In parallel we need to move the automation script to be run by Azure Pipelines to support queueing, and add a user-friendly service portal to "click the button."</p>
+<p>Watch this space for more exiting progress.</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | <a href="/yaml-pipelines-part7.html">Part 7</a> | <a href="/yaml-pipelines-part8.html">Part 8</a> | Part 9 |</p>
+</blockquote>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/automation.html">automation </a><a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/x-as-code.html">x-as-code </a>
+        | <a href="/yaml-pipelines-part9.html" rel="bookmark"
+         title="Permalink to Self-service automation - A dream turns into reality">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/automation.html">automation</a>(3)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(25)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(25)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(13)</li>
+                    <li><a href="/tag/learning.html">learning</a>(3)</li>
+                    <li><a href="/tag/devops.html">devops</a>(26)</li>
+                    <li><a href="/tag/posters.html">posters</a>(4)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(2)</li>
+                    <li><a href="/tag/code.html">code</a>(19)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/agile.html">agile</a>(14)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(6)</li>
+                    <li><a href="/tag/testing.html">testing</a>(10)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(1)</li>
+                    <li><a href="/tag/xp.html">xp</a>(4)</li>
+                    <li><a href="/tag/events.html">events</a>(2)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/tips.html">tips</a>(6)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(1)</li>
+                    <li><a href="/tag/quality.html">quality</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (5)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (46)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
