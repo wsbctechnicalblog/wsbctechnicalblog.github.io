@@ -1,4 +1,4 @@
-Title: Gotchas when share variables with Azure DevOps stages and jobs
+Title: Gotchas when sharing variables with Azure DevOps stages and jobs
 Date: 2021-07-08
 Category: Posts
 Tags: azure-devops, pipelines, tips
