@@ -77,6 +77,8 @@ When we return to the office environment full- or part-time, I suggest adding an
 
 ---
 
+Another experiment I am running is removing Twitter, LinkedIN, Signal, News, and other applications that thrive on notifications from my (smart?!?) phone. Instead of sitting at the Fraser feverishly clicking through all the channels, I am now sitting with my feet in the water and enjoying the tranquil beauty that mother nature is spoiling us with.
+
 I hope this post gives your food for thought. 
 
 Life is precious and protecting your work/life balance is important. When you take charge of **your** day and realise that not every storm in someone's tea cup is an emergency, you will start to dream again, delivering innovative and quality solutions previously thwarted by context switching.
