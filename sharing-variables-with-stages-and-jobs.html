@@ -1,0 +1,309 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Gotchas when share variables with Azure DevOps stages and jobs - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/sharing-variables-with-stages-and-jobs.html" rel="bookmark"
+            title="Permalink to Gotchas when share variables with Azure DevOps stages and jobs">Gotchas when share variables with Azure DevOps stages and jobs</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Thu 08 July 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Understanding and avoiding gotchas that may keep you up at 2AM, troubleshooting YAML-based Azure Pipelines</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>I assume that you have read our <a href="/sharing-variables-with-stages-and-jobs.html">How to share variables amongst Azure Pipeline agents</a>, which shared a few turbulent moments we experienced while troubleshooting this feature earlier this year. With this post we continue our troubleshooting excursion to highlight a few gotchas that have caused lots of head scratching.</p>
+<hr>
+<h1>Core Syntax</h1>
+<blockquote>
+<p><img alt="Syntax" src="/images/sharing-variables-with-stages-and-jobs-3.png"></p>
+</blockquote>
+<p>Here are two reminders to tattoo on your forearm, when referencing variables:</p>
+<ul>
+<li>Within a stage, map variables as: <code>dependencies.&lt;stage&gt;.&lt;job&gt;.outputs['&lt;step&gt;.&lt;name&gt;']</code></li>
+<li>Across stages, map variables as: <code>stageDependencies.&lt;stage&gt;.&lt;job&gt;.outputs['&lt;step&gt;.&lt;name&gt;']</code></li>
+</ul>
+<p>Let us lift the pipeline bonnet and explore.</p>
+<hr>
+<h1>STEP 1: Define a variable to be shared</h1>
+<p>We define three variables, named secretValue1, secretValue2, and secretValue3 in our job called StageOneJobOne. Note that we explicitly name two of the steps and leave one as default. Sounds simple, but this will bite is later on.</p>
+<div class="highlight"><pre><span></span><code>  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;windows-latest&#39;</span>
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">SetVariable1</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">SetVariable3</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="s1">&#39;env | sort&#39;</span>
+</code></pre></div>
+
+<p>The last task, replaces the <a href="https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables">Display all variables</a> extension, I commonly used to dump all variables. A bonus is that unlike the extension, the bash task runs on any agent.</p>
+<blockquote>
+<p>Extract from task log</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="err">...</span>
+<span class="c">BASH_SECRETVALUE2: BINGO-2!</span>
+<span class="err">...</span>
+<span class="c">SETVARIABLE1_SECRETVALUE1: BINGO-1!</span>
+<span class="c">SETVARIABLE3_SECRETVALUE3: BINGO-3!</span>
+<span class="err">...</span>
+</code></pre></div>
+
+<p>If you cannot resolve a variable, add this task to determine if and in which shape it is included. As you may have noted our three variables are mapped slightly differently. The two generated  by the explicitly names step have inherited the step names <code>SetVariable1</code> and <code>SetVariable3</code>, whereas the other assumed the default task name, <code>Bash</code>. Assumptions one of the evil roots of the infamous 2AM-calls!</p>
+<hr>
+<h1>STEP 2: Reference variable in another job with the same stage</h1>
+<p>Next we reference  the variables in another job and echo their values.</p>
+<div class="highlight"><pre><span></span><code>  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobTwo</span>
+    <span class="n">dependsOn</span><span class="p">:</span> <span class="n">StageOneJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;ubuntu-latest&#39;</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var1</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+      <span class="c1"># Gotcha #1</span>
+      <span class="n">var2</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;secretValue2&#39;</span><span class="p">]</span> <span class="p">]</span> 
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">GOTCHA_1</span>
+</code></pre></div>
+
+<p>Looking at the stage log, we immediately notice that our first <code>var1</code> variable has been resolved as expected, the second <code>var2</code> variable is blank?!?</p>
+<blockquote>
+<p><img alt="Gotcha1" src="/images/sharing-variables-with-stages-and-jobs-1.png">
+If you refer to your forearm and look at the tattoo for mapping a variable within the stage, you realise we are missing the step name. It is fairly easy to pinpoint this GOTCHA when you use the tools at your disposal, such as the <code>- bash: 'env | sort'</code> task and the trustworthy log files.</p>
+</blockquote>
+<hr>
+<h1>STEP 3: Reference variable in another job in a different stage</h1>
+<p>Next we reference the variables in another job from another stage and echo the value. The sample shows the use of a stage and a job variable and highlights the importance of using your second tattoo, which uses <strong>stageDependencies...</strong> instead of <strong>dependencies...</strong> we used before. In fact, the sample intentionally uses both, to welcome GOTCHA #2.</p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">stage</span><span class="p">:</span> <span class="n">StageTwo</span>
+  <span class="n">dependsOn</span><span class="p">:</span> <span class="n">StageOne</span>
+  <span class="n">variables</span><span class="p">:</span>
+    <span class="n">varStage</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="n">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageTwoJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;windows-latest&#39;</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var2</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+      <span class="n">var3</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="s1">&#39;env | sort&#39;</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">GOTCHA_2</span>
+</code></pre></div>
+
+<p>Looking at the job's log file, we immediately notice the GOTCHA.</p>
+<blockquote>
+<p><img alt="Gotcha2" src="/images/sharing-variables-with-stages-and-jobs-2.png"></p>
+</blockquote>
+<hr>
+<h1>Troubleshooting Checklist</h1>
+<p>When things go belly up with your variables, I recommend that you:</p>
+<ol>
+<li>Look at the job logs and check if variables have been prepared correctly.</li>
+<li>Run <code>- bash: 'env | sort'</code> to display all variables.</li>
+<li>Check that your steps creating the variables have a <strong>name</strong>.</li>
+<li>Check that your steps referencing the variables use the correct <strong>mapping</strong> as per the mapping tattoo.</li>
+<li>Use the new YAML-pipeline editor and highlight the stage, job, task, and variable names. It highlights reoccurrences very nicely. Saved me a lot of time today when the highlighting, or lack thereof, made me realise that job was named job<strong>e</strong> ... easily missed when embedded in mapping hierarchies.</li>
+</ol>
+<hr>
+<p>Last, but not least, here is the complete sample code for the pipeline we experimented with. Enjoy!</p>
+<div class="highlight"><pre><span></span><code><span class="n">stages</span><span class="p">:</span>
+
+<span class="c1"># ##################################################################################################</span>
+<span class="c1"># STAGE ONE</span>
+<span class="c1"># ##################################################################################################</span>
+<span class="o">-</span> <span class="n">stage</span><span class="p">:</span> <span class="n">StageOne</span>
+  <span class="n">jobs</span><span class="p">:</span>
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="c1"># STAGE 1 JOB 1</span>
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;windows-latest&#39;</span>
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">SetVariable1</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="n">echo</span> <span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">SetVariable3</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="s1">&#39;env | sort&#39;</span>
+
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="c1"># STAGE 1 JOB 2</span>
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobTwo</span>
+    <span class="n">dependsOn</span><span class="p">:</span> <span class="n">StageOneJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;ubuntu-latest&#39;</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var1</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+      <span class="c1"># Gotcha #1</span>
+      <span class="n">var2</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;secretValue2&#39;</span><span class="p">]</span> <span class="p">]</span> 
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">GOTCHA_1</span>
+
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="c1"># STAGE 1 JOB 3</span>
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobThree</span>
+    <span class="n">dependsOn</span><span class="p">:</span> 
+    <span class="o">-</span> <span class="n">StageOneJobOne</span>
+    <span class="o">-</span> <span class="n">StageOneJobTwo</span>
+    <span class="n">condition</span><span class="p">:</span> <span class="n">eq</span><span class="p">(</span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">],</span> <span class="s1">&#39;BINGO-1!&#39;</span><span class="p">)</span> 
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;macOS-latest&#39;</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var1</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="c1"># STAGE 1 JOB 4</span>
+  <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageOneJobFour</span>
+    <span class="n">dependsOn</span><span class="p">:</span> 
+    <span class="o">-</span> <span class="n">StageOneJobOne</span>
+    <span class="o">-</span> <span class="n">StageOneJobTwo</span>
+    <span class="n">pool</span><span class="p">:</span> <span class="n">server</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var1</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="c1"># ##################################################################################################</span>
+<span class="c1"># STAGE TWO</span>
+<span class="c1"># ##################################################################################################</span>
+<span class="o">-</span> <span class="n">stage</span><span class="p">:</span> <span class="n">StageTwo</span>
+  <span class="n">dependsOn</span><span class="p">:</span> <span class="n">StageOne</span>
+  <span class="n">variables</span><span class="p">:</span>
+    <span class="n">varStage</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+  <span class="n">jobs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">job</span><span class="p">:</span> <span class="n">StageTwoJobOne</span>
+    <span class="n">pool</span><span class="p">:</span>
+      <span class="n">vmImage</span><span class="p">:</span> <span class="s1">&#39;windows-latest&#39;</span>
+    <span class="n">variables</span><span class="p">:</span>
+      <span class="n">var2</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+      <span class="n">var3</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">steps</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">bash</span><span class="p">:</span> <span class="s1">&#39;env | sort&#39;</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">echo</span> <span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+      <span class="n">name</span><span class="p">:</span> <span class="n">GOTCHA_2</span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/tips.html">tips </a>
+        | <a href="/sharing-variables-with-stages-and-jobs.html" rel="bookmark"
+         title="Permalink to Gotchas when share variables with Azure DevOps stages and jobs">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(26)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(26)</li>
+                    <li><a href="/tag/tips.html">tips</a>(7)</li>
+                    <li><a href="/tag/automation.html">automation</a>(3)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(13)</li>
+                    <li><a href="/tag/learning.html">learning</a>(3)</li>
+                    <li><a href="/tag/devops.html">devops</a>(26)</li>
+                    <li><a href="/tag/posters.html">posters</a>(4)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(2)</li>
+                    <li><a href="/tag/code.html">code</a>(19)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/agile.html">agile</a>(14)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(6)</li>
+                    <li><a href="/tag/testing.html">testing</a>(10)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(1)</li>
+                    <li><a href="/tag/xp.html">xp</a>(4)</li>
+                    <li><a href="/tag/events.html">events</a>(2)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(1)</li>
+                    <li><a href="/tag/quality.html">quality</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (5)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (47)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
