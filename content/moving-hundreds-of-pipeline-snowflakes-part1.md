@@ -22,7 +22,7 @@ Other pipeline posts:
 
 - [Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers](/experiment-yaml-1.html)
 - [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html)
-- [Pipeline-as-code wrapped with Pull Requests](/ipelines-as-code-pr.html)
+- [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html)
 - [Gotchas when share variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html)
 
 Pipeline quick reference poster posts:
