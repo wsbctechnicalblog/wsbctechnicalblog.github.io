@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Pipelines - Meet our second-generation app-type blueprints - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/yaml-pipelines-part10.html" rel="bookmark"
+            title="Permalink to Pipelines - Meet our second-generation app-type blueprints">Pipelines - Meet our second-generation app-type blueprints</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Sat 24 July 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Our quest for continuous improvement, simplicity, consistency, enablement, and automation has taking us into a realm of Azure Pipelines that amaze even our most critical engineers.</p>
+        </div>
+    
+        <div class="entry-content">
+            <hr>
+<p>In <a href="/yaml-pipelines-part9.html">Self-service automation - A dream turns into reality</a> we explored the nifty automation script we used to demonstrate our application-type blueprints to our engineering teams. The feedback was positive, as shown by the session score and the net performance score (NPS) for our common engineering system and sets high expectations for future innovation.</p>
+<p><img alt="Stars" src="/images/moving-hundreds-of-pipeline-snowflakes-part10-1.png"> <img alt="NPS" src="/images/moving-hundreds-of-pipeline-snowflakes-part10-2.png"></p>
+<p>Let us review the latest blueprints, we refer to as our second-generation app-type blueprints, and a checklist we use to build new ones.</p>
+<hr>
+<h1>2nd Generation app-type blueprint</h1>
+<p>The diagram looks intimidating at first, but the power and simplicity will become evident as we unpack the pieces. If you have been following our adventure from the days of the generic blueprints, you will appreciate the improvement and simplicity - 18 lines of YAML and less than a handful of tokens to update that engineers must worry about.</p>
+<p>Although <a href="/yaml-pipelines-part9.html">Self-service automation - A dream turns into reality</a> sets up <strong>everything</strong> for our engineers, it helps to know about all the ingredients and how they are mixed to create magic.</p>
+<blockquote>
+<p>app-type blueprint architecture</p>
+<p><img alt="blueprints" src="/images/moving-hundreds-of-pipeline-snowflakes-part10-3.png"></p>
+</blockquote>
+<p>( 1 ) azure-pipeline-&lt; app-type &gt;-<strong>start</strong>.yml template, where * is a placeholder for azure-pipeline. </p>
+<blockquote>
+<p>azure-pipeline-azure-function-<strong>start</strong>.yml template example</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">--------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="n">WorkSafeBC</span><span class="w"> </span><span class="n">Multi</span><span class="o">-</span><span class="n">Stage</span><span class="w"> </span><span class="n">Blueprint</span><span class="o">-</span><span class="n">Based</span><span class="w"> </span><span class="n">Pipeline</span><span class="w"> </span><span class="n">Design</span><span class="w"> </span><span class="n">Practice</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="o">--------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="n">See</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">aka</span><span class="p">.</span><span class="n">ms</span><span class="o">/</span><span class="n">yaml</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Azure</span><span class="w"> </span><span class="n">DevOps</span><span class="w"> </span><span class="n">Pipeline</span><span class="w"> </span><span class="n">documentation</span><span class="w"></span>
+<span class="err">#</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="n">Azure</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="n">blueprint</span><span class="w"> </span><span class="n">v2</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="o">--------------------------------------------------------------------------</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="n">HOW</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="k">USE</span><span class="w"></span>
+<span class="err">#</span><span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Copy</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">to</span><span class="w"> </span>
+<span class="err">#</span><span class="w">     </span><span class="s1">&#39;pipelines/azure-pipelines-&lt;portfolio&gt;-&lt;program&gt;-start.yml&#39;</span><span class="w"> </span><span class="k">under</span><span class="w"> </span><span class="n">the</span><span class="w"> </span>
+<span class="err">#</span><span class="w">     </span><span class="n">root</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">repo</span><span class="w"></span>
+<span class="err">#</span><span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Look</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">TODO</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fine</span><span class="o">-</span><span class="n">tune</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">needed</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="o">--------------------------------------------------------------------------</span><span class="w"></span>
+
+<span class="k">trigger</span><span class="err">:</span><span class="w"></span>
+<span class="w">  </span><span class="nl">batch</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">every</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">false</span><span class="w"></span>
+<span class="w">  </span><span class="nl">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">include</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="k">Trigger</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">branches</span><span class="w"></span>
+
+<span class="nl">resources</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nl">repositories</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nl">repository</span><span class="p">:</span><span class="w"> </span><span class="n">CeSTemplates</span><span class="w"></span>
+<span class="w">    </span><span class="nl">type</span><span class="p">:</span><span class="w">       </span><span class="n">git</span><span class="w"></span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w">       </span><span class="s1">&#39;Common-Engineering-System/AzureDevOps.Automation.Pipeline.Templates&#39;</span><span class="w"></span>
+
+<span class="nl">extends</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nl">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">Blueprints</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="k">function</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="k">function</span><span class="o">-</span><span class="n">control</span><span class="p">.</span><span class="n">yml</span><span class="nv">@CeSTemplates</span><span class="w"></span>
+<span class="w">  </span><span class="k">parameters</span><span class="err">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">netCoreVersion</span><span class="p">:</span><span class="w">     </span><span class="s1">&#39;3.1.x&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="w"> </span><span class="mf">2.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mf">3.1</span><span class="p">.</span><span class="n">x</span><span class="w"></span>
+<span class="w">    </span><span class="nl">portfolioName</span><span class="p">:</span><span class="w">      </span><span class="s1">&#39;__TODO_PORTFOLIO__&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">productName</span><span class="p">:</span><span class="w">        </span><span class="s1">&#39;__TODO_PRODUCT__&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">azFuncProjectName</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;__TODO_AZURE_FUNCTION_PROJECT_NAME__&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="w"> </span><span class="n">CeS</span><span class="p">.</span><span class="n">Sample</span><span class="p">.</span><span class="n">AzureFunction</span><span class="w"></span>
+<span class="w">    </span><span class="nl">suppressCD</span><span class="p">:</span><span class="w">         </span><span class="k">true</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">Allow</span><span class="w"> </span><span class="n">eng</span><span class="p">.</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">CI</span><span class="o">/</span><span class="n">build</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">configured</span><span class="w"></span>
+</code></pre></div>
+
+<p>( 2 ) azure-pipeline-&lt; app-type &gt;-<strong>control</strong>.yml template, our new wheelhouse, and <strong>extends</strong> the app-type <em>-start.yml template above. As implied by the name, the template is the app-type cookbook. It pulls the configuration from the ( 3 ) azure-pipeline-&lt; app-type &gt;-</em><em>config</em>*.yml template, injects the continuous integration pipeline, and then the continuous deployment template.</p>
+<p>( 4 ) azure-pipeline-&lt; app-type &gt;-<strong>ci</strong>.yml template, defines the continuous integration steps and injects the ( 5 ) <strong>boot-strap</strong>.yml template, which is covered in <a href="/yaml-pipelines-part3.html">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a>. It is where the builds and tests are run, followed by automated scans to verify the latest codebase before opening the deployment gates. "Trust but verify" as Kevin would say.</p>
+<blockquote>
+<p><strong>COFFEE BREAK</strong></p>
+<p><em>Our DevSecOps team recently decided to suspend one of the security scans, SonarQube, to rebuild their server and create a new database from scratch. Our engineers supporting our classic unified Azure Pipelines, as mentioned in <a href="/why-pipelines-part1.html">Part 1: Pipelines - Why bother and what are our nightmares and options</a>, are faces with the mammoth task of updating more than 1000 pipelines. Our pipeline working group only had to update one YAML template, submit, review, and complete a pull-request ... and voila 200+ blueprint-based pipelines no longer ran the SonarQube task. Minutes versus a mind-numbing waste of time.</em></p>
+</blockquote>
+<p>( 6 ) azure-pipeline-&lt; app-type &gt;-<strong>cd</strong>.yml template, defines the continuous deployment steps to validate with automated tests and deploy to one or more environments. As shown in the diagram above, the template includes the ( 7 ) <strong>security-scans</strong>.yml template, and the ( 8 ) azure-pipeline-&lt; app-type &gt;-cd-<strong>stage</strong>.yml template. The latter includes the actual recipe for deployment and assumes that all environments are the same. </p>
+<blockquote>
+<p><strong>WHAT IF ENVIRONENTS ARE DIFFERENT?</strong></p>
+<p><em>The start and control templates support the concept of injecting custom templates for the continuous integration and deployment steps. In future we will use the same concept to support default and custom QA templates. See code snippet below.</em> </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># START OF PIPELINE</span>
+<span class="c1"># If user overrides the customCITemplate with a custom template</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCITemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span><span class="p">)</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="o">/</span><span class="n">Operations</span><span class="o">/</span><span class="n">Custom</span><span class="o">/</span><span class="n">CI</span><span class="o">/$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCITemplate</span><span class="p">}}</span><span class="o">.</span><span class="n">yml</span>
+    <span class="n">parameters</span><span class="p">:</span>
+      <span class="n">ciParameter</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCIParameter</span><span class="p">}}</span>
+
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCITemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span><span class="p">)</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="o">/</span><span class="n">Blueprints</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">function</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="n">ci</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
+    <span class="n">parameters</span><span class="p">:</span>
+      <span class="n">netCoreVersion</span><span class="p">:</span>     <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">netCoreVersion</span><span class="p">}}</span>
+      <span class="n">portfolioName</span><span class="p">:</span>      <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">}}</span>
+      <span class="n">productName</span><span class="p">:</span>        <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">}}</span>
+      <span class="n">azFuncProjectName</span><span class="p">:</span>  <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">azFuncProjectName</span><span class="p">}}</span>
+      <span class="n">verbose</span><span class="p">:</span>            <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">verbose</span><span class="p">}}</span>
+      <span class="n">forceToolbox</span><span class="p">:</span>       <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">forceToolbox</span><span class="p">}}</span>
+      <span class="n">previews</span><span class="p">:</span>           <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">previews</span><span class="p">}}</span>
+      <span class="n">loadDVTBox</span><span class="p">:</span>         <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">loadDVTBox</span><span class="p">}}</span>
+<span class="o">...</span>
+</code></pre></div>
+
+<p>( 9 ) Our <strong>standardisation</strong>.yml line, which separates the pipeline instance, and the shared templates. Engineering is accountable for the former and the common engineering system for the latter.</p>
+<p>( 10 ) <strong>extends</strong>, the hidden gem that empower our consistency and security guardrails. We use the <a href="https://github.com/MicrosoftDocs/azure-devops-docs/blob/master/docs/pipelines/security/templates.md#set-required-templates">set required templates</a> feature to verify and enforce that all our production pipelines extend from one of the <em>-control.yml templates stored in our AzureDevOps.Automation.Pipeline.</em><em>Templates</em>* repo.</p>
+<hr>
+<h1>Building a new blueprint</h1>
+<p><img alt="blueprints" src="/images/moving-hundreds-of-pipeline-snowflakes-part10-4.png"></p>
+<p>Now that we know the ingredients of our gourmet template stew, let us conclude with a checklist how our engineers create a new blueprint. </p>
+<h2>Cook a new blueprint</h2>
+<p>Create a new ...</p>
+<ol>
+<li>Feature branch in our AzureDevOps.Automation.Pipeline.Templates repository and a DRAFT pull request to start <strong>collaborating</strong> with the pipeline working group. It is important to use the latest and greatest ingredients and consider shared templates where possible to avoid <strong>waste</strong>.</li>
+<li>azure-pipeline-&lt; app-type &gt;-<strong>start</strong>.yml template ( feel free to copy-paste from an existing template).</li>
+<li>azure-pipeline-&lt; app-type &gt;-<strong>control</strong>.yml template.</li>
+<li>azure-pipeline-&lt; app-type &gt;-<strong>config</strong>.yml template.</li>
+<li>azure-pipeline-&lt; app-type &gt;-<strong>ci</strong>.yml template.</li>
+<li>azure-pipeline-&lt; app-type &gt;-<strong>cd</strong>.yml and an associated azure-pipeline-&lt; app-type &gt;-cd-<strong>stage</strong>.yml template.</li>
+<li>Publish the pull request to trigger validation build(s), validate policies, and invite operations, security, and working group reviewers.</li>
+</ol>
+<h2>Taste the automation</h2>
+<p>Take a few more steps further to enable automation ...</p>
+<ol>
+<li>Create a AzureDevOps.Automation.Pipeline.Sample.&lt; app-type &gt; repository with a sample app-type specific sample.</li>
+<li>If you have custom tokens that need to be updated by the automation script:<ul>
+<li>Create a feature branch in AzureDevOps.Automation.Scripts repository</li>
+<li>Update the /azure-devops-pipelines/demo-blueprints/drop-the-mic.ps1 script</li>
+<li>Submit a pull request.</li>
+</ul>
+</li>
+<li>Run the automation script, as covered in <a href="/yaml-pipelines-part9.html">Part 9: Self-service automation - A dream turns into reality</a> to verify that the following magic happens:<ul>
+<li>New repo is created in the specified Azure DevOps.</li>
+<li>New pipeline is created in the new repo.</li>
+<li>New config template is added to the Automation.Pipeline.Templates repo in the /Operations/Config folder.</li>
+<li>The sample from the AzureDevOps.Automation.Pipeline.Sample.&lt; app-type  is copied to the new repository.</li>
+<li>Run new pipeline to validate the continuous integration part of the new pipeline.</li>
+</ul>
+</li>
+</ol>
+<p>Simple, no?</p>
+<hr>
+<h1>What is next?</h1>
+<p>We continue to create new blueprints to cover all our existing application-types, which include good old Cobol, and new application-types emerging from our architecture runway. </p>
+<p>Watch this space for more exciting news.</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | <a href="/yaml-pipelines-part7.html">Part 7</a> | <a href="/yaml-pipelines-part8.html">Part 8</a> | <a href="/yaml-pipelines-part9.html">Part 9</a> | Part 10 |</p>
+</blockquote>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/automation.html">automation </a><a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/x-as-code.html">x-as-code </a>
+        | <a href="/yaml-pipelines-part10.html" rel="bookmark"
+         title="Permalink to Pipelines - Meet our second-generation app-type blueprints">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/automation.html">automation</a>(4)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(27)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(27)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(14)</li>
+                    <li><a href="/tag/agile.html">agile</a>(15)</li>
+                    <li><a href="/tag/code.html">code</a>(20)</li>
+                    <li><a href="/tag/devops.html">devops</a>(27)</li>
+                    <li><a href="/tag/learning.html">learning</a>(6)</li>
+                    <li><a href="/tag/quality.html">quality</a>(2)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(1)</li>
+                    <li><a href="/tag/tips.html">tips</a>(8)</li>
+                    <li><a href="/tag/posters.html">posters</a>(4)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(2)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(6)</li>
+                    <li><a href="/tag/testing.html">testing</a>(10)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(1)</li>
+                    <li><a href="/tag/xp.html">xp</a>(4)</li>
+                    <li><a href="/tag/events.html">events</a>(2)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (5)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (51)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
