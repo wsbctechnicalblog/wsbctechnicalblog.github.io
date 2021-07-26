@@ -4,7 +4,7 @@ Category: Posts
 Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part10
 Author: Willy-Peter Schaub
-Summary: Our quest for continuous improvement, simplicity, consistency, enablement, and automation has taking us into a realm of Azure Pipelines that amaze even our most critical engineers. 
+Summary: Our quest for continuous improvement, simplicity, consistency, enablement, and automation has taken us into a realm of Azure Pipelines that amaze even our most critical engineers. 
 
 ---
 
