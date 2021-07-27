@@ -4,7 +4,7 @@ Category: Posts
 Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part10
 Author: Willy-Peter Schaub
-Summary: Our quest for continuous improvement, simplicity, consistency, enablement, and automation has taking us into a realm of Azure Pipelines that amaze even our most critical engineers. 
+Summary: Our quest for continuous improvement, simplicity, consistency, enablement, and automation has taken us into a realm of Azure Pipelines that amaze even our most critical engineers. 
 
 ---
 
@@ -128,7 +128,7 @@ Now that we know the ingredients of our gourmet template stew, let us conclude w
 
 Create a new ...
 
-1. Feature branch in our AzureDevOps.Automation.Pipeline.Templates repository and a DRAFT pull request to start **collaborating** with the pipeline working group. It is important to use the latest and greatest ingredients and consider shared templates where possible to avoid **waste**.
+1. Feature branch in our AzureDevOps.Automation.Pipeline.Templates repository and a DRAFT pull request to start **collaborating** with the pipeline working group. It is important to use the latest and greatest ingredients and consider shared templates where possible to avoid **waste**. Also use a friendly < app-type > name when creating the unique blueprint folder in our repository.
 2. azure-pipeline-< app-type >-**start**.yml template ( feel free to copy-paste from an existing template).
 3. azure-pipeline-< app-type >-**control**.yml template.
 4. azure-pipeline-< app-type >-**config**.yml template.

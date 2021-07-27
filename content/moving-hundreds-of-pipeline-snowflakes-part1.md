@@ -38,7 +38,7 @@ Pipeline quick reference poster posts:
 
 > *"Continuous Delivery Pipeline Value Stream Mapping The Continuous Delivery Pipeline (CDP) represents the workflows, activities, and automation needed to shepherd a new piece of functionality from ideation to an on-demand release of value to the end user."* - © Scaled Agile, Inc.
 
-As eluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.
+As alluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.
 
 ![CICD Pipeline](/images/moving-hundreds-of-pipeline-snowflakes-part1-1.png)
 
