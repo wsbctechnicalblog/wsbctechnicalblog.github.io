@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-07-27T00:00:00-07:00</updated><entry><title>First International TDD Conference</title><link href="https://wsbctechnicalblog.github.io/first-international-tdd-conference.html" rel="alternate"></link><published>2021-07-27T00:00:00-07:00</published><updated>2021-07-27T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-07-27:/first-international-tdd-conference.html</id><summary type="html">&lt;p&gt;First International TDD Conference generated a lot of good interest and traction&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="TDD Conference" src="../images/TDDconf.png"&gt; &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-07-31T00:00:00-07:00</updated><entry><title>Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo</title><link href="https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html" rel="alternate"></link><published>2021-07-31T00:00:00-07:00</published><updated>2021-07-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-07-31:/dojo-tdd-getting-started-demo.html</id><summary type="html">&lt;p&gt;Exploring the advantages of Test-driven Development and the concept of self-healing code&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent TDD Dojo, our Sensei &lt;a href="https://twitter.com/alexbunardzic"&gt;Alex&lt;/a&gt; reiterated the main advantages of embracing Test-driven Development (TDD), such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating an up-to-date armour of automated tests your or your pipeline friends can rerun at will.&lt;/li&gt;
+&lt;li&gt;Fine-tuned code that is functional, maintainable, and plagued by fewer bugs.&lt;/li&gt;
+&lt;li&gt;Less need for and time spent debugging code.&lt;/li&gt;
+&lt;li&gt;Less friction and hesitance to make code changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also known as "Test First Development", TDD is a continuous loop of writing tests, adding, and refactoring code, as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="TDD" src="../images/dojo-tdd-getting-started-demo-1.png"&gt; &lt;/p&gt;
+&lt;p&gt;What followed in the Dojo seemed trivial but made my head spin for a while. Alex introduced the concept of "fake it until you make it" and self-healing code, which literally erased code changes that break the test(s). &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Self-Healing" src="../images/dojo-tdd-getting-started-demo-2.png"&gt; &lt;/p&gt;
+&lt;p&gt;Self-healing code is definitely not for the faint hearted and will take nerves of steel to adopt. However, it forces you to continuously make and test small autonomous code changes.&lt;/p&gt;
+&lt;p&gt;Seeing is believing. Enjoy the following Dojo demo recording and share your thoughts with me on &lt;a href="https://twitter.com/wpschaub"&gt;@wpschaub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/AQq-HwBzQtQ"&gt;&lt;img alt="TDD Video" src="../images/dojo-tdd-getting-started-demo-3.png"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="Events"></category><category term="code"></category><category term="quality"></category><category term="testing"></category><category term="tdd"></category><category term="events"></category></entry><entry><title>First International TDD Conference</title><link href="https://wsbctechnicalblog.github.io/first-international-tdd-conference.html" rel="alternate"></link><published>2021-07-27T00:00:00-07:00</published><updated>2021-07-27T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-07-27:/first-international-tdd-conference.html</id><summary type="html">&lt;p&gt;First International TDD Conference generated a lot of good interest and traction&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="TDD Conference" src="../images/TDDconf.png"&gt; &lt;/p&gt;
 &lt;p&gt;Although &lt;a href="http://agiledata.org/essays/tdd.html"&gt;Test-Driven Development (TDD)&lt;/a&gt; practice is already more than a quarter century old, it is still treated as the unloved foster child of software engineering. And while there is abundance of amazing international tech conferences on pretty much any other important software engineering practice, TDD remains ignored.&lt;/p&gt;
 &lt;p&gt;As an avid TDD advocate and practitioner, I felt the urge to remedy that oversight and back in April 2021 got the idea to organize the &lt;strong&gt;First International TDD Conference&lt;/strong&gt;. My intention was to expose the usefulness of TDD practice to the wider audience in the hopes of achieving greater legitimacy of this vitally important software engineering practice.&lt;/p&gt;
 &lt;p&gt;I was also impressed with the progress we are making here at &lt;strong&gt;WorkSafeBC&lt;/strong&gt; with TDD Dojos that were introduced by &lt;a href="https://www.linkedin.com/in/andrekaminski/?originalSubdomain=ca"&gt;Andre Kaminski, Director of IT&lt;/a&gt;. I thought, hey, why don’t we try to move the needle in the wider community by gathering TDD experts to present their teachings?
@@ -4322,67 +4335,4 @@ PowerShell Script to the Rescue&lt;/p&gt;
 
 &lt;p&gt;Migrating data is not an easy task, especially if you also need to migrate Test Plans, Suites, and Cases ... that is another turbulent topic for another day. &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Migration Tools for Azure DevOps" src="/images/move-to-team-project-warning-2.png"&gt;&lt;/p&gt;
-&lt;p&gt;We are busy investigating the open source Migration Tools for Azure DevOps, by Martin Hinshelwood, which will hopefully allow us to further automate and reduce the number of state changes during work item migrations. I will be back with an update!&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="azure-devops"></category><category term="tips"></category></entry><entry><title>Pull Request is your friend not foe!</title><link href="https://wsbctechnicalblog.github.io/pull-requests-friend.html" rel="alternate"></link><published>2020-10-19T13:13:00-07:00</published><updated>2020-10-19T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-19:/pull-requests-friend.html</id><summary type="html">&lt;p&gt;There is a debate around the value of pull requests (PR), fueled by unfortunate misunderstandings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;"The primary reason we use PRs is to encourage quality in the commits that are made to our code repositories"&lt;/em&gt; - &lt;a href="https://gist.github.com/mikepea/863f63d6e37281e329f8"&gt;GitHub Pull request Etiguette&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Start simple&lt;/h1&gt;
-&lt;p&gt;Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trunk), and a short-lived feature branch, as shown below.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Feature Branch" src="/images/Pull-Request-is-your-friend-not-foe-1.jpg"&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Create a short-lived feature branch.&lt;/li&gt;
-&lt;li&gt;Work on new work or a bug fix.&lt;/li&gt;
-&lt;li&gt;Merge (commit) changes to the target branch.&lt;/li&gt;
-&lt;li&gt;Continuous Integration (CI) build is triggered.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img alt="Caution" src="/images/Pull-Request-is-your-friend-not-foe-2.png"&gt;&lt;/p&gt;
-&lt;p&gt;Simple, but potentially dangerous. As the CI build is triggered after changes have been committed to the target branch, we could have a broken build and an undeployable branch. To make matters worse, anyone creating a new feature branch from an undeployable branch has just inherited a lot of unproductive pain!&lt;/p&gt;
-&lt;h1&gt;Embrace the four-eyes principle&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="Four-Eyes Principle" src="/images/Pull-Request-is-your-friend-not-foe-3.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;The four-eyes principle requires that at least four eyes, in other words, validate any change by at least two people. With &lt;a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops"&gt;Azure DevOps&lt;/a&gt; we can define &lt;a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops"&gt;Branch Policies&lt;/a&gt; to protect target branches, such as requiring:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Minimum number of reviewers (required and optional)&lt;/li&gt;
-&lt;li&gt;Linked work items (adds the context and traceability)&lt;/li&gt;
-&lt;li&gt;Resolved comments (all discussions and recommendations actioned)&lt;/li&gt;
-&lt;li&gt;Limited merge types&lt;/li&gt;
-&lt;li&gt;Successful build (which includes security scans, tests, etc.)&lt;/li&gt;
-&lt;li&gt;Thumbs up from other services&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We can require some or all of the above policies.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;Welcome Pull Request&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Pull Request is a change validation workflow, not a feature of the version control service.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="Welcome" src="/images/Pull-Request-is-your-friend-not-foe-4.png"&gt;&lt;/p&gt;
-&lt;p&gt;When we define one or more branch policies, we enforce them on &lt;a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops"&gt;Pull Requests&lt;/a&gt;, making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. However, that is a topic for another day.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Pull Request Workflow" src="/images/Pull-Request-is-your-friend-not-foe-5.jpg"&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Create a short-lived feature branch.&lt;/li&gt;
-&lt;li&gt;Work on new work or a bug fix.&lt;/li&gt;
-&lt;li&gt;Create a &lt;strong&gt;DRAFT&lt;/strong&gt; pull request, which enables collaboration, work item linking, and manual build validation policies.&lt;/li&gt;
-&lt;li&gt;When we are ready to have our pull request reviewed and completed, we can &lt;strong&gt;PUBLISH&lt;/strong&gt; our draft pull request.&lt;/li&gt;
-&lt;li&gt;Pre-defined optional and required reviewers are assigned and notified, policies are evaluated, and voting is enabled. The validation builds are triggered and perform a pre-merge validation - if the build(s) fail, the Pull Request cannot be completed.&lt;/li&gt;
-&lt;li&gt;When all policies are met, the Pull Request can be completed.&lt;/li&gt;
-&lt;li&gt;Associated changes are merged to the target branch.&lt;/li&gt;
-&lt;li&gt;Which, as before, triggers the continuous integration (CI) build.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 and 4 above.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!&lt;/p&gt;
-&lt;p&gt;Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build, as we need the results to review the changes effectively. See YAML sample below.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The advantages of Pull Requests are evident:
-- Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
-- Guardrail are validated and enforced
-- Automation of validations, which could (or not) include humanoid involvement&lt;/p&gt;
-&lt;h1&gt;YAML Sample&lt;/h1&gt;
-&lt;p&gt;Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# VALIDATIONS&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt;  &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Build.SourceBranchName&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;merge&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}:&lt;/span&gt;    
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;DSO&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;InjectValidations&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="version-control"></category></entry></feed>
+&lt;p&gt;We are busy investigating the open source Migration Tools for Azure DevOps, by Martin Hinshelwood, which will hopefully allow us to further automate and reduce the number of state changes during work item migrations. I will be back with an update!&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="azure-devops"></category><category term="tips"></category></entry></feed>
