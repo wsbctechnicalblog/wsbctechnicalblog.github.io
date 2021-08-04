@@ -26,5 +26,5 @@ Self-healing code is definitely not for the faint hearted and will take nerves o
 Seeing is believing. Enjoy the following Dojo demo recording and share your thoughts with me on [@wpschaub](https://twitter.com/wpschaub).
 
 
-[![TDD Video](../images/dojo-tdd-getting-started-demo-3.png)](https://youtu.be/7qcx3tEUSBE)
+[![TDD Video](../images/dojo-tdd-getting-started-demo-3.png)](TBD)
 
