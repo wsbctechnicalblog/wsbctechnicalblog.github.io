@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-07-31T00:00:00-07:00</updated><entry><title>Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo</title><link href="https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html" rel="alternate"></link><published>2021-07-31T00:00:00-07:00</published><updated>2021-07-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-07-31:/dojo-tdd-getting-started-demo.html</id><summary type="html">&lt;p&gt;Exploring the advantages of Test-driven Development and the concept of self-healing code&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent TDD Dojo, our Sensei &lt;a href="https://twitter.com/alexbunardzic"&gt;Alex&lt;/a&gt; reiterated the main advantages of embracing Test-driven Development (TDD), such as:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-08-05T00:00:00-07:00</updated><entry><title>Cultivate rapid spreading of knowledge</title><link href="https://wsbctechnicalblog.github.io/cultivate-rapid-spreading-of-knowledge.html" rel="alternate"></link><published>2021-08-05T00:00:00-07:00</published><updated>2021-08-05T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-08-05:/cultivate-rapid-spreading-of-knowledge.html</id><summary type="html">&lt;p&gt;Knowledge must be shared rapidly to enable teams to continuously deliver desired values&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;“In a beginner's mind there are many possibilities, but in the expert’s, there are few.” -Shunryu Suzuki&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Numerous studies have shown that people working in isolation prefer to enter the state known as the Flow. That state is the one of intense focus. Thanks to that intense focus, the entire problem and the solution spaces are loaded into a person’s head.&lt;/p&gt;
+&lt;p&gt;It goes without saying that entering such intense state of clear focus cannot happen easily. On average, some studies claim that it takes approximately 20 minutes before a person could settle in the state of the Flow. That is in a way like sailing – before the sail is set properly and the wind picks up and the boat is effortlessly gliding, the crew needs to invest serious time to set everything up properly.
+Reaching the state of the Flow is an expensive endeavor.&lt;/p&gt;
+&lt;p&gt;Is the price worth paying? Perhaps. But before we jump to any conclusions, let’s also review the flip side of the coin: once in the state of the Flow, how easy is it to break it?&lt;/p&gt;
+&lt;p&gt;As it turns out, nothing is easier than interrupting the state of the Flow. Any little disturbance in the environment is enough to destroy that state. A phone rings, an email notification chimes, someone coughs, etc. When that happens, we’re back to square one – another 20 or so minutes of messing around, trying to set everything up properly.&lt;/p&gt;
+&lt;p&gt;We see that the state of the Flow is extremely brittle. Is the price worth paying?&lt;/p&gt;
+&lt;h2&gt;Skills and Competencies&lt;/h2&gt;
+&lt;p&gt;Skills and competencies aren’t interchangeable. There exist considerable differences between these two capabilities.&lt;/p&gt;
+&lt;p&gt;What are the differences? In short, people can usually learn skills in a matter of months (sometimes even weeks); on the other hand, it is impossible to learn competencies in less than several years, minimum. We haven’t been able to identify any capabilities that would fall in the gap between skills and competencies.&lt;/p&gt;
+&lt;p&gt;When we talk about qualifications, we must clearly specify whether we’re looking for skills or for competencies.&lt;/p&gt;
+&lt;p&gt;Skills are easily shareable. Competencies aren’t. Often, competencies could even be mutually exclusive. There could be a person who is competent in following a process, but we cannot expect that person to also be competent in being creative.&lt;/p&gt;
+&lt;p&gt;As a matter of fact, competencies are unique to an individual. As such, building a team around certain competencies might end up being a very challenging task.&lt;/p&gt;
+&lt;h2&gt;Importance of teamwork&lt;/h2&gt;
+&lt;p&gt;Software development is a social activity. It takes a team to continuously deliver software. But in every team, we find disparate levels of knowledge. There are seasoned professionals with many years of proven track record and there are junior members who are just starting in their career, and then there are also intermediate members. And as we know, a chain is as strong as its weakest link. In this case, the team may end up being only as strong as its weakest, least knowledgeable member. Or a team will be as fast as its slowest member.&lt;/p&gt;
+&lt;p&gt;Every team lives or dies by their products/services (to put things a bit dramatically), which is why there is a natural push to set aside the time to onramp the slowest/weakest member(s). However, any time set aside to upgrade the skills in an asynchronous fashion robs the team of the bandwidth needed to continue delivering quality software. And yet if the weakest members are not trained properly, their inexperience will eat up a lot of the precious bandwidth.&lt;/p&gt;
+&lt;p&gt;How to solve this conundrum?&lt;/p&gt;
+&lt;p&gt;Embrace collective code ownership and synchronous collaboration!&lt;/p&gt;
+&lt;h2&gt;Knowledge transfer&lt;/h2&gt;
+&lt;p&gt;There is mounting body of evidence that shows how working in a team in real time (synchronously) is the fastest way to achieve much needed knowledge transfer.&lt;/p&gt;
+&lt;p&gt;The typical objection to working in a team environment in real time is that it is literally impossible to get into the much-coveted state of Flow. Interruptions in the team environment abound, especially with novices asking all kinds of questions that seem so obvious to more experienced members. And even if the state of Flow is achieved, it is only good for getting things done, not good for transferring knowledge.&lt;/p&gt;
+&lt;p&gt;That’s a valid objection and is seemingly unresolvable. Such situation is forcing us to find a different way of working synchronously in a team.&lt;/p&gt;
+&lt;p&gt;The solution to the impossibility to get into and stay in the state of Flow is to abandon the focus on the Flow and to instead turn our attention to the Beginner’s Mind.&lt;/p&gt;
+&lt;p&gt;How does knowledge transfer work when relying on the Beginner’s Mind (and, what is Beginner’s Mind)?&lt;/p&gt;
+&lt;p&gt;Beginner’s Mind refers to an attitude of openness and the ability to see things as fresh and new. Beginner’s Mind includes both doubt and possibility. Because of that, a person with the Beginner’s Mind is open to change, eager to change, eager to try something new.&lt;/p&gt;
+&lt;p&gt;When a person who is working is unsure of their boundaries, that person enters the Beginner’s Mind. That uncertainty leads the person to thoroughly test their environment. That state routinely happens whenever we find ourselves in a situation outside but near the limits of our comfort zone.&lt;/p&gt;
+&lt;p&gt;For example, if I’m otherwise comfortable with my environment but I don’t understand one thing, I will tend to try stuff until I figure that one thing I don’t understand. My state of Beginner’s Mind leads me to try more approaches, and try them rapidly, therefore I am more likely to succeed at a task than a person who thinks they know how it works.&lt;/p&gt;
+&lt;p&gt;The frustration brought about my insecurity of not understanding something creates a high energy cognitive state. If we now widen the scope and involve the team in the situation where everything is comfortable except on unsolved thing, the team is likely to hit the collective Beginner’s Mind. If the competence prevails over skills, one competent team member could drag the high energy cognitive state down to the lower energy state. When that happens, knowledge transfer is not possible.&lt;/p&gt;
+&lt;p&gt;We see from the above that the best way to transfer knowledge in the group situation is to focus on skills and allow the team to rise to the Beginner’s Mind state.&lt;/p&gt;
+&lt;h2&gt;Embrace instability (change)&lt;/h2&gt;
+&lt;p&gt;Unlike the state of Flow, which depends on stability, Beginner’s Mind depends on instability. When working in a group arrangement (for example, a team doing mob programming), instability gets created by encountering a problem and instead of falling back on the competence of the more experienced team members/team leads, intentionally open the mindshare to embrace the Beginner’s Mind which allows the team to try out various approaches in rapid fire succession. We say that the team is surfing the edge of chaos.&lt;/p&gt;
+&lt;p&gt;It is important to maintain the instability that leads to experimentation. How do we maintain instability in the group setting? Easy. Introduce the ‘musical chairs’ rotation. Don’t let anyone’s exploration turn into hardened competence. Rotate team members who are solving the problem; that way, knowledge transfer spreads like a forest fire and much more gets accomplished in a given timeframe.&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="xp"></category></entry><entry><title>Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo</title><link href="https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html" rel="alternate"></link><published>2021-07-31T00:00:00-07:00</published><updated>2021-07-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-07-31:/dojo-tdd-getting-started-demo.html</id><summary type="html">&lt;p&gt;Exploring the advantages of Test-driven Development and the concept of self-healing code&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a recent TDD Dojo, our Sensei &lt;a href="https://twitter.com/alexbunardzic"&gt;Alex&lt;/a&gt; reiterated the main advantages of embracing Test-driven Development (TDD), such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Creating an up-to-date armour of automated tests your or your pipeline friends can rerun at will.&lt;/li&gt;
 &lt;li&gt;Fine-tuned code that is functional, maintainable, and plagued by fewer bugs.&lt;/li&gt;
@@ -4258,81 +4289,4 @@ We realized that some of our email-enabled AD security groups received no notifi
 &lt;p&gt;The second bullet is the one that caught us off guard. If the permission is missing the Azure DevOps Pipeline event/notification service filters out the account's notifications. When notifications are filtered, no email is sent for impacted group(s) - silence prevails.&lt;/p&gt;
 &lt;p&gt;Make sure that your email-enabled AD security groups are members of your project &lt;strong&gt;Contributors or Readers&lt;/strong&gt;, which by default, have the View Releases permission.&lt;/p&gt;
 &lt;h1&gt;What Is Next?&lt;/h1&gt;
-&lt;p&gt;This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.&lt;/p&gt;</content><category term="Posts"></category><category term="azure"></category><category term="azure-devops"></category><category term="pipelines"></category></entry><entry><title>Use the move to team project feature with caution!</title><link href="https://wsbctechnicalblog.github.io/the-move-to-team-project-feature.html" rel="alternate"></link><published>2020-10-20T13:13:00-07:00</published><updated>2020-10-20T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-10-20:/the-move-to-team-project-feature.html</id><summary type="html">&lt;p&gt;The "Move to Team Project" feature can reset your work item state and dates&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are two valuable features in the Azure Boards service, one to change the work item type and the other to move work items between projects. However ... there is always a but ... the second comes with a few gotchas that turned a simple migration into a mind-numbing slog.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Move to Team project featute" src="/images/move-to-team-project-warning-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;The "&lt;strong&gt;Move to team project&lt;/strong&gt;" allows you to select one, more, or all of the work items on a backlog or from a work item query language (WIQL) result set and move them to another Azure DevOps project, within the same Azure DevOps organization.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Quick and simple!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;However ... here we go again ... when you look at the migrated data you will notice two things:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The work item state is reset to New&lt;/li&gt;
-&lt;li&gt;The Change Date is set to the migration date and time&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Why? Do not know, but would love to understand the reasoning behind the state and date changes. If you have not planned your migration you will not have to single step through hundreds to thousands of work items to determine the correct state and dates - mind numbing!&lt;/p&gt;
-&lt;h1&gt;Pre-migration planning&lt;/h1&gt;
-&lt;p&gt;After staring at the updated work item data in disbelief a few times, we have created a simple pre-migration checklist:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Export all work items to an Excel workbook to have a reference snapshot.&lt;/li&gt;
-&lt;li&gt;Tag the work items with the state, iteration, board column, and board lane.&lt;/li&gt;
-&lt;li&gt;Verify that target has all of the work item types for the set of items you need to migrate&lt;/li&gt;
-&lt;li&gt;Grab a can of your favourite brew ... you will need it!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Post-migration grooming&lt;/h1&gt;
-&lt;p&gt;After using the "Move to team project" feature to migrate all of the work items, we process the post-migration checklist:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Set the correct state of the work items, based on the state tag. Once done, remove tag.&lt;/li&gt;
-&lt;li&gt;Set the correct Iteration Path, based on the state tag. Once done, remove tag.&lt;/li&gt;
-&lt;li&gt;Move cards to the correct column and swim lane, based on the column and lane tags. Once done, remove tags.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If needed, set the correct Activated and Closed dates, which are now set to the date and time when you corrected the work item state :(
-PowerShell Script to the Rescue&lt;/p&gt;
-&lt;h1&gt;Samples&lt;/h1&gt;
-&lt;p&gt;Here are two sample scripts we added to our ever-growing library of automation and maintenance scripts to update the read-only Closed Date field. We want to change the dates back to the post migration dates, which we can extract from the Excel workbook we created in pre-migration step 1, so that the data on boards and the backlog looks valid.&lt;/p&gt;
-&lt;h2&gt;Set Changed Date Script&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[CmdletBinding()]&lt;/span&gt;
-&lt;span class="na"&gt;param(&lt;/span&gt;
-  &lt;span class="na"&gt;[string]   $orgName&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;lt;ORG&amp;gt;&amp;quot;,&lt;/span&gt;
-&lt;span class="s"&gt;  [string]   $patToken      = &amp;quot;&amp;lt;PAT&amp;gt;&amp;quot;,&lt;/span&gt;
-&lt;span class="s"&gt;  [string]   $workItemID    = &amp;quot;&amp;lt;invalid&amp;gt;&amp;quot;,&lt;/span&gt;
-&lt;span class="s"&gt;  [string]   $dateTime      = &amp;quot;&amp;lt;invalid&amp;gt;&amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Authentication header&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;(&amp;quot;{0}:{1}&amp;quot; -f &amp;quot;&amp;quot;,$patToken)&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Text.Encoding]::UTF8.GetBytes($basicAuth)&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Convert]::ToBase64String($basicAuth)&lt;/span&gt;
-&lt;span class="na"&gt;$headers&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;@{Authorization=(&amp;quot;Basic {0}&amp;quot; -f $basicAuth)}&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Setup Request&lt;/span&gt;
-&lt;span class="na"&gt;$request&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;https://dev.azure.com/&amp;quot; + $orgName + &amp;quot;/&amp;quot; + &amp;quot;_apis/wit/workitems/&amp;quot; + $workItemID + &amp;quot;?bypassRules=true&amp;amp;api-version=6.0&amp;quot;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Setup Body&lt;/span&gt;
-&lt;span class="na"&gt;$json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; 
-&lt;span class="na"&gt;&amp;#39;[&lt;/span&gt;
-&lt;span class="na"&gt;{&amp;quot;op&amp;quot;:&amp;quot;add&amp;quot;,&amp;quot;path&amp;quot;:&amp;quot;/fields/Microsoft.VSTS.Common.ClosedDate&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;&amp;#39; + $dateTime + &amp;#39;&amp;quot;},&lt;/span&gt;
-&lt;span class="na"&gt;{&amp;quot;op&amp;quot;:&amp;quot;add&amp;quot;,&amp;quot;path&amp;quot;:&amp;quot;/fields/System.History&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;Post-migration Closed Date correction to reflect original, not migration, date.&amp;quot;}&lt;/span&gt;
-&lt;span class="na"&gt;]&amp;#39;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Call Request&lt;/span&gt;
-&lt;span class="na"&gt;try&lt;/span&gt;
-&lt;span class="na"&gt;{&lt;/span&gt;
-  &lt;span class="na"&gt;Write-Host &amp;quot;Updating work item: $workItemID&amp;quot;&lt;/span&gt;
-  &lt;span class="na"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Invoke-RestMethod -Uri $request -headers $headers -Method PATCH -Body $json -ContentType &amp;#39;application/json-patch+json&amp;#39;&lt;/span&gt;
-&lt;span class="na"&gt;}&lt;/span&gt;
-&lt;span class="na"&gt;catch &lt;/span&gt;
-&lt;span class="na"&gt;{&lt;/span&gt;
-    &lt;span class="na"&gt;Write-Host &amp;quot;Error setting date - &amp;quot; $PSItem.Exception.Message&lt;/span&gt;
-    &lt;span class="na"&gt;Write-Host  $_.Exception|format-list -force&lt;/span&gt;
-&lt;span class="na"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;Calling Script&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# Batch 1&lt;/span&gt;
-&lt;span class="err"&gt;..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &amp;quot;&amp;lt;ORG&amp;gt;&amp;quot; -patToken &amp;quot;&amp;lt;PAT&amp;gt;&amp;quot; -workItemID &amp;quot;&amp;lt;WI #&amp;gt;&amp;quot; -dateTime &amp;quot;&amp;lt;DATE FROM EXCEL WORKBOOK&amp;gt;T13:00:00.00-08:00&amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &amp;quot;&amp;lt;ORG&amp;gt;&amp;quot; -patToken &amp;quot;&amp;lt;PAT&amp;gt;&amp;quot; -workItemID &amp;quot;&amp;lt;WI #&amp;gt;&amp;quot; -dateTime &amp;quot;&amp;lt;DATE FROM EXCEL WORKBOOK&amp;gt;T13:00:00.00-08:00&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Migrating data is not an easy task, especially if you also need to migrate Test Plans, Suites, and Cases ... that is another turbulent topic for another day. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Migration Tools for Azure DevOps" src="/images/move-to-team-project-warning-2.png"&gt;&lt;/p&gt;
-&lt;p&gt;We are busy investigating the open source Migration Tools for Azure DevOps, by Martin Hinshelwood, which will hopefully allow us to further automate and reduce the number of state changes during work item migrations. I will be back with an update!&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="azure-devops"></category><category term="tips"></category></entry></feed>
+&lt;p&gt;This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.&lt;/p&gt;</content><category term="Posts"></category><category term="azure"></category><category term="azure-devops"></category><category term="pipelines"></category></entry></feed>
