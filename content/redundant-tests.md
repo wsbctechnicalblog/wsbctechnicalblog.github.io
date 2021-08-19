@@ -8,7 +8,7 @@ Summary: Keeping the suite of automated tests lean is an essential trait of qual
 
 During our **TDD Dojo session** on July 23, 2021, I have demonstrated the benefits of writing one test at a time before writing any implementation code. The demo was recorded and published on our **WSBC Technical Blog** ([Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo](https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html)).
 
-Due to the time limitation, I didn’t get a chance to demonstrate another benefit of writing one tests at a time and doing mutation testing – the ability to keep the body of tests lean. This episode takes a closer look into the importance of preventing the test suite from becoming bloated.
+Due to the time limitation, I didn’t get a chance to demonstrate another benefit of writing one tests at a time and doing mutation testing – the ability to keep the entire suite of tests lean. This episode takes a closer look into the importance of preventing the test suite from becoming bloated.
 
 ## Tests are non-productive
 
@@ -42,7 +42,7 @@ public void TerribleRatingIsValid()
 
 The test _TerribleRatingIsValid_ describes the expectation that when we give the string “Terrible” to our application, asking it if that rating is valid, it will respond with true. That means that we must teach our application to be able to look for the ratings stored somewhere on the system and tell us either that it found the rating we asked it to look for (by returning true), or that is couldn’t find it (by returning false).
 
-After we’ve implemented that capability, we turned our attention to the next expectation. We are expecting our app to be able to tell us the percentage tip for the “Terrible” rating, and that percentage tip is expected to be 0%. We then created a new test (_TerribleRatingIs0Tip_) in which be ask the _Tip Calculator_ to tell us what the tip for the rating “Terrible” is. If the app returns 0, the test will pass, otherwise the test fails:
+After we’ve implemented that capability, we turned our attention to the next expectation. We are expecting our app to be able to tell us the percentage tip for the “Terrible” rating, and that percentage tip is expected to be 0%. We then created a new test (_TerribleRatingIs0Tip_) in which we ask the _Tip Calculator_ to tell us what the tip for the rating “Terrible” is. If the app returns 0, the test will pass, otherwise the test fails:
 
 ```
 [Fact]
@@ -115,7 +115,7 @@ When we run tests, they are all in green!
 
 ![6 tests green](/images/6testsgreen.png) 
  
-We feel good knowing that our design is delivering as expected. However, prudent engineering demand that we examine our design more thoroughly, so we will now run mutation testing:
+We feel good knowing that our design is delivering as expected. However, prudent engineering demands that we examine our design more thoroughly, so we will now run mutation testing:
  
 ![6 mutants killed](/images/6mutantskilled.png)
 
@@ -127,7 +127,7 @@ And now for the punchline: just because we have a solution where all tests are p
 
 So, how do we check for bloated tests?
 
-We must perform some housekeeping duties. Thanks to the mutation testing tool, the chore will most likely be very light. What is advisable to do now that we have an airtight solution is to try and get rid of some tests. We must go one test at a time. Let’s first eliminate the first test (_TerribleRatingIsValid_) and watch if mutation testing discovers any surviving mutants. After running mutation testing without having the first test, we see that our solution still has killed all mutants!
+We must perform some housekeeping duties. Thanks to the mutation testing tool, the chore will most likely be very light. What is advisable to do now that we have an airtight solution is to try and get rid of some tests. We must go one test at a time. Let’s first eliminate the first test (_TerribleRatingIsValid_) and pay attention to see if mutation testing discovers any surviving mutants. After running mutation testing without having the first test, we see that our solution still has killed all mutants!
 Great news. Let’s carry on by removing the second test (_TerribleRatingIs0Tip_). After running mutation testing again, we see that no mutants survive. Yay!
 
 Let’s try removing the third test (_TerribleRatingFor100Is100_). Run mutation testing again and – uh-oh! – one mutant survives!
@@ -146,7 +146,7 @@ Oh-oh, quickly restore that last test, and we’re back to normal.
 
 ## Analysis
 
-In the above simple exercise, we have delivered a solid design guided by 6 micro tests. When we gat all 6 tests to pass, we ran mutation testing and got additional confidence boost when no mutants have survived. We were assured that our solution is now placed on solid ground.
+In the above simple exercise, we have delivered a solid design guided by 6 micro tests. When we got all 6 tests to pass, we ran mutation testing and got additional confidence boost when no mutants have survived. We were assured that our solution is now placed on solid ground.
 
 However, just because we have a complete and solid solution doesn’t mean it is engineered properly. We demonstrated the shoddy engineering by removing some tests and seeing that despite the tests not being present, no mutants survived the execution of the mutation testing.
 
