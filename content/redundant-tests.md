@@ -67,9 +67,10 @@ public void TerribleRatingFor100Is100()
 ```
 
 Now that we got scenario 1 implemented, we moved to scenario 2 – calculate grand total for $100.00 bill total and “Poor” service rating. The stated expectation is that in such scenario the grand total should be $105.00, which means that “Poor” rating is calculated with the 5% tip.
+
 In designing the processing of the “Poor” rating we followed the same design that guided us in designing the “Terrible” rating. We now proceeded to design the “Poor” rating by crafting three tests:
 
-1. Check if “Poor” rating is valid
+1) Check if “Poor” rating is valid
 
 ```
 [Fact]
@@ -81,7 +82,7 @@ public void PoorRatingIsValid()
 }
 ```
 
-2. Check if “Poor” rating is calculated with 5% tip
+2) Check if “Poor” rating is calculated with 5% tip
 
 ```
 [Fact]
@@ -93,7 +94,7 @@ public void PoorRatingIs5Tip()
 }
 ```
 
-3. Check if grand total for the bill total $100.00 and rating “Poor” is $105.00
+3) Check if grand total for the bill total $100.00 and rating “Poor” is $105.00
 
 ```
 [Fact]
