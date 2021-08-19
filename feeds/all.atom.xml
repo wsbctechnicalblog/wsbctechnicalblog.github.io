@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-08-18T00:00:00-07:00</updated><entry><title>Get rid of redundant tests</title><link href="https://wsbctechnicalblog.github.io/remove-redundant-tests.html" rel="alternate"></link><published>2021-08-18T00:00:00-07:00</published><updated>2021-08-18T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-08-18:/remove-redundant-tests.html</id><summary type="html">&lt;p&gt;Keeping the suite of automated tests lean is essential trait of quality engineering. Remove all tests that don't add any value.&lt;/p&gt;</summary><content type="html">&lt;p&gt;During our &lt;strong&gt;TDD Dojo session&lt;/strong&gt; on July 23, 2021, I have demonstrated the benefits of writing one test at a time before writing any implementation code. The demo was recorded and published on our &lt;strong&gt;WSBC Technical Blog&lt;/strong&gt; (&lt;a href="https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html"&gt;Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo&lt;/a&gt;).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-08-18T00:00:00-07:00</updated><entry><title>Get rid of redundant tests</title><link href="https://wsbctechnicalblog.github.io/remove-redundant-tests.html" rel="alternate"></link><published>2021-08-18T00:00:00-07:00</published><updated>2021-08-18T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-08-18:/remove-redundant-tests.html</id><summary type="html">&lt;p&gt;Keeping the suite of automated tests lean is an essential trait of quality software engineering. Diligently remove all tests that don't add any value.&lt;/p&gt;</summary><content type="html">&lt;p&gt;During our &lt;strong&gt;TDD Dojo session&lt;/strong&gt; on July 23, 2021, I have demonstrated the benefits of writing one test at a time before writing any implementation code. The demo was recorded and published on our &lt;strong&gt;WSBC Technical Blog&lt;/strong&gt; (&lt;a href="https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html"&gt;Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Due to the time limitation, I didn’t get a chance to demonstrate another benefit of writing one tests at a time and doing mutation testing – the ability to keep the body of tests lean. This episode takes a closer look into the importance of preventing the test suite from becoming bloated.&lt;/p&gt;
 &lt;h2&gt;Tests are non-productive&lt;/h2&gt;
 &lt;p&gt;No one hired us to write tests. We write them because that is the best way to speed up the delivery. Still, we need to keep in mind that tests are not a product we could sell. No customer would ever agree to pay someone to write tests; customers are only interested in paying for the finished product.&lt;/p&gt;
@@ -43,11 +43,9 @@
 &lt;span class="na"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now that we got scenario 1 implemented, we moved to scenario 2 – calculate grand total for $100.00 bill total and “Poor” service rating. The stated expectation is that in such scenario the grand total should be $105.00, which means that “Poor” rating is calculated with the 5% tip.
-In designing the processing of the “Poor” rating we followed the same design that guided us in designing the “Terrible” rating. We now proceeded to design the “Poor” rating by crafting three tests:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Check if “Poor” rating is valid&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Now that we got scenario 1 implemented, we moved to scenario 2 – calculate grand total for $100.00 bill total and “Poor” service rating. The stated expectation is that in such scenario the grand total should be $105.00, which means that “Poor” rating is calculated with the 5% tip.&lt;/p&gt;
+&lt;p&gt;In designing the processing of the “Poor” rating we followed the same design that guided us in designing the “Terrible” rating. We now proceeded to design the “Poor” rating by crafting three tests:&lt;/p&gt;
+&lt;p&gt;1) Check if “Poor” rating is valid&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Fact]&lt;/span&gt;
 &lt;span class="na"&gt;public void PoorRatingIsValid()&lt;/span&gt;
 &lt;span class="na"&gt;{&lt;/span&gt;
@@ -57,9 +55,7 @@ In designing the processing of the “Poor” rating we followed the same design
 &lt;span class="na"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Check if “Poor” rating is calculated with 5% tip&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;2) Check if “Poor” rating is calculated with 5% tip&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Fact]&lt;/span&gt;
 &lt;span class="na"&gt;public void PoorRatingIs5Tip()&lt;/span&gt;
 &lt;span class="na"&gt;{&lt;/span&gt;
@@ -69,9 +65,7 @@ In designing the processing of the “Poor” rating we followed the same design
 &lt;span class="na"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Check if grand total for the bill total $100.00 and rating “Poor” is $105.00&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;3) Check if grand total for the bill total $100.00 and rating “Poor” is $105.00&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Fact]&lt;/span&gt;
 &lt;span class="na"&gt;public void PoorRatingFor100Is105()&lt;/span&gt;
 &lt;span class="na"&gt;{&lt;/span&gt;
@@ -108,7 +102,7 @@ Great news. Let’s carry on by removing the second test (&lt;em&gt;TerribleRati
 &lt;p&gt;How can we be sure that by removing a test (or several tests), we're not tossing the proverbial baby out with the dirty bathwater? I often hear that question being asked when we start getting rid of those redundant tests.&lt;/p&gt;
 &lt;p&gt;We can be sure that we haven't discarded valuable tests by the virtue of the fact that removing a test did not produce a surviving mutant (or, surviving mutants). For example, we may think that &lt;em&gt;TerribleRatingIsValid&lt;/em&gt; test is offering a unique value. However, if indeed that test were unique, removing it would out of necessity produce at least one surviving mutant. Same reasoning applies to the dilemma we may experience when asked to remove &lt;em&gt;TerribleRatingIs0Tip&lt;/em&gt; test. But even after removing that test we see that no mutants survived. That means that whatever these two tests are testing, has already been tested by the third test: &lt;em&gt;TerribleRatingFor100Is100&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;If we now know that &lt;em&gt;TerribleRatingFor100Is100&lt;/em&gt; test is checking both that "Terrible" rating is valid and also that "Terrible" rating has 0% tip, we should be able to understand why are &lt;em&gt;TerribleRatingIsValid&lt;/em&gt; and &lt;em&gt;TerribleRatingIs0Tip&lt;/em&gt; tests completely unnecessary. Those tests are just clutter, only adding noise and providing no value to our solution.&lt;/p&gt;
-&lt;p&gt;Same discussion then apples for the "Poor" rating processing. &lt;em&gt;PoorRatingIsValid&lt;/em&gt; and &lt;em&gt;PoorRatingIs5Tip&lt;/em&gt; tests are redundant because all the testing these two tests are performing is already performed by the PoorRatingFor100Is105 test. It is therefore safe to reduce the number of tests from 6 down to only 2.&lt;/p&gt;
+&lt;p&gt;Same discussion then apples for the "Poor" rating processing. &lt;em&gt;PoorRatingIsValid&lt;/em&gt; and &lt;em&gt;PoorRatingIs5Tip&lt;/em&gt; tests are redundant because all the testing these two tests are performing is already performed by the &lt;em&gt;PoorRatingFor100Is105&lt;/em&gt; test. It is therefore safe to reduce the number of tests from 6 down to only 2.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We have seen in the above demonstration how, while writing micro tests before writing implementation code is an indispensable technique for producing solid, decoupled design, the final product oftentimes will end up not needing some of those micro tests. We can view those redundant tests as scaffolding, something we erect for the time being, while we are working on the product. But eventually the time comes when all that scaffolding isn’t needed anymore, and it is advisable to remove it. Removing the scaffolding (i.e., redundant tests) not only minimizes the noise and maximizes the signal, but also relieves the system from the burden of having to run unnecessary tests each time test suite executes.&lt;/p&gt;</content><category term="Posts"></category><category term="tdd"></category><category term="testing"></category></entry><entry><title>Cultivate rapid spreading of knowledge</title><link href="https://wsbctechnicalblog.github.io/cultivate-rapid-spreading-of-knowledge.html" rel="alternate"></link><published>2021-08-05T00:00:00-07:00</published><updated>2021-08-05T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-08-05:/cultivate-rapid-spreading-of-knowledge.html</id><summary type="html">&lt;p&gt;Knowledge must be shared rapidly to enable teams to continuously deliver desired values&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;“In a beginner's mind there are many possibilities, but in the expert’s, there are few.” -Shunryu Suzuki&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Numerous studies have shown that people working in isolation prefer to enter the state known as the Flow. That state is the one of intense focus. Thanks to that intense focus, the entire problem and the solution spaces are loaded into a person’s head.&lt;/p&gt;
