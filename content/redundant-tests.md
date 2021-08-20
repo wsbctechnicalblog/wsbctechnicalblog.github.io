@@ -8,7 +8,7 @@ Summary: Keeping the suite of automated tests lean is an essential trait of qual
 
 During our **TDD Dojo session** on July 23, 2021, I have demonstrated the benefits of writing one test at a time before writing any implementation code. The demo was recorded and published on our **WSBC Technical Blog** ([Sensei Alex "fakes it until he makes it" in our Test-driven Development (TDD) dojo](https://wsbctechnicalblog.github.io/dojo-tdd-getting-started-demo.html)).
 
-Due to the time limitation, I didn’t get a chance to demonstrate another benefit of writing one tests at a time and doing mutation testing – the ability to keep the entire suite of tests lean. This episode takes a closer look into the importance of preventing the test suite from becoming bloated.
+Due to the time limitation, I didn’t get a chance to demonstrate another benefit of writing one test at a time and doing mutation testing – the ability to keep the entire suite of tests lean. This episode takes a closer look into the importance of preventing the test suite from becoming bloated.
 
 ## Tests are non-productive
 
