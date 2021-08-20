@@ -1,7 +1,7 @@
 Title: Automation enables engineering to focus on value
 Date: 2021-04-29
 Category: Posts
-Tags: automation
+Tags: automation, eliminate-waste
 Slug: automation-lesson-1
 Author: Willy-Peter Schaub
 Summary: Asking yourself why you are performing a set of manual tasks again and again? If yes, automate!
@@ -71,7 +71,7 @@ OK, now let us look at the facts ...
 ![Robot versus Humanoid](../images/automation-lesson-1-4.png) 
 
 
-I do not believe that we must discuss this any further for the Penny to drop that automation at the right time is **cost effective**, **productive**, and **consistent**.
+I do not believe that we must discuss this any further for the Penny to drop that automation at the right time is **cost effective**, **productive**, and **consistent**. Also, there is a lot less **WASTE**!
 
 Have a great weekend!
 
