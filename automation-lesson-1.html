@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines - </title>
+        <title>Automation enables engineering to focus on value - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,48 +32,117 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html" rel="bookmark"
-            title="Permalink to Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines">Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines</a></h1>
+    <h1 style="font-size:2em;"><a href="/automation-lesson-1.html" rel="bookmark"
+            title="Permalink to Automation enables engineering to focus on value">Automation enables engineering to focus on value</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 13 April 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Sat 21 August 2021</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Summarising the main points of YAML syntax, within the context of our generic blueprint-based pipelines.</p>
+            <p>Asking yourself why you are performing a set of manual tasks again and again? If yes, automate!</p>
         </div>
     
         <div class="entry-content">
-            <p>Quick Reference Posters help us foster collaboration, visualise and get across key points for specific topics. They also serve as handy cheat sheets!</p>
+            <p>TBD
+Ask myself often ... nah, creating script sounds like work</p>
 <hr>
+<h1>Case Study #1: Creating Iteration Paths</h1>
+<p>Roughly every two years must add 12 program increments, each with 5 iterations to our Azure DevOps (AzDO) projects and then map them to all the (AzDO) Teams within the AzDO project.</p>
+<p>I decided to invest some of my personal time to get some rough estimates on how long this exercise takes. Here is a summary of effort in our sandbox:</p>
+<table>
+<thead>
+<tr>
+<th>MANUAL TASK</th>
+<th align="center">REF</th>
+<th align="right">SECONDS</th>
+<th align="right">CLICKS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create a program increment</td>
+<td align="center">1</td>
+<td align="right">13</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td>Create five (5) iterations under the program increment</td>
+<td align="center">2</td>
+<td align="right">65</td>
+<td align="right">90</td>
+</tr>
+<tr>
+<td>Map five iterations to a team</td>
+<td align="center">3</td>
+<td align="right">11</td>
+<td align="right">9</td>
+</tr>
+</tbody>
+</table>
+<p>So, this does not look to bad, if you make no typos. What is important to remember is that the Azure DevOps user interface only allows you to add 5 iterations to a team at a time ... not very productive, but that is a story for another post.</p>
+<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-1.png"> </p>
+<p>The number of projects and teams is volatile, but today I would have to update 257 teams across 25 projects. Does not sound too bad ... let us get a <strong>rough</strong> estimates on how many times I would have to click my keyboard and how long I would have to spend behind my laptop this weekend.</p>
 <blockquote>
-<p>YAML Generic Blueprint-based Pipeline Quick Reference</p>
-<p><img alt="Poster" src="/images/moving-hundreds-of-pipeline-snowflakes-qr-1-1.png"></p>
+<p><strong>TASK</strong></p>
+<p>Add 12 program increments, each with 5 iterations, to each project (25) and map the (12*5=60) iterations to each team (257) in each project.</p>
 </blockquote>
-<p>The quick reference poster introduces:</p>
-<ul>
-<li>Basic concepts for <strong>Parameters</strong>, <strong>Variables</strong>, <strong>Triggers</strong>, <strong>Resources</strong>, and <strong>Templates</strong>, as used in our generic blueprint-based pipelines. See <a href="https://aka.ms/yaml">YAML Schema</a> for details.</li>
-<li>In the centre of the poster, our single-job, multiple-steps <strong>generic blueprint</strong>. See <a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a> for details.</li>
-<li>On the right-hand side, our <strong>bootstrap template</strong>. See <a href="/yaml-pipelines-part3.html">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a> for details.</li>
-</ul>
+<p>Here is a visual after creating one program increment with 5 iterations:</p>
+<p><img alt="Task" src="../images/automation-lesson-1-2.png"> </p>
+<table>
+<thead>
+<tr>
+<th align="center">REF</th>
+<th>CALCULATION</th>
+<th align="right">SECONDS</th>
+<th align="right">CLICKS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td>12 PIs * 25 projects * x = 300 * x</td>
+<td align="right">3900</td>
+<td align="right">2700</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>12 PIs * 25 projects * x = 300 * x</td>
+<td align="right">19500</td>
+<td align="right">27000</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td>(120/5) * 257 teams  * x = 6168 * x</td>
+<td align="right">67848</td>
+<td align="right">55512</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p><img alt="Poster" src="/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png"></p>
-<p>DOWNLOAD &gt;&gt; <a href="/documents/multi-stage-blueprint-based-1st-gen-pipelines-poster.pdf">PDF</a></p>
+<p><strong>TOTALS</strong></p>
+<p><strong>Seconds</strong>: 91248 = 25.367 hours</p>
+<p><strong>Clicks</strong> : 85212</p>
 </blockquote>
-<p>Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!</p>
-<p>| POSTER 1 (this) | <a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html">POSTER 2</a> |</p>
+<p>So, if I fill up my Ovomaltine mug on Saturday morning at 9AM, I will be done with the task by Sunday morning just before 11AM. A typical operational task and doable, no?!? </p>
+<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-3.png"> </p>
 <hr>
+<h1>Compare it to our automation scripts</h1>
+<p>OK, now let us look at the facts ...</p>
+<p><img alt="Robot versus Humanoid" src="../images/automation-lesson-1-4.png"> </p>
+<p>I do not believe that we must discuss this any further for the Penny to drop that automation at the right time is <strong>cost effective</strong>, <strong>productive</strong>, and <strong>consistent</strong>. Also, there is a lot less <strong>WASTE</strong>!</p>
+<p>Have a great weekend!</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
-        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/devops.html">devops </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/posters.html">posters </a><a href="/tag/x-as-code.html">x-as-code </a>
-        | <a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html" rel="bookmark"
-         title="Permalink to Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines">Permalink</a>            
+        | Tagged: <a href="/tag/automation.html">automation </a><a href="/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="/automation-lesson-1.html" rel="bookmark"
+         title="Permalink to Automation enables engineering to focus on value">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
