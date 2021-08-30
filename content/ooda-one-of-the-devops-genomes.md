@@ -4,7 +4,7 @@ Category: Posts
 Tags: devops
 Slug: ooda-one-of-the-devops-genomes
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: If we unpack the DevOps DNA we will find a prominent genome labeled O-O-D-A.
 
 In the [analyzing the DNA of DevOps](https://opensource.com/article/18/11/analyzing-devops) article I argued that waterfall, agile, and other development frameworks have not only shaped the evolution of DevOps, but that they are part of the DevOps DNA. Recent explorations of DevOps, as it evolves and matures, revealed an exciting hypothesis that OODA is another one of its numerous genomes. 
 
