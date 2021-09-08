@@ -28,7 +28,7 @@ The [Universal Artifacts](https://docs.microsoft.com/en-us/azure/devops/artifact
 
 As shown above, we developed a universal artifact app-type blueprint that create a pipeline that publishes our toolbox, containing scripts and configuration files, to a development universal artifact and starts running security scans, irrespective from which branch the pipeline is triggered from. If triggered from a release/* branch, it involves our DevSecOps team in a security review and then deploys to an additional production universal artifact.
 
-In our boot-strap.yml template, we download the universal package.
+In our boot-strap.yml template, we download the universal package, which requires an average of **10 seconds**.
 
 ```
 # ===========================================================================
@@ -82,13 +82,13 @@ And finally, we pass configuration files contained in the toolbox package, such 
 
 Works like a charm!
 
-Do we need the universal artifact pipeline and the complexity or generating, publishing, and downloading the toolbox package? What happens when we delete it from our Azure Pipelines?
+Do we need the universal artifact pipeline and the complexity of generating, publishing, and downloading the toolbox package? What happens when we **remove** it from our Azure Pipeline process?
 
 # A la repository
 
 ![Code Repo](/images/share-your-toolbox-with-pipelines-3.png)
 
-TBD
+An alternative approach is to separate the toolbox, containing scripts and configuration files, into a separate Azure Repo. We must let the system know about the external repository so that we can integrate it into our pipeline.
 
 ```
 - repository: Toolbox
@@ -96,13 +96,19 @@ TBD
   name: 'Common/Automation.Scripts'
 ```
 
-TBD
+We then **check out** the contents of the external repository, relative to the agent's build directory (e.g. \_work\1). Default is the directory **s** and adds an average of **3 seconds** processing time to our pipeline.
+
+> ![Waste](/images/share-your-toolbox-with-pipelines-6.png) 
+>
+> **WASTE ALERT** - (10-3) = 7 seconds of waste detected in the first Universal Artifact strategy!
+
 
 ```
-- checkout: ToolBox
+- checkout: Toolbox
+  path: tool-box
 ```
 
-TBD
+Tweak out template(s) to pickup the artifacts, such as the configuration file for the WhiteSource Unified Agent, from a different location.
 
 ```
 $(Build.SourcesDirectory)
@@ -111,13 +117,11 @@ $(Build.SourcesDirectory)
   continueOnError: true
 ```
 
-TBD
-
-Much simpler, no?
+The Azure Repo strategy has less **moving** parts, is **faster** and **simpler**, no?
 
 # Which option do you prefer?
 
 ![Option](/images/share-your-toolbox-with-pipelines-4.png)
 
-I wish we had comments enabled on our technical blog, so that we could have a discussion around the two presented options. In the interim, please DM me on [twitter](www.twitter.com/wpschaub) or [linkedin](www.linkedin.com/in/wpschaub), or better add a comment on the Twitter or LinkedIn post which nudged you to this article.
+I wish we had comments enabled on our technical blog, so that we could have a vibrant discussion of the two presented and other options. In the interim, please DM me on [twitter](www.twitter.com/wpschaub) or [linkedin](www.linkedin.com/in/wpschaub), or better add a comment on the Twitter or LinkedIn post which nudged you to this article, to share your thoughts.
 
