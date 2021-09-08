@@ -1,7 +1,7 @@
 Title: Two ways to share your toolbox with your pipelines 
 Date: 2021-09-08
 Category: Posts 
-Tags: devops
+Tags: azure-devops,devops, pipelines
 Slug: share-your-toolbox-with-pipelines
 Author: Willy-Peter Schaub
 Summary: Let us review two strategies to share scripts and config files with your Azure (YAML) Pipelines.
@@ -87,8 +87,6 @@ Do we need the universal artifact pipeline and the complexity or generating, pub
 # A la repository
 
 ![Code Repo](/images/share-your-toolbox-with-pipelines-3.png)
-
-X
 
 TBD
 
