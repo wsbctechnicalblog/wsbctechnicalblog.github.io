@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Two ways to share your toolbox with your pipelines - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/share-your-toolbox-with-pipelines.html" rel="bookmark"
+            title="Permalink to Two ways to share your toolbox with your pipelines">Two ways to share your toolbox with your pipelines</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 08 September 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Let us review two strategies to share scripts and config files with your Azure (YAML) Pipelines.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>The need to share PowerShell Scripts or configuration files is a common requirement when working with Azure Pipelines. For example, pass a configuration file to the <a href="https://whitesource.atlassian.net/wiki/spaces/WD/pages/804814917/Unified+Agent+Overview">WhiteSource</a> unified agent tool, or run a PowerShell script to invite Zombies created by the <a href="https://stryker-mutator.io/">Stryker</a> mutation tool. </p>
+<p><img alt="Inject" src="/images/share-your-toolbox-with-pipelines-1.png"></p>
+<p>These are just two examples of a platter of common and re-usable features we need to <strong>inject</strong> into the flow of our Azure Pipelines.</p>
+<p>Let us review two options. The first is the one we embraced on our boot-strap template, as documented in the <a href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html">pipeline snowflakes</a> series and the second is a simplification I will present to our pipeline working group to reduce complexity and waste.</p>
+<blockquote>
+<p>Requirement:</p>
+<p><em>As an Azure Pipeline I want to download a toolbox package, so that I can re-use tested and well-known scripts, as well as verified configuration files.</em></p>
+</blockquote>
+<h1>A la Universal Artifact</h1>
+<p><img alt="UA" src="/images/share-your-toolbox-with-pipelines-2.png"></p>
+<p>The <a href="https://docs.microsoft.com/en-us/azure/devops/artifacts/quickstarts/universal-packages?view=azure-devops">Universal Artifacts</a> are probably one of the longest running feature previews in Azure DevOps. It allows you to store <strong>anything</strong> up to 4TB - although you should have a serious chat with yourself if your packages start growing beyond kilobytes in size. You want small and focused packages, that can be downloaded fast and do not dump any <strong>waste</strong> on your build agent.</p>
+<p><img alt="Pipeline" src="/images/share-your-toolbox-with-pipelines-5.png"></p>
+<p>As shown above, we developed a universal artifact app-type blueprint that create a pipeline that publishes our toolbox, containing scripts and configuration files, to a development universal artifact and starts running security scans, irrespective from which branch the pipeline is triggered from. If triggered from a release/* branch, it involves our DevSecOps team in a security review and then deploys to an additional production universal artifact.</p>
+<p>In our boot-strap.yml template, we download the universal package, which requires an average of <strong>10 seconds</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># ===========================================================================</span>
+<span class="cp"># BOOTSTRAP TOOLBOX</span>
+<span class="cp"># ===========================================================================</span>
+<span class="cp"># Production Toolbox</span>
+<span class="p">-</span> <span class="nf">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">and</span><span class="p">(</span> <span class="n">ne</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">loadDVTBox</span><span class="p">),</span> <span class="err">&#39;</span><span class="n">yes</span><span class="err">&#39;</span><span class="p">),</span> <span class="n">or</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span> <span class="err">&#39;</span><span class="n">init</span><span class="err">&#39;</span> <span class="p">),</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span> <span class="err">&#39;</span><span class="n">runbuildingcodeonly</span><span class="err">&#39;</span> <span class="p">),</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">forceToolbox</span><span class="p">),</span> <span class="err">&#39;</span><span class="nb">true</span><span class="err">&#39;</span><span class="p">)))</span> <span class="p">}}</span><span class="o">:</span>
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">UniversalPackages</span><span class="mi">@0</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Bootstrap</span> <span class="n">download</span> <span class="n">toolbox</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">command</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">download</span><span class="err">&#39;</span>
+      <span class="nl">downloadDirectory</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">$</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DefaultWorkingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">ToolboxRuntime</span><span class="err">&#39;</span>
+      <span class="nl">feedsToUse</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">internal</span><span class="err">&#39;</span>
+      <span class="nl">vstsFeed</span><span class="p">:</span> <span class="err">&#39;</span><span class="o">&lt;</span><span class="n">FEED_GUID</span><span class="o">&gt;</span><span class="err">&#39;</span>           <span class="err">#</span> <span class="n">Automation</span><span class="p">.</span><span class="n">Pipeline</span><span class="p">.</span><span class="n">Templates</span>
+      <span class="nl">vstsFeedPackage</span><span class="p">:</span> <span class="err">&#39;</span><span class="o">&lt;</span><span class="n">PACKAGE</span><span class="o">-</span><span class="n">GUID</span><span class="o">&gt;</span><span class="err">&#39;</span> <span class="err">#</span> <span class="n">toolbox</span>
+      <span class="nl">vstsPackageVersion</span><span class="p">:</span> <span class="sc">&#39;*&#39;</span>
+</code></pre></div>
+
+<p>We run scripts from the package in our pipeline, for example, to publish telemetry from the boot-strap template.</p>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">$</span><span class="p">{{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span> <span class="err">&#39;</span><span class="n">init</span><span class="err">&#39;</span> <span class="p">)</span> <span class="p">}}</span><span class="o">:</span>
+  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
+    <span class="nl">displayName</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">Bootstrap</span> <span class="n">Telemetry</span> <span class="n">START</span><span class="err">&#39;</span>
+    <span class="nl">inputs</span><span class="p">:</span>
+      <span class="nl">filePath</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">$</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DefaultWorkingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">ToolboxRuntime</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">AI</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">event</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">ai</span><span class="p">.</span><span class="n">ps1</span><span class="err">&#39;</span>
+      <span class="nl">arguments</span><span class="p">:</span> <span class="o">-</span><span class="n">OperationId</span> <span class="s">&quot;$(Build.BuildNumber).$(Build.BuildId)&quot;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">Event</span>  <span class="err">&#39;</span><span class="n">Bootstrap</span><span class="err">&#39;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">Action</span> <span class="err">&#39;</span><span class="n">Start</span><span class="err">&#39;</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">BootstrapMode</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">}}</span> <span class="err">`</span> 
+                 <span class="o">-</span><span class="n">ApplicationType</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">applicationType</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">ApplicationBlueprint</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">PortfolioName</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">portfolioName</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">ProductName</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">productName</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">SourcesDirectory</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">sourcesDirectory</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">VerboseFlag</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">verbose</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">Previews</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">previews</span><span class="p">}}</span> <span class="err">`</span>
+                 <span class="o">-</span><span class="n">ForceCheck</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">forceCheck</span><span class="p">}}</span>
+      <span class="nl">failOnStderr</span><span class="p">:</span> <span class="nb">true</span>
+      <span class="nl">pwsh</span><span class="p">:</span> <span class="nb">true</span>
+    <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">true</span>
+</code></pre></div>
+
+<p>And finally, we pass configuration files contained in the toolbox package, such as wss-unified-agent.config, when running security scans.</p>
+<div class="highlight"><pre><span></span><code>- script: java -jar wss-unified-agent.jar -c $(System.DefaultWorkingDirectory)/ToolboxRuntime/Config/DevSecOps/wss-unified-agent.config -apiKey <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">apiKeyAPI</span><span class="cp">}</span>} -product <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">whitesourceProductName</span><span class="cp">}</span>} -project <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="cp">}</span>}.<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="cp">}</span>} -logLevel DEBUG
+  displayName: &#39;Bootstrap WhiteSource Unified Agent Scan&#39;
+  continueOnError: true
+</code></pre></div>
+
+<p>Works like a charm!</p>
+<p>Do we need the universal artifact pipeline and the complexity of generating, publishing, and downloading the toolbox package? What happens when we <strong>remove</strong> it from our Azure Pipeline process?</p>
+<h1>A la repository</h1>
+<p><img alt="Code Repo" src="/images/share-your-toolbox-with-pipelines-3.png"></p>
+<p>An alternative approach is to separate the toolbox, containing scripts and configuration files, into a separate Azure Repo. We must let the system know about the external repository so that we can integrate it into our pipeline.</p>
+<div class="highlight"><pre><span></span><code><span class="err">- repository: Toolbox</span>
+<span class="err">  type: git</span>
+<span class="err">  name: &#39;Common/Automation.Scripts&#39;</span>
+</code></pre></div>
+
+<p>We then <strong>check out</strong> the contents of the external repository, relative to the agent's build directory (e.g. _work\1). Default is the directory <strong>s</strong> and adds an average of <strong>3 seconds</strong> processing time to our pipeline.</p>
+<blockquote>
+<p><img alt="Waste" src="/images/share-your-toolbox-with-pipelines-6.png"> </p>
+<p><strong>WASTE ALERT</strong> - (10-3) = 7 seconds of waste detected in the first Universal Artifact strategy!</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">checkout</span><span class="p">:</span> <span class="n">Toolbox</span>
+  <span class="n">path</span><span class="p">:</span> <span class="k">tool</span><span class="o">-</span><span class="n">box</span>
+</code></pre></div>
+
+<p>Tweak out template(s) to pickup the artifacts, such as the configuration file for the WhiteSource Unified Agent, from a different location.</p>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="p">(</span><span class="n">Build</span><span class="o">.</span><span class="n">SourcesDirectory</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">script</span><span class="p">:</span> <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">wss</span><span class="o">-</span><span class="n">unified</span><span class="o">-</span><span class="n">agent</span><span class="o">.</span><span class="n">jar</span> <span class="o">-</span><span class="n">c</span> <span class="o">$</span><span class="p">(</span><span class="n">Build</span><span class="o">.</span><span class="n">SourcesDirectory</span><span class="p">)</span><span class="o">/</span><span class="k">tool</span><span class="o">-</span><span class="n">box</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">dev</span><span class="o">-</span><span class="n">sec</span><span class="o">-</span><span class="n">ops</span><span class="o">/</span><span class="n">wss</span><span class="o">-</span><span class="n">unified</span><span class="o">-</span><span class="n">agent</span><span class="o">.</span><span class="n">config</span> <span class="o">-</span><span class="n">apiKey</span> <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">apiKeyAPI</span><span class="p">}}</span> <span class="o">-</span><span class="n">product</span> <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">whitesourceProductName</span><span class="p">}}</span> <span class="o">-</span><span class="n">project</span> <span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">}}</span><span class="o">.$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">}}</span> <span class="o">-</span><span class="n">logLevel</span> <span class="n">DEBUG</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="s1">&#39;Bootstrap WhiteSource Unified Agent Scan&#39;</span>
+  <span class="n">continueOnError</span><span class="p">:</span> <span class="bp">true</span>
+</code></pre></div>
+
+<p>The Azure Repo strategy has less <strong>moving</strong> parts, is <strong>faster</strong> and <strong>simpler</strong>, no?</p>
+<h1>Which option do you prefer?</h1>
+<p><img alt="Option" src="/images/share-your-toolbox-with-pipelines-4.png"></p>
+<p>I wish we had comments enabled on our technical blog, so that we could have a vibrant discussion of the two presented and other options. In the interim, please DM me on <a href="www.twitter.com/wpschaub">twitter</a> or <a href="www.linkedin.com/in/wpschaub">linkedin</a>, or better add a comment on the Twitter or LinkedIn post which nudged you to this article, to share your thoughts.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/devops.html">devops </a><a href="/tag/pipelines.html">pipelines </a>
+        | <a href="/share-your-toolbox-with-pipelines.html" rel="bookmark"
+         title="Permalink to Two ways to share your toolbox with your pipelines">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(28)</li>
+                    <li><a href="/tag/devops.html">devops</a>(29)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(28)</li>
+                    <li><a href="/tag/automation.html">automation</a>(6)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(3)</li>
+                    <li><a href="/tag/agile.html">agile</a>(17)</li>
+                    <li><a href="/tag/learning.html">learning</a>(8)</li>
+                    <li><a href="/tag/quality.html">quality</a>(4)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(2)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(3)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(9)</li>
+                    <li><a href="/tag/testing.html">testing</a>(12)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(14)</li>
+                    <li><a href="/tag/tips.html">tips</a>(8)</li>
+                    <li><a href="/tag/posters.html">posters</a>(4)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (6)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (58)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
