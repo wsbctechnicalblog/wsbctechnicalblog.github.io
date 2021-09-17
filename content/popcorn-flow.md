@@ -20,9 +20,9 @@ That’s easy, but what goes in the middle? That’s where various prescriptions
 
 I can only talk about my personal preferences, but I’m sure others will find something similar in the way they prefer to track the progress of work. To begin, I tend to perceive work as a response to challenges. Things change, and with the change we experience challenges. Taking those challenges on is a special skill because we don’t want to be caught in the situation where we are faced with chronic challenges. To avoid that trap, we must make the work that matters more visible. Still, without challenges we wouldn’t have anything to work on.
 
-I like to start by adding a column to the board where I place problems and observations that come along the way. Once I pick the problem I plan to focus on, I move it to the next column to the right of the “Problems” column. I label that column “Options”. The problem that made its way into the Options column should be split into several possible options. It is unlikely that a problem is so simple that there is only one option available to solve it. Having options at our disposal is always a desirable thing.
+I like to start by adding a column to the board where I place problems and observations that come along the way. Once I pick the problem I plan to focus on, I move it to the next column to the right of the “Problems and observations” column. I label that column “Options”. The problem that made its way into the "Options" column should be split into several possible options. It is unlikely that a problem is so simple that there is only one option available to solve it. Having options at our disposal is always a desirable thing.
 
-We then choose one option that seems to promise the best outcome. We then move that option to the next column to the right; we label that column “Possible experiments”. Each experiment could be defined with three attributes:
+We then choose one option that seems to promise the best outcome. We move that option to the next column to the right and we label that column “Possible experiments”. Each experiment could be defined with three attributes:
 
 1. Action: which action is the experiment proposing?
 2. Duration: how long is the experiment expected to run?
@@ -32,9 +32,9 @@ From that position the work continues by picking one of the possible experiments
 
 Once the experiment gets committed, we move it to the next column to the right – “Ongoing experiments”.
 
-The experiments selected to be worked on (i.e., the ongoing experiments), must obey the constraints of the Work in Progress (WiP) buffer. Small batches are de rigeur here. It’s best if at any point in time no more than a couple of experiments are being worked on. Because we strive to keep the WiP buffer as small as possible, there could be a number of committed experiments waiting for their turn in the "Committed experiments" column.
+The experiments selected to be worked on (i.e., the ongoing experiments), must obey the constraints of the Work in Progress (WiP) buffer. Small batches are _de rigeur_ here. It is best if at any point in time no more than a couple of experiments are being worked on. Because we strive to keep the WiP buffer as small as possible, there could be a number of committed experiments waiting for their turn in the "Committed experiments" column.
 
-When the experiment is finished, it moves to the column to the right – “Review”. During the review, we ask some of the questions, such as:
+When the experiment is finished, it moves to the column to the right – “Review”. During the review, we ask some questions, such as:
 
 - What did we expect to happen (i.e., the hypothesis)?
 - What had actually happened?
@@ -104,6 +104,7 @@ Option #3 was then pulled into the next column, where it generated 3 possible ex
 2. Use Microsoft app.Metrics nuget to generate code quality reports
 3. Use Microsoft app.Metrics nuget to generate code quality reports as part of Automated Building Code
 ​​​​​​​
+
 Experiment #3 was then picked as committed work item, and it is ongoing at the time of writing this episode.
 
 ## Conclusion
