@@ -6,8 +6,8 @@
 &lt;p&gt;That’s easy, but what goes in the middle? That’s where various prescriptions propose various types of tracking. It is difficult to argue that one type of tracking is necessarily better than other types of tracking. At the end of the day, it mostly boils down to personal preferences.&lt;/p&gt;
 &lt;h2&gt;My preferred mode of tracking&lt;/h2&gt;
 &lt;p&gt;I can only talk about my personal preferences, but I’m sure others will find something similar in the way they prefer to track the progress of work. To begin, I tend to perceive work as a response to challenges. Things change, and with the change we experience challenges. Taking those challenges on is a special skill because we don’t want to be caught in the situation where we are faced with chronic challenges. To avoid that trap, we must make the work that matters more visible. Still, without challenges we wouldn’t have anything to work on.&lt;/p&gt;
-&lt;p&gt;I like to start by adding a column to the board where I place problems and observations that come along the way. Once I pick the problem I plan to focus on, I move it to the next column to the right of the “Problems” column. I label that column “Options”. The problem that made its way into the Options column should be split into several possible options. It is unlikely that a problem is so simple that there is only one option available to solve it. Having options at our disposal is always a desirable thing.&lt;/p&gt;
-&lt;p&gt;We then choose one option that seems to promise the best outcome. We then move that option to the next column to the right; we label that column “Possible experiments”. Each experiment could be defined with three attributes:&lt;/p&gt;
+&lt;p&gt;I like to start by adding a column to the board where I place problems and observations that come along the way. Once I pick the problem I plan to focus on, I move it to the next column to the right of the “Problems and observations” column. I label that column “Options”. The problem that made its way into the "Options" column should be split into several possible options. It is unlikely that a problem is so simple that there is only one option available to solve it. Having options at our disposal is always a desirable thing.&lt;/p&gt;
+&lt;p&gt;We then choose one option that seems to promise the best outcome. We move that option to the next column to the right and we label that column “Possible experiments”. Each experiment could be defined with three attributes:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Action: which action is the experiment proposing?&lt;/li&gt;
 &lt;li&gt;Duration: how long is the experiment expected to run?&lt;/li&gt;
@@ -15,8 +15,8 @@
 &lt;/ol&gt;
 &lt;p&gt;From that position the work continues by picking one of the possible experiments and moving it to the next column to the right – “Committed experiments”.&lt;/p&gt;
 &lt;p&gt;Once the experiment gets committed, we move it to the next column to the right – “Ongoing experiments”.&lt;/p&gt;
-&lt;p&gt;The experiments selected to be worked on (i.e., the ongoing experiments), must obey the constraints of the Work in Progress (WiP) buffer. Small batches are de rigeur here. It’s best if at any point in time no more than a couple of experiments are being worked on. Because we strive to keep the WiP buffer as small as possible, there could be a number of committed experiments waiting for their turn in the "Committed experiments" column.&lt;/p&gt;
-&lt;p&gt;When the experiment is finished, it moves to the column to the right – “Review”. During the review, we ask some of the questions, such as:&lt;/p&gt;
+&lt;p&gt;The experiments selected to be worked on (i.e., the ongoing experiments), must obey the constraints of the Work in Progress (WiP) buffer. Small batches are &lt;em&gt;de rigeur&lt;/em&gt; here. It is best if at any point in time no more than a couple of experiments are being worked on. Because we strive to keep the WiP buffer as small as possible, there could be a number of committed experiments waiting for their turn in the "Committed experiments" column.&lt;/p&gt;
+&lt;p&gt;When the experiment is finished, it moves to the column to the right – “Review”. During the review, we ask some questions, such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What did we expect to happen (i.e., the hypothesis)?&lt;/li&gt;
 &lt;li&gt;What had actually happened?&lt;/li&gt;
@@ -70,9 +70,9 @@
 &lt;li&gt;Use SonarQube to generate code quality reports&lt;/li&gt;
 &lt;li&gt;Use Microsoft app.Metrics nuget to generate code quality reports&lt;/li&gt;
 &lt;li&gt;Use Microsoft app.Metrics nuget to generate code quality reports as part of Automated Building Code
-​​​​​​​
-Experiment #3 was then picked as committed work item, and it is ongoing at the time of writing this episode.&lt;/li&gt;
+​​​​​​​&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Experiment #3 was then picked as committed work item, and it is ongoing at the time of writing this episode.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Change comes with challenges. Those challenges present us with the opportunity to work. We practice picking our battles wisely and knowing when to cut our losses.&lt;/p&gt;
 &lt;p&gt;Visualizing the workflow is a helpful heuristic. There are many ways to visualize the progress of the work, but such visualization cannot help solving the problem. The problem can only be solved by experimenting and gathering feedback. After accomplishing that, we apply validated learning and obtain insights into what should be done next.&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="quality"></category><category term="lean"></category><category term="engineering"></category><category term="innovation"></category><category term="learning"></category></entry><entry><title>How is ordering a pizza similar to hexagonal architecture?</title><link href="https://wsbctechnicalblog.github.io/hexagonal-architecture-exaple.html" rel="alternate"></link><published>2021-09-10T00:00:00-07:00</published><updated>2021-09-10T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-10:/hexagonal-architecture-exaple.html</id><summary type="html">&lt;p&gt;How to build a system that interacts with the outside world without knowing the gory details of the outside world&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Pizza" src="../images/pizza.png"&gt;&lt;/p&gt;
