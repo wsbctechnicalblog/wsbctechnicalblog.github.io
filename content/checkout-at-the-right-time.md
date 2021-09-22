@@ -4,7 +4,7 @@ Category: Posts
 Tags: learning, tips, version-control, eliminate-waste
 Slug: checkout-at-the-right-time
 Author: Willy-Peter Schaub
-Summary: X
+Summary: Let us explore why the sequence of **checkout** steps are important in your Azure Pipeline.
 
 In [Two ways to share your toolbox with your pipelines](https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html) we reviewed two strategies to share scripts and config files with your Azure (YAML) Pipelines. 
 
