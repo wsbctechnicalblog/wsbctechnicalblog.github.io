@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Checkout your git repos at the right time! - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/checkout-at-the-right-time.html" rel="bookmark"
+            title="Permalink to Checkout your git repos at the right time!">Checkout your git repos at the right time!</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 21 September 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Let us explore why the sequence of <strong>checkout</strong> steps are important in your Azure Pipeline.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>In <a href="https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html">Two ways to share your toolbox with your pipelines</a> we reviewed two strategies to share scripts and config files with your Azure (YAML) Pipelines. </p>
+<p><img alt="WIN:WIN" src="../images/checkout-at-the-right-time-1.png"> </p>
+<p>As discussed, the <code>checkout: git://&lt;AzDO-PROJECT&gt;/&lt;REPO-NAME&gt; path: &lt;PATH&gt;</code> gem gets a tick for <strong>SIMPLICITY</strong> and a tick for <strong>PERFORMANCE</strong>. But ... as always, there is a catch. </p>
+<blockquote>
+<p>YES - There are other options, such as <a href="https://www.powershellgallery.com/">PowerShell Gallery</a>, but we intentionally only compared the two <code>checkout:</code> versus <code>Universal Artifact</code> options.</p>
+</blockquote>
+<hr>
+<h1>Run pipeline blueprint regression tests</h1>
+<p>When I ran the regression tests my excitement grew as the generic-single-job and generic-multiple-jobs blueprints passed with flying colours. Next, the app-type Universal Artifact blueprint created the templates that triggered a continuous integration, followed by a continuous delivery to a development and production Universal Azure Artifact. </p>
+<p>Next, I ran the regression test for our app-type azure-function blueprint, which <strong>failed</strong> with the following error:</p>
+<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">sdk</span><span class="o">/</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">413</span><span class="o">/</span><span class="n">Sdks</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NET</span><span class="o">.</span><span class="n">Sdk</span><span class="o">/</span><span class="n">targets</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">PackageDependencyResolution</span><span class="o">.</span><span class="n">targets</span><span class="p">(</span><span class="mi">241</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span> <span class="n">Error</span> <span class="n">NETSDK1004</span><span class="p">:</span> <span class="n">Assets</span> <span class="n">file</span> <span class="s1">&#39;/home/vsts/work/1/s/AzureDevOps.Automation.Pipeline.Sample.azure-function/Src/AzureFunction.Sample/AzureFunction.Sample/obj/project.assets.json&#39;</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span> <span class="n">Run</span> <span class="n">a</span> <span class="n">NuGet</span> <span class="n">package</span> <span class="n">restore</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">this</span> <span class="n">file</span><span class="o">.</span>
+</code></pre></div>
+
+<p>Which lights up as the following failure in the <strong>build</strong> step of the continuous integration pipeline.</p>
+<p><img alt="ERROR" src="../images/checkout-at-the-right-time-2.png"> </p>
+<h1>Said to the rescue!</h1>
+<p>My colleague Said, the author of the Azure Function Blueprint, was intrigued and vanished in his binary lab. After a brief pause, he was back with a smile.</p>
+<p><img alt="Said Akram" src="/images/Said-mug.jpeg"></p>
+<p><em>"The checkout runs after the restore step, which will override all the nuget packages/files needed by the build step. Hence, the missing project.assets.json. I will advise adding the checkout steps at the job level (first step of the job) and avoid nesting checkouts in other templates."</em> - Said Akram</p>
+<p>Looking at the continuous integration pipeline flow, as shown below, it is evident that the <strong>Restore</strong> step runs before the <strong><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#checkout">checkout</a></strong> step that checks out source code of our Azure Function solution. </p>
+<p>In fact, we identified another bug - we checked out the source code at the start of the job and again after the restore.</p>
+<p><img alt="SEQUENCE" src="../images/checkout-at-the-right-time-3.png"></p>
+<p>Time to <strong>FAIL-FAST</strong>!</p>
+<h1>Call checkout: at the right time!</h1>
+<p>What I <strong>love</strong> about pipeline-as-code, is that we were able to fix the issue by tweaking two templates, issuing a pull request, and waiting for the validation build to give us the "thumbs up."</p>
+<p>As shown, the <strong>Restore</strong> now runs before the <code>checkout</code>. </p>
+<p><img alt="CORRECTION" src="../images/checkout-at-the-right-time-4.png"></p>
+<p>To cut a long ~~story~~ post short. Make sure you run the <code>checkout:self</code> at the beginning of your pipeline, so that dependent tasks, such as <strong>Restore</strong>, can reference the solution source code. You can run the other <code>checkout: git://&lt;AzDO-PROJECT&gt;/&lt;REPO-NAME&gt;</code> to checkout your toolbox with scripts and/or configuration as needed.</p>
+<p>Thanks for reading and thank you <strong>Said</strong> for the tip!</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/learning.html">learning </a><a href="/tag/tips.html">tips </a><a href="/tag/version-control.html">version-control </a><a href="/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="/checkout-at-the-right-time.html" rel="bookmark"
+         title="Permalink to Checkout your git repos at the right time!">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/learning.html">learning</a>(10)</li>
+                    <li><a href="/tag/tips.html">tips</a>(9)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(5)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/quality.html">quality</a>(6)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(28)</li>
+                    <li><a href="/tag/devops.html">devops</a>(29)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(28)</li>
+                    <li><a href="/tag/automation.html">automation</a>(6)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(9)</li>
+                    <li><a href="/tag/testing.html">testing</a>(12)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(14)</li>
+                    <li><a href="/tag/posters.html">posters</a>(4)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (6)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (61)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
