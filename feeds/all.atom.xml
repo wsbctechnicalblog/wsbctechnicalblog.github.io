@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-09-16T00:00:00-07:00</updated><entry><title>Track work with POPCORN Flow</title><link href="https://wsbctechnicalblog.github.io/popcorn-flow.html" rel="alternate"></link><published>2021-09-16T00:00:00-07:00</published><updated>2021-09-16T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-16:/popcorn-flow.html</id><summary type="html">&lt;p&gt;Work challenges are opportunities to explore, experiment, and track the feedback gathered from the innovation&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Popcorn" src="../images/popcorn.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-09-21T00:00:00-07:00</updated><entry><title>Checkout your git repos at the right time!</title><link href="https://wsbctechnicalblog.github.io/checkout-at-the-right-time.html" rel="alternate"></link><published>2021-09-21T00:00:00-07:00</published><updated>2021-09-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-21:/checkout-at-the-right-time.html</id><summary type="html">&lt;p&gt;Let us explore why the sequence of &lt;strong&gt;checkout&lt;/strong&gt; steps are important in your Azure Pipeline.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html"&gt;Two ways to share your toolbox with your pipelines&lt;/a&gt; we reviewed two strategies to share scripts and config files with your Azure (YAML) Pipelines. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="WIN:WIN" src="../images/checkout-at-the-right-time-1.png"&gt; &lt;/p&gt;
+&lt;p&gt;As discussed, the &lt;code&gt;checkout: git://&amp;lt;AzDO-PROJECT&amp;gt;/&amp;lt;REPO-NAME&amp;gt; path: &amp;lt;PATH&amp;gt;&lt;/code&gt; gem gets a tick for &lt;strong&gt;SIMPLICITY&lt;/strong&gt; and a tick for &lt;strong&gt;PERFORMANCE&lt;/strong&gt;. But ... as always, there is a catch. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;YES - There are other options, such as &lt;a href="https://www.powershellgallery.com/"&gt;PowerShell Gallery&lt;/a&gt;, but we intentionally only compared the two &lt;code&gt;checkout:&lt;/code&gt; versus &lt;code&gt;Universal Artifact&lt;/code&gt; options.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Run pipeline blueprint regression tests&lt;/h1&gt;
+&lt;p&gt;When I ran the regression tests my excitement grew as the generic-single-job and generic-multiple-jobs blueprints passed with flying colours. Next, the app-type Universal Artifact blueprint created the templates that triggered a continuous integration, followed by a continuous delivery to a development and production Universal Azure Artifact. &lt;/p&gt;
+&lt;p&gt;Next, I ran the regression test for our app-type azure-function blueprint, which &lt;strong&gt;failed&lt;/strong&gt; with the following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hostedtoolcache&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dotnet&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;3.1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;413&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Sdks&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NET&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Sdk&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;targets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PackageDependencyResolution&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;targets&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;241&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;Error&lt;/span&gt; &lt;span class="n"&gt;NETSDK1004&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Assets&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/home/vsts/work/1/s/AzureDevOps.Automation.Pipeline.Sample.azure-function/Src/AzureFunction.Sample/AzureFunction.Sample/obj/project.assets.json&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Run&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;NuGet&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt; &lt;span class="n"&gt;restore&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Which lights up as the following failure in the &lt;strong&gt;build&lt;/strong&gt; step of the continuous integration pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ERROR" src="../images/checkout-at-the-right-time-2.png"&gt; &lt;/p&gt;
+&lt;h1&gt;Said to the rescue!&lt;/h1&gt;
+&lt;p&gt;My colleague Said, the author of the Azure Function Blueprint, was intrigued and vanished in his binary lab. After a brief pause, he was back with a smile.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Said Akram" src="/images/Said-mug.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"The checkout runs after the restore step, which will override all the nuget packages/files needed by the build step. Hence, the missing project.assets.json. I will advise adding the checkout steps at the job level (first step of the job) and avoid nesting checkouts in other templates."&lt;/em&gt; - Said Akram&lt;/p&gt;
+&lt;p&gt;Looking at the continuous integration pipeline flow, as shown below, it is evident that the &lt;strong&gt;Restore&lt;/strong&gt; step runs before the &lt;strong&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#checkout"&gt;checkout&lt;/a&gt;&lt;/strong&gt; step that checks out source code of our Azure Function solution. &lt;/p&gt;
+&lt;p&gt;In fact, we identified another bug - we checked out the source code at the start of the job and again after the restore.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SEQUENCE" src="../images/checkout-at-the-right-time-3.png"&gt;&lt;/p&gt;
+&lt;p&gt;Time to &lt;strong&gt;FAIL-FAST&lt;/strong&gt;!&lt;/p&gt;
+&lt;h1&gt;Call checkout: at the right time!&lt;/h1&gt;
+&lt;p&gt;What I &lt;strong&gt;love&lt;/strong&gt; about pipeline-as-code, is that we were able to fix the issue by tweaking two templates, issuing a pull request, and waiting for the validation build to give us the "thumbs up."&lt;/p&gt;
+&lt;p&gt;As shown, the &lt;strong&gt;Restore&lt;/strong&gt; now runs before the &lt;code&gt;checkout&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="CORRECTION" src="../images/checkout-at-the-right-time-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;To cut a long ~~story~~ post short. Make sure you run the &lt;code&gt;checkout:self&lt;/code&gt; at the beginning of your pipeline, so that dependent tasks, such as &lt;strong&gt;Restore&lt;/strong&gt;, can reference the solution source code. You can run the other &lt;code&gt;checkout: git://&amp;lt;AzDO-PROJECT&amp;gt;/&amp;lt;REPO-NAME&amp;gt;&lt;/code&gt; to checkout your toolbox with scripts and/or configuration as needed.&lt;/p&gt;
+&lt;p&gt;Thanks for reading and thank you &lt;strong&gt;Said&lt;/strong&gt; for the tip!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="tips"></category><category term="version-control"></category><category term="eliminate-waste"></category></entry><entry><title>Track work with POPCORN Flow</title><link href="https://wsbctechnicalblog.github.io/popcorn-flow.html" rel="alternate"></link><published>2021-09-16T00:00:00-07:00</published><updated>2021-09-16T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-16:/popcorn-flow.html</id><summary type="html">&lt;p&gt;Work challenges are opportunities to explore, experiment, and track the feedback gathered from the innovation&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Popcorn" src="../images/popcorn.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;I love to visualize the work. It’s easy to do – all I need is a low tech/low rent board and some yellow sticky notes. Or, a simple, inexpensive whiteboard with erasable markers. Easy to acquire, easy to set up.&lt;/p&gt;
 &lt;p&gt;Yes, but what to put on the board? Ah, that’s where the real trick lies. Knowing what information to put on the board is oftentimes half the battle.&lt;/p&gt;
 &lt;p&gt;Different teams adopt different prescriptions on how to track the work using a board. Whatever the prescription, it always boils down to something simple – track the progress of work in time by starting from the left-hand side of the board until you reach the right-hand side of the board. Leftmost side implies nascent work; rightmost side implies completed work.&lt;/p&gt;
@@ -208,7 +236,7 @@ One way to avoid painting ourselves into a corner when building complex automate
 &lt;p&gt;The Azure Repo strategy has less &lt;strong&gt;moving&lt;/strong&gt; parts, is &lt;strong&gt;faster&lt;/strong&gt; and &lt;strong&gt;simpler&lt;/strong&gt;, no?&lt;/p&gt;
 &lt;h1&gt;Which option do you prefer?&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="Option" src="/images/share-your-toolbox-with-pipelines-4.png"&gt;&lt;/p&gt;
-&lt;p&gt;I wish we had comments enabled on our technical blog, so that we could have a vibrant discussion of the two presented and other options. In the interim, please DM me on &lt;a href="www.twitter.com/wpschaub"&gt;twitter&lt;/a&gt; or &lt;a href="www.linkedin.com/in/wpschaub"&gt;linkedin&lt;/a&gt;, or better add a comment on the Twitter or LinkedIn post which nudged you to this article, to share your thoughts.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category></entry><entry><title>Why OODA is one of the DevOps genomes</title><link href="https://wsbctechnicalblog.github.io/ooda-one-of-the-devops-genomes.html" rel="alternate"></link><published>2021-09-01T00:00:00-07:00</published><updated>2021-09-01T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-01:/ooda-one-of-the-devops-genomes.html</id><summary type="html">&lt;p&gt;If we unpack the DevOps DNA we will find a prominent genome labeled O-O-D-A.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the &lt;a href="https://opensource.com/article/18/11/analyzing-devops"&gt;analyzing the DNA of DevOps&lt;/a&gt; article I argued that waterfall, agile, and other development frameworks have not only shaped the evolution of DevOps, but that they are part of the DevOps DNA. Recent explorations of DevOps, as it evolves and matures, revealed an exciting hypothesis that OODA is another one of its numerous genomes. &lt;/p&gt;
+&lt;p&gt;I wish we had comments enabled on our technical blog, so that we could have a vibrant discussion of the two presented and other options. In the interim, please DM me on &lt;a href="www.twitter.com/wpschaub"&gt;twitter&lt;/a&gt; or &lt;a href="www.linkedin.com/in/wpschaub"&gt;linkedin&lt;/a&gt;, or better add a comment on the Twitter or LinkedIn post which nudged you to this article, to share your thoughts.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="eliminate-waste"></category></entry><entry><title>Why OODA is one of the DevOps genomes</title><link href="https://wsbctechnicalblog.github.io/ooda-one-of-the-devops-genomes.html" rel="alternate"></link><published>2021-09-01T00:00:00-07:00</published><updated>2021-09-01T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-09-01:/ooda-one-of-the-devops-genomes.html</id><summary type="html">&lt;p&gt;If we unpack the DevOps DNA we will find a prominent genome labeled O-O-D-A.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In the &lt;a href="https://opensource.com/article/18/11/analyzing-devops"&gt;analyzing the DNA of DevOps&lt;/a&gt; article I argued that waterfall, agile, and other development frameworks have not only shaped the evolution of DevOps, but that they are part of the DevOps DNA. Recent explorations of DevOps, as it evolves and matures, revealed an exciting hypothesis that OODA is another one of its numerous genomes. &lt;/p&gt;
 &lt;h1&gt;DevOps is a mindset&lt;/h1&gt;
 &lt;p&gt;“DevOps is the union of people, process, and products to enable continuous delivery of value to our end users.” - (Donovan Brown, 2015). It is based on &lt;a href="https://opensource.com/article/19/5/values-devops-mindset"&gt;5 essential values for the DevOps mindset&lt;/a&gt;, creating a foundation for &lt;strong&gt;continuous&lt;/strong&gt; measure, feedback, collaboration, learning, adoption, and most importantly, delivery of value to delighted users.&lt;/p&gt;
 &lt;h1&gt;Observe-Orient-Decide-Act (OODA)&lt;/h1&gt;
@@ -4277,238 +4305,4 @@ Our Bootstrap.yml templates is a standard YAML-template, as are the templates it
 &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | &lt;a href="/yaml-pipelines-part2.html"&gt;Part 2&lt;/a&gt; | Part 3 | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | &lt;a href="/yaml-pipelines-part7.html"&gt;Part 7&lt;/a&gt; | &lt;a href="/yaml-pipelines-part8.html"&gt;Part 8&lt;/a&gt; | &lt;a href="/yaml-pipelines-part9.html"&gt;Part 9&lt;/a&gt; | &lt;a href="/yaml-pipelines-part10.html"&gt;Part 10&lt;/a&gt; |&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="x-as-code"></category></entry><entry><title>Part 2: Pipelines - Introduction, variables and why spaces matter</title><link href="https://wsbctechnicalblog.github.io/yaml-pipelines-part2.html" rel="alternate"></link><published>2020-12-21T00:00:00-08:00</published><updated>2020-12-21T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2020-12-21:/yaml-pipelines-part2.html</id><summary type="html">&lt;p&gt;The new Azure DevOps YAML pipelines have been the focus of innovation, enabling engineering to treat pipelines as code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We continue our continuous delivery pipeline journey by switching gears from the unified pipelines to the new YAML-syntax pipelines. &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why the YAML course change?&lt;/h1&gt;
-&lt;p&gt;Do not get me wrong, the Unified pipelines introduced in &lt;a href="/why-pipelines-part1.html"&gt;Part 1: Pipelines - Why bother and what are our nightmares and options&lt;/a&gt; are phenomenal and will continue to serve us for quite some time. However, we realised that the unified pipelines are based on the json-based user interface pipelines. Microsoft refers to these pipelines as &lt;strong&gt;classic interface&lt;/strong&gt; and there have been no improvements for many sprints in the Azure DevOps &lt;a href="https://docs.microsoft.com/en-us/azure/devops/release-notes/features-timeline"&gt;timeline&lt;/a&gt;. This is a &lt;strong&gt;RISK&lt;/strong&gt; as the technology is becoming stale.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Classic Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;In turn, the new Azure DevOps YAML-syntax pipelines have been the focus of innovation, enabling engineering to treat pipelines as code, use templates to promote consistency, efficiency, innovation, and quality, and last, but not least, combine continuous integration and deployment into one pipeline.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-2.png"&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;YAML Overview&lt;/h1&gt;
-&lt;p&gt;YAML is a mature human-readable data-serialization language, originally proposed by Clark Evans in 2001. It is often referred to as “yet another markup language” and “YAML ain’t markup language.&lt;/p&gt;
-&lt;p&gt;When we look at the &lt;a href="https://aka.ms/yaml"&gt;Azure DevOps YAML&lt;/a&gt; pipelines, the pipeline configuration language has been kept structurally YAML. That is exciting!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;BOOKMARK the gem &lt;a href="https://aka.ms/yaml"&gt;https://aka.ms/yaml&lt;/a&gt; URL!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;YAML Basics&lt;/h1&gt;
-&lt;p&gt;Let us ask Azure Pipelines for a new YAML-syntax pipeline to explore. By default, Azure DevOps generates the following starter pipeline for us:&lt;/p&gt;
-&lt;h2&gt;Our first pipeline&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Starter&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt;
-&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;Start&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;minimal&lt;/span&gt; &lt;span class="n"&gt;pipeline&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;customize&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;Add&lt;/span&gt; &lt;span class="n"&gt;steps&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;more&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;aka&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;
-
-&lt;span class="k"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
-
-&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ubuntu-latest&amp;#39;&lt;/span&gt;
-
-&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
-  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Run a one-line script&amp;#39;&lt;/span&gt;
-
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
-    &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;Add&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt; &lt;span class="n"&gt;tasks&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;deploy&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-    &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;See&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;aka&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;
-  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Run a multi-line script&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;It is evident that:
-- It is triggered on changes on the &lt;strong&gt;master&lt;/strong&gt; branch.
-- It is queued on the latest &lt;strong&gt;ubuntu&lt;/strong&gt; agent pool - other options include macOS and Windows.
-- It runs two steps, hosted in one stage, containing one job.&lt;/p&gt;
-&lt;p&gt;Simple!&lt;/p&gt;
-&lt;h2&gt;Variables&lt;/h2&gt;
-&lt;p&gt;Next, we will explore two key YAML topics: &lt;strong&gt;Variables&lt;/strong&gt; and &lt;strong&gt;Parameters&lt;/strong&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Every variable is really a key:value pair.&lt;/li&gt;
-&lt;li&gt;Simple variable syntax example
-    &lt;code&gt;yml
-    variables:
-      name: WSBC&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Explicit key:value syntax example
-    ```yml
-    variables:&lt;ul&gt;
-&lt;li&gt;name:  myvariable
-  value: WSBC 
-```&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;The key is the name of the variable, and it has a &lt;strong&gt;string&lt;/strong&gt; value. &lt;/li&gt;
-&lt;li&gt;The variable is processed at &lt;strong&gt;run&lt;/strong&gt; time.&lt;/li&gt;
-&lt;li&gt;To dereference a variable, simply wrap the key in &lt;code&gt;$()&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;There are several types of variables, whereby pipelines do not distinguish between these types. &lt;/li&gt;
-&lt;li&gt;Inline variables&lt;/li&gt;
-&lt;li&gt;Variable groups&lt;/li&gt;
-&lt;li&gt;Template variables&lt;/li&gt;
-&lt;li&gt;Pipeline variables&lt;/li&gt;
-&lt;li&gt;Predefined Azure DevOps agent and build &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&amp;amp;tabs=yaml"&gt;variables&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; - Explicit syntax is required when you mix variable types. For example:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;yml
- variables:
- - name:     myvariable
-   value:    WSBC
- - group:    myVariableGroup
- - template: myVariableTemplate.yml&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Parameters&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Parameters can be used in templates and pipelines. They allow us to deal with complex objects and combine parameters and expressions to create complex scenarios.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;yml
-  parameters:
-  - name: parameterSample
-    type: string
-    default: sunshine
-    values:
-    - sunshine
-    - moonlight
-    - aurora&lt;/code&gt;
-- Unlike variables, parameters are defined as key value pairs where the value can be of &lt;strong&gt;any type&lt;/strong&gt;.
-- To dereference a parameter, simply wrap the key in &lt;code&gt;${{}}&lt;/code&gt;.
-- The variable is processed at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/p&gt;
-&lt;p&gt;Powerful magic!&lt;/p&gt;
-&lt;h2&gt;Our second YAML pipeline&lt;/h2&gt;
-&lt;p&gt;Now that we understand variables and parameters, let us create our second YAML pipeline and first template. No need to panic, you have not missed anything - we will explore templates in more detail in Part 3 of this series.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
-  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
-
-&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;}})&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;}})&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yml&lt;/span&gt;
-    &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-      &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Did you notice that we assigned the value to the keyFinal variable, but are using keyRef throughout the sample? By using the queue-time ${{}} resolution, we are changing the first script to the following during queue time:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
-  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
-
-&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;keyFinal&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yml&lt;/span&gt;
-    &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-      &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;keyFinal&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;Our first template&lt;/h2&gt;
-&lt;p&gt;Like parameters the template is injected and processed at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;defaultKey&amp;#39;&lt;/span&gt;  
-
-&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;
-
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt; 
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;KeyRef&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}}&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt; &lt;span class="o"&gt;}})&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;test&lt;/span&gt;&lt;span class="o"&gt;}})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I recommend that you create the sample pipeline and run it. Does it display what you expected? If yes, you can skip the YAML Gotchas, otherwise read on.&lt;/p&gt;
-&lt;h2&gt;Generated echo output&lt;/h2&gt;
-&lt;p&gt;Take note of the fourth, fifth, and sixth echo in the template. You may expect that the output will be the same ... but:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Fourth &lt;code&gt;echo $(keyRef)&lt;/code&gt; displays &lt;code&gt;keyFinal&lt;/code&gt; as expected.&lt;/li&gt;
-&lt;li&gt;Fifth  &lt;code&gt;echo $( keyRef )&lt;/code&gt; displays &lt;code&gt;command not found&lt;/code&gt; ... too many spaces. &lt;/li&gt;
-&lt;li&gt;Sixth  &lt;code&gt;echo $( KeyRef )&lt;/code&gt; displays &lt;code&gt;command not found&lt;/code&gt; ... YAML is case-sensitive and too many spaces.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Bingo!&lt;/span&gt;
-&lt;span class="err"&gt;Bingo!&lt;/span&gt;
-&lt;span class="err"&gt;... command not found&lt;/span&gt;
-&lt;span class="err"&gt;here we go&lt;/span&gt;
-&lt;span class="err"&gt;keyFinal&lt;/span&gt;
-&lt;span class="err"&gt;... command not found&lt;/span&gt;
-&lt;span class="err"&gt;keyFinal&lt;/span&gt;
-&lt;span class="c"&gt;keyRef: command not found&lt;/span&gt;
-&lt;span class="c"&gt;KeyRef: command not found&lt;/span&gt;
-&lt;span class="err"&gt;keyFinal command not found&lt;/span&gt;
-&lt;span class="err"&gt;Bingo!&lt;/span&gt;
-&lt;span class="err"&gt;Bingo!&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;h1&gt;YAML Gotchas, such as spaces&lt;/h1&gt;
-&lt;p&gt;For example, alignment of your definition is critical. Just like in the Cobol and Fortran days, a space too many or too few will throw errors, that are often difficult to decipher. As shown in the simple example, these two statements look the same, however, the second has too many spaces and fails:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="p"&gt;}})&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Likewise, the following example looks innocent at a quick glance, but the first and third script will fail as it is indented few and one too many spaces respectively:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
- &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
-   &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Yaml is a very positional and pedantic language!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt; - Use the &lt;strong&gt;validate&lt;/strong&gt; feature in the Azure Pipeline editor to help you unearth some of the gremlins.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="YAML Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part2-4.png"&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Common language&lt;/h1&gt;
-&lt;p&gt;With the various names popping up - classic, unified, YAML, and multi-stage - it is important to define and use a common language when talking about pipelines. Within the context of Azure DevOps pipelines, we suggest and use the following in these technical blogs:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;TERMINOLOGY&lt;/th&gt;
-&lt;th&gt;DESCRIPTION&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Classic Unified Pipeline&lt;/td&gt;
-&lt;td&gt;Unified pipeline design practice, defined by WSBC, based on the user interface (Classic) Azure Pipeline to promote a consistent CICD pipeline.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Multi-stage YAML-syntax Pipeline&lt;/td&gt;
-&lt;td&gt;Unified YAML experience to create an Azure Pipeline to do CI, CD, or CI and CD, and store the pipeline configuration as part of the source code.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Multi-stage Blueprint-based Pipeline&lt;/td&gt;
-&lt;td&gt;Unified pipeline design practice, defined by WSBC, based on the multi-stage YAML-syntax pipeline to promote a consistent, secure, and extensible CI/CD pipeline.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Continuous Exploration (CE)&lt;/td&gt;
-&lt;td&gt;Continuous analysis of an idea or hypothesis, customer feedback, or market research through rapid prototyping. OODA – Observe, Orient, Decide, Act.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Continuous Integration (CI)&lt;/td&gt;
-&lt;td&gt;Continuously collaboration, validation, and merging of code changes. Also known as a continuous and automated “Build”.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Continuous Deployment (CD)&lt;/td&gt;
-&lt;td&gt;Ability to use the output from the CI to build and deploy the new known good build to &lt;strong&gt;one&lt;/strong&gt; environment automatically – for example, deploy straight to production.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Continuous Delivery (CD)&lt;/td&gt;
-&lt;td&gt;Ability to use the output from the CI to build and deploy the new known good build to &lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;more&lt;/strong&gt; environments automatically – for example, deploy to multiple rings.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Release on Demand (RoD)&lt;/td&gt;
-&lt;td&gt;Ability to make changes available to customers all at once, or selectively in response to feedback or business needs.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1&gt;What is next?&lt;/h1&gt;
-&lt;p&gt;If erroneous spaces do not rattle you, we are ready to jump into &lt;a href="yaml-pipelines-part3.html"&gt;part 3&lt;/a&gt; to explore the power of templates and how we are cooking up a storm of re-usable magic.&lt;/p&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Series Bread Crumbs | &lt;a href="/why-pipelines-part1.html"&gt;Part 1, TOC&lt;/a&gt; | Part 2 | &lt;a href="/yaml-pipelines-part3.html"&gt;Part 3&lt;/a&gt; | &lt;a href="/yaml-pipelines-part4.html"&gt;Part 4&lt;/a&gt; | &lt;a href="/yaml-pipelines-part5.html"&gt;Part 5&lt;/a&gt; | &lt;a href="/yaml-pipelines-part6.html"&gt;Part 6&lt;/a&gt; | &lt;a href="/yaml-pipelines-part7.html"&gt;Part 7&lt;/a&gt; | &lt;a href="/yaml-pipelines-part8.html"&gt;Part 8&lt;/a&gt; | &lt;a href="/yaml-pipelines-part9.html"&gt;Part 9&lt;/a&gt; | &lt;a href="/yaml-pipelines-part10.html"&gt;Part 10&lt;/a&gt; |&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="x-as-code"></category></entry></feed>
