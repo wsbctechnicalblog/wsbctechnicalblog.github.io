@@ -31,7 +31,7 @@ While we should all hover in the production quadrant, it is important to conside
 
 Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!
 
-| [POSTER 1](/moving-hundreds-of-pipeline-snowflakes-qr-1.html) | [POSTER 2](/moving-hundreds-of-pipeline-snowflakes-qr-3.html) | POSTER 3 (this) |
+| [POSTER 1](/moving-hundreds-of-pipeline-snowflakes-qr-1.html) | [POSTER 2](/moving-hundreds-of-pipeline-snowflakes-qr-2.html) | POSTER 3 (this) |
 
 ---
 
