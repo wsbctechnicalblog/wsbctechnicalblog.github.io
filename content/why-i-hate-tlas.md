@@ -49,3 +49,17 @@ Imagine if you are sitting in a production release planning meeting and mistake 
 
 In conclusion, having a common and clear language, void of the infamous TLAs, energizes collaboration and avoids waste such as frustration, confusion, overwhelming [loss of space crafts in translation](https://www.simscale.com/blog/2017/12/nasa-mars-climate-orbiter-metric/), or worse [unrecognized waste](https://twitter.com/mcsee1/status/1443597775346839557?s=20).
 
+---
+
+# Invaluable feedback from discussions making communication unambiguous
+
+We have received candid feedback on how to make communication unambiguous, which I would like to add to this post.
+
+
+- _Avoid technical jargon._
+- _Avoid colloquialism._
+- _Avoiding acronyms and technical jargon also addresses accessibility, not everyone fills a technical role within this Division therefore I consistently must ask the meaning of acronyms. I would add using proper nouns (I spoke to Annette) instead of pronouns (I spoke to her), of course this is not related to a person's preferred identity signature block._ - AnnetteG.
+
+
+**THANK YOU** for the candid feedback. Keep it coming.
+
