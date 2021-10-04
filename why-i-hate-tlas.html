@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Refactoring saves time and increases quality - </title>
+        <title>Why I loathe when engineers use TLAs, such as CD vs CD! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,47 +32,52 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/refactoring-saves-time-and-increases-quaity.html" rel="bookmark"
-            title="Permalink to Refactoring saves time and increases quality">Refactoring saves time and increases quality</a></h1>
+    <h1 style="font-size:2em;"><a href="/why-i-hate-tlas.html" rel="bookmark"
+            title="Permalink to Why I loathe when engineers use TLAs, such as CD vs CD!">Why I loathe when engineers use TLAs, such as CD vs CD!</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 22 July 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 01 October 2021</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Design is not a static construct, it evolves by refactoring as we keep changing the code</p>
+            <p>The use of TLAs creates subpar collaboration, unnecessary confusion, and unintended waste.</p>
         </div>
     
         <div class="entry-content">
-            <p>When creating an application, we feel a strong urge to envision a perfect design of the system we intend to build. After all, we have many decades of collective experience in designing systems, and why not leverage that vast body of knowledge?</p>
-<p>That line of reasoning would work perfectly if the systems we’re building were confectionary products that are standardized and normalized. However, years of experience teach us that pretty much each and every system we’re building is somehow unique. Despite many attempts to standardize and normalize software applications, we haven’t seen much useful advances in that area.</p>
-<p>It is for that reason that we cannot blindly apply previously successful designs to a new system we are building. It is more prudent to work on the design that emerges as we are creating software.
-This is not to say that the initially envisioned ‘perfect’ design is a waste; it is a good guidepost, something to inform and guide our initial reasoning. But as we proceed with the building activities, we discover that the initial design quickly becomes obsolete.</p>
-<h2>Why redesign?</h2>
-<p>Consider an example from nature: a caterpillar is perfectly designed to devour vast amounts of foliage. So, given such perfect design, why go for a redesign?</p>
-<p>Well, eating vast amounts of foliage is sufficient for survival, but not sufficient for reproduction. There is a design flaw that got discovered in the ‘perfect’ design of a caterpillar.</p>
-<p>To reproduce, a caterpillar must find a mate. And the only way a caterpillar could find a mate is if he refactors himself into a butterfly. A butterfly is designed to search the sky for others of his own species.</p>
-<p>Any design, no matter how perfect it may appear to be, sooner or later must be redesigned. Technical term for that redesign in software is refactoring.</p>
-<h2>What if we don’t refactor?</h2>
-<p>Teams often feel disdain toward refactoring because it eats up precious cycles. Wouldn’t it be more desirable to spend scarce time on building new useful features?</p>
-<p>But that line of reasoning is false economy. Churning new features as if we’re following a construction/manufacturing model and producing widgets on an assembly line doesn’t work well in software development. We are better advised to follow knowledge/service ecology models. And those models differ significantly from the manufacturing model where once established patterns are reliably repeatable. In knowledge/service ecology models, experimentation is the key and reliably repeatable patterns are a rare exception, rather than a rule.</p>
-<p>If we choose not to refactor, we quickly accumulate bad design. It doesn’t take long on a brand-new software development project to start noticing rapidly mounting redundancy. Code duplication is rampant, and that anti-pattern is a surefire signal that we are heading into a defect-and-malfunctioning territory. Before we know it, the precious time we have carved up for building new features gets completely eaten up by the time teams spend fighting fires. Not a good position to be in.</p>
-<p>So, how to fight it? There is no other way to fight treacherous redundancy but by merciless refactoring.
-Another bad smell on the rapidly advancing project is unused functionality. Seemingly innocuous, this ‘deadwood code’ is actually very dangerous because it slows teams down. Makes it difficult to separate signal from the noise. Refactoring is the only way to keep mounting deadwood code from sticking around. Getting rid of the unused code is one of the most important aspects of refactoring.</p>
-<p>Designs quickly become obsolete under the pressure of newly discovered details that were unknown during the times the design was formulated. Any design, no matter how fit for purpose it may be, need to be constantly reviewed and rejuvenated.</p>
-<p>Avoid needless clutter and complexity. Make sure that everything is expressed once and only once. It is not possible to ensure that principle if we’re not refactoring.</p>
-<p>Refactoring is time well spent. Never postpone refactoring activities. Never project refactoring tasks for some time into the future. The time is now!</p>
+            <p>When last were you sitting in a discussion, lost in a bombardment of TLAs (<strong>t</strong>hree-<strong>l</strong>ettered-<strong>a</strong>cronyms)? In engineering, especially software engineering, we have an abundance of acronyms which is the norm for us, but the kiss of confusion and one of the core reasons collaboration with our non-<strong>IT</strong> stakeholders is so challenging.</p>
+<blockquote>
+<p><strong>IT</strong> = <strong>I</strong>nformation <strong>T</strong>echnology in the context of this post. It could be mistaken for <strong>i</strong>nternet <strong>t</strong>imes, <strong>i</strong>nternational <strong>t</strong>rade, <strong>i</strong>ncome <strong>t</strong>ax, <strong>i</strong>nitial <strong>t</strong>est, <strong>I</strong> <strong>t</strong>hink, etc.
+</p>
+</blockquote>
+<hr>
+<h1>Seek Clarity!</h1>
+<p><img alt="Confusion" src="/images/why-i-hate-tlas-1.png"></p>
+<p>In our common engineering team, we are spearheading several cool initiatives, such as optimization of meetings (a future topic) and the avoidance of TLAs or FLAs - three, four, and five lettered acronyms. Instead, when writing, we practice the recommended way of first mentioning the full meaning, followed by the acronym, for example Information Technology (IT).</p>
+<p>When collaborating verbally we encourage everyone to "read" the TLA, but "speak" the expanded form. In other words, when we read "IT is fun", we say "Information Technology is fun."</p>
+<p><img alt="Happy" src="/images/why-i-hate-tlas-2.png"></p>
+<p>A simple way to change the most complex and confusing conversation, to a <strong>simple</strong> and <strong>easy to understand</strong> collaboration.</p>
+<hr>
+<h1>So, what is CD versus CD?</h1>
+<p>Continuous Delivery (CD) is similar, but not the same as Continuous Deployment (CD). Although <code>CD == CD</code>, there is a subtle difference.</p>
+<p><img alt="Continuous Delivery" src="/images/why-i-hate-tlas-3.png"></p>
+<p><strong>Continuous Delivery</strong> deploys the release artifacts to several environment, such as development, system test, staging, and production, or deployment rings. See <a href="https://www.tactec.ca/ndtw-resources">Act 3 in Navigating DevOps through Waterfalls</a> and <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Feature flags or Rings</a> for details.</p>
+<p><img alt="Continuous Deployment" src="/images/why-i-hate-tlas-4.png"></p>
+<p><strong>Continuous Deployment</strong> deploys the release artifacts to a single environment and each change goes directly to production. Using <a href="https://opensource.com/article/19/6/why-hypothesis-driven-development-devops">Hypothesis-driven Development</a>, for example, you can separate the deploy from the release using <strong>Feature Flags</strong>, hiding the changes until it is time to release them for prime time.</p>
+<p>Imagine if you are sitting in a production release planning meeting and mistake <strong>CD</strong> for <strong>CD</strong> - welcome 2AM production incident meeting(s) :( Compared to have clarity whether the release is based on Continuous Delivery or Continuous Deployment - enjoy a night of uninterrupted quality sleep :) The choice is yours!</p>
+<hr>
+<h1>Keep it simple and avoid waste!</h1>
+<p>In conclusion, having a common and clear language, void of the infamous TLAs, energizes collaboration and avoids waste such as frustration, confusion, overwhelming <a href="https://www.simscale.com/blog/2017/12/nasa-mars-climate-orbiter-metric/">loss of space crafts in translation</a>, or worse <a href="https://twitter.com/mcsee1/status/1443597775346839557?s=20">unrecognized waste</a>.</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
-        | Tagged: <a href="/tag/agile.html">agile </a><a href="/tag/code.html">code </a><a href="/tag/devops.html">devops </a><a href="/tag/learning.html">learning </a><a href="/tag/quality.html">quality </a><a href="/tag/eliminate-waste.html">eliminate-waste </a>
-        | <a href="/refactoring-saves-time-and-increases-quaity.html" rel="bookmark"
-         title="Permalink to Refactoring saves time and increases quality">Permalink</a>            
+        | Tagged: <a href="/tag/learning.html">learning </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="/why-i-hate-tlas.html" rel="bookmark"
+         title="Permalink to Why I loathe when engineers use TLAs, such as CD vs CD!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
