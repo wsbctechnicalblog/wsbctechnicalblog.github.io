@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Cultivate apathy for details to enable refactoring - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/apathy-for-details.html" rel="bookmark"
+            title="Permalink to Cultivate apathy for details to enable refactoring">Cultivate apathy for details to enable refactoring</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Fri 15 October 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Give equal care to the code structure as you would give to the code behaviour</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><img alt="Law of Demeter" src="../images/law-of-demeter.png"></p>
+<p>Code behaviour cannot be implemented without having code structure. On the other hand, code structure that does not implement meaningful and useful behaviour is worthless. It thus becomes apparent that code behaviour and code structure go together – it is not possible to separate one from another.​​​​​​​</p>
+<p>Since code structure is never visible to end-users, the tendency is to assign much higher value to the code behaviour than to the code structure. From the business operations side of things, the most pressing question is always <em>Why</em>? Why are we planning to make changes to our system? There’s got to be a valid business case for spending precious time, money, and effort on making proposed changes.</p>
+<p>Once the business case is justified, we move into the <em>What</em> phase. What do we need to change in our system so that the business case gets fulfilled?</p>
+<p>It is this <em>What</em> stage of development that defines the expected change in the behaviour of the system. Maybe we need to change the behaviour of the system in such way that it allows end-users to apply for a promotional discount? Now that we know what needs to get done, there is an urgent pressure to do it.</p>
+<p>That leads us to the <em>How</em>. While our discussions and concerns around the <em>What</em> had helped define the <em>expected behaviour</em> (i.e., the desired functionality), when it comes to deciding <em>How</em> to do it, we realize that there are many ways to skin a cat. And here is where the trouble can potentially begin.</p>
+<p>How to implement the agreed-upon behaviour is the sole responsibility of the code structure. We could implement it in a simple, straightforward way, or we could implement it in a convoluted, unnecessarily complex way. There are many possible ways to implement the same behaviour of the code. Having cleared the questions around the <em>Why</em> and the <em>What</em>, we are now discussing the <em>Way</em>.</p>
+<h2>Substandard structure causes substandard behaviour</h2>
+<p>From the business operations standpoint, the most valuable way to implement the desired behaviour is the quickest, cheapest way. However, such approach usually belies false economy.</p>
+<p>If the desired behaviour, once implemented, is never going to change, one could argue that the cheapest, quickest, dirtiest way to implement it makes sense. However, it is extremely rare that newly added behaviour to the system never changes.</p>
+<p>Change in software is inevitable. Creating a substandard structure of the code results in inability to safely accommodate upcoming unavoidable changes. As such, what little gets saved upfront by not caring about the quality of the code structure, gets quickly eaten up by the exorbitant costs of having to make subsequent changes to the code. Not only that, but the changes to a lousy code structure tend to introduce a lot of bugs, defects, and breakages.</p>
+<p>Overall, not paying attention to the quality of the code structure (the <em>Way</em>) results in the substandard behaviour of the system. It becomes brittle, unreliable, non-performant, and quickly turns from being an asset into becoming a liability.</p>
+<h2>Enable refactoring</h2>
+<p>Almost all knowledge-based activities are based on refactoring. We typically start any project by crafting the first draft. That first draft is far from being anywhere near good, but it’s a great starting point. We throw in quick outlines and paint with a broad brush (we approximate). Then we iterate. We make a second pass (either working on our own or collaborating on the project in a team). The second pass increases the resolution of the information provided in the document we are working on. That gradual increase in the precision of information is what we refer to as ‘refactoring’.</p>
+<p>Regardless of the type of the project we may be collaborating on (i.e., a financial plan, a technology roadmap, an important planning event, etc.), we never create a publishable version on the first pass. We must keep reworking our initial draft, adding more details, removing clumsy/cumbersome statements, and so on. We proceed piecemeal, step-by-step.</p>
+<p>After several iterations (i.e., refactoring sessions), we eventually arrive at a satisfactory version of our deliverable. It is finally ready to be published.</p>
+<p>There is absolutely no reason why writing software code should be any different. And yet, for some strange reason, we meet many software engineers who feel that refactoring is a waste of time. Some people think that good programmers must know how to write well-structured code on the first try.</p>
+<p>That mindset is very damaging to the quality of the delivery. It insists on ignoring the quality of the code structure and instead spending all the time only on implementing the desired behaviour of the code. The argument for such irresponsible practice is that since end-users will never see the code structure, why should we worry about its quality?</p>
+<p>It’s like saying “Since average drivers will never get to see the inside of the car engine, why worry about its quality? Instead, we should pour all our efforts into making the attractive exterior and interior, plus do an amazing paint job and add an awesome stereo system, heated leather seats, and so on!”</p>
+<h2>Why enable refactoring?</h2>
+<p>The key to enabling easy, risk-free refactoring is to practice <em>apathy for details</em>. What do we mean by that? Maybe a hypothetical example could illustrate the concept better:</p>
+<p>Imagine a person arriving at the checkout in a supermarket and the cashier asks them to pay for their groceries. The person reaches into their pocket and takes out their car keys and gives the keys to the cashier. The cashier is confused, and the person says: “I’m parked in the stall 17, red Honda Accord. Go to my car, open the passenger side door, open the glove compartment, find my jacket in there, reach into the bottom right jacket pocket, grab my wallet, take out the cash and please leave the change in!”</p>
+<p>Naturally, the cashier would refuse to do that. Why? Because the cashier has <em>apathy for details</em>. Simply put, the cashier only wants the money bills (the <em>What</em>) and is absolutely not interested in the process by which that money arrives at their hands (disinterested in the <em>How</em>).</p>
+<p>If we structure our code in such a way that it always refuses to know the annoying details (the <em>How</em>), it will be easy to refactor it without any risk. If, on the other hand, we structure our code in such a way that it that it is hungry for details, we end up with tightly coupled code that is brittle, expensive, and risky to modify. Which is to say, we paint ourselves in the corner.</p>
+<h2>How to enable refactoring</h2>
+<p>The best way to enable refactoring is to write code that is <em>structure-shy</em>. If the code is disinterested in knowing more details than is necessary, such code remains loosely coupled (easy and risk-free to change).</p>
+<p>Yes, but how to make sure the code we write is <em>structure-shy</em>? The recommended way is to abstain from writing any code before we have created a client who will consume that code.</p>
+<p>To create the first client of the yet-to-be-written code, we focus on the <em>expected behaviour</em>. The <em>expected behaviour</em> should be obtained via a single step. The client should be able to ask the system to do something, and that ask should be a simple step. The system will then go away, do some processing behind the scenes, and return with the expected values.</p>
+<p>What we’ve described above is what is technically known as an interface, or an API.</p>
+<p>A quality interface/API is always <em>structure-shy</em>. It does not care about the <em>How</em>, only cares about the <em>What</em>.
+To create the client before we create the code that will serve the client’s expectations, we resort to writing microtests. Microtests are focused on small, atomic steps where the client sends one request to the system, and then, after receiving a response, asserts whether the response matches the initial expectation. That way, the client verifies that the behaviour of the system is still as expected.</p>
+<p>The <em>structure-shy</em> code is now freely open for radical refactoring. With each refactoring step (i.e., a change made to the code structure), we run the clients (i.e., microtests) to confirm that nothing broke with that change and that the system still behaves as expected.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="/apathy-for-details.html" rel="bookmark"
+         title="Permalink to Cultivate apathy for details to enable refactoring">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(1)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(30)</li>
+                    <li><a href="/tag/tips.html">tips</a>(10)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/devops.html">devops</a>(30)</li>
+                    <li><a href="/tag/posters.html">posters</a>(5)</li>
+                    <li><a href="/tag/learning.html">learning</a>(11)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(6)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/quality.html">quality</a>(6)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(28)</li>
+                    <li><a href="/tag/automation.html">automation</a>(6)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(9)</li>
+                    <li><a href="/tag/testing.html">testing</a>(12)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/leaning.html">leaning</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (6)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (65)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
