@@ -49,7 +49,7 @@ Imagine a person arriving at the checkout in a supermarket and the cashier asks 
 
 Naturally, the cashier would refuse to do that. Why? Because the cashier has _apathy for details_. Simply put, the cashier only wants the money bills (the _What_) and is absolutely not interested in the process by which that money arrives at their hands (disinterested in the _How_).
 
-If we structure our code in such a way that it always refuses to know the annoying details (the _How_), it will be easy to refactor it without any risk. If, on the other hand, we structure our code in such a way that it that it is hungry for details, we end up with tightly coupled code that is brittle, expensive, and risky to modify. Which is to say, we paint ourselves in the corner.
+If we structure our code in such a way that it always refuses to know the annoying details (the _How_), it will be easy to refactor it without any risk. If, on the other hand, we structure our code in such a way that it is hungry for details, we end up with tightly coupled code that is brittle, expensive, and risky to modify. Which is to say, we paint ourselves in the corner.
 
 ## How to enable refactoring
 The best way to enable refactoring is to write code that is _structure-shy_. If the code is disinterested in knowing more details than is necessary, such code remains loosely coupled (easy and risk-free to change).
