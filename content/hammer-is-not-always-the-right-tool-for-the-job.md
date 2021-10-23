@@ -57,7 +57,7 @@ Not only will you collaborate efficiently, but you will also cut down on the amo
 Still unconvinced? If yes, I recommend you try these two experiments:
 
 1. **EXPERIMENT 1**: Create an Excel document containing a beefy set of data and share it as an attachment with 13 of your colleagues. Ask everyone to update formulas and data. When done, ask them to send the changes back to you. Merge all the changes back into your master copy.
-2. **EXPERIMENT 2**: Share the same file using Office Excel 365 and ask your colleagues to update formulas and  data. You can literally watch **everyone** co-author and instantly see any content changes in real-time. **Simple** and effective!
+2. **EXPERIMENT 2**: Share the same file using Office Excel 365 and ask your colleagues to update formulas and data. You can literally watch **everyone** co-author and instantly see any content changes in real-time. **Simple** and effective!
 
 I will let you decide which is the simpler and more productive experiment, producing little to no **WASTE.** I will place all my apples on the second experiment!
 
