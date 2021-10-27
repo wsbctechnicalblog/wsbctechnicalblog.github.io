@@ -100,9 +100,9 @@ Download a copy of our ceremonies overview and Centre of Enablement working agre
 Here are references to more information on ceremonies mentioned above:
 
 - [Community of practice](/images/coming-soon.png)
-- [Working group](images/coming-soon.png)
-- [Dojo](images/coming-soon.png)
-- [Townhall](images/coming-soon.png)
+- [Working group](/images/coming-soon.png)
+- [Dojo](/images/coming-soon.png)
+- [Townhall](/images/coming-soon.png)
 
 Looking forward to your "vibrant" collaboration and feedback!
 
