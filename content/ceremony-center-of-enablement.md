@@ -28,7 +28,11 @@ Every CoE is laser focused on a strategic vision, actionable goals, and made up 
 - Disengaged participants - **WASTE**.
 - Lack of clarity of "**WHY** are we here?".
 
-As you scale your ecosystem into a ring of interconnected CoEs, you will need to coordinate them through a CoE sync. This 
+As you scale your ecosystem into a ring of interconnected CoEs, you will need to coordinate them through a CoE sync which:
+
+- Shares the current status and roadmap for each CoE.
+- Collaborates on current challenges for each CoE and the organization.
+- Identify and track dependencies between CoEs.
 
 ![CoE Sync](../images/ceremony-center-of-enablement-2.png) 
 
