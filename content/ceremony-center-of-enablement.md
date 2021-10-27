@@ -66,7 +66,7 @@ CoEs require guardrails and a blueprint to standup and energize new CoPs. Here a
 - CoE triggers Community of Practice, Working Group, and Dojo ceremonies linked to CoE.
 - CoE owns Community of Practice, Working Group, and Dojo ceremony lists and planning.
 - Recognition of attendance.
-- Terms of Reference defining **WHY** we are here and **WHAT** are our objectives and hypothesis that defines the CoE's existence and purpose, for example standardization, guidance, governance, and removing blockers.
+- **Terms of Reference** defining **WHY** we are here and **WHAT** are our objectives and hypothesis that defines the CoE's existence and purpose, for example standardization, guidance, governance, and removing blockers.
 - Weekly to bi-weekly cadence.
 
 Also have a look at our CoE working agreement poster for a crisp summary of these and other guidelines.
