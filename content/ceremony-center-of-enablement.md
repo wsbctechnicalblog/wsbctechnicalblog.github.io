@@ -91,9 +91,9 @@ Download a copy of our ceremonies overview and Centre of Enablement working agre
 
 > ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
-> DOWNLOAD >> [Ceremony Overview Poster PDF](/Documents/working-agreement-ceremonies-overview.pdf)
+> DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
-> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](working-agreement-ceremony-center-of-enablement.pdf)
+> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-center-of-enablement.pdf)
 
 ## Other ceremonies
 
