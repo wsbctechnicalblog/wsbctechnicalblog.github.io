@@ -1,4 +1,4 @@
-Title: What is our centre of enablement and WHY do we need it?
+Title: What is our Centre of Enablement (CoE) and WHY do we need it?
 Date: 2020-10-27 13:13
 Category: Posts
 Tags: agile, devops, posters
@@ -6,7 +6,7 @@ Slug: ceremony-center-of-enablement
 Author: Willy-Peter Schaub
 Summary: It all starts with people from different disciplines to create a focused competency center and obliterating silos through vibrant collaboration!
 
-Our center of enablement (CoE), typically known as center of excellence, assembles people from different disciplines to collaborate and enable our organization to shift across multiple disciplines to create a place where the highest standards are maintained. Every CoE is a coalition for change, made of these pillars: 
+Our Center of Enablement (CoE), typically known as center of excellence, assembles people from different disciplines to collaborate and enable our organization to shift across multiple disciplines to create a place where the highest standards are maintained. Every CoE is a coalition for change, made of these pillars: 
 
 - Provide thought leadership, vision, and direction.
 - Provide good practice and guardrails (aka governance).
@@ -36,7 +36,7 @@ As you scale your ecosystem into a ring of interconnected CoEs, you will need to
 
 # What is our secret sauce?
 
-Here is a recipe for our center of enablement ceremonies:
+Here is a recipe for our Center of Enablement ceremonies:
 
 ## Executive buy-in!
 
@@ -69,7 +69,7 @@ CoEs require guardrails and a blueprint to standup and energize new CoPs. Here a
 - Terms of Reference defining **WHY** we are here and **WHAT** are our objectives and hypothesist that defines the CoE's existence and purpose, for example standardization, guidance, governance, and removing blockers.
 - Weekly to bi-weekly cadence.
 
-Also have a look at out center of enablement working agreement poster for a crisp summary of these and other guidelines.
+Also have a look at our CoE working agreement poster for a crisp summary of these and other guidelines.
 
 ---
 
@@ -87,7 +87,7 @@ The centre of enablement acts as a hub for all the information, learnings, and o
 
 ## Quick Reference Posters
 
-Download a copy of our ceremonies overview and Centre of Enablement working agreement poster here:
+Download a copy of our ceremonies overview and CoE working agreement poster here:
 
 > ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
@@ -99,8 +99,8 @@ Download a copy of our ceremonies overview and Centre of Enablement working agre
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of practice](/images/coming-soon.png)
-- [Working group](/images/coming-soon.png)
+- [Community of Practice](/images/coming-soon.png)
+- [Working Group](/images/coming-soon.png)
 - [Dojo](/images/coming-soon.png)
 - [Townhall](/images/coming-soon.png)
 
