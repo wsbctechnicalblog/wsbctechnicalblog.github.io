@@ -20,7 +20,11 @@ Looking through the lens of our common engineering ecosystem, we use our Working
 
 ![Working Group](/images/ceremony-working-group-1.png)
 
-Every CoE can trigger one or more focused Working Groups throughout its lifetime.
+Every CoE can trigger one or more focused Working Groups throughout its lifetime. 
+
+![Relationshiop](/images/ceremony-working-group-5.png)
+
+In other words, every Working Group has a CoE parent, and every CoE can have one or more short-lived Working Groups.
 
 ---
 
