@@ -40,7 +40,15 @@ TBD
 
 Working Groups require guardrails and a blueprint to standup and energize. Here are some of our guidelines, sorted alphabetically:
 
-- TBD
+- 2-pizza sized team (3-9 members).
+- Groomed and prioritized subset of the CoE backlog
+- Innovation charge code for members to commit their time.
+- Membership is by invitation only.
+- Short-term lifetime.
+- **Terms of Reference** defining **WHY** we are here and **WHAT** are our objectives and hypothesist that defines the Working Group's existence and purpose.
+- Triggered by CoE.
+- Recognition of attendance.
+- Weekly to bi-weekly cadence.
 
 Also have a look at our Working Group working agreement poster for a crisp summary of these and other guidelines.
 
