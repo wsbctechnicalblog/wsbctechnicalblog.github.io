@@ -44,7 +44,7 @@ Every CoE requires executive support to be empowered with a clear strategy, an i
 
 ## Cross-discipline collaboration!
 
-CoEs rely on cross-discipline collaboration to erode debilitating silos and bring together the right mix of passion and expertise. For example, our common engineering ecosystem relies on architecture, business, development, operations, and other disciplines who respect each other and engage to create more efficient and effective guardrails, processes, and products. content marketing engine for your organization.
+CoEs rely on cross-discipline collaboration to erode debilitating silos and bring together the right mix of passion and expertise. For example, our common engineering ecosystem relies on architecture, business, development, operations, and other disciplines who respect each other and engage to create more efficient and effective guardrails, processes, and products.
 
 ## Consistency
 
@@ -66,7 +66,7 @@ CoEs require guardrails and a blueprint to standup and energize new CoPs. Here a
 - CoE triggers Community of Practice, Working Group, and Dojo ceremonies linked to CoE.
 - CoE owns Community of Practice, Working Group, and Dojo ceremony lists and planning.
 - Recognition of attendance.
-- Terms of Reference defining **WHY** we are here and **WHAT** are our objectives and hypothesist that defines the CoE's existence and purpose, for example standardization, guidance, governance, and removing blockers.
+- Terms of Reference defining **WHY** we are here and **WHAT** are our objectives and hypothesis that defines the CoE's existence and purpose, for example standardization, guidance, governance, and removing blockers.
 - Weekly to bi-weekly cadence.
 
 Also have a look at our CoE working agreement poster for a crisp summary of these and other guidelines.
