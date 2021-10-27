@@ -10,7 +10,7 @@ Working Groups are people from different disciplines, collaborating to solve a s
 
 ![Working Group](/images/ceremony-working-group-2.jpg)
 
-We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](TBD).
+We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](/images/coming-soon.png).
 
 ---
 
