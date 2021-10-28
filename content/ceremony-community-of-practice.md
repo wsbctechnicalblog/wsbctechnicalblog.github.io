@@ -74,6 +74,7 @@ CoPs are responsible to report back to its parent CoE with:
 - Report of outcomes.
 - Guardrail proposals, as needed.
 - Recording of all collaboration recordings.
+- Ongoing Net Performance Score (NPS) from members and stakeholders.
 
 ---
 
