@@ -4,7 +4,7 @@ Category: Posts
 Tags: learning
 Slug: dont-become-expert-beginner
 Author: Alex Bunardzic
-Summary: How to avoid the trap of getting stuck in a Expert Beginner role
+Summary: How to avoid the trap of getting stuck in an Expert Beginner role
 
 Dreyfus model lists five phases of skill acquisition:
 
