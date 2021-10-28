@@ -1,12 +1,15 @@
-Title: What is our Working Group and WHY do we need it?
+Title: What is our Community of Practice (CoP) and why do we need it?
 Date: 2020-10-30 13:13
 Category: Posts
 Tags: agile, devops, posters
 Slug: ceremony-community-of-practice
 Author: Willy-Peter Schaub
-Summary: TBD.
+Summary: "People with great PASSION can make the impossible happen" - Elon Musk.
 
 TBDs  
+
+Share a concern or passion for something they do and learn how to group of people with common disciplines do it better as they interact regularly.
+
 
 ![CoP](/images/ceremony-community-of-practice-1.jpg)
 
