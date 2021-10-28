@@ -67,6 +67,15 @@ Working Groups require guardrails and a blueprint to standup and energize. Here 
 
 Also have a look at our Working Group working agreement poster for a crisp summary of these and other guidelines.
 
+## All good things come to an end
+
+When your Working Group reaches its maximum lifetime or it as resolved the problem, you must terminate your Working Group!
+
+Also, every Working Group will go through the Forming-Storming-Norming-Performing stages, similar to [Tuckman's Stages of Group Development](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development). When you find yourself in the Performing phase, it is important to continuously measure the passion, energy, and value (to members and stakeholders) of your event and members. 
+
+![Passion](/images/ceremony-termination.png)
+Working GroupCommunity of Practice!
+
 ---
 
 # What are our Working Group deliverables?
