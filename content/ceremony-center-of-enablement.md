@@ -84,6 +84,7 @@ The centre of enablement acts as a hub for all the information, learnings, and o
 - Regular updates on the CoE terms of reference, for example at the Townhall.
 - Regular updates on the triggered events, for example at the Townhall.
 - Recordings of all collaboration sessions.
+- Ongoing Net Performance Score (NPS) from members and stakeholders.
 
 ---
 
