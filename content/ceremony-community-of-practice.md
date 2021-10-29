@@ -1,7 +1,7 @@
 Title: What is our Community of Practice (CoP) and why do we need it?
 Date: 2020-10-30 13:13
 Category: Posts
-Tags: agile, devops, posters
+Tags: agile, ceremony, devops, posters
 Slug: ceremony-community-of-practice
 Author: Willy-Peter Schaub
 Summary: "People with great PASSION can make the impossible happen" - Elon Musk.
