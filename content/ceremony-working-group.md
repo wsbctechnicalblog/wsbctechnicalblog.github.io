@@ -32,7 +32,7 @@ In other words, every Working Group has a CoE parent, and every CoE can have one
 
 As shown below, the Center of Enablement (CoE) typically spawns one or more Working Groups, which have a short-term lifetime. Similar to a short-lived feature branch.
 
-The Working Group starts with a terms of reference that outlines the "WHY" we need the Working Group, with an inherited buy-in from the CoE. We LAUNCH the Working Group and switch to IN-FLIGHT mode until the maximum lifetime, value or energy of the CoP starts diminishing. We then TERMINATE the Working Group and share the final outcomes, the value, with the CoE. 
+The Working Group starts with a terms of reference that outlines the "WHY" we need the Working Group, with an inherited buy-in from the CoE. We KICKSTART the Working Group and switch to IN-FLIGHT mode until the maximum lifetime, value or energy of the CoP starts diminishing. We then TERMINATE the Working Group and share the final outcomes, the value, with the CoE. 
 
 ![Lifetime](../images/ceremony-working-group-lifetime.png) 
 
