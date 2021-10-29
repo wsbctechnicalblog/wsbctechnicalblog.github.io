@@ -32,6 +32,16 @@ Every CoE typically triggers one CoP, but can trigger more as needed throughout 
 
 ---
 
+# Lifetime
+
+As shown below, the Center of Enablement (CoE) typically spawns one Community of Practice (CoP), which has a long-term lifetime. Similar to the CoE the CoP starts with a terms of reference that outlines the "WHY" we need the CoE, with an inherited buy-in from the CoE. We LAUNCH the CoP and switch to IN-FLIGHT mode until the value or energy of the CoP starts diminishing. We then TERMINATE the CoP and share the final outcomes, the value, with the CoE. 
+
+![Lifetime](../images/ceremony-community-of-practice-lifetime.png) 
+
+No **flight plan** (terms of reference), no CoE launch!
+
+---
+
 # What is our secret sauce?
 
 ![Secret Sauce](/images/ceremony-community-of-practice-3.png)
