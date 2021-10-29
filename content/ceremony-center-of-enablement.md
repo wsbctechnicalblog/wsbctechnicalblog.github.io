@@ -38,6 +38,16 @@ As you scale your ecosystem into a ring of interconnected CoEs, you will need to
 
 ---
 
+# Lifetime
+
+As shown below, the Center of Enablement (CoE) has a long-term lifetime, which starts with a terms of reference that outlines the "WHY" we need the CoE. Once we have business buy-in, we LAUNCH the CoE and switch to IN-FLIGHT mode until the value or energy of the CoE starts diminishing. We then TERMINATE the CoE and share the outcomes, the value, transparently. 
+
+![Lifetime](../images/ceremony-center-of-enablement-lifetime.png) 
+
+No **flight plan** (terms of reference) and/or no **take-off approval** (business buy-in), no CoE launch!
+
+---
+
 # What is our secret sauce?
 
 Here is a recipe for our Center of Enablement ceremonies:
