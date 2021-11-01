@@ -76,7 +76,7 @@ CoPs require guardrails and a blueprint to standup and energize. Here are some o
 - Membership is voluntary.
 - Long-term lifetime.
 - Terminate if there is no remaining energy in or value for the community.
-- **Terms of Reference** defining **WHY** we are here and **WHAT** are our objectives and hypothesist that defines the Working Group's existence and purpose.
+- **Terms of Reference** defining **WHY** we are here and **WHAT** are our objectives and hypothesis that defines the Working Group's existence and purpose.
 - Triggered by CoE.
 - Recognition of attendance.
 - Bi-weekly or monthly cadence.
