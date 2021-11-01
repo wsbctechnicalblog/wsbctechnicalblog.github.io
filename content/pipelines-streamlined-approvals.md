@@ -64,5 +64,5 @@ Where we can, we ...
 - Reduce the number and the sequence of approvals.
 - Automate validations and approvals.
 
-Leaving us with security review, which is based on automated vulnerability and quality scans and a few pairs of security engineer eyeballs. My colleague Kevin and I have been chatting about the [NEXUS](https://nexus-card.ca/)-type boarder control process, which may allow us to expedite parts of the security reviews based on **trust**. Watch this space for updates.
+Leaving us with security review, which is based on automated vulnerability and quality scans and a few pairs of security engineer eyeballs. My colleague Kevin and I have been chatting about the [NEXUS](https://nexus-card.ca/)-type border control process, which may allow us to expedite parts of the security reviews based on **trust**. Watch this space for updates.
 
