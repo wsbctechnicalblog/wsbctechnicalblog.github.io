@@ -40,7 +40,9 @@ As you scale your ecosystem into a ring of interconnected CoEs, you will need to
 
 # Lifetime
 
-As shown below, the Center of Enablement (CoE) has a long-term lifetime, which starts with a terms of reference that outlines the "WHY" we need the CoE. Once we have business buy-in, we LAUNCH the CoE and switch to IN-FLIGHT mode until the value or energy of the CoE starts diminishing. We then TERMINATE the CoE and share the outcomes, the value, transparently. 
+As shown below, the Center of Enablement (CoE) has a long-term lifetime, which starts with a terms of reference that outlines the "WHY" we need the CoE. Once we have business buy-in, we LAUNCH the CoE and switch to IN-FLIGHT mode until the value or energy of the CoE starts diminishing. We then TERMINATE the CoE and share the outcomes, the value, transparently.
+
+That said, think of the CoE lifetime as the [Huygens](https://en.wikipedia.org/wiki/Huygens_(spacecraft)) space probe's lifetime, which could be describes as a potentially infinite journey without any known destination. In comparison I visualize working groups as short regional flights and Communities of Practices as long-haul flights, for example a 15-20+ hour flight from North America to South-Africa.
 
 ![Lifetime](../images/ceremony-center-of-enablement-lifetime.png) 
 
