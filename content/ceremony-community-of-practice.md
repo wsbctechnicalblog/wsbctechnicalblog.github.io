@@ -38,18 +38,6 @@ As shown below, the Center of Enablement (CoE) typically spawns one Community of
 
 ![Lifetime](../images/ceremony-community-of-practice-lifetime.png) 
 
-The Scaled Agile Framework has another great visualisation of the CoP lifetime.
-
-![SAFe CoP](../images/ceremony-community-of-practice-safe.png)
-
->
-> Image from [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/)
->
-> Figure 4. CoPs typically follow a five-stage life cycle, from conceptualization to closure
->
-> © Scaled Agile, Inc.
->
-
 No **flight plan** (terms of reference), no CoE launch!
 
 ---
@@ -97,11 +85,20 @@ Also have a look at our Community of Practice working agreement poster for a cri
 
 ## All good things come to an end
 
-Every Community of Practice will go through the Forming-Storming-Norming-Performing stages, similar to [Tuckman's Stages of Group Development](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development). When you find yourself in the Performing phase, it is important to continuously measure the passion, energy, and value (to members and stakeholders) of your event and members. 
+Every CoP will go through the Forming-Storming-Norming-Performing stages, similar to [Tuckman's Stages of Group Development](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development), whereby it is important to continuously measure the passion, energy, and value (to members and stakeholders) of your event and members. 
+If any of these metrics start dipping it is time to ask whether is is time to terminate your CoP!
 
-![Passion](/images/ceremony-termination.png)
+The Scaled Agile Framework has a great visualization of the CoP five-stage life cycle, from **committing** to **shutting down**.
 
-If any of these metrics start dipping it is time to terminate your Community of Practice!
+![SAFe CoP](../images/ceremony-community-of-practice-safe.png)
+
+>
+> Image from [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/)
+>
+> Figure 4. CoPs typically follow a five-stage life cycle, from conceptualization to closure
+>
+> © Scaled Agile, Inc.
+>
 
 ---
 
