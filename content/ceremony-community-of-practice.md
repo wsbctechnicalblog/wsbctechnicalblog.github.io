@@ -38,6 +38,18 @@ As shown below, the Center of Enablement (CoE) typically spawns one Community of
 
 ![Lifetime](../images/ceremony-community-of-practice-lifetime.png) 
 
+The Scaled Agile Framework has another great visualisation of the CoP lifetime.
+
+![SAFe CoP](../images/ceremony-community-of-practice-safe.png)
+
+>
+> Image from [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/)
+>
+> Figure 4. CoPs typically follow a five-stage life cycle, from conceptualization to closure
+>
+> © Scaled Agile, Inc.
+>
+
 No **flight plan** (terms of reference), no CoE launch!
 
 ---
