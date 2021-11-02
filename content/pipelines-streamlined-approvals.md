@@ -1,5 +1,5 @@
 Title: Streamlining your pipeline approvals, without flooding DevSecOps with noise
-Date: 2021-03-13
+Date: 2021-11-02
 Category: Posts
 Tags: azure-devops, eliminate-waste, pipelines, tips
 Slug: pipelines-streamlined-approvals
