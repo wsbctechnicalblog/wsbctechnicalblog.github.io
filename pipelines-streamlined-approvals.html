@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Use Active Directory Groups in your unified classic CI CD pipelines - </title>
+        <title>Streamlining your pipeline approvals, without flooding DevSecOps with noise - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,67 +32,68 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
-            title="Permalink to Use Active Directory Groups in your unified classic CI CD pipelines">Use Active Directory Groups in your unified classic CI CD pipelines</a></h1>
+    <h1 style="font-size:2em;"><a href="/pipelines-streamlined-approvals.html" rel="bookmark"
+            title="Permalink to Streamlining your pipeline approvals, without flooding DevSecOps with noise">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 20 October 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 02 November 2021</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Instead of managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions</p>
+            <p>Back to the future, to optimize the Classic Azure Pipeline approvals.</p>
         </div>
     
         <div class="entry-content">
-            <p>The CI/CD pipeline is a DevOps practice for delivering code changes more frequently, consistently, and reliably. It enables Agile teams to increase deployment frequency, decrease lead time for change, change failure rate, and mean time to recovery key performance indicators, thereby improving quality and delivering value faster.</p>
-<h1>Let us use Active Directory (AD) security groups</h1>
-<p>After our dream for One CI/CD pipeline to rule them all we decided to go one-step further and simplify the classic release pipeline security using Active Directory (AD) groups. Instead of assigning and managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions. For example, we have project specific super users AD groups that grant elevated permissions to edit release pipelines and the development and system test stages.</p>
-<p><img alt="Classic Pipeline" src="/images/use-ad-groups-with-CI-CD-pipelines-1.png"></p>
+            <p>To improve our deployment frequency, reduce our lead time for change, and avoid unnecessary release stress, we have invested a lot of time reviewing processes and products. In this post I am <strong>NOT</strong> covering the magic of YAML-based pipelines (see <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html">magic of queue time assembly</a> for details) but am focusing on the classic Azure Release Pipelines.</p>
 <blockquote>
-<p>Empower the Agile Development Team to own development and system test stages</p>
+<p>DEPLOYMENT FREQUENCY - determines how many deployments are made to <strong>**production</strong>.</p>
+<p>LEAD TIME FOR CHANGE - is the average time between receiving a feature request and deploying it to <strong>production</strong>.
+</p>
 </blockquote>
-<p>Bookmark the Azure DevOps DRIFT project, which will enable you to monitor and remediate configuration drift, for example to automatically remove explicit user accounts added to an AD driven security model.</p>
-<h1>Why AD groups?</h1>
-<p>The value of using AD groups depends on your environment. In our case the benefits are:</p>
-<ul>
-<li>AD groups and memberships are centrally <strong>managed</strong> and <strong>audited</strong>.</li>
-<li>AD group membership is track than individual user accounts spread across multiple Azure DevOps services and projects.</li>
-<li>Azure DevOps users are empowered to request group membership using an existing process, rather than relying on the Azure DevOps project collection and project administrators.</li>
-<li>Simplifies automation of pipeline generation and configuration.</li>
-</ul>
-<p><img alt="Simplicity" src="/images/use-ad-groups-with-CI-CD-pipelines-2.png"></p>
-<h1>Let us use email-enabled Active Directory (AD) security groups</h1>
-<p>However, wait, we can go a step further and use mail-enabled AD security groups for pre- and post-stage pipeline approvals.</p>
-<p><img alt="Post deployment conditionse" src="/images/use-ad-groups-with-CI-CD-pipelines-3.png"></p>
-<p>Use email-enables security groups for stage approvals
-We replace the individual users highlighted in yellow with Release Approval AD groups.</p>
-<p><img alt="CI CD pipelines" src="/images/use-ad-groups-with-CI-CD-pipelines-4.png"></p>
+<h1>Streamlined approvals</h1>
+<p><img alt="Streamlined Approvals" src="/images/pipelines-streamlined-approvals-1.png"></p>
+<p>As shown, we assume we have a release pipeline that deploys artifacts received from the continuous integration (build) pipeline to a development, system test, canary, and production environment. Deployment to the development environment is automatic, whereas we have gates before can deploy to the system test, canary, and production environments.</p>
+<p>For each gate we use one or more Azure Active Directory (AAD) groups to define the group of users who are authorized to approve the deployment. See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops">use gates and approvals to control your deployment</a>.</p>
+<p>You may or should be frowning at this point, because anything that is deployed to the system test environment automatically triggers the Security Review. In our environment this led to agitated Security Engineers who were inundated with security review request across hundreds of release pipelines.</p>
+<p><img alt="Unhappy DevSecOps" src="/images/pipelines-streamlined-approvals-3.png"></p>
+<p>Let us reduce the number of security reviews which are WASTEful and check back with DevSecOps.</p>
+<hr>
+<h1>Artifact filters</h1>
+<p>The eye of the storm is created as we are passing all the artifacts down the release pipeline, regardless from which source repository branch it originated from. In other words, security engineers were triggered for changes that were not ready for prime time (production).</p>
+<p><img alt="Artifact Filters" src="/images/pipelines-streamlined-approvals-2.png"></p>
+<p>By adding an <strong>artifact filters</strong> allow us to create a first line of defense against artifacts that were generated from source repository branches that are not trusted in production and therefore do not require a security review. We only allow artifacts originating from <strong>release</strong> branches to trigger a security review and trundle down the pipeline.</p>
 <blockquote>
-<p>Simplify stage approvals with email-enabled AD security groups</p>
+<p><img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-5.png">
+Artifact filters can be overridden if you have relevant permissions. If you need a "<strong>you shall not pass</strong>" checkpoint, you should investigate the YAML-based pipelines as mentioned above.
+</p>
 </blockquote>
-<p>Why are there no stage approval notifications?
-We realized that some of our email-enabled AD security groups received no notifications and spend time with Microsoft support to identify the root cause(s).</p>
-<p>You have to ensure that the AD security groups:</p>
+<p>See <a href="https://medium.com/objectsharp/branch-and-artifact-filters-in-azure-pipelines-83d4256ada98">Branch and Artifact Filters in Azure Pipelines</a>, by Dave Lloyd, for a great overview of artifact filters. </p>
+<p><img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-4.png"></p>
+<p>We now have less WASTE, which makes me happy, and a lot less security reviews, which improved our security engineers' mood and ability to be laser focused on potential production deployments.</p>
+<hr>
+<h1>Mulling over the future approvals</h1>
+<blockquote>
+<p><em>"Constantly think about how you could be doing things better. Keep questioning yourself."</em> - Elon Musk
+</p>
+</blockquote>
+<p>We take this quote to heart and have been mulling over our streamlines approval process. When we map a pipeline to a value stream it becomes evident that all of the gates and the security review contribute to our <strong>Lead time for change</strong> - WASTE.</p>
+<p>Where we can, we ...</p>
 <ul>
-<li>Are <strong>mail-enabled</strong> and authorized to receive external emails.</li>
-<li>Have <strong>View Releases</strong> permissions on release and definitions.</li>
-<li>Have a subscription that is enabled for the group(s).</li>
+<li>Reduce the number and the sequence of approvals.</li>
+<li>Automate validations and approvals.</li>
 </ul>
-<p>The second bullet is the one that caught us off guard. If the permission is missing the Azure DevOps Pipeline event/notification service filters out the account's notifications. When notifications are filtered, no email is sent for impacted group(s) - silence prevails.</p>
-<p>Make sure that your email-enabled AD security groups are members of your project <strong>Contributors or Readers</strong>, which by default, have the View Releases permission.</p>
-<h1>What Is Next?</h1>
-<p>This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.</p>
+<p>Leaving us with security review, which is based on automated vulnerability and quality scans and a few pairs of security engineer eyeballs. My colleague Kevin and I have been chatting about the <a href="https://nexus-card.ca/">NEXUS</a>-type border control process, which may allow us to expedite parts of the security reviews based on <strong>trust</strong>. Watch this space for updates.</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
-        | Tagged: <a href="/tag/azure.html">azure </a><a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/pipelines.html">pipelines </a>
-        | <a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
-         title="Permalink to Use Active Directory Groups in your unified classic CI CD pipelines">Permalink</a>            
+        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/eliminate-waste.html">eliminate-waste </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/tips.html">tips </a>
+        | <a href="/pipelines-streamlined-approvals.html" rel="bookmark"
+         title="Permalink to Streamlining your pipeline approvals, without flooding DevSecOps with noise">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

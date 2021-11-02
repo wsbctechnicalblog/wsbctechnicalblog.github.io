@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-10-27T00:00:00-07:00</updated><entry><title>Quality of Design</title><link href="https://wsbctechnicalblog.github.io/quality-of-design.html" rel="alternate"></link><published>2021-10-27T00:00:00-07:00</published><updated>2021-10-27T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-10-27:/quality-of-design.html</id><summary type="html">&lt;p&gt;Adopt design principles to ensure highest quality of the code design&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Quality of design" src="../images/quality-of-design.png"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-11-02T00:00:00-07:00</updated><entry><title>Streamlining your pipeline approvals, without flooding DevSecOps with noise</title><link href="https://wsbctechnicalblog.github.io/pipelines-streamlined-approvals.html" rel="alternate"></link><published>2021-11-02T00:00:00-07:00</published><updated>2021-11-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-02:/pipelines-streamlined-approvals.html</id><summary type="html">&lt;p&gt;Back to the future, to optimize the Classic Azure Pipeline approvals.&lt;/p&gt;</summary><content type="html">&lt;p&gt;To improve our deployment frequency, reduce our lead time for change, and avoid unnecessary release stress, we have invested a lot of time reviewing processes and products. In this post I am &lt;strong&gt;NOT&lt;/strong&gt; covering the magic of YAML-based pipelines (see &lt;a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html"&gt;magic of queue time assembly&lt;/a&gt; for details) but am focusing on the classic Azure Release Pipelines.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DEPLOYMENT FREQUENCY - determines how many deployments are made to &lt;strong&gt;**production&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;LEAD TIME FOR CHANGE - is the average time between receiving a feature request and deploying it to &lt;strong&gt;production&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Streamlined approvals&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Streamlined Approvals" src="/images/pipelines-streamlined-approvals-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;As shown, we assume we have a release pipeline that deploys artifacts received from the continuous integration (build) pipeline to a development, system test, canary, and production environment. Deployment to the development environment is automatic, whereas we have gates before can deploy to the system test, canary, and production environments.&lt;/p&gt;
+&lt;p&gt;For each gate we use one or more Azure Active Directory (AAD) groups to define the group of users who are authorized to approve the deployment. See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops"&gt;use gates and approvals to control your deployment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may or should be frowning at this point, because anything that is deployed to the system test environment automatically triggers the Security Review. In our environment this led to agitated Security Engineers who were inundated with security review request across hundreds of release pipelines.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Unhappy DevSecOps" src="/images/pipelines-streamlined-approvals-3.png"&gt;&lt;/p&gt;
+&lt;p&gt;Let us reduce the number of security reviews which are WASTEful and check back with DevSecOps.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Artifact filters&lt;/h1&gt;
+&lt;p&gt;The eye of the storm is created as we are passing all the artifacts down the release pipeline, regardless from which source repository branch it originated from. In other words, security engineers were triggered for changes that were not ready for prime time (production).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Artifact Filters" src="/images/pipelines-streamlined-approvals-2.png"&gt;&lt;/p&gt;
+&lt;p&gt;By adding an &lt;strong&gt;artifact filters&lt;/strong&gt; allow us to create a first line of defense against artifacts that were generated from source repository branches that are not trusted in production and therefore do not require a security review. We only allow artifacts originating from &lt;strong&gt;release&lt;/strong&gt; branches to trigger a security review and trundle down the pipeline.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-5.png"&gt;
+Artifact filters can be overridden if you have relevant permissions. If you need a "&lt;strong&gt;you shall not pass&lt;/strong&gt;" checkpoint, you should investigate the YAML-based pipelines as mentioned above.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;See &lt;a href="https://medium.com/objectsharp/branch-and-artifact-filters-in-azure-pipelines-83d4256ada98"&gt;Branch and Artifact Filters in Azure Pipelines&lt;/a&gt;, by Dave Lloyd, for a great overview of artifact filters. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;We now have less WASTE, which makes me happy, and a lot less security reviews, which improved our security engineers' mood and ability to be laser focused on potential production deployments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Mulling over the future approvals&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;"Constantly think about how you could be doing things better. Keep questioning yourself."&lt;/em&gt; - Elon Musk
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We take this quote to heart and have been mulling over our streamlines approval process. When we map a pipeline to a value stream it becomes evident that all of the gates and the security review contribute to our &lt;strong&gt;Lead time for change&lt;/strong&gt; - WASTE.&lt;/p&gt;
+&lt;p&gt;Where we can, we ...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduce the number and the sequence of approvals.&lt;/li&gt;
+&lt;li&gt;Automate validations and approvals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Leaving us with security review, which is based on automated vulnerability and quality scans and a few pairs of security engineer eyeballs. My colleague Kevin and I have been chatting about the &lt;a href="https://nexus-card.ca/"&gt;NEXUS&lt;/a&gt;-type border control process, which may allow us to expedite parts of the security reviews based on &lt;strong&gt;trust&lt;/strong&gt;. Watch this space for updates.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="eliminate-waste"></category><category term="pipelines"></category><category term="tips"></category></entry><entry><title>Quality of Design</title><link href="https://wsbctechnicalblog.github.io/quality-of-design.html" rel="alternate"></link><published>2021-10-27T00:00:00-07:00</published><updated>2021-10-27T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-10-27:/quality-of-design.html</id><summary type="html">&lt;p&gt;Adopt design principles to ensure highest quality of the code design&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Quality of design" src="../images/quality-of-design.png"&gt;&lt;/p&gt;
 &lt;p&gt;Quality of design in software engineering is focused on the code structure. There are many ways to implement the desired behaviour of a software product. Careless implementation of desired behaviour delivers poor quality of design. Consequently, the quality of the delivery gets compromised.&lt;/p&gt;
 &lt;p&gt;It is therefore paramount to invest time and effort to ensure that quality of the designed code structure is optimal. There are two branches of industry standards that serve as guidelines when it comes to producing optimal quality of the designed code structure:&lt;/p&gt;
 &lt;ol&gt;
@@ -1563,6 +1601,11 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 &lt;td&gt;Microsoft &lt;a href="https://azure.microsoft.com/en-us/services/devops/"&gt;Azure DevOps&lt;/a&gt; services.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;ceremony&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Collaboration ceremonies.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;code&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Software coding.&lt;/td&gt;
@@ -1571,6 +1614,11 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 &lt;td&gt;devops&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;The union of people, process, and products to enable continuous delivery of value to our end users. - &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan Brian&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;eliminate-waste&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Continuous drive to avoid and reduce wasteful processes and products.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;engineering&lt;/td&gt;
@@ -3721,78 +3769,4 @@ Why is the version not flowing, as expected?&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Wrap-up&lt;/h1&gt;
 &lt;p&gt;You can continue to build your own pipelines, tinker with knobs, dials, configurations, and products, and remember to innovate all pipelines continuously - do-it-yourself (DIY). &lt;/p&gt;
-&lt;p&gt;Alternatively, you can focus on your business code and let the pipeline engineers focus on your pipelines - pipelines-as-a-service. The choice is &lt;strong&gt;yours&lt;/strong&gt;. &lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="x-as-code"></category></entry><entry><title>Find the capabilities and IP addresses of an Azure DevOps agent</title><link href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="alternate"></link><published>2021-03-12T00:00:00-08:00</published><updated>2021-03-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-03-12:/azure-devops-agent-capabilities.html</id><summary type="html">&lt;p&gt;How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Why should we care about an Azure DevOps Agent?&lt;/h1&gt;
-&lt;p&gt;To use our &lt;a href="https://wsbctechnicalblog.github.io/index.html"&gt;Azure Pipelines&lt;/a&gt;, we need the agents. Every time one of our pipelines is triggered, it comes to life on one or more jobs, which are hosted and run an agent.&lt;/p&gt;
-&lt;p&gt;Azure DevOps offers two types of agents. &lt;strong&gt;Microsoft-hosted&lt;/strong&gt; agents are a software as a service (SaaS) offering, where maintenance and upgrades are taken care of for you. Our recommended type of agents!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Self-hosted agents&lt;/strong&gt; give you more control of access and installed software needed for special builds and deployments. For example, we have a self-hosted pool to service our good old &lt;strong&gt;Cobol&lt;/strong&gt; builds.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;How to determine the capabilities of an Azure DevOps Agent&lt;/h1&gt;
-&lt;p&gt;We often get the question: "What software is installed on the agent?" In other words, how do we determine the capabilities of each Azure DevOPs agent.&lt;/p&gt;
-&lt;p&gt;For self-hosted agents you can go to your Azure DevOps &lt;strong&gt;organizational&lt;/strong&gt; setting, Agent pools, select &lt;strong&gt;pool&lt;/strong&gt;, select &lt;strong&gt;Agents&lt;/strong&gt;, select an &lt;strong&gt;agent&lt;/strong&gt;, and finally, select &lt;strong&gt;Capabilities&lt;/strong&gt;. You will be presented with the agent's system capabilities, variables, paths, and installed software, as shown below.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Capabilities of a &lt;strong&gt;self-hosted&lt;/strong&gt; agent&lt;/p&gt;
-&lt;p&gt;&lt;img alt="AzDO Agent Details" src="/images/azuredevops-agent-info-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;When you select a Microsoft-hosted agent and pool, the presented capabilities are less exciting.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Capabilities of a &lt;strong&gt;Microsoft-hosted&lt;/strong&gt; agent&lt;/p&gt;
-&lt;p&gt;&lt;img alt="AzDO Agent LAck of Details" src="/images/azuredevops-agent-info-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You need to visit the &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted Agents&lt;/a&gt; documentation and scroll down to the &lt;strong&gt;Software&lt;/strong&gt; section. Peruse a list of hosted agents, classic pipeline editor specifications, YAML image labels, and links to software available on each type of agent.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Azure DevOps Agent Documentation&lt;/p&gt;
-&lt;p&gt;&lt;img alt="AzDO Agent Documentation" src="/images/azuredevops-agent-info-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Select your agent, click on the included software hyperlink, and voila, you have a detailed report of the agent's capabilities.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Azure DevOps Agent Capabilities Documentation&lt;/p&gt;
-&lt;p&gt;&lt;img alt="AzDO Agent Capabilties Documentation" src="/images/azuredevops-agent-info-4.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;How to determine the IP addresses of an Azure DevOps Agent&lt;/h1&gt;
-&lt;p&gt;The &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted Agents&lt;/a&gt; documentation also gives you information on how to identify possible IP ranges for Microsoft-hosted agents. This information is pivotal if you need to allow the agents to make their way from the public internet, through your firewall, to collaborate with one of your services.&lt;/p&gt;
-&lt;p&gt;Unfortunately, you will also find some small print ... well, it is the same sized font and the note is placed on a prominent Indigo background. It is easy to miss the highlighted part, as shown below, that mentions that the IP addresses for the macOS agents are not included.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;macOS Addresses are a mystery&lt;/p&gt;
-&lt;p&gt;&lt;img alt="macOS Address Mystery" src="/images/azuredevops-agent-info-5.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;First thought is to queue a investigative pipeline on one of the macOS agents and run the &lt;strong&gt;ipconfig getifaddr en0&lt;/strong&gt; command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.&lt;/p&gt;
-&lt;p&gt;Try this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;-&lt;/span&gt; &lt;span class="nf"&gt;task:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;&lt;span class="mi"&gt;@2&lt;/span&gt;
-  &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="nl"&gt;targetType&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="kr"&gt;inline&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-    &lt;span class="nl"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="n"&gt;ipecho&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-    &lt;span class="nl"&gt;errorActionPreference&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-    &lt;span class="nl"&gt;pwsh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;It reveals the public IP address:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
-
-... SNIPPED FOR BLOG POST ...
-
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;main&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text-align: center; flex: 1; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Your IP is 13.105.49.13&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-...SNIPPED FOR BLOG POST...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Lastly, who owns the IP address we just found?&lt;/p&gt;
-&lt;p&gt;Visit &lt;a href="https://ipinfo.io/13.105.49.13"&gt;13.105.49.13 IP Address Details - IPinfo.io&lt;/a&gt; for the answer:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;IP address "BINGO!"&lt;/p&gt;
-&lt;p&gt;&lt;img alt="IPinfo.io" src="/images/azuredevops-agent-info-6.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;A big thank you to &lt;a href="https://www.linkedin.com/in/lukas-wilson-8792ba172/"&gt;Lukas Wilson&lt;/a&gt;, one of our resident Azure gurus, who helped with the IP address exploration. &lt;/p&gt;
-&lt;h1&gt;Reference Information&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted"&gt;Microsoft-hosted agents&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/index.html"&gt;Part 1: Pipelines - Why bother and what are our nightmares and options?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="tips"></category></entry></feed>
+&lt;p&gt;Alternatively, you can focus on your business code and let the pipeline engineers focus on your pipelines - pipelines-as-a-service. The choice is &lt;strong&gt;yours&lt;/strong&gt;. &lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="x-as-code"></category></entry></feed>
