@@ -45,7 +45,9 @@ At all times, the Dojo must be a psychologically safe place for all in attendanc
 1. Upon entering the Dojo, strive to cultivate an open mind that expects to be instructed on skill. No other concerns or discussions should be on the practitioner's mind for the duration of the session.  
 1. _Sensei_ and _senpais_ always enter the Dojo with undivided respect and gratitude to students who are ready to receive instructions.  
 1. It is important to be on time for practice. If you arrive late, please wait for _sensei_ to give you the signal to enter the session, so as not to disturb the flow.  
-1. _Kohais_ (students) may find themselves disagreeing with the instructor. While asking questions is part of the training session, it is important to keep in mind that not all the details of the technique have been fully presented at the moment when confusion arises in the student's understanding. Patience is a virtue, and often what appears contradictory or incoherent becomes clearer as the training session continues. 
+1. _Kohais_ (students) may find themselves disagreeing with the instructor. While asking questions is part of the training session, it is important to keep in mind that not all the details of the technique have been fully presented at the moment when confusion arises in the student's understanding. Patience is a virtue, and often what appears contradictory or incoherent becomes clearer as the training session continues.
+
+![Working Agreement](../images/WorkingAgreementCeremonyDojo.png)
 
 ## Deliverables 
 
