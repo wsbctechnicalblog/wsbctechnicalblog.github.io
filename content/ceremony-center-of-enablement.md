@@ -48,6 +48,10 @@ That said, think of the CoE lifetime as the [Huygens](https://en.wikipedia.org/w
 
 ![Lifetime](../images/ceremony-center-of-enablement-lifetime.png) 
 
+Emphasize the long-term lifetime, the strategic laser focus, and the "**WHY we are**" here when creating a new CoE. Invest time to prepare your terms of reference for your CoE to ensure that you can launch with clear objectives and committed members. Walk up to a whiteboard or use a digital board to collaborate around **Current State**, **Future State**, **Current Problems**, **What can stop us**, **What we need to do**, **How do we know we are successful** to define your terms of reference.
+
+![CoE Planning](../images/ceremony-center-of-enablement-3.png) 
+
 No **flight plan** (terms of reference) and/or no **take-off approval** (business buy-in), no CoE launch!
 
 ---
