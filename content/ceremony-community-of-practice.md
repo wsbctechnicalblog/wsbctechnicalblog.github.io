@@ -38,6 +38,10 @@ As shown below, the Center of Enablement (CoE) typically spawns one Community of
 
 ![Lifetime](../images/ceremony-community-of-practice-lifetime.png) 
 
+>
+> ![Bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png) Something to peruse:  [Community of Practice Maturity Model](https://workingknowledge-csp.com/wp-content/uploads/CoP_Maturity_Model_v1.pdf) by Bill Kaplan from Working Knowledge.
+>
+
 No **flight plan** (terms of reference), no CoE launch!
 
 ---
@@ -80,6 +84,10 @@ CoPs require guardrails and a blueprint to standup and energize. Here are some o
 - Triggered by CoE.
 - Recognition of attendance.
 - Bi-weekly or monthly cadence.
+
+>
+> ![Bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png) Something to peruse for terms of reference ideas: [Community of Practice: Terms of Reference](https://view.officeapps.live.com/op/view.aspx?src=http%3A%2F%2Ftheagiledirector.com%2Fimages%2FCoPToR-examplebyEvanLeybourn.docx) by Evan Leybourn
+>
 
 Also have a look at our Community of Practice working agreement poster for a crisp summary of these and other guidelines. 
 
