@@ -1,5 +1,5 @@
 Title: Guidelines to start and terminate the Dojo Events
-Date: 2021-11-03
+Date: 2021-11-11
 Category: Events
 Tags: dojo, quality, events
 Slug: dojo-events
