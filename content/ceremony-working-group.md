@@ -1,5 +1,5 @@
 Title: What is our Working Group and WHY do we need it?
-Date: 2020-11-05 13:13
+Date: 2020-11-09 13:13
 Category: Posts
 Tags: agile, ceremony, devops, posters
 Slug: ceremony-working-group
