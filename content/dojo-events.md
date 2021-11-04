@@ -72,3 +72,17 @@ If the Dojo demonstrates effective progress (i.e., students are swiftly graduati
 Everything good and nice must eventually end. The Dojo should not be forever; its goal is to swiftly elevate the skill levels to the desired status. Ideally, once all Dojo students graduate to the black belt level, the Dojo can be closed. 
 
 In a case where the pace of progress is not as brisk as expected, _sensei_ and Dojo stakeholders/sponsors should meet and discuss whether it makes sense to continue with the Dojo events. Sometimes the best course of action is to cut our losses and move on. If the Dojo reaches that undesirable state, _sensei_’s duty is to close it.
+
+---
+
+# Reference Information
+
+## Quick Reference Posters
+
+Download a copy of our ceremonies overview and Community of Practice (CoP) working agreement poster here:
+
+> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
+>
+> DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
+>
+> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-dojo.pdf)
