@@ -48,7 +48,7 @@ Here is a recipe for our Working Group ceremonies:
 
 ## Executive buy-in!
 
-Every Working Group inherits the executive support to be empowered with a clear strategy, an innovation budget, and support where needed from its parent Centre of Enablement (CoE).
+Every Working Group inherits the executive support to be empowered with a clear strategy, an innovation budget, and support where needed from its parent Center of Enablement (CoE).
 
 ## Cross-discipline collaboration!
 
@@ -112,13 +112,13 @@ Download a copy of our ceremonies overview and Working Group working agreement p
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
-> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-working-group.pdf)
+> DOWNLOAD >> [Working Agreement - Working Group PDF](/documents/working-agreement-ceremony-working-group.pdf)
 
 ## Other ceremonies
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Enablement]../images/coming-soon.png)
+- [Center of Enablement](../images/coming-soon.png)
 - [Community of Practice](../images/coming-soon.png)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
