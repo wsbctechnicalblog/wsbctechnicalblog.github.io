@@ -97,7 +97,7 @@ Also have a look at our CoE working agreement poster for a crisp summary of thes
 
 # What are our CoE deliverables?
 
-The centre of enablement acts as a hub for all the information, learnings, and outcomes for all the collaboration, community of practice, working group, and Dojo events it triggers. 
+The Center of Enablement acts as a hub for all the information, learnings, and outcomes for all the collaboration, community of practice, working group, and Dojo events it triggers. 
 
 - Regular updates on the CoE terms of reference, for example at the Townhall.
 - Regular updates on the triggered events, for example at the Townhall.
@@ -116,13 +116,13 @@ Download a copy of our ceremonies overview and CoE working agreement poster here
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
-> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-center-of-enablement.pdf)
+> DOWNLOAD >> [Working Agreement - Center of Enablement PDF](/documents/working-agreement-ceremony-center-of-enablement.pdf)
 
 ## Other ceremonies
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Practice](../images/coming-soon.png)
+- [Center of Practice](../images/coming-soon.png)
 - [Working Group](../images/coming-soon.png)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
