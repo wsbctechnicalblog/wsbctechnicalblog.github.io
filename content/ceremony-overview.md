@@ -1,16 +1,18 @@
 Title: An overview of our key collaboration ceremonies
 Date: 2020-11-13 13:13
 Category: Posts
-Tags: agile, ceremony, devops, posters
+Tags: ceremony, devops, posters
 Slug: ceremony-overview
 Author: Willy-Peter Schaub
 Summary: Taking a step back and digesting this weeks storm of ceremony posts.
 
-During this week we launched a tsunami of blog posts focused on our [Community of Enablement](/images/coming-soon.png) (CoE), [Dojo](/images/coming-soon.png), [Townhall](/images/coming-soon.png), [Working Group](/images/coming-soon.png), and [Community of Practice](/images/coming-soon.png) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
+During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/images/coming-soon.png) (CoE), [Dojo](/images/coming-soon.png), [Townhall](/images/coming-soon.png), [Working Group](/images/coming-soon.png), and [Community of Practice](/images/coming-soon.png) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
 In this post I will answer some of the questions we received to date.
 
 > ![Overview](../images/ceremonies-overview.png)
+
+The overview image highlights that the heart of our ceremonies are the CoE 
 
 # Frequently asked questions
 
@@ -18,7 +20,7 @@ In this post I will answer some of the questions we received to date.
 
 ## Who creates the CoE?
 
-Anyone can collaborate and initiate a [Community of Enablement](/images/coming-soon.png) and any of its related ceremonies. Our directors and managers are the **stewards** to ensure we have buy-in and that each CoE provides vision, direction, and governance to the organization. 
+Anyone can collaborate and initiate a [Center of Enablement](/images/coming-soon.png) and any of its related ceremonies. Our directors and managers are the **stewards** to ensure we have buy-in and that each CoE provides vision, direction, and governance to the organization. 
 
 ---
 
