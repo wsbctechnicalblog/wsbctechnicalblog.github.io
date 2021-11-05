@@ -8,9 +8,9 @@ Summary: Union of laser-focused experts collaborating to empower its parent Cent
 
 Working Groups are people from different disciplines, collaborating to solve a specific problem and/or (dis)prove a hypothesis. They are empowered to research processes and products, evaluate and recommend guardrails (governance), and propose adoption and readiness plans.  
 
-![Working Group](/images/ceremony-working-group-2.jpg)
+![Working Group](../images/ceremony-working-group-2.jpg)
 
-We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](/images/coming-soon.png).
+We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](../images/coming-soon.png).
 
 ---
 
@@ -18,11 +18,11 @@ We admit that there are many flavours and definitions of working groups. Within 
 
 Looking through the lens of our common engineering ecosystem, we use our Working Group to bring together committed and appropriate subject matter experts from different areas within the organization to solve a specific problem and/or (dis)prove a hypothesis for its parent CoE. Subject matter experts from Architecture, Business, DevSecOps, Operations, Site Reliability Engineering, Innovations, and other stakeholders not only bring their tribal knowledge and experience to the table, but naturally erode organizational silos through vibrant collaboration.
 
-![Working Group](/images/ceremony-working-group-1.png)
+![Working Group](../images/ceremony-working-group-1.png)
 
 Every CoE can trigger one or more focused Working Groups throughout its lifetime. 
 
-![Relationshiop](/images/ceremony-working-group-5.png)
+![Relationshiop](../images/ceremony-working-group-5.png)
 
 In other words, every Working Group has a CoE parent, and every CoE can have one or more short-lived Working Groups.
 
@@ -42,7 +42,7 @@ No **flight plan** (terms of reference), no CoE launch!
 
 # What is our secret sauce?
 
-![Secret Sauce](/images/ceremony-working-group-3.png)
+![Secret Sauce](../images/ceremony-working-group-3.png)
 
 Here is a recipe for our Working Group ceremonies:
 
@@ -85,14 +85,14 @@ When your Working Group reaches its maximum lifetime or it as resolved the probl
 
 Also, every Working Group will go through the Forming-Storming-Norming-Performing stages, similar to [Tuckman's Stages of Group Development](https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development). When you find yourself in the Performing phase, it is important to continuously measure the passion, energy, and value (to members and stakeholders) of your event and members. 
 
-![Passion](/images/ceremony-termination.png)
+![Passion](../images/ceremony-termination.png)
 Working GroupCommunity of Practice!
 
 ---
 
 # What are our Working Group deliverables?
 
-![SDeliverables](/images/ceremony-working-group-4.png)
+![SDeliverables](../images/ceremony-working-group-4.png)
 
 Working Groups are responsible to report back to its parent CoE with:  
 
@@ -108,7 +108,7 @@ Working Groups are responsible to report back to its parent CoE with:
 
 Download a copy of our ceremonies overview and Working Group working agreement poster here:
 
-> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
+> ![Poster](../images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
@@ -118,10 +118,10 @@ Download a copy of our ceremonies overview and Working Group working agreement p
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Enablement](/images/coming-soon.png)
-- [Community of Practice](/images/coming-soon.png)
-- [Dojo](/images/coming-soon.png)
-- [Townhall](/images/coming-soon.png)
+- [Community of Enablement]../images/coming-soon.png)
+- [Community of Practice](../images/coming-soon.png)
+- [Dojo](../images/coming-soon.png)
+- [Townhall](../images/coming-soon.png)
 
 Looking forward to your "vibrant" collaboration and feedback!
 
