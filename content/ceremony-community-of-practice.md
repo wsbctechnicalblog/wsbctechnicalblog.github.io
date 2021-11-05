@@ -1,7 +1,7 @@
 Title: What is our Community of Practice (CoP) and why do we need it?
 Date: 2020-11-10 13:13
 Category: Posts
-Tags: agile, ceremony, devops, posters
+Tags: ceremony, devops, posters
 Slug: ceremony-community-of-practice
 Author: Willy-Peter Schaub
 Summary: "People with great PASSION can make the impossible happen" - Elon Musk.
@@ -54,7 +54,7 @@ Here is a recipe for our Community of Practice ceremonies:
 
 ## Executive buy-in!
 
-Every Working Group inherits the executive support to be empowered with a clear strategy and support where needed from its parent Centre of Enablement (CoE).
+Every Working Group inherits the executive support to be empowered with a clear strategy and support where needed from its parent Center of Enablement (CoE).
 
 ## Cross-discipline collaboration!
 
@@ -133,13 +133,13 @@ Download a copy of our ceremonies overview and Community of Practice (CoP) worki
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
-> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-community-of-practice.pdf)
+> DOWNLOAD >> [Working Agreement - Community of Practice PDF](/documents/working-agreement-ceremony-community-of-practice.pdf)
 
 ## Other ceremonies
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Enablement](../images/coming-soon.png)
+- [Center of Enablement](../images/coming-soon.png)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
 - [Working Group](../images/coming-soon.png)
