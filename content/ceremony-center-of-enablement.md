@@ -1,7 +1,7 @@
 Title: What is our Centre of Enablement (CoE) and WHY do we need it?
 Date: 2020-11-08 13:13
 Category: Posts
-Tags: agile, ceremony, devops, posters
+Tags: ceremony, devops, posters
 Slug: ceremony-center-of-enablement
 Author: Willy-Peter Schaub
 Summary: It all starts with people from different disciplines to create a focused competency center and obliterating silos through vibrant collaboration!
