@@ -1,7 +1,7 @@
 Title: What is our Working Group and WHY do we need it?
 Date: 2020-11-09 13:13
 Category: Posts
-Tags: agile, ceremony, devops, posters
+Tags: ceremony, devops, posters
 Slug: ceremony-working-group
 Author: Willy-Peter Schaub
 Summary: Union of laser-focused experts collaborating to empower its parent Center of Enablement (CoE).
