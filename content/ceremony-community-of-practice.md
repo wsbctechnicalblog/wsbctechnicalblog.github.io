@@ -8,7 +8,7 @@ Summary: "People with great PASSION can make the impossible happen" - Elon Musk.
 
 Community of Practice (CoP) is an event by people that share a concern or passion for something they do and learn how to group of people with common disciplines do it better as they interact regularly. As implied by the name, a CoP is a **community**, driven by **passion**, and therefore voluntary.
 
-![CoP](/images/ceremony-community-of-practice-1.png)
+![CoP](../images/ceremony-community-of-practice-1.png)
 
 Read [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/) for details on how to organize, operate, and encourage your community. Within the context of this blog post we are referring to CoPs that are triggered by and serve our [Centers of Enablement (CoE)](/images/coming-soon.png).
 
@@ -26,7 +26,7 @@ Looking through the lens of our common engineering ecosystem, we use our CoPs to
 
 Our core objective is to promote collaboration and share tribal knowledge, experience, and passion for processes, products, and other interesting themes that our Centers of Enablement (CoE) are focused on.
 
-![CoP](/images/ceremony-community-of-practice-2.png)
+![CoP](../images/ceremony-community-of-practice-2.png)
 
 Every CoE typically triggers one CoP, but can trigger more as needed throughout its lifetime.
 
@@ -48,7 +48,7 @@ No **flight plan** (terms of reference), no CoE launch!
 
 # What is our secret sauce?
 
-![Secret Sauce](/images/ceremony-community-of-practice-3.png)
+![Secret Sauce](../images/ceremony-community-of-practice-3.png)
 
 Here is a recipe for our Community of Practice ceremonies:
 
@@ -112,7 +112,7 @@ The Scaled Agile Framework has a great visualization of the CoP five-stage life 
 
 # What are our Community of Practice deliverables?
 
-![SDeliverables](/images/ceremony-community-of-practice-4.png)
+![SDeliverables](../images/ceremony-community-of-practice-4.png)
 
 CoPs are responsible to report back to its parent CoE with:  
 
@@ -129,7 +129,7 @@ CoPs are responsible to report back to its parent CoE with:
 
 Download a copy of our ceremonies overview and Community of Practice (CoP) working agreement poster here:
 
-> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
+> ![Poster](../images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
@@ -139,10 +139,10 @@ Download a copy of our ceremonies overview and Community of Practice (CoP) worki
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Enablement](/images/coming-soon.png)
-- [Dojo](/images/coming-soon.png)
-- [Townhall](/images/coming-soon.png)
-- [Working Group](/images/coming-soon.png)
+- [Community of Enablement](../images/coming-soon.png)
+- [Dojo](../images/coming-soon.png)
+- [Townhall](../images/coming-soon.png)
+- [Working Group](../images/coming-soon.png)
 
 Looking forward to your "vibrant" collaboration and feedback!
 
