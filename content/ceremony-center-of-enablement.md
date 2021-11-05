@@ -112,7 +112,7 @@ The centre of enablement acts as a hub for all the information, learnings, and o
 
 Download a copy of our ceremonies overview and CoE working agreement poster here:
 
-> ![Poster](/images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
+> ![Poster](../images/moving-hundreds-of-pipeline-snowflakes-qr-1-2.png)
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
@@ -122,10 +122,10 @@ Download a copy of our ceremonies overview and CoE working agreement poster here
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Community of Practice](/images/coming-soon.png)
-- [Working Group](/images/coming-soon.png)
-- [Dojo](/images/coming-soon.png)
-- [Townhall](/images/coming-soon.png)
+- [Community of Practice](../images/coming-soon.png)
+- [Working Group](../images/coming-soon.png)
+- [Dojo](../images/coming-soon.png)
+- [Townhall](../images/coming-soon.png)
 
 Looking forward to your "vibrant" collaboration and feedback!
 
