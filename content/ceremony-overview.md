@@ -18,23 +18,35 @@ In this post I will answer some of the questions we received to date.
 
 ## Who creates the CoE?
 
-TBD
-
-## Why is the CoE called Center of Enablement, not Excellence?
-
-TBD
-
-## Why do we have guardrails?
-
-TBD
-
-## Why do we insist on a terms of reference?
-
-TBD
+Anyone can collaborate and initiate a [Community of Enablement](/images/coming-soon.png) and any of its related ceremonies. Our directors and managers are the **stewards** to ensure we have buy-in and that each CoE provides vision, direction, and governance to the organization. 
 
 ---
 
-Watch this space for more questions and posts by ceremony attendees to share their experiences.
+## Why is the CoE called Center of Enablement, not Excellence?
+
+On one hand the term **Excellence** triggers the same alarm bells as **Best Practices**. More importantly our goal is to **enable** our common engineering stakeholders - this is why I LOVE our decision to pivot to **Enablement**.
+
+---
+
+## Why do we have guardrails?
+
+Yes, the guardrails feel like we are ignoring the first value of the Agile manifesto: "_Individuals and interactions over processes and tools_." We decided to introduce lightweight guardrails through these blog posts and the referenced overview and working agreement posters to ensure that we promote **consistent** and **laser focused** collaboration, with measurable outcomes, and an opportunity to drive our dream to optimize our meetings.
+
+![Meetings](../images/ceremony-overview-1x.png)
+
+---
+
+## Why do we insist on a terms of reference?
+
+![Meetings](../images/ceremony-overview-2.png)
+
+We question the value of every ceremony and every meeting we plan or attend. The minimal expectations for the terms of reference identifies the purpose, the outcomes, and a measurable hypothesis. This promotes consistency and purpose!
+
+---
+
+![Meetings](../images/azuredevop-automation-stakeholders-3.png)
+
+Watch this space for more questions and posts by ceremony members sharing their experiences.
 
 ---
 
