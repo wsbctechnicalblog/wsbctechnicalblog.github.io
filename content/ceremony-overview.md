@@ -4,7 +4,7 @@ Category: Posts
 Tags: ceremony, devops, posters
 Slug: ceremony-overview
 Author: Willy-Peter Schaub
-Summary: Taking a step back and digesting this weeks storm of ceremony posts.
+Summary: Taking a step back and digesting this week's storm of ceremony posts.
 
 During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/images/coming-soon.png) (CoE), [Dojo](/images/coming-soon.png), [Townhall](/images/coming-soon.png), [Working Group](/images/coming-soon.png), and [Community of Practice](/images/coming-soon.png) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
@@ -12,7 +12,12 @@ In this post I will answer some of the questions we received to date.
 
 > ![Overview](../images/ceremonies-overview.png)
 
-The overview image highlights that the heart of our ceremonies are the CoE 
+The overview image highlights that the heart of our ceremonies is the CoE providing vision, direction, and governance. It also serves as the steward and source of laser focused working groups, dojos, and community of practice ceremonies. For details on each of ceremonies, refer to:
+- [Center of Enablement](/images/coming-soon.png) (CoE)
+- [Community of Practice](/images/coming-soon.png) (CoP)
+- [Dojo](/images/coming-soon.png)
+- [Townhall](/images/coming-soon.png)
+- [Working Group](/images/coming-soon.png)
 
 # Frequently asked questions
 
@@ -26,7 +31,7 @@ Anyone can collaborate and initiate a [Center of Enablement](/images/coming-soon
 
 ## Why is the CoE called Center of Enablement, not Excellence?
 
-On one hand the term **Excellence** triggers the same alarm bells as **Best Practices**. More importantly our goal is to **enable** our common engineering stakeholders - this is why I LOVE our decision to pivot to **Enablement**.
+On one hand the term **Excellence** triggers the same alarm bells as **Best Practices**. More importantly our goal is to **enable** our common engineering stakeholders - therefore I LOVE our decision to pivot to **Enablement**. The CoE enables by providing vision, direction, and governance, as well as stewarding laser focused working groups, dojos, and community of practices.
 
 ---
 
@@ -38,7 +43,7 @@ Yes, the guardrails feel like we are ignoring the first value of the Agile manif
 
 ---
 
-## Why do we insist on a terms of reference?
+## Why do we insist on terms of reference?
 
 ![Meetings](../images/ceremony-overview-2.png)
 
