@@ -1,7 +1,7 @@
 Title: Guidelines to start and terminate the Dojo Events
 Date: 2021-11-11
 Category: Events
-Tags: dojo, quality, events
+Tags: dojo, quality, ceremony
 Slug: dojo-events
 Author: Alex Bunardzic
 Summary: Instructions on how to start, run and terminate Dojos
