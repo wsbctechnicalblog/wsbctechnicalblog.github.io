@@ -10,9 +10,16 @@ In the previous [Streamlining your pipeline approvals, without flooding DevSecOp
 
 ![Jurassic Park](/images/pipelines-streamlined-approvals-new-world-1.jpg)
 
- In this post we will switch gears and compare it to the  era of state-of-the-art YAML-based Azure Pipelines.
-
+ In this post we will switch gears and compare it to the era of state-of-the-art YAML-based Azure Pipelines. 
+ 
 ![Jurassic Park](/images/pipelines-streamlined-approvals-new-world-2.jpg)
+ 
+ Most of the engineers I recently discussed this magic with, looked at me with the _"what are you talking about?!?"_ glazed look. 
+ 
+![Jurassic Park](/images/pipelines-streamlined-approvals-new-world-5.png)
+ 
+ A really worrying trend, because the Microsoft [documentation](https://aka.ms/yaml) is comprehensive and the associated features amazing - hence this post.
+
 
 # Goodbye Artifact Filter Issues
 
