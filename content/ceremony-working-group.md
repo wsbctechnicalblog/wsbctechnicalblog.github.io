@@ -1,5 +1,5 @@
 Title: What is our Working Group and WHY do we need it?
-Date: 2020-11-09 13:13
+Date: 2021-11-09 13:13
 Category: Posts
 Tags: ceremony, devops, posters
 Slug: ceremony-working-group
@@ -10,7 +10,7 @@ Working Groups are people from different disciplines, collaborating to solve a s
 
 ![Working Group](../images/ceremony-working-group-2.jpg)
 
-We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](../images/coming-soon.png).
+We admit that there are many flavours and definitions of working groups. Within the context of this blog post we are referring to Working Groups that are triggered by and serve our [Centers of Enablement (CoE)](/ceremony-center-of-enablement.html).
 
 ---
 
@@ -118,7 +118,7 @@ Download a copy of our ceremonies overview and Working Group working agreement p
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Center of Enablement](../images/coming-soon.png)
+- [Center of Enablement](/ceremony-center-of-enablement.html)
 - [Community of Practice](../images/coming-soon.png)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
