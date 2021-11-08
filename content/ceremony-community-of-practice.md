@@ -10,7 +10,7 @@ Community of Practice (CoP) is an event by people that share a concern or passio
 
 ![CoP](../images/ceremony-community-of-practice-1.png)
 
-Read [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/) for details on how to organize, operate, and encourage your community. Within the context of this blog post we are referring to CoPs that are triggered by and serve our [Centers of Enablement (CoE)](/images/coming-soon.png).
+Read [Community of Practice](https://www.scaledagileframework.com/communities-of-practice/) for details on how to organize, operate, and encourage your community. Within the context of this blog post we are referring to CoPs that are triggered by and serve our [Centers of Enablement (CoE)](/ceremony-center-of-enablement.html).
 
 ---
 
@@ -139,7 +139,7 @@ Download a copy of our ceremonies overview and Community of Practice (CoP) worki
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Center of Enablement](../images/coming-soon.png)
+- [Center of Enablement](/ceremony-center-of-enablement.html)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
 - [Working Group](../images/coming-soon.png)
