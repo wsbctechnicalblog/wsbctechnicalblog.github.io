@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Streamlining your pipeline approvals, without flooding DevSecOps with noise - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/pipelines-streamlined-approvals.html" rel="bookmark"
+            title="Permalink to Streamlining your pipeline approvals, without flooding DevSecOps with noise">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 02 November 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Back to the future, to optimize the Classic Azure Pipeline approvals.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>To improve our deployment frequency, reduce our lead time for change, and avoid unnecessary release stress, we have invested a lot of time reviewing processes and products. In this post I am <strong>NOT</strong> covering the magic of YAML-based pipelines (see <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part4.html">magic of queue time assembly</a> for details) but am focusing on the classic Azure Release Pipelines.</p>
+<blockquote>
+<p>DEPLOYMENT FREQUENCY - determines how many deployments are made to <strong>**production</strong>.</p>
+<p>LEAD TIME FOR CHANGE - is the average time between receiving a feature request and deploying it to <strong>production</strong>.
+</p>
+</blockquote>
+<h1>Streamlined approvals</h1>
+<p><img alt="Streamlined Approvals" src="/images/pipelines-streamlined-approvals-1.png"></p>
+<p>As shown, we assume we have a release pipeline that deploys artifacts received from the continuous integration (build) pipeline to a development, system test, canary, and production environment. Deployment to the development environment is automatic, whereas we have gates before can deploy to the system test, canary, and production environments.</p>
+<p>For each gate we use one or more Azure Active Directory (AAD) groups to define the group of users who are authorized to approve the deployment. See <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops">use gates and approvals to control your deployment</a>.</p>
+<p>You may or should be frowning at this point, because anything that is deployed to the system test environment automatically triggers the Security Review. In our environment this led to agitated Security Engineers who were inundated with security review request across hundreds of release pipelines.</p>
+<p><img alt="Unhappy DevSecOps" src="/images/pipelines-streamlined-approvals-3.png"></p>
+<p>Let us reduce the number of security reviews which are WASTEful and check back with DevSecOps.</p>
+<hr>
+<h1>Artifact filters</h1>
+<p>The eye of the storm is created as we are passing all the artifacts down the release pipeline, regardless from which source repository branch it originated from. In other words, security engineers were triggered for changes that were not ready for prime time (production).</p>
+<p><img alt="Artifact Filters" src="/images/pipelines-streamlined-approvals-2.png"></p>
+<p>By adding an <strong>artifact filters</strong> allow us to create a first line of defense against artifacts that were generated from source repository branches that are not trusted in production and therefore do not require a security review. We only allow artifacts originating from <strong>release</strong> branches to trigger a security review and trundle down the pipeline.</p>
+<blockquote>
+<p><img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-5.png">
+Artifact filters can be overridden if you have relevant permissions. If you need a "<strong>you shall not pass</strong>" checkpoint, you should investigate the YAML-based pipelines as mentioned above.
+</p>
+</blockquote>
+<p>See <a href="https://medium.com/objectsharp/branch-and-artifact-filters-in-azure-pipelines-83d4256ada98">Branch and Artifact Filters in Azure Pipelines</a>, by Dave Lloyd, for a great overview of artifact filters. </p>
+<p><img alt="Happy DevSecOps" src="/images/pipelines-streamlined-approvals-4.png"></p>
+<p>We now have less WASTE, which makes me happy, and a lot less security reviews, which improved our security engineers' mood and ability to be laser focused on potential production deployments.</p>
+<hr>
+<h1>Mulling over the future approvals</h1>
+<blockquote>
+<p><em>"Constantly think about how you could be doing things better. Keep questioning yourself."</em> - Elon Musk
+</p>
+</blockquote>
+<p>We take this quote to heart and have been mulling over our streamlines approval process. When we map a pipeline to a value stream it becomes evident that all of the gates and the security review contribute to our <strong>Lead time for change</strong> - WASTE.</p>
+<p>Where we can, we ...</p>
+<ul>
+<li>Reduce the number and the sequence of approvals.</li>
+<li>Automate validations and approvals.</li>
+</ul>
+<p>Leaving us with security review, which is based on automated vulnerability and quality scans and a few pairs of security engineer eyeballs. My colleague Kevin and I have been chatting about the <a href="https://nexus-card.ca/">NEXUS</a>-type border control process, which may allow us to expedite parts of the security reviews based on <strong>trust</strong>. Watch this space for updates.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/eliminate-waste.html">eliminate-waste </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/tips.html">tips </a>
+        | <a href="/pipelines-streamlined-approvals.html" rel="bookmark"
+         title="Permalink to Streamlining your pipeline approvals, without flooding DevSecOps with noise">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(1)</li>
+                    <li><a href="/tag/devops.html">devops</a>(31)</li>
+                    <li><a href="/tag/posters.html">posters</a>(6)</li>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(2)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(10)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(29)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(8)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(31)</li>
+                    <li><a href="/tag/tips.html">tips</a>(11)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(15)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/quality.html">quality</a>(6)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (6)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (71)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

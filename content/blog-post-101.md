@@ -31,8 +31,10 @@ Here is a list of tags we use when creating new content:
 | automation      |  | Automate repetitive tasks and processes. |
 | azure           |  | Microsoft [Azure](https://azure.microsoft.com). |
 | azure-devops    |  | Microsoft [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) services. |
+| ceremony        |  | Collaboration ceremonies. |
 | code            |  | Software coding.
 | devops          |  | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |
+| eliminate-waste |  | Continuous drive to avoid and reduce wasteful processes and products. |
 | engineering     |  | Software engineering. |
 | event           |  | Meetup, training, workshop, and other event gatherings. |
 | feature-flags   |  | Separating deploy from release through feature toggles / flags. |

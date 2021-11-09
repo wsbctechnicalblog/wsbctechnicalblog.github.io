@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Quality of Design - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/quality-of-design.html" rel="bookmark"
+            title="Permalink to Quality of Design">Quality of Design</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Wed 27 October 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Adopt design principles to ensure highest quality of the code design</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><img alt="Quality of design" src="../images/quality-of-design.png"></p>
+<p>Quality of design in software engineering is focused on the code structure. There are many ways to implement the desired behaviour of a software product. Careless implementation of desired behaviour delivers poor quality of design. Consequently, the quality of the delivery gets compromised.</p>
+<p>It is therefore paramount to invest time and effort to ensure that quality of the designed code structure is optimal. There are two branches of industry standards that serve as guidelines when it comes to producing optimal quality of the designed code structure:</p>
+<ol>
+<li>Design principles</li>
+<li>Design patterns</li>
+</ol>
+<p>Design patterns have been introduced more than 25 years ago (<a href="https://www.amazon.ca/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?dchild=1&amp;gclid=Cj0KCQjw8eOLBhC1ARIsAOzx5cH-0nZehpHbrYfJBmdgtJ5AAfU0wYOyyHk4LrPvKjNjmsHAy31fcO8aAlsVEALw_wcB&amp;hvadid=353255290729&amp;hvdev=c&amp;hvlocphy=9001545&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=362995041334244275&amp;hvtargid=kwd-301036555631&amp;hydadcr=26084_9772498&amp;keywords=design+patterns+gang+of+four&amp;qid=1635370689&amp;sr=8-1">Design Patterns: Elements of Reusable Object-Oriented Software</a>, published in 1994). Most software engineers are by now familiar with many design patterns, which is a great improvement compared to earlier days of software engineering practices.</p>
+<p>Design principles, on the other hand, are still not as widely accepted as design patterns are. Now may be a good time to pay a bit closer attention to what design principles mean and how to adopt them in our daily practice.</p>
+<h2>What are design principles?</h2>
+<p>Organizing structural components of a software system should be following accepted industry standards. These standards comprise the body of design principles.</p>
+<p>The standardized body of design principles has two levels of abstraction:</p>
+<ol>
+<li>Coarse-grained design principles</li>
+<li>Fine-grained design principles</li>
+</ol>
+<p>Coarse-grained design principles are difficult to apply in daily practice because they are quite abstract. There are four coarse-grained design principles:</p>
+<ol>
+<li>Low coupling</li>
+<li>High cohesion</li>
+<li>Low complexity</li>
+<li>Proper encapsulation</li>
+</ol>
+<p>Fine-grained design principles are less abstract and therefore easier to apply in daily practice. Adhering to fine-grained design principles ensures adherence to more abstract, coarse-grained design principles.</p>
+<h2>What are the benefits of design principles?</h2>
+<p>Design principles are helpful in building common basis of architectural knowledge. By following guidelines on how to implement fine-grained design principles, software engineers get enabled to build, understand, and maintain high-quality software systems. Systems built following design principles can successfully grow into large scale systems. Following those principles is also helpful in preventing us from unforeseen pitfalls.</p>
+<h2>An example of fine-grained design principle</h2>
+<p>An example of a fine-grained design principle may help understand the benefit of mastering those principles. For this exercise let’s have a quick look at <strong>Option Operand Principle (OOP)</strong>:</p>
+<p>Every routine, method, or function operates on certain values. Those values are referred to as <em>operands</em>. Typically, operands make their way into the body of a routine, method, or function by being passed in as an argument, or a parameter. The OOP principle states:</p>
+<blockquote>
+<p>The argument of a routine should only include operands (no options).</p>
+</blockquote>
+<p>What is meant by ‘option’ in the above principle? We can view option in two ways:</p>
+<ol>
+<li>Option that the client calling the routine does not provide a value for the argument</li>
+<li>Option that is passed in as an argument but is not treated as an argument</li>
+</ol>
+<p>In the first case, the onus is on the creator of the routine to provide a default value that will kick in in case the client chooses not to provide the value (i.e., in case the argument contains NULL value).</p>
+<p>In the second case, a value passed in as an argument is not being operated on by the routine. If the routine does not operate on a value passed in, that value is viewed as an option, not as an operand.</p>
+<p>Both cases of violating the OOP principle are considered bad code smell, with the first case being viewed as a mild code smell while the second case a more serious case of bad code smell.</p>
+<p>Providing default value for cases when the client chooses not to provide the value for an argument is a code smell because it places the onus on the routine to implement reasonable escape hatch (which may not always be easily achievable), while it may give the client code a false understanding of what to expect when calling the routine.</p>
+<p>Providing an option when calling a routine places onus on the called routine to handle the decision logic. That responsibility is better left to the calling client; they need some processing done; they should possess sufficient understanding which routine to call.</p>
+<h2>Detecting violations of the OOP principle</h2>
+<p>While it is very desirable to be able to automatically detect violations of this principle, in practice it is proving to be a tough challenge. Static code analyzers cannot easily distinguish between operands and options. The only time when it is possible to detect violations of this principle automatically and unambiguously is if the option type is Boolean. In such case it is obvious that Boolean argument serves to split the code into two paths and decide the mode of operation.</p>
+<h2>Conclusion​​​​​​​</h2>
+<p>There are numerous design principles that guide us in producing high quality structure of a software product. Adhering to those principles protects us from various pitfalls and improves the overall quality and maintainability of our system. In this episode I’ve reviewed only one design principle, to provide a simple example and a foretaste of how those principles may apply in our daily practice.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/design.html">design </a><a href="/tag/code-quality.html">code-quality </a><a href="/tag/learning.html">learning </a>
+        | <a href="/quality-of-design.html" rel="bookmark"
+         title="Permalink to Quality of Design">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(1)</li>
+                    <li><a href="/tag/devops.html">devops</a>(31)</li>
+                    <li><a href="/tag/posters.html">posters</a>(6)</li>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(2)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/tdd.html">TDD</a>(10)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(29)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(8)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(31)</li>
+                    <li><a href="/tag/tips.html">tips</a>(11)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(15)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/quality.html">quality</a>(6)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (6)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (71)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
