@@ -1,4 +1,4 @@
-Title: What is our Centre of Enablement (CoE) and WHY do we need it?
+Title: What is our Center of Enablement (CoE) and WHY do we need it?
 Date: 2021-11-08 13:13
 Category: Posts
 Tags: ceremony, devops, posters
