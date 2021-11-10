@@ -122,10 +122,10 @@ Download a copy of our ceremonies overview and CoE working agreement poster here
 
 Here are references to more information on ceremonies mentioned above:
 
-- [Center of Practice](../images/coming-soon.png)
-- [Working Group](../images/coming-soon.png)
+- [Community of Practice](/ceremony-community-of-practice.html)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
+- [Working Group](/ceremony-working-group.html)
 
 Looking forward to your "vibrant" collaboration and feedback!
 
