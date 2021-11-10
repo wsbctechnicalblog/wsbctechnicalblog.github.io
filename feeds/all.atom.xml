@@ -94,7 +94,7 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;li&gt;&lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../ceremony-working-group.html"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/ceremony-working-group.html"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Looking forward to your "vibrant" collaboration and feedback!&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry><entry><title>What is our Working Group and WHY do we need it?</title><link href="https://wsbctechnicalblog.github.io/ceremony-working-group.html" rel="alternate"></link><published>2021-11-09T13:13:00-08:00</published><updated>2021-11-09T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-09:/ceremony-working-group.html</id><summary type="html">&lt;p&gt;Union of laser-focused experts collaborating to empower its parent Center of Enablement (CoE).&lt;/p&gt;</summary><content type="html">&lt;p&gt;Working Groups are people from different disciplines, collaborating to solve a specific problem and/or (dis)prove a hypothesis. They are empowered to research processes and products, evaluate and recommend guardrails (governance), and propose adoption and readiness plans.  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Working Group" src="../images/ceremony-working-group-2.jpg"&gt;&lt;/p&gt;
@@ -165,7 +165,7 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;p&gt;Here are references to more information on ceremonies mentioned above:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Community of Practice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -283,10 +283,10 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;h2&gt;Other ceremonies&lt;/h2&gt;
 &lt;p&gt;Here are references to more information on ceremonies mentioned above:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Center of Practice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/ceremony-working-group.html"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Looking forward to your "vibrant" collaboration and feedback!&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry><entry><title>Do not automate anything unless you automate the tests</title><link href="https://wsbctechnicalblog.github.io/automate-tests.html" rel="alternate"></link><published>2021-11-04T00:00:00-07:00</published><updated>2021-11-04T00:00:00-07:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-04:/automate-tests.html</id><summary type="html">&lt;p&gt;Automating critical systems operations without having automated tests is risky practice&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Automate QA" src="../images/qatrex.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;There are three types of automated tests that software engineers focus on:&lt;/p&gt;
