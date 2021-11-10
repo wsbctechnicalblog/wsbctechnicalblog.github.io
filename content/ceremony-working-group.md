@@ -118,7 +118,7 @@ Download a copy of our ceremonies overview and Working Group working agreement p
 Here are references to more information on ceremonies mentioned above:
 
 - [Center of Enablement](/ceremony-center-of-enablement.html)
-- [Community of Practice](../images/coming-soon.png)
+- [Community of Practice](/ceremony-community-of-practice.html)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
 
