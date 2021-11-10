@@ -6,7 +6,7 @@ Slug: ceremony-overview
 Author: Willy-Peter Schaub
 Summary: Taking a step back and digesting this week's storm of ceremony posts.
 
-During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](../images/coming-soon.png), [Townhall](../images/coming-soon.png), [Working Group](../ceremony-working-group.html), and [Community of Practice](../images/coming-soon.png) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
+During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](../images/coming-soon.png), [Townhall](../images/coming-soon.png), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
 In this post I will answer some of the questions we received to date.
 
@@ -14,7 +14,7 @@ In this post I will answer some of the questions we received to date.
 
 The overview image highlights that the heart of our ceremonies is the CoE providing vision, direction, and governance. It also serves as the steward and source of laser focused working groups, dojos, and community of practice ceremonies. For details on each of ceremonies, refer to:
 - [Center of Enablement](/ceremony-center-of-enablement.html) (CoE)
-- [Community of Practice](../images/coming-soon.png) (CoP)
+- [Community of Practice](/ceremony-community-of-practice.html) (CoP)
 - [Dojo](../images/coming-soon.png)
 - [Townhall](../images/coming-soon.png)
 - [Working Group](../ceremony-working-group.html)
