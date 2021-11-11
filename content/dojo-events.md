@@ -35,7 +35,7 @@ Following successful graduation from the white to the yellow belt level, the Doj
 
 ## Preferred mode of working 
 
-It is important not to get stuck at the level of [Expert Beginner](https://wsbctechnicalblog.github.io/dont-become-expert-beginner.html).
+It is important not to get stuck at the level of [Expert Beginner](../images/coming-soon.png).
 
 At all times, the Dojo must be a psychologically safe place for all in attendance. To ensure smooth and effective progress, the _sensei_ imposes the _Dojo Code of Ethics_:
 
@@ -46,8 +46,6 @@ At all times, the Dojo must be a psychologically safe place for all in attendanc
 1. _Sensei_ and _senpais_ always enter the Dojo with undivided respect and gratitude to students who are ready to receive instructions.  
 1. It is important to be on time for practice. If you arrive late, please wait for _sensei_ to give you the signal to enter the session, so as not to disturb the flow.  
 1. _Kohais_ (students) may find themselves disagreeing with the instructor. While asking questions is part of the training session, it is important to keep in mind that not all the details of the technique have been fully presented at the moment when confusion arises in the student's understanding. Patience is a virtue, and often what appears contradictory or incoherent becomes clearer as the training session continues.
-
-![Working Agreement](../images/WorkingAgreementCeremonyDojo.png)
 
 ## Deliverables 
 
@@ -85,4 +83,4 @@ Download a copy of our ceremonies overview and Community of Practice (CoP) worki
 >
 > DOWNLOAD >> [Ceremony Overview Poster PDF](/documents/working-agreement-ceremonies-overview.pdf)
 >
-> DOWNLOAD >> [Working Agreement - Centre of Enablement PDF](/documents/working-agreement-ceremony-dojo.pdf)
+> DOWNLOAD >> [Working Agreement - Dojo Ceremony PDF](/documents/working-agreement-ceremony-dojo.pdf)
