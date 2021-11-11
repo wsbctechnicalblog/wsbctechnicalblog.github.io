@@ -58,7 +58,7 @@ Every Working Group inherits the executive support to be empowered with a clear 
 
 ## Cross-discipline collaboration!
 
-A Community of Practice relies on vibrant collaboration and respect, similar to the [Dojo](/images/coming-soon.png), in particular:
+A Community of Practice relies on vibrant collaboration and respect, similar to the [Dojo](/dojo-events.html), in particular:
 
 - Respect those more experienced. 
 - Do not force your ideas on others.
@@ -140,7 +140,7 @@ Download a copy of our ceremonies overview and Community of Practice (CoP) worki
 Here are references to more information on ceremonies mentioned above:
 
 - [Center of Enablement](/ceremony-center-of-enablement.html)
-- [Dojo](../images/coming-soon.png)
+- [Dojo](/dojo-events.html)
 - [Townhall](../images/coming-soon.png)
 - [Working Group](/ceremony-working-group.html)
 
