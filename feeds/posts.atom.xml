@@ -31,7 +31,7 @@
 &lt;h2&gt;Executive buy-in!&lt;/h2&gt;
 &lt;p&gt;Every Working Group inherits the executive support to be empowered with a clear strategy and support where needed from its parent Center of Enablement (CoE).&lt;/p&gt;
 &lt;h2&gt;Cross-discipline collaboration!&lt;/h2&gt;
-&lt;p&gt;A Community of Practice relies on vibrant collaboration and respect, similar to the &lt;a href="/images/coming-soon.png"&gt;Dojo&lt;/a&gt;, in particular:&lt;/p&gt;
+&lt;p&gt;A Community of Practice relies on vibrant collaboration and respect, similar to the &lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;, in particular:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Respect those more experienced. &lt;/li&gt;
 &lt;li&gt;Do not force your ideas on others.&lt;/li&gt;
@@ -92,7 +92,7 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;p&gt;Here are references to more information on ceremonies mentioned above:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ceremony-working-group.html"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -166,7 +166,7 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Looking forward to your "vibrant" collaboration and feedback!&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry><entry><title>How to create deterministic tests</title><link href="https://wsbctechnicalblog.github.io/deterministic-tests.html" rel="alternate"></link><published>2021-11-09T00:00:00-08:00</published><updated>2021-11-09T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-09:/deterministic-tests.html</id><summary type="html">&lt;p&gt;Quality of automated tests is the most important aspect of continuous delivery&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Law of Demeter" src="../images/nondeterministic.jpg"&gt;&lt;/p&gt;
@@ -284,7 +284,7 @@ If any of these metrics start dipping it is time to ask whether is is time to te
 &lt;p&gt;Here are references to more information on ceremonies mentioned above:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../images/coming-soon.png"&gt;Townhall&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ceremony-working-group.html"&gt;Working Group&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
