@@ -141,7 +141,7 @@ Here are references to more information on ceremonies mentioned above:
 
 - [Center of Enablement](/ceremony-center-of-enablement.html)
 - [Dojo](/dojo-events.html)
-- [Townhall](../images/coming-soon.png)
+- [Townhall](/townhall.html)
 - [Working Group](/ceremony-working-group.html)
 
 Looking forward to your "vibrant" collaboration and feedback!

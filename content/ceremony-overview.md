@@ -6,7 +6,7 @@ Slug: ceremony-overview
 Author: Willy-Peter Schaub
 Summary: Taking a step back and digesting this week's storm of ceremony posts.
 
-During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](/dojo-events.html), [Townhall](../images/coming-soon.png), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
+During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](/dojo-events.html), [Townhall](/townhall.html), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
 In this post I will answer some of the questions we received to date. Plan is to update this post as we dog-food our ceremonies, with an intent to continuously improve them.
 
@@ -16,7 +16,7 @@ The overview image highlights that the heart of our ceremonies is the CoE provid
 - [Center of Enablement](/ceremony-center-of-enablement.html) (CoE)
 - [Community of Practice](/ceremony-community-of-practice.html) (CoP)
 - [Dojo](/dojo-events.html)
-- [Townhall](../images/coming-soon.png)
+- [Townhall](/townhall.html)
 - [Working Group](../ceremony-working-group.html)
 
 # Frequently asked questions
@@ -40,7 +40,7 @@ List of questions we will cover herein:
 
 The [Center of Enablement](/ceremony-center-of-enablement.html) and [Working Group](../ceremony-working-group.html) are by invitation only for the active and core members. You can request to be invited to these events as a "fly on the wall" to observe, not interrupt.
 
-The [Community of Practice](/ceremony-community-of-practice.html), [Dojo](/dojo-events.html), and [Townhall](../images/coming-soon.png) ceremonies are open to everyone. You should be engaged and committed to collaborate when joining these events and introduce yourself to the Sensei for Dojos out of respect. 
+The [Community of Practice](/ceremony-community-of-practice.html), [Dojo](/dojo-events.html), and [Townhall](/townhall.html) ceremonies are open to everyone. You should be engaged and committed to collaborate when joining these events and introduce yourself to the Sensei for Dojos out of respect. 
 
 ---
 
