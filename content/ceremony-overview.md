@@ -8,7 +8,7 @@ Summary: Taking a step back and digesting this week's storm of ceremony posts.
 
 During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](/dojo-events.html), [Townhall](../images/coming-soon.png), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
-In this post I will answer some of the questions we received to date.
+In this post I will answer some of the questions we received to date. Plan is to update this post as we dog-food our ceremonies, with an intent to continuously improve them.
 
 > ![Overview](../images/ceremonies-overview.png)
 
@@ -21,9 +21,9 @@ The overview image highlights that the heart of our ceremonies is the CoE provid
 
 # Frequently asked questions
 
-List of questions we will cover herein:
-
 ![FAQ](../images/automation-lesson-1-5.png)
+
+List of questions we will cover herein:
 
 - How can I join a ceremony?
 - What are the pre-requisites to initiate a ceremony?
@@ -70,7 +70,7 @@ The following table summarizes the outcomes of the ceremonies.
 
 ---
 
-## When and How to host a ceremony? 
+## When and how to host a ceremony? 
 
 ![Host](../images/ceremony-overview-6.png)
 
