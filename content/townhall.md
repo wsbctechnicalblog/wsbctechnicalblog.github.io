@@ -36,7 +36,7 @@ Upon executing the PI and attending to the agreed-upon elimination of prioritize
 
 ## Preferred mode of working 
 
-Townhall events are envisioned as “come all, share all” happenings. Ceremonious parts of the event should be kept at a minimum, to enable lively and productive collaboration. There should be no anointed/appointed leaders of the event. Preferred mode of collaboration is by following the [Guest Leaders](https://wsbctechnicalblog.github.io/guest-leader.html) model – minimize any ‘vertical distance’ between participants and encourage stepping forward and temporarily taking charge of the pressing topics. A facilitator/moderator is a must at such events. 
+Townhall events are envisioned as “come all, share all” happenings. Ceremonious parts of the event should be kept at a minimum, to enable lively and productive collaboration. There should be no anointed/appointed leaders of the event. Preferred mode of collaboration is by following the [Guest Leaders](/guest-leader.html) model – minimize any ‘vertical distance’ between participants and encourage stepping forward and temporarily taking charge of the pressing topics. A facilitator/moderator is a must at such events. 
 
 At all times, the Townhall event must be a psychologically safe place for all in attendance. To ensure smooth and effective progress, we propose the _Townhall Code of Ethics_:
 
