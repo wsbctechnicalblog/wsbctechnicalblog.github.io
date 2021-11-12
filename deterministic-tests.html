@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>How to create deterministic tests - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/deterministic-tests.html" rel="bookmark"
+            title="Permalink to How to create deterministic tests">How to create deterministic tests</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Tue 09 November 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Quality of automated tests is the most important aspect of continuous delivery</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><img alt="Law of Demeter" src="../images/nondeterministic.jpg"></p>
+<p>In my previous post <a href="/automate-tests.html">Do not automate anything unless you automate the tests</a> I discussed the importance of having full test coverage for any automated operation in the system. This episode will elaborate on that by looking into factors that enable automated tests to run deterministically.</p>
+<p>Generally speaking. there are two types of tests:</p>
+<ol>
+<li>Exploratory tests</li>
+<li>Automated tests</li>
+</ol>
+<p>Exploratory tests are not part of the continuous delivery flow. Usually performed by QA engineers (in collaboration with other team members), these tests are experimental in nature and are focused on disrupting the system <em>status quo</em>. The aim of exploratory tests is to expose potential vulnerabilities in the automated system. If vulnerabilities get discovered during the exploratory testing spike, a remedy solution gets engineered and implemented. The system thus grows more resilient, less fragile.</p>
+<p>Automated tests, on the other hand, are part and parcel of the continuous delivery flow. As a matter of fact, continuous delivery is not possible without a comprehensive suite of automated tests.</p>
+<p>Continuous delivery is only possible if automated tests that are underpinning the delivery are deterministic. If the automated tests are not 100% deterministic, engaging in continuous delivery becomes risky. If the risk compounds, we are at the danger of experiencing outages and defects caused by the continuous delivery. Once that starts happening, we would be forced to discontinue the continuous delivery, and would fall back to the slow and sluggish scheduled delivery model.</p>
+<h2>What are deterministic tests?</h2>
+<p>Deterministic tests are tests that are repeatable. If we have a test that delivers certain results when we run it, and then if we run it again it delivers different results, that test is not deterministic.</p>
+<p>Tests that are not deterministic are not only useless, but they are also harmful. They have capacity to mislead us. As such, non-deterministic tests must be avoided at all cost. It is better not having any tests than having non-deterministic tests.</p>
+<h2>How to recognize non-deterministic tests?</h2>
+<p>It is relatively straightforward to detect non-deterministic tests. If a test we are creating or modifying/examining depends on some other tests, it is a clear sign that it is a non-deterministic test.</p>
+<p>Any tests that depend on some sequence of events that are scheduled outside of the body of the test are non-deterministic. Automated tests must be immune to any sequence of events that happen in the system under test.</p>
+<p>In addition to that, any test that depends on hidden inputs is a non-deterministic test. A typical example would be a test that depends on the system clock. System clock is a hidden input, which means that at the time the test gets executed, it is impossible to predict the value of that input. A system clock provides the test with the value (usually in milliseconds). That value changes with the passage of time (every millisecond that value is different). The test whose assertion depends on that hidden value cannot ever be deterministic.</p>
+<p>Similarly, tests that rely on any other non-explicit values (entering the test via a network, or some I/O operation) are non-deterministic. Also, tests that depend on some value that is part of the shared mutable state are non-deterministic tests. Such tests must be banned from the repo.</p>
+<h2>Create only quality tests</h2>
+<p>As we’ve seen, not all automated tests are equally valuable. Some are downright harmful. Our goal is to hone our skills to only create high value, high quality automated tests. That way we will pave the way to the ultimate engineering goal – delivery on demand, not on the predefined schedule.</p>
+<h2>So, what are quality tests?</h2>
+<p>To begin with, each test must isolate <strong>one failure mode only</strong>. A test that detects and measures two or more failure modes is low quality test.</p>
+<p>What is one failure mode? It is a single expectation of how we intend the system to behave. A quality test should never combine two or more such expectations. For example, we must never create a test that expects the system to calculate monthly installment rate AND craft the notification message to the client. Those are two separate expectations, and those expectations must have two separate automated tests.</p>
+<p>It goes without saying that the above two separate tests are completely independent of each other. We must make sure to create our expectations in such a way that the sequence of execution does not matter.</p>
+<p>Next thing to strive for is speed. As we keep creating more and more such isolated automated tests, we want to be able to run them at will. The decision when to run all tests should never be an issue. All tests must always run, without incurring any speed bumps. Ideally, any time we make any changes to our system, we must run all tests. That means that tests must be designed to run in memory. No suite of tests should take more than several seconds to run.</p>
+<p>The onus is therefore on us, the designers of automated tests, to pay close attention to how are we going to design them so that they don’t consume more than few seconds of running time. Being able to get to that level of design skills takes a lot of practice. It is therefore recommended that engineers attend TDD Dojo sessions where they can gain those skills by working together (mob programming).</p>
+<p>If we are running all tests after we make any change to our system, that implies that all tests are repeatable. Any time tests run they produce identical results. I was at one point managing a software development department that released faulty code to production. During the <em>postmortem</em> we discovered that engineers have disabled some tests in the pipeline. When asked why, they replied that the tests were failing which was preventing them from releasing the code to production. When asked why those tests were failing, the engineers replied: “There were some TEMPORAL dependencies!”</p>
+<p>‘Temporal dependencies’ is just a fancy phrase for ‘tests are not isolated; they are not independent’. Meaning, they are poor quality tests.</p>
+<p>Moral of the story: it is crucially important to make sure that each test is completely isolated and independent from any other events in the system.</p>
+<h2>Conclusion</h2>
+<p>Automated tests should be viewed as the Oracle. They should be able to predict the future. If we go to the Oracle and ask: “Is it safe to release this code to production?”, the Oracle must be able to give us a clear Yes or No answer. If all tests pass, that’s the Oracle’s Yes answer. If even one test fails, that the Oracle’s No answer.</p>
+<p>If the Oracle answers with Yes (i.e., all test pass), and if we deploy to production but then the deployed code blows up, we lose confidence in the Oracle. We realize that the Oracle is flaky and is not capable of predicting the future. When that happens, we start feeling reluctant when it comes to writing automated tests. What’s the point in wasting time on writing those tests if they cannot tell us if it’s safe to proceed or not?</p>
+<p>It is for that reason that we must make our automated tests fully deterministic. Tests that always behave according to the expectations regardless of the conditions (i.e., the underlying computing machinery, the time of day, week, month, year, the network status, the I/O operations, presence of shared mutable values, etc.) are deterministic tests. They support a predictable system. Such predictable system is completely immune to any perturbations that may occur in the operating environment. The magic word that makes that happen is <em>isolation</em>.</p>
+<p>Once we get to that level of technical excellence, we can safely engage in continuous delivery (a.k.a. delivery on demand).</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/technical-excellence.html">technical-excellence </a><a href="/tag/delivery-on-demand.html">delivery-on-demand </a><a href="/tag/continuous-delivery.html">continuous-delivery </a><a href="/tag/tdd.html">tdd </a>
+        | <a href="/deterministic-tests.html" rel="bookmark"
+         title="Permalink to How to create deterministic tests">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(4)</li>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(5)</li>
+                    <li><a href="/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="/tag/quality.html">quality</a>(7)</li>
+                    <li><a href="/tag/devops.html">devops</a>(33)</li>
+                    <li><a href="/tag/posters.html">posters</a>(8)</li>
+                    <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(11)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(29)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(8)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(31)</li>
+                    <li><a href="/tag/tips.html">tips</a>(11)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(15)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (7)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (75)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>

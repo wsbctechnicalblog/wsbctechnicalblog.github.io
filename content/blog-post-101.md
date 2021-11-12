@@ -33,21 +33,32 @@ Here is a list of tags we use when creating new content:
 | azure-devops    |  | Microsoft [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) services. |
 | ceremony        |  | Collaboration ceremonies. |
 | code            |  | Software coding.
+| code-quality |  | Objectively measurable characteristics of the code structure. |
+| continuous-delivery |  | Uninterrupted flow of delivery of changes from development to production |
+| delivery-on-demand |  | Ability to deliver/release changes to the system any time business demands those changes be put in front of customers. |
+| design |  | Structuring the system and the code in the most optimal fashion. |
 | devops          |  | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |
+| dojo |  | Psychologically safe place dedicated to perfecting one's skills. |
 | eliminate-waste |  | Continuous drive to avoid and reduce wasteful processes and products. |
 | engineering     |  | Software engineering. |
 | event           |  | Meetup, training, workshop, and other event gatherings. |
 | feature-flags   |  | Separating deploy from release through feature toggles / flags. |
+| innovation |  | Disrupting the status quo by proposing hypotheses and conducting observable/repeatable experiments to corroborate or falsify proposed hypotheses. |
+| lean |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
 | learning        |  | Continuous learning. |
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
 | posters         |  | Quick reference posters and cheat sheets. |
 | quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
 | security        |  | "Trust, but verify " to avoid and function under malicious attacks. |
+| system-programming |  | Automating system operations. |
 | tdd             |  | Test-driven Development. |
+| technical-excellence |  | Focus on satisfying the minimum acceptable standard of quality in terms of security, safety, reliability, resilience, and performance. |
+| testability |  | Designing changes to the system in such way that they are 100% testable in a deterministic fashion. |
 | testing         |  | Test to raise the quality bar and deploy with confidence. |
 | tips            |  | Tips and tricks. |
 | version-control |  | Secure, version, and collaborate to build better code. |  
 | workflow        |  | Streamline repetitive tasks and processes.
+| x-as-code |  | Virtualizing any aspect of the computing machinery. |
 | xp              |  | Extreme programming ( XP) software development methodology. |
 
 
