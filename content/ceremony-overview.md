@@ -21,7 +21,44 @@ The overview image highlights that the heart of our ceremonies is the CoE provid
 
 # Frequently asked questions
 
+List of questions we will cover herein:
+
+- How can I join a ceremony?
+- What are the pre-requisites to initiate a ceremony?
+- What are the outcomes of a ceremony?
+- When and How to host a ceremony? 
+- Who creates the CoE?
+- Why is the CoE called Center of Enablement, not Excellence?
+- Why do we have guardrails?
+- Why do we insist on a Terms of Reference?
+
 ![FAQ](../images/automation-lesson-1-5.png)
+
+## How can I join a ceremony?
+
+The [Center of Enablement](/ceremony-center-of-enablement.html) and [Working Group](../ceremony-working-group.html) are by invitation only for the active and core members. You can request to be invited to these events as a "fly on the wall" to observe, not interrupt.
+
+The [Community of Practice](/ceremony-community-of-practice.html), [Dojo](/dojo-events.html), and [Townhall](../images/coming-soon.png) ceremonies are open to everyone. You should be engaged and committed to collaborate when joining these events and introduce yourself to the Sensei for Dojos out of respect. 
+
+---
+
+## What are the pre-requisites to initiate a ceremony?
+
+TBD
+
+---
+
+## What are the outcomes of a ceremony?
+
+TBD
+
+---
+
+## When and How to host a ceremony? 
+
+TBD
+
+---
 
 ## Who creates the CoE?
 
@@ -43,7 +80,7 @@ Yes, the guardrails feel like we are ignoring the first value of the Agile manif
 
 ---
 
-## Why do we insist on terms of reference?
+## Why do we insist on a Terms of Reference?
 
 ![Meetings](../images/ceremony-overview-2.png)
 
