@@ -23,6 +23,8 @@ The overview image highlights that the heart of our ceremonies is the CoE provid
 
 List of questions we will cover herein:
 
+![FAQ](../images/automation-lesson-1-5.png)
+
 - How can I join a ceremony?
 - What are the pre-requisites to initiate a ceremony?
 - What are the outcomes of a ceremony?
@@ -32,9 +34,9 @@ List of questions we will cover herein:
 - Why do we have guardrails?
 - Why do we insist on a Terms of Reference?
 
-![FAQ](../images/automation-lesson-1-5.png)
-
 ## How can I join a ceremony?
+
+![Join](../images/ceremony-overview-3.png)
 
 The [Center of Enablement](/ceremony-center-of-enablement.html) and [Working Group](../ceremony-working-group.html) are by invitation only for the active and core members. You can request to be invited to these events as a "fly on the wall" to observe, not interrupt.
 
@@ -44,17 +46,33 @@ The [Community of Practice](/ceremony-community-of-practice.html), [Dojo](/dojo-
 
 ## What are the pre-requisites to initiate a ceremony?
 
-TBD
+![Initiate](../images/ceremony-overview-4.png)
+
+- To initiate a [Center of Enablement](/ceremony-center-of-enablement.html) you need a sponsor - a director and/or manager who owns the area of focus. 
+- To initiate a [Working Group](../ceremony-working-group.html), [Community of Practice](/ceremony-community-of-practice.html), or [Dojo](/dojo-events.html), you need a sponsoring [Center of Enablement](/ceremony-center-of-enablement.html) to ensure that the ceremonies are aligned with the vision, direction, and governance promoted by the CoE.
 
 ---
 
 ## What are the outcomes of a ceremony?
 
-TBD
+![Outcomes](../images/ceremony-overview-5.png)
+
+The following table summarizes the outcomes of the ceremonies.
+
+
+| CEREMONY          | ~~ | OUTCOMES |
+|-------------------|----|----------|
+| **CoE**           |    | Vision, Direction, and Governance. |
+| **CoP**           |    | Vibrant collaboration and continuous learning. |
+| **Dojo**          |    | Vibrant collaboration and immersive learning. |
+| **Working Group** |    | Process and Product Guardrails. (Dis)Proven Hypothesis. |
+
 
 ---
 
 ## When and How to host a ceremony? 
+
+![Host](../images/ceremony-overview-6.png)
 
 TBD
 
@@ -62,17 +80,25 @@ TBD
 
 ## Who creates the CoE?
 
+![CoE](../images/ceremony-overview-7.png)
+
 Anyone can collaborate and initiate a [Center of Enablement](/ceremony-center-of-enablement.html) and any of its related ceremonies. Our directors and managers are the **stewards** to ensure we have buy-in and that each CoE provides vision, direction, and governance to the organization. 
+
+When you have buy-in, you can **announce** the new CoE. When you have the **Terms of Reference** and committed core members, you can launch the CoE. When the CoE is active, you can launch associated COP, Working Group, and Dojo ceremonies. Always monitor the **heart-beat** of all ceremonies and **terminate** them when the energy, value, or intent fades.
 
 ---
 
 ## Why is the CoE called Center of Enablement, not Excellence?
+
+![CoE](../images/ceremony-overview-7.png)
 
 On one hand the term **Excellence** triggers the same alarm bells as **Best Practices**. More importantly our goal is to **enable** our common engineering stakeholders - therefore I LOVE our decision to pivot to **Enablement**. The CoE enables by providing vision, direction, and governance, as well as stewarding laser focused working groups, dojos, and community of practices.
 
 ---
 
 ## Why do we have guardrails?
+
+![Guardrails](../images/ceremony-overview-8.png)
 
 Yes, the guardrails feel like we are ignoring the first value of the Agile manifesto: "_Individuals and interactions over processes and tools_." We decided to introduce lightweight guardrails through these blog posts and the referenced overview and working agreement posters to ensure that we promote **consistent** and **laser focused** collaboration, with measurable outcomes, and an opportunity to drive our dream to optimize our meetings.
 
@@ -82,7 +108,7 @@ Yes, the guardrails feel like we are ignoring the first value of the Agile manif
 
 ## Why do we insist on a Terms of Reference?
 
-![Meetings](../images/ceremony-overview-2.png)
+![ToR](../images/ceremony-overview-2.png)
 
 We question the value of every ceremony and every meeting we plan or attend. The minimal expectations for the terms of reference identifies the purpose, the outcomes, and a measurable hypothesis. This promotes consistency and purpose!
 
