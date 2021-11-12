@@ -35,7 +35,7 @@ Following successful graduation from the white to the yellow belt level, the Doj
 
 ## Preferred mode of working 
 
-It is important not to get stuck at the level of [Expert Beginner](../images/coming-soon.png).
+It is important not to get stuck at the level of [Expert Beginner](/dont-become-expert-beginner.html).
 
 At all times, the Dojo must be a psychologically safe place for all in attendance. To ensure smooth and effective progress, the _sensei_ imposes the _Dojo Code of Ethics_:
 
