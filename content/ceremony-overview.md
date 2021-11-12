@@ -74,7 +74,9 @@ The following table summarizes the outcomes of the ceremonies.
 
 ![Host](../images/ceremony-overview-6.png)
 
-TBD
+We recommend to start with **weekly** meetups, moving to **bi-weekly** and **monthly** when the members are laser focused and the ceremony picks up momentum. As with the ceremony overall, each meetup must have an agenda, a purpose, and survive on actions.
+
+Ceremonies must be a psychologically safe place for all in attendance and dealing with failure as an opportunity to learn and innovate. Respect those more experienced, respect those less experienced, and do not force your ideas on others. It is all about collaboration!
 
 ---
 
