@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Streamlining your pipeline using the magic of YAML-base Azure Pipelines - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/pipelines-streamlined-approvals-new-world.html" rel="bookmark"
+            title="Permalink to Streamlining your pipeline using the magic of YAML-base Azure Pipelines">Streamlining your pipeline using the magic of YAML-base Azure Pipelines</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 09 November 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            
+        </div>
+    
+        <div class="entry-content">
+            <p>In the previous <a href="/pipelines-streamlined-approvals.html">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a> post we covered streamlined approvals and the magic and challenges of artifact filters. In essence, we discussed the Jurassic era of classic Azure Pipelines.</p>
+<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-1.jpg"></p>
+<p>In this post we will switch gears and compare it to the era of state-of-the-art YAML-based Azure Pipelines. </p>
+<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-2.jpg"></p>
+<p>Most of the engineers I recently discussed this magic with, looked at me with the <em>"what are you talking about?!?"</em> glazed look. </p>
+<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-5.png"></p>
+<p>A really worrying trend, because the Microsoft <a href="https://aka.ms/yaml">documentation</a> is comprehensive and the associated features amazing - hence this post.</p>
+<h1>Goodbye Artifact Filter Issues</h1>
+<p>Using the YAML-based Azure Pipelines we implemented the same streamlined approvals as we discussed in <a href="/pipelines-streamlined-approvals.html">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a>.</p>
+<p><img alt="Trusted Branches" src="../images/pipelines-streamlined-approvals-new-world-3.png"></p>
+<p>As shown above, the pipeline looks the same as the classic pipeline when the release artifact is created using one of the repository branches that are trusted for the Canary and Production environments.</p>
+<p>If the source branch is untrusted, the pipeline looks different - in fact, everything after the system test environment is missing. </p>
+<p><img alt="Untrusted Branches" src="../images/pipelines-streamlined-approvals-new-world-4.png"></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------------------</span>
+<span class="c1"># SECURITY REVIEW STAGE</span>
+<span class="c1"># ------------------------------------------------------------------------------------------</span>
+<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span> <span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span> <span class="p">}}:</span>
+  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="o">/</span><span class="n">Templates</span><span class="o">/</span><span class="n">DevSecOps</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">review</span><span class="o">.</span><span class="n">yml</span>
+</code></pre></div>
+
+<p>The code extract reveals the simple trick. If the source originates from the <strong>release</strong> branch, we inject the Security review, Canary, and Production stages. If not, Azure DevOps ignores them while assembling the run-time pipeline. If they are missing, they cannot be overridden as is the case with artifact filters, even if you are an Azure DevOps god. Simple!</p>
+<hr>
+<h1>Blocking untrusted templates</h1>
+<p>If you are working with Azure Pipelines I urge you to read <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">Create and target an environment</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">Define approvals and checks</a>. It is standard reading material for our engineers.</p>
+<p><img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-6.png"></p>
+<p>As shown above, if one of more of the templates used by Azure DevOps when assembling the run-time pipeline, the environment check blocks the pipeline from trundling down the deployment chain. In this case you cannot override the template check. "You shall not pass" if you are using untrusted pipelines.</p>
+<p>The magic in this case is the <strong>extends</strong> feature, as used in the following code extract:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">extends</span><span class="o">:</span>
+  <span class="n">template</span><span class="o">:</span> <span class="sr">/Blueprints/azure-function/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="kd">function</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
+</code></pre></div>
+
+<p>You configure the required templates in your <strong>Environments</strong>, under <strong>Approvals and Checks</strong>.</p>
+<p><img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-7.png"></p>
+<p>Read <a href="https://twitter.com/jjjettrain">josh-ops'</a> blog post <a href="https://josh-ops.com/posts/extends-template/">Azure DevOps: Extends Template with Build and Deployment Templates</a> for a great overview and example of using <strong>extends</strong>.</p>
+<p>Right, if you are excited and interested in these YAML-based pipeline features, I recommend that you review our <a href="/why-pipelines-part1.html">Pipeline Series</a> which delves deeper into the classic and new pipelines. If not, you are likely in the wrong movie.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/eliminate-waste.html">eliminate-waste </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/tips.html">tips </a>
+        | <a href="/pipelines-streamlined-approvals-new-world.html" rel="bookmark"
+         title="Permalink to Streamlining your pipeline using the magic of YAML-base Azure Pipelines">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(6)</li>
+                    <li><a href="/tag/devops.html">devops</a>(34)</li>
+                    <li><a href="/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="/tag/collaboration.html">collaboration</a>(1)</li>
+                    <li><a href="/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(4)</li>
+                    <li><a href="/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="/tag/quality.html">quality</a>(7)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(30)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(9)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(32)</li>
+                    <li><a href="/tag/tips.html">tips</a>(12)</li>
+                    <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(11)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(15)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/lean.html">lean</a>(1)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (7)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (78)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
