@@ -1,5 +1,5 @@
 Title: Streamlining your pipeline using the magic of YAML-base Azure Pipelines
-Date: 2021-11-09 13:13
+Date: 2021-11-16 13:13
 Category: Posts
 Tags: azure-devops, eliminate-waste, pipelines, tips
 Slug: pipelines-streamlined-approvals-new-world
