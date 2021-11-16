@@ -1,10 +1,10 @@
 Title: Streamlining your pipeline using the magic of YAML-base Azure Pipelines
-Date: 2021-11-16 13:13
+Date: 2021-11-09 13:13
 Category: Posts
 Tags: azure-devops, eliminate-waste, pipelines, tips
 Slug: pipelines-streamlined-approvals-new-world
 Author: Willy-Peter Schaub
-Summary: 
+Summary: Teleport to the future, to optimize the YAML-based Azure Pipeline approvals.
 
 In the previous [Streamlining your pipeline approvals, without flooding DevSecOps with noise](/pipelines-streamlined-approvals.html) post we covered streamlined approvals and the magic and challenges of artifact filters. In essence, we discussed the Jurassic era of classic Azure Pipelines.
 
