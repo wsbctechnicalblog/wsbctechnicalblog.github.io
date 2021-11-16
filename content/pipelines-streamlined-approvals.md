@@ -16,7 +16,7 @@ To improve our deployment frequency, reduce our lead time for change, and avoid 
 
 # Streamlined approvals
 
-![Streamlined Approvals](/images/pipelines-streamlined-approvals-1.png)
+![Streamlined Approvals](../images/pipelines-streamlined-approvals-1.png)
 
 As shown, we assume we have a release pipeline that deploys artifacts received from the continuous integration (build) pipeline to a development, system test, canary, and production environment. Deployment to the development environment is automatic, whereas we have gates before can deploy to the system test, canary, and production environments.
 
@@ -24,7 +24,7 @@ For each gate we use one or more Azure Active Directory (AAD) groups to define t
 
 You may or should be frowning at this point, because anything that is deployed to the system test environment automatically triggers the Security Review. In our environment this led to agitated Security Engineers who were inundated with security review request across hundreds of release pipelines.
 
-![Unhappy DevSecOps](/images/pipelines-streamlined-approvals-3.png)
+![Unhappy DevSecOps](../images/pipelines-streamlined-approvals-3.png)
 
 Let us reduce the number of security reviews which are WASTEful and check back with DevSecOps.
 
@@ -34,18 +34,18 @@ Let us reduce the number of security reviews which are WASTEful and check back w
 
 The eye of the storm is created as we are passing all the artifacts down the release pipeline, regardless from which source repository branch it originated from. In other words, security engineers were triggered for changes that were not ready for prime time (production).
 
-![Artifact Filters](/images/pipelines-streamlined-approvals-2.png)
+![Artifact Filters](../images/pipelines-streamlined-approvals-2.png)
 
 By adding an **artifact filters** allow us to create a first line of defense against artifacts that were generated from source repository branches that are not trusted in production and therefore do not require a security review. We only allow artifacts originating from **release** branches to trigger a security review and trundle down the pipeline.
 
 >
-> ![Happy DevSecOps](/images/pipelines-streamlined-approvals-5.png)
+> ![Happy DevSecOps](../images/pipelines-streamlined-approvals-5.png)
 > Artifact filters can be overridden if you have relevant permissions. If you need a "**you shall not pass**" checkpoint, you should investigate the YAML-based pipelines as mentioned above.
 >
 
 See [Branch and Artifact Filters in Azure Pipelines](https://medium.com/objectsharp/branch-and-artifact-filters-in-azure-pipelines-83d4256ada98), by Dave Lloyd, for a great overview of artifact filters. 
 
-![Happy DevSecOps](/images/pipelines-streamlined-approvals-4.png)
+![Happy DevSecOps](../images/pipelines-streamlined-approvals-4.png)
 
 We now have less WASTE, which makes me happy, and a lot less security reviews, which improved our security engineers' mood and ability to be laser focused on potential production deployments.
 
