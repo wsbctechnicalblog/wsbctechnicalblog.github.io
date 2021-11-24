@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-11-17T00:00:00-08:00</updated><entry><title>How do we know what our customers value?</title><link href="https://wsbctechnicalblog.github.io/what-is-value.html" rel="alternate"></link><published>2021-11-17T00:00:00-08:00</published><updated>2021-11-17T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-17:/what-is-value.html</id><summary type="html">&lt;p&gt;We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Dojo" src="../images/buffett.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-11-23T00:00:00-08:00</updated><entry><title>Plate-emptying is not the same as Done</title><link href="https://wsbctechnicalblog.github.io/plate-emptying.html" rel="alternate"></link><published>2021-11-23T00:00:00-08:00</published><updated>2021-11-23T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-23:/plate-emptying.html</id><summary type="html">&lt;p&gt;Maximizing the utilization of the time spent on creating software is a surefire way to drive the team into a brickwall&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Dojo" src="../images/plateemptying.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Back in the heady days of dotcom boom (1999 – 2000) I was hired by an e-commerce startup company as their Chief Technology Officer. It was a sudden and large leap in my career, being mostly focused on creating software and only marginally involved in managing the process of software creation.&lt;/p&gt;
+&lt;p&gt;To cut the long story short, dotcom boom quickly turned into dotcom bust, and by April 2001 the company went belly up. Ran out of funding. Sad story, but it was a great learning experience for us who got involved in that venture.&lt;/p&gt;
+&lt;p&gt;My duties as CTO were to build the engineering department from ground up. My department got funded to open the office in downtown Vancouver (the US to Canadian dollar exchange rate at that time made the venture look much less expensive to the US investors). We procured office space, office furniture, workstations, servers, licensed all required software, and then the race was on to hire talented engineers.&lt;/p&gt;
+&lt;p&gt;One of the reasons the company hired me as a CTO was due to the fact that at that time, I was teaching software development courses at the local BCIT college, and they rightly assumed I’ll be in the position to hire talented developers from the cohorts of my students.&lt;/p&gt;
+&lt;p&gt;Their bet was sound, and it didn’t take me more than a few days to hire a team of five bright, talented engineers who had just graduated the course I was teaching.&lt;/p&gt;
+&lt;h2&gt;Where things started going in the wrong direction&lt;/h2&gt;
+&lt;p&gt;Being young and still inexperienced, I made a serious mistake in managing my department – I took a very wrong approach to planning. When abruptly growing from a hands-on engineer into a CTO role, I missed a few important stops along the way. I had no idea what does prudent planning entail. Back then I certainly wasn’t aware of that, but in hindsight…&lt;/p&gt;
+&lt;p&gt;So, what did I do wrong? I took a long hard look into the limited budget that was given to my department, looked at the expenses (office lease, licensing costs, employee salaries and benefits), and decided to maximize the time that the budget was buying us. Obviously, we had a limited runway (a stretch of time needed before the operation becomes profitable, or at least starts pulling its own weight). My bosses were very strict about money (who could blame them) and that created the air of anxiety in my mind.&lt;/p&gt;
+&lt;p&gt;Basically, I decided to tailor my plans in such way to make sure every team member is super busy every minute on the job!&lt;/p&gt;
+&lt;p&gt;That was a terrible mistake. I deeply regret it to this day. But I didn’t know back then the value of slack time, the value of establishing the flow.&lt;/p&gt;
+&lt;p&gt;But by foolishly insisting that every task and subtask my team members were performing be done in quickest possible time (i.e., I was pushing to minimize the touch-time), I only managed to frustrate the team and it started dying of attrition.&lt;/p&gt;
+&lt;h2&gt;How would I do it today?&lt;/h2&gt;
+&lt;p&gt;If I had a time machine and could travel back 22 years in the past, I’d do everything differently. To begin with, I would forget about making plans to maximize the utilization of team members’ time. Experience has taught me that maximizing the utilization of resources that are at our disposal has a strong counter-productive effect. A fully utilized highway defeats its purpose, as it quickly turns into a parking lot.&lt;/p&gt;
+&lt;p&gt;The secret to productivity in knowledge-based economy is ample slack time. We need to be careful when defining ‘slack time’. The danger is that some may interpret ‘slack time’ as ‘wait time’. And that’s not what is meant by ‘slack time’.&lt;/p&gt;
+&lt;p&gt;When we plan for maximal utilization of workers’ time, our goal is to create some semblance of an assembly line. I may start my day by taking on a list of to-do tasks. As I’m going down the to-do list, I am handling, one-by-one, each task defined for me. Where does the maximum utilization come in?&lt;/p&gt;
+&lt;p&gt;The maximum utilization mindset comes in at the task level. Under the ‘maximum utilization/everyone busy all the time’ regime, I am expected to spend the least possible amount of time on my task and promptly hand it off to the next worker in line. That worker in turn is also expected to spend the least possible amount of time handing the task passed on to them (the touch-time). If any of the workers end up spending more time than projected on handling their task, that worker gets reprimanded for not pulling their weight.&lt;/p&gt;
+&lt;p&gt;On the surface, that arrangement may seem very reasonable. We have hired the team, and the crew is doing their job as prescribed. If anyone takes longer than prescribed, it only means they are not fully qualified/fully skilled to perform the duties related to the task. They’re not pulling their weight.&lt;/p&gt;
+&lt;p&gt;Working under such pressure results in what has been called ‘plate emptying’. As I work, I have a lot on my plate and my job is to empty my plate as quickly as possible. Doing that, I demonstrate to my employer how valuable, how eager I am to continue working and dealing with the next full plate.&lt;/p&gt;
+&lt;p&gt;Why is plate-emptying bad? It creates a mindset and a culture where workers are rewarded when giving their work short shrift by declaring early completion for work that was only partly done. In the end, the crew trades quality for apparent velocity.&lt;/p&gt;
+&lt;p&gt;And that’s exactly the culture I had created back in the year 2000 with my team. Wanting to maximize the utilization of expensive staff, I set up the system that openly rewarded skillful plate-emptying. Everything looked great at first, until we started getting hit by those terrible bugs and defects. Suddenly, the blindingly fast delivery (our great velocity) got destroyed by the catastrophic defects that were almost impossible to reproduce and fix. The crew was cutting corners left and right, striving to meet my approval and pat on the back (and a hefty year-end bonuses). Little did I know how much those bonuses would end up costing us.&lt;/p&gt;
+&lt;p&gt;Of course, once the ugliness of severity-one incidents started hitting the team on an almost daily basis, people started looking for a new job. The team began dying of attrition. By that time, it was too late to try to find the intervention point that would turn the ship around. We started tanking.&lt;/p&gt;
+&lt;p&gt;So, how would I have done it back then if I knew what I know today? To begin, I’d abandon trying to make plans so that everyone has their plates full during the project. I’d treat the project like a race with passing the baton. Rather than keeping an eye on individual runners, I’d make plans to only keep an eye on the baton.&lt;/p&gt;
+&lt;p&gt;That way, I’d be able to better manage the progress of the delivery. If the team is delivering frequently (at least once per day, ideally many times per day), I don’t need to worry whether everyone on the team is pulling their weight. The only thing that matters is continuous delivery and continuous release, and if that activity turns into an uninterrupted flow, I need not concern myself with the resource utilization/slack time. That approach would relieve team members from the futile plate-emptying race and would realign their efforts with the business priorities. Meaning, we’d improve our chances of avoiding the fiasco that was caused by the team attrition.&lt;/p&gt;
+&lt;p&gt;When team members realize that completing their task or subtask does not mean they’ve reached the “done” stage, they start paying closer attention to the quality of their work. A task/feature is done only when it is deployed and released to production and is causing zero bugs or defects.&lt;/p&gt;</content><category term="Posts"></category><category term="quality"></category><category term="value"></category><category term="process"></category><category term="flow"></category><category term="lean"></category></entry><entry><title>How do we know what our customers value?</title><link href="https://wsbctechnicalblog.github.io/what-is-value.html" rel="alternate"></link><published>2021-11-17T00:00:00-08:00</published><updated>2021-11-17T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-17:/what-is-value.html</id><summary type="html">&lt;p&gt;We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Dojo" src="../images/buffett.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Common wisdom defines value as something that customers are willing to pay for. That line of thinking is applicable to repeatable processes, such as manufacturing.&lt;/p&gt;
 &lt;p&gt;When it comes to digital product development, processes are not nearly as repeatable as they are in manufacturing. In the new product development, what customers might find valuable are often unclear. In such environment, we need a new definition of value. That definition must support the discovery of who our customers are and what their needs are.&lt;/p&gt;
 &lt;h2&gt;Validated learning&lt;/h2&gt;
@@ -3406,112 +3430,4 @@ You need an understanding of feature flags, governance around usage, maintenance
 &lt;h2&gt;WSBC Automation Working Group&lt;/h2&gt;
 &lt;p&gt;Seeing how crucially important the ability to automate repetitive and error-prone tasks is to our organization, I have decided to form a task force that will focus on raising the bar when it comes to automating critical processes. The working group is presently in the process of formation and early discussions around formulating the charter and the agenda.&lt;/p&gt;
 &lt;p&gt;In addition to focusing on finding the biggest bang for the buck/lowest hanging fruit to be tackled for automation, the Automation Working Group will also make plans for hands-on workshops. We are planning to learn the ins and outs of shell scripting by engaging in mob programming sessions.&lt;/p&gt;
-&lt;p&gt;I am excited about this initiative, as I think it can truly help us move the needle and speed up our delivery.&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="automation"></category><category term="code"></category><category term="devops"></category><category term="learning"></category><category term="workflow"></category></entry><entry><title>Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers</title><link href="https://wsbctechnicalblog.github.io/experiment-yaml-1.html" rel="alternate"></link><published>2021-04-28T13:13:00-07:00</published><updated>2021-04-28T13:13:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-04-28:/experiment-yaml-1.html</id><summary type="html">&lt;p&gt;Snippets of common questions and issues from Azure Pipeline workshops and support calls. Today's snippet includes conditionals, parameters, and triggers.&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you are an avid user of the YAML-based Azure Pipelines, you will be aware that the language can be very pedantic when it comes to too many or too few spaces. In fact, we have been mulling over a broken pipeline for (what felt like) hours, only to realise that we were misaligned by &lt;strong&gt;one&lt;/strong&gt; space. Fortunately, both the YAML editor in both Azure DevOps and Visual Studio Code, as well as the &lt;strong&gt;Validate&lt;/strong&gt; features are continuously improving.&lt;/p&gt;
-&lt;p&gt;Let us park the spaces topic and focus on conditionals, parameters, and triggers, using this simple sample code.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Experimentation Sample Code&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt;
-
-&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt;
-  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Branch Name&amp;#39;&lt;/span&gt;
-  &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;
-  &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;release&lt;/span&gt;
-  &lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;rElEaSe&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;ReLeAsE&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Release&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;release&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="k"&gt;master&lt;/span&gt;
-
-&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;windows&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;
-
-&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="n"&gt;keyFinal&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Bingo!&amp;#39;&lt;/span&gt;
-  &lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;   &lt;span class="s1"&gt;&amp;#39;keyFinal&amp;#39;&lt;/span&gt;
-  &lt;span class="n"&gt;keyTest&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
-
-&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
-  &lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Welcome&amp;#39;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Referencing&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;2.&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keyTest&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="mf"&gt;3.&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyRef&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Run-time Parameters&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Branch&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Lower&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;release&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Bingo&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Release only&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Build.SourceBranch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;refs/heads/release&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;startsWith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Build.SourceBranch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;refs/heads/release/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;}}:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="n"&gt;Release&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1&gt;Triggers&lt;/h1&gt;
-&lt;p&gt;You can configure a trigger to fire &lt;strong&gt;manually&lt;/strong&gt;, &lt;strong&gt;never&lt;/strong&gt;, or as &lt;strong&gt;changes&lt;/strong&gt; are made to selected branches, tags, and folders.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;If you remove the trigger all together, the pipeline will be triggered if &lt;strong&gt;any&lt;/strong&gt; change is made to any &lt;strong&gt;folder&lt;/strong&gt; or &lt;strong&gt;branch&lt;/strong&gt;. &lt;/li&gt;
-&lt;li&gt;If you want to have a &lt;strong&gt;manually&lt;/strong&gt; triggered pipeline, you must configure &lt;code&gt;- none&lt;/code&gt;, as in today's sample code.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#triggers"&gt;Triggers&lt;/a&gt; for details.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Parameters&lt;/h1&gt;
-&lt;p&gt;You can use parameters in templates and pipelines, as visualised on our &lt;a href="https://wsbctechnicalblog.github.io/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;YAML Generic Blueprint-based Pipeline Quick Reference&lt;/a&gt; and documented in detail in the &lt;a href="https://aka.ms/YAML"&gt;YAML Schema&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Parameter key:value pairs are evaluated at &lt;strong&gt;queue&lt;/strong&gt; time.&lt;/li&gt;
-&lt;li&gt;You can define a pipeline parameter, as in the sample code above.&lt;/li&gt;
-&lt;li&gt;When you run the sample pipeline, you can select from the available values, as shown:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Run pipeline" src="/images/experiment-yaml-1-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#parameters"&gt;Parameters&lt;/a&gt; for details.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Variables&lt;/h1&gt;
-&lt;p&gt;You can add static values, reference variable groups, or insert  variable templates into your pipeline.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Variable key:value pairs are evaluated at &lt;strong&gt;run&lt;/strong&gt; time.&lt;/li&gt;
-&lt;li&gt;Echo 1 is boring, but we must say hello!&lt;/li&gt;
-&lt;li&gt;Echo 2 displays the value of &lt;strong&gt;keyTest&lt;/strong&gt;, which was set to the same value as &lt;strong&gt;keyRef&lt;/strong&gt;&lt;blockquote&gt;
-&lt;p&gt;Output:&lt;strong&gt;keyFinal&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;Echo 3 is the one that is a bit more interesting. It is changed to $(keyFinal) at queue time, which demonstrates a rudimentary use of &lt;strong&gt;reference&lt;/strong&gt; values. I had to write and run the sample to get my head around the code - try it yourself! &lt;blockquote&gt;
-&lt;p&gt;Output: &lt;strong&gt;Bingo!&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;amp;tabs=schema%2Cparameter-schema#variables"&gt;Variables&lt;/a&gt; for details.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Conditionals&lt;/h1&gt;
-&lt;p&gt;Lastly, conditions can be used to determine whether tasks should execute or if code or entire template are injected into the pipeline at queue time.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Learning" src="/images/experiment-yaml-1-1.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;# Lower&lt;/code&gt; demonstrates how to include tasks if certain conditions are met. In our sample, we check if the selected &lt;code&gt;parameters.branch&lt;/code&gt; is equal to 'release'. If yes, Bingo!&lt;/li&gt;
-&lt;li&gt;Note how we convert the parameter to lowercase before doing the comparison, so that any combination of casing for &lt;code&gt;release&lt;/code&gt; will meet the condition.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Release only&lt;/code&gt; demonstrates how to include tasks if and only if the origin source branch matches &lt;code&gt;refs/heads/release&lt;/code&gt; or starts with &lt;code&gt;refs/heads/release/&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We make extensive use of conditions in our blueprints and re-usable toolkit templates. &lt;/p&gt;
-&lt;p&gt;See &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions"&gt;Expressions&lt;/a&gt; for details.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;We are done for today. &lt;/p&gt;
-&lt;p&gt;Hope these snippets are adding value and looking forward to your candid feedback. See you in the next experiment.&lt;/p&gt;
-&lt;p&gt;```&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="tips"></category></entry></feed>
+&lt;p&gt;I am excited about this initiative, as I think it can truly help us move the needle and speed up our delivery.&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="automation"></category><category term="code"></category><category term="devops"></category><category term="learning"></category><category term="workflow"></category></entry></feed>
