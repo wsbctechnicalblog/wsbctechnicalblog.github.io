@@ -21,7 +21,7 @@ There are three different ways we debug code:
 In each of the above three cases, we aim at _slowing down_ the program execution. If we are not debugging, we activate the code by running the app (the program) and observing how the app behaves. If the app crashes, we have a serious defect somewhere. If the app doesn’t crash but behaves erratically (for example, displays incorrect information or takes us to an incorrect part of the app, or sends incorrect information to some other systems), we have detected that there is a bug somewhere (but we don’t know where). Now’s the time to hunt for that bug (or bugs). We typically hunt for it by slowing down the execution of the program.
 
 How do we slow down the execution? There are basically two ways to do that:
-​​​​​​​
+
 1. We add new lines of code that print some values to the output (a console, or a printer)
 1. We add a breakpoint at some line of the code
 
@@ -47,7 +47,7 @@ Because we know exactly what we expect from the code when it runs, the test we w
 
 To begin, notice how we did not have to make any incision into the implemented code. No need to add any output statements, nor do we have to enforce any breakpoints in the code.
 
-Secondly, we have explicitly expressed our expectation. This is useful not only in guiding our own thinking, but also facilitates successful teamwork. We can interrupt our programming session and let other team members pick up the slack and continue exactly from where ewe stopped, because they will be guided by the test we wrote.
+Secondly, we have explicitly expressed our expectation. This is useful not only in guiding our own thinking, but also facilitates successful teamwork. We can interrupt our programming session and let other team members pick up the slack and continue exactly from where we stopped, because they will be guided by the test we wrote.
 
 Thirdly, we did not have to slow the program execution down. We did not interrupt the flow. The test runs and executes the program and does not expect the program to run slower so that the automated test could examine it. That is a huge time saver and a big productivity boost.
 
