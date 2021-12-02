@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Don’t debug; do TDD instead - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/dont-debug.html" rel="bookmark"
+            title="Permalink to Don’t debug; do TDD instead">Don’t debug; do TDD instead</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Thu 02 December 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Avoid wasteful debugging activities by creating automated tests using TDD technique</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><img alt="Dojo" src="../images/debug.jpeg"></p>
+<p>When creating software, we often realize that the solution we’ve created does not behave the way we expect it to behave. We move into creating software with certain intentions (I call those intentions expectations). We materialize those expectations by writing code. If we are not careful when writing code, the code we wrote may end up having a few bugs. Hopefully, those bugs get identified before we release our changes to the customers. Unfortunately, that’s not always the case and sometime bugs get discovered in production, by the end users.</p>
+<p>Now we need to fix the bugs. And how do we do that? We debug. The debugging process is a technique for identifying bugs in the code.</p>
+<p>There are three different ways we debug code:</p>
+<ol>
+<li>We debug the code we wrote</li>
+<li>We debug the code someone else wrote and we have the source code</li>
+<li>We debug the code we wrote that uses the code someone else wrote but we don’t have their source code</li>
+</ol>
+<p>In each of the above three cases, we aim at <em>slowing down</em> the program execution. If we are not debugging, we activate the code by running the app (the program) and observing how the app behaves. If the app crashes, we have a serious defect somewhere. If the app doesn’t crash but behaves erratically (for example, displays incorrect information or takes us to an incorrect part of the app, or sends incorrect information to some other systems), we have detected that there is a bug somewhere (but we don’t know where). Now’s the time to hunt for that bug (or bugs). We typically hunt for it by slowing down the execution of the program.</p>
+<p>How do we slow down the execution? There are basically two ways to do that:
+​​​​​​​
+1. We add new lines of code that print some values to the output (a console, or a printer)
+1. We add a breakpoint at some line of the code</p>
+<p>Either of these tricks are intrusive; they make the cut into the body of the code so that the troubleshooting engineers could pry into the innards of the system.</p>
+<p>Furthermore, not only are debugging activities intrusive, but they are also wasteful. Nothing useful gets produced after spending some time debugging. The best we can hope for after a successful debugging session is to gain a better understanding of how the system works. But that understanding was achievable even without debugging, by simply reading the source code carefully.</p>
+<p>The worst part of any debugging activity is that it is 100% manual. We manually add new lines of code that output some values, or we manually add breakpoints to the code. When the program execution reaches the breakpoint, we then manually step through the code and manually inspect the produced values. Extremely tedious and error prone.</p>
+<p>As if that activity was not inefficient enough, an even worse part is that we cannot record the debugging session and reuse it later. If sometimes later the same or very similar bug returns, we need to repeat the same tedious manual process of debugging. Very wasteful, to say the least. Add to that the fact that it is literally impossible to estimate how long will any debugging session last (we are fishing for results, basically), and we get an extremely non-productive way of working (I’ve seen situations where teams sometimes waste days debugging).</p>
+<h2>How to avoid wasting time with debugging activities?</h2>
+<p>Any time we discover a bug, we realize that our expectation hasn’t been met but the running code. Rather than rolling up our sleeves and wasting time by getting immersed in tedious debugging activities (as described above), we should strive to work smarter, not harder.</p>
+<p>A much more productive approach to removing any bugs is to first formulate our expectation. If we do not take the time to formulate our expectation, we analyze program’s execution while keeping our expectation in our heads. It is of very little use being kept there. Instead, we should always insist to write our expectation down.</p>
+<p>When creating software, the best way to write our expectation down is to craft a test. A test is much simpler and easier to write than the implementation code. If done properly, a written test cannot contain any bugs (by ‘properly’ I mean the test must never contain any processing logic).</p>
+<p>Because we know exactly what we expect from the code when it runs, the test we wrote will fail (the bug in the implemented code will cause the program to fail to satisfy the expectation written in the test, which makes the test fail). Now we have the evidence that something is broken. And now is the time to work on fixing the breakage.</p>
+<h2>Why is this approach better than debugging?</h2>
+<p>To begin, notice how we did not have to make any incision into the implemented code. No need to add any output statements, nor do we have to enforce any breakpoints in the code.</p>
+<p>Secondly, we have explicitly expressed our expectation. This is useful not only in guiding our own thinking, but also facilitates successful teamwork. We can interrupt our programming session and let other team members pick up the slack and continue exactly from where ewe stopped, because they will be guided by the test we wrote.</p>
+<p>Thirdly, we did not have to slow the program execution down. We did not interrupt the flow. The test runs and executes the program and does not expect the program to run slower so that the automated test could examine it. That is a huge time saver and a big productivity boost.</p>
+<p>And lastly, our tests are recorded, and are repeatable to our hearts content. If later the same or a similar bug reenters the system, we don’t have to start from square one. We just let tests detect the breakage (fail early) and then use the tests to guide the process of fixing it. That way, we are safeguarded from allowing the breakage to bleed through into production.</p>
+<p>Writing tests to replace any debugging time wasters is the best strategy to safely grow our products. Everything we write must be fully testable. That way, bugs will be prevented from ever entering our codebase.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/quality.html">quality </a><a href="/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="/dont-debug.html" rel="bookmark"
+         title="Permalink to Don’t debug; do TDD instead">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/quality.html">quality</a>(10)</li>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(5)</li>
+                    <li><a href="/tag/value.html">value</a>(2)</li>
+                    <li><a href="/tag/process.html">process</a>(2)</li>
+                    <li><a href="/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(30)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(9)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(32)</li>
+                    <li><a href="/tag/tips.html">tips</a>(12)</li>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(6)</li>
+                    <li><a href="/tag/devops.html">devops</a>(34)</li>
+                    <li><a href="/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="/tag/collaboration.html">collaboration</a>(1)</li>
+                    <li><a href="/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(11)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(15)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (7)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (81)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
