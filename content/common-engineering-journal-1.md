@@ -13,7 +13,7 @@ When I joined the Cloud Operations and Infrastructure team in 2018, I explored t
 >
 > **Autonomy** - Works exceptionally well in an environment where an engineers owns a feature from ideation to deprecation. Healthy DevOps mindset!
 > 
-> **RED FLAG** - When ownership is transferred to a sustainment, maintenance, site reliability, or any other team it is pivotal to balance autonomy with consistency and standarization. NOT a healthy DevOps mindset!
+> **RED FLAG** - When ownership of a feature is transferred to a sustainment, maintenance, site reliability, or any other team it is pivotal to balance autonomy with consistency and standarization. NOT a healthy DevOps mindset!
 >
 
 I began to poke the hornet's nest in our architecture, development, operations, and security teams, which inspired guidance I contributed to the [Navigating DevOps through Waterfalls](https://www.tactec.ca/ndtw-resources/) book. I highlighted the risk of **autonomy without guardrails**, especially in an environment plagued by organizational silos that stifle collaboration and where ownership is transferred from team to team. We will be reflecting on this in future journals, as our common engineering team is promoting for engineers to own a feature from ideation to deprecation.  
@@ -25,6 +25,8 @@ On the 21st October 2019 I chose to consolidate the guidance, frequently asked q
 To this date, the wiki remains to be our **go-to** place for engineering processes, security, standardization, collaboration, as well as the manifestos that started it all.
 
 ![CeS](../images/common-engineering-journal-1-4.png)
+
+A few months ago I became aware that there were plans to promote our informal common engineering system, to a more strategic common engineering team.
 
 ---
 
