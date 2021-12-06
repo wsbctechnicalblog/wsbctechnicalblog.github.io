@@ -53,7 +53,7 @@ My personal leadership vision is to:
 
 While we are all inspired by the phenomenal pace of innovation with [SpaceX](https://www.spacex.com/), and [Elon Musk's](https://en.wikipedia.org/wiki/Elon_Musk) mantra to:
 
-- Make requirements less dump
+- Make requirements less dumb
 - Try to delete part of the process
 - Simplify or optimize
 - Accelerate cycle time
