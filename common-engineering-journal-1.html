@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Workflow-as-code - </title>
+        <title>What is origin of our common engineering team? - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,51 +32,70 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/workflow-as-code.html" rel="bookmark"
-            title="Permalink to Workflow-as-code">Workflow-as-code</a></h1>
+    <h1 style="font-size:2em;"><a href="/common-engineering-journal-1.html" rel="bookmark"
+            title="Permalink to What is origin of our common engineering team?">What is origin of our common engineering team?</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 05 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 06 December 2021</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Configuring complex workflows that govern Continuous Integration and Continuous Delivery must only be allowed by making changes to the YAML source files; GUI tools must be prohibited</p>
+            <p>Learning about the genesis of our EDO Common Engineering (EDO Ce) team</p>
         </div>
     
         <div class="entry-content">
-            <p>Majority of software applications available on the market today offer self-serve capabilities to end users. Those self-serve capabilities are mostly focused on automating the chores related to various paperwork processes. Browsing product and service catalogs, picking items and ordering them via automated checkout process. In addition to that, there are alternate automated scenarios that enable end users to cancel their actions, repeat them, request refunds, etc.</p>
-<p>A smaller portion of such typical mainstream software applications are focused on automating the workflow. Oftentimes we see that the business operations workflow is not a simple straight line from start to finish. Depending on the business policy rules, workflows may take a number of twists and turns. Automating such complex rules is no small feat, which is why we're not seeing that many self-serve workflow applications on the market today. Unlike with simple automation of the paperwork representing straightforward business transactions, workflows tend to get more convoluted.</p>
-<h2>How are self-serve business applications implemented?</h2>
-<p>Experience has shown that the majority of end users prefer to do self-serve tasks by operating a Graphical User Interface (GUI). Such interface often mimics real life paperwork (i.e. replicating paper forms in electronic format etc.)</p>
-<p>When it comes to offering workflow solutions, it has also been demonstrated that end users prefer to do the self-serve activities via Graphical User Interfaces. The flow of various documents and forms gets represented with artifacts or simulacra resembling real world pipes. Those pipes, when put together in certain configurations, form various pipelines.</p>
-<p>Many users are now getting familiar with the concept of manipulating pipelines in order to perform the self-serve activities of configuring non-trivial workflows.</p>
-<h2>Problem statement</h2>
-<p>So far, the self-serve model we've described looks perfectly reasonable and even quite desirable. So where's the problem?</p>
-<p>While it is perfectly reasonable to hide the formalized complexities of the automation from end users (they are not trained to operate complex systems using rigorous formal reasoning), when it comes to enabling software engineers to operate complex software systems, Graphical User Interface is not a good way to do it.</p>
-<p>And yet, for some reason we see a lot of platforms drag the GUI mindset back into the inner circles of software engineering teams. And the problem then becomes the fact that software engineers get conditioned to use GUI for configuring complex workflows needed for Continuous Integration (CI) and Continuous Delivery (CD).</p>
-<p>Why is that a problem? When using GUI, engineers are directly touching the materialized infrastructure. That is a very bad idea. To illustrate, let's imagine a scenario where a software engineer would log in to the live production system that's running the application binary (compiled) code. Imagine that engineer being privileged to go directly to the live binary code, and using some GUI tool, start making changes to the live code in production!</p>
-<p>That situation will cause panic. Making untested changes to the live code is a surefire recipe for disaster.</p>
-<p>The only legitimate way software engineering teams could make changes to the production code is if they make changes not to the materialized binary code, but only to the code representation -- the actual source code.</p>
-<p>Source code by itself cannot perform any operations. It must be compiled and the compiled code must be then built first. Those operations must happen within regulated Continuous Integration and Continuous Delivery workflows. Those workflows consist of a number of strict business policy rules that govern the quality of the proposed code change. If the quality is substandard (i.e. the code does not pass all the tests that are baked into the workflow), the proposed change gets rejected.</p>
-<h2>Replace GUI with code</h2>
-<p>Workflow, that is represented by the GUI, must be removed and in its place we must put the source code. Typically, when it comes to configuring the integration and delivery workflows, we opt for YAML code.</p>
-<p>The challenge now is to retrain software engineers from knowing how to use GUIs to configure the workflow rules to mastering YAML needed to accomplish the same self-serve automation.</p>
-<p>No one should be allowed to touch the materialized computing artifact (such as the implemented workflow engine) with their 'bare hands' (by 'bare hands' we mean direct access to the implemented machinery via a GUI tool).</p>
-<p>It is therefore urgent to rush and get rid of all GUI tools that enable software engineers to perform self-serve workflow configuration activities. Instead, we must switch wholesale to learning how to use YAML properly.</p>
-<h2>What are the advantages of workflow-as-code?</h2>
-<p>Just by the virtue of disabling engineers from touching the workflow machinery directly, we ensure that any changes to the workflow get implemented through official channels. When a team decides to make changes to the workflow, they cannot do it directly. They must first create a workflow feature branch, make proposed changes in isolation, test them, then open a Pull Request (PR), proposing these changes get merged to the main trunk. The PR gets reviewed by the stakeholders on the CI/CD workflow, and if approved, the changes will get merged and then materialized as an implemented workflow.
-<br /><br /></p>
+            <p>When I joined the Cloud Operations and Infrastructure team in 2018, I explored the variety of snowflakes decorating continuous integration and delivery pipelines, engineering practices, repositories, and solution architectures. While I agree with <a href="https://en.wikipedia.org/wiki/Drive:_The_Surprising_Truth_About_What_Motivates_Us">Daniel Pink</a> that knowledge workers have a need for autonomy to self-direct and manage their own lives, it must thrive within the context of engineering guardrails and organizational governance.</p>
+<p><img alt="Daniel Pink" src="../images/common-engineering-journal-1-2.png"></p>
+<blockquote>
+<p><strong>Autonomy</strong> - Works exceptionally well in an environment where an engineers owns a feature from ideation to deprecation. Healthy DevOps mindset!</p>
+<p><strong>RED FLAG</strong> - When ownership of a feature is transferred to a sustainment, maintenance, site reliability, or any other team it is pivotal to balance autonomy with consistency and standarization. NOT a healthy DevOps mindset!
+</p>
+</blockquote>
+<p>I began to poke the hornet's nest in our architecture, development, operations, and security teams, which inspired guidance I contributed to the <a href="https://www.tactec.ca/ndtw-resources/">Navigating DevOps through Waterfalls</a> book. I highlighted the risk of <strong>autonomy without guardrails</strong>, especially in an environment plagued by organizational silos that stifle collaboration and where ownership is transferred from team to team. We will be reflecting on this in future journals, as our common engineering team is promoting for engineers to own a feature from ideation to deprecation.  </p>
+<p>On the 21st October 2019 I chose to consolidate the guidance, frequently asked questions and answers, knowledgebase, manifestos, and guardrails in an open wiki. The contents of the wiki is based on knowledge I gathered during collaboration, troubleshooting, breakfast and lunches, and informal meetups with fellow engineers in our atrium. </p>
+<p><img alt="CeS" src="../images/common-engineering-journal-1-3.png"></p>
+<p>To this date, the wiki remains to be our <strong>go-to</strong> place for engineering processes, security, standardization, collaboration, as well as the manifestos that started it all.</p>
+<p><img alt="CeS" src="../images/common-engineering-journal-1-4.png"></p>
+<p>A few months ago I became aware that there were plans to promote our informal common engineering system, to a more strategic common engineering team.</p>
+<hr>
+<h1>CeS Journal, entry #1</h1>
+<p>For our journal, let us fast-forward to 6th December 2021, which marks the 67th day of our EDO Ce team, which emerged from the informal and rebellious common engineering system like a mythical Phoenix.</p>
+<p><img alt="Journal Countdown" src="../images/common-engineering-journal-1-1.png"></p>
+<p>The EDO Ce team was launched with a leadership mandate to empower every engineer by standardizing practices and products, and stewarding guardrails to promote engineering consistency, enablement, security, and simplicity. </p>
+<p>We agreed that our formal goals are to:</p>
+<ul>
+<li>Enable collaboration through active working groups, community of practices, and workshops.</li>
+<li>Steward guardrails (lightweight governance) to foster consistency, maintainability, security, and simplicity.</li>
+<li>Nurture the courage to experiment and fail, and breed a culture of continuous learning and innovation, and transparency.</li>
+<li>Empower engineering to embrace high DevOps performance.</li>
+<li>Foster the courage to tackle the status quo!</li>
+</ul>
+<p>My personal leadership vision is to: </p>
+<ul>
+<li>Encourage and enable everyone’s creativity, passion, purpose, and strengths!</li>
+<li>Declare war on WASTE, such as cycle time, excessive meetings, complexity, and manual processes.</li>
+</ul>
+<p>While we are all inspired by the phenomenal pace of innovation with <a href="https://www.spacex.com/">SpaceX</a>, and <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk's</a> mantra to:</p>
+<ul>
+<li>Make requirements less dumb</li>
+<li>Try to delete part of the process</li>
+<li>Simplify or optimize</li>
+<li>Accelerate cycle time</li>
+<li>Automate</li>
+</ul>
+<p>In the next journal update, I will explore <em>"why we need the common engineering team?"</em> and how we navigate the endless friction between the demand by engineering for full autonomy and the quest to create a common (common == all of ours) engineering mindset.</p>
+<p>See you next time!</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
-        | Tagged: <a href="/tag/agile.html">agile </a><a href="/tag/devops.html">devops </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/x-as-code.html">x-as-code </a>
-        | <a href="/workflow-as-code.html" rel="bookmark"
-         title="Permalink to Workflow-as-code">Permalink</a>            
+        | Tagged: <a href="/tag/learning.html">learning </a>
+        | <a href="/common-engineering-journal-1.html" rel="bookmark"
+         title="Permalink to What is origin of our common engineering team?">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
