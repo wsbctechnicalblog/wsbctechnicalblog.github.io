@@ -10,7 +10,7 @@ Summary: Adopt more modest planning strategy by treating the journey as if saili
 
 Roadmaps are a familiar way to represent a strategic vision. We start from our current position, we then pinpoint our strategic goal/destination, and then map our projected journey by placing strategic milestones to be hit along the way.
 
-Roadmaps are very useful in situations that are predictable and free of hazards. However, we live in the world that is not so predictable. The challenges are manifold, including global challenges such as the unpredictable pandemics, climate changes, economic turmoil, and so on. As our word is becoming more global and the blast radius of various changes keeps attaining ever wider reach, we are starting to recognize and acknowledge that we live in the so-called **VUCA** world.
+Roadmaps are very useful in situations that are predictable and free of hazards. However, we live in the world that is not so predictable. The challenges are manifold, including global challenges such as the unpredictable pandemics, climate changes, economic turmoil, and so on. As our world is becoming more global and the blast radius of various changes keeps attaining ever wider reach, we are starting to recognize and acknowledge that we live in the so-called **VUCA** world.
 
 ## What is **VUCA**?
  
