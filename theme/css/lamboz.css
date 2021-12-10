@@ -52,7 +52,7 @@ H5,H6 { font-size: 1.05em; }
 }
 
 A { 
-  text-decoration: underline;
+  text-decoration: none;
   color: #666;
 }
 
