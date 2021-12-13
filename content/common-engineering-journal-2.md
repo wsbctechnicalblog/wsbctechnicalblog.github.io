@@ -1,5 +1,5 @@
 Title: Why do we need our common engineering team?
-Date: 2021-12-13 13:13
+Date: 2021-12-15 13:13
 Category: Posts
 Tags: learning
 Slug: common-engineering-journal-2
@@ -10,16 +10,16 @@ We are T+74 calendar days into the journey of our EDO Common Engineering team an
 
 > ![T+73](../images/common-engineering-journal-2-1.png)
 
-Changing the culture and mindset of engineers and business stakeholders of an organization based on stringent security policies, processes, and segregation of duties takes grit, tenacity, a thick skin, and lots of patience. It feels like trying to change course of a massive oil-tanker travelling through heavy seas at full speed. 
+Changing the culture and mindset of engineers and business stakeholders of an organization based on stringent security policies, processes, and segregation of duties takes grit, tenacity, a thick skin, and lots of patience. It often feels like trying to change course of a massive oil-tanker travelling through heavy seas at full speed. 
 
 ---
 
 # WHY do we need our EDO Common Engineering Team?
 
-We want everyone to embrace a healthy DevOps mindset to empower development and operations collaboration and enable us, as an organization, to “delight our end-users”, most importantly our BC employers and workers, our WorkSafeBC workers, and IT engineers. It is important the we shift the focus from creating technological marvels and snowflakes, to reducing waste, automate everything automable, and delivering value to our end-users.
+We want everyone to embrace a healthy DevOps mindset to empower development and operations collaboration and enable us, as an organization, to “delight our end-users”, most importantly our BC employers and workers, our WorkSafeBC workers, and IT engineers. It is important we shift the focus from creating technological marvels and snowflakes, to reducing waste, automate everything automable, and delivering value to our end-users.
 
 >
-> When you boarded your last cross-Atlantic flight, wre you interested in how the plane was assembled and which processes or products were used? I believe your response is "NO". What you cared about was the outcome, landing safe and on time at your destination.
+> When you boarded your last cross-Atlantic flight, were you interested in how the plane was assembled and which processes or products were used? I believe your response is "NO". What you cared about was the outcome, landing safe and on time at your destination.
 >
 
 Therefore, our goal is not just automation and enabling technology, but to deliver **value**.** Any innovation, transformation, or measured value is worthless, unless we can continuously deliver value to our end-users. It is important to understand that DevOps is not a silver bullet, nor is it a product we can buy and install. It is a mindset that enables people to **collaborate** and follow a known **process** enabled by **products** to deliver **value** to our end users.
@@ -57,6 +57,10 @@ Once we have a foundation, we plan to enable, foster, and steward **COLLABORATIO
 
 The team took off like a [SpaceX Falcon Heavy](https://www.spacex.com/vehicles/falcon-heavy/) and it is extremely difficult to cherry-pick from our running list of achievements linked to our backlog of **culture**, **collaboration**, **innovation**, **practices**, and **kaizen** work. 
 
+>
+> **BURNOUT!** - Although everyone loves to watch teams take off and perform at maximum capacity, we must ensure that we throttle back to avoid inevitable **stress** and **burnout** which will impact **quality** and **health** negatively.
+>
+
 I will pick the top 3 on my personal favourites list and invite my colleagues to add another journal entry with their favourites.
 
 ## LITE Self-Service Automation
@@ -69,27 +73,29 @@ The first preview of our self-service automation prototype which creates an Azur
 
 We launched the collaboration program to dog|cat-food our working agreements, checklists, and ceremony portal for the [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](/dojo-events.html), [Townhall](/townhall.html), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies.
 
-The EDO Ce Center of Enablement triggers the **Common Language**, **Containerization**, and **Crank-it-up-board v2** working groups, with a few more such as **Healthy mindest for continuous delivery and release on demand**, **Automate everything automatable for Azure DevOps governance printing** using [vinijmoura/Azure-DevOps](https://github.com/vinijmoura/Azure-DevOps), and **Application-type CICD blueprint** rolling onto the launch pad.
+The EDO Ce Center of Enablement triggers the **Common Language**, **Containerization**, and **Crank-it-up-board v2** working groups, with a few more such as **Healthy mindset for continuous delivery and release on demand**, **Automate everything automatable for Azure DevOps governance printing** using [vinijmoura/Azure-DevOps](https://github.com/vinijmoura/Azure-DevOps), and **Application-type CICD blueprint** rolling onto the launch pad.
 
 ## WAR on Silos!
 
 > ![T+73](../images/common-engineering-journal-2-2.png)
 
-When we started with the common engineering system in 2019, we experienced turbulence created by our culture and processes. 
+When we started with the common engineering system in 2019, we experienced turbulence created by our siloed culture and stringent processes. The latter will raise its head again when we discuss how we **improve our value streams** and **innovate** supporting processes and products in future. 
+
+ Organizational silos exist for a number of reasons, such as:
+
+ - Creating **isolated** groups with common interests and experiences.
+ - Creating working relationships, based on personal experiences - we typically favour working with colleagues with whom we have had positive experiences and **isolate** ourselves from those that are associated with turbulence.
+ - Reorganizations that create a churn in the organizational culture - we often go "heads down" and focus on our work as the organization changes, **isolating** ourselves from the noise and fallout.
 
 > ![T+73](../images/common-engineering-journal-2-3.png)
 
-TBD
+For us to **innovate** and be **productive** we must eradicate **isolation** and foster a culture based on **trust**, **exchange of ideas** and **collaboration**. The reason I am smiling from ear to ear, is that our EDO Ce Center of Enablement and associated EDO Working Groups is enabling and demonstrating **vibrant collaboration** with (in no specific order) Enterprise Architecture, Solution Architecture, Sustainment, Site Reliability Engineering, DevSecOps, Development, Cloud Operations, Innovation, Release Management, and EDO Common Engineering.
+
+The appetite and interest in continuous **innovation**, **Consistency**, **Standardization**, and the removal of **waste** and associated **snowflakes / accidental complexity** is both exciting and refreshing! 
 
 ---
 
-# WHAT are some of the failures and turbulence?
-
-TBD 
-
----
-
-That is is for today. Ping me on [twitter](https://www.twitter.com/wpschaub) if you have any questions. 
+That is it for today. Ping me on [twitter](https://www.twitter.com/wpschaub) if you have any questions. 
 
 See you next journal update!
 
