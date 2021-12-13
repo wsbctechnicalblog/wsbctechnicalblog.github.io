@@ -55,7 +55,9 @@ Once we have a foundation, we plan to enable, foster, and steward **COLLABORATIO
 
 > ![Falcon Heavy](../images/common-engineering-journal-2-5.jpg)
 
-The team has taken off like a [SpaceX Falcon Heavy](https://www.spacex.com/vehicles/falcon-heavy/) and it will be difficult to cherry-pick from our running list of achievements linked to our backlog of **culture**, **collaboration**, **innovation**, **practices**, and **kaizen**. I will pick the top 3 on my personal favourites list and invite my colleagues to add another journal entry with their favourites.
+The team took off like a [SpaceX Falcon Heavy](https://www.spacex.com/vehicles/falcon-heavy/) and it is extremely difficult to cherry-pick from our running list of achievements linked to our backlog of **culture**, **collaboration**, **innovation**, **practices**, and **kaizen** work. 
+
+I will pick the top 3 on my personal favourites list and invite my colleagues to add another journal entry with their favourites.
 
 ## LITE Self-Service Automation
 
@@ -73,7 +75,7 @@ The EDO Ce Center of Enablement triggers the **Common Language**, **Containeriza
 
 > ![T+73](../images/common-engineering-journal-2-2.png)
 
-TBD
+When we started with the common engineering system in 2019, we experienced turbulence created by our culture and processes. 
 
 > ![T+73](../images/common-engineering-journal-2-3.png)
 
