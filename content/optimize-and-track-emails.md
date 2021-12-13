@@ -70,9 +70,9 @@ Something we used in the ALM/DevOps Ranger era and which I have noticed making a
 
 For example:
 
-- [INFO] This is an information-only email
-- [NOTIFICATION] This is an important notification email
-- [ALERT] Someone's hair is on fire
+- [INFO] This is an information-only email sample email subject
+- [NOTIFICATION] This is an important notification email sample email subject
+- [ALERT] Someone's hair is on fire sample email subject
 
 If you have a **consistent** list of qualifiers, users can create email rules and take action on emails, based on their qualifier tag.
 
