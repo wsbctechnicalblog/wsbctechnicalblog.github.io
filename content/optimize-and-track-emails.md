@@ -64,6 +64,20 @@ Ever sent an email and regretted it 10 seconds later? Well, I defer all emails I
 
 ---
 
+# Qualifiers
+
+Something we used in the ALM/DevOps Ranger era and which I have noticed making a comeback in our group the use of qualifiers in the email subject.
+
+For example:
+
+- [INFO] This is an information-only email
+- [NOTIFICATION] This is an important notification email
+- [ALERT] Someone's hair is on fire
+
+If you have a **consistent** list of qualifiers, users can create email rules and take action on emails, based on their qualifier tag.
+
+---
+
 # Use more productive collaboration channels
 
 Instead of email, consider using Microsoft Teams, Slack, or some other collaboration service that allows you to collaborate with your peers and stakeholders far more effectively. It avoids the misunderstandings and the frustrating and often time consuming conversations that split and drift from the conversation topic.
@@ -81,7 +95,7 @@ I just challenged my team to reduce the email we send as individuals and as a te
 
 Let us walk through the process of creating one of these search folders.
 
-- Create a new **custom** search folder.
+- Right click on **Search Folders**, scroll to bottom of list, and a choose **Create a new search folder**.
 
 > ![Custom Search](../Images/optimize-and-track-emails-8.png)
 
