@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
+        <title>Systems thinking and the flow of work - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="/index.html">Home</a></li>
+            <li ><a href="/pages/about.html">About</a></li>
+            <li ><a href="/pages/authors.html">Authors</a></li>
+            <li ><a href="/pages/copyright.html">Copyright</a></li>
+            <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="/flow-of-work.html" rel="bookmark"
+            title="Permalink to Systems thinking and the flow of work">Systems thinking and the flow of work</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Alex Bunardzic on Wed 15 December 2021</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Speeding up software development may not speed up the delivery</p>
+        </div>
+    
+        <div class="entry-content">
+            <p><img alt="Yoda" src="../images/yoda.png"></p>
+<p><em>Everyone is busy and yet few things are ever finished.</em> -Anonymous</p>
+<p>Delivery of the planned workload often appears unpredictable. Let’s examine what processes contribute to that lack of reliable predictability.</p>
+<h2>How reliable are the estimates?</h2>
+<p>If the expected delivery fails to materialize, usually the first suspect is poor estimates. If the team bids on a certain feature and estimates it at one timeboxed cycle (i.e., one iteration), but the feature gets delivered after three or four iterations, the team’s ability to accurately estimate is placed under suspicion.</p>
+<p>However, the team is only one component of a larger system, and the delivery workflow travels throughout the entire system. A team cannot reliably predict how will the workflow get processed throughout the system.</p>
+<p>A larger, more holistic system view is needed if we are to understand the overall delivery process. Without gaining such insights, we will continue to be somewhat mystified why is workflow slow and unpredictable.</p>
+<h2>Ask developers to work faster</h2>
+<p>Because of the lack of the insight into the overall working of the entire system, the bottlenecks may get wrongly identified. What we see typically happen is development gets erroneously perceived as the bottleneck. The slowness of delivery gets attributed to the pace of software development. Management attempts to address these ‘bottlenecks’ by either hiring more staff, or by purchasing more advanced tools, or by retraining the staff, or the combination thereof.</p>
+<p>What that amounts to is basically asking software development staff to work faster. The thinking is that if the developers were to pick up the speed by certain level of magnitude (say, by 50%), then the value delivery will improve in speed by 50%.</p>
+<p>A good time to take a closer look into this line of reasoning.</p>
+<h2>Software delivery queues</h2>
+<p>Software development is always done in isolation. The reason is that changes done to the software code are always assumed to be somewhat faulty. It is much more likely that a change made to the source code is less than optimal. Because of that, we instigate processes in the form of delivery queues. These queues/quality gates are created to make sure software does not get released without inspection.</p>
+<p>Queues are, by their very nature, speed bumps. Their only job is to slow down the delivery.</p>
+<p>Why the need to slow down? As mentioned, we don’t trust raw changes to the software, and thus enforce points of inspection.</p>
+<h2>Software delivery loops</h2>
+<p>Putting speed bumps on the road to releasing software improves our chances of delivering quality products. However, to blindly assume a happy path and smooth sailing, where all changes get carefully inspected and vetted by the gatekeepers, would be overly optimistic and naïve. More likely than not, the inspection will catch some issues with the proposed changes. When that happens, the proposed change gets sent back to authors. This sendoff then creates a loop.</p>
+<p>It would also be overly optimistic to assume that it’s always a single loop. Not every request for a fix gets done to the gatekeepers’ satisfaction. We often see the loop (i.e., back to the authors) occur more than once. Try again!</p>
+<h2>Queues and loops eat up the cycles</h2>
+<p>The inspection process is never instantaneous. When the requested change arrives at the inspection queue, it is extremely unlikely that the gatekeepers responsible to inspecting the change are immediately available to look at it. They’re busy servicing other requests. The newly arrived change request must “take a number” and then wait in the queue for the number to be called.</p>
+<p>How long will the wait be? There is no definitive, precise answer to that question. It depends on many things, most of them completely unpredictable.</p>
+<p>The team who is planning to release their changes is now forced to leave their changes alone; they then either start idling (which causes the management to frown – low utilization rates), or they get to work on something else. The wait time spent in the queue is wasting precious cycles. Not only are the teams waiting, but customers are also waiting for the new functionality/feature/fix.</p>
+<p>What happens when the gatekeepers finally get to work on the request? They will spend some time examining it, and that time could be substantial. The outcome could be positive (i.e., everything a-okay, go to the next gated phase), or negative (i.e., “we found a defect, sending it back to the team who authored it and now need to fix it”).</p>
+<p>Now we have a loop. The team who authored the defect receives the request for fixing it, and places it on their queue (“take a number”). Since they are busy working on something else, the request needs to wait for the team to free up their time and attend to it.</p>
+<p>How long is that wait time going to be? There is no definitive, precise answer. It depends on many things, many of those things also unpredictable.</p>
+<h2>Will speeding up the development make a significant impact?</h2>
+<p>If we were to trace the time spent on handoffs (i.e., idling in the queue, waiting for the next available inspectors, reassigning the team to work on something else while they’re waiting) as well as trace the time spent on examining/inspecting the change, plus the time spent on looping back with requests to fix the discovered issues, we will notice that it tends to be of a higher order of magnitude compared to the time spent developing software.</p>
+<p>Since any time spent waiting in the queue is unproductive time, we should go ahead and label it as waste (waste of time). Waste is to be avoided, however in the current model of software development process, such waste seems unavoidable. Our challenge then is to try to reduce it. Reduce the unproductive time.</p>
+<p>The added stress caused by this mode of working causes another waste – cognitive dissonance that arises from the frequent context switching. The flow of the work gets interrupted, teams get frustrated, customers place additional pressure by complaining about the sluggish speed of delivery.</p>
+<p>Is it possible to speed up the development process? Definitely – there is always room for improvement. But is that going to make a significant dent in the overall speed of delivery? Probably not.</p>
+<p>The real improvement will happen when we begin reducing the unproductive idling. Instead of investing time and effort in finding ways to speed up the development, it may be better to work on reducing the queue wait time, eliminating the loops, and minimizing the context switching stress.</p>
+<p>Once we remedy the queuing, inspecting, and looping time waste, speeding up the development process will start showing significant improvements. But not before the remedial intervention.</p>
+<h2>Would more precise estimating help?</h2>
+<p>The assumption that every development task can be precisely estimated still leaves the problem of unpredictable idling time caused by queues and loops. As we’ve seen, the grands total time spent on making the change and then seeing that change in production is quite unpredictable. It doesn’t really help knowing how long predictable activities will take if we have no way of knowing how long unpredictable activities will take.</p>
+<h2>What is the solution?</h2>
+<p>The only plausible solution to this challenge is to strive to reduce, minimize, or even eliminate queues and loops. If we get to the point where we do not need handoffs, there would be no need for queues caused by asynchronous inspection. Once that happens, estimating individual software development tasks will make more sense, as it will offer closer approximation of the delivery time.</p>
+        </div>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/quality.html">quality </a><a href="/tag/technical-excellence.html">technical-excellence </a><a href="/tag/estimates.html">estimates </a>
+        | <a href="/flow-of-work.html" rel="bookmark"
+         title="Permalink to Systems thinking and the flow of work">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="/tag/quality.html">quality</a>(11)</li>
+                    <li><a href="/tag/technical-excellence.html">technical-excellence</a>(6)</li>
+                    <li><a href="/tag/estimates.html">estimates</a>(1)</li>
+                    <li><a href="/tag/tips.html">tips</a>(13)</li>
+                    <li><a href="/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="/tag/learning.html">learning</a>(16)</li>
+                    <li><a href="/tag/value.html">value</a>(2)</li>
+                    <li><a href="/tag/process.html">process</a>(2)</li>
+                    <li><a href="/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="/tag/azure-devops.html">azure-devops</a>(30)</li>
+                    <li><a href="/tag/eliminate-waste.html">eliminate-waste</a>(9)</li>
+                    <li><a href="/tag/pipelines.html">pipelines</a>(32)</li>
+                    <li><a href="/tag/ceremony.html">ceremony</a>(6)</li>
+                    <li><a href="/tag/devops.html">devops</a>(34)</li>
+                    <li><a href="/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="/tag/collaboration.html">collaboration</a>(1)</li>
+                    <li><a href="/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
+                    <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
+                    <li><a href="/tag/tdd.html">tdd</a>(11)</li>
+                    <li><a href="/tag/testing.html">testing</a>(13)</li>
+                    <li><a href="/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="/tag/automation.html">automation</a>(7)</li>
+                    <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="/tag/design.html">design</a>(1)</li>
+                    <li><a href="/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="/tag/version-control.html">version-control</a>(2)</li>
+                    <li><a href="/tag/agile.html">agile</a>(19)</li>
+                    <li><a href="/tag/engineering.html">engineering</a>(4)</li>
+                    <li><a href="/tag/innovation.html">innovation</a>(1)</li>
+                    <li><a href="/tag/architecture.html">architecture</a>(4)</li>
+                    <li><a href="/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="/tag/code.html">code</a>(21)</li>
+                    <li><a href="/tag/events.html">events</a>(3)</li>
+                    <li><a href="/tag/security.html">security</a>(1)</li>
+                    <li><a href="/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/events.html">Events</a> (7)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (85)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
