@@ -1,5 +1,5 @@
 Title: Why do we need our common engineering team?
-Date: 2021-12-15 13:13
+Date: 2021-12-20 13:13
 Category: Posts
 Tags: learning
 Slug: common-engineering-journal-2
