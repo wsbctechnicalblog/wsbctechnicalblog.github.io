@@ -47,7 +47,7 @@ Think of the CoE as the Ferrari racing team (long-lived) and the CoE Working Gro
 
 **(3)** and **(4)** - The CoE triggers one or more CoE working groups, each focused on a subset of the CoE goals, their backlogs linked to he CoE backlog, and their vision supporting the CoE's vision. Every CoE working group is:
 
-- **Short-lived!** - The working group's lifetime is limited to the CoE's lifetime and a maximum of 2 program increments (10 weeks).
+- **Short-lived!** - The working group's lifetime is limited to the CoE's lifetime and a maximum of 2 program increments (10 weeks). See FAQ for more details.
 - **Laser focused!** - Focus on experiments, (dis)prove hypothesis, make recommendations, and minimal viable products.
 - **A slice!** - Take baby steps, focus on a vertical slice, and do **not** try to solve the world's problems.
 
@@ -65,9 +65,9 @@ Think of the CoE as the Ferrari racing team (long-lived) and the CoE Working Gro
 
 When we terminate a CoE, all associated CoE Working Groups, CoE Dojos, and CoE Community of Practices are terminated as well. All learnings, failures, etc. are maintained for future reference.
 
-## What happens when a working group's lifetime expires?
+## What happens when a CoE Working Group's lifetime expires?
 
-We terminate the working group, perform a retrospective, and **optionally** spin up a new working group to complete the work, if and only if it still deemed valuable.
+We terminate the working group, perform a retrospective, and **optionally** spin up a new working group to complete the work, if and only if it still deemed valuable. THe intentionally limit the lifetime of working groups to keep them focused and energized.
 
 ## What happens at a +1 Townhall?
 
