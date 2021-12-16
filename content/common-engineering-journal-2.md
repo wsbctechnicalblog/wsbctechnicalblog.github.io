@@ -6,7 +6,7 @@ Slug: common-engineering-journal-2
 Author: Willy-Peter Schaub
 Summary: Introducing the voice of reason and stewards of guardrails
 
-We are T+74 calendar days into the journey of our EDO Common Engineering team and it is time to shared and update our team journal, post 2. 
+We are T+74 calendar days into the journey of our EDO Common Engineering team and it is time to share and update our team journal, post 2. 
 
 > ![T+73](../images/common-engineering-journal-2-1.png)
 
@@ -92,6 +92,12 @@ When we started with the common engineering system in 2019, we experienced turbu
 For us to **innovate** and be **productive** we must eradicate **isolation** and foster a culture based on **trust**, **exchange of ideas** and **collaboration**. The reason I am smiling from ear to ear, is that our EDO Ce Center of Enablement and associated EDO Working Groups is enabling and demonstrating **vibrant collaboration** with (in no specific order) Enterprise Architecture, Solution Architecture, Sustainment, Site Reliability Engineering, DevSecOps, Development, Cloud Operations, Innovation, Release Management, and EDO Common Engineering.
 
 The appetite and interest in continuous **innovation**, **Consistency**, **Standardization**, and the removal of **waste** and associated **snowflakes / accidental complexity** is both exciting and refreshing! 
+
+---
+
+## Feedback from my colleagues
+
+Alex's favourite part and I quote: _"My favourite part of our first 90 days journey (which hasn't ended yet) is formulating clear expectations coming from the stakeholders. That creates clarity in my mind, which is very important to me."_
 
 ---
 
