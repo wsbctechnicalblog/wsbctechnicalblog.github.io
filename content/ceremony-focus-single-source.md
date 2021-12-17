@@ -1,5 +1,5 @@
 Title: Why can I not just create a working group?
-Date: 2021-11-16 13:13
+Date: 2021-12-17 13:13
 Category: Posts
 Tags: ceremony, devops
 Slug: ceremony-focus-single-source
