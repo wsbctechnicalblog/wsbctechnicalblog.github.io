@@ -1,7 +1,7 @@
 Title: Why do we need our common engineering team?
 Date: 2021-12-20 13:13
 Category: Posts
-Tags: learning
+Tags: learning, journal
 Slug: common-engineering-journal-2
 Author: Willy-Peter Schaub
 Summary: Introducing the voice of reason and stewards of guardrails

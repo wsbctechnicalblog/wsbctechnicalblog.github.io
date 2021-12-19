@@ -44,6 +44,7 @@ Here is a list of tags we use when creating new content:
 | event           |  | Meetup, training, workshop, and other event gatherings. |
 | feature-flags   |  | Separating deploy from release through feature toggles / flags. |
 | innovation |  | Disrupting the status quo by proposing hypotheses and conducting observable/repeatable experiments to corroborate or falsify proposed hypotheses. |
+| journal |  | Regular EDO Common Engineering journal entries to share our progress, failures, and learnings. |
 | lean |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
 | learning        |  | Continuous learning. |
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
