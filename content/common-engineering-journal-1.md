@@ -1,7 +1,7 @@
 Title: What is origin of our common engineering team?
 Date: 2021-12-06 13:13
 Category: Posts
-Tags: learning
+Tags: learning, journal
 Slug: common-engineering-journal-1
 Author: Willy-Peter Schaub
 Summary: Learning about the genesis of our EDO Common Engineering (EDO Ce) team
