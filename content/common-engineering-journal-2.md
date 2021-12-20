@@ -22,7 +22,7 @@ We want everyone to embrace a healthy DevOps mindset to empower development and 
 > When you boarded your last cross-Atlantic flight, were you interested in how the plane was assembled and which processes or products were used? I believe your response is "NO". What you cared about was the outcome, landing safe and on time at your destination.
 >
 
-Therefore, our goal is not just automation and enabling technology, but to deliver **value**.** Any innovation, transformation, or measured value is worthless, unless we can continuously deliver value to our end-users. It is important to understand that DevOps is not a silver bullet, nor is it a product we can buy and install. It is a mindset that enables people to **collaborate** and follow a known **process** enabled by **products** to deliver **value** to our end users.
+Therefore, our goal is not just automation and enabling technology, but to deliver **value**. Any innovation, transformation, or measured value is worthless, unless we can continuously deliver value to our end-users. It is important to understand that DevOps is not a silver bullet, nor is it a product we can buy and install. It is a mindset that enables people to **collaborate** and follow a known **process** enabled by **products** to deliver **value** to our end users.
 
 Also, instead of starting with a focus on our burning platform, our team agreed to focus on establishing an efficient system of highways, roads and railroads that enable both our business and engineering teams to focus on outcomes that delight our end-users. Automated circuit-breakers and smoke detectors monitor the health of our ecosystem, while we continuously improving outcomes.
 
