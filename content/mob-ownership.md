@@ -6,7 +6,7 @@ Slug: mob-ownership
 Author: Willy-Peter Schaub
 Summary: We succeed or fail as a team (mob), not as individuals!
 
-Mob-programming, which is the art of an entire team working on the same thing, at the same time, in the same space, and at the same keyboard/monitor, has been on our radar for a while. My colleague [AlexB](https://wsbctechnicalblog.github.io/author/alex-bunardzic.html) has been driving the software development approach with vigour, demonstrating the drop in **WASTE** and surge of **shared learning**.
+Mob-programming, which is the art of an entire team working on the same thing, at the same time, in the same space, and at the same keyboard/monitor, has been on our radar for a while. My colleague [AlexB](https://wsbctechnicalblog.github.io/author/alex-bunardzic.html) has been driving the software development approach with vigour, demonstrating a drop in **WASTE** and surge of **shared learning**.
 
 ![Mob programming](../images/mob-ownership-1.png)
 
