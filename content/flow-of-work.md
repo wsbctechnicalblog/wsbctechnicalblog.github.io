@@ -18,7 +18,7 @@ If the expected delivery fails to materialize, usually the first suspect is poor
 
 However, the team is only one component of a larger system, and the delivery workflow travels throughout the entire system. A team cannot reliably predict how will the workflow get processed throughout the system.
 
-A larger, more holistic system view is needed if we are to understand the overall delivery process. Without gaining such insights, we will continue to be somewhat mystified why is workflow slow and unpredictable.
+A larger, more holistic system view is needed if we are to understand the overall delivery process. Without gaining such insights, we will continue to be somewhat mystified why is our workflow slow and unpredictable.
 
 ## Ask developers to work faster
 
@@ -44,7 +44,7 @@ It would also be overly optimistic to assume that it’s always a single loop. N
 
 ## Queues and loops eat up the cycles
 
-The inspection process is never instantaneous. When the requested change arrives at the inspection queue, it is extremely unlikely that the gatekeepers responsible to inspecting the change are immediately available to look at it. They’re busy servicing other requests. The newly arrived change request must “take a number” and then wait in the queue for the number to be called.
+The inspection process is never instantaneous. When the requested change arrives at the inspection queue, it is extremely unlikely that the gatekeepers responsible for inspecting the change are immediately available to look at it. They’re busy servicing other requests. The newly arrived change request must “take a number” and then wait in the queue for the number to be called.
 
 How long will the wait be? There is no definitive, precise answer to that question. It depends on many things, most of them completely unpredictable.
 
@@ -58,7 +58,7 @@ How long is that wait time going to be? There is no definitive, precise answer. 
 
 ## Will speeding up the development make a significant impact?
 
-If we were to trace the time spent on handoffs (i.e., idling in the queue, waiting for the next available inspectors, reassigning the team to work on something else while they’re waiting) as well as trace the time spent on examining/inspecting the change, plus the time spent on looping back with requests to fix the discovered issues, we will notice that it tends to be of a higher order of magnitude compared to the time spent developing software.
+If we were to trace the time spent on handoffs (i.e., idling in the queue, waiting for the next available inspectors, reassigning the team to work on something else while they’re waiting) as well as trace the time spent on examining/inspecting the change, plus the time spent on looping back with requests to fix the discovered issues, we will notice that it tends to be of a higher order of magnitude larger compared to the time spent developing software.
 
 Since any time spent waiting in the queue is unproductive time, we should go ahead and label it as waste (waste of time). Waste is to be avoided, however in the current model of software development process, such waste seems unavoidable. Our challenge then is to try to reduce it. Reduce the unproductive time.
 
@@ -66,13 +66,13 @@ The added stress caused by this mode of working causes another waste – cogniti
 
 Is it possible to speed up the development process? Definitely – there is always room for improvement. But is that going to make a significant dent in the overall speed of delivery? Probably not.
 
-The real improvement will happen when we begin reducing the unproductive idling. Instead of investing time and effort in finding ways to speed up the development, it may be better to work on reducing the queue wait time, eliminating the loops, and minimizing the context switching stress.
+The real improvement will happen when we focus on reducing the unproductive idling. Instead of investing time and effort in finding ways to speed up the development, it may be better to work on reducing the queue wait time, eliminating the loops, and minimizing the context switching stress.
 
 Once we remedy the queuing, inspecting, and looping time waste, speeding up the development process will start showing significant improvements. But not before the remedial intervention.
 
 ## Would more precise estimating help?
 
-The assumption that every development task can be precisely estimated still leaves the problem of unpredictable idling time caused by queues and loops. As we’ve seen, the grands total time spent on making the change and then seeing that change in production is quite unpredictable. It doesn’t really help knowing how long predictable activities will take if we have no way of knowing how long unpredictable activities will take.
+The assumption that every development task can be precisely estimated still leaves the problem of unpredictable idling time caused by queues and loops. As we’ve seen, the grand total time spent on making the change and then seeing that change in production is quite unpredictable. It doesn’t really help knowing how long predictable activities will take if we have no way of knowing how long unpredictable activities will take.
 
 ## What is the solution?
 
