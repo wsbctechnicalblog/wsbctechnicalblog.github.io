@@ -23,7 +23,7 @@ Unfortunately, we just wasted hours of previous time we could have used for more
 - Users will automatically loop other users into their email thread if they realise you are out of office or touch base with you again when you return.
 
 >
-> Every second you waste on outdated email is **WASTE**!
+> Every second you spend on outdated email is **WASTE**!
 >
 
 ---
