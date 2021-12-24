@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-12-23T00:00:00-08:00</updated><entry><title>How to minimize queueing</title><link href="https://wsbctechnicalblog.github.io/how-to-minimize-queueing.html" rel="alternate"></link><published>2021-12-23T00:00:00-08:00</published><updated>2021-12-23T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-23:/how-to-minimize-queueing.html</id><summary type="html">&lt;p&gt;Adopt the humble approach to only work in smallest possible batches with limited work-in-progress&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Queue" src="../images/queue.png"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2021-12-24T00:00:00-08:00</updated><entry><title>How to tame your vacation email traffic</title><link href="https://wsbctechnicalblog.github.io/optimize-and-avoid-emails.md.html" rel="alternate"></link><published>2021-12-24T00:00:00-08:00</published><updated>2021-12-24T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-24:/optimize-and-avoid-emails.md.html</id><summary type="html">&lt;p&gt;How to ensure you are not confronted by hundreds of emails when you are back-to-work.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pick up from the &lt;a href="/optimize-and-track-emails.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt; post, where we have discussed the tsunami wave of emails we receive and process every day. I would like to focus on avoiding the &lt;strong&gt;WASTE&lt;/strong&gt;ful first day back at work, when we spend hours processing hundreds of emails we received while we were away on a well-deserved vacation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why should we avoid the return-to-work flood of emails?&lt;/h1&gt;
+&lt;p&gt;We have all had the terrifying welcome back to work experience, when we opened our favourite email client and stared at hundreds of emails seeking our attention. After hours of reading dated and often redundant emails, we have a brief sense of achievement when the inbox is finally empty - similar to sorting bottle tops into respective colours.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Emails" src="../images/optimize-and-avoid-emails-0.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Unfortunately, we just wasted hours of precious time we could have used for more productive work and often find ourselves behind schedule and stressed out after the first day of work. What is important to realize is the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email that has been sitting in your inbox for days or weeks is most likely &lt;strong&gt;outdated&lt;/strong&gt; by the time you read it.&lt;/li&gt;
+&lt;li&gt;Many emails are fire-and-forget type communication and will be &lt;strong&gt;rotting&lt;/strong&gt; by the time you read them.&lt;/li&gt;
+&lt;li&gt;Users will automatically loop other users into their email thread if they realise you are out of office or touch base with you again when you return.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every second you spend on outdated email is &lt;strong&gt;WASTE&lt;/strong&gt;!
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Create a vacation rule&lt;/h1&gt;
+&lt;p&gt;I recommend you create a vacation rule which automatically moves all inbound email to a bucket you can reference, not process, in future.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Email Rule" src="../images/optimize-and-avoid-emails-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This ensures that you can hit the ground running when you return to work, rather than sorting through a pile of junk for hours first.&lt;/p&gt;
+&lt;p&gt;More importantly, it discourages you from "quickly" checking your email during precious family time in order to avoid the inbox from hell. To achieve a &lt;strong&gt;work-life balance&lt;/strong&gt; you must &lt;strong&gt;STOP&lt;/strong&gt; mixing the two!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Set the expectations in your out of office message&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Email Rule" src="../images/optimize-and-avoid-emails-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When I go away for a longer period, I enable both the &lt;strong&gt;Archive OOO&lt;/strong&gt; email rule and create an out of office message. You will notice in the red text, that I set a clear expectation with senders that I will &lt;strong&gt;not&lt;/strong&gt; process their email.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Last, but not least, your phone is a phone!&lt;/h1&gt;
+&lt;p&gt;Oh, how I hate my mobile device at times. It started as a handy text + phone device with a short-lived and huge battery in the 90's but evolved into an ever-lasting digital device that follows you to the end of the world, interrupts your precious family time, and encourages you to keep track of email.&lt;/p&gt;
+&lt;p&gt;Please note that I have uninstalled business email, business collaboration, and social channels such as Facebook from my mobile "phone".&lt;/p&gt;
+&lt;p&gt;Worst case you can drag your business phone and laptop with you on vacation, but intentionally leave your chargers at home. That gives you a few hours of distraction at worst.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;With that, I wish everyone a safe, warm, and festive holiday season, as well as a jump into a successful new year!&lt;/p&gt;
+&lt;p&gt;C (see) U (you) in 2022!&lt;/p&gt;</content><category term="Posts"></category><category term="tips"></category></entry><entry><title>How to minimize queueing</title><link href="https://wsbctechnicalblog.github.io/how-to-minimize-queueing.html" rel="alternate"></link><published>2021-12-23T00:00:00-08:00</published><updated>2021-12-23T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-23:/how-to-minimize-queueing.html</id><summary type="html">&lt;p&gt;Adopt the humble approach to only work in smallest possible batches with limited work-in-progress&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Queue" src="../images/queue.png"&gt;&lt;/p&gt;
 &lt;p&gt;In my previous post &lt;a href="https://wsbctechnicalblog.github.io/flow-of-work.html"&gt;Systems thinking and the flow of work&lt;/a&gt;, I tried to describe the sluggish/unpredictable software delivery caused by queueing and looping. Adding speed bumps introduces unwanted wait time that is exacerbated by frequent requests for retries. A gated phase, a quality inspection gate, often finds fault with proposed changes and asks the authoring team to try again. Those retries add significant amount of waste to the process.&lt;/p&gt;
 &lt;p&gt;How to avoid such unwanted delays? There are a few ideas that may help:&lt;/p&gt;
 &lt;ol&gt;
@@ -3024,229 +3062,4 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 &lt;/blockquote&gt;
 &lt;p&gt;Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!&lt;/p&gt;
 &lt;p&gt;| &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;POSTER 1&lt;/a&gt; | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html"&gt;POSTER 2&lt;/a&gt; | POSTER 3 (this) |&lt;/p&gt;
-&lt;hr&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="posters"></category><category term="x-as-code"></category></entry><entry><title>Manage your Azure DevOps User Access Levels through automation</title><link href="https://wsbctechnicalblog.github.io/azuredevop-automation-stakeholders.html" rel="alternate"></link><published>2021-06-02T00:00:00-07:00</published><updated>2021-06-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-06-02:/azuredevop-automation-stakeholders.html</id><summary type="html">&lt;p&gt;Quick overview how our Azure DevOps access level audits and management automation using PowerShell, REST APIs, and Richard's WIKI Updater task.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Three of my top irritations in software engineering are &lt;strong&gt;complexity&lt;/strong&gt;, &lt;strong&gt;inconsistency&lt;/strong&gt;, and &lt;strong&gt;waste&lt;/strong&gt;. They lead to engineering rot, the infamous 2AM calls, and rapid evaporation of funds that could have beeen re-invested in innovation and learning.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Agent 13" src="../images/azuredevop-automation-stakeholders-13.png"&gt;&lt;/p&gt;
-&lt;p&gt;As Agent #13, I made this declaration in &lt;a href="https://www.tactec.ca/ndtw-resources/"&gt;Navigating DevOps through Waterfalls&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;To remain competitive and respond to rapidly changing business and 
-technology trends, as well as regulatory and compliance 
-requirements, you must find ways to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ship value! – Increase the delivery of value to customers. &lt;/li&gt;
-&lt;li&gt;Ship value faster! – Shorten the delivery cycle. &lt;/li&gt;
-&lt;li&gt;Ship the right value faster! – Monitor, learn, adapt, and pivot. &lt;/li&gt;
-&lt;li&gt;Ship the right and better value faster! – Improve quality! &lt;/li&gt;
-&lt;li&gt;Ship the right and better value faster while reducing cost and efficiency! – Reduce cost and simplify through automation.”
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Context&lt;/h1&gt;
-&lt;p&gt;As part of our common engineering system we performed regular user audits to identify &lt;strong&gt;inactive&lt;/strong&gt; users, assigned with &lt;strong&gt;Basic&lt;/strong&gt; and the expensive &lt;strong&gt;Basic + Test&lt;/strong&gt; access levels. You can find details on the Azure DevOps access levels &lt;a href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/access-levels?view=azure-devops"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Why?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Identify inactive users and downgrade them to free stakeholder access level&lt;/li&gt;
-&lt;li&gt;Downgrade helps us &lt;strong&gt;reduce unnecessary costs&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Downgrade supports &lt;strong&gt;security&lt;/strong&gt; by reducing access and limiting features&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;The "ding" moment&lt;/h1&gt;
-&lt;p&gt;After doing the painstaking and mind-numbing manual audit a few times, a faithful background thread triggered at the back of my head: "&lt;em&gt;you have followed the boring audit checklist more than twice - automate!&lt;/em&gt;"&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Idea" src="../images/azuredevop-automation-stakeholders-3.png"&gt;&lt;/p&gt;
-&lt;p&gt;What followed was collaboration with the community, such as the former ALM/DevOps Rangers and our automation guru, aka Rodney. We agreed to the following automation requirements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Automate the manual audit using PowerShell Core&lt;/li&gt;
-&lt;li&gt;Schedule the audit weekly using Azure Pipelines&lt;/li&gt;
-&lt;li&gt;Identify users who have been inactive for X months and based on parameters:&lt;/li&gt;
-&lt;li&gt;Only report the inactive users&lt;/li&gt;
-&lt;li&gt;Downgrade the inactive users to stakeholder access level&lt;/li&gt;
-&lt;li&gt;Inactive users are defined as:&lt;/li&gt;
-&lt;li&gt;Users who have logged on to Azure DevOps, but have not used any of its services for X months&lt;/li&gt;
-&lt;li&gt;Users who have been assigned an access level, but have never logged on to Azure DevOps for X months&lt;/li&gt;
-&lt;li&gt;Write the weekly report to our knowledgebase wiki&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Automation solution&lt;/h1&gt;
-&lt;p&gt;And voila, here is the PowerShell script that has been running weekly for more than a year.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[CmdletBinding()]&lt;/span&gt;
-&lt;span class="na"&gt;param(&lt;/span&gt;
-  &lt;span class="na"&gt;[string]   $orgName&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;experimentation-sandbox&amp;quot;,&lt;/span&gt;
-&lt;span class="s"&gt;  [int]      $months        = &amp;quot;-2&amp;quot;,&lt;/span&gt;
-&lt;span class="s"&gt;  [int]      $actionSet     = 0,&lt;/span&gt;
-&lt;span class="s"&gt;  [int]      $purgeUnknown  = 0,&lt;/span&gt;
-&lt;span class="s"&gt;  [string]   $patToken      = &amp;quot;&amp;lt;PAT&amp;gt;,&lt;/span&gt;
-&lt;span class="s"&gt;  [string]   $outputfile    = &amp;quot;Reset-Idle-Users-To-Stakeholders.md&amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;)&lt;/span&gt;
-
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;gt;&amp;gt;&amp;gt; QUERY MEMBER ENTITLEMENTS&amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Initialise outputfile&lt;/span&gt;
-&lt;span class="c1"&gt;#$logFile = (&amp;quot;{0}-{1}&amp;quot; -f [DateTime]::Now.ToString(&amp;quot;yyyyMMdd&amp;quot;), $outputfile)&lt;/span&gt;
-&lt;span class="na"&gt;$logFile&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;$outputfile;&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|&amp;quot; -f &amp;quot;Organsation&amp;quot;, &amp;quot;Months&amp;quot;, &amp;quot;Actionset&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;|---|:-:|:-:|&amp;quot;                                         | add-content -path $logFile&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|&amp;quot; -f $orgName, $months, $actionSet        | add-content -path $logFile&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;---&amp;quot;                                                   | add-content -path $logFile&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f &amp;quot;Name&amp;quot;, &amp;quot;Last Access&amp;quot;, &amp;quot;License&amp;quot;, &amp;quot;License Name&amp;quot;, &amp;quot;Action&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="na"&gt;&amp;quot;|---|---|---|---|---|&amp;quot;                                 | add-content -path $logFile&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Authentication header&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;(&amp;quot;{0}:{1}&amp;quot; -f &amp;quot;&amp;quot;,$patToken)&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Text.Encoding]::UTF8.GetBytes($basicAuth)&lt;/span&gt;
-&lt;span class="na"&gt;$basicAuth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[System.Convert]::ToBase64String($basicAuth)&lt;/span&gt;
-&lt;span class="na"&gt;$headers&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;@{Authorization=(&amp;quot;Basic {0}&amp;quot; -f $basicAuth)}&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Requests&lt;/span&gt;
-&lt;span class="na"&gt;$request_GetEntitlements&lt;/span&gt;         &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;https://vsaex.dev.azure.com/&amp;quot; + $orgName + &amp;quot;/_apis/userentitlements?top=10000&amp;amp;api-version=5.1-preview.2&amp;quot;;&lt;/span&gt;
-&lt;span class="na"&gt;$request_UpdateEntitlementsPre&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;https://vsaex.dev.azure.com/&amp;quot; + $orgName + &amp;quot;/_apis/userentitlements/&amp;quot;;&lt;/span&gt;
-&lt;span class="na"&gt;$request_UpdateEntitlementsPost&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;?api-version=5.1-preview.2&amp;quot;;&lt;/span&gt;
-&lt;span class="na"&gt;$json&lt;/span&gt;                            &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;[{&amp;quot;from&amp;quot;: &amp;quot;&amp;quot;,&amp;quot;op&amp;quot;: &amp;quot;replace&amp;quot;,&amp;quot;path&amp;quot;: &amp;quot;/accessLevel&amp;quot;,&amp;quot;value&amp;quot;: {&amp;quot;accountLicenseType&amp;quot;: &amp;quot;stakeholder&amp;quot;,&amp;quot;licensingSource&amp;quot;: &amp;quot;account&amp;quot;}}]&amp;#39;;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Data&lt;/span&gt;
-&lt;span class="na"&gt;$members&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;New-Object System.Collections.ArrayList&lt;/span&gt;
-&lt;span class="na"&gt;[int] $count&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;0;&lt;/span&gt;
-&lt;span class="na"&gt;[string] $basic&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Basic&amp;quot;;&lt;/span&gt;
-&lt;span class="na"&gt;[string] $basicTest&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Basic + Test Plans&amp;quot;;&lt;/span&gt;
-&lt;span class="na"&gt;[string] $stakeholder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Stakeholder&amp;quot;; &lt;/span&gt;
-
-&lt;span class="c1"&gt;# Get Entitlements&lt;/span&gt;
-&lt;span class="na"&gt;$response&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Invoke-RestMethod -Uri $request_GetEntitlements -headers $headers -Method Get&lt;/span&gt;
-&lt;span class="na"&gt;$response.items | ForEach-Object { $members.add($_.id) | out-null }&lt;/span&gt;
-
-&lt;span class="c1"&gt;# List Members &lt;/span&gt;
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;gt;&amp;gt;&amp;gt; LIST ENTITLEMENTS &amp;quot;&lt;/span&gt;
-&lt;span class="na"&gt;Write-Host &amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class="na"&gt;$response.items | ForEach-Object {&lt;/span&gt;
-  &lt;span class="na"&gt;$name&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[string]$_.user.displayName;&lt;/span&gt;
-&lt;span class="s"&gt;  $date    = [DateTime]$_.lastAccessedDate;&lt;/span&gt;
-&lt;span class="s"&gt;  $expired = Get-Date;&lt;/span&gt;
-&lt;span class="s"&gt;  $expired = $expired.AddMonths($months);&lt;/span&gt;
-&lt;span class="s"&gt;  $license = [string]$_.accessLevel.AccountLicenseType;&lt;/span&gt;
-&lt;span class="s"&gt;  $licenseName = [string]$_.accessLevel.LicenseDisplayName;&lt;/span&gt;
-&lt;span class="s"&gt;  $count++;&lt;/span&gt;
-
-  &lt;span class="c1"&gt;# Forcefully remove never activated users&lt;/span&gt;
-  &lt;span class="na"&gt;if ( $purgeUnknown -eq 1 )&lt;/span&gt;
-  &lt;span class="na"&gt;{&lt;/span&gt;
-    &lt;span class="na"&gt;if ( $date.Year -eq 1 ) {&lt;/span&gt;
-      &lt;span class="na"&gt;$date&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;[DateTime]$_.dateCreated;&lt;/span&gt;
-&lt;span class="s"&gt;    }&lt;/span&gt;
-&lt;span class="s"&gt;  }&lt;/span&gt;
-
-  &lt;span class="na"&gt;if ( $expired -gt $date ) {&lt;/span&gt;
-
-    &lt;span class="c1"&gt;# Prepare request for the expired user&lt;/span&gt;
-    &lt;span class="na"&gt;$request&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;$request_UpdateEntitlementsPre + $_.id + $request_UpdateEntitlementsPost;&lt;/span&gt;
-
-    &lt;span class="c1"&gt;# NEVER ACTIVATED&lt;/span&gt;
-    &lt;span class="na"&gt;if ( $date.Year -eq 1 )&lt;/span&gt;
-    &lt;span class="na"&gt;{&lt;/span&gt;
-      &lt;span class="na"&gt;if ( $licenseName -ne $stakeholder ) {&lt;/span&gt;
-        &lt;span class="na"&gt;Write-Host &amp;quot; ** IGNORE NEVER ACCESSED - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Date Created: &amp;quot; $_.dateCreated &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
-      &lt;span class="na"&gt;}&lt;/span&gt;
-    &lt;span class="na"&gt;}&lt;/span&gt;
-    &lt;span class="c1"&gt;# BASIC&lt;/span&gt;
-    &lt;span class="na"&gt;elseif ( $licenseName -eq $basic ) {&lt;/span&gt;
-      &lt;span class="na"&gt;if ( $actionSet -ne 0 ) {&lt;/span&gt;
-        &lt;span class="na"&gt;try {&lt;/span&gt;
-            &lt;span class="na"&gt;Write-Host &amp;quot; ** RESET TO STAKEHOLDER - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
-            &lt;span class="na"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &amp;#39;application/json-patch+json&amp;#39;&lt;/span&gt;
-&lt;span class="s"&gt;            &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Reset to Stakeholder&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="s"&gt;        }&lt;/span&gt;
-&lt;span class="s"&gt;        catch {&lt;/span&gt;
-&lt;span class="s"&gt;          Write-Host Error updating entitlements&lt;/span&gt;
-&lt;span class="s"&gt;          Write-Host $_.Exception|format-list -force&lt;/span&gt;
-&lt;span class="s"&gt;        }&lt;/span&gt;
-&lt;span class="s"&gt;      }&lt;/span&gt;
-&lt;span class="s"&gt;      else {&lt;/span&gt;
-&lt;span class="s"&gt;        Write-Host &amp;quot; ** EXPIRED ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
-&lt;span class="s"&gt;        &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Expired&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="s"&gt;      }&lt;/span&gt;
-&lt;span class="s"&gt;    }&lt;/span&gt;
-&lt;span class="s"&gt;    # BASIC + TEST&lt;/span&gt;
-&lt;span class="s"&gt;    elseif ( $licenseName -eq $basicTest ) {&lt;/span&gt;
-&lt;span class="s"&gt;      if ( $actionSet -ne 0 ) {&lt;/span&gt;
-&lt;span class="s"&gt;        try {&lt;/span&gt;
-&lt;span class="s"&gt;            Write-Host &amp;quot; ** RESET TO STAKEHOLDER - ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
-&lt;span class="s"&gt;            $response = Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &amp;#39;application/json-patch+json&amp;#39;&lt;/span&gt;
-&lt;span class="s"&gt;            &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Reset to Stakeholder&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="s"&gt;        }&lt;/span&gt;
-&lt;span class="s"&gt;        catch {&lt;/span&gt;
-&lt;span class="s"&gt;          Write-Host Error updating entitlements&lt;/span&gt;
-&lt;span class="s"&gt;          Write-Host $_.Exception|format-list -force&lt;/span&gt;
-&lt;span class="s"&gt;        }&lt;/span&gt;
-&lt;span class="s"&gt;      }&lt;/span&gt;
-&lt;span class="s"&gt;      else {&lt;/span&gt;
-&lt;span class="s"&gt;        Write-Host &amp;quot; ** EXPIRED ** &amp;quot; &amp;quot; Name: &amp;quot; $name &amp;quot; Last Access: &amp;quot; $date &amp;quot;License: &amp;quot; $license &amp;quot; - &amp;quot; $licenseName&lt;/span&gt;
-&lt;span class="s"&gt;        &amp;quot;|{0}|{1}|{2}|{3}|{4}|&amp;quot; -f $name, $date, $license, $licenseName, &amp;quot;Expired&amp;quot; | add-content -path $logFile&lt;/span&gt;
-&lt;span class="s"&gt;      }&lt;/span&gt;
-&lt;span class="s"&gt;    }&lt;/span&gt;
-&lt;span class="s"&gt;  }&lt;/span&gt;
-&lt;span class="na"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;REFERENCE INFORMATION&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1"&gt;Azure DevOps Services REST API Reference&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=richardfennellBM.BM-VSTS-WIKIUpdater-Tasks"&gt;WIKI Updater Tasks&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Azure DevOps Pipeline&lt;/h1&gt;
-&lt;p&gt;And here is the Azure Pipeline definition, whereby I replace our organization and project with &lt;ORG&gt; and &lt;PROJECT&gt; placeholders:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;schedules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;cron&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-  &lt;span class="nl"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="nl"&gt;include&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;refs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;heads&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;
-  &lt;span class="nl"&gt;always&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;yyyyMMdd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Rev&lt;/span&gt;&lt;span class="p"&gt;:.&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="nl"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;job&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Weekly_Audit&lt;/span&gt;
-  &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Agent&lt;/span&gt; &lt;span class="n"&gt;Weekly&lt;/span&gt; &lt;span class="n"&gt;Audit&lt;/span&gt;
-  &lt;span class="nl"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;AGENT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="nl"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;checkout&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;self&lt;/span&gt;
-    &lt;span class="nl"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
-    &lt;span class="nl"&gt;persistCredentials&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
-
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;AzureKeyVault&lt;/span&gt;&lt;span class="mi"&gt;@1&lt;/span&gt;
-    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Azure&lt;/span&gt; &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="nl"&gt;Vault&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;RROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;-&lt;/span&gt;&lt;span class="n"&gt;KV&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="nl"&gt;ConnectedServiceName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;GUID&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="nl"&gt;KeyVaultName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;-&lt;/span&gt;&lt;span class="n"&gt;KV&lt;/span&gt;
-
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;&lt;span class="mi"&gt;@2&lt;/span&gt;
-    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;PowerShell&lt;/span&gt;
-    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="nl"&gt;filePath&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Member&lt;/span&gt; &lt;span class="n"&gt;Entitlement&lt;/span&gt; &lt;span class="n"&gt;Management&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ps1&lt;/span&gt;
-      &lt;span class="nl"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;patToken&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PAT&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;MemberEntitlementManagement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;orgName&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;lt;ORG&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;months&lt;/span&gt; &lt;span class="mi"&gt;-3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;actionSet&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;outputFile&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtifactStagingDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
-      &lt;span class="nl"&gt;failOnStderr&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-      &lt;span class="nl"&gt;pwsh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-
-  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nl"&gt;task&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;WikiUpdaterTask&lt;/span&gt;&lt;span class="mi"&gt;@1&lt;/span&gt;
-    &lt;span class="nl"&gt;displayName&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Git&lt;/span&gt; &lt;span class="n"&gt;based&lt;/span&gt; &lt;span class="n"&gt;WIKI&lt;/span&gt;
-    &lt;span class="nl"&gt;inputs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="nl"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ORG&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;visualstudio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;/&lt;/span&gt;&lt;span class="n"&gt;_git&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Common&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Engineering&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wiki&lt;/span&gt;
-      &lt;span class="nl"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;PROJECT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;/&lt;/span&gt;&lt;span class="n"&gt;Knowledgebase&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Logs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;InactiveUsers&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;wcbbc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BuildNumber&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;_Reset_Idle_User_Licenses&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
-      &lt;span class="nl"&gt;dataIsFile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-      &lt;span class="nl"&gt;sourceFile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArtifactStagingDirectory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Reset&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Idle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Stakeholders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;
-      &lt;span class="nl"&gt;message&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Automated&lt;/span&gt; &lt;span class="n"&gt;Idle&lt;/span&gt; &lt;span class="n"&gt;Users&lt;/span&gt; &lt;span class="n"&gt;Report&lt;/span&gt; &lt;span class="n"&gt;Job&lt;/span&gt;
-      &lt;span class="nl"&gt;gitname&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QueuedBy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="nl"&gt;gitemail&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QueuedBy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="nl"&gt;useAgentToken&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1&gt;Positive ending&lt;/h1&gt;
-&lt;p&gt;The audit is now performed weekly (not ad-hoc), in minutes (not hours), and consistently (not flawed by boredom or context switching). In fact, I completely forgot about the automation until my colleague, Dennis, asked me whether we can run the same automation in another organization. Response was an easy one, "&lt;em&gt;yes we can and already have been for the past X months. Checkout the weekly reports in our knowledgebase wiki.&lt;/em&gt;"&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Robots" src="../images/azuredevop-automation-stakeholders-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;Hope you will join us on our quest to &lt;strong&gt;automate everything automatable&lt;/strong&gt; to move the repetitive, mind-numbing, and therefore error-prone tasks that our digital colleagues can perform consistently and efficiently. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Humanoids" src="../images/azuredevop-automation-stakeholders-2.png"&gt;&lt;/p&gt;
-&lt;p&gt;Do not see it as the world of robotics taking over humanity, but as robotic colleagues enabling us to focus on other responsibilities, such as ensuring we continuously ship value to our &lt;strong&gt;delighted customers&lt;/strong&gt;.&lt;/p&gt;</content><category term="Posts"></category><category term="automation"></category><category term="azure-devops"></category></entry></feed>
+&lt;hr&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="devops"></category><category term="pipelines"></category><category term="posters"></category><category term="x-as-code"></category></entry></feed>
