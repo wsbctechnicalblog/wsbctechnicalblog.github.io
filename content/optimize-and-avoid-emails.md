@@ -16,7 +16,7 @@ We have all had the terrifying welcome back to work experience, when we opened o
 
 > ![Emails](../images/optimize-and-avoid-emails-0.png)
 
-Unfortunately, we just wasted hours of previous time we could have used for more productive work and often find ourselves behind schedule and stressed out after the first day of work. What is important to realize is the following:
+Unfortunately, we just wasted hours of precious time we could have used for more productive work and often find ourselves behind schedule and stressed out after the first day of work. What is important to realize is the following:
 
 - Email that has been sitting in your inbox for days or weeks is most likely **outdated** by the time you read it.
 - Many emails are fire-and-forget type communication and will be **rotting** by the time you read them.
