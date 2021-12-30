@@ -12,7 +12,7 @@ Experimentation is the foundation of the scientific method, which is a systemati
 
 Most of us are by now familiar with the business methodology called Minimum Viable Product (**MVP**). This Minimum Viable Product is basically just an experiment. By building and launching MVPs, business operations are engaging in a systematic means of exploring the markets.
 
-If we look at market leaders today, we learn that they’re not doing projects anymore. The only thing they’re doing is experiments. **Customer discover**y** and **Lean strategies** are used to test assumptions about the markets. Such approach is equivalent to Test-Driven Development (**TDD**), which is the process we are intimately familiar with. In TDD, we write the hypothesis first (the test). We then use that test to guide our implementation. Ultimately, product or service development is no different than TDD – we first write a hypothesis, that hypothesis guides our implementation which serves as measurable validation of the hypothesis.
+If we look at market leaders today, we learn that they’re not doing projects anymore. The only thing they’re doing is experiments. **Customer discovery** and **Lean strategies** are used to test assumptions about the markets. Such approach is equivalent to Test-Driven Development (**TDD**), which is the process we are intimately familiar with. In TDD, we write the hypothesis first (the test). We then use that test to guide our implementation. Ultimately, product or service development is no different than TDD – we first write a hypothesis, that hypothesis guides our implementation which serves as measurable validation of the hypothesis.
 
 ## Information discovery
 
@@ -22,7 +22,7 @@ Back then it seemed a perfectly reasonable thing to do. The fly in the ointment 
 
 But the clincher was in the gated phases. Remember, once requirements get signed off, they get frozen. No more changes, no scope creep allowed. Which means, newly obtained market insights get willfully ignored.
 
-Well, that’s kind of a foolish neglect. More often than not, the newly emerging evidence could be of critical importance to the health of the business operation. Can we afford to ignore it? You be we cannot! We have no recourse other than to embrace the change.
+Well, that’s kind of a foolish neglect. More often than not, the newly emerging evidence could be of critical importance to the health of the business operation. Can we afford to ignore it? You bet we cannot! We have no recourse other than to embrace the change.
 
 It is after a number of prominent fiascos in the industry that many software development projects switched to the agile approach. With agile, information discovery is partial. With agile we never claim that we have gathered the requirements, and are now ready to implement them. We keep discovering information and implementing it at the same time (we embrace the change). We do it in tiny steps, keeping our efforts interruptible and steerable at all times.
 
