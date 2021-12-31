@@ -47,6 +47,7 @@ Here is a list of tags we use when creating new content:
 | journal |  | Regular EDO Common Engineering journal entries to share our progress, failures, and learnings. |
 | lean |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
 | learning        |  | Continuous learning. |
+| metrics         |  | Telemetry, logging, metrics, and other evidence-based learnings. |
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
 | posters         |  | Quick reference posters and cheat sheets. |
 | quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
