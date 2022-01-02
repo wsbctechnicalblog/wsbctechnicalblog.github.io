@@ -12,7 +12,9 @@ Similarly, hypothesis-driven development (HDD) relies on feedback to be in a pos
 
 ![HDD](../images/ooda-loop-and-devops-3.png) 
 
-Both **OODA** and **HDD** become worthless black holes if we remove the **feedback**. Your dream to fail-fast, continuously learn, and continuously improve evaporates before your very eyes.
+Both **OODA** and **HDD** become worthless black holes if we remove the **feedback**. Your dream to fail-fast, continuously learn, and continuously improve evaporates before your very eyes, and you will embark on a nightmare journey, without clues, insight, or early-warnings. 
+
+![Clueless](../images/metrics-importance-1.png)
 
 ---
 
