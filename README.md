@@ -1,8 +1,8 @@
-# WorkSafeBC Technical Blog
+# WorkSafeBC Technical Blog [Link](https://wsbctechnicalblog.github.io/)
 
 ## What is WorkSafeBC Technical Blog?
 
-A publishing platform focused on showcasing cutting edge accomplishments of WorkSafeBC Software Engineering Teams.
+A publishing platform focused on showcasing cutting edge accomplishments of WorkSafeBC Software Engineering Teams. It's hosted on Github pages at https://wsbctechnicalblog.github.io/
 
 ## Can I contribute to WorkSafeBC Technical Blog?
 
