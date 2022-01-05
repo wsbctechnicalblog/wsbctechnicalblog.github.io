@@ -97,8 +97,8 @@ Title: <catchy title>
 Date: YYYY-MM-DD
 Category: <Events|Posts>, as above mentioned 
 Tags: <Tags> comma separated, as above mentioned
-Slug: Your <file-name> without the .md
-Author: <FirstName> <LastName>
+Slug: Your <file-name> without the .md, using kebab style, for example code-as-text
+Author: <FirstName> <LastName>, matching the name of your entry in the X [authors](https://wsbctechnicalblog.github.io/pages/authors.html) page.
 Summary: <Quick summary of what post is about>.
 ```
 
@@ -117,6 +117,10 @@ Done!
 ![Tags](../images/blog-post-101-6.png) 
 
 Unfortunately, we can only define one author in the metadata, however, you can co-author a post with a colleague or with a member from our **WSBC Technical Blog Content Discussion** working group. We are more than happy and keen to assist you, even as an unknown ghost writer. 
+
+If there are multiple authors, consider adding this:
+
+> Authored by X, Y, and Z at the start of end of your post.
 
 Just collaborate with us, ask questions (_the only one that is bad is the one you never ask_), and do not hesitate to ask for help.
 
