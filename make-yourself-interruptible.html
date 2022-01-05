@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Use Active Directory Groups in your unified classic CI CD pipelines - </title>
+        <title>Make yourself interruptible - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,67 +32,43 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
-            title="Permalink to Use Active Directory Groups in your unified classic CI CD pipelines">Use Active Directory Groups in your unified classic CI CD pipelines</a></h1>
+    <h1 style="font-size:2em;"><a href="/make-yourself-interruptible.html" rel="bookmark"
+            title="Permalink to Make yourself interruptible">Make yourself interruptible</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 20 October 2020</div>
+        <div class="read-more">Posted by Alex Bunardzic on Wed 05 January 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Instead of managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions</p>
+            <p>Adopt humble approach when creating software products by making yourself open to interruptions</p>
         </div>
     
         <div class="entry-content">
-            <p>The CI/CD pipeline is a DevOps practice for delivering code changes more frequently, consistently, and reliably. It enables Agile teams to increase deployment frequency, decrease lead time for change, change failure rate, and mean time to recovery key performance indicators, thereby improving quality and delivering value faster.</p>
-<h1>Let us use Active Directory (AD) security groups</h1>
-<p>After our dream for One CI/CD pipeline to rule them all we decided to go one-step further and simplify the classic release pipeline security using Active Directory (AD) groups. Instead of assigning and managing permissions for users in Azure DevOps, we use Azure Active Directory groups to fine tune permissions. For example, we have project specific super users AD groups that grant elevated permissions to edit release pipelines and the development and system test stages.</p>
-<p><img alt="Classic Pipeline" src="/images/use-ad-groups-with-CI-CD-pipelines-1.png"></p>
-<blockquote>
-<p>Empower the Agile Development Team to own development and system test stages</p>
-</blockquote>
-<p>Bookmark the Azure DevOps DRIFT project, which will enable you to monitor and remediate configuration drift, for example to automatically remove explicit user accounts added to an AD driven security model.</p>
-<h1>Why AD groups?</h1>
-<p>The value of using AD groups depends on your environment. In our case the benefits are:</p>
-<ul>
-<li>AD groups and memberships are centrally <strong>managed</strong> and <strong>audited</strong>.</li>
-<li>AD group membership is track than individual user accounts spread across multiple Azure DevOps services and projects.</li>
-<li>Azure DevOps users are empowered to request group membership using an existing process, rather than relying on the Azure DevOps project collection and project administrators.</li>
-<li>Simplifies automation of pipeline generation and configuration.</li>
-</ul>
-<p><img alt="Simplicity" src="/images/use-ad-groups-with-CI-CD-pipelines-2.png"></p>
-<h1>Let us use email-enabled Active Directory (AD) security groups</h1>
-<p>However, wait, we can go a step further and use mail-enabled AD security groups for pre- and post-stage pipeline approvals.</p>
-<p><img alt="Post deployment conditionse" src="/images/use-ad-groups-with-CI-CD-pipelines-3.png"></p>
-<p>Use email-enables security groups for stage approvals
-We replace the individual users highlighted in yellow with Release Approval AD groups.</p>
-<p><img alt="CI CD pipelines" src="/images/use-ad-groups-with-CI-CD-pipelines-4.png"></p>
-<blockquote>
-<p>Simplify stage approvals with email-enabled AD security groups</p>
-</blockquote>
-<p>Why are there no stage approval notifications?
-We realized that some of our email-enabled AD security groups received no notifications and spend time with Microsoft support to identify the root cause(s).</p>
-<p>You have to ensure that the AD security groups:</p>
-<ul>
-<li>Are <strong>mail-enabled</strong> and authorized to receive external emails.</li>
-<li>Have <strong>View Releases</strong> permissions on release and definitions.</li>
-<li>Have a subscription that is enabled for the group(s).</li>
-</ul>
-<p>The second bullet is the one that caught us off guard. If the permission is missing the Azure DevOps Pipeline event/notification service filters out the account's notifications. When notifications are filtered, no email is sent for impacted group(s) - silence prevails.</p>
-<p>Make sure that your email-enabled AD security groups are members of your project <strong>Contributors or Readers</strong>, which by default, have the View Releases permission.</p>
-<h1>What Is Next?</h1>
-<p>This is likely one of the last posts on classic CI/CD pipelines. Watch the space for unified multi-stage YAML-based pipeline learnings.</p>
+            <p><img alt="Interrupt" src="../images/Interrupt.png"></p>
+<p>Let's take one simple example: suppose I'm a programmer writing code and I use Notepad to do it. I can lock myself in my office and keep writing code in the Notepad for hours without being interrupted. I'm a professional programmer and I know what I'm doing, right?</p>
+<p>Suppose now I upgrade from Notepad to a sophisticated code editor. If I continue writing code the way I used to do with Notepad, I will start getting interrupted. Why? Because sophisticated code editors are opinionated and will push back if I attempt to write syntactically incorrect code. Notepad, on the other hand, couldn't care less if the code I wrote is correct or not.</p>
+<p>Suppose now I upgrade to an even more sophisticated code editor that on every diff runs all tests in the background. The moment any test fails, the editor interrupts my coding session and demands that I fix the failing test.</p>
+<p>Suppose now I upgrade to an even more sophisticated code editor that on every diff runs all tests in the background, and when all tests pass it runs mutation testing. If there are any surviving mutants, it interrupts my coding session and demands that I kill all surviving mutants before I could continue writing code.</p>
+<p>All those interruptions are extremely desirable if we care at all about the quality of our work.</p>
+<h2>Are interruptions slowing us down?</h2>
+<p>Common sense thinking is prone to viewing interruptions as a speed bump. If I know exactly what I’m doing, what’s the point in me being interrupted? My flow will slow down, and the delivery will inevitably suffer.</p>
+<p>Few years ago, I went to IKEA and purchased a large bookshelf. Brought it home, unpacked it, and studied the instruction sheet. Since I’m an engineer by training, I was confident that I completely understood the prescribed process of assembling the shelf.</p>
+<p>I jumped into action and spent a few hours working on the big shelf without any interruptions. When I was finished and stood the shelf up, I realized that I have assembled it incorrectly – it looked the way a normal shelf would look when viewed in a mirror! Obviously, the shelf was not safe to use in such botched shape, so I had to disassemble it and then reassemble it following the instruction sheet very carefully.</p>
+<p>So, what was happening now that I realized the importance of respecting and following the instruction sheet to the letter? I started getting many, many interruptions while I was working on it. Those interruptions were slowing down the flow of work. I had to stop my work, put down the tools and the parts of the shelf I was holding in my hands, bring the instruction sheet up to my attention, and study it carefully before making the next decision. That took some extra time.</p>
+<p>However, overall, I finished the shelf in less than half the time it took me originally to assemble it, realize it was botched, disassemble it, and then waste time on few expletives.</p>
+<p>I now apply the same approach to creating software. I welcome interruptions. Any time I make a change to the code, I invite the system to run and let me know if my change broke anything. If it did, I reset the system to its previous working state, and try again. If it didn’t break anything, I continue confidently, knowing that the software I’m creating is always in its fully functional state.</p>
+<p>And that, in my experience, is the fastest way to work and release software.</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
-        | Tagged: <a href="/tag/azure.html">azure </a><a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/pipelines.html">pipelines </a>
-        | <a href="/ad-groups-for-ci-cd-pipelines.html" rel="bookmark"
-         title="Permalink to Use Active Directory Groups in your unified classic CI CD pipelines">Permalink</a>            
+        | Tagged: <a href="/tag/quality.html">quality </a><a href="/tag/technical-excellence.html">technical-excellence </a><a href="/tag/tdd.html">TDD </a><a href="/tag/eliminate-waste.html">eliminate-waste </a><a href="/tag/agile.html">agile </a><a href="/tag/devops.html">devops </a>
+        | <a href="/make-yourself-interruptible.html" rel="bookmark"
+         title="Permalink to Make yourself interruptible">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
