@@ -2,9 +2,10 @@ Title: When should we automate tests
 Date: 2022-01-01
 Category: Posts
 Tags: learning, testing, devops
-Slug: When should we automate tests
-Author: Aditya Chourasiya, Mohita Kataria, Midhi Naidu
-Summary: This article is gist of brainstorming session among QA team at WorkSafeBC
+Slug: when-should-we-automate-tests
+Author: Aditya Chourasiya
+
+Summary: This article is gist of brainstorming session among QA team(Mohita Kataria, Midhi Naidu and Aditya Chourasiya) at WorkSafeBC
 
    Automation is advised when tests are **prone to human error** or **complex** or if they need **repeating**, **reporting** , **execution speed** and ofcourse fetch good **return on investment**. 
    
@@ -25,7 +26,7 @@ Summary: This article is gist of brainstorming session among QA team at WorkSafe
  These are few reasons not to automate (not in order)
 - **Aesthetics** - User experience , look and feel, colour and images verification require complex human context and interpretation.
 - **Accessibility** - Similar to aesthetics, accessibility, usablity, language, grammer etc should be verified manually
-- **One-time** - Urgent non-regression(hotfixes), non-critical, or very small changes can/may be manually verified  
+- **One-time** - Urgent non-regression hotfix, non-critical, or very small changes can/may be manually verified  
 - **Unpredictable results** - Exploratory, time delay tests, random tests can/will rely on manual execution
 - **Inadequate return on investment** - Automated test for short lived products, small scale development, duplicate tests should be avoided 
 
