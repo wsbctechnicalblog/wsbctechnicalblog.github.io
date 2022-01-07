@@ -1,5 +1,5 @@
-Title: V2MoM for DevOps Analytics
-Date: 2022-01-01
+Title: DevOps Analytics Strategy
+Date: 2022-01-07
 Category: Posts
 Tags: learning, metrics, devops
 Slug: devops-analytics-strategy
@@ -8,7 +8,7 @@ Summary: Objective, Method and Maturity model for business analytics across an e
 
    As a business user, I want to make sense of all the data coming from my production system and make sure my product meets business requirements. This article summarizes different maturity model and action-sequence to achieve snow-ball effect for typical organization.
 
-![Vision](../images/vision.webp)
+![Vision](../images/vision.png)
 
 # Let's start with Why
 
@@ -18,7 +18,7 @@ Summary: Objective, Method and Maturity model for business analytics across an e
 - To raise awareness and instill team wide 'measure' from the very inception
 - To give stakeholders and senior management on-demand visibility into systems dev and ops
 
-[Objective](../images/objective.webp)
+[Objective](../images/objective.png)
 
 - To promote Business objectives of measurements and organization wide 'manifesto'
 - To define metrics for each group of stakeholders
@@ -26,7 +26,7 @@ Summary: Objective, Method and Maturity model for business analytics across an e
 - To define delivery methods for metrics
 - To define measurement and metric delivery cadence
 
-[Methods](../images/methods.webp)
+[Methods](../images/methods.png)
 # Phase 1 of 4 (Awareness)
 This phase is focused on developing Descriptive analytics capabilities, which can help answer: “What has happened?"
 
@@ -73,3 +73,6 @@ This phase is focused on developing Prescriptive Analytics capabilities, which c
 
 # Summary and invite
 This article was intended to be written in [V2MoM](https://www.salesforce.com/blog/how-to-create-alignment-within-your-company/) format, however due to different organizational structure and needs, it will vary a lot. Based on my experience in different government and non-government organizations, the above holds true. Please feel free to submit a pull request to suggest any changes. Thank you for reading.
+
+
+
