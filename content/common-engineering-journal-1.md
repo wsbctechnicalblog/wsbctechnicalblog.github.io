@@ -1,4 +1,4 @@
-Title: What is origin of our common engineering team?
+Title: Journal 1 - What is origin of our common engineering team?
 Date: 2021-12-06 13:13
 Category: Posts
 Tags: learning, journal

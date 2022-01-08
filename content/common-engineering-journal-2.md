@@ -1,4 +1,4 @@
-Title: Why do we need our common engineering team?
+Title: Journal 2 - Why do we need our common engineering team?
 Date: 2021-12-20 13:13
 Category: Posts
 Tags: learning, journal
