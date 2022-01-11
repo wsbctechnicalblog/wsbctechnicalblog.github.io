@@ -2,7 +2,7 @@ Title: Journal 3 - Explore the trajectory of our Common Engineering (Ce) ecosyst
 Date: 2021-01-26 13:13
 Category: Posts
 Tags: learning, journal, event
-Slug: common-engineering-journal-23
+Slug: common-engineering-journal-3
 Author: Willy-Peter Schaub
 Summary: Looking at our common engineering team through the management (leader) lens
 
@@ -130,6 +130,5 @@ Catch me on [Twitter](https://www.twitter.com/wpschaub) or [LinkedIn](https://ww
 - [Willy-Peter Schaub Publications](https://www.linkedin.com/pulse/summary-some-my-publications-willy-peter-schaub) 
 - [Willy-Peter Schaub Twitter](https://www.twitter.com/wpschaub)
 - [WSBC Technical Blog](https://wsbctechnicalblog.github.io/index.html)
-
 
 
