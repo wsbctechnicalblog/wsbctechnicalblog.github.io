@@ -42,14 +42,13 @@ Thereafter let your imagination soar, for example **chaos engineering**.
 
 # No more silos! Collaborate!
 
-@@@@@@@@@@@@@
-
 Here is a snapshot of the extend of collaboration we achieved during the first 90-days. 
 
 > ![Collaboration](../images/common-engineering-journal-3-3.png)
 
 The variety of teams, the vibrance of collaboration, and the focus on outcomes give me reassurance that we are on the right track and hope that we can achieve the unthinkable as an organization.
-Erasing the silos, avoiding them to regrow like weeds, establishing TRUST, and getting all the stakeholders to collaborate was one of the big tests to date. 
+
+Erasing the silos, avoiding them to regrow like weeds, establishing **TRUST**, and getting all the stakeholders to collaborate was one of the big tests to date. 
 
 ---
 
@@ -59,15 +58,19 @@ Which brings me to the challenge of launching such a team, especially when you a
 
 > ![Challenges](../images/common-engineering-journal-3-4.png)
 
-Apart from the people management, dealing with rigid and time-consuming processes, a lack of resources in the local market … our team has existing operational support, and quality assurance responsibilities. Balancing these with our quest for bold change and continuous innovation, has been the biggest challenge. Creating a harmonious team, where everyone takes responsibility for their actions, where we have a work:life balance, and where everyone is a leader is not easy.
+Apart from the people management, dealing with rigid and time-consuming processes, a lack of resources in the local market … our team has existing operational support, and quality assurance responsibilities. Balancing these with our quest for bold change and continuous innovation, has challenging. Creating a harmonious team, where everyone takes responsibility for their actions, where we have a work:life balance, and where everyone is a leader is not ea walk in the park.
 
 Another anomaly that keeps me awake at night, is how to ensure that everyone has an innovation mindset, the time, and the grit to take a chance. I find that many engineers can spend hours talking about a problem, but often have no time to make changes. Hopefully you can give me guidance here.
 
-My personal mission statement, which I stare at every morning, <…> is to “encourage everyone’s creativity, passion, purpose, and strengths.”
-I am experimenting with a variety of guidance <…> from David Marquet, carrying around his book – Turn the ship around – wherever I go.
-I always remind myself to <…> foster autonomy, mastery, and purpose, as discussed by Daniel Pink.
-Inspired by Elon Musk and SpaceX’s phenomenal innovation, <…> I encourage my team to simplify everything, automate everything automatable, and question all processes, often provoking colleagues when I ask the five WHYs and rip parts out of an inefficient process.
-Last, but not least, I remember everyone to have <…> FUN to combat today’s stressful days of isolated and remote engineering, and to remind us of the need to balance work and life. <…> A reason our most recent quarterly update looked more like a newspaper than a formal report.
+My personal mission statement, which I stare at every morning, is to “**encourage everyone’s creativity, passion, purpose, and strengths**.”
+
+I am experimenting with a variety of guidance from David Marquet, carrying around his book – Turn the ship around – wherever I go.
+
+I always remind myself to foster autonomy, mastery, and purpose, as discussed by Daniel Pink.
+
+Inspired by Elon Musk and SpaceX’s phenomenal innovation, I encourage my team to simplify everything, automate everything automatable, and question all processes, often provoking colleagues when I ask the five WHYs and rip parts out of an inefficient process.
+
+Last, but not least, I remember everyone to have FUN to combat today’s stressful days of isolated and remote engineering, and to remind us of the need to balance work and life. A reason our most recent quarterly update looked more like a newspaper than a formal report.
 
 ---
 
@@ -87,7 +90,7 @@ To be successful you need a DREAM TEAM …
 
 > ![Dream Team](../images/common-engineering-journal-3-6.png)
 
-Here is our EDO Common Engineering DREAM TEAM, focused on operational support, quality assurance, and innovation.
+... here is our EDO Common Engineering DREAM TEAM, focused on operational support, quality assurance, and innovation.
 
 > ![EDO Ce](../images/common-engineering-journal-3-7.png)
 
@@ -97,8 +100,8 @@ Here is our EDO Common Engineering DREAM TEAM, focused on operational support, q
 
 > ![EDO Ce](../images/common-engineering-journal-3-8.png)
 
-We live and breathe by our <…> working agreement, with an emphasis on optimizing meetings … another Elon Musk inspiration … and inspire an Agile, Kanban, and DevOps mindset, as well as DevOps core values.
-Our working agreement has triggered <…> a range of other working agreement, such as starting a center of enablement or rotating through our common engineering team.
+We live and breathe by our [working agreement](https://wsbctechnicalblog.github.io/dream-team-working-agreement-poster.html), with an emphasis on optimizing meetings … another Elon Musk inspiration … and inspire an Agile, Kanban, and DevOps mindset, as well as DevOps core values.
+Our working agreement has triggered a range of other working agreements, such as starting a center of enablement or rotating through our common engineering team.
 
 --- 
 
