@@ -6,6 +6,8 @@ Slug: ceremony-overview
 Author: Willy-Peter Schaub
 Summary: Taking a step back and digesting this week's storm of ceremony posts.
 
+> Refreshed on January 4, 2022.
+
 During this week we launched a tsunami of blog posts focused on our [Center of Enablement](/ceremony-center-of-enablement.html) (CoE), [Dojo](/dojo-events.html), [Townhall](/townhall.html), [Working Group](../ceremony-working-group.html), and [Community of Practice](/ceremony-community-of-practice.html) (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.
 
 In this post I will answer some of the questions we received to date. Plan is to update this post as we dog-food our ceremonies, with an intent to continuously improve them.
@@ -33,6 +35,7 @@ List of questions we will cover herein:
 - Why is the CoE called Center of Enablement, not Excellence?
 - Why do we have guardrails?
 - Why do we insist on a Terms of Reference?
+- Why can I not just create a working group?
 
 ## How can I join a ceremony?
 
@@ -113,6 +116,16 @@ Yes, the guardrails feel like we are ignoring the first value of the Agile manif
 ![ToR](../images/ceremony-overview-2.png)
 
 We question the value of every ceremony and every meeting we plan or attend. The minimal expectations for the terms of reference identifies the purpose, the outcomes, and a measurable hypothesis. This promotes consistency and purpose!
+
+---
+
+## Why can I not just create a working group?
+
+A **working group** is a group of people working together to collaborate and achieve specified goals. The lifespan of a working group can last anywhere between minutes to years, although we strongly recommend the shorter the better mindset. You can create these working groups whenever you need one!
+
+A **CoE working group** is short-lived and sponsored by one or more Centers of Enablement, its terms of reference (vision, goals, hypothesis) a subset of and supporting the CoE terms of reference. In other words, there is a strong dependency between a sponsoring and other collaborating CoEs.
+
+See [Why can I not just create a working group?]https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html) for details.
 
 ---
 
