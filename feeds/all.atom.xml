@@ -583,7 +583,10 @@
 &lt;p&gt;You configure the required templates in your &lt;strong&gt;Environments&lt;/strong&gt;, under &lt;strong&gt;Approvals and Checks&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-7.png"&gt;&lt;/p&gt;
 &lt;p&gt;Read &lt;a href="https://twitter.com/jjjettrain"&gt;josh-ops'&lt;/a&gt; blog post &lt;a href="https://josh-ops.com/posts/extends-template/"&gt;Azure DevOps: Extends Template with Build and Deployment Templates&lt;/a&gt; for a great overview and example of using &lt;strong&gt;extends&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Right, if you are excited and interested in these YAML-based pipeline features, I recommend that you review our &lt;a href="/why-pipelines-part1.html"&gt;Pipeline Series&lt;/a&gt; which delves deeper into the classic and new pipelines. If not, you are likely in the wrong movie.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="eliminate-waste"></category><category term="pipelines"></category><category term="tips"></category></entry><entry><title>An overview of our key collaboration ceremonies</title><link href="https://wsbctechnicalblog.github.io/ceremony-overview.html" rel="alternate"></link><published>2021-11-13T13:13:00-08:00</published><updated>2021-11-13T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-13:/ceremony-overview.html</id><summary type="html">&lt;p&gt;Taking a step back and digesting this week's storm of ceremony posts.&lt;/p&gt;</summary><content type="html">&lt;p&gt;During this week we launched a tsunami of blog posts focused on our &lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt; (CoE), &lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;, &lt;a href="/townhall.html"&gt;Townhall&lt;/a&gt;, &lt;a href="../ceremony-working-group.html"&gt;Working Group&lt;/a&gt;, and &lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt; (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.&lt;/p&gt;
+&lt;p&gt;Right, if you are excited and interested in these YAML-based pipeline features, I recommend that you review our &lt;a href="/why-pipelines-part1.html"&gt;Pipeline Series&lt;/a&gt; which delves deeper into the classic and new pipelines. If not, you are likely in the wrong movie.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="eliminate-waste"></category><category term="pipelines"></category><category term="tips"></category></entry><entry><title>An overview of our key collaboration ceremonies</title><link href="https://wsbctechnicalblog.github.io/ceremony-overview.html" rel="alternate"></link><published>2021-11-13T13:13:00-08:00</published><updated>2021-11-13T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-11-13:/ceremony-overview.html</id><summary type="html">&lt;p&gt;Taking a step back and digesting this week's storm of ceremony posts.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Refreshed on January 4, 2022.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;During this week we launched a tsunami of blog posts focused on our &lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt; (CoE), &lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;, &lt;a href="/townhall.html"&gt;Townhall&lt;/a&gt;, &lt;a href="../ceremony-working-group.html"&gt;Working Group&lt;/a&gt;, and &lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt; (CoP) ceremonies. Behind the scenes we also launched our first CoE to dogfood (evaluate our own stuff) guardrails, posters, and working agreements we created.&lt;/p&gt;
 &lt;p&gt;In this post I will answer some of the questions we received to date. Plan is to update this post as we dog-food our ceremonies, with an intent to continuously improve them.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Overview" src="../images/ceremonies-overview.png"&gt;&lt;/p&gt;
@@ -606,6 +609,7 @@
 &lt;li&gt;Why is the CoE called Center of Enablement, not Excellence?&lt;/li&gt;
 &lt;li&gt;Why do we have guardrails?&lt;/li&gt;
 &lt;li&gt;Why do we insist on a Terms of Reference?&lt;/li&gt;
+&lt;li&gt;Why can I not just create a working group?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;How can I join a ceremony?&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="Join" src="../images/ceremony-overview-3.png"&gt;&lt;/p&gt;
@@ -676,6 +680,11 @@
 &lt;h2&gt;Why do we insist on a Terms of Reference?&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="ToR" src="../images/ceremony-overview-2.png"&gt;&lt;/p&gt;
 &lt;p&gt;We question the value of every ceremony and every meeting we plan or attend. The minimal expectations for the terms of reference identifies the purpose, the outcomes, and a measurable hypothesis. This promotes consistency and purpose!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Why can I not just create a working group?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;working group&lt;/strong&gt; is a group of people working together to collaborate and achieve specified goals. The lifespan of a working group can last anywhere between minutes to years, although we strongly recommend the shorter the better mindset. You can create these working groups whenever you need one!&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;CoE working group&lt;/strong&gt; is short-lived and sponsored by one or more Centers of Enablement, its terms of reference (vision, goals, hypothesis) a subset of and supporting the CoE terms of reference. In other words, there is a strong dependency between a sponsoring and other collaborating CoEs.&lt;/p&gt;
+&lt;p&gt;See [Why can I not just create a working group?]https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html) for details.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img alt="Meetings" src="../images/azuredevop-automation-stakeholders-3.png"&gt;&lt;/p&gt;
 &lt;p&gt;Watch this space for more questions and posts by ceremony members sharing their experiences.&lt;/p&gt;
