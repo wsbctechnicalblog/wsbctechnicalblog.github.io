@@ -47,12 +47,16 @@ The core difference between the two ways of adopting new processes and products 
 
 # Technology Adoption Program (TAP) 
 
-Enterprise Architecture introduced the Technology Adoption Program (TAP), as shown below, which guides us to adopt, asses, approve, and embrace new technology (processes and products).
+Enterprise Architecture introduced the Technology Adoption Program (TAP), as shown below, which guides us to adopt, asses, approve, and embrace new technology (processes and products). Instead of re-inventing the wheel, our Common Engineering Center of Enablement decided to base our process and product adoption program on the existing Technology Adoption Program (TAP) - **re-use**!
 
 > Figure 3 - Technology Adoption Program (flow)
 > ![Value](../images/technology-adoption-program-3.png)
 
 The TAP lights up when combined with our common engineering ecosystem, in which the [centres of enablement](https://wsbctechnicalblog.github.io/ceremony-center-of-enablement.html) (CoE) provide thought leadership, vision, direction, guardrails, and sponsor vibrant and laser focused working groups to **ASSESS**, **TRIAL**, and **ADOPT** new technologies. Both the CoE and sponsored Working Groups are based on people from different disciplines, encouraging vibrant collaboration and awareness amongst all stakeholders.
+
+> 
+> **COLLABORATION FROM THE START** - we can ensure that new technology is supported by the innovation programs, such as pipeline blueprints and self-service, once organizational approval is received. This ensures that we can empower engineering to “hit the ground running” with new technologies.
+>
 
 By the time a process or product is approved, it is neither unknown, nor a mystical Unicorn. Instead, awareness and self-service automation programs are aware and supportive of the new technology, which not only enables and empowers engineering, but reduces **WASTE**.
 
