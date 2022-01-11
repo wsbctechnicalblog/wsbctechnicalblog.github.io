@@ -52,7 +52,7 @@ Enterprise Architecture introduced the Technology Adoption Program (TAP), as sho
 > Figure 3 - Technology Adoption Program (flow)
 > ![Value](../images/technology-adoption-program-3.png)
 
-The TAP lights up when combined with our common engineering ecosystem, in which the [centres of enablement](https://wsbctechnicalblog.github.io/ceremony-center-of-enablement.html) (CoE) provide thought leadership, vision, direction, guardrails, and sponsor vibrant and laser focused working groups to **ASSESS**, **TRIAL**, and **ADOBT** new technologies. Both the CoE and sponsored Working Groups are based on people from different disciplines, encouraging vibrant collaboration and awareness amongst all stakeholders.
+The TAP lights up when combined with our common engineering ecosystem, in which the [centres of enablement](https://wsbctechnicalblog.github.io/ceremony-center-of-enablement.html) (CoE) provide thought leadership, vision, direction, guardrails, and sponsor vibrant and laser focused working groups to **ASSESS**, **TRIAL**, and **ADOPT** new technologies. Both the CoE and sponsored Working Groups are based on people from different disciplines, encouraging vibrant collaboration and awareness amongst all stakeholders.
 
 By the time a process or product is approved, it is neither unknown, nor a mystical Unicorn. Instead, awareness and self-service automation programs are aware and supportive of the new technology, which not only enables and empowers engineering, but reduces **WASTE**.
 
