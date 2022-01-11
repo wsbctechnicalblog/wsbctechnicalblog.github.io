@@ -90,9 +90,7 @@ To be successful you need a DREAM TEAM …
 
 > ![Dream Team](../images/common-engineering-journal-3-6.png)
 
-... here is our EDO Common Engineering DREAM TEAM, focused on operational support, quality assurance, and innovation.
-
-> ![EDO Ce](../images/common-engineering-journal-3-7.png)
+... a self-organizing, self-managing, and cohesive team!
 
 ---
 
