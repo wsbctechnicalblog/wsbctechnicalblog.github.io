@@ -15,5 +15,6 @@ In no event shall WorkSafeBC be liable for any damages or losses of any type suf
 
 
 ![cc license](/images/cc-license.png)
+
 This blog post is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode) license, subject to these Terms of Use.
 
