@@ -16,6 +16,8 @@ All of the above, without letting your ego get in the way, being scared to fail 
 
 Our WorkSafeBC technical blog is one of many channels (or hammer) that helps us collaborate and share our experiences and knowledge with everyone. In this short post, I will focus on how to find content relevant to you, and if you are a WorkSafeBC engineer, to create your first post. 
 
+---
+
 # What do our categories and tags mean?
 
 ![Tags](../images/blog-post-101-2.png) 
@@ -78,6 +80,8 @@ We are starting to also **categorise** our content to add a different lens for y
 
 Thoughts? How can we improve our tags and categories? Please ping me on [@wpschaub](https://twitter.com/wpschaub) and help us improve our content.
 
+---
+
 # Create your first post
 
 ![Tags](../images/blog-post-101-3.png) 
@@ -112,6 +116,8 @@ Summary: <Quick summary of what post is about>.
 
 Done!
 
+---
+
 # One, two, or more authors?
 
 ![Tags](../images/blog-post-101-6.png) 
@@ -123,6 +129,29 @@ If there are multiple authors, consider adding this:
 > Authored by X, Y, and Z at the start of end of your post.
 
 Just collaborate with us, ask questions (_the only one that is bad is the one you never ask_), and do not hesitate to ask for help.
+
+---
+
+# Approval process
+
+The approval process to publish a post on WorkSafeBC Technical Blog consists of two (minimum) or more reviewers who must carefully examine content submitted in the form of Pull Request. Only if all involved reviewers approve the Pull Request will the blog post get published.
+
+The following specific ethics will have to be followed: 
+
+- Address sharing of intellectual property must be made transparent
+- Speaking on behalf of WorkSafeBC must be approved by the management
+- Conflicts of interest will not be allowed/tolerated
+- Privacy/confidentiality must be observed at all times
+
+---
+
+# The Originality Clause
+
+WorkSafeBC will only consider original content for publishing. Please make sure not to regurgitate something that has already been published at large and is a well known problem or issue for which there is an effective solution provided by the community.
+
+We are striving for highest possible quality content. A quality blog post is expected to propose an issue or a problem (or a set of problems) for which the author may have found an elegant, simple solution.
+
+---
 
 # To conclude
 
