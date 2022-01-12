@@ -8,6 +8,8 @@ Summary: Improve the predictability of delivering business value by reducing the
 
 ![Big batch](../images/batch.png)
 
+**Note:** This article is largely a summary of the [brilliant thread](https://twitter.com/d_stepanovic/status/1480941814895063045) by [Dragan Stepanovic](https://twitter.com/d_stepanovic)
+
 We are learning how to transform organizational culture from focusing on measuring and tracking **outputs** to focusing on measuring and tracking **outcomes**. Immature practices tend to focus on measuring and tracking outputs for the simple reason that outputs are much easier to measure and track. Traveling along the trajectory of the least resistance, our need to **reduce uncertainties** and **increase predictability** is leading us to latch onto whatever is immediately available for measuring and tracking.
 
 However, we slowly but surely learn that outputs almost never correlate to or map on to outcomes. For example, if we are measuring and tracking number of lines of code that a software development team produces in a unit of time, we will have hard time proving that the more lines of code the team produces, the better the outcomes.
