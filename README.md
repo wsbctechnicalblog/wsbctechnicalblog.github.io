@@ -12,7 +12,7 @@ See [Terms of Use](https://wsbctechnicalblog.github.io/pages/terms-of-use.html) 
 
 ![Contributors](/images/readme-2.png)
 
-WorkSafeBC engineers and other interesting subject matter experts share their knowledge, learnings, experiences, and failures. You can find more details on some of the authors [here](/pages/authors.html).
+WorkSafeBC engineers and other interesting subject matter experts share their knowledge, learnings, experiences, and failures. You can find more details on some of the authors [here](https://wsbctechnicalblog.github.io/pages/authors.html).
 
 ---
 
