@@ -22,7 +22,7 @@ Well, if you change ...
 [![Build status](https://dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master&label=PIPELINE%20TOTALS)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)
 ```
 
-... by adding by adding ```&label=<TEXT>```, you can enjoy a more compact version of your dashboard.
+... by adding ```&label=<TEXT>```, you can enjoy a more compact version of your dashboard.
 
 ![SpaceX](../images/pipeline-badges-2.png)
 
