@@ -58,7 +58,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span> <span class="n">status</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master&amp;label=PIPELINE%20TOTALS)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)</span>
 </code></pre></div>
 
-<p>... by adding by adding <code>&amp;label=&lt;TEXT&gt;</code>, you can enjoy a more compact version of your dashboard.</p>
+<p>... by adding <code>&amp;label=&lt;TEXT&gt;</code>, you can enjoy a more compact version of your dashboard.</p>
 <p><img alt="SpaceX" src="../images/pipeline-badges-2.png"></p>
 <p>I stumbled over this tweak in a recent Azure DevOps community chat and realized that I must read the Azure DevOps REST API documentation a bit more carefully. See <strong>URI Parameters</strong> in <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/build/status/get?view=azure-devops-rest-6.0">Status Get</a> and notice "<em>Replaces the default text on the left side of the badge.</em>"</p>
         </div>
