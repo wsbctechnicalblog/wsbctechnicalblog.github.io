@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Streamlining your pipeline using the magic of YAML-base Azure Pipelines - </title>
+        <title>Make your pipeline badges more compact and meaningful - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,64 +32,42 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="/pipelines-streamlined-approvals-new-world.html" rel="bookmark"
-            title="Permalink to Streamlining your pipeline using the magic of YAML-base Azure Pipelines">Streamlining your pipeline using the magic of YAML-base Azure Pipelines</a></h1>
+    <h1 style="font-size:2em;"><a href="/pipelines-badges.html" rel="bookmark"
+            title="Permalink to Make your pipeline badges more compact and meaningful">Make your pipeline badges more compact and meaningful</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 16 November 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 17 January 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Teleport to the future, to optimize the YAML-based Azure Pipeline approvals.</p>
+            <p>Tired of cluttering your dashboards with duplicated waste?</p>
         </div>
     
         <div class="entry-content">
-            <p>In the previous <a href="/pipelines-streamlined-approvals.html">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a> post we covered streamlined approvals and the magic and challenges of artifact filters. In essence, we discussed the Jurassic era of classic Azure Pipelines.</p>
-<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-1.jpg"></p>
-<p>In this post we will switch gears and compare it to the era of state-of-the-art YAML-based Azure Pipelines. </p>
-<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-2.jpg"></p>
-<p>Most of the engineers I recently discussed this magic with, looked at me with the <em>"what are you talking about?!?"</em> glazed look. </p>
-<p><img alt="Jurassic Park" src="../images/pipelines-streamlined-approvals-new-world-5.png"></p>
-<p>A really worrying trend, because the Microsoft <a href="https://aka.ms/yaml">documentation</a> is comprehensive and the associated features amazing - hence this post.</p>
-<h1>Goodbye Artifact Filter Issues</h1>
-<p>Using the YAML-based Azure Pipelines we implemented the same streamlined approvals as we discussed in <a href="/pipelines-streamlined-approvals.html">Streamlining your pipeline approvals, without flooding DevSecOps with noise</a>.</p>
-<p><img alt="Trusted Branches" src="../images/pipelines-streamlined-approvals-new-world-3.png"></p>
-<p>As shown above, the pipeline looks the same as the classic pipeline when the release artifact is created using one of the repository branches that are trusted for the Canary and Production environments.</p>
-<p>If the source branch is untrusted, the pipeline looks different - in fact, everything after the system test environment is missing. </p>
-<p><img alt="Untrusted Branches" src="../images/pipelines-streamlined-approvals-new-world-4.png"></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ------------------------------------------------------------------------------------------</span>
-<span class="c1"># SECURITY REVIEW STAGE</span>
-<span class="c1"># ------------------------------------------------------------------------------------------</span>
-<span class="o">-</span> <span class="o">$</span><span class="p">{{</span> <span class="k">if</span> <span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span> <span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span> <span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span> <span class="p">}}:</span>
-  <span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="o">/</span><span class="n">Templates</span><span class="o">/</span><span class="n">DevSecOps</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">security</span><span class="o">-</span><span class="n">review</span><span class="o">.</span><span class="n">yml</span>
+            <p>We have dashboards with multiple pipeline badges to keep an eye on our Azure DevOps pipelines. I often wondered why we cannot change the "Azure Pipelines" label to reduce the duplication (WASTE) and make our dashboards more compact.</p>
+<p><img alt="Jurassic Park" src="../images/pipeline-badges-1.png"></p>
+<p>Well, if you change ...</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span> <span class="n">status</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)</span>
 </code></pre></div>
 
-<p>The code extract reveals the simple trick. If the source originates from the <strong>release</strong> branch, we inject the Security review, Canary, and Production stages. If not, Azure DevOps ignores them while assembling the run-time pipeline. If they are missing, they cannot be overridden as is the case with artifact filters, even if you are an Azure DevOps god. Simple!</p>
-<hr>
-<h1>Blocking untrusted templates</h1>
-<p>If you are working with Azure Pipelines I urge you to read <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">Create and target an environment</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops">Define approvals and checks</a>. It is standard reading material for our engineers.</p>
-<p><img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-6.png"></p>
-<p>As shown above, if one of more of the templates used by Azure DevOps when assembling the run-time pipeline, the environment check blocks the pipeline from trundling down the deployment chain. In this case you cannot override the template check. "You shall not pass" if you are using untrusted pipelines.</p>
-<p>The magic in this case is the <strong>extends</strong> feature, as used in the following code extract:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">extends</span><span class="o">:</span>
-  <span class="n">template</span><span class="o">:</span> <span class="sr">/Blueprints/azure-function/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="kd">function</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
+<p>... to ...</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span> <span class="n">status</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master&amp;label=PIPELINE%20TOTALS)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)</span>
 </code></pre></div>
 
-<p>You configure the required templates in your <strong>Environments</strong>, under <strong>Approvals and Checks</strong>.</p>
-<p><img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-7.png"></p>
-<p>Read <a href="https://twitter.com/jjjettrain">josh-ops'</a> blog post <a href="https://josh-ops.com/posts/extends-template/">Azure DevOps: Extends Template with Build and Deployment Templates</a> for a great overview and example of using <strong>extends</strong>.</p>
-<p>Right, if you are excited and interested in these YAML-based pipeline features, I recommend that you review our <a href="/why-pipelines-part1.html">Pipeline Series</a> which delves deeper into the classic and new pipelines. If not, you are likely in the wrong movie.</p>
+<p>... by adding by adding <code>&amp;label=&lt;TEXT&gt;</code>, you can enjoy a more compact version of your dashboard.</p>
+<p><img alt="SpaceX" src="../images/pipeline-badges-2.png"></p>
+<p>I stumbled over this tweak in a recent Azure DevOps community chat and realized that I must read the Azure DevOps REST API documentation a bit more carefully. See <strong>URI Parameters</strong> in <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/build/status/get?view=azure-devops-rest-6.0">Status Get</a> and notice "<em>Replaces the default text on the left side of the badge.</em>"</p>
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
         | Tagged: <a href="/tag/azure-devops.html">azure-devops </a><a href="/tag/eliminate-waste.html">eliminate-waste </a><a href="/tag/pipelines.html">pipelines </a><a href="/tag/tips.html">tips </a>
-        | <a href="/pipelines-streamlined-approvals-new-world.html" rel="bookmark"
-         title="Permalink to Streamlining your pipeline using the magic of YAML-base Azure Pipelines">Permalink</a>            
+        | <a href="/pipelines-badges.html" rel="bookmark"
+         title="Permalink to Make your pipeline badges more compact and meaningful">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

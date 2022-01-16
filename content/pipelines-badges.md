@@ -2,7 +2,7 @@ Title: Make your pipeline badges more compact and meaningful
 Date: 2022-01-17
 Category: Posts
 Tags: azure-devops, eliminate-waste, pipelines, tips
-Slug: pipelines-streamlined-approvals
+Slug: pipelines-badges
 Author: Willy-Peter Schaub
 Summary: Tired of cluttering your dashboards with duplicated waste?
 
