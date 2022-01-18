@@ -48,16 +48,16 @@ hr { border: 2px solid #EEEEEE; }
 
 /* Anchors */
 a {outline: 0;}
-a img {border: 0px; text-decoration: none;}
+a img {border: 0px; text-decoration: underline;}
 a:link, a:visited {
 	color: #C74350;
 	padding: 0 1px;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:hover, a:active {
 	background-color: #C74350;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 	text-shadow: 1px 1px 1px #333;
 }
 
