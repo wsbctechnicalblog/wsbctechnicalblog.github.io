@@ -31,4 +31,5 @@ Summary: This article is gist of brainstorming session among QA team(Mohita Kata
 - **Inadequate return on investment** - Automated test for short lived products, small scale development, duplicate tests should be avoided 
 
 # Summary and invite 
-While ability and enthusiasm to automate is important, it is more important to know when to automate and avoid [gold plating](https://en.wikipedia.org/wiki/Gold_plating_(project_management)). I will link the video for discussion in next commit. Thank you for reading. Please feel free to submit a pull request to suggest any changes. 
+While ability and enthusiasm to automate is important, it is more important to know when to automate and avoid [gold plating](https://en.wikipedia.org/wiki/Gold_plating_(project_management)). I will link the video for discussion in next commit. Thank you for reading. Please feel free to submit a pull request to suggest any changes.
+
