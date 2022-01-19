@@ -6,7 +6,7 @@ Slug: devops-analytics-strategy
 Author: Aditya Chourasiya
 Summary: Objective, Method and Maturity model for business analytics across an enterprise.
 
-   As a business user, I want to make sense of all the data coming from my production system and make sure my product meets business requirements. This article summarizes different maturity model and action-sequence to achieve snow-ball effect for typical organization.
+As a business user, I want to make sense of all the data coming from my production system and make sure my product meets business requirements. This article summarizes different maturity model and action-sequence to achieve snow-ball effect for typical organization.
 
 ![Vision](../images/vision.png)
 
@@ -20,7 +20,7 @@ Summary: Objective, Method and Maturity model for business analytics across an e
 - To raise awareness and instill team wide 'measure' from the very inception
 - To give stakeholders and senior management on-demand visibility into systems dev and ops
 
-[Objective](../images/objective.png)
+![Objective](../images/objective.png)
 
 - To promote Business objectives of measurements and organization wide 'manifesto'
 - To define metrics for each group of stakeholders
@@ -28,7 +28,7 @@ Summary: Objective, Method and Maturity model for business analytics across an e
 - To define delivery methods for metrics
 - To define measurement and metric delivery cadence
 
-[Methods](../images/methods.png)
+![Methods](../images/methods.png)
 
 ---
 
@@ -68,7 +68,7 @@ This phase is focused on developing Diagnostic analytics capabilities, which can
 This phase is focused on developing Predictive Analytics capabilities, which can help answer the question, “What could happen?”
 
 - Business value delivery confirmation
-- Continious analytics delivery through automated pipelines
+- Continuous analytics delivery through automated pipelines
 - DevOps Program Risk (ROAM) analytics
 - Building people skills for digital transformation based on Risk area
 - Establish Standards and Practices for Analytics
