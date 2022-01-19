@@ -28,7 +28,7 @@ On the contrary, test cases for aesthetics, accessibility, one-time, urgent non-
  These are few reasons not to automate (not in order)
 
 - **Aesthetics** - User experience , look and feel, colour and images verification require complex human context and interpretation.
-- **Accessibility** - Similar to aesthetics, accessibility, usability, language, grammer, etc should be verified manually
+- **Accessibility** - Similar to aesthetics, accessibility, usability, language, grammar, etc should be verified manually
 - **One-time** - Urgent non-regression hotfix, non-critical, or very small changes can/may be manually verified  
 - **Unpredictable results** - Exploratory, time delay tests, random tests can/will rely on manual execution
 - **Inadequate return on investment** - Automated test for short lived products, small scale development, duplicate tests should be avoided 
