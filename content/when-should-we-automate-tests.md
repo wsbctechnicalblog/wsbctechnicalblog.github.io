@@ -10,7 +10,7 @@ Automation is advised when tests are **prone to human error** or **complex** or 
    
 On the contrary, test cases for aesthetics, accessibility, one-time, urgent non-regression(hotfixes), exploratory, with unpredictable results and/or with less return on investment,  should not be automated. 
    
-![Navigating the Future](../images/chapline-automation.gif")
+![Navigating the Future](../images/chapline-automation.gif)
 
 ---
 
