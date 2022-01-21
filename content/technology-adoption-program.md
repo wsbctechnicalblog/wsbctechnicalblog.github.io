@@ -47,7 +47,7 @@ The core difference between the two ways of adopting new processes and products 
 
 # Technology Adoption Program (TAP) 
 
-Enterprise Architecture introduced the Technology Adoption Program (TAP), as shown below, which guides us to adopt, asses, approve, and embrace new technology (processes and products). Instead of re-inventing the wheel, our Common Engineering Center of Enablement decided to base our process and product adoption program on the existing Technology Adoption Program (TAP) - **re-use**!
+Enterprise Architecture introduced the Technology Adoption Program (TAP), as shown below, which guides us to adopt, assess, approve, and embrace new technology (processes and products). Instead of re-inventing the wheel, our Common Engineering Center of Enablement decided to base our process and product adoption program on the existing Technology Adoption Program (TAP) - **re-use**!
 
 > Figure 3 - Technology Adoption Program (flow)
 > ![Value](../images/technology-adoption-program-3.png)
