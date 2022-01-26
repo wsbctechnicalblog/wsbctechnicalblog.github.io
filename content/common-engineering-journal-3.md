@@ -1,5 +1,5 @@
 Title: Journal 3 - Explore the trajectory of our Common Engineering (Ce) ecosystem
-Date: 2021-01-26 13:13
+Date: 2021-01-28 13:13
 Category: Posts
 Tags: learning, journal, event
 Slug: common-engineering-journal-3
@@ -91,6 +91,8 @@ To be successful you need a DREAM TEAM …
 > ![Dream Team](../images/common-engineering-journal-3-6.png)
 
 ... a self-organizing, self-managing, and cohesive team!
+
+In my humble opinion the secret sauce is **TRUST**. You must trust each other, your leadership, your stakeholders, your end-users, and vice versa! No **TRUST**, no dream!
 
 ---
 
