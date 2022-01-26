@@ -1,5 +1,5 @@
 Title: Automation enables engineering to focus on value
-Date: 2021-08-21
+Date: 2021-08-22
 Category: Posts
 Tags: automation, eliminate-waste
 Slug: automation-lesson-1
