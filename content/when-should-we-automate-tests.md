@@ -1,5 +1,5 @@
 Title: When should we automate tests
-Date: 2022-01-24
+Date: 2022-01-26
 Category: Posts
 Tags: learning, testing, devops
 Slug: when-should-we-automate-tests
