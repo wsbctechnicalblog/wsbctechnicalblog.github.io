@@ -62,66 +62,66 @@
 <h2>Tests help grow the quality design</h2>
 <p>One of the main reasons we are doing <strong>Test-Driven Development (TDD)</strong> is due to the demonstrable ability of that method to guide us in producing quality design. For example, how did the design of the <em>Tip Calculator</em> (as presented in our TDD Dojo hands-on session that was published in the above <strong>WSBC Technical Blog</strong>) grow from following the TDD method?</p>
 <p>The first step we did when designing the <em>Tip Calculator</em> is to stop and think about the simplest expectation: we’d like our automated service to recognize that there is such thing as ‘Terrible’ rating. Once we have formulated that expectation, we rolled up our sleeves and wrote our first test:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void TerribleRatingIsValid()</span>
-<span class="na">{</span>
-    <span class="na">var expectedResponseForTerribleRating</span> <span class="o">=</span> <span class="s">true;</span>
-<span class="s">    var actualResponseForTerribleRating = tipCalc.IsRatingValid(&quot;Terrible&quot;);</span>
-<span class="s">    Assert.Equal(expectedResponseForTerribleRating, actualResponseForTerribleRating);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void TerribleRatingIsValid()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedResponseForTerribleRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualResponseForTerribleRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.IsRatingValid(&quot;Terrible&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedResponseForTerribleRating, actualResponseForTerribleRating);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>The test <em>TerribleRatingIsValid</em> describes the expectation that when we give the string “Terrible” to our application, asking it if that rating is valid, it will respond with true. That means that we must teach our application to be able to look for the ratings stored somewhere on the system and tell us either that it found the rating we asked it to look for (by returning true), or that is couldn’t find it (by returning false).</p>
 <p>After we’ve implemented that capability, we turned our attention to the next expectation. We are expecting our app to be able to tell us the percentage tip for the “Terrible” rating, and that percentage tip is expected to be 0%. We then created a new test (<em>TerribleRatingIs0Tip</em>) in which we ask the <em>Tip Calculator</em> to tell us what the tip for the rating “Terrible” is. If the app returns 0, the test will pass, otherwise the test fails:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void TerribleRatingIs0Tip()</span>
-<span class="na">{</span>
-    <span class="na">var expectedTipForTerribleRating</span> <span class="o">=</span> <span class="s">0;</span>
-<span class="s">    var actualTipForTerribleRating = tipCalc.TipForRating(&quot;Terrible&quot;);</span>
-<span class="s">    Assert.Equal(expectedTipForTerribleRating, actualTipForTerribleRating);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void TerribleRatingIs0Tip()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedTipForTerribleRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualTipForTerribleRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.TipForRating(&quot;Terrible&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedTipForTerribleRating, actualTipForTerribleRating);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>The last thing we did to fulfill the scenario 1 specified in the <em>Tip Calculator</em> user story was to create the expectation that the app will correctly calculate the grand total if given the bill total and the service rating. We created the test <em>TerribleRatingFor100Is100</em>, in which we stated that if the bill total is $100.00 and the rating is “Terrible”, the calculated grand total should be $100.00 (meaning, no tip, or more precisely, 0% tip):</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void TerribleRatingFor100Is100()</span>
-<span class="na">{</span>
-    <span class="na">var expectedTotalForTerribleRatingFor100</span> <span class="o">=</span> <span class="s">100.00;</span>
-<span class="s">    var actualTotalForTerribleRatingFor100 = tipCalc.CalculateGrandTotal(100.00, &quot;Terrible&quot;);</span>
-<span class="s">    Assert.Equal(expectedTotalForTerribleRatingFor100, actualTotalForTerribleRatingFor100);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void TerribleRatingFor100Is100()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedTotalForTerribleRatingFor100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100.00;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualTotalForTerribleRatingFor100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.CalculateGrandTotal(100.00, &quot;Terrible&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedTotalForTerribleRatingFor100, actualTotalForTerribleRatingFor100);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>Now that we got scenario 1 implemented, we moved to scenario 2 – calculate grand total for $100.00 bill total and “Poor” service rating. The stated expectation is that in such scenario the grand total should be $105.00, which means that “Poor” rating is calculated with the 5% tip.</p>
 <p>In designing the processing of the “Poor” rating we followed the same design that guided us in designing the “Terrible” rating. We now proceeded to design the “Poor” rating by crafting three tests:</p>
 <p>1) Check if “Poor” rating is valid</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void PoorRatingIsValid()</span>
-<span class="na">{</span>
-    <span class="na">var expectedResponseForPoorRating</span> <span class="o">=</span> <span class="s">true;</span>
-<span class="s">    var actualResponseForPoorRating = tipCalc.IsRatingValid(&quot;Poor&quot;);</span>
-<span class="s">    Assert.Equal(expectedResponseForPoorRating, actualResponseForPoorRating);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void PoorRatingIsValid()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedResponseForPoorRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualResponseForPoorRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.IsRatingValid(&quot;Poor&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedResponseForPoorRating, actualResponseForPoorRating);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>2) Check if “Poor” rating is calculated with 5% tip</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void PoorRatingIs5Tip()</span>
-<span class="na">{</span>
-    <span class="na">var expectedTipForPoorRating</span> <span class="o">=</span> <span class="s">5;</span>
-<span class="s">    var actualTipForPoorRating = tipCalc.TipForRating(&quot;Poor&quot;);</span>
-<span class="s">    Assert.Equal(expectedTipForPoorRating, actualTipForPoorRating);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void PoorRatingIs5Tip()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedTipForPoorRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualTipForPoorRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.TipForRating(&quot;Poor&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedTipForPoorRating, actualTipForPoorRating);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>3) Check if grand total for the bill total $100.00 and rating “Poor” is $105.00</p>
-<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span>
-<span class="na">public void PoorRatingFor100Is105()</span>
-<span class="na">{</span>
-    <span class="na">var expectedTotalForPoorRatingFor100</span> <span class="o">=</span> <span class="s">105.00;</span>
-<span class="s">    var actualTotalForPoorRatingFor100 = tipCalc.CalculateGrandTotal(100.00, &quot;Poor&quot;);</span>
-<span class="s">    Assert.Equal(expectedTotalForPoorRatingFor100, actualTotalForPoorRatingFor100);</span>
-<span class="na">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Fact]</span><span class="w"></span>
+<span class="na">public void PoorRatingFor100Is105()</span><span class="w"></span>
+<span class="na">{</span><span class="w"></span>
+<span class="w">    </span><span class="na">var expectedTotalForPoorRatingFor100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">105.00;</span><span class="w"></span>
+<span class="w">    </span><span class="na">var actualTotalForPoorRatingFor100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tipCalc.CalculateGrandTotal(100.00, &quot;Poor&quot;);</span><span class="w"></span>
+<span class="w">    </span><span class="na">Assert.Equal(expectedTotalForPoorRatingFor100, actualTotalForPoorRatingFor100);</span><span class="w"></span>
+<span class="na">}</span><span class="w"></span>
 </code></pre></div>
 
 <p>We’ve also completed the app by implementing similar designs for the “Good”, “Great” and “Excellent” service rating. But for the purposes of this discussion, we’ll limit the analysis to only two ratings: “Terrible” and “Poor”.</p>
@@ -191,6 +191,9 @@ Great news. Let’s carry on by removing the second test (<em>TerribleRatingIs0T
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
+                    <li><a href="/tag/learning.html">learning</a>(19)</li>
+                    <li><a href="/tag/testing.html">testing</a>(14)</li>
+                    <li><a href="/tag/devops.html">devops</a>(39)</li>
                     <li><a href="/tag/collaboration.html">collaboration</a>(2)</li>
                     <li><a href="/tag/team-building.html">team-building</a>(1)</li>
                     <li><a href="/tag/technical-excellence.html">technical-excellence</a>(10)</li>
@@ -200,11 +203,9 @@ Great news. Let’s carry on by removing the second test (<em>TerribleRatingIs0T
                     <li><a href="/tag/tips.html">tips</a>(15)</li>
                     <li><a href="/tag/quality.html">quality</a>(16)</li>
                     <li><a href="/tag/agile.html">agile</a>(21)</li>
-                    <li><a href="/tag/devops.html">devops</a>(38)</li>
                     <li><a href="/tag/no-estimates.html">no-estimates</a>(1)</li>
                     <li><a href="/tag/tdd.html">TDD</a>(12)</li>
                     <li><a href="/tag/estimates.html">estimates</a>(2)</li>
-                    <li><a href="/tag/learning.html">learning</a>(18)</li>
                     <li><a href="/tag/journal.html">journal</a>(2)</li>
                     <li><a href="/tag/ceremony.html">ceremony</a>(7)</li>
                     <li><a href="/tag/strategy.html">strategy</a>(1)</li>
@@ -219,7 +220,6 @@ Great news. Let’s carry on by removing the second test (<em>TerribleRatingIs0T
                     <li><a href="/tag/dojo.html">dojo</a>(1)</li>
                     <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
                     <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
-                    <li><a href="/tag/testing.html">testing</a>(13)</li>
                     <li><a href="/tag/testability.html">testability</a>(1)</li>
                     <li><a href="/tag/automation.html">automation</a>(7)</li>
                     <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
@@ -243,7 +243,7 @@ Great news. Let’s carry on by removing the second test (<em>TerribleRatingIs0T
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="/category/events.html">Events</a> (7)</li>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (96)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (97)</li>
                 </ul>
              
             </div>

@@ -89,34 +89,34 @@
 <li>The <strong>example</strong> implementation of a starter and app-type template, sample application, and pipeline is self-explanatory. Handy awareness and validation aid.</li>
 </ul>
 <p>Here is an example of our Azure Function starter template:</p>
-<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="o">:</span>
-  <span class="n">batch</span><span class="o">:</span> <span class="kc">true</span> <span class="err">#</span> <span class="n">batch</span> <span class="n">changes</span> <span class="k">if</span> <span class="kc">true</span><span class="o">;</span> <span class="n">start</span> <span class="n">a</span> <span class="k">new</span> <span class="n">build</span> <span class="k">for</span> <span class="n">every</span> <span class="n">push</span> <span class="k">if</span> <span class="kc">false</span>
-  <span class="n">branches</span><span class="o">:</span>
-    <span class="k">include</span><span class="o">:</span>
-    <span class="o">-</span> <span class="s1">&#39;*&#39;</span> <span class="err">#</span> <span class="n">Trigger</span> <span class="n">on</span> <span class="n">all</span> <span class="n">branches</span>
+<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">batch</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">  </span><span class="n">branches</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">include</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">Trigger</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">branches</span><span class="w"></span>
 
-<span class="n">resources</span><span class="o">:</span>
-  <span class="n">repositories</span><span class="o">:</span>
-  <span class="o">-</span> <span class="n">repository</span><span class="o">:</span> <span class="n">AppTemplates</span>
-    <span class="n">type</span><span class="o">:</span>       <span class="n">git</span>
-    <span class="n">name</span><span class="o">:</span>       <span class="s1">&#39;CeS/AzureDevOps.Automation.Pipeline.AppTemplates&#39;</span>
+<span class="n">resources</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">repositories</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">repository</span><span class="o">:</span><span class="w"> </span><span class="n">AppTemplates</span><span class="w"></span>
+<span class="w">    </span><span class="n">type</span><span class="o">:</span><span class="w">       </span><span class="n">git</span><span class="w"></span>
+<span class="w">    </span><span class="n">name</span><span class="o">:</span><span class="w">       </span><span class="s1">&#39;CeS/AzureDevOps.Automation.Pipeline.AppTemplates&#39;</span><span class="w"></span>
 
-<span class="err">#</span> <span class="n">Semantic</span> <span class="n">version</span> <span class="k">as</span> <span class="n">per</span> <span class="n">Azure</span> <span class="n">DevOps</span> <span class="n">Naming</span> <span class="n">Conventions</span><span class="o">.</span>
-<span class="n">name</span><span class="o">:</span>
-  <span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">GITVERSION_MAJORMINORPATCH</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">yyyyMMdd</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">HHmmss</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">SourceBranchName</span><span class="o">)</span>
+<span class="err">#</span><span class="w"> </span><span class="n">Semantic</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="n">Azure</span><span class="w"> </span><span class="n">DevOps</span><span class="w"> </span><span class="n">Naming</span><span class="w"> </span><span class="n">Conventions</span><span class="o">.</span><span class="w"></span>
+<span class="n">name</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">GITVERSION_MAJORMINORPATCH</span><span class="o">)</span><span class="n">_$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">yyyyMMdd</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">date</span><span class="o">:</span><span class="n">HHmmss</span><span class="o">).</span><span class="n">$</span><span class="o">(</span><span class="n">Build</span><span class="o">.</span><span class="na">SourceBranchName</span><span class="o">)</span><span class="w"></span>
 
-<span class="err">#</span> <span class="n">VARIABLES</span>
-<span class="n">variables</span><span class="o">:</span>
-  <span class="n">portfolioName</span><span class="o">:</span>    <span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="n">CeS</span>
-  <span class="n">productName</span><span class="o">:</span>      <span class="s1">&#39;TODO REPLACE WITH PRODUCT NAME&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="n">Samples</span><span class="o">.</span><span class="na">AzureFunction</span>
+<span class="err">#</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"></span>
+<span class="n">variables</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">portfolioName</span><span class="o">:</span><span class="w">    </span><span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span><span class="w"> </span><span class="n">CeS</span><span class="w"></span>
+<span class="w">  </span><span class="n">productName</span><span class="o">:</span><span class="w">      </span><span class="s1">&#39;TODO REPLACE WITH PRODUCT NAME&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span><span class="w"> </span><span class="n">Samples</span><span class="o">.</span><span class="na">AzureFunction</span><span class="w"></span>
 
-<span class="kd">extends</span><span class="o">:</span>
-  <span class="n">template</span><span class="o">:</span> <span class="n">Templates</span><span class="sr">/AzureFunction/</span><span class="n">AzureFunctionTemplate</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">AppTemplates</span>
-  <span class="n">parameters</span><span class="o">:</span>
-    <span class="n">netCoreVersion</span><span class="o">:</span>         <span class="s1">&#39;TODO REPLACE WITH .NET CORE VERSION&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="mf">3.1</span><span class="o">.</span><span class="na">x</span>
-    <span class="n">applicationGuid</span><span class="o">:</span>        <span class="s1">&#39;TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS&#39;</span> <span class="err">#</span> <span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="mi">257929</span><span class="n">e89c69471083efb51899b42bdb</span>
-    <span class="n">portfolioName</span><span class="o">:</span>          <span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span>
-    <span class="n">productName</span><span class="o">:</span>            <span class="n">$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span>
+<span class="kd">extends</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">template</span><span class="o">:</span><span class="w"> </span><span class="n">Templates</span><span class="sr">/AzureFunction/</span><span class="n">AzureFunctionTemplate</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">AppTemplates</span><span class="w"></span>
+<span class="w">  </span><span class="n">parameters</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">netCoreVersion</span><span class="o">:</span><span class="w">         </span><span class="s1">&#39;TODO REPLACE WITH .NET CORE VERSION&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span><span class="w"> </span><span class="mf">3.1</span><span class="o">.</span><span class="na">x</span><span class="w"></span>
+<span class="w">    </span><span class="n">applicationGuid</span><span class="o">:</span><span class="w">        </span><span class="s1">&#39;TODO REPLACE WITH A NEW GUID WITHOUT BRACKETS&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span><span class="w"> </span><span class="mi">257929</span><span class="n">e89c69471083efb51899b42bdb</span><span class="w"></span>
+<span class="w">    </span><span class="n">portfolioName</span><span class="o">:</span><span class="w">          </span><span class="n">$</span><span class="o">(</span><span class="n">portfolioName</span><span class="o">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">productName</span><span class="o">:</span><span class="w">            </span><span class="n">$</span><span class="o">(</span><span class="n">productName</span><span class="o">)</span><span class="w"></span>
 </code></pre></div>
 
 <p>In case you have not counted yourself: A mere twenty-two (22) lines of configuration code, with only four (4) TODO that require minimal effort!</p>
@@ -200,6 +200,9 @@
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
+                    <li><a href="/tag/learning.html">learning</a>(19)</li>
+                    <li><a href="/tag/testing.html">testing</a>(14)</li>
+                    <li><a href="/tag/devops.html">devops</a>(39)</li>
                     <li><a href="/tag/collaboration.html">collaboration</a>(2)</li>
                     <li><a href="/tag/team-building.html">team-building</a>(1)</li>
                     <li><a href="/tag/technical-excellence.html">technical-excellence</a>(10)</li>
@@ -209,11 +212,9 @@
                     <li><a href="/tag/tips.html">tips</a>(15)</li>
                     <li><a href="/tag/quality.html">quality</a>(16)</li>
                     <li><a href="/tag/agile.html">agile</a>(21)</li>
-                    <li><a href="/tag/devops.html">devops</a>(38)</li>
                     <li><a href="/tag/no-estimates.html">no-estimates</a>(1)</li>
                     <li><a href="/tag/tdd.html">TDD</a>(12)</li>
                     <li><a href="/tag/estimates.html">estimates</a>(2)</li>
-                    <li><a href="/tag/learning.html">learning</a>(18)</li>
                     <li><a href="/tag/journal.html">journal</a>(2)</li>
                     <li><a href="/tag/ceremony.html">ceremony</a>(7)</li>
                     <li><a href="/tag/strategy.html">strategy</a>(1)</li>
@@ -228,7 +229,6 @@
                     <li><a href="/tag/dojo.html">dojo</a>(1)</li>
                     <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
                     <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
-                    <li><a href="/tag/testing.html">testing</a>(13)</li>
                     <li><a href="/tag/testability.html">testability</a>(1)</li>
                     <li><a href="/tag/automation.html">automation</a>(7)</li>
                     <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
@@ -252,7 +252,7 @@
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="/category/events.html">Events</a> (7)</li>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (96)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (97)</li>
                 </ul>
              
             </div>

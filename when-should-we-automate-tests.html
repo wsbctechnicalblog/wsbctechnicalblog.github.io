@@ -7,7 +7,7 @@
         <script type="text/javascript" src="/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/theme/css/lamboz.css" media="all">
-        <title>Terms of Use</title>
+        <title>When should we automate tests - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -19,14 +19,12 @@
             <li ><a href="/pages/authors.html">Authors</a></li>
             <li ><a href="/pages/copyright.html">Copyright</a></li>
             <li ><a href="/pages/privacy.html">Privacy and Security</a></li>
-            <li  class="active"><a href="/pages/terms-of-use.html">Terms of Use</a></li>
+            <li ><a href="/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
-            <div id="title-block">
-            </div>
         </div>
     </div>
 </div>
@@ -34,17 +32,60 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-<h1>Terms of Use</h1>
-    <section class="article">
-    
+    <h1 style="font-size:2em;"><a href="/when-should-we-automate-tests.html" rel="bookmark"
+            title="Permalink to When should we automate tests">When should we automate tests</a></h1>
 
-    <p><strong>Terms of Use</strong></p>
-<p>WorkSafeBC provides this technical blog to assist individuals and organizations who are looking for articles pertaining to software engineering. The blog is non-exhaustive. There may be other useful technical resources not found in the blog.</p>
-<p>WorkSafeBC makes no representation or warranty regarding the suitability of any content listed and published in this blog.</p>
-<p>In no event shall WorkSafeBC be liable for any damages or losses of any type suffered by any user of the blog from any cause whatsoever arising from or in any way related to the provision of information published in this blog.</p>
-<p><img alt="cc license" src="/images/cc-license.png"></p>
-<p>This blog post is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode">Creative Commons Attribution-NonCommercial 4.0 International</a> license, subject to these Terms of Use.</p>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Aditya Chourasiya on Wed 26 January 2022</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>This article is gist of brainstorming session among Wuality Assurance (QA) team (Mohita Kataria, Midhi Naidu and Aditya Chourasiya) at WorkSafeBC</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Automation is advised when tests are <strong>prone to human error</strong> or <strong>complex</strong> or if they need <strong>repeating</strong>, <strong>reporting</strong> , <strong>execution speed</strong> and off course fetch good <strong>return on investment</strong>. </p>
+<p>On the contrary, test cases for aesthetics, accessibility, one-time, urgent non-regression(hotfixes), exploratory, with unpredictable results and/or with less return on investment,  should not be automated. </p>
+<p><img alt="Navigating the Future" src="../images/chapline-automation.gif"></p>
+<hr>
+<h1>Let's dive in reasons and examples</h1>
+<p>These are few reasons to automate (not in order)</p>
+<ul>
+<li><strong>Repeating</strong> - Apart from typical regression suite this will include running large number of tests, multi platform, multi browser, performance tests, overnight tests or tests with big set of data.</li>
+<li><strong>Critical path</strong> - If the user action sequence / path or application function is critical to your business, it's recommended to automate.</li>
+<li><strong>Prone to human error</strong> - large number of data fields, complex technical steps like Database test, Security tests should be automated.</li>
+<li><strong>Reporting</strong> - Legal, audit, low confidence or high stake tests should be automated for reporting and logs.</li>
+<li><strong>Execution speed</strong> - parallel and automated execution can help run all sort of test much faster, however planning, automation, triage may take more time depending on type of tests.</li>
+<li><strong>Return on investment</strong> - While there is no exact number, as a rule of thumb anytime you're saving more money with automation, you should.</li>
+</ul>
+<p>These are few reasons not to automate (not in order)</p>
+<ul>
+<li><strong>Aesthetics</strong> - User experience , look and feel, colour and images verification require complex human context and interpretation.</li>
+<li><strong>Accessibility</strong> - Similar to aesthetics, accessibility, usability, language, grammar, etc should be verified manually</li>
+<li><strong>One-time</strong> - Urgent non-regression hotfix, non-critical, or very small changes can/may be manually verified  </li>
+<li><strong>Unpredictable results</strong> - Exploratory, time delay tests, random tests can/will rely on manual execution</li>
+<li><strong>Inadequate return on investment</strong> - Automated test for short lived products, small scale development, duplicate tests should be avoided </li>
+</ul>
+<hr>
+<h1>Summary and invite</h1>
+<p>While ability and enthusiasm to automate is important, it is more important to know when to automate and avoid <a href="https://en.wikipedia.org/wiki/Gold_plating_(project_management)">gold plating</a>. I will link the video for discussion in next commit. Thank you for reading. Please feel free to submit a pull request to suggest any changes.</p>
+        </div>
     </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="/category/posts.html">Posts</a>
+        | Tagged: <a href="/tag/learning.html">learning </a><a href="/tag/testing.html">testing </a><a href="/tag/devops.html">devops </a>
+        | <a href="/when-should-we-automate-tests.html" rel="bookmark"
+         title="Permalink to When should we automate tests">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -121,7 +162,7 @@
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="/category/events.html">Events</a> (7)</li>
-                    <li><a href="/category/posts.html">Posts</a> (97)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (97)</li>
                 </ul>
              
             </div>

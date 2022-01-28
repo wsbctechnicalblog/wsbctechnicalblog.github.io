@@ -59,36 +59,36 @@ In May 2020, the following release notes created excitement: "<em>Output variabl
 <blockquote>
 <p>Our git-tools-git-version.yml template</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nl">parameters</span><span class="p">:</span>
-<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">versionSpec</span>
-  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
-  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;</span><span class="mf">5.</span><span class="n">x</span><span class="err">&#39;</span>
-<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">useConfigFile</span>
-  <span class="nl">type</span><span class="p">:</span>     <span class="n">boolean</span>
-  <span class="k">default</span><span class="o">:</span>  <span class="nb">false</span>
-<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">configFilePath</span>
-  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
-  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;&#39;</span>
-<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">updateAssemblyInfo</span>
-  <span class="nl">type</span><span class="p">:</span>     <span class="n">boolean</span>
-  <span class="k">default</span><span class="o">:</span>  <span class="nb">false</span>
-<span class="o">-</span> <span class="nl">name</span><span class="p">:</span>     <span class="n">updateAssemblyInfoFilename</span>
-  <span class="nl">type</span><span class="p">:</span>     <span class="n">string</span>
-  <span class="k">default</span><span class="o">:</span>  <span class="err">&#39;&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nl">parameters</span><span class="p">:</span><span class="w"></span>
+<span class="p">-</span> <span class="nf">name:</span><span class="w">     </span><span class="n">versionSpec</span><span class="w"></span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;</span><span class="mf">5.</span><span class="n">x</span><span class="err">&#39;</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">useConfigFile</span><span class="w"></span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">boolean</span><span class="w"></span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="nb">false</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">configFilePath</span><span class="w"></span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">updateAssemblyInfo</span><span class="w"></span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">boolean</span><span class="w"></span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="nb">false</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">updateAssemblyInfoFilename</span><span class="w"></span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span><span class="w"></span>
 
-<span class="nl">steps</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span>
-    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Install</span> <span class="n">GitVersion</span>
-    <span class="nl">inputs</span><span class="p">:</span>
-      <span class="nl">versionSpec</span><span class="p">:</span> <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">versionSpec</span><span class="p">}}</span>
+<span class="nl">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span><span class="w"></span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">GitVersion</span><span class="w"></span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">versionSpec</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">versionSpec</span><span class="p">}}</span><span class="w"></span>
 
-  <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span>
-    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Use</span> <span class="n">GitVersion</span>
-    <span class="nl">inputs</span><span class="p">:</span>
-      <span class="nl">useConfigFile</span><span class="p">:</span>                <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">useConfigFile</span><span class="p">}}</span>
-      <span class="nl">configFilePath</span><span class="p">:</span>               <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">configFilePath</span><span class="p">}}</span>
-      <span class="nl">updateAssemblyInfo</span><span class="p">:</span>           <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfo</span><span class="p">}}</span>
-      <span class="nl">updateAssemblyInfoFilename</span><span class="p">:</span>   <span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfoFilename</span><span class="p">}}</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span><span class="w"></span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">GitVersion</span><span class="w"></span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">useConfigFile</span><span class="p">:</span><span class="w">                </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">useConfigFile</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="nl">configFilePath</span><span class="p">:</span><span class="w">               </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">configFilePath</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="nl">updateAssemblyInfo</span><span class="p">:</span><span class="w">           </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfo</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="nl">updateAssemblyInfoFilename</span><span class="p">:</span><span class="w">   </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfoFilename</span><span class="p">}}</span><span class="w"></span>
 </code></pre></div>
 
 <p>Here is a visual of our hypothetical pipeline. </p>
@@ -100,18 +100,18 @@ In May 2020, the following release notes created excitement: "<em>Output variabl
 <blockquote>
 <p>Publish Universal Artifact using the version</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>          <span class="nl">steps</span><span class="p">:</span>
-            <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">Toolkit</span> <span class="n">Version</span> <span class="o">=</span> <span class="n">$</span><span class="p">(</span><span class="n">currentVersion</span><span class="p">)</span>
-            <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">UniversalPackages</span><span class="mi">@0</span>
-              <span class="nl">name</span><span class="p">:</span> <span class="n">Create_DV_Universal_Package</span>
-              <span class="nl">inputs</span><span class="p">:</span>
-                <span class="nl">command</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">publish</span><span class="err">&#39;</span>
-                <span class="nl">publishDirectory</span><span class="p">:</span>       <span class="n">$</span><span class="p">(</span><span class="n">Agent</span><span class="p">.</span><span class="n">BuildDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">drop</span>
-                <span class="nl">feedsToUsePublish</span><span class="p">:</span>      <span class="err">&#39;</span><span class="n">internal</span><span class="err">&#39;</span>
-                <span class="nl">vstsFeedPublish</span><span class="p">:</span>        <span class="n">$</span><span class="p">(</span><span class="n">developmentStageFeedPublish</span><span class="p">)</span>
-                <span class="nl">vstsFeedPackagePublish</span><span class="p">:</span> <span class="n">$</span><span class="p">(</span><span class="n">developmentStagePackagePublish</span><span class="p">)</span>
-                <span class="nl">versionOption</span><span class="p">:</span>          <span class="err">&#39;</span><span class="n">custom</span><span class="err">&#39;</span>
-                <span class="nl">versionPublish</span><span class="p">:</span>         <span class="n">$</span><span class="p">(</span><span class="n">versionToolbox</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="w">          </span><span class="nl">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Toolkit</span><span class="w"> </span><span class="n">Version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">currentVersion</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">UniversalPackages</span><span class="mi">@0</span><span class="w"></span>
+<span class="w">              </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">Create_DV_Universal_Package</span><span class="w"></span>
+<span class="w">              </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="nl">command</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">publish</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="nl">publishDirectory</span><span class="p">:</span><span class="w">       </span><span class="n">$</span><span class="p">(</span><span class="n">Agent</span><span class="p">.</span><span class="n">BuildDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">drop</span><span class="w"></span>
+<span class="w">                </span><span class="nl">feedsToUsePublish</span><span class="p">:</span><span class="w">      </span><span class="err">&#39;</span><span class="n">internal</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="nl">vstsFeedPublish</span><span class="p">:</span><span class="w">        </span><span class="n">$</span><span class="p">(</span><span class="n">developmentStageFeedPublish</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="nl">vstsFeedPackagePublish</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">developmentStagePackagePublish</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="nl">versionOption</span><span class="p">:</span><span class="w">          </span><span class="err">&#39;</span><span class="n">custom</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="nl">versionPublish</span><span class="p">:</span><span class="w">         </span><span class="n">$</span><span class="p">(</span><span class="n">versionToolbox</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
 <hr>
@@ -120,12 +120,12 @@ In May 2020, the following release notes created excitement: "<em>Output variabl
 <blockquote>
 <p>Create Development stage-specific versionToolkit version</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>    <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
-      <span class="nl">name</span><span class="p">:</span> <span class="n">setToolkitVersion</span>
-      <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Set Toolkit Version&quot;</span>
-      <span class="nl">inputs</span><span class="p">:</span>
-        <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
-        <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=versionToolkit;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
+<span class="w">      </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">setToolkitVersion</span><span class="w"></span>
+<span class="w">      </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Set Toolkit Version&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=versionToolkit;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span><span class="w"></span>
 </code></pre></div>
 
 <p>Next, we move to the <strong>Development</strong> stage and create a stage variable, which is set to the value of versionToolkit calculated in the <strong>ContinuousIntegration</strong> stage.</p>
@@ -133,11 +133,11 @@ In May 2020, the following release notes created excitement: "<em>Output variabl
 <blockquote>
 <p>Create <strong>Development</strong> stage-specific versionToolkit version</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Development&#39;</span>
-  <span class="n">dependsOn</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">ContinuousIntegration</span>
-  <span class="n">variables</span><span class="p">:</span>
-    <span class="n">versionToolkit</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.toolkitVersion&#39;</span><span class="p">]</span> <span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="s1">&#39;Development&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">ContinuousIntegration</span><span class="w"></span>
+<span class="w">  </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">versionToolkit</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.toolkitVersion&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>In our case the originating stage and job share the same name <strong>ContinuousIntegration</strong>, hence the ...ContinuousIntegration.ContinuousIntegration... repetition.</p>
@@ -154,16 +154,16 @@ Why is the version not flowing, as expected?</p>
 <blockquote>
 <p><strong>Production</strong> Stage</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Production&#39;</span>
-    <span class="n">dependsOn</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">SecurityScans</span>
-    <span class="o">-</span> <span class="n">SecurityReview</span>
-    <span class="n">variables</span><span class="p">:</span>
-      <span class="n">versionToolbox</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span> <span class="p">]</span>
-    <span class="n">pool</span><span class="p">:</span>
-      <span class="n">vmImage</span><span class="p">:</span>     <span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span>
-    <span class="n">jobs</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">deployment</span><span class="p">:</span>  <span class="s1">&#39;Production&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="s1">&#39;Production&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityScans</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityReview</span><span class="w"></span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">versionToolbox</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w">     </span><span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">deployment</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;Production&#39;</span><span class="w"></span>
 </code></pre></div>
 
 <p>Can you spot the issue?</p>
@@ -171,16 +171,16 @@ Why is the version not flowing, as expected?</p>
 <h1>After rain comes sunshine</h1>
 <p>I was pacing up and down our marina, sipping a hot chocolate, when a background thread triggered. “<em>How does the pipeline know that Production stage has a dependency on ContinuousIntegration stage?</em>”</p>
 <p>I tried the following change:</p>
-<div class="highlight"><pre><span></span><code>  <span class="o">-</span> <span class="n">stage</span><span class="p">:</span>         <span class="s1">&#39;Production&#39;</span>
-    <span class="n">dependsOn</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">ContinuousIntegration</span>
-    <span class="o">-</span> <span class="n">SecurityScans</span>
-    <span class="o">-</span> <span class="n">SecurityReview</span>
-    <span class="n">variables</span><span class="p">:</span>
-      <span class="n">versionToolbox</span><span class="p">:</span> <span class="o">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span> <span class="p">]</span>
-    <span class="n">pool</span><span class="p">:</span>
-      <span class="n">vmImage</span><span class="p">:</span>     <span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span>
-    <span class="n">jobs</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="s1">&#39;Production&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">ContinuousIntegration</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityScans</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityReview</span><span class="w"></span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">versionToolbox</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setToolkitVersion.versionToolbox&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w">     </span><span class="o">$</span><span class="p">(</span><span class="n">productionStageVmImage</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 
 <p><strong>BINGO!</strong> Adding line 3, <code>- ContinuousIntegration</code>, fixed the stageDependency and the <strong>versionToolbox</strong> was set to the version set in the <strong>ContinuousIntegration</strong> stage.</p>
@@ -188,99 +188,99 @@ Why is the version not flowing, as expected?</p>
 <blockquote>
 <p>Experimentation sample</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nl">stages</span><span class="p">:</span>
-<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Build</span>
-  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Build</span> <span class="n">stage</span>
-  <span class="nl">jobs</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> <span class="n">Build</span>
-    <span class="nl">pool</span><span class="p">:</span>
-      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
-    <span class="nl">displayName</span><span class="p">:</span> <span class="n">Version</span> <span class="n">Check</span>
-    <span class="nl">continueOnError</span><span class="p">:</span> <span class="nb">false</span>
-    <span class="nl">steps</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nl">stages</span><span class="p">:</span><span class="w"></span>
+<span class="p">-</span> <span class="nf">stage:</span><span class="w"> </span><span class="n">Build</span><span class="w"></span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Build</span><span class="w"> </span><span class="n">stage</span><span class="w"></span>
+<span class="w">  </span><span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span><span class="n">Build</span><span class="w"></span>
+<span class="w">    </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">vmImage</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Version</span><span class="w"> </span><span class="n">Check</span><span class="w"></span>
+<span class="w">    </span><span class="nl">continueOnError</span><span class="p">:</span><span class="w"> </span><span class="nb">false</span><span class="w"></span>
+<span class="w">    </span><span class="nl">steps</span><span class="p">:</span><span class="w"></span>
 
-      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span>
-        <span class="nl">displayName</span><span class="p">:</span> <span class="n">Install</span> <span class="n">GitVersion</span>
-        <span class="nl">inputs</span><span class="p">:</span>
-              <span class="nl">versionSpec</span><span class="p">:</span> <span class="mf">5.</span><span class="n">x</span>
-      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span>
-        <span class="nl">displayName</span><span class="p">:</span> <span class="n">Use</span> <span class="n">GitVersion</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@0</span><span class="w"></span>
+<span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">GitVersion</span><span class="w"></span>
+<span class="w">        </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="nl">versionSpec</span><span class="p">:</span><span class="w"> </span><span class="mf">5.</span><span class="n">x</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@0</span><span class="w"></span>
+<span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">GitVersion</span><span class="w"></span>
 
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">GitVersion</span><span class="p">.</span><span class="n">SemVer</span><span class="p">)</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">GitVersion</span><span class="p">.</span><span class="n">SemVer</span><span class="p">)</span><span class="w"></span>
 
-      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="n">setCurProjVersion</span>
-        <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Collect Application Version ID&quot;</span>
-        <span class="nl">inputs</span><span class="p">:</span>
-          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
-          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(GitVersion.SemVer)&quot;</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
+<span class="w">        </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">setCurProjVersion</span><span class="w"></span>
+<span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Collect Application Version ID&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(GitVersion.SemVer)&quot;</span><span class="w"></span>
 
-<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy</span>
-  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy</span> <span class="n">stage</span>
-  <span class="nl">dependsOn</span><span class="p">:</span> <span class="n">Build</span>
-  <span class="nl">variables</span><span class="p">:</span>
-    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-  <span class="nl">jobs</span><span class="p">:</span>
-   <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> <span class="n">Deploy</span>
-     <span class="nl">pool</span><span class="p">:</span>
-       <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
-     <span class="nl">steps</span><span class="p">:</span> 
-      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
-        <span class="nl">name</span><span class="p">:</span> <span class="n">setCurProjVersion</span>
-        <span class="nl">displayName</span><span class="p">:</span> <span class="s">&quot;Collect Application Version ID&quot;</span>
-        <span class="nl">inputs</span><span class="p">:</span>
-          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
-          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(curProjVersion1)&quot;</span>
-      <span class="o">-</span> <span class="nl">task</span><span class="p">:</span> <span class="n">PowerShell</span><span class="mi">@2</span>
-        <span class="nl">inputs</span><span class="p">:</span>
-          <span class="nl">targetType</span><span class="p">:</span> <span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
-          <span class="nl">script</span><span class="p">:</span> <span class="n">Write</span><span class="o">-</span><span class="n">Host</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="o">:</span><span class="w"> </span><span class="n">Deploy</span><span class="w"></span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Deploy</span><span class="w"> </span><span class="n">stage</span><span class="w"></span>
+<span class="w">  </span><span class="nl">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">Build</span><span class="w"></span>
+<span class="w">  </span><span class="nl">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion1</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span><span class="n">Deploy</span><span class="w"></span>
+<span class="w">     </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">       </span><span class="nl">vmImage</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">     </span><span class="nl">steps</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
+<span class="w">        </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">setCurProjVersion</span><span class="w"></span>
+<span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Collect Application Version ID&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=curProjVersion;isOutput=true]$(curProjVersion1)&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
+<span class="w">        </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span><span class="w"></span>
 
-<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Parallel</span>
-  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Parallel</span>
-  <span class="nl">dependsOn</span><span class="p">:</span> <span class="n">Build</span>
-  <span class="nl">variables</span><span class="p">:</span>
-    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-  <span class="nl">jobs</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
-    <span class="nl">pool</span><span class="p">:</span>
-      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
-    <span class="nl">steps</span><span class="p">:</span> 
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="o">:</span><span class="w"> </span><span class="n">Parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nl">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">Build</span><span class="w"></span>
+<span class="w">  </span><span class="nl">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion1</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">vmImage</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">steps</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span><span class="w"></span>
 
-<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy2</span>
-  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy2</span> <span class="n">stage</span>
-  <span class="nl">dependsOn</span><span class="p">:</span> 
-  <span class="o">-</span> <span class="n">Deploy</span>
-  <span class="o">-</span> <span class="n">Parallel</span>
-  <span class="nl">variables</span><span class="p">:</span>
-    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-    <span class="nl">curProjVersion2</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-  <span class="nl">jobs</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
-    <span class="nl">pool</span><span class="p">:</span>
-      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
-    <span class="nl">steps</span><span class="p">:</span> 
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
-      <span class="cp"># next variable is empty as dependsOn is missing  - Build.</span>
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="o">:</span><span class="w"> </span><span class="n">Deploy2</span><span class="w"></span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Deploy2</span><span class="w"> </span><span class="n">stage</span><span class="w"></span>
+<span class="w">  </span><span class="nl">dependsOn</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Deploy</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nl">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion1</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion2</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">vmImage</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">steps</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="cp"># next variable is empty as dependsOn is missing  - Build.</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span><span class="w"></span>
 
-<span class="o">-</span> <span class="nl">stage</span><span class="p">:</span> <span class="n">Deploy3</span>
-  <span class="nl">displayName</span><span class="p">:</span> <span class="n">Deploy3</span> <span class="n">stage</span>
-  <span class="nl">dependsOn</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">Build</span>
-  <span class="o">-</span> <span class="n">Deploy</span>
-  <span class="o">-</span> <span class="n">Parallel</span>
-  <span class="nl">variables</span><span class="p">:</span>
-    <span class="nl">curProjVersion1</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-    <span class="nl">curProjVersion2</span><span class="p">:</span> <span class="n">$</span><span class="p">[</span> <span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span> <span class="p">]</span>
-  <span class="nl">jobs</span><span class="p">:</span>
-  <span class="o">-</span> <span class="nl">job</span><span class="p">:</span> 
-    <span class="nl">pool</span><span class="p">:</span>
-      <span class="nl">vmImage</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span>
-    <span class="nl">steps</span><span class="p">:</span> 
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span>
-      <span class="o">-</span> <span class="nl">script</span><span class="p">:</span> <span class="n">echo</span> <span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="o">:</span><span class="w"> </span><span class="n">Deploy3</span><span class="w"></span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Deploy3</span><span class="w"> </span><span class="n">stage</span><span class="w"></span>
+<span class="w">  </span><span class="nl">dependsOn</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Build</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Deploy</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nl">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion1</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">Deploy</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nl">curProjVersion2</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">outputs</span><span class="p">[</span><span class="err">&#39;</span><span class="n">setCurProjVersion</span><span class="p">.</span><span class="n">curProjVersion</span><span class="err">&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">vmImage</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">steps</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion1</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="o">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">curProjVersion2</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
 <p>Have fun passing variables!</p>
@@ -324,6 +324,9 @@ Why is the version not flowing, as expected?</p>
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
+                    <li><a href="/tag/learning.html">learning</a>(19)</li>
+                    <li><a href="/tag/testing.html">testing</a>(14)</li>
+                    <li><a href="/tag/devops.html">devops</a>(39)</li>
                     <li><a href="/tag/collaboration.html">collaboration</a>(2)</li>
                     <li><a href="/tag/team-building.html">team-building</a>(1)</li>
                     <li><a href="/tag/technical-excellence.html">technical-excellence</a>(10)</li>
@@ -333,11 +336,9 @@ Why is the version not flowing, as expected?</p>
                     <li><a href="/tag/tips.html">tips</a>(15)</li>
                     <li><a href="/tag/quality.html">quality</a>(16)</li>
                     <li><a href="/tag/agile.html">agile</a>(21)</li>
-                    <li><a href="/tag/devops.html">devops</a>(38)</li>
                     <li><a href="/tag/no-estimates.html">no-estimates</a>(1)</li>
                     <li><a href="/tag/tdd.html">TDD</a>(12)</li>
                     <li><a href="/tag/estimates.html">estimates</a>(2)</li>
-                    <li><a href="/tag/learning.html">learning</a>(18)</li>
                     <li><a href="/tag/journal.html">journal</a>(2)</li>
                     <li><a href="/tag/ceremony.html">ceremony</a>(7)</li>
                     <li><a href="/tag/strategy.html">strategy</a>(1)</li>
@@ -352,7 +353,6 @@ Why is the version not flowing, as expected?</p>
                     <li><a href="/tag/dojo.html">dojo</a>(1)</li>
                     <li><a href="/tag/delivery-on-demand.html">delivery-on-demand</a>(1)</li>
                     <li><a href="/tag/continuous-delivery.html">continuous-delivery</a>(1)</li>
-                    <li><a href="/tag/testing.html">testing</a>(13)</li>
                     <li><a href="/tag/testability.html">testability</a>(1)</li>
                     <li><a href="/tag/automation.html">automation</a>(7)</li>
                     <li><a href="/tag/system-programming.html">system-programming</a>(1)</li>
@@ -376,7 +376,7 @@ Why is the version not flowing, as expected?</p>
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="/category/events.html">Events</a> (7)</li>
-                    <li class="active"><a href="/category/posts.html">Posts</a> (96)</li>
+                    <li class="active"><a href="/category/posts.html">Posts</a> (97)</li>
                 </ul>
              
             </div>
