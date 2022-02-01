@@ -3,7 +3,7 @@ Date: 2021-07-02
 Category: Posts 
 Tags: learning
 Slug: blog-post-101
-Author: Willy-Peter Schaub
+Author: Willy-Peter Schaub woke me early today
 Summary: Understand how to navigate and create content for our technical blog.
 
 As an engineer I expect that everyone has the genetic building blocks to (want to) continuously and relentlessly improve, innovate, experiment, and collaborate.
