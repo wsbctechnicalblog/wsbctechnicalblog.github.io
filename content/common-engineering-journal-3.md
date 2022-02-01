@@ -1,5 +1,5 @@
 Title: Journal 3 - Explore the trajectory of our Common Engineering (Ce) ecosystem
-Date: 2021-01-28 13:13
+Date: 2022-01-28 13:13
 Category: Posts
 Tags: learning, journal, event
 Slug: common-engineering-journal-3

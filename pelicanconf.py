@@ -3,7 +3,7 @@
 
 AUTHOR = 'EDO Common Engineering'
 SITENAME = ''
-SITEURL = ''
+SITEURL = 'https://wsbctechnicalblog.github.io'
 
 PATH = 'content'
 
@@ -11,14 +11,11 @@ TIMEZONE = 'Canada/Pacific'
 
 DEFAULT_LANG = 'en'
 
-THEME = '/Users/alexbunardzic/Documents/worksafeblog/pelican-themes/bricks'
 THEME = 'c:/_T/bricks'
 
 # Feed generation is usually not desired when developing
-FEED_MAX_ITEMS = 50
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
-
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None

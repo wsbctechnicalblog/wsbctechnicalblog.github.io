@@ -4,7 +4,7 @@ Category: Posts
 Tags: learning, testing, devops
 Slug: when-should-we-automate-tests
 Author: Aditya Chourasiya
-Summary: This article is gist of brainstorming session among Wuality Assurance (QA) team (Mohita Kataria, Midhi Naidu and Aditya Chourasiya) at WorkSafeBC
+Summary: This article is gist of brainstorming session among Quality Assurance (QA) team.
 
 Automation is advised when tests are **prone to human error** or **complex** or if they need **repeating**, **reporting** , **execution speed** and off course fetch good **return on investment**. 
    
