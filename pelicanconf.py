@@ -11,7 +11,7 @@ TIMEZONE = 'Canada/Pacific'
 
 DEFAULT_LANG = 'en'
 
-THEME = 'c:/_T/bricks'
+THEME = '../brick'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
