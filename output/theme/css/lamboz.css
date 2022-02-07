@@ -53,11 +53,11 @@ H5,H6 { font-size: 1.05em; }
 
 A { 
   text-decoration: underline;
-  color: blue;
+  color: #6399AE;
 }
 
 A:hover {
-  color: blue;
+  color: #6399AE;
 }
 
 .footer UL { 
