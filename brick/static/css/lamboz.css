@@ -56,8 +56,9 @@ A {
   color: #666;
 }
 
-A:hover {
-  color: #900;
+A:hover { 
+  text-decoration: underline;
+  color: #008CBA 
 }
 
 .footer UL { 
