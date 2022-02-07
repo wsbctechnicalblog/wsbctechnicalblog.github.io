@@ -53,12 +53,12 @@ H5,H6 { font-size: 1.05em; }
 
 A { 
   text-decoration: none;
-  color: #666;
+  color: #6399AE;
 }
 
 A:hover { 
   text-decoration: underline;
-  color: #008CBA 
+  color: #6399AE 
 }
 
 .footer UL { 
