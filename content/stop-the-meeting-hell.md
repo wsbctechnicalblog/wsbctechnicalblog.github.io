@@ -1,4 +1,4 @@
-Title: Stop the meeting nightmare!
+Title: Stop the meeting overload!
 Date: 20212-02-25
 Category: Posts
 Tags: eliminate-waste
@@ -28,7 +28,7 @@ For the person being teleported out of the meeting it means a context switch …
 
 Back to the actual topic … can we stop the meeting madness? So, what is the actual problem?
 
-We have to choose whether we want to improve productivity and balance work:life, or continue the multi-tasking, context-switching madness. 
+We have to choose whether we want to improve productivity and balance work:life, or continue the multi-tasking, context-switching overload. 
 
 The choice is yours … my team and I are taking the right turn!
 
