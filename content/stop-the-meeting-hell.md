@@ -8,15 +8,15 @@ Summary: Notes from a recent improvement "meeting" to stop meetings.
 
 Thank you for the opportunity to collaborate on a very important topic, that will help us raise productivity and lower stress … as well as errors caused by excessive context switching.
 
-![Intro](../images/stop-the-meeting-hell-1.png)
+![Intro](../images/stop-the-meeting-hell-1.PNG)
 
 To start, I would like to get rid of my pet peeve of our new remote and video conferencing era. No-one with a healthy meeting etiquette would barge into the following meeting environment to ask you to join another meeting. 
 
-![Meeting](../images/stop-the-meeting-hell-2.png)
+![Meeting](../images/stop-the-meeting-hell-2.PNG)
 
 Correct?
 
-![Meeting Interruption?](../images/stop-the-meeting-hell-3.png)
+![Meeting Interruption?](../images/stop-the-meeting-hell-3.PNG)
 
 Then why are you using the worst Microsoft Teams feature to call a colleague who is busy in another scheduled event to join your meeting?
 
@@ -24,7 +24,7 @@ This causes interruptions for all … be right back … Willy what do you think 
 
 For the person being teleported out of the meeting it means a context switch … and I, for example, start making mistakes and forgetting things when I battered by context switching.
 
-![Decision](../images/stop-the-meeting-hell-4.png)
+![Decision](../images/stop-the-meeting-hell-4.PNG)
 
 Back to the actual topic … can we stop the meeting madness? So, what is the actual problem?
 
@@ -32,13 +32,13 @@ We have to choose whether we want to improve productivity and balance work:life,
 
 The choice is yours … my team and I are taking the right turn!
 
-![Snippets of madness](../images/stop-the-meeting-hell-5.png)
+![Snippets of madness](../images/stop-the-meeting-hell-5.PNG)
 
 Here are a few examples of OUR calendars … on a good day. 
 
 Let us look at one and spot the challenges.
 
-![Core Issue](../images/stop-the-meeting-hell-6.png)
+![Core Issue](../images/stop-the-meeting-hell-6.PNG)
 
 Looking at this example we will notice a few things.
 
@@ -51,7 +51,7 @@ In fact, this person had 4 hours to relax or work during four working days. That
 
 In our regular stress-o-meter polls the feedback clearly points to one worrying outcome of this madness, namely “STRESS”.
 
-![What we are doing](../images/stop-the-meeting-hell-7.png)
+![What we are doing](../images/stop-the-meeting-hell-7.PNG)
 
 As per our team working agreement, we are trying hard to …
 
@@ -63,9 +63,9 @@ As per our team working agreement, we are trying hard to …
 
 In addition, I have asked my team to block out their lunch hours and to decline all double bookings to reduce the context switching and associated.
 
-![What we should all do](../images/stop-the-meeting-hell-8.png)
+![What we should all do](../images/stop-the-meeting-hell-8.PNG)
 
-In my humble opinion, we need an Enterprise Development and Operations working agreement, which:
+In my humble opinion, we need an organizational working agreement, which:
 
 - Encourages a respectful meeting etiquette
 - Fosters collaboration
