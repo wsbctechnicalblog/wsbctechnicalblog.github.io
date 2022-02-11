@@ -7,7 +7,7 @@ Summary: WorkSafeBC Contributors
 
 ## Alex Bunardzic
 
-![Alex Bunardzic](/images/Alex-mug.jpg)
+![Alex Bunardzic](../images/Alex-mug.jpg)
 
 Alex has been doing software development since 1990. His professional passion is bringing _soft_ into software. Which means software must be soft, maleable, pliable. That quality enables the flexibility of the business operations.
 
@@ -21,7 +21,7 @@ Read Alex's posts [here](/author/alex-bunardzic.html)
 
 ## Kevin Schwantje
 
-![Kevin Schwantje](/images/Kevin-mug.jpeg)
+![Kevin Schwantje](../images/Kevin-mug.jpeg)
 
 Kevin has been working in cybersecurity for the past nine years, attacking and defending everything from networks to virtual machines. In his current iteration, he’s a DevSecOps security engineer safeguarding web apps from today’s scary modern threat landscape. At WorkSafeBC, Kevin has found a passion for integrating security practices into every level of software development practices, from Agile principles all the way to Azure DevOps and CI/CD pipelines and processes. He believes in pushing left, purple teaming, favouring a human approach over spreadsheets and always saying “no”.
 
@@ -31,9 +31,19 @@ Read Kevin's posts [here](/author/kevin-schwantje.html)
 
 ---
 
+## Laurent Blain
+
+![Laurent Blain](../images/laurentb.jpg)
+
+TBD
+
+Read Laurent's posts [here](../author/laurent-blain.html)
+
+---
+
 ## Said Akram
 
-![Said Akram](/images/Said-mug.jpeg)
+![Said Akram](../images/Said-mug.jpeg)
 
 Said has been working as a full-stack software engineer since the early 2000s. He worked for small and large organizations on a variety of projects. His focus has always been on delivering clean code. He is constantly learning and sharing how to do things in new ways.
 
@@ -41,19 +51,19 @@ At WorkSafeBC, Said works on legacy systems maintenance, cloud migration, cloud 
 
 > _“Truth can only be found in one place: the code.” - Robert C. Martin_
 
-Read Said's posts [here](/author/said-akram.html)
+Read Said's posts [here](../author/said-akram.html)
 
 ---
 
 ## Willy-Peter Schaub
 
-![Willy-Peter Schaub](/images/willy-schaub.png)
+![Willy-Peter Schaub](../images/willy-schaub.png)
 
 Willy-Peter began his IT career in the early 1980s, during his electrical engineering studies, focusing on the BTOS/CTOS operating systems until he moved over to Microsoft technologies in the early ‘90s. Since then, his passion has been to investigate, research, and evangelize technology and best practises, striving for _simplicity_ and _maintainability_ in software engineering. Apart from sharing technology and transformation learnings in [tweets](https://www.twitter.com/wpschaub), blogs, [articles](https://www.opensource.com/user_articles/180826), and books such as [.NET Enterprise Solutions - Best Practises](https://1drv.ms/b/s!AoTKFn7kQntwmahQJlHkxzgjlzQv4w), [.NET Enterprise Solutions - Interoperability for the Connoisseur](https://1drv.ms/b/s!AoTKFn7kQntwmahS9OnZ20IB2aecYg), [Software Engineers on their way to Pluto](https://1drv.ms/b/s!AoTKFn7kQntwmahRBJUVSZWpWXnDAg), and [Navigating DevOps Through Waterfalls](https://www.amazon.ca/Navigating-DevOps-Through-Waterfalls-Brent/dp/1999529103), his varied and extreme interests include scuba diving, cycling, science fiction, astronomy, and, most importantly, his family. 
 
 If you would like to discuss or share feedback on my posts, please ping me on [Twitter](https://twitter.com/wpschaub) or [LinkedIn](https://www.linkedin.com/in/wpschaub/).
 
-> _Enable engineering and business to continuously deliver value to delighted customers!_
+> _Encourage everyone's creativity, passion, purpose, and strengths!_
 
 Read Willy's posts [here](/author/willy-peter-schaub.html)
 <br/><br/>
