@@ -35,7 +35,7 @@ Read Kevin's posts [here](/author/kevin-schwantje.html)
 
 ![Laurent Blain](../images/laurentb.jpg)
 
-TBD
+Laurent joined WorkSafeBC in 2011 as the Manager of Enterprise Application Architecture and has since played a role in the evolution of the architecture function across a variety of assignments, most notably Cloud Architecture in the early days of Cloud DevOps (CDO). Laurent now manages the Enterprise Architecture function under Business Engagement Services, which is tasked with the elaboration and evergreening of portfolio roadmaps. 
 
 Read Laurent's posts [here](../author/laurent-blain.html)
 
