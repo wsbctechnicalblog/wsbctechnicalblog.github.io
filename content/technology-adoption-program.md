@@ -1,5 +1,5 @@
 Title: Having a sound Technology Adoption Process is pivotal to innovation
-Date: 20212-MM-DD 13:13
+Date: 2022-02-15 13:13
 Category: Posts
 Tags: architecture, devops, technical-excellence
 Slug: technology-adoption-program
