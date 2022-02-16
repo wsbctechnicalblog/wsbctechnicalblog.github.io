@@ -16,6 +16,8 @@ All of the above, without letting your ego get in the way, being scared to fail 
 
 Our WorkSafeBC technical blog is one of many channels (or hammer) that helps us collaborate and share our experiences and knowledge with everyone. In this short post, I will focus on how to find content relevant to you, and if you are a WorkSafeBC engineer, to create your first post. 
 
+---
+
 # What do our categories and tags mean?
 
 ![Tags](../images/blog-post-101-2.png) 
@@ -47,6 +49,7 @@ Here is a list of tags we use when creating new content:
 | journal |  | Regular EDO Common Engineering journal entries to share our progress, failures, and learnings. |
 | lean |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
 | learning        |  | Continuous learning. |
+| metrics         |  | Telemetry, logging, metrics, and other evidence-based learnings. |
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
 | posters         |  | Quick reference posters and cheat sheets. |
 | quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
@@ -77,6 +80,8 @@ We are starting to also **categorise** our content to add a different lens for y
 
 Thoughts? How can we improve our tags and categories? Please ping me on [@wpschaub](https://twitter.com/wpschaub) and help us improve our content.
 
+---
+
 # Create your first post
 
 ![Tags](../images/blog-post-101-3.png) 
@@ -96,8 +101,8 @@ Title: <catchy title>
 Date: YYYY-MM-DD
 Category: <Events|Posts>, as above mentioned 
 Tags: <Tags> comma separated, as above mentioned
-Slug: Your <file-name> without the .md
-Author: <FirstName> <LastName>
+Slug: Your <file-name> without the .md, using kebab style, for example code-as-text
+Author: <FirstName> <LastName>, matching the name of your entry in the X [authors](https://wsbctechnicalblog.github.io/pages/authors.html) page.
 Summary: <Quick summary of what post is about>.
 ```
 
@@ -111,13 +116,42 @@ Summary: <Quick summary of what post is about>.
 
 Done!
 
+---
+
 # One, two, or more authors?
 
 ![Tags](../images/blog-post-101-6.png) 
 
 Unfortunately, we can only define one author in the metadata, however, you can co-author a post with a colleague or with a member from our **WSBC Technical Blog Content Discussion** working group. We are more than happy and keen to assist you, even as an unknown ghost writer. 
 
+If there are multiple authors, consider adding this:
+
+> Authored by X, Y, and Z at the start of end of your post.
+
 Just collaborate with us, ask questions (_the only one that is bad is the one you never ask_), and do not hesitate to ask for help.
+
+---
+
+# Approval process
+
+The approval process to publish a post on WorkSafeBC Technical Blog consists of two (minimum) or more reviewers who must carefully examine content submitted in the form of Pull Request. Only if all involved reviewers approve the Pull Request will the blog post get published.
+
+The following specific ethics will have to be followed: 
+
+- Address sharing of intellectual property must be made transparent
+- Speaking on behalf of WorkSafeBC must be approved by the management
+- Conflicts of interest will not be allowed/tolerated
+- Privacy/confidentiality must be observed at all times
+
+---
+
+# The Originality Clause
+
+WorkSafeBC will only consider original content for publishing. Please make sure not to regurgitate something that has already been published at large and is a well known problem or issue for which there is an effective solution provided by the community.
+
+We are striving for highest possible quality content. A quality blog post is expected to propose an issue or a problem (or a set of problems) for which the author may have found an elegant, simple solution.
+
+---
 
 # To conclude
 
