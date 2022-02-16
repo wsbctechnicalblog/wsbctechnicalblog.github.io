@@ -27,7 +27,7 @@ To compete in an ever-changing industry, we must find ways to be more effective,
 Use a blend of market research, production telemetry, surveys, unsolicited feedback, customer visits, and when possible the invaluable [Gemba walk](https://kanbanize.com/lean-management/improvement/gemba-walk) to gather and measure everything that is measurable ... and meaningful!
 
 >
-> "_The art of fine-tuning what and how you measure data without inundating everyone with reports and notifications is an art and a necessity for a healthy DevOps mindset._" - [Navigating DecOps through Waterfalls](https://www.tactec.ca/ndtw-resources/)
+> "_The art of fine-tuning what and how you measure data without inundating everyone with reports and notifications is an art and a necessity for a healthy DevOps mindset._" - [Navigating DevOps through Waterfalls](https://www.tactec.ca/ndtw-resources/)
 >
 
 ![Metrics](../images/metrics-importance-2.png)
