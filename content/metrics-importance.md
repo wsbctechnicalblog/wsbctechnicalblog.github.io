@@ -1,5 +1,5 @@
 Title: Understanding key metrics for a healthy DevOps mindset
-Date: 2022-02-13
+Date: 2022-02-18
 Category: Posts 
 Tags: learning, metrics, devops
 Slug: metrics-importance
