@@ -1,5 +1,5 @@
 Title: DevOps Analytics Strategy
-Date: 2022-02-02
+Date: 2022-02-25
 Category: Posts
 Tags: learning, metrics, devops
 Slug: devops-analytics-strategy
