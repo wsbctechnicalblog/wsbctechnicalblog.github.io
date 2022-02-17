@@ -18,7 +18,7 @@ Correct?
 
 ![Meeting Interruption?](../images/stop-the-meeting-hell-3.PNG)
 
-Then why are you using the worst Microsoft Teams feature to call a colleague who is busy in another scheduled event to join your meeting?
+Then why are we using the worst Microsoft Teams feature to call a colleague who is busy in another scheduled event to join your meeting?
 
 This causes interruptions for all … be right back … Willy what do you think … Willy? … back … What did I miss? These interruptions drive me insane. 
 
@@ -28,7 +28,7 @@ For the person being teleported out of the meeting it means a context switch …
 
 Back to the actual topic … can we stop the meeting madness? So, what is the actual problem?
 
-We have to choose whether we want to improve productivity and balance work:life, or continue the multi-tasking, context-switching overload. 
+We must choose whether we want to improve productivity and balance work:life, or continue the multi-tasking, context-switching overload. 
 
 The choice is yours … my team and I are taking the right turn!
 
@@ -53,6 +53,8 @@ In our regular stress-o-meter polls the feedback clearly points to one worrying 
 
 ![What we are doing](../images/stop-the-meeting-hell-7.PNG)
 
+However, the eye of the storm is not just the number of meetings, but the quality of our meetings.
+
 As per our team working agreement, we are trying hard to …
 
 - Finish meetings 5-minutes early, instead of bleeding into other meetings.
@@ -67,11 +69,11 @@ In addition, I have asked my team to block out their lunch hours and to decline 
 
 In my humble opinion, we need an organizational working agreement, which:
 
-- Encourages a respectful meeting etiquette
+- Encourages a respectful meeting etiquette that raises the quality and reduces the number of meetings
 - Fosters collaboration
 - Focuses on productivity
 - Enables a healthy work:life balance
-- And pivots our culture from meetings to delivery
+- Pivots our culture from ”just another meeting” to collaboration, leadership, and delivery
 
 Thank you for listening. Thoughts? Questions?
 
