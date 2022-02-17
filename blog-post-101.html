@@ -53,6 +53,7 @@
 <p>Collaboration is essential as two or more brains are better than one, exchange ideas, knowledge, experience, and to come up with better ideas and ways of solving problems for today and tomorrow.</p>
 <p>All of the above, without letting your ego get in the way, being scared to fail or ask a question, not afraid of seeking candid feedback. </p>
 <p>Our WorkSafeBC technical blog is one of many channels (or hammer) that helps us collaborate and share our experiences and knowledge with everyone. In this short post, I will focus on how to find content relevant to you, and if you are a WorkSafeBC engineer, to create your first post. </p>
+<hr>
 <h1>What do our categories and tags mean?</h1>
 <p><img alt="Tags" src="../images/blog-post-101-2.png"> </p>
 <p>We <strong>tag</strong> our technical blog posts to allow you, the reader, to find and focus on content that is relevant and valuable to you. It is important to focus on what is valuable to you and skip the "bile".</p>
@@ -172,6 +173,11 @@
 <td>Continuous learning.</td>
 </tr>
 <tr>
+<td>metrics</td>
+<td></td>
+<td>Telemetry, logging, metrics, and other evidence-based learnings.</td>
+</tr>
+<tr>
 <td>pipelines</td>
 <td></td>
 <td>Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions.</td>
@@ -268,6 +274,7 @@
 </tbody>
 </table>
 <p>Thoughts? How can we improve our tags and categories? Please ping me on <a href="https://twitter.com/wpschaub">@wpschaub</a> and help us improve our content.</p>
+<hr>
 <h1>Create your first post</h1>
 <p><img alt="Tags" src="../images/blog-post-101-3.png"> </p>
 <blockquote>
@@ -281,13 +288,13 @@
 <li>Create a feature branch <code>&lt;yourname&gt;/&lt;title&gt;</code>, for example willys/blog-post-101. Do not use your primary, 2, or 5-ID!</li>
 <li>Create a new markdown file in the <code>/content</code>, for example <code>/content/blog-post-101.md</code> and add the metadata header at the start, which will be used when your gem is converted to a live HTML page.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>Title: &lt;catchy title&gt;
-Date: YYYY-MM-DD
-Category: &lt;Events|Posts&gt;, as above mentioned 
-Tags: &lt;Tags&gt; comma separated, as above mentioned
-Slug: Your &lt;file-name&gt; without the .md
-Author: &lt;FirstName&gt; &lt;LastName&gt;
-Summary: &lt;Quick summary of what post is about&gt;.
+<div class="highlight"><pre><span></span><code><span class="nl">Title</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">catchy</span><span class="w"> </span><span class="n">title</span><span class="o">&gt;</span><span class="w"></span>
+<span class="nc">Date</span><span class="err">:</span><span class="w"> </span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="w"></span>
+<span class="nl">Category</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Events</span><span class="o">|</span><span class="n">Posts</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">mentioned</span><span class="w"> </span>
+<span class="nl">Tags</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Tags</span><span class="o">&gt;</span><span class="w"> </span><span class="n">comma</span><span class="w"> </span><span class="n">separated</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">mentioned</span><span class="w"></span>
+<span class="nl">Slug</span><span class="p">:</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="o">&lt;</span><span class="k">file</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="p">.</span><span class="n">md</span><span class="p">,</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">kebab</span><span class="w"> </span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="n">code</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="nc">text</span><span class="w"></span>
+<span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">FirstName</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">LastName</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">matching</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">[</span><span class="n">authors</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">wsbctechnicalblog</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">pages</span><span class="o">/</span><span class="n">authors</span><span class="p">.</span><span class="n">html</span><span class="p">)</span><span class="w"> </span><span class="n">page</span><span class="p">.</span><span class="w"></span>
+<span class="nl">Summary</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Quick</span><span class="w"> </span><span class="n">summary</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">post</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">about</span><span class="o">&gt;</span><span class="p">.</span><span class="w"></span>
 </code></pre></div>
 
 <p>...and finally:</p>
@@ -297,10 +304,30 @@ Summary: &lt;Quick summary of what post is about&gt;.
 </ul>
 <p><img alt="Tags" src="../images/blog-post-101-5.png"> </p>
 <p>Done!</p>
+<hr>
 <h1>One, two, or more authors?</h1>
 <p><img alt="Tags" src="../images/blog-post-101-6.png"> </p>
 <p>Unfortunately, we can only define one author in the metadata, however, you can co-author a post with a colleague or with a member from our <strong>WSBC Technical Blog Content Discussion</strong> working group. We are more than happy and keen to assist you, even as an unknown ghost writer. </p>
+<p>If there are multiple authors, consider adding this:</p>
+<blockquote>
+<p>Authored by X, Y, and Z at the start of end of your post.</p>
+</blockquote>
 <p>Just collaborate with us, ask questions (<em>the only one that is bad is the one you never ask</em>), and do not hesitate to ask for help.</p>
+<hr>
+<h1>Approval process</h1>
+<p>The approval process to publish a post on WorkSafeBC Technical Blog consists of two (minimum) or more reviewers who must carefully examine content submitted in the form of Pull Request. Only if all involved reviewers approve the Pull Request will the blog post get published.</p>
+<p>The following specific ethics will have to be followed: </p>
+<ul>
+<li>Address sharing of intellectual property must be made transparent</li>
+<li>Speaking on behalf of WorkSafeBC must be approved by the management</li>
+<li>Conflicts of interest will not be allowed/tolerated</li>
+<li>Privacy/confidentiality must be observed at all times</li>
+</ul>
+<hr>
+<h1>The Originality Clause</h1>
+<p>WorkSafeBC will only consider original content for publishing. Please make sure not to regurgitate something that has already been published at large and is a well known problem or issue for which there is an effective solution provided by the community.</p>
+<p>We are striving for highest possible quality content. A quality blog post is expected to propose an issue or a problem (or a set of problems) for which the author may have found an elegant, simple solution.</p>
+<hr>
 <h1>To conclude</h1>
 <p>Are you a reader of our technical blog post? Please do not hesitate to give us candid feedback to help us improve our content!</p>
 <p>Are a WorkSafeBC'tonian? Hopefully this post will serve as an inspiration for you to start and to keep on blogging. We are waiting for your call and/or your pull request!</p>
@@ -354,10 +381,11 @@ Summary: &lt;Quick summary of what post is about&gt;.
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(41)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(40)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(11)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(20)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(3)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(14)</li>
@@ -407,7 +435,7 @@ Summary: &lt;Quick summary of what post is about&gt;.
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (7)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (99)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (100)</li>
                 </ul>
              
             </div>
