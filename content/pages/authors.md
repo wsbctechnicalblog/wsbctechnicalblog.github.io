@@ -5,6 +5,18 @@ Slug: authors
 Author: WorkSafeBC
 Summary: WorkSafeBC Contributors
 
+## Aditya Chourasiyac
+
+![Aditya Chourasiya](../images/Adi-mug.png)
+
+Aditya is a hard working, proactive, go-getter. He excels in overseeing the quality assurance, monitoring and people development in a fast-paced DevOps environment. He considers information technology an important means to fulfill to customer needs and transform it to customer delight.
+
+If you would like to discuss or share feedback on his posts, please ping him on [LinkedIn](https://www.linkedin.com/in/adichourasiya/).
+
+Read Aditya's posts [here](/author/Aditya-Chourasiya.html)
+
+---
+
 ## Alex Bunardzic
 
 ![Alex Bunardzic](../images/Alex-mug.jpg)
@@ -61,9 +73,9 @@ Read Said's posts [here](../author/said-akram.html)
 
 Willy-Peter began his IT career in the early 1980s, during his electrical engineering studies, focusing on the BTOS/CTOS operating systems until he moved over to Microsoft technologies in the early ‘90s. Since then, his passion has been to investigate, research, and evangelize technology and best practises, striving for _simplicity_ and _maintainability_ in software engineering. Apart from sharing technology and transformation learnings in [tweets](https://www.twitter.com/wpschaub), blogs, [articles](https://www.opensource.com/user_articles/180826), and books such as [.NET Enterprise Solutions - Best Practises](https://1drv.ms/b/s!AoTKFn7kQntwmahQJlHkxzgjlzQv4w), [.NET Enterprise Solutions - Interoperability for the Connoisseur](https://1drv.ms/b/s!AoTKFn7kQntwmahS9OnZ20IB2aecYg), [Software Engineers on their way to Pluto](https://1drv.ms/b/s!AoTKFn7kQntwmahRBJUVSZWpWXnDAg), and [Navigating DevOps Through Waterfalls](https://www.amazon.ca/Navigating-DevOps-Through-Waterfalls-Brent/dp/1999529103), his varied and extreme interests include scuba diving, cycling, science fiction, astronomy, and, most importantly, his family. 
 
-If you would like to discuss or share feedback on my posts, please ping me on [Twitter](https://twitter.com/wpschaub) or [LinkedIn](https://www.linkedin.com/in/wpschaub/).
+If you would like to discuss or share feedback on his posts, please ping him on [Twitter](https://twitter.com/wpschaub) or [LinkedIn](https://www.linkedin.com/in/wpschaub/).
 
 > _Encourage everyone's creativity, passion, purpose, and strengths!_
 
 Read Willy's posts [here](/author/willy-peter-schaub.html)
-<br/><br/>
+
