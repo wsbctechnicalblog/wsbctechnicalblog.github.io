@@ -69,7 +69,7 @@ Read Said's posts [here](../author/said-akram.html)
 
 ## Shay Vannery
 
-![Shay Vannery](../images/shay-mug.jpeg)
+![Shay Vannery](../images/shay-mug.jpg)
 
 Helps organizations streamline their software delivery. Talk to him about Site Reliability, DevOps, Agile-at-scale and Cooking.
 
