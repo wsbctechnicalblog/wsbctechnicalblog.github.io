@@ -13,7 +13,7 @@ Aditya is a hard working, proactive, go-getter. He excels in overseeing the qual
 
 If you would like to discuss or share feedback on his posts, please ping him on [LinkedIn](https://www.linkedin.com/in/adichourasiya/).
 
-Read Aditya's posts [here](/author/Aditya-Chourasiya.html)
+Read Aditya's posts [here](/author/aditya-chourasiya.html)
 
 ---
 
