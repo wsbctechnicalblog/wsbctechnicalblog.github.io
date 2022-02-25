@@ -67,6 +67,16 @@ Read Said's posts [here](../author/said-akram.html)
 
 ---
 
+## Shay Vannery
+
+![Shay Vannery](../images/shay-mug.jpeg)
+
+Helps organizations streamline their software delivery. Talk to him about Site Reliability, DevOps, Agile-at-scale and Cooking.
+
+Read Shay's posts [here](../author/shay-vannery.html)
+
+---
+
 ## Willy-Peter Schaub
 
 ![Willy-Peter Schaub](../images/willy-schaub.png)
