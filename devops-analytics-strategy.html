@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Automation enables engineering to focus on value - </title>
+        <title>DevOps Analytics Strategy - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,122 +32,95 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-lesson-1.html" rel="bookmark"
-            title="Permalink to Automation enables engineering to focus on value">Automation enables engineering to focus on value</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/devops-analytics-strategy.html" rel="bookmark"
+            title="Permalink to DevOps Analytics Strategy">DevOps Analytics Strategy</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Sat 21 August 2021</div>
+        <div class="read-more">Posted by Aditya Chourasiya on Fri 25 February 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Asking yourself why you are performing a set of manual tasks again and again? If yes, automate!</p>
+            <p>Objective, Method and Maturity model for business analytics across an enterprise.</p>
         </div>
     
         <div class="entry-content">
-            <p>That is a question I ask myself a few times a day ... and too often answer with "nah, creating an automation script sounds like more work." But, is it really more work and are we true to our goals of alignment, automation, consistency, enablement, simplicity, and reduction of waste? </p>
-<p>When I picked a maintenance card, based on previous automation, from our Kanban board today, I decided to do a quick calculation of what effort ... if any ... I am saving by NOT doing the maintenance by hand.</p>
+            <p>As a business user, I want to make sense of all the data coming from my production system and make sure my product meets business requirements. This article summarizes different maturity model and action-sequence to achieve snow-ball effect for typical organization.</p>
+<p><img alt="Vision" src="../images/vision.png"></p>
 <hr>
-<h1>Case Study #1: Creating Iteration Paths</h1>
-<p>Roughly every two years must add 12 program increments, each with 5 iterations to our Azure DevOps (AzDO) projects and then map them to all the AzDO Teams within the AzDO project.</p>
-<p>I decided to invest some of my personal time to get some rough estimates on how long this exercise takes. Here is a summary of effort in our sandbox:</p>
-<table>
-<thead>
-<tr>
-<th>MANUAL TASK</th>
-<th align="right">REF</th>
-<th>-</th>
-<th align="right">SECONDS</th>
-<th>-</th>
-<th align="right">CLICKS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Create a program increment</td>
-<td align="right">1</td>
-<td></td>
-<td align="right">13</td>
-<td></td>
-<td align="right">9</td>
-</tr>
-<tr>
-<td>Create five (5) iterations under the program increment</td>
-<td align="right">2</td>
-<td></td>
-<td align="right">65</td>
-<td></td>
-<td align="right">90</td>
-</tr>
-<tr>
-<td>Map five iterations to a team</td>
-<td align="right">3</td>
-<td></td>
-<td align="right">11</td>
-<td></td>
-<td align="right">9</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-5.png"> </p>
-<p>So, this does not look to bad, if you make no typos. What is important to remember is that the Azure DevOps user interface only allows you to add 5 iterations to a team at a time ... not very productive, but that is a story for another post.</p>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-1.png"> </p>
-<p>The number of projects and teams is volatile, but today I would have to update 257 teams across 25 projects. Does not sound too bad. Let me get <strong>rough</strong> estimates on how many times I would have to click my keyboard and how long I would have to spend behind my laptop this weekend.</p>
-<blockquote>
-<p><strong>TASK</strong></p>
-<p>Add 12 program increments, each with 5 iterations, to each project (25) and map the (12*5=60) iterations to each team (257) in each project.</p>
-</blockquote>
-<p>Here is a visual after creating one program increment with 5 iterations:</p>
-<p><img alt="Task" src="../images/automation-lesson-1-2.png"> </p>
-<table>
-<thead>
-<tr>
-<th align="center">REF</th>
-<th>CALCULATION</th>
-<th align="right">SECONDS</th>
-<th>-</th>
-<th align="right">CLICKS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td>12 PIs * 25 projects * x = 300 * x</td>
-<td align="right">3900</td>
-<td></td>
-<td align="right">2700</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td>12 PIs * 25 projects * x = 300 * x</td>
-<td align="right">19500</td>
-<td></td>
-<td align="right">27000</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td>(120/5) * 257 teams  * x = 6168 * x</td>
-<td align="right">67848</td>
-<td></td>
-<td align="right">55512</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>TOTALS</strong></p>
-<p><strong>Seconds</strong>: 91248 = 25.367 hours and <strong>Clicks</strong> : 85212</p>
-</blockquote>
-<p>So, if I fill up my Ovomaltine mug on Saturday morning at 9AM, I will be done with the task by Sunday morning just before 11AM. A typical operational task and doable, no?!? </p>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-3.png"> </p>
+<h1>Let's start with Why</h1>
+<ul>
+<li>To continue DevOps and Agile development and leverage one of the DevOps principles – “to measure”</li>
+<li>To understand the current baseline and be able to measure progress</li>
+<li>To answer common question of - how close we are to 'done'?</li>
+<li>To raise awareness and instill team wide 'measure' from the very inception</li>
+<li>To give stakeholders and senior management on-demand visibility into systems dev and ops</li>
+</ul>
+<p><img alt="Objective" src="../images/objective.png"></p>
+<ul>
+<li>To promote Business objectives of measurements and organization wide 'manifesto'</li>
+<li>To define metrics for each group of stakeholders</li>
+<li>To develop best practices for measurements</li>
+<li>To define delivery methods for metrics</li>
+<li>To define measurement and metric delivery cadence</li>
+</ul>
+<p><img alt="Methods" src="../images/methods.png"></p>
 <hr>
-<h1>Compare it to our automation scripts</h1>
-<p>OK, now let us look at the facts ...</p>
-<p><img alt="Robot versus Humanoid" src="../images/automation-lesson-1-4.png"> </p>
-<p>I do not believe that we need to discuss this any further for "your Penny to drop" that automation, at the right time, is <strong>cost effective</strong>, <strong>productive</strong>, and <strong>consistent</strong>. Also, there is a lot less <strong>WASTE</strong>!</p>
-<p>Have a great weekend!</p>
+<h1>Phase 1 of 4 (Awareness)</h1>
+<p>This phase is focused on developing Descriptive analytics capabilities, which can help answer: “What has happened?"</p>
+<ul>
+<li>Release Dashboard- Showing all releases went/going to prod</li>
+<li>Teams assessment / DoD dashboard- Are teams doing well in assessment/ meeting DoD </li>
+<li>Data Stewards rollout - Identifying who is responsible for keeping data updated/correct</li>
+<li>Standard Team dashboards - Same dashboards across teams with auto login and rotation enable</li>
+<li>Analytics Strategy awareness - CoPs, Demo, micro learnings and Lunch and Learns about Analytics in DevOps</li>
+<li>CoP - PowerBI - PowerBI CoP establish and monthly meeting scheduled</li>
+<li>Team Business Objectives [PI/Sprint Goals] Dashboard - PI and Sprint goal dashboards from AzDo Enabler to experimental releases</li>
+<li>Business value dashboard requirement gathering - Need to gather requirement for business value reporting (Enabler for business value)</li>
+</ul>
+<hr>
+<h1>Phase 2 of 4 (Desire)</h1>
+<p>This phase is focused on developing Diagnostic analytics capabilities, which can help answer the question, “Why did it happen?"</p>
+<ul>
+<li>Experimental release support</li>
+<li>SAFe Metrics rollout</li>
+<li>Focus on and communication of DevOps Strategy</li>
+<li>Gamification of Team's matrices</li>
+<li>Analytics as a code</li>
+<li>Business value delivery prediction</li>
+<li>Make data accessible so people can play with it freely and innovate</li>
+<li>Relevant messaging and alerts through reports</li>
+<li>ROAMing Risks and Risk Registry</li>
+</ul>
+<hr>
+<h1>Phase 3 of 4 (Knowledge)</h1>
+<p>This phase is focused on developing Predictive Analytics capabilities, which can help answer the question, “What could happen?”</p>
+<ul>
+<li>Business value delivery confirmation</li>
+<li>Continuous analytics delivery through automated pipelines</li>
+<li>DevOps Program Risk (ROAM) analytics</li>
+<li>Building people skills for digital transformation based on Risk area</li>
+<li>Establish Standards and Practices for Analytics</li>
+<li>Skill requirement based recruitment</li>
+<li>Big Data integration for better analytics</li>
+</ul>
+<hr>
+<h1>Phase 4 of 4 (Ability)</h1>
+<p>This phase is focused on developing Prescriptive Analytics capabilities, which can help advise on possible outcomes and answer: “What should we do?”</p>
+<ul>
+<li>Skill based resource movement</li>
+<li>Machine learning integration to other then business value delivery</li>
+<li>Analytics Governance body</li>
+<li>Business requirement generation through analytics</li>
+<li>Measure how analytics is changing business</li>
+<li>Strategic decision making through automation</li>
+</ul>
+<hr>
+<h1>Summary and invite</h1>
+<p>This article was intended to be written in <a href="https://www.salesforce.com/blog/how-to-create-alignment-within-your-company/">V2MoM</a> format, however due to different organizational structure and needs, it will vary a lot. Based on my experience in different government and non-government organizations, the above holds true. Please feel free to submit a pull request to suggest any changes. Thank you for reading.</p>
         </div>
 
         
@@ -164,9 +137,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
-        | <a href="https://wsbctechnicalblog.github.io/automation-lesson-1.html" rel="bookmark"
-         title="Permalink to Automation enables engineering to focus on value">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a>
+        | <a href="https://wsbctechnicalblog.github.io/devops-analytics-strategy.html" rel="bookmark"
+         title="Permalink to DevOps Analytics Strategy">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
