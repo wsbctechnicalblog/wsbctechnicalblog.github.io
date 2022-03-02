@@ -1,10 +1,10 @@
 Title: Stop the meeting overload!
-Date: 20212-02-25
+Date: 20212-03-11
 Category: Posts
 Tags: eliminate-waste
 Slug: stop-the-meeting-hell
 Author: Willy-Peter Schaub
-Summary: Notes from a recent improvement "meeting" to stop meetings. 
+Summary: My personal crusade to optimize meetings and associated WASTE
 
 Thank you for the opportunity to collaborate on a very important topic, that will help us raise productivity and lower stress … as well as errors caused by excessive context switching.
 
@@ -20,7 +20,7 @@ Correct?
 
 Then why are we using the worst Microsoft Teams feature to call a colleague who is busy in another scheduled event to join your meeting?
 
-This causes interruptions for all … be right back … Willy what do you think … Willy? … back … What did I miss? These interruptions drive me insane. 
+This context switching and causes interruptions for all … be right back … Willy what do you think … Willy? … back … What did I miss? These interruptions drive me insane. 
 
 For the person being teleported out of the meeting it means a context switch … and I, for example, start making mistakes and forgetting things when I battered by context switching.
 
@@ -45,9 +45,9 @@ Looking at this example we will notice a few things.
 1. We have back-to-back meetings. Context-switching hell, with few opportunities to take a break.
 2. Double and triple booked meetings … how many clones of me are you expecting to join your meetings?
 3. Meetings booked after working hours ... unthought of in the days of people walking out of the office to catch their last bus.
-4. Everyone is working extra hours to catch-up with their commitments … as productivity outside of meetings was low all day.
+4. Everyone is working extra hours to try to catch-up with their commitments.
 
-In fact, this person had 4 hours to relax or work during four working days. That means this person spend 87.5% productive hours going from meeting to meeting without a break. That is crazy and NOT sustainable. 
+In fact, this person had 4 hours to relax or work during four working days. That means this person spend most of the day going from meeting to meeting without a break. That is not healthy and NOT sustainable. 
 
 In our regular stress-o-meter polls the feedback clearly points to one worrying outcome of this madness, namely “STRESS”.
 
