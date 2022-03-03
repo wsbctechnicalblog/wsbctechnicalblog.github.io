@@ -1,5 +1,5 @@
 Title: Continuous Delivery in the enterprise
-Date: 2022-03-05
+Date: 2022-03-04
 Category: Posts
 Tags: continuous-delivery, delivery-on-demand
 Slug: continuous-delivery-in-the-enterprise
