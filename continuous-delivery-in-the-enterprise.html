@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Don’t debug; do TDD instead - </title>
+        <title>Continuous Delivery in the enterprise - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,52 +32,54 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/dont-debug.html" rel="bookmark"
-            title="Permalink to Don’t debug; do TDD instead">Don’t debug; do TDD instead</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/continuous-delivery-in-the-enterprise.html" rel="bookmark"
+            title="Permalink to Continuous Delivery in the enterprise">Continuous Delivery in the enterprise</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 02 December 2021</div>
+        <div class="read-more">Posted by Shay Vannery on Fri 04 March 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Avoid wasteful debugging activities by creating automated tests using TDD technique</p>
+            <p>Continuous Delivery is no silver bullet and requires persistence, discipline and effort.</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Dojo" src="../images/debug.jpeg"></p>
-<p>When creating software, we often realize that the solution we’ve created does not behave the way we expect it to behave. We move into creating software with certain intentions (I call those intentions expectations). We materialize those expectations by writing code. If we are not careful when writing code, the code we wrote may end up having a few bugs. Hopefully, those bugs get identified before we release our changes to the customers. Unfortunately, that’s not always the case and sometime bugs get discovered in production, by the end users.</p>
-<p>Now we need to fix the bugs. And how do we do that? We debug. The debugging process is a technique for identifying bugs in the code.</p>
-<p>There are three different ways we debug code:</p>
+            <p>Businesses have been adopting a Digital-first approach to interact with their customers since the advent of the internet. The global pandemic of 2019 further accelerated this trend. Today, it has become more important than ever before for a service-based organization to have a robust web presence. Customer expectations are at all-time highs; and organizations are expected to be highly-available; highly-accessible; and provide an online experience comparable to high-tech ecommerce &amp; content streaming companies. This requires organizations to make quick, seamless transitions when faced with security concerns &amp; changing business priorities.</p>
+<p>The answer is <strong>Continuous Delivery</strong>.</p>
+<blockquote>
+<p><img alt="Continuous Delivery" src="../images/continuous-delivery-in-the-enterprise-1.png"></p>
+</blockquote>
+<hr>
+<h1>What is Continuous Delivery anyway?</h1>
+<p>In his book on Continuous Delivery, author Martin Fowler defines Continuous Delivery as “a software development discipline where you build software in such a way that the software can be released to production at any time”.</p>
+<p>In layperson’s terms; Continuous Delivery is the ability to get changes of all types into the hands of end-users, quickly, safely &amp; seamlessly; thereby making production releases routine non-events. </p>
+<p>I like to think of continuous delivery as replacing components of an airplane while it is in-flight and full of passengers. Or performing an organ transplant on an athlete while she is running a marathon. </p>
+<p>Amusing metaphors aside, Continuous Delivery makes it possible to continuously make changes to software as required by the end-user or the business.</p>
+<hr>
+<h1>Why do WE need this?</h1>
+<p>Traditional organizations with legacy footprints often make the mistake of ignoring cutting edge software engineering methodologies; thinking of it as unnecessary or overkill. However, the benefits of Continuous Delivery can be observed &amp; measured quickly in organizations of all sizes, in all industry verticals. Some of these benefits are as follows:</p>
 <ol>
-<li>We debug the code we wrote</li>
-<li>We debug the code someone else wrote and we have the source code</li>
-<li>We debug the code we wrote that uses the code someone else wrote but we don’t have their source code</li>
+<li>
+<p><strong>Minimized risk</strong> – Smaller, more frequent releases reduce risk. The chances of bugs creeping into production, or features not functioning as intended are far lower. It also becomes possible to quickly identify &amp; remediate any errors without outages or degraded performance.</p>
+</li>
+<li>
+<p><strong>Improved Quality</strong>– When cross-functional teams work together, leverage automation, test and integrate changes frequently; overall quality improves. Teams are able to avoid re-work and focus on delivering value to the customer. They can also get quicker, timely feedback and focus on building a better, more relevant product.</p>
+</li>
+<li>
+<p><strong>Improved Predictability</strong> – By following a predictable &amp; standardized sequence of activities (sometimes known as deployment pipeline) teams can avoid surprises caused by human error, code, integration or environmental issues. </p>
+</li>
+<li>
+<p><strong>Lowered Costs</strong> – Automating repeatable &amp; manual tasks can lead to significant cost savings. In theory, teams can avoid working over-time after business hours. As releases become non-events, teams can move away from war-rooms, incident mitigation protocols and the massive amount of coordination effort these require. </p>
+</li>
+<li>
+<p><strong>Improved work-life balance</strong> – Less panic, less fire-fighting, leads to a more fruitful employee experience, free of blame and unnecessary stress caused by fear of the unknown and looming deadlines. </p>
+</li>
 </ol>
-<p>In each of the above three cases, we aim at <em>slowing down</em> the program execution. If we are not debugging, we activate the code by running the app (the program) and observing how the app behaves. If the app crashes, we have a serious defect somewhere. If the app doesn’t crash but behaves erratically (for example, displays incorrect information or takes us to an incorrect part of the app, or sends incorrect information to some other systems), we have detected that there is a bug somewhere (but we don’t know where). Now’s the time to hunt for that bug (or bugs). We typically hunt for it by slowing down the execution of the program.</p>
-<p>How do we slow down the execution? There are basically two ways to do that:</p>
-<ol>
-<li>We add new lines of code that print some values to the output (a console, or a printer)</li>
-<li>We add a breakpoint at some line of the code</li>
-</ol>
-<p>Either of these tricks are intrusive; they make the cut into the body of the code so that the troubleshooting engineers could pry into the innards of the system.</p>
-<p>Furthermore, not only are debugging activities intrusive, but they are also wasteful. Nothing useful gets produced after spending some time debugging. The best we can hope for after a successful debugging session is to gain a better understanding of how the system works. But that understanding was achievable even without debugging, by simply reading the source code carefully.</p>
-<p>The worst part of any debugging activity is that it is 100% manual. We manually add new lines of code that output some values, or we manually add breakpoints to the code. When the program execution reaches the breakpoint, we then manually step through the code and manually inspect the produced values. Extremely tedious and error prone.</p>
-<p>As if that activity was not inefficient enough, an even worse part is that we cannot record the debugging session and reuse it later. If sometimes later the same or very similar bug returns, we need to repeat the same tedious manual process of debugging. Very wasteful, to say the least. Add to that the fact that it is literally impossible to estimate how long will any debugging session last (we are fishing for results, basically), and we get an extremely non-productive way of working (I’ve seen situations where teams sometimes waste days debugging).</p>
-<h2>How to avoid wasting time with debugging activities?</h2>
-<p>Any time we discover a bug, we realize that our expectation hasn’t been met but the running code. Rather than rolling up our sleeves and wasting time by getting immersed in tedious debugging activities (as described above), we should strive to work smarter, not harder.</p>
-<p>A much more productive approach to removing any bugs is to first formulate our expectation. If we do not take the time to formulate our expectation, we analyze program’s execution while keeping our expectation in our heads. It is of very little use being kept there. Instead, we should always insist to write our expectation down.</p>
-<p>When creating software, the best way to write our expectation down is to craft a test. A test is much simpler and easier to write than the implementation code. If done properly, a written test cannot contain any bugs (by ‘properly’ I mean the test must never contain any processing logic).</p>
-<p>Because we know exactly what we expect from the code when it runs, the test we wrote will fail (the bug in the implemented code will cause the program to fail to satisfy the expectation written in the test, which makes the test fail). Now we have the evidence that something is broken. And now is the time to work on fixing the breakage.</p>
-<h2>Why is this approach better than debugging?</h2>
-<p>To begin, notice how we did not have to make any incision into the implemented code. No need to add any output statements, nor do we have to enforce any breakpoints in the code.</p>
-<p>Secondly, we have explicitly expressed our expectation. This is useful not only in guiding our own thinking, but also facilitates successful teamwork. We can interrupt our programming session and let other team members pick up the slack and continue exactly from where we stopped, because they will be guided by the test we wrote.</p>
-<p>Thirdly, we did not have to slow the program execution down. We did not interrupt the flow. The test runs and executes the program and does not expect the program to run slower so that the automated test could examine it. That is a huge time saver and a big productivity boost.</p>
-<p>And lastly, our tests are recorded, and are repeatable to our hearts content. If later the same or a similar bug reenters the system, we don’t have to start from square one. We just let tests detect the breakage (fail early) and then use the tests to guide the process of fixing it. That way, we are safeguarded from allowing the breakage to bleed through into production.</p>
-<p>Writing tests to replace any debugging time wasters is the best strategy to safely grow our products. Everything we write must be fully testable. That way, bugs will be prevented from ever entering our codebase.</p>
+<p>Admittedly, Continuous Delivery is no silver bullet. Just like diet, exercise and meditation; Continuous Delivery requires persistence, discipline and effort. It is imperative for all organizations today to examine the way they perform work, where they invest time and effort, and make data-driven investments in their delivery pipeline; so they may continue to be relevant in our rapidly changing world.  </p>
         </div>
 
         
@@ -94,9 +96,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
-        | <a href="https://wsbctechnicalblog.github.io/dont-debug.html" rel="bookmark"
-         title="Permalink to Don’t debug; do TDD instead">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery </a><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand </a>
+        | <a href="https://wsbctechnicalblog.github.io/continuous-delivery-in-the-enterprise.html" rel="bookmark"
+         title="Permalink to Continuous Delivery in the enterprise">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
