@@ -47,7 +47,7 @@ Looking at this example we will notice a few things.
 3. Meetings booked after working hours ... unthought of in the days of people walking out of the office to catch their last bus.
 4. Everyone is working extra hours to try to catch-up with their commitments.
 
-In fact, this person had 4 hours to relax or work during four working days. That means this person spend most of the day going from meeting to meeting without a break. That is not healthy and NOT sustainable. 
+This person spend most of the day going from meeting to meeting without a break. That is not healthy and NOT sustainable. 
 
 In our regular stress-o-meter polls the feedback clearly points to one worrying outcome of this madness, namely “STRESS”.
 
@@ -63,7 +63,7 @@ As per our team working agreement, we are trying hard to …
 - We expand all three lettered acronyms when speaking to ensure we create no time wasting confusion.
 - Conclude every meeting with actionable notes.
 
-In addition, I have asked my team to block out their lunch hours and to decline all double bookings to reduce the context switching and associated.
+In addition, I have asked my team to block out their lunch hours and decline double bookings to reduce the context switching and associated stress. In terms of double bookings, I am not referring to meetings we have not committed to, but keep in our calendars for reference, but instead to an ask or expectation to commit to be in two calls at the same time.
 
 ![What we should all do](../images/stop-the-meeting-hell-8.PNG)
 
