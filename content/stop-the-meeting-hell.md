@@ -1,5 +1,5 @@
 Title: Stop the meeting overload!
-Date: 20212-03-11
+Date: 20212-03-09
 Category: Posts
 Tags: eliminate-waste
 Slug: stop-the-meeting-hell
