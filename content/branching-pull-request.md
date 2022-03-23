@@ -20,7 +20,7 @@ TBD
 
 > MYTH 2 - One branching strategy is better than another!
 >
-> _TBD_
+> _There is no silver bullet! Avoid the debates and invest time to experiment with a few of the common branching strategies, to determine the best fit for your PEOPLE, PROCESS, and PRODUCTS._ 
 
 ---
 
@@ -30,11 +30,15 @@ TBD
 
 > MYTH 3 - Pull-requests slow down your continuous integration value stream!
 >
-> _A pull request takes as long as you and your process allow it to sit in a corner and wait. We encourage our engineers to track the lead and cycle times of pull requests using the [Pull Request Completion Report](https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport&targetId=dc216ba3-25e9-46a8-823a-fb77a81f2a9f) and to **collaborate** with their peers to ensure that pull requests do not go stale._
+> _A pull request takes as long as you and your process allow it to sit in a corner to gather dust. We encourage our engineers to track the lead and cycle times of pull requests using the [Pull Request Completion Report](https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport&targetId=dc216ba3-25e9-46a8-823a-fb77a81f2a9f) and to **collaborate** with their peers to ensure that pull requests do not go stale._
 
-> MYTH 4 - Trunk-based branching strategy and use of pull requests is a NO-NO!
+> MYTH 4 - Pull-requests are manual gates
 >
-> _TBD_
+> _In theory a pull request (in Azure DevOps) could be all automated, based on policies, validation builds, and other validations. It is as manual and/or automated as YOU decide to configure your policies and guardrails._
+
+> MYTH 5 - Trunk-based branching strategy and use of pull requests is a NO-NO!
+>
+> _"In theory" the trunk-based strategy is based on short-lived feature branches and merging changes directly with the master branch. Using a pull request as a pre-merge validation does not change the strategy, it merely inject a final countdown checkpoint before you commit your code changes to the "always deployable" master|main branch. It is an opportunity to move your scale of **trust**, not a matter of changing the branching strategy._
 
 ---
 
