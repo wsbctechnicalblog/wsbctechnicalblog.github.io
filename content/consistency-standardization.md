@@ -44,7 +44,7 @@ Why we love consistency and standardization:
 
 - **Consistency empowers automation** - We frequently say that "_if you do something twice or trice, consider automation!_" While this is solid guidance, automation becomes a lot easier if you have a consistent process and products at your disposal.
 
-- **Standardization reduces cost and time** - By adopting industry standards we improve upgrades, maintenance, migrations, security, and scalability of our solutions. As with consistency, a reduction in cost with a rise in quality is a well-received side effect.
+- **Standardization reduces cost and time** - By adopting industry standards we improve upgrades, maintenance, migrations, security, and scalability of our solutions. By standardizing **processes** and **products**, we improve clarity and productivity, because engineers can focus on delivering value in a predefined way without the need to master a platter of variations.  As with consistency, a reduction in cost with a rise in quality, repeatability, and security is a well-received side effect.
 
 - **Standardization promotes consistency** - As shown in the previous example of drawing rectangles based on a standard, we can produce consistent squares and Lego can continue to produce a treasure chest of building blocks.
 
