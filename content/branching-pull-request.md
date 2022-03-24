@@ -32,7 +32,7 @@ See [trunk-based release from branch](https://trunkbaseddevelopment.com/branch-f
 
 > MYTH 1 - Trunk-based branching strategy is suited only for small and experienced teams!
 >
-> _The [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) and [Microsoft Office](https://devblogs.microsoft.com/devops/improving-azure-devops-cherry-picking/) are two very large teams that poof that the trunk-based branching strategy scales from small and rapid experimentation and innovation teams, to large product-based teams._
+> _The [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) and [Microsoft Office](https://devblogs.microsoft.com/devops/improving-azure-devops-cherry-picking/) are two very large teams that demonstrate the trunk-based branching strategy scales from small and rapid experimentation and innovation teams, to large product-based teams._
 
 The takeaway for you is that the answer to "_what branching strategy is ideal for you?_" is "_it depends on the outcome of your experiments!_"
 
@@ -59,7 +59,7 @@ So, we are talking about minutes to add immense value and ensure that the change
 >
 > _In theory a pull request (in Azure DevOps) could be all automated, based on policies, validation builds, and other validations. It is as manual and/or automated as YOU decide to configure your policies and guardrails._
 
-If you wonder whether it is a sin to use pull requests with trunk-based branching strategies you can review [continuous code review](https://trunkbaseddevelopment.com/continuous-review/) and watch the [trunk-based development](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) video. 
+If you wonder whether it is a sin to use pull requests with trunk-based branching strategies, read [continuous code review](https://trunkbaseddevelopment.com/continuous-review/) and watch the [trunk-based development](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) video. 
 
 > MYTH 5 - Trunk-based branching strategy and use of pull requests is a NO-NO!
 >
