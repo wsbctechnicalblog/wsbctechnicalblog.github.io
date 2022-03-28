@@ -61,7 +61,7 @@ The reason we want to **automate** these types of mind-numbing tasks is that the
 
 ![Consistency](../images/consistency-standardization-4.png) 
 
-Although it appears like a trivial issue, when we aggregate the process into a more complex solution that expects **consistent** squares, the **failure rate** for the manually created squares will be much higher than the squares created through automation. In fact, although both sets of objects look like squares, we will observe a 100% versus 25% pass rate for the automated and manual processes respectively. In this sample example, this implies a 75% WASTE!
+Although it appears like a trivial issue, when we aggregate the process into a more complex solution that expects **consistent** squares, the **failure rate** for the manually created squares will be much higher than the squares created through automation. In fact, although both sets of objects look like squares, we will observe a 100% versus 25% pass rate for the automated and manual processes respectively. In this simple example, this implies a 75% WASTE!
 
 ![Consistency](../images/consistency-standardization-5.png) 
 
@@ -70,7 +70,7 @@ Last, but not least, we acknowledge that autonomy, mastery, and purpose is the s
 > **MY 2 CENTS**
 > 
 > - The smaller your organization the more you can pivot to autonomy.
-> - The greater your organization and rotation of engineers, the more you can pivot to consistency and standardization. 
+> - The bigger your organization and rotation of engineers, the more you can pivot to consistency and standardization. 
 
 We, for example, empower our engineers to contribute to our common engineering system and our supporting (not enforcing) guardrails through [centers of enablement and associated working groups](/ceremony-overview.html), to empower all engineers to do end-to-end tasks more efficiently, while nurturing their mastery and purpose. A win:win!
 
