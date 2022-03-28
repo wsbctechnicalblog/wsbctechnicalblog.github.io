@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Quick peek into regular expressions - </title>
+        <title>WHY are we pushing consistency and standardization? - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,128 +32,77 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/peek-into-regular-expressions.html" rel="bookmark"
-            title="Permalink to Quick peek into regular expressions">Quick peek into regular expressions</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/consistency-standardization.html" rel="bookmark"
+            title="Permalink to WHY are we pushing consistency and standardization?">WHY are we pushing consistency and standardization?</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 13 April 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 28 March 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Regular expressions are fundamental to programming</p>
+            <p>Balancing autonomy with consistency and standardization.</p>
         </div>
     
         <div class="entry-content">
-            <p>When I reviewed a pull request with a few commits focused on regular expression code changes, I decided to re-create a quick reference cheat sheet. Regular expression (regex), a variant of conventional set theory, has a few oddities with infrequent use. Hopefully this cheat sheet will turn regular expressions into a less daunting ally in your world programming and configuration.</p>
-<blockquote>
-<p>Regular Expressions</p>
-<p><img alt="Regular Expressions" src="/images/peek-into-regular-expressions-1.png"></p>
-</blockquote>
+            <p><strong>WHY</strong> do we keep mentioning <strong>consistency</strong> and <strong>standardization</strong> like a broken record in <a href="/common-engineering-journal-1.html">Journal 1 - What is origin of our common engineering team?</a> and many other posts? </p>
+<p>Before we explore the answer, let us explore our understanding of consistency and standardization.</p>
 <hr>
-<h1>Common Expressions</h1>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Special Characters</td>
-<td>.<br/>\.<br/>\n<br/>\f<br/>\t<br/>\xhhhh</td>
-<td>any character<br/>dot<br/>newline character<br/>form feed character<br/>tab character<br/>Unicode character as hexadecimal number, i.e. \xFFFF</td>
-</tr>
-<tr>
-<td>Quantifiers</td>
-<td>+<br/>?<br/>*<br/>{x,y}</td>
-<td>1 or more<br/>0 or one<br/>0 or more<br/>at least ‘x’ but no more that ‘y’ occurrences</td>
-</tr>
-<tr>
-<td>Character Sets</td>
-<td>\s<br/>\S<br/>\d<br/>\D<br/>\w<br/>\W<br/> [a-x] <br/>[^a-x]</td>
-<td>whitespace character<br/>non-whitespace character<br/>digit character (0-9) <br/>non-digit character<br/>any letter (a-zA-Z) or digit (0-9) or underscore (_) character <br/>non-word character<br/>characters in the range of a to x, excluding yz<br/>characters except in the range of a to x, i.e. y and z</td>
-</tr>
-<tr>
-<td>Anchoring</td>
-<td>^<br/>$<br/>\b<br/>\B</td>
-<td>if first char, indicates that match starts at start of  string<br/>match must continue to end of string<br/>word boundary<br/>non-word boundary</td>
-</tr>
-</tbody>
-</table>
+<h1>Consistency</h1>
+<p><strong>Consistency</strong> is coherence, a key pillar in engineering. It empowers a unified whole, such as a common engineering system or a complex solution that is maintainable and extensible.</p>
+<p><img alt="Consistency" src="../images/consistency-standardization-1.png"> </p>
+<p>The previous illustration shows twelve <strong>consistent</strong> squares that have the same height, width, and colouring. A great example of consistency is <a href="https://www.lego.com/">LEGO</a> which offers us an assortment of consistent building blocks, with which we can follow directions or experiment in creating simple or complex objects, based on consistent building blocks.</p>
 <hr>
-<h1>Example</h1>
+<h1>Standardization</h1>
+<p><strong>Standardization</strong> is another pillar of engineering. It is the process of observing guidance, guardrail, standard, or governance.</p>
+<p><img alt="Standardization" src="../images/consistency-standardization-2.png"> </p>
+<p>In the illustration, above, we have defined a guardrail that the height and width of the rectangle must be equal and that all lines are straight and parallel - a recipe to create a rectangle, also known as a square.</p>
+<p>Standardization is pivotal with designs, producing <strong>consistent</strong> interfaces, solutions, and uniformity that empowers people to be more effective.</p>
+<hr>
+<h1>Back to the question ... why do we promote consistency and standardization?</h1>
+<p>Why we love consistency and standardization:</p>
+<ul>
+<li>
+<p><strong>Consistency improves adoption</strong> - Once we become familiar with a process or product, resistance to explore and embrace others will evaporate. For example, if you know how to use Office 365 Word, you can navigate yourself around Office 365 Excel or PowerPoint with familiarity and without friction.</p>
+</li>
+<li>
+<p><strong>Consistency reduces cost and time</strong> - Usability and learnability improves with consistency, which empowers engineering to deliver value quicker and continuously. Reducing time and anomalies, reduces cost - a favourable side-effect for investors and researchers.</p>
+</li>
+<li>
+<p><strong>Consistency empowers automation</strong> - We frequently say that "<em>if you do something twice or thrice, consider automation!</em>" While this is solid guidance, automation becomes a lot easier if you have a consistent process and products at your disposal.</p>
+</li>
+<li>
+<p><strong>Standardization reduces cost and time</strong> - By adopting industry standards we improve upgrades, maintenance, migrations, security, and scalability of our solutions. By standardizing <strong>processes</strong> and <strong>products</strong>, we improve clarity and productivity, because engineers can focus on delivering value in a predefined way without the need to master a platter of variations.  As with consistency, a reduction in cost with a rise in quality, repeatability, and security is a well-received side effect.</p>
+</li>
+<li>
+<p><strong>Standardization promotes consistency</strong> - As shown in the previous example of drawing rectangles based on a standard, we can produce consistent squares and Lego can continue to produce a treasure chest of building blocks.</p>
+</li>
+</ul>
+<p>For example, once we have a <strong>standardized</strong> process to produce rectangles with equal sides, aka squares, we can hand it to a machine to automate, and repeat to create <strong>consistent</strong> squares continuously.</p>
+<p><img alt="Consistency" src="../images/consistency-standardization-3.png"> </p>
+<p>The reason we want to <strong>automate</strong> these types of mind-numbing tasks is that they are well suited for machines. If we ask a humanoid to repeat the same <strong>standardized</strong> process we will end up with inconsistent squares, as shown.</p>
 <blockquote>
-<p>Regular Expression Example</p>
-<p><img alt="Regular Expression Example" src="/images/peek-into-regular-expressions-2.png"></p>
+<p><strong>MY 2-CENTS</strong></p>
+<ul>
+<li>Humans are not suited for mind-numbing and repetitive work. Context switching, distractions, and mental fatique will affect quality <strong>sooner</strong> than later. </li>
+<li>Machines, on the other hands, thrive on repetitive work and deliver continuously and consistently, as long as there is power.</li>
+</ul>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">#</th>
-<th align="center">EXPRESSION</th>
-<th>DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">^</td>
-<td>The first character ^ indicates that the next match (19|20) starts at beginning of string.</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">(19|20)</td>
-<td>We either need a 19 or a 20 at the beginning of the string.</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">\d\d</td>
-<td>Next we have two digit character (0-9).</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">[- /.]</td>
-<td>Next we have a range of valid characters, in this case minus, slash, space and dot.</td>
-</tr>
-<tr>
-<td align="center">5.1</td>
-<td align="center">(0[1-9]</td>
-<td>Either we have a 0, followed by a digit in the range of 1-9, i.e. 01 to 09.</td>
-</tr>
-<tr>
-<td align="center">5.2</td>
-<td align="center">|1[012])</td>
-<td><strong>OR</strong> we have a 1, followed by a zero, one or two, i.e. 10, 11 or 12.</td>
-</tr>
-<tr>
-<td align="center">6.1</td>
-<td align="center">(0[1-9]</td>
-<td>Either we have a 0, followed by a digit in the range of 1-9, i.e. 01 to 09.</td>
-</tr>
-<tr>
-<td align="center">6.2</td>
-<td align="center">|[12][0-9)</td>
-<td><strong>OR</strong> we have a 1 or a 2, followed by a digit in the range of 0-9, i.e. 10 to 29.</td>
-</tr>
-<tr>
-<td align="center">6.3</td>
-<td align="center">|3[01])</td>
-<td><strong>OR</strong>** we have a three, followed by a zero or a one, i.e. 30 - 31.</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">$</td>
-<td>The last character $ indicates that the next match must continue to end of string.</td>
-</tr>
-</tbody>
-</table>
-<p>If you need more examples, go to <a href="http://www.regular-expressions.info/">regularexpressions.info</a>.</p>
+<p><img alt="Consistency" src="../images/consistency-standardization-4.png"> </p>
+<p>Although it appears like a trivial issue, when we aggregate the process into a more complex solution that expects <strong>consistent</strong> squares, the <strong>failure rate</strong> for the manually created squares will be much higher than the squares created through automation. In fact, although both sets of objects look like squares, we will observe a 100% versus 25% pass rate for the automated and manual processes respectively. In this sample example, this implies a 75% WASTE!</p>
+<p><img alt="Consistency" src="../images/consistency-standardization-5.png"> </p>
+<p>Last, but not least, we acknowledge that autonomy, mastery, and purpose is the secret sauce that drives information workers (See <a href="https://youtu.be/u6XAPnuFjJc">Pink</a> for details). It is important that we balance <strong>consistency</strong> and <strong>standardization</strong> with <strong>autonomy</strong>. </p>
+<blockquote>
+<p><strong>MY 2 CENTS</strong></p>
+<ul>
+<li>The smaller your organization the more you can pivot to autonomy.</li>
+<li>The greater your organization and rotation of engineers, the more you can pivot to consistency and standardization. </li>
+</ul>
+</blockquote>
+<p>We, for example, empower our engineers to contribute to our common engineering system and our supporting (not enforcing) guardrails through <a href="/ceremony-overview.html">centers of enablement and associated working groups</a>, to empower all engineers to do end-to-end tasks more efficiently, while nurturing their mastery and purpose. A win:win!</p>
         </div>
 
         
@@ -170,9 +119,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters </a>
-        | <a href="https://wsbctechnicalblog.github.io/peek-into-regular-expressions.html" rel="bookmark"
-         title="Permalink to Quick peek into regular expressions">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="https://wsbctechnicalblog.github.io/consistency-standardization.html" rel="bookmark"
+         title="Permalink to WHY are we pushing consistency and standardization?">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
