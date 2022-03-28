@@ -1,5 +1,5 @@
 Title: WHY are we pushing consistency and standardization?
-Date: 2022-03-25
+Date: 2022-03-28
 Category: Posts
 Tags: eliminate-waste, technical-excellence
 Slug: consistency-standardization
