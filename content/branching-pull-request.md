@@ -19,16 +19,17 @@ We have been experimenting with GitFlow and Trunk-based branching strategies and
 WHY?
 
 - It is simple.
-- It been adopted by our engineering teams.
+- It has been adopted by our engineering teams.
 - It fits well with our [app-type blueprint](/yaml-pipelines-part10.html) initiative.
 
-![TIP](../images/branching-pull-request-1.png) I am NOT saying that is the best strategy but based on experimentation it fits our **people**, **process**, and **products**.
+![TIP](../images/branching-pull-request-1.png) 
+I am NOT saying that is the best strategy but based on experimentation it fits our **people**, **process**, and **products**.
 
 > MYTH 1 - One branching strategy is better than another!
 >
 > _There is no silver bullet! Avoid the debates and invest time to experiment with a few of the common branching strategies, to determine the best fit for your PEOPLE, PROCESS, and PRODUCTS._ 
 
-See [trunk-based release from branch](https://trunkbaseddevelopment.com/branch-for-release/) for the variant that we are using, based on learning from the [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017). It is a strategy that works well for the 1-2 pizza sized teams, as well as product teams with hundreds to thousands of engineers.
+See [trunk-based release from branch](https://trunkbaseddevelopment.com/branch-for-release/) for the variant that we are using, based on learning from the [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) team. It is a strategy that works well for the 1-2 pizza sized teams, as well as product teams with hundreds to thousands of engineers.
 
 > MYTH 1 - Trunk-based branching strategy is suited only for small and experienced teams!
 >
