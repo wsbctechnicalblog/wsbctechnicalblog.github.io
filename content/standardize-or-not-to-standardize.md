@@ -3,7 +3,7 @@ Date: 2022-04-06
 Category: Posts
 Tags: journal, innovation
 Slug: standardize-or-not-to-standardize
-Author: Andre Kaminsiki
+Author: Andre Kaminski
 Summary: Which is better, standardization or experimentation?
 
 I have to admit that I don’t like going shopping, so I leave it mostly to my wife. If I have to go to a store, I want to finish this exercise as quickly as possible, as … I find it boring.
