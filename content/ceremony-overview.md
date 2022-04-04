@@ -19,7 +19,7 @@ The overview image highlights that the heart of our ceremonies is the CoE provid
 - [Community of Practice](/ceremony-community-of-practice.html) (CoP)
 - [Dojo](/dojo-events.html)
 - [Townhall](/townhall.html)
-- [Working Group](../ceremony-working-group.html)
+- [Working Group](/ceremony-working-group.html)
 
 # Frequently asked questions
 
@@ -41,7 +41,7 @@ List of questions we will cover herein:
 
 ![Join](../images/ceremony-overview-3.png)
 
-The [Center of Enablement](/ceremony-center-of-enablement.html) and [Working Group](../ceremony-working-group.html) are by invitation only for the active and core members. You can request to be invited to these events as a "fly on the wall" to observe, not interrupt.
+The [Center of Enablement](/ceremony-center-of-enablement.html) and [Working Group](/ceremony-working-group.html) are by invitation only for the active and core members. You can request to be invited to these events as a "fly on the wall" to observe, not interrupt.
 
 The [Community of Practice](/ceremony-community-of-practice.html), [Dojo](/dojo-events.html), and [Townhall](/townhall.html) ceremonies are open to everyone. You should be engaged and committed to collaborate when joining these events and introduce yourself to the Sensei for Dojos out of respect. 
 
@@ -125,7 +125,7 @@ A **working group** is a group of people working together to collaborate and ach
 
 A **CoE working group** is short-lived and sponsored by one or more Centers of Enablement, its terms of reference (vision, goals, hypothesis) a subset of and supporting the CoE terms of reference. In other words, there is a strong dependency between a sponsoring and other collaborating CoEs.
 
-See [Why can I not just create a working group?]https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html) for details.
+See [Why can I not just create a working group?](https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html) for details.
 
 ---
 
