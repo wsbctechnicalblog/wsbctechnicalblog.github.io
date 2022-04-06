@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why we use pull requests with our trunk-based branching strategies - </title>
+        <title>Common Engineering - To Standardize or Not to Standardize, view from a directors point - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,71 +32,88 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/branching-pull-request.html" rel="bookmark"
-            title="Permalink to Why we use pull requests with our trunk-based branching strategies">Why we use pull requests with our trunk-based branching strategies</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/standardize-or-not-to-standardize.html" rel="bookmark"
+            title="Permalink to Common Engineering - To Standardize or Not to Standardize, view from a directors point">Common Engineering - To Standardize or Not to Standardize, view from a directors point</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 01 April 2022</div>
+        <div class="read-more">Posted by Andre Kaminski on Wed 06 April 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Busting a few process myths around branching strategies and pull-requests</p>
+            <p>Which is better, standardization or experimentation?</p>
         </div>
     
         <div class="entry-content">
-            <p>If you want to ignite a debate in a pub, casually start chatting about politics. In a [virtual] room of software engineers, gently mention branching strategies and pull requests. In both scenarios you can sit back and enjoy the vibrant chain reaction of experiences, opinions, and myths. In this brief article I will share our experience, our <a href="/consistency-standardization.html">standardization</a> of branching strategies, our use of <a href="/pull-requests-friend.html">pull requests</a> and bust a few myths along the way.</p>
-<hr>
-<h1>Branching Strategies</h1>
-<p>There are many, such as <a href="https://trunkbaseddevelopment.com/">trunk-based</a>, <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">GitFlow</a>, <a href="https://githubflow.github.io/">GitHubFlow</a>, and derivations as documented by the former <a href="https://vsardata.blob.core.windows.net/projects/TFS%20Version%20Control%20Part%201%20-%20Branching%20Strategies.pdf">Microsoft ALM/DevOps Rangers</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=azure-devops">Microsoft Docs</a>.</p>
-<p>We have been experimenting with GitFlow and Trunk-based branching strategies and are supporting both as part of our common engineering ecosystem and associated guardrails (aka governance). Based on a push for consistency and standardization we are recommending the <a href="https://trunkbaseddevelopment.com/">trunk-based</a> branching strategy, with release branches, as used by the Azure DevOps product team.</p>
-<p>WHY?</p>
+            <p>I have to admit that I don’t like going shopping, so I leave it mostly to my wife. If I have to go to a store, I want to finish this exercise as quickly as possible, as … I find it boring.</p>
+<p>The biggest frustration I have is when my wife sends me to a supermarket, and suddenly I realize that they changed location of aisles with specific products. This is most probably one of the very few occasions when you can hear me swearing, and where I pray for standardization. Standardization makes our lives so much easier and efficient.</p>
+<blockquote>
+<p><img alt="shopping" src="../images/standardize-or-not-to-standardize-1.png"></p>
+</blockquote>
+<p>So now I have to navigate through the aisles and shelves, still swearing, trying to find what I have on my list.
+But guess what. Sometimes, unexpectedly I get lost in an unknown aisle and find some new ethnic produce that I have never tried. Since I am a risk taker, quite often I discover a new food that extends my cooking abilities and menu horizon (which mostly, but not always, is pleasing to my wife and kids).</p>
+<p>This is actually a great example of benefits and limitations of standardization versus experimentation.</p>
+<p>Standardization allows us to be more efficient and faster in the Cynefin framework parlor - simple or complicated processes. In this case finding a standard product that I have used in the past, and which my wife put on the list, is way easier and faster. However the cost of this efficiency is a loss of creativity. While being focused on collecting what I need, I mostly miss the discovery part.</p>
+<p>Henri Fayol and Henry Ford mastered the standardization and repeatability of processes to perfection. But again, manufacturing of widgets or cars belongs to simple (T-Model) or complicated domains (Tesla).</p>
+<blockquote>
+<p><img alt="manufacturing" src="../images/standardize-or-not-to-standardize-2.png"></p>
+</blockquote>
+<p>When it comes to innovation however, this stops working. Rigidity of processes and penalizing those who try to break them, negatively impacts our ability to find new solutions to existing problems.</p>
+<p>So here are two ways to win in the market. One is to be more efficient than competitors, the other is to find a better solution but at the cost of initial speed of delivery. The problem with the former is that you can optimize the process only to certain level after which, you will plateau. You can be efficient only to a point. Although initially you might win over the competitors, eventually they are going to catch up. The optimization of the process has its limits.</p>
+<p>On the other hand, innovation brings intellectual property into the picture, that cannot be easily replicated. Yes, the competitors will eventually catch up where you are right now, but it will take them much longer (think Porter’s strategies). As a matter of fact, if you continue innovating, your competitors will always try to catch up, and will always be behind. Innovation doesn’t have limit, it doesn’t have plateau, as long as you keep inflow of new ideas.</p>
+<p>But there is another problem with innovating - it doesn’t guarantee success. As a matter of fact more that 90% of ideas are not going to work, and most probably will be waste of time. So the effectiveness disappears in a puff of smoke.</p>
+<blockquote>
+<p><img alt="effectiveness" src="../images/standardize-or-not-to-standardize-3.png"></p>
+</blockquote>
+<p>However, it is the 10% of those ideas that make difference, and elevate the companies to the top. This is not just linear growth, but rather exponential rocket launch pad.</p>
+<blockquote>
+<p><img alt="phone in hand" src="../images/standardize-or-not-to-standardize-4.png"> </p>
+</blockquote>
+<p>Thus, both approaches have advantages and failings.</p>
+<p>Which one is better? </p>
+<p>As a consultant would say - ‘it depends’.</p>
+<p>It depends on ‘personality’ and culture of your organization, risk tolerance, desperation to succeed. This is the reason why start-ups are more innovative (they have nothing to lose), while well established companies are more cautious and focus more on efficiency and process improvement by standardization (middle management tries to limit the risks). But then many established companies survive, while 90% of startups fail.</p>
+<p>I believe that the best approach, rather than trying to standardize, is to provide guardrails. Guardrails would define when you should standardize, while still keeping open options for projects and products that are just a hypothesis. Both approaches are viable, but which side of the spectrum you want to be, will depend on what you are trying to achieve. </p>
+<p>In organization that I work - WorkSafeBC, we decided exactly to do this - find balance.
+A few years back we created a Common Engineering (Ce) team whose responsibility is to enable our engineering community to collaborate and agree on best practices that then become set of guardrails for our teams. A team can select one of the standards within the portfolio, but without locking them down to a particular way of solving a problem. The teams can still come up with different, innovative solution, which could be added to our portfolio library or pattern for re-usability. Common Engineering team is a custodian of these guardrails, providing information about existing standards, and at the same time enabling teams to on-board new best practices. We use few instruments for this, that are facilitated by Ce.</p>
+<p><a href="/ceremony-center-of-enablement.html"><strong>Centers of Enablement (CoE)</strong></a>
+These are small (5-9 people), cross functional, long living groups that provide overall governance and direction to a specific function. They meet frequently, facilitating development of best practices and standards through Communities of Practice (CoPs) and Working Groups (WGs).</p>
+<p><a href="/ceremony-community-of-practice.html"><strong>Communities of Practice (CoP)</strong></a>
+CoPs are larger groups of people with common interests, but the membership is not fixed. They focus on providing feedback to practices proposed by CoEs and suggesting new solutions. Creativity and feedback through diversity of opinions and experiences.</p>
+<p><a href="/ceremony-working-group.html"><strong>Working Groups (WG)</strong></a>
+These are temporary, fixed membership groups called to solve a specific problem. They are small, focused, and as soon as problem is solved, they disband and reform with new members to address next problem in the priority backlog.</p>
+<p>If you would ask me about advice which way to go, this would be my answer.</p>
+<p>There is no right or wrong way. It is a <strong>spectrum</strong>, as every organization is different, and different levels of standardization, consistency or innovation might be needed. I have to admit that personally I am inclined to be rather on innovation side (the discovered products in the ethnic foods stay with me for life, while my wife’s list is just once off thing, that I will forget the minute I leave the supermarket).</p>
+<p>So here is the set of questions that we should ask ourselves:</p>
 <ul>
-<li>It is simple.</li>
-<li>It has been adopted by our engineering teams.</li>
-<li>It fits well with our <a href="/yaml-pipelines-part10.html">app-type blueprint</a> initiative.</li>
+<li>
+<p>are we in regulated industry and need to conform to specific audit requirements? If so, standardization and gated processes are better choice.</p>
+</li>
+<li>
+<p>how innovative we want to be? If innovation is our primary goal, we will want to leave as much freedom to the teams as possible</p>
+</li>
+<li>
+<p>are we working on a product that nobody did before? Again, you will want to experiment with as little constraints as possible (your company’s survival could depend on it after all)</p>
+</li>
+<li>
+<p>how new the technology is that we are intending to use? If it is new, we want to experiment and innovate</p>
+</li>
+<li>
+<p>how difficult it will be to maintain the product in the future? If this is our concern, we will want to standardize more</p>
+</li>
+<li>
+<p>how easy is to acquire talent with needed skills? Again, if it is difficult to find skilled resources, moving towards standardization might be the right answer</p>
+</li>
+<li>
+<p>how complicated the product is going to be? The more complicated integration will be, the more we want to standardize in order to balance the speed.</p>
+</li>
 </ul>
-<p><img alt="TIP" src="../images/branching-pull-request-1.png"> 
-I am NOT saying that is the best strategy but based on experimentation it fits our <strong>people</strong>, <strong>process</strong>, and <strong>products</strong>.</p>
-<blockquote>
-<p>MYTH 1 - One branching strategy is better than another!</p>
-<p><em>There is no silver bullet! Avoid the debates and invest time to experiment with a few of the common branching strategies, to determine the best fit for your PEOPLE, PROCESS, and PRODUCTS.</em> </p>
-</blockquote>
-<p>See <a href="https://trunkbaseddevelopment.com/branch-for-release/">trunk-based release from branch</a> for the variant that we are using, based on learning from the <a href="https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017">Microsoft Azure DevOps</a> team. It is a strategy that works well for the 1-2 pizza sized teams, as well as product teams with hundreds to thousands of engineers.</p>
-<blockquote>
-<p>MYTH 1 - Trunk-based branching strategy is suited only for small and experienced teams!</p>
-<p><em>The <a href="https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017">Microsoft Azure DevOps</a> and <a href="https://devblogs.microsoft.com/devops/improving-azure-devops-cherry-picking/">Microsoft Office</a> are two very large teams that demonstrate the trunk-based branching strategy scales from small and rapid experimentation and innovation teams, to large product-based teams.</em></p>
-</blockquote>
-<p>The takeaway for you is that the answer to "<em>what branching strategy is ideal for you?</em>" is "<em>it depends on the outcome of your experiments!</em>"</p>
-<hr>
-<h1>Pull Requests</h1>
-<p>Which brings us to pull requests (PRs), which enable us to change, review, and merge code. You can add policies to your PRs to enable code quality in key branches using policies, validation builds, code-quality and security scans. I trust you all want to protect key branches such as trunk/master/main, which should always be stable and deployable.</p>
-<blockquote>
-<p>MYTH 3 - Pull-requests slow down your continuous integration value stream!</p>
-<p><em>A pull request takes as long as you and your process allow it to sit in a corner to gather dust. We encourage our engineers to track the lead and cycle times of pull requests using the <a href="https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport&amp;targetId=dc216ba3-25e9-46a8-823a-fb77a81f2a9f">Pull Request Completion Report</a> and to <strong>collaborate</strong> with their peers to ensure that pull requests do not go stale.</em></p>
-</blockquote>
-<p>Make sure you have a working agreement for pull requests, because <strong>you</strong> decide how long the average lead and cycle times are for your pull requests. In our case:</p>
-<ul>
-<li><strong>Code-quality</strong>, <strong>security-scans</strong>, and <strong>validation build(s)</strong> take minutes at the worst. </li>
-<li>Code review for <strong>learning</strong> can be done in parallel without affecting the lead and cycle times, so no delays.</li>
-<li><strong>Branch policy checks</strong>, such as must be linked to work items and all comments must be addressed, is instantaneous.</li>
-<li>If feature branches are <strong>short-lived</strong>, <strong>collaboration</strong> is healthy, and code changes constrained to agreed feature(s), the code reviews are also in the territory of minutes.</li>
-</ul>
-<p>So, we are talking about minutes to add immense value and ensure that the changes we commit to trunk/master/main branch are quality and will not break. If your average pull request lead time is in the hours to days, you need to map your pull request value stream and find the <strong>WASTE</strong>.</p>
-<blockquote>
-<p>MYTH 4 - Pull-requests are manual gates</p>
-<p><em>In theory a pull request (in Azure DevOps) could be all automated, based on policies, validation builds, and other validations. It is as manual and/or automated as YOU decide to configure your policies and guardrails.</em></p>
-</blockquote>
-<p>If you wonder whether it is a sin to use pull requests with trunk-based branching strategies, read <a href="https://trunkbaseddevelopment.com/continuous-review/">continuous code review</a> and watch the <a href="https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017">trunk-based development</a> video. </p>
-<blockquote>
-<p>MYTH 5 - Trunk-based branching strategy and use of pull requests is a NO-NO!</p>
-<p><em>"In theory" the trunk-based strategy is based on short-lived feature branches and merging changes directly with the trunk/master/main branch. Using a pull request as a pre-merge validation does not change the strategy, it merely injects a final countdown checkpoint before you commit your code changes to the "always deployable" trunk/master|main branch. It is an opportunity to move your scale of <strong>trust</strong>, not a matter of changing the branching strategy.</em></p>
-</blockquote>
-<hr>
-<p>For branching strategies and the use of pull requests there is no silver bullet. Once you realize that consistency and standardization trumps personal preference and variations, you can pick the branching strategy and the use of pull-requests (or not) that empowers your engineers and organization. </p>
+<p>The bottom line is that the choice is yours. As I mentioned earlier, my personal preference is to be on the innovation side, but due to the role at my organization, I need to carefully evaluate options and find balance, before providing recommendations (here comes the servant leadership part). 
+I hope that the set of questions above can help with the decision. Good luck!</p>
+<p>And by the way, we always look for innovative, inspiring people who push boundaries. If you are one of them, please reach out to me.</p>
         </div>
 
         
@@ -113,9 +130,9 @@ I am NOT saying that is the best strategy but based on experimentation it fits o
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control </a>
-        | <a href="https://wsbctechnicalblog.github.io/branching-pull-request.html" rel="bookmark"
-         title="Permalink to Why we use pull requests with our trunk-based branching strategies">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation </a>
+        | <a href="https://wsbctechnicalblog.github.io/standardize-or-not-to-standardize.html" rel="bookmark"
+         title="Permalink to Common Engineering - To Standardize or Not to Standardize, view from a directors point">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
