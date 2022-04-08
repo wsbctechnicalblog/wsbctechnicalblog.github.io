@@ -17,6 +17,16 @@ Read Aditya's posts [here](/author/aditya-chourasiya.html)
 
 ---
 
+## Andre Kaminski
+
+![Andre Kaminski](../images/AndreKaminski.jpg)
+
+Andre Kaminski is a technology leader with a passion for creating high performing teams for rapid delivery of business solutions. Currently, as Director at WorkSafeBC (WSBC), Andre is responsible for setting up and leading Agile DevOps functional teams to deliver business value. An entrepreneur with proven track record of successful software projects and products, Andre has worked in engineering, product development, project and program management and held consulting advisory roles across industries in both public and private sectors over a 30-year career. While he’s no stranger to working hands-on directly with his teams “in the trenches”, Andre has held several executive-level positions at global companies, including VP of Product Development, Director of Product Development and Services Director. Andre is a passionate advocate for Agile and DevOps. His solid Agile DevOps experience is supported by a foundation of extensive study and certifications. He has over 25 years of experience in information technology and holds several certifications, including PMP, CSPO, CSM, SAFe Advanced Scrum Master and SAFe Program Consultant.
+
+Read Andre's posts [here](/author/andre-kaminski.html)
+
+---
+
 ## Alex Bunardzic
 
 ![Alex Bunardzic](../images/Alex-mug.jpg)
