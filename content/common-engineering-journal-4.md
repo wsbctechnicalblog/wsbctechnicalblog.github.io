@@ -32,7 +32,7 @@ without a balance, we cannot continuously deliver value!
 
 ![EDO Ce](../images/common-engineering-journal-4-0.png)
 
-**Our team is based on leadership at every level** of the functional role and every member of our crew, encouraged to self-organize and self-manage. We value **autonomy**, **transparency**, and **simplicity.** For example, every engineer is empowered to question a process and experiment by removing steps that appear to add no value.
+**Our team is based on leadership at every level** of the functional role and every member of our crew, encouraged to self-organize and self-manage. We value **autonomy**, **transparency**, and **simplicity.** For example, every engineer is empowered to question a process and experiment by removing steps that appear to add no value. One of our main pillars is **TRUST** - we trust each other and what we do!
 
 Benefits?
 
