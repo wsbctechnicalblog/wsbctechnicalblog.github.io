@@ -1,6 +1,6 @@
 Title: WorkSafeBC DevOps Celebrate 100th Sprint
 Date: 2022-04-22
-Category: Events
+Category: Posts
 Tags: agile, devops, journal
 Slug: common-engineering-journal-4
 Author: Willy-Peter Schaub
@@ -8,7 +8,7 @@ Summary: Safe and healthy workplaces. Compassionate and responsive service.
 
 I could take a shortcut and refer you to the [WorkSafeBC Top Employer 2022](https://reviews.canadastop100.com/top-employer-worksafebc) article. It showcases why WorkSafeBC was voted as a top employer in 2022, during the challenging Covid pandemic.
 
-Instead I will emphasize the humbling mission that fuels me with energy every day - "_Prevent workplace injury, illness, and death, and support injured workers through fair compensation and effective rehabilitation._" - and introduce WorkSafeBC through the lens of our vibrant [EDO Common Engineering](/common-engineering-journal-2.html) team.
+Instead, I will emphasize the humbling mission that fuels me with energy every day - "_Prevent workplace injury, illness, and death, and support injured workers through fair compensation and effective rehabilitation._" - and introduce WorkSafeBC through the lens of our vibrant [EDO Common Engineering](/common-engineering-journal-2.html) team.
 
 ---
 
@@ -16,7 +16,7 @@ Instead I will emphasize the humbling mission that fuels me with energy every da
 
 ![Confused](../images/common-engineering-journal-4-3.png)
 
-**WIIFM**? First of all you will be part of a team that is curious, but despises TLAs (three-lettered acronyms). We prefer the question "_what is in it for me_" instead of "_WIIFM_" - it is clear and avoids confusion, awkward pauses and Google'ing.
+**WIIFM**? First, you will be part of a team that is curious but despises TLAs (three-lettered acronyms). We prefer the question "_what is in it for me_" instead of "_WIIFM_" - it is clear and avoids confusion, awkward pauses, and Google'ing.
 
 **We are a diverse family of engineers**, working in one or more of three functional roles. **Pathfinders** are engineers that are part of shared services we rotate through software engineering teams to share their experience and bring real-world learnings back to our team. These rotations can last from hours to months, fostering **curiosity** and [T-shaped](https://medium.com/making-meetup/t-shaped-engineering-on-meetup-pro-1e0a38df7f5b) engineering. 
 
@@ -65,5 +65,9 @@ I hope that this has given you a sneak peek into our team and the world of engin
 
 ## We are looking for flexible and passionate engineers
 
-TBD
+Interested in our world? If yes, we currently have position in our **Platform Advancement** area for an **Software Engineering Practices Lead** and **Quality Assurance Lead**. In both cases you would enable our common engineering ecosystem, to shift across multiple disciplines to create a place where the highest standards are maintained, and provide vision, direction, and guardrails (governance). 
+
+Keep an eye on my [Twitter](https://twitter.com/wpschaub) and [LinkedIn](https://www.linkedin.com/in/wpschaub) channels for posts such as [this](https://www.linkedin.com/posts/wpschaub_azuredevops-devops-mindset-activity-6889783742718722048-xXaa) for more details on the opportunity. 
+
+Ping me any time - I would love to **collaborate** with you!
 
