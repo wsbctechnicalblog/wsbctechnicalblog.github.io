@@ -43,7 +43,11 @@ Benefits?
 
 ![Evolution](../images/common-engineering-journal-4-1.png)
 
-**WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration.
+**WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration. Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem:
+
+- An [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
+- [Second generation YAML-based Application-Type CI/CD Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
+- Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
 
 ![Bleeding Edge](../images/common-engineering-journal-4-2.png)
 
