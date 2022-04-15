@@ -48,6 +48,9 @@ Benefits?
 - An [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
 - [Second generation YAML-based Application-Type CI/CD Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
 - Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
+- Azure Services and Service Fabric Orchestrator as a development platform
+- API, Mobile, Performance, and User Interface testing
+- Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos
 
 ![Bleeding Edge](../images/common-engineering-journal-4-2.png)
 
