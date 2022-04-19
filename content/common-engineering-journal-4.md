@@ -46,10 +46,11 @@ Benefits?
 **WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration. Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem:
 
 - An [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
-- [Second generation YAML-based Application-Type CI/CD Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
-- Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
-- Azure Services and Service Fabric Orchestrator as a development platform
 - API, Mobile, Performance, and User Interface testing
+- Azure Services and Service Fabric Orchestrator as a development platform
+- Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
+- Flutter-based mobile apps
+- [Second generation YAML-based Application-Type CI/CD Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
 - Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos
 
 ![Bleeding Edge](../images/common-engineering-journal-4-2.png)
