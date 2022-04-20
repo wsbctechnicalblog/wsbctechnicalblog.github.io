@@ -16,7 +16,7 @@ Instead, I will emphasize the humbling mission that fuels me with energy every d
 
 ![Confused](../images/common-engineering-journal-4-3.png)
 
-**WIIFM**? First, you will be part of a team that is curious but despises TLAs (three-lettered acronyms). We prefer the question "_what is in it for me_" instead of "_WIIFM_" - it is clear and avoids confusion, awkward pauses, and Google'ing.
+**WIIFM**? First, you will be part of a team that is curious but despises TLAs (three-lettered acronyms). We prefer the question "_what is in it for me_" instead of "_WIIFM_" - it is clear and avoids confusion, awkward pauses, and Google'ing. See [Why I loathe when engineers use TLAs, such as CD vs CD!](/why-i-hate-tlas.html) for details.
 
 **We are a diverse family of engineers**, working in one or more of three functional roles. **Pathfinders** are engineers that are part of shared services we rotate through software engineering teams to share their experience and bring real-world learnings back to our team. These rotations can last from hours to months, fostering **curiosity** and [T-shaped](https://medium.com/making-meetup/t-shaped-engineering-on-meetup-pro-1e0a38df7f5b) engineering. 
 
@@ -43,15 +43,29 @@ Benefits?
 
 ![Evolution](../images/common-engineering-journal-4-1.png)
 
-**WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration. Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem:
+**WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration. 
 
-- An [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
-- API, Mobile, Performance, and User Interface testing
-- Azure Services and Service Fabric Orchestrator as a development platform
+Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem, sorted alphabetically, not from most to least exciting:
+
+- Application Programming Interface (API), Mobile, Performance, and User Interface testing.
+- Automate everything automatable and Self-Service Automation.
+- [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
+- Azure Services and Service Fabric Orchestrator as a development platform.
+- Behaviour Driven Development (BDD).
+- Continuous experimentation, viewing failures as opportunities to learn.
+- Domain Driven Design (DDD).
 - Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
-- Flutter-based mobile apps
-- [Second generation YAML-based Application-Type CI/CD Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
-- Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos
+- Flutter-based mobile apps.
+- Hypothesis driven development.
+- People first mindset.
+- Reducing waste and [optimizing meeting](/stop-the-meeting-hell.html).
+- [Second generation Yet Another Markup Language (YAML)-based Application-Type Continuous Integration (CI)/Continuous Delivery (CD) Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
+- Shift-Left, empowering delivery teams and performing security, quality, and guardrail scans as early as possible.
+- Shift-Right, using configuration-as-code and committing to delivery configuration as late as possible.
+- Test-driven Development (TDD).
+- Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos.
+- Vibrant collaboration, creating invaluable bridges and busting SILOs.
+
 
 ![Bleeding Edge](../images/common-engineering-journal-4-2.png)
 
