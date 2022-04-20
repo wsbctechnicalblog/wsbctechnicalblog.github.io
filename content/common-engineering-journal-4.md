@@ -45,26 +45,29 @@ Benefits?
 
 **WorkSafeBC presents a technology heaven for engineers**. The diverse world of **processes** and **products**, ranging from the classic to bleeding edge technology, ensures that every engineer is continuously learning and pushing the boundaries of integration. 
 
-Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem, sorted alphabetically, not from most to least exciting:
+Here are some of the exciting **process** and **product** adventures planned for 2022 as part of the common engineering ecosystem, sorted from most to least exciting (through my lens):
 
-- Application Programming Interface (API), Mobile, Performance, and User Interface testing.
-- Automate everything automatable and Self-Service Automation.
-- [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code. Consistent, standardized, simple!
-- Azure Services and Service Fabric Orchestrator as a development platform.
-- Behaviour Driven Development (BDD).
-- Continuous experimentation, viewing failures as opportunities to learn.
-- Domain Driven Design (DDD).
-- Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
-- Flutter-based mobile apps.
-- Hypothesis driven development.
-- People first mindset.
-- Reducing waste and [optimizing meeting](/stop-the-meeting-hell.html).
+- Automate everything automatable and empower with Self-Service Automation.
+- [Azure DevOps](https://azure.microsoft.com/en-ca/services/devops/) environment that is based on self-service automation, config- and pipeline-as-code.
 - [Second generation Yet Another Markup Language (YAML)-based Application-Type Continuous Integration (CI)/Continuous Delivery (CD) Pipeline Blueprints](./moving-hundreds-of-pipeline-snowflakes-part10.html).
-- Shift-Left, empowering delivery teams and performing security, quality, and guardrail scans as early as possible.
-- Shift-Right, using configuration-as-code and committing to delivery configuration as late as possible.
-- Test-driven Development (TDD).
-- Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos.
+- Hypothesis driven development and embrace failure as an opportunity to innovate.
+- Embrace cloud native computing (watch this space for a related article by my colleague Sergiy), containerization and orchestration for the right workloads.
+- [Azure Services](https://azure.microsoft.com/en-ca/) and Service Fabric Orchestrator as a development platform.
+- More QUALITY, less WASTE!
+  - Continuous experimentation, viewing failures as an opportunity to learn.
+  - Behaviour Driven Development (BDD).
+  - Domain Driven Design (DDD).
+  - Test-driven Development (TDD).
+  - Reducing waste and [optimizing meeting](/stop-the-meeting-hell.html).
+- SHIFT <...>
+  - << Left, empowering delivery teams and performing validation scans, such as security, quality, and guardrails, as early as possible.
+  - Right >>, using configuration-as-code and committing to delivery configuration as late as possible.
+- People first mindset.
 - Vibrant collaboration, creating invaluable bridges and busting SILOs.
+- Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos.
+- Application Programming Interface (API), Mobile, Performance, and User Interface testing.
+
+- Flutter-based mobile apps.
 
 
 ![Bleeding Edge](../images/common-engineering-journal-4-2.png)
