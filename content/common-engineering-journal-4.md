@@ -78,13 +78,15 @@ When you rotate into the role of **Platform Advancement** you are not only autom
 
 Crafting tomorrow's world is often a daunting task - however, there is no better feeling to see your idea being launched and creating a smile on every stakeholder's face. 
 
-Last, but not least, we have an ambitious vision to empower all engineers and to practice and promote the mindset of **continuous experimentation** where failure is viewed as a positive opportunity to learn and innovate.
+We have an ambitious vision to empower all engineers and to practice and promote the mindset of **continuous experimentation** where failure is viewed as a positive opportunity to learn and innovate.
 
 You will find this and other Elon's quotes all over our blogs, presentations, portals, and documentation:
 
 > "_Failure is an option here. If things are not failing, you are not innovating enough._" - Elon Musk
 
 ![Failure](../images/common-engineering-journal-3-5.png)
+
+> Last, but not least - we have the option to work at the **office**, at **remotely** from home, or both. Autonomy, self-organization, self-management, and flexibility!
 
 I hope that this has given you a sneak peek into our team and the world of engineering in our group at WorkSafeBC.
 
