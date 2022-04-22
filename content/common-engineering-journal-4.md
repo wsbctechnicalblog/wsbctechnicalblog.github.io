@@ -58,10 +58,9 @@ Here are some of the exciting **process** and **product** adventures planned for
   - Behaviour Driven Development (BDD).
   - Domain Driven Design (DDD).
   - Test-driven Development (TDD).
-  - Reducing waste and [optimizing meeting](/stop-the-meeting-hell.html).
-- SHIFT <...>
-  - << Left, empowering delivery teams and performing validation scans, such as security, quality, and guardrails, as early as possible.
-  - Right >>, using configuration-as-code and committing to delivery configuration as late as possible.
+  - Reducing waste and [optimizing meetings](/stop-the-meeting-hell.html).
+- SHIFT << Left, empowering delivery teams and performing validation scans, such as security, quality, and guardrails, as early as possible.
+- SHIFT Right >>, using configuration-as-code and committing to delivery configuration as late as possible.
 - People first mindset.
 - Vibrant collaboration, creating invaluable bridges and busting SILOs.
 - Using animated whiteboard software to create crisp, informative, and fun process and product awareness videos.
