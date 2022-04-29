@@ -104,7 +104,7 @@ That said, most of the identified barriers can likely be classified into the fol
 
 # 6.0 Conclusion
 
-It is likely that some of the barriers we encountered can be eliminated by coaching team members on existing organizational protocols and widely accepted engineering best practices around development, testing, deployment, monitoring, error detection and mitigation. Communities of Practice must make contin (this sentence appears incomplete)
+It is likely that some of the barriers we encountered can be eliminated by coaching team members on existing organizational protocols and widely accepted engineering best practices around development, testing, deployment, monitoring, error detection and mitigation. Communities of Practice must make continuous learning a key priority, and time must be allocated for learning and teaching.
 
 If it emerges that changes to processes are required, these changes must be meticulously recorded, observed and measured as an experiment. The results must be peer reviewed and widely distributed within the organization, so as to foster a culture of experimentation and continuous improvement.
 
