@@ -6,7 +6,7 @@ Slug: improving-dora-metrics
 Author: Shay Vannery
 Summary: We would like to plan how to track and empower engineering to increase deployment frequency, and reduce lead time for change, MTTR, and change failure rates.
 
-Streamlining software delivery can seem deceptively simple. Technology consultants (like myself) are quick to tout the trending new tool or methodology that can magically solve all of an organization’s woes. Though tools, automations and practices can help to a large extent; there’s no alternatives to holistically and critically examining one’s own organizational practices and value streams.
+Streamlining software delivery can seem deceptively simple. Technology consultants (like myself) are quick to tout the trending new tool or methodology that can magically solve all of an organization’s woes. Though tools, automations and practices can help to a large extent, there is no alternative to holistically and critically examining one’s own organizational practices and value streams.
 
 ---
 
@@ -14,7 +14,7 @@ Streamlining software delivery can seem deceptively simple. Technology consultan
 
 A **value stream** is the set of actions that take place to add value to a customer from the initial request through realization of value by the customer.
 
-Every organization has a somewhat unique set of actions that must occur to get a user story from the Ideation phase to the end-user acceptance phase. This value stream has likely been developed over many years, by several groups of people with differing priorities. It is imperative to examine said value stream periodically to ensure it is free of redundancies; and updated to better fit present-day organizational priorities and goals.
+Every organization has a somewhat unique set of actions that must occur to get a user story from the Ideation phase into the hands of the end-user. This value stream has likely been developed over many years, by several groups of people with differing priorities. It is imperative to examine said value stream periodically to ensure it is free of redundancies; and updated to better fit present-day organizational priorities and goals.
 
 > **Bonus Tip** 
 >
@@ -85,7 +85,7 @@ Mean time to Recovery or Mean time to Resolution is the average amount of time r
 4. Are resolution teams aware of the mitigation protocol?
 5. Are resolution teams empowered to resolve issues and make quick decisions?
 
-Similar to Change Failure Rare, MTTR can be complex to measure. At the risk of oversimplifying this nuanced process, teams may rely on monitoring and observability platforms to capture the start and end times of an incident. Depending on the nature of the issues; Application Insights within Azure Monitor or even PagerDuty can be leveraged to measure MTTR. 
+Similar to Change Failure Rate, MTTR can be complex to measure. At the risk of oversimplifying this nuanced process, teams may rely on monitoring and observability platforms to capture the start and end times of an incident. Depending on the nature of the issues; Application Insights within Azure Monitor or even PagerDuty can be leveraged to measure MTTR. 
 
 ---
 
@@ -104,7 +104,7 @@ That said, most of the identified barriers can likely be classified into the fol
 
 # 6.0 Conclusion
 
-It is likely that some of the barriers we encountered can be eliminated by coaching team members on existing organizational protocols and widely accepted engineering best practices around development, testing, deployment, monitoring, error detection and mitigation. Communities of Practice must make contin
+It is likely that some of the barriers we encountered can be eliminated by coaching team members on existing organizational protocols and widely accepted engineering best practices around development, testing, deployment, monitoring, error detection and mitigation. Communities of Practice must make contin (this sentence appears incomplete)
 
 If it emerges that changes to processes are required, these changes must be meticulously recorded, observed and measured as an experiment. The results must be peer reviewed and widely distributed within the organization, so as to foster a culture of experimentation and continuous improvement.
 
