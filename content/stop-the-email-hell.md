@@ -1,5 +1,5 @@
 Title: Stop the email overload!
-Date: 2022-05-25
+Date: 2022-05-27
 Category: Posts
 Tags: eliminate-waste
 Slug: stop-the-email-hell
