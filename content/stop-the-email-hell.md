@@ -8,6 +8,10 @@ Summary: Our quest to optimize email and associated WASTE
 
 Email was born around 1978 and has been the backbone of communication ever since. Unfortunately, when you start to [track](/optimize-and-track-emails.html) your actual email volume or consider options to [optimize](/optimize-and-avoid-emails.html) after a well deserved vacation, you realize that enough is enough. Similar to [stop the meeting overload](/stop-the-meeting-hell.html) we will discuss strategies to optimize your use of email and reduce the amount of email and **WASTE** thereof.
 
+**WHY**? Well, I receive an average of 154 emails per working day. I have time to read about 20%, skimming the rest as I context switch between meetings, work, and breaks. **NOT** efficient!
+
+![Communication](../images/stop-the-email-hell-0.png)
+
 ---
 
 # A few email anti-patterns to avoid at all costs!
