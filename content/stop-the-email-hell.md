@@ -86,6 +86,8 @@ The result is a firestorm with everyone wanting to understand the issue, resolut
 
 As a team, we looked at three options. (1) No more email, (2) less email, and (3) using different collaboration channels. We opted for a hybrid option, generating less email, and switching to Microsoft Teams for all our team internal and immediate stakeholder collaboration.
 
+> **NOTE** - Some users love, some hate email. Some users love, some hate Teams. It is a personal preference - find the sweat spot for your **team**!
+
 Here are three of our core collaboration guardrails.
 
 ## Use email for broad one-way notifications
@@ -108,7 +110,11 @@ In comparison Microsoft Teams gives use a cue if you are available, busy, or out
 
 - Have a chat to exchange ideas, share video to add virtual (v) face to vFace social cues, and share our desktops or a virtual whiteboard to inject visual feedback.
 
+> **TIP** - Use named Team Chats and Teams Channels to focus collaboration on a specific context and improve discoverability of shared content.
+
 - Easily share files, data, and knowledge, stored on SharePoint.
+
+> **TIP** - Share files by reference, not a copy thereof. This allows everyone part of the collaboration to revise and observe the content real-time.
 
 - Search for discussions and content in one place. Gone are the days of brittle and time-consuming Outlook searches.
 
