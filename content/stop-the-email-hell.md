@@ -84,11 +84,11 @@ The result is a firestorm with everyone wanting to understand the issue, resolut
 
 ![Options](../images/stop-the-email-hell-7.png)
 
-As a team, we looked at three options. (1) No more email, (2) less email, and (3) using different collaboration channels. We opted for a hybrid option, generating less email, and switching to Microsoft Teams for all our team internal and immediate stakeholder collaboration.
+As a team, we looked at three options. (1) No more email, (2) less email, and (3) using different collaboration channels. We opted for a hybrid option, generating less email, and switching to Microsoft Teams for all our team internal and immediate stakeholder collaboration. Essentially we are trying to replicate the in-person environment where we used to have a quick chat on a whiteboard, made our own notes (OneNote, Notepad, ...), and seldom used email to collaborate with stakeholders in our line of sight.
 
 > **NOTE** - Some users love, some hate email. Some users love, some hate Teams. It is a personal preference - find the sweat spot for your **team**!
 
-Here are three of our core collaboration guardrails.
+Here are three of our core collaboration guardrails:
 
 ## Use email for broad one-way notifications
 
@@ -121,3 +121,6 @@ In comparison Microsoft Teams gives use a cue if you are available, busy, or out
 - Integrate Microsoft Teams with Microsoft PowerApps, Azure DevOps, and other 3rd party products, to create an efficient collaboration ecosystem that empower us to move forward **together**. 
 
 Hope you enjoyed this quick chat. Good luck optimizing your [meetings](/stop-the-meeting-hell.html) and **collaboration** - focus on what is important!
+
+Please share your thoughts on email, Microsoft Teams, and other collaboration solutions.
+
