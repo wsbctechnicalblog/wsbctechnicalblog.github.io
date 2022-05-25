@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Can we enact governance through engineering-friendly manifestos and guardrails? - </title>
+        <title>Stop the email overload! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,87 +32,105 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html" rel="bookmark"
-            title="Permalink to Can we enact governance through engineering-friendly manifestos and guardrails?">Can we enact governance through engineering-friendly manifestos and guardrails?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/stop-the-email-hell.html" rel="bookmark"
+            title="Permalink to Stop the email overload!">Stop the email overload!</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 18 May 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 27 May 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>The best way to create an engineering revolt is to enforce governance with the big stick.</p>
+            <p>Our quest to optimize email and associated WASTE</p>
         </div>
     
         <div class="entry-content">
-            <p>One of many challenges of pursuing a healthy DevOps mindset is finding harmony between the need for organizational governance and autonomous engineering teams. Merriam-Webster defines <strong>Governance</strong> as “<em>the act or process of governing or overseeing the control and direction of something</em>”. It comes in many forms such as architecture, infrastructure, development, security, operations, bureaucracy, and legislation. A healthy portion of governance raises quality and trust but tends to stifle autonomy and innovation. Rules are rules!</p>
-<p><img alt="Governance" src="../images/governance-manifestos-guardrails-5.png"></p>
-<p>On the other hand, if we have minimal or no governance, we can experience an engineering revolt which introduces a variety of engineering snowflakes, duplication of effort, and technical debt that grows like a vicious virus. For example, when we ask engineering why we have hundred of applications and thousands of CI/CD pipelines, we get a shrug of shoulders and everyone moves on. Everyone but the operations and site reliability engineering teams, because they inherit an endless variety of technical solutions, code rot, complexity, and declining return on investments. So, which way should we pivot the scale?</p>
-<p><img alt="Revolt" src="../images/governance-manifestos-guardrails-6.png"></p>
-<p>You guessed it, we must nurture a balance between governance and autonomy. It fuels innovation, risk taking, and passion. Easier said than done!</p>
-<p><img alt="YingYang" src="../images/governance-manifestos-guardrails-7.png"></p>
+            <p>Email was born around 1978 and has been the backbone of communication ever since. Unfortunately, when you start to <a href="/optimize-and-track-emails.html">track</a> your actual email volume or consider options to <a href="/optimize-and-avoid-emails.html">optimize</a> after a well deserved vacation, you realize that enough is enough. Similar to <a href="/stop-the-meeting-hell.html">stop the meeting overload</a> we will discuss strategies to optimize your use of email and reduce the amount of email and <strong>WASTE</strong> thereof.</p>
+<p><strong>WHY</strong>? Well, I receive an average of 154 emails per working day. I have time to read about 20%, skimming the rest as I context switch between meetings, work, and breaks. <strong>NOT</strong> efficient!</p>
+<p><img alt="Communication" src="../images/stop-the-email-hell-0.png"></p>
 <hr>
-<h1>Quest for balance</h1>
-<p><img alt="Hat" src="../images/governance-manifestos-guardrails-4.png"></p>
-<p>When I put on my engineering hat, the word <strong>governance</strong> triggers tension and at times even an urge to revolt.</p>
-<p>For that reason, we prefer using engineering friendlier language such as <strong>manifestos</strong> and <strong>guardrails</strong>.</p>
-<ul>
-<li><strong>Manifesto</strong> – “<em>a written statement declaring publicly the intentions, motives, or views of its issuer</em>” (Merriam-Webster), such as <a href="https://agilemanifesto.org/">Manifesto for Agile Software Development</a> and <a href="https://www.tactec.ca/devops-core-values/">DevOps Core Values</a>.</li>
-</ul>
-<p><img alt="Agile" src="../images/governance-manifestos-guardrails-1.png"></p>
-<p><img alt="DevOps" src="../images/governance-manifestos-guardrails-2.png"></p>
-<ul>
-<li><strong>Guardrails</strong> – “<em>a railing guarding usually against danger</em>” (Merriam-Webster), such as the sides of a bridge, 200m above a raging George, or naming guidance.</li>
-</ul>
-<p>For our common engineering system, we have collaborated with security and operations to define a library of guardrails, such as:</p>
-<p><img alt="DevOps" src="../images/governance-manifestos-guardrails-3.png"></p>
-<p>Here is an extract from our naming guidelines guardrail, with recommendations (not policies, rules, or standards) for Active Directory group names. </p>
-<div class="highlight"><pre><span></span><code>Active Directory Group Names
-
-Review AD AAD Security Groups for a list of organizational, project, and team-level groups.
-
-<span class="k">-</span> Guidelines
-  <span class="k">-</span> AzureDevOps_&lt;Department&gt;_&lt;Project&gt;[_&lt;Team&gt;]_&lt;Role&gt; format.
-  <span class="k">-</span> Avoid spaces. Use underscore (_) instead.
-  <span class="k">-</span> Prefix with 3rdParty for artifacts containing third-party resources.
-<span class="k">-</span> Examples
-  <span class="k">-</span> AzureDevOps_IT_CeS_ProjectAdministrators
-  <span class="k">-</span> AzureDevOps_Training_AgilePlanning_ReleaseApprovers
-</code></pre></div>
-
-<p>So now that we have autonomous engineering teams and are all using ~~politically~~ correct engineering language, we should all be focused on continuously delivering value and delighting our end-users. No?</p>
-<hr>
-<h1>Manifestos and guardrails are wolves in sheep skins</h1>
-<p>Yes, we should focus on continuously delivering value and delighting our end-users. I have seen it time and time again that engineering rallies behind <strong>manifestos</strong> and <strong>guardrails</strong>, only to pivot back to doing things the way they have been done for decades, leaving a wake of rotting guidance, knowledge, and learnings. There are several reasons that even the most effective and groomed guidance, best practices, manifestos, guardrails, or whatever fancy name you may use, are forgotten, ignored, or abandoned all together.</p>
-<ul>
-<li>Hard to discover them in a pile of sites, wikis, and documentation</li>
-<li>Hard to keep them up-to-date and relevant for engineering</li>
-<li>Eventually referred to and perceived as <strong>rules</strong> and equated to governance</li>
-</ul>
-<p><img alt="Failure" src="../images/governance-manifestos-guardrails-8.png"></p>
-<p>Once the <strong>manifestos</strong> and <strong>guardrails</strong> meander into the perceived <strong>them</strong> (enforcers, wolves) and <strong>us</strong> (engineers, sheep) territory, their value, advocates, and everyone's trust will evaporate like hot coffee in the arctic. You may as well shred them and walk away.</p>
-<hr>
-<h1>Why not embrace Manifesto and Guardrail Mobbing?</h1>
-<p><img alt="Failure" src="../images/governance-manifestos-guardrails-10.png"></p>
-<p>I have been observing our test-driven development (TDD) and, in particular, our mob programming dojos for some time. Mob programming is a special process in which an entire team works on the same issue or feature at the same time, in the same environment, and rotating through one and the same computer. It scales up pair programming and inspires a high degree of collaboration, learning, and quality deliverables. It creates trust, enables consistency, and stewards of doing things the right way.</p>
-<p>In fact, many of the bi-products of mob programming, such as collaboration, mind-sharing, and trust, are those we lack with governance, guidance, and guardrails. </p>
+<h1>A few email anti-patterns to avoid at all costs!</h1>
+<p><img alt="Communication" src="../images/stop-the-email-hell-1.png"></p>
+<p>As discussed in <a href="TBD">Navigating DevOps through Waterfalls</a>, act 4 STORM - Building a better Boat, communication complexity becomes unproductive and <strong>WASTE</strong>ful as the number of members in the collaboration thread increases. Looking at the simple illustration above, it is evident that five or more members introduces duplication, split (separate) discussions, inherent quality issues, a flood of emails that impedes our productivity.</p>
+<p>Let us look at some email practices you should avoid to drastically reduce the amount of collaboration <strong>noise</strong> for your colleagues.</p>
+<h2>The duplicate and split email</h2>
+<p><img alt="Duplicate and Split" src="../images/stop-the-email-hell-2.png"></p>
+<p>When you send an email to a shared mailbox, as shown above, you may inadvertently send an email to Willy in his private mailbox and an email through the shared mailbox. </p>
+<p><img alt="Duplicate and Split Noise" src="../images/stop-the-email-hell-2b.png"></p>
+<p>A minor annoyance, but also an unfortunate opportunity to create a split in collaboration, or worse duplication of effort if the team reacts to the message in the shared mailbox and Willy to the message in his mailbox.</p>
 <blockquote>
-<p>Which makes me think ... what if we learn from mob programming and embrace mob guardrailing? </p>
+<p><strong>ASK #1</strong> - **When addressing an email to a shared mailbox, do not add individual users of the same team!</p>
 </blockquote>
-<p>By involving engineering (the mob) in the refinement of our guardrails, we nurture engagement, promote collaboration, and enable advocates to rise from the deep routed cynicism for governance. I propose the following hypotheses to our working groups:</p>
-<p><img alt="Hypothesis" src="../images/governance-manifestos-guardrails-11.png"></p>
+<h2>The planetary email</h2>
+<p><img alt="Planetary" src="../images/stop-the-email-hell-3.png"></p>
+<p>Avoid sending an email to hundreds of users using broad distribution lists without discouraging reply-all.</p>
+<p><img alt="Planetary Noise" src="../images/stop-the-email-hell-3b.png"></p>
+<p>If only a fraction of recipients "reply all" you inadvertently create a brushfire of split collaboration threads and an inbox from hell for everyone. </p>
 <blockquote>
-<ul>
-<li>Hypothesis 1: Engineers being engaged in the formulation of guardrails leads to better <strong>adoption</strong> of the guardrails.</li>
-<li>Hypothesis 2: Engineers being engaged in the formulation of guardrails creates champions who will <strong>advocate</strong> the guardrails. </li>
-<li>Hypothesis 3: Involving engineers in the formulation of guardrails promotes guardrails <strong>mobbing</strong>.</li>
-</ul>
+<p><strong>ASK #2</strong> - Think twice before "replying all" to an email with one or more distribution lists.</p>
 </blockquote>
-<p>To summarize a long story, if we can prove these hypotheses, we can enact the organizational governance through engineering friendly and trusted manifestos and guardrails!</p>
-<p>What do YOU think?</p>
+<h2>The meta morphed email</h2>
+<p><img alt="Problem X" src="../images/stop-the-email-hell-4.png"></p>
+<p>Recognize this type of email response? "<em>Thank you for your help. I have another question ...</em>" - completely unrelated to the email subject. </p>
+<p><img alt="Problem Y with Subject X" src="../images/stop-the-email-hell-4b.png"></p>
+<p>Not only is this confusing but creates a major headache when searching for an email with the solution to the subsequent discussions months later. </p>
+<blockquote>
+<p><strong>ASK #3</strong> - Stick to the subject! </p>
+</blockquote>
+<h2>The empty subject email</h2>
+<p><img alt="Empty Subject" src="../images/stop-the-email-hell-5.png"></p>
+<p>It happens to all of us, but please try not to send an email with no subject.</p>
+<p><img alt="Empty Subject" src="../images/stop-the-email-hell-5b.png"></p>
+<p>Not only is it bad email etiquette, but it breaks email rules and workflow automation, forcing the recipient to read the email to get an idea of context and priority.</p>
+<blockquote>
+<p><strong>ASK #4</strong> - Use meaningful and actionable email subjects.</p>
+</blockquote>
+<h2>The fire and forget email</h2>
+<p><img alt="Fire and forget" src="../images/stop-the-email-hell-6.png"></p>
+<p>The last example is one that I have started to intentionally deprioritize, and I urge everyone to do the same. User encounters an issue, for example, user is unable to deploy latest release, and decides to send us an email to ask for help. For good measure user also loops in management, after which user disappears (coffee break, lunch, or end-of-day).</p>
+<p>The result is a firestorm with everyone wanting to understand the issue, resolution, and status. Instead of focus on finding the root cause and a speedy remediation, we are shrouded by stress, context switching, duplication of effort, and a work:life imbalance that will taint any future vibrant collaboration.</p>
+<hr>
+<h1>A few collaboration strategies that work for us</h1>
+<p><img alt="Options" src="../images/stop-the-email-hell-7.png"></p>
+<p>As a team, we looked at three options. (1) No more email, (2) less email, and (3) using different collaboration channels. We opted for a hybrid option, generating less email, and switching to Microsoft Teams for all our team internal and immediate stakeholder collaboration. Essentially we are trying to replicate the in-person environment where we used to have a quick chat on a whiteboard, made our own notes (OneNote, Notepad, ...), and seldom used email to collaborate with stakeholders in our line of sight.</p>
+<blockquote>
+<p><strong>NOTE</strong> - Some users love, some hate email. Some users love, some hate Teams. It is a personal preference - find the sweat spot for your <strong>team</strong>!</p>
+</blockquote>
+<p>Here are three of our core collaboration guardrails:</p>
+<h2>Use email for broad one-way notifications</h2>
+<p><img alt="Options" src="../images/stop-the-email-hell-8.png"></p>
+<p>Use email for broad notifications, clearly stipulating that recipient(s) should <strong>not</strong> reply-all.  </p>
+<h2>Use email where process dictates</h2>
+<p>Use email where an existing process dictates the use of email or is optimized for the use of emails.</p>
+<h2>Use teams collaboration for everything else</h2>
+<p>For everything else, use another collaboration channel, such as Microsoft Teams. </p>
+<p>Email promotes costly context switches. Send email, wait for response, switch context, focus on something else, response email notification, and another context switch is triggered. Interruptive, costly, and stressful!</p>
+<p>In comparison Microsoft Teams gives use a cue if you are available, busy, or out of the office. Gone are the guessing days and impatiently waiting for a reply. Instead, we can ...</p>
+<ul>
+<li>Have a chat to exchange ideas, share video to add virtual (v) face to vFace social cues, and share our desktops or a virtual whiteboard to inject visual feedback.</li>
+</ul>
+<blockquote>
+<p><strong>TIP</strong> - Use named Team Chats and Teams Channels to focus collaboration on a specific context and improve discoverability of shared content.</p>
+</blockquote>
+<ul>
+<li>Easily share files, data, and knowledge, stored on SharePoint.</li>
+</ul>
+<blockquote>
+<p><strong>TIP</strong> - Share files by reference, not a copy thereof. This allows everyone part of the collaboration to revise and observe the content real-time.</p>
+</blockquote>
+<ul>
+<li>
+<p>Search for discussions and content in one place. Gone are the days of brittle and time-consuming Outlook searches.</p>
+</li>
+<li>
+<p>Integrate Microsoft Teams with Microsoft PowerApps, Azure DevOps, and other 3rd party products, to create an efficient collaboration ecosystem that empower us to move forward <strong>together</strong>. </p>
+</li>
+</ul>
+<p>Hope you enjoyed this quick chat. Good luck optimizing your <a href="/stop-the-meeting-hell.html">meetings</a> and <strong>collaboration</strong> - focus on what is important!</p>
+<p>Please share your thoughts on email, Microsoft Teams, and other collaboration solutions.</p>
         </div>
 
         
@@ -129,9 +147,9 @@ Review AD AAD Security Groups for a list of organizational, project, and team-le
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
-        | <a href="https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html" rel="bookmark"
-         title="Permalink to Can we enact governance through engineering-friendly manifestos and guardrails?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="https://wsbctechnicalblog.github.io/stop-the-email-hell.html" rel="bookmark"
+         title="Permalink to Stop the email overload!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
