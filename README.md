@@ -8,7 +8,7 @@ See [Terms of Use](https://wsbctechnicalblog.github.io/pages/terms-of-use.html) 
 
 ---
 
-## Who are the contributors?]
+## Who are the contributors?
 
 ![Contributors](/images/readme-2.png)
 
