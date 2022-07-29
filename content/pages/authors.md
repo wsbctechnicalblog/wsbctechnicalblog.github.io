@@ -99,3 +99,14 @@ If you would like to discuss or share feedback on his posts, please ping him on 
 
 Read Willy's posts [here](/author/willy-peter-schaub.html)
 
+## Daniel Broderick
+
+Daniel began his IT career in Sydney Australia before moving to Canada. 
+
+Daniel has worked on numerous projects for large North American companies migrating infrastructure, automating everything and anything possible and now cloud migration and devops. 
+
+When not working in IT Daniel enjoy getting out and about, skiing hiking, mountain bike riding and generally exploring new places, looking for that next adventure. 
+
+![Daniel Broderick](../images/daniel-broderick-mug.png)
+
+Read Willy's posts [here](/author/daniel-broderick.html)
