@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Incremental and Iterative Development – what’s the diff? - </title>
+        <title>Automation mayhem and Angst is normal - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,75 +32,60 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/incremental-and-iterative-development.html" rel="bookmark"
-            title="Permalink to Incremental and Iterative Development – what’s the diff?">Incremental and Iterative Development – what’s the diff?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="bookmark"
+            title="Permalink to Automation mayhem and Angst is normal">Automation mayhem and Angst is normal</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 19 March 2021</div>
+        <div class="read-more">Posted by Willy Schaub on Fri 29 July 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Visual example illustrating the fundamental differences between incremental and iterative development process.</p>
+            <p>Doing a manual and mind-numbing task twice or more? Automate!</p>
         </div>
     
         <div class="entry-content">
-            <p>I oftentimes hear people discuss development methodologies and mention incremental and iterative approaches. When I ask for further clarification, it surprises me how frequently people conflate the two methodologies. I hear “well, they’re just two words denoting the same thing”.</p>
-<p>Which is far from being true. Let’s now examine what makes one development process iterative and another development process incremental, and let’s then look into what makes them so fundamentally different.</p>
-<h2>Iterative development</h2>
-<p>According to the dictionary, to iterate implies “to perform or utter repeatedly”. Repetition is the essence of iteration. In software engineering, we often call iteration by another name – rework.</p>
-<p>This distinction sometimes gets misinterpreted, so I’d like to illustrate what is meant by the expression ‘iterative development’, and I’d like to use a series of visual examples.</p>
-<p>Let’s start with the first iteration (or a first pass). The initial draft may look something like this:</p>
-<p><img alt="Mona Lisa Iteration 1" src="/images/monalisa/monalisa1.png"></p>
-<p>Since the above draft is very vague and unclear, we need to revisit our first draft and do a bit of rework, in the hopes of adding some clarity:</p>
-<p><img alt="Mona Lisa Iteration 2" src="/images/monalisa/monalisa2.png"></p>
-<p>The picture now is a little bit clearer, but still it is obvious it needs more work (rework). So we iterate, and the third iteration looks like this:</p>
-<p><img alt="Mona Lisa Iteration 3" src="/images/monalisa/monalisa3.png"></p>
-<p>A bit better, yeah? Still, quite fuzzy. Let’s do the fourth iteration:</p>
-<p><img alt="Mona Lisa Iteration 4" src="/images/monalisa/monalisa4.png"></p>
-<p>Ah okay, maybe now with the fourth iteration some eagle-eyed people can already recognize what are we making? Still, needs more rework. On to the fifth iteration:</p>
-<p><img alt="Mona Lisa Iteration 5" src="/images/monalisa/monalisa5.png"></p>
-<p>Oh, that kind of looks familiar. Just to be sure, let’s do more rework; iteration 6:</p>
-<p><img alt="Mona Lisa Iteration 6" src="/images/monalisa/monalisa6.png"></p>
-<p>It’s a portrait of a woman, and maybe even a very famous portrait. Let’s add more details; iteration 7:</p>
-<p><img alt="Mona Lisa Iteration 7" src="/images/monalisa/monalisa7.png"></p>
-<p>Aha, looks like Leonardo da Vinci’s famous Mona Lisa! Definitely. But it looks quite crude – we need to do some more rework. Iteration 8:</p>
-<p><img alt="Mona Lisa Iteration 8" src="/images/monalisa/monalisa8.png"></p>
-<p>Now there’s no doubt – it is Mona Lisa! If we squint we can definitely be sure. But it lacks a lot of detail still. Iteration 9:</p>
-<p><img alt="Mona Lisa Iteration 9" src="/images/monalisa/monalisa9.png"></p>
-<p>The details are starting to emerge. Still looks amateurish. More rework; iteration 10:</p>
-<p><img alt="Mona Lisa Iteration 10" src="/images/monalisa/monalisa10.png"></p>
-<p>The expression on Mona Lisa’s face is now visible. Let’s keep going; iteration 11:</p>
-<p><img alt="Mona Lisa Iteration 11" src="/images/monalisa/monalisa11.png"></p>
-<p>Almost there! Still somewhat pixelated, we will circle back one more time to increase the resolution. Iteration 12:</p>
-<p><img alt="Mona Lisa Iteration 12" src="/images/monalisa/monalisa12.png"></p>
-<p>Voila! That’s it. Gradual refinement delivers the masterpiece!</p>
-<h2>Incremental development</h2>
-<p>According to the dictionary, to increment means “an increase or addition, especially one of a series on a fixed scale”.</p>
-<p>Let’s illustrate incremental development using Da Vinci’s Mona Lisa.</p>
-<p>First increment:</p>
-<p><img alt="Mona Lisa Increment 1" src="/images/monalisa/monalisaincrement1.png"></p>
-<p>Second increment:</p>
-<p><img alt="Mona Lisa Increment 2" src="/images/monalisa/monalisaincrement2.png"></p>
-<p>Third increment:</p>
-<p><img alt="Mona Lisa Increment 3" src="/images/monalisa/monalisaincrement3.png"></p>
-<p>Fourth increment:</p>
-<p><img alt="Mona Lisa Increment 4" src="/images/monalisa/monalisaincrement4.png"></p>
-<p>Fifth increment:</p>
-<p><img alt="Mona Lisa Increment 5" src="/images/monalisa/monalisaincrement5.png"></p>
-<p>Sixth increment:</p>
-<p><img alt="Mona Lisa Increment 6" src="/images/monalisa/monalisaincrement6.png"></p>
-<p>And so on…</p>
-<h2>What are the differences between iterative and incremental development?</h2>
-<p>I hope that the visual illustrations above are helpful in driving the salient points home. Let’s enumerate the differences:</p>
-<ul>
-<li>Unlike iterative development, which starts with the whole picture (the whole system), incremental development starts from one fixed part of the system</li>
-<li>Unlike iterative development, which outlines the whole system in very crude strokes, incremental development works on an isolated fixed part of the system until is fully done (following the Definition of Done, or DoD)</li>
-<li>Unlike iterative development, which is based on relentless rework, incremental development forbids rework, and only moves on to work on the next part of the system once the previous part is fully fleshed out and frozen for any further changes</li>
-</ul>
+            <p>The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – <a href="https://www.tactec.ca/devops-core-values">Core DevOps Values</a>. Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.</p>
+<blockquote>
+<p><img alt="Angst Chart" src="../images/automation-churn-and-angst-3.jpg"></p>
+</blockquote>
+<hr>
+<h1>Brace yourself for instability and churn</h1>
+<blockquote>
+<p><img alt="Churn" src="../images/automation-churn-and-angst-1.png"></p>
+</blockquote>
+<p>After we identify, analyze, and prioritize a manual and mind-numbing task we <strong>BUILD</strong> our automation code, as shown in the “Automation Angst” illustration. After <strong>BUILD</strong>, follows <strong>VALIDATE</strong>, during which we validate the automation script, the pre- and post-automation state, and the overall outcome of the automation exercise. </p>
+<p>There is usually an initial spike of churn as the automation <strong>failures</strong> due to unexpected outliers or when we realize that a task that is super easy for a human is a not suited for our binary machines.</p>
+<p>What follows are a few less dramatic spikes as we revise and fine <strong>TUNE</strong> the automation. There are new feature requests, triggered by new improvement ideas, refactoring, and revisions to reduce technical debt – until we finally make the <strong>GO-FOR-LAUNCH</strong> call.</p>
+<p><img alt="Turn it off" src="../images/automation-churn-and-angst-3.png"></p>
+<p>This type of Microsoft Teams chat message is not uncommon as you flip the automation from dormant to active and it is tempting to disable the automation as requested. However, to be able to fine tune the automation, I urge you not to flip the switch back to dormant. Instead work with the stakeholders, especially the agitated ones, to continuously improve the automation – there is never a good time to action the automation churn! </p>
+<blockquote>
+<p><strong>LEARNINGS</strong>
+- <strong>Remain critical</strong> to identify and promote the automation that add value, and to deprecate unviable automation.
+- <strong>Do not despair</strong> when automation takes time and effort to fine-tune and integrate into our existing processes. </p>
+</blockquote>
+<hr>
+<h1>“Angst” that will never really go away</h1>
+<blockquote>
+<p><img alt="Angst" src="../images/automation-churn-and-angst-2.png"></p>
+</blockquote>
+<p>The major turbulence we experience while working on process automation is the “Angst” when we realize the potential of the automation on our operational environment.</p>
+<blockquote>
+<p><img alt="Oops" src="../images/automation-churn-and-angst-4.png"></p>
+</blockquote>
+<p>As highlighted in the "Automation Angst” illustration the fear of <strong>FAILURE</strong> spikes at the start and declines gradually as we make progress with fine-tuning and continuous improvement of our automation. The Angst is normal - embrace it as your guardian of built-in quality and embrace the continuous <strong>FAILURES</strong> to advance your automation.</p>
+<p>While I have no recipe for sleepless nights where you mull over thousands of lines of config-as-code, wake up in a sweat dreaming of scrum masters and engineers pounding on your door after breaking their pipeline, or pondering over when to click the launch button, I can reassure you that my entire team is still intact and promoting automation as a pivotal pillar. At some point you simply have to click on the <strong>ENTER</strong> button and watch the action q-;) </p>
+<blockquote>
+<p><strong>LEARNINGS</strong>
+- <strong>FAILURE is an option here. If things are not failing, you are not innovating enough.</strong> - Elon Musk.
+- <strong>Gradually increase the blast radius</strong>. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The <strong>big bang</strong> strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.</p>
+</blockquote>
+<hr>
+<h1>What are your automation experiences?</h1>
+<p>What are your automation stories? I am looking for the good, the bad, and the ugly 😊 Ping me on <a href="https://twitter.com/wpschaub">@wpschaub</a> or <a href="https://www.linkedin.com/in/wpschaub/">LinkedIN</a> until we enable the commenting feature below.</p>
         </div>
 
         
@@ -117,9 +102,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a>
-        | <a href="https://wsbctechnicalblog.github.io/incremental-and-iterative-development.html" rel="bookmark"
-         title="Permalink to Incremental and Iterative Development – what’s the diff?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
+        | <a href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="bookmark"
+         title="Permalink to Automation mayhem and Angst is normal">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-06-22T00:00:00-07:00</updated><entry><title>The WHY, HOW, and WHAT of our technical blog</title><link href="https://wsbctechnicalblog.github.io/demo-technical-blog-1.html" rel="alternate"></link><published>2022-06-22T00:00:00-07:00</published><updated>2022-06-22T00:00:00-07:00</updated><author><name>Willy Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-06-22:/demo-technical-blog-1.html</id><summary type="html">&lt;p&gt;Creating a demo pull request and post for our technical blog demo.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been invited to share our insights into how we are experimenting and present our WorkSafeBC technical blog. To show how we moved from ideation to action, gather feedback, and connect with the audience I decided to create a pull request - which will be turned into an actual blog post by the time you read this. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-07-29T00:00:00-07:00</updated><entry><title>Automation mayhem and Angst is normal</title><link href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="alternate"></link><published>2022-07-29T00:00:00-07:00</published><updated>2022-07-29T00:00:00-07:00</updated><author><name>Willy Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-07-29:/automation-churn-and-angst.html</id><summary type="html">&lt;p&gt;Doing a manual and mind-numbing task twice or more? Automate!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – &lt;a href="https://www.tactec.ca/devops-core-values"&gt;Core DevOps Values&lt;/a&gt;. Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Angst Chart" src="../images/automation-churn-and-angst-3.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Brace yourself for instability and churn&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Churn" src="../images/automation-churn-and-angst-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After we identify, analyze, and prioritize a manual and mind-numbing task we &lt;strong&gt;BUILD&lt;/strong&gt; our automation code, as shown in the “Automation Angst” illustration. After &lt;strong&gt;BUILD&lt;/strong&gt;, follows &lt;strong&gt;VALIDATE&lt;/strong&gt;, during which we validate the automation script, the pre- and post-automation state, and the overall outcome of the automation exercise. &lt;/p&gt;
+&lt;p&gt;There is usually an initial spike of churn as the automation &lt;strong&gt;failures&lt;/strong&gt; due to unexpected outliers or when we realize that a task that is super easy for a human is a not suited for our binary machines.&lt;/p&gt;
+&lt;p&gt;What follows are a few less dramatic spikes as we revise and fine &lt;strong&gt;TUNE&lt;/strong&gt; the automation. There are new feature requests, triggered by new improvement ideas, refactoring, and revisions to reduce technical debt – until we finally make the &lt;strong&gt;GO-FOR-LAUNCH&lt;/strong&gt; call.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Turn it off" src="../images/automation-churn-and-angst-3.png"&gt;&lt;/p&gt;
+&lt;p&gt;This type of Microsoft Teams chat message is not uncommon as you flip the automation from dormant to active and it is tempting to disable the automation as requested. However, to be able to fine tune the automation, I urge you not to flip the switch back to dormant. Instead work with the stakeholders, especially the agitated ones, to continuously improve the automation – there is never a good time to action the automation churn! &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;
+- &lt;strong&gt;Remain critical&lt;/strong&gt; to identify and promote the automation that add value, and to deprecate unviable automation.
+- &lt;strong&gt;Do not despair&lt;/strong&gt; when automation takes time and effort to fine-tune and integrate into our existing processes. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;“Angst” that will never really go away&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Angst" src="../images/automation-churn-and-angst-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The major turbulence we experience while working on process automation is the “Angst” when we realize the potential of the automation on our operational environment.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Oops" src="../images/automation-churn-and-angst-4.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As highlighted in the "Automation Angst” illustration the fear of &lt;strong&gt;FAILURE&lt;/strong&gt; spikes at the start and declines gradually as we make progress with fine-tuning and continuous improvement of our automation. The Angst is normal - embrace it as your guardian of built-in quality and embrace the continuous &lt;strong&gt;FAILURES&lt;/strong&gt; to advance your automation.&lt;/p&gt;
+&lt;p&gt;While I have no recipe for sleepless nights where you mull over thousands of lines of config-as-code, wake up in a sweat dreaming of scrum masters and engineers pounding on your door after breaking their pipeline, or pondering over when to click the launch button, I can reassure you that my entire team is still intact and promoting automation as a pivotal pillar. At some point you simply have to click on the &lt;strong&gt;ENTER&lt;/strong&gt; button and watch the action q-;) &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;
+- &lt;strong&gt;FAILURE is an option here. If things are not failing, you are not innovating enough.&lt;/strong&gt; - Elon Musk.
+- &lt;strong&gt;Gradually increase the blast radius&lt;/strong&gt;. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The &lt;strong&gt;big bang&lt;/strong&gt; strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;What are your automation experiences?&lt;/h1&gt;
+&lt;p&gt;What are your automation stories? I am looking for the good, the bad, and the ugly 😊 Ping me on &lt;a href="https://twitter.com/wpschaub"&gt;@wpschaub&lt;/a&gt; or &lt;a href="https://www.linkedin.com/in/wpschaub/"&gt;LinkedIN&lt;/a&gt; until we enable the commenting feature below.&lt;/p&gt;</content><category term="Posts"></category><category term="automation"></category><category term="learning"></category></entry><entry><title>The WHY, HOW, and WHAT of our technical blog</title><link href="https://wsbctechnicalblog.github.io/demo-technical-blog-1.html" rel="alternate"></link><published>2022-06-22T00:00:00-07:00</published><updated>2022-06-22T00:00:00-07:00</updated><author><name>Willy Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-06-22:/demo-technical-blog-1.html</id><summary type="html">&lt;p&gt;Creating a demo pull request and post for our technical blog demo.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been invited to share our insights into how we are experimenting and present our WorkSafeBC technical blog. To show how we moved from ideation to action, gather feedback, and connect with the audience I decided to create a pull request - which will be turned into an actual blog post by the time you read this. &lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;WHY did we create this blog?&lt;/h1&gt;
 &lt;p&gt;This blog is based on an initiative that started as an idea at our March 2021 InnoFest to explore how we can enter the open-source world, collaborate, and share our cutting-edge engineering practices, products, and innovation such as our application-type CI/CD pipeline blueprints, and show the rest of the world that WorkSafeBC is a phenomenal place for engineers to work for.&lt;/p&gt;
@@ -2426,26 +2463,4 @@ To create the client before we create the code that will serve the client’s ex
 
 &lt;p&gt;The &lt;code&gt;ne(lower(variables['Build.SourceBranchName']), 'merge')&lt;/code&gt; part of the code suppresses the conditional logic if the pipeline run originates from a Pull Request merge validation build.&lt;/p&gt;
 &lt;p&gt;At this stage we suppress all post-build logic to keep it &lt;strong&gt;simple&lt;/strong&gt; but can shift the conditional logic by a few lines to allow the deployment to the &lt;strong&gt;development&lt;/strong&gt; stage, while suppressing others.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt;, but powerful!&lt;/p&gt;</content><category term="Posts"></category><category term="pipelines"></category><category term="tips"></category><category term="x-as-code"></category></entry><entry><title>A peek at our Dream Team Working Agreement Poster</title><link href="https://wsbctechnicalblog.github.io/dream-team-working-agreement-poster.html" rel="alternate"></link><published>2021-10-02T00:00:00-07:00</published><updated>2021-10-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-10-02:/dream-team-working-agreement-poster.html</id><summary type="html">&lt;p&gt;As a team we want to create an empathetic, safe, and vibrant ecosystem&lt;/p&gt;</summary><content type="html">&lt;p&gt;With our Common Engineering team we have a noble vision to &lt;em&gt;"Enable and empower engineering to work together with shared and efficient processes, products, and promote a healthy DevOps mindset, to continuously deliver value to our organization and end-users."&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;As we prepare for the the countdown to launch our mission methods, we are taking the opportunity to inspect and adapt ourselves to create an &lt;strong&gt;empathetic&lt;/strong&gt;, &lt;strong&gt;safe&lt;/strong&gt;, and &lt;strong&gt;vibrant&lt;/strong&gt; team, to continuously look for opportunities to &lt;strong&gt;innovate&lt;/strong&gt; and reduce &lt;strong&gt;waste&lt;/strong&gt;, and to contribute to a &lt;strong&gt;common language.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In this post we are sharing our dream team working agreement poster, which sets team expectations, lays out ways to collaborate, and establishes an atmosphere that encourages failure.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;"Failure is an option here. If things are not failing, you are not innovating enough."&lt;/em&gt; - Elon Musk
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;The dream team poster summarizes what we value and encourage, such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;How we will &lt;strong&gt;optimise meetings&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://agilemanifesto.org"&gt;Agile mindset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;strong&gt;Kanban&lt;/strong&gt; mindset (visualise, flow, improve)&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;DevOps mindset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://www.tactec.ca/ndtw-resources"&gt;DevOps Core Values&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Poster" src="/images/dream-team-working-agreement-poster-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/dream-team-working-agreement-poster.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!&lt;/p&gt;
-&lt;p&gt;| &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;POSTER 1&lt;/a&gt; | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html"&gt;POSTER 2&lt;/a&gt; | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-3.html"&gt;POSTER 3&lt;/a&gt; | POSTER 4 (this) |&lt;/p&gt;
-&lt;hr&gt;</content><category term="Posts"></category><category term="devops"></category><category term="posters"></category></entry></feed>
+&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt;, but powerful!&lt;/p&gt;</content><category term="Posts"></category><category term="pipelines"></category><category term="tips"></category><category term="x-as-code"></category></entry></feed>
