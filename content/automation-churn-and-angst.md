@@ -1,4 +1,4 @@
-Title: Automation mayhem and Angst is normal
+Title: Automation Mayhem and Angst is normal
 Date: 2022-07-29
 Category: Posts
 Tags: automation, learning 
@@ -27,8 +27,11 @@ What follows are a few less dramatic spikes as we revise and fine **TUNE** the a
 This type of Microsoft Teams chat message is not uncommon as you flip the automation from dormant to active and it is tempting to disable the automation as requested. However, to be able to fine tune the automation, I urge you not to flip the switch back to dormant. Instead work with the stakeholders, especially the agitated ones, to continuously improve the automation – there is never a good time to action the automation churn! 
 
 > **LEARNINGS**
+>
 > - **Remain critical** to identify and promote the automation that add value, and to deprecate unviable automation.
+>
 > - **Do not despair** when automation takes time and effort to fine-tune and integrate into our existing processes. 
+>
 
 ---
 
@@ -45,8 +48,11 @@ As highlighted in the "Automation Angst” illustration the fear of **FAILURE** 
 While I have no recipe for sleepless nights where you mull over thousands of lines of config-as-code, wake up in a sweat dreaming of scrum masters and engineers pounding on your door after breaking their pipeline, or pondering over when to click the launch button, I can reassure you that my entire team is still intact and promoting automation as a pivotal pillar. At some point you simply have to click on the **ENTER** button and watch the action q-;) 
 
 > **LEARNINGS**
+>
 > - **FAILURE is an option here. If things are not failing, you are not innovating enough.** - Elon Musk.
+>
 > - **Gradually increase the blast radius**. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The **big bang** strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.
+>
 
 ---
 
