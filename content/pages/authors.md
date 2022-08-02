@@ -41,6 +41,16 @@ Read Alex's posts [here](/author/alex-bunardzic.html)
 
 ---
 
+## Daniel Broderick
+
+![Daniel Broderick](../images/Daniel-mug.jpg)
+
+TBD
+
+Read Daniel's posts [here](/author/daniel-broderick.html)
+
+---
+
 ## Kevin Schwantje
 
 ![Kevin Schwantje](../images/Kevin-mug.jpeg)
