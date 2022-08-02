@@ -1,7 +1,7 @@
 Title: Automation and the great unknown
 Date: 2022-08-05
 Category: Posts
-Tags: automation, learning, tips
+Tags: automation, learning, tips, azure-devops
 Slug: automation-task-group-learning
 Author: Daniel Broderick
 Summary: Inadvertently restricting thousands of pipelines with a simple automated task group insertion.
