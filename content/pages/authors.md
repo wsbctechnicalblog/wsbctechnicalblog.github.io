@@ -43,7 +43,7 @@ Read Alex's posts [here](/author/alex-bunardzic.html)
 
 ## Daniel Broderick
 
-![Daniel Broderick](../images/Daniel-mug.jpg)
+![Daniel Broderick](../images/Daniel-mug.png)
 
 Daniel began his IT career in Sydney Australia before moving to Canada. 
 
