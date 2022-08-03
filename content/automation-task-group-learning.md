@@ -4,7 +4,7 @@ Category: Posts
 Tags: automation, learning, tips, azure-devops
 Slug: automation-task-group-learning
 Author: Daniel Broderick
-Summary: Inadvertently restricting thousands of pipelines with a simple automated task group insertion.
+Summary: Inadvertently restricting access thousands of pipelines with a simple automated task group insertion.
 
 The problem: How can the security team run all the tasks like the scans they need to run? 
 
