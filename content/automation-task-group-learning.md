@@ -6,7 +6,7 @@ Slug: automation-task-group-learning
 Author: Daniel Broderick
 Summary: Inadvertently restricting thousands of pipelines with a simple automated task group insertion.
 
-The problem how can the security team run all the tasks like the scans they need to run? 
+The problem: How can the security team run all the tasks like the scans they need to run? 
 
 The idea was simple inject an empty security review task group into the release pipelines, the security team can update the task group whenever they please. Providing a central location for the security items. 
  
