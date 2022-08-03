@@ -45,7 +45,11 @@ Read Alex's posts [here](/author/alex-bunardzic.html)
 
 ![Daniel Broderick](../images/Daniel-mug.jpg)
 
-TBD
+Daniel began his IT career in Sydney Australia before moving to Canada. 
+
+Daniel has worked on numerous projects for large North American companies migrating infrastructure, automating everything and anything possible and now cloud migration and devops. 
+
+When not working in IT Daniel enjoy getting out and about, skiing hiking, mountain bike riding and generally exploring new places, looking for that next adventure. 
 
 Read Daniel's posts [here](/author/daniel-broderick.html)
 
