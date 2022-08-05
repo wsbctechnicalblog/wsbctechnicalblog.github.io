@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-07-29T00:00:00-07:00</updated><entry><title>Automation mayhem and Angst is normal</title><link href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="alternate"></link><published>2022-07-29T00:00:00-07:00</published><updated>2022-07-29T00:00:00-07:00</updated><author><name>Willy Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-07-29:/automation-churn-and-angst.html</id><summary type="html">&lt;p&gt;Doing a manual and mind-numbing task twice or more? Automate!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – &lt;a href="https://www.tactec.ca/devops-core-values"&gt;Core DevOps Values&lt;/a&gt;. Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-08-05T00:00:00-07:00</updated><entry><title>Automation and the great unknown</title><link href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="alternate"></link><published>2022-08-05T00:00:00-07:00</published><updated>2022-08-05T00:00:00-07:00</updated><author><name>Daniel Broderick</name></author><id>tag:wsbctechnicalblog.github.io,2022-08-05:/automation-task-group-learning.html</id><summary type="html">&lt;p&gt;Inadvertently restricting access to thousands of pipelines with a simple automated task group insertion.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The problem: How can the security team run all the tasks like the scans they need to run? &lt;/p&gt;
+&lt;p&gt;The idea was simple inject an empty security review task group into the release pipelines, the security team can update the task group whenever they please. Providing a central location for the security items. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Simple idea" src="../images/automation-task-group-learning-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Automation to the rescue&lt;/h1&gt;
+&lt;p&gt;The automation was written, fired off by a YAML pipeline and the empty task group was injected. Over 3000 pipelines were updated. The injection automation runs weekly to inject the task group to any new pipelines that may be created.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Automation 2 the rescue" src="../images/automation-task-group-learning-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Using the REST API all that had to be done was create the JSON payload and send it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;{
+    &amp;quot;environment&amp;quot;: {},
+    &amp;quot;refName&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;enabled&amp;quot;: true,
+    &amp;quot;alwaysRun&amp;quot;: true,
+    &amp;quot;taskId&amp;quot;: &amp;quot;$TaskGroupID&amp;quot;,
+    &amp;quot;version&amp;quot;: &amp;quot;1.*&amp;quot;,
+    &amp;quot;name&amp;quot;: &amp;quot;$TaskGroupName&amp;quot;,
+    &amp;quot;continueOnError&amp;quot;: true,
+    &amp;quot;timeoutInMinutes&amp;quot;: 0,
+    &amp;quot;retryCountOnTaskFailure&amp;quot;: 0,
+    &amp;quot;definitionType&amp;quot;: &amp;quot;metaTask&amp;quot;,
+    &amp;quot;overrideInputs&amp;quot;: {},
+    &amp;quot;condition&amp;quot;: &amp;quot;succeededOrFailed()&amp;quot;,
+    &amp;quot;inputs&amp;quot;: {}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Job done – or so it was thought.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;Users cannot edit&lt;/h2&gt;
+&lt;p&gt;The team got a call a few weeks later that some users could no longer edit their releases, there was an error saving due to an issue with the security review stage.&lt;/p&gt;
+&lt;p&gt;How strange? Users could edit before, a quick check of the permissions yield no results as to why. &lt;/p&gt;
+&lt;p&gt;After working with a user we discovered the steps that allowed editing and steps to invoke the error. &lt;/p&gt;
+&lt;p&gt;What was not known at this stage was why. What was causing this? The security review task group was working, the release pipeline was working. Saving – nope.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Exporting and comparing&lt;/h2&gt;
+&lt;p&gt;The pipeline JSON definition was exported before and after changes that enabled users to edit – low and behold a variable that the security team were using in one of the tasks was a parameter in the task group. This was not present when injecting the empty security task group.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;The Fix&lt;/h2&gt;
+&lt;p&gt;The automation was not injecting this parameter into the definition. This caused the error when certain users saved. The automation was Injecting an empty task group though this task group was no longer empty. &lt;/p&gt;
+&lt;p&gt;The automation needed to reflect this. &lt;/p&gt;
+&lt;p&gt;A quick edit of the automation and users are back in business.&lt;/p&gt;
+&lt;p&gt;Below one can see the input field that is required when using the REST API.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;environment&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;taskId&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$TaskGroupID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;1.*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$TaskGroupName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;refName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;enabled&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;alwaysRun&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;continueOnError&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;timeoutInMinutes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;retryCountOnTaskFailure&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;definitionType&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;metaTask&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;overrideInputs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;condition&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;succeededOrFailed()&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;inputs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;variableName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;variableValue&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson learnt&lt;/strong&gt;, anytime a new variable or parameter is required the automation will have to be modified to add this input in.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Back to happy customers!!!&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Happy Customers" src="../images/automation-task-group-learning-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This goes to show that automation and improvement is a continuous process. It would have been easy to abandon the automation and go back to what works. With any automation there will be bumps in the road however it’s important to navigate past these. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Happy automation" src="../images/automation-task-group-learning-4.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Happy automation!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="automation"></category><category term="learning"></category><category term="tips"></category><category term="azure-devops"></category></entry><entry><title>Automation Mayhem and Angst is normal</title><link href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="alternate"></link><published>2022-07-29T00:00:00-07:00</published><updated>2022-07-29T00:00:00-07:00</updated><author><name>Willy Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-07-29:/automation-churn-and-angst.html</id><summary type="html">&lt;p&gt;Doing a manual and mind-numbing task twice or more? Automate!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – &lt;a href="https://www.tactec.ca/devops-core-values"&gt;Core DevOps Values&lt;/a&gt;. Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Angst Chart" src="../images/automation-churn-and-angst-3.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14,9 +92,16 @@
 &lt;p&gt;&lt;img alt="Turn it off" src="../images/automation-churn-and-angst-3.png"&gt;&lt;/p&gt;
 &lt;p&gt;This type of Microsoft Teams chat message is not uncommon as you flip the automation from dormant to active and it is tempting to disable the automation as requested. However, to be able to fine tune the automation, I urge you not to flip the switch back to dormant. Instead work with the stakeholders, especially the agitated ones, to continuously improve the automation – there is never a good time to action the automation churn! &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;
-- &lt;strong&gt;Remain critical&lt;/strong&gt; to identify and promote the automation that add value, and to deprecate unviable automation.
-- &lt;strong&gt;Do not despair&lt;/strong&gt; when automation takes time and effort to fine-tune and integrate into our existing processes. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Remain critical&lt;/strong&gt; to identify and promote the automation that add value, and to deprecate unviable automation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Do not despair&lt;/strong&gt; when automation takes time and effort to fine-tune and integrate into our existing processes. 
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;“Angst” that will never really go away&lt;/h1&gt;
@@ -30,9 +115,16 @@
 &lt;p&gt;As highlighted in the "Automation Angst” illustration the fear of &lt;strong&gt;FAILURE&lt;/strong&gt; spikes at the start and declines gradually as we make progress with fine-tuning and continuous improvement of our automation. The Angst is normal - embrace it as your guardian of built-in quality and embrace the continuous &lt;strong&gt;FAILURES&lt;/strong&gt; to advance your automation.&lt;/p&gt;
 &lt;p&gt;While I have no recipe for sleepless nights where you mull over thousands of lines of config-as-code, wake up in a sweat dreaming of scrum masters and engineers pounding on your door after breaking their pipeline, or pondering over when to click the launch button, I can reassure you that my entire team is still intact and promoting automation as a pivotal pillar. At some point you simply have to click on the &lt;strong&gt;ENTER&lt;/strong&gt; button and watch the action q-;) &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;
-- &lt;strong&gt;FAILURE is an option here. If things are not failing, you are not innovating enough.&lt;/strong&gt; - Elon Musk.
-- &lt;strong&gt;Gradually increase the blast radius&lt;/strong&gt;. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The &lt;strong&gt;big bang&lt;/strong&gt; strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LEARNINGS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;FAILURE is an option here. If things are not failing, you are not innovating enough.&lt;/strong&gt; - Elon Musk.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gradually increase the blast radius&lt;/strong&gt;. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The &lt;strong&gt;big bang&lt;/strong&gt; strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;What are your automation experiences?&lt;/h1&gt;
@@ -2443,24 +2535,4 @@ If Advanced Beginners graduate to the Expert Beginner level, they typically assu
 &lt;p&gt;What we’ve described above is what is technically known as an interface, or an API.&lt;/p&gt;
 &lt;p&gt;A quality interface/API is always &lt;em&gt;structure-shy&lt;/em&gt;. It does not care about the &lt;em&gt;How&lt;/em&gt;, only cares about the &lt;em&gt;What&lt;/em&gt;.
 To create the client before we create the code that will serve the client’s expectations, we resort to writing microtests. Microtests are focused on small, atomic steps where the client sends one request to the system, and then, after receiving a response, asserts whether the response matches the initial expectation. That way, the client verifies that the behaviour of the system is still as expected.&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;structure-shy&lt;/em&gt; code is now freely open for radical refactoring. With each refactoring step (i.e., a change made to the code structure), we run the clients (i.e., microtests) to confirm that nothing broke with that change and that the system still behaves as expected.&lt;/p&gt;</content><category term="Posts"></category><category term="technical-excellence"></category></entry><entry><title>How to suppress selected logic when running PR validation pipelines</title><link href="https://wsbctechnicalblog.github.io/suppress-pipeline-as-code-for-pr.html" rel="alternate"></link><published>2021-10-04T00:00:00-07:00</published><updated>2021-10-04T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-10-04:/suppress-pipeline-as-code-for-pr.html</id><summary type="html">&lt;p&gt;Solving the pipeline-as-code "chicken or the egg" challenge by suppressing selected logic&lt;/p&gt;</summary><content type="html">&lt;p&gt;With our app-type CI/CD pipeline blueprints we are consolidating the continuous integration (CI) and continuous delivery (CD) pipelines into one pipeline. When you peruse &lt;a href="/yaml-pipelines-part10.html"&gt;Part 10: Pipelines - Meet our second generation app-type blueprints&lt;/a&gt; you will get an overview of our new pipelines which are &lt;strong&gt;powerful&lt;/strong&gt; ... with a twist.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;The Twist&lt;/h1&gt;
-&lt;p&gt;By consolidating both the continuous integration and delivery logic, we made the pipelines unsuitable to be used as validation pipelines in our Pull Request policies. Why? &lt;/p&gt;
-&lt;p&gt;Assume you are creating a pull request to apply a hotfix to a release branch. When the pull request triggers your pipeline, it must wait until the pipeline is complete - which means we must build and deploy to all environments, including production, before the validation pipeline completes. Obviously a "chicken or the egg" and &lt;strong&gt;not&lt;/strong&gt; a desired solution.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;The Fix&lt;/h1&gt;
-&lt;p&gt;We therefore applied a minor fix (or feature) to our blueprints.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;# &lt;/span&gt;&lt;span class="nb"&gt;--------------------------------------------------------------------------&lt;/span&gt;&lt;span class="c"&gt;&lt;/span&gt;
-&lt;span class="c"&gt;# DEPLOYMENT&lt;/span&gt;
-&lt;span class="c"&gt;# 2021&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;10&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;04 WS Suppress CD on &amp;quot;merge&amp;quot; so that we can use PR validation builds&lt;/span&gt;
-&lt;span class="c"&gt;# &lt;/span&gt;&lt;span class="nb"&gt;--------------------------------------------------------------------------&lt;/span&gt;&lt;span class="c"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;-&lt;/span&gt;&lt;span class="c"&gt; ${{ if and(ne(parameters&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;suppressCD&lt;/span&gt;&lt;span class="nt"&gt;,&lt;/span&gt;&lt;span class="c"&gt; true)&lt;/span&gt;&lt;span class="nt"&gt;,&lt;/span&gt;&lt;span class="c"&gt; ne(parameters&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;customCDTemplate&lt;/span&gt;&lt;span class="nt"&gt;,&lt;/span&gt;&lt;span class="c"&gt; &amp;#39;blueprint&amp;#39;)&lt;/span&gt;&lt;span class="nt"&gt;,&lt;/span&gt;&lt;span class="c"&gt; ne(lower(variables&lt;/span&gt;&lt;span class="k"&gt;[&lt;/span&gt;&lt;span class="c"&gt;&amp;#39;Build&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;SourceBranchName&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;]&lt;/span&gt;&lt;span class="c"&gt;)&lt;/span&gt;&lt;span class="nt"&gt;,&lt;/span&gt;&lt;span class="c"&gt; &amp;#39;merge&amp;#39;)) }}:&lt;/span&gt;
-&lt;span class="c"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;-&lt;/span&gt;&lt;span class="c"&gt; template: /Operations/Custom/${{parameters&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;customCDTemplate}}&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;yml&lt;/span&gt;
-&lt;span class="c"&gt;    parameters:&lt;/span&gt;
-&lt;span class="c"&gt;      cdParameter: ${{parameters&lt;/span&gt;&lt;span class="nt"&gt;.&lt;/span&gt;&lt;span class="c"&gt;customCDParameter}}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code&gt;ne(lower(variables['Build.SourceBranchName']), 'merge')&lt;/code&gt; part of the code suppresses the conditional logic if the pipeline run originates from a Pull Request merge validation build.&lt;/p&gt;
-&lt;p&gt;At this stage we suppress all post-build logic to keep it &lt;strong&gt;simple&lt;/strong&gt; but can shift the conditional logic by a few lines to allow the deployment to the &lt;strong&gt;development&lt;/strong&gt; stage, while suppressing others.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt;, but powerful!&lt;/p&gt;</content><category term="Posts"></category><category term="pipelines"></category><category term="tips"></category><category term="x-as-code"></category></entry></feed>
+&lt;p&gt;The &lt;em&gt;structure-shy&lt;/em&gt; code is now freely open for radical refactoring. With each refactoring step (i.e., a change made to the code structure), we run the clients (i.e., microtests) to confirm that nothing broke with that change and that the system still behaves as expected.&lt;/p&gt;</content><category term="Posts"></category><category term="technical-excellence"></category></entry></feed>
