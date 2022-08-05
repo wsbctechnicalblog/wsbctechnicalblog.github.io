@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Common Engineering - To Standardize or Not to Standardize, view from a directors point - </title>
+        <title>Automation and the great unknown - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,88 +32,101 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/standardize-or-not-to-standardize.html" rel="bookmark"
-            title="Permalink to Common Engineering - To Standardize or Not to Standardize, view from a directors point">Common Engineering - To Standardize or Not to Standardize, view from a directors point</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="bookmark"
+            title="Permalink to Automation and the great unknown">Automation and the great unknown</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Andre Kaminski on Wed 06 April 2022</div>
+        <div class="read-more">Posted by Daniel Broderick on Fri 05 August 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Which is better, standardization or experimentation?</p>
+            <p>Inadvertently restricting access to thousands of pipelines with a simple automated task group insertion.</p>
         </div>
     
         <div class="entry-content">
-            <p>I have to admit that I don’t like going shopping, so I leave it mostly to my wife. If I have to go to a store, I want to finish this exercise as quickly as possible, as … I find it boring.</p>
-<p>The biggest frustration I have is when my wife sends me to a supermarket, and suddenly I realize that they changed location of aisles with specific products. This is most probably one of the very few occasions when you can hear me swearing, and where I pray for standardization. Standardization makes our lives so much easier and efficient.</p>
+            <p>The problem: How can the security team run all the tasks like the scans they need to run? </p>
+<p>The idea was simple inject an empty security review task group into the release pipelines, the security team can update the task group whenever they please. Providing a central location for the security items. </p>
 <blockquote>
-<p><img alt="shopping" src="../images/standardize-or-not-to-standardize-1.png"></p>
+<p><img alt="Simple idea" src="../images/automation-task-group-learning-1.png"></p>
 </blockquote>
-<p>So now I have to navigate through the aisles and shelves, still swearing, trying to find what I have on my list.
-But guess what. Sometimes, unexpectedly I get lost in an unknown aisle and find some new ethnic produce that I have never tried. Since I am a risk taker, quite often I discover a new food that extends my cooking abilities and menu horizon (which mostly, but not always, is pleasing to my wife and kids).</p>
-<p>This is actually a great example of benefits and limitations of standardization versus experimentation.</p>
-<p>Standardization allows us to be more efficient and faster in the Cynefin framework parlor - simple or complicated processes. In this case finding a standard product that I have used in the past, and which my wife put on the list, is way easier and faster. However the cost of this efficiency is a loss of creativity. While being focused on collecting what I need, I mostly miss the discovery part.</p>
-<p>Henri Fayol and Henry Ford mastered the standardization and repeatability of processes to perfection. But again, manufacturing of widgets or cars belongs to simple (T-Model) or complicated domains (Tesla).</p>
+<hr>
+<h1>Automation to the rescue</h1>
+<p>The automation was written, fired off by a YAML pipeline and the empty task group was injected. Over 3000 pipelines were updated. The injection automation runs weekly to inject the task group to any new pipelines that may be created.</p>
 <blockquote>
-<p><img alt="manufacturing" src="../images/standardize-or-not-to-standardize-2.png"></p>
+<p><img alt="Automation 2 the rescue" src="../images/automation-task-group-learning-2.png"></p>
 </blockquote>
-<p>When it comes to innovation however, this stops working. Rigidity of processes and penalizing those who try to break them, negatively impacts our ability to find new solutions to existing problems.</p>
-<p>So here are two ways to win in the market. One is to be more efficient than competitors, the other is to find a better solution but at the cost of initial speed of delivery. The problem with the former is that you can optimize the process only to certain level after which, you will plateau. You can be efficient only to a point. Although initially you might win over the competitors, eventually they are going to catch up. The optimization of the process has its limits.</p>
-<p>On the other hand, innovation brings intellectual property into the picture, that cannot be easily replicated. Yes, the competitors will eventually catch up where you are right now, but it will take them much longer (think Porter’s strategies). As a matter of fact, if you continue innovating, your competitors will always try to catch up, and will always be behind. Innovation doesn’t have limit, it doesn’t have plateau, as long as you keep inflow of new ideas.</p>
-<p>But there is another problem with innovating - it doesn’t guarantee success. As a matter of fact more that 90% of ideas are not going to work, and most probably will be waste of time. So the effectiveness disappears in a puff of smoke.</p>
+<p>Using the REST API all that had to be done was create the JSON payload and send it.</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;environment&quot;: {},
+    &quot;refName&quot;: &quot;&quot;,
+    &quot;enabled&quot;: true,
+    &quot;alwaysRun&quot;: true,
+    &quot;taskId&quot;: &quot;$TaskGroupID&quot;,
+    &quot;version&quot;: &quot;1.*&quot;,
+    &quot;name&quot;: &quot;$TaskGroupName&quot;,
+    &quot;continueOnError&quot;: true,
+    &quot;timeoutInMinutes&quot;: 0,
+    &quot;retryCountOnTaskFailure&quot;: 0,
+    &quot;definitionType&quot;: &quot;metaTask&quot;,
+    &quot;overrideInputs&quot;: {},
+    &quot;condition&quot;: &quot;succeededOrFailed()&quot;,
+    &quot;inputs&quot;: {}
+}
+</code></pre></div>
+
 <blockquote>
-<p><img alt="effectiveness" src="../images/standardize-or-not-to-standardize-3.png"></p>
+<p>Job done – or so it was thought.</p>
 </blockquote>
-<p>However, it is the 10% of those ideas that make difference, and elevate the companies to the top. This is not just linear growth, but rather exponential rocket launch pad.</p>
+<hr>
+<h2>Users cannot edit</h2>
+<p>The team got a call a few weeks later that some users could no longer edit their releases, there was an error saving due to an issue with the security review stage.</p>
+<p>How strange? Users could edit before, a quick check of the permissions yield no results as to why. </p>
+<p>After working with a user we discovered the steps that allowed editing and steps to invoke the error. </p>
+<p>What was not known at this stage was why. What was causing this? The security review task group was working, the release pipeline was working. Saving – nope.</p>
+<hr>
+<h2>Exporting and comparing</h2>
+<p>The pipeline JSON definition was exported before and after changes that enabled users to edit – low and behold a variable that the security team were using in one of the tasks was a parameter in the task group. This was not present when injecting the empty security task group.</p>
+<hr>
+<h2>The Fix</h2>
+<p>The automation was not injecting this parameter into the definition. This caused the error when certain users saved. The automation was Injecting an empty task group though this task group was no longer empty. </p>
+<p>The automation needed to reflect this. </p>
+<p>A quick edit of the automation and users are back in business.</p>
+<p>Below one can see the input field that is required when using the REST API.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;taskId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupID&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.*&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupName&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;refName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;alwaysRun&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;continueOnError&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;timeoutInMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;retryCountOnTaskFailure&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;definitionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;metaTask&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;overrideInputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;succeededOrFailed()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="s2">&quot;variableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;variableValue&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p><strong>Lesson learnt</strong>, anytime a new variable or parameter is required the automation will have to be modified to add this input in.</p>
+<hr>
+<h2>Back to happy customers!!!</h2>
 <blockquote>
-<p><img alt="phone in hand" src="../images/standardize-or-not-to-standardize-4.png"> </p>
+<p><img alt="Happy Customers" src="../images/automation-task-group-learning-3.png"></p>
 </blockquote>
-<p>Thus, both approaches have advantages and failings.</p>
-<p>Which one is better? </p>
-<p>As a consultant would say - ‘it depends’.</p>
-<p>It depends on ‘personality’ and culture of your organization, risk tolerance, desperation to succeed. This is the reason why start-ups are more innovative (they have nothing to lose), while well established companies are more cautious and focus more on efficiency and process improvement by standardization (middle management tries to limit the risks). But then many established companies survive, while 90% of startups fail.</p>
-<p>I believe that the best approach, rather than trying to standardize, is to provide guardrails. Guardrails would define when you should standardize, while still keeping open options for projects and products that are just a hypothesis. Both approaches are viable, but which side of the spectrum you want to be, will depend on what you are trying to achieve. </p>
-<p>In organization that I work - WorkSafeBC, we decided exactly to do this - find balance.
-A few years back we created a Common Engineering (Ce) team whose responsibility is to enable our engineering community to collaborate and agree on best practices that then become set of guardrails for our teams. A team can select one of the standards within the portfolio, but without locking them down to a particular way of solving a problem. The teams can still come up with different, innovative solution, which could be added to our portfolio library or pattern for re-usability. Common Engineering team is a custodian of these guardrails, providing information about existing standards, and at the same time enabling teams to on-board new best practices. We use few instruments for this, that are facilitated by Ce.</p>
-<p><a href="/ceremony-center-of-enablement.html"><strong>Centers of Enablement (CoE)</strong></a>
-These are small (5-9 people), cross functional, long living groups that provide overall governance and direction to a specific function. They meet frequently, facilitating development of best practices and standards through Communities of Practice (CoPs) and Working Groups (WGs).</p>
-<p><a href="/ceremony-community-of-practice.html"><strong>Communities of Practice (CoP)</strong></a>
-CoPs are larger groups of people with common interests, but the membership is not fixed. They focus on providing feedback to practices proposed by CoEs and suggesting new solutions. Creativity and feedback through diversity of opinions and experiences.</p>
-<p><a href="/ceremony-working-group.html"><strong>Working Groups (WG)</strong></a>
-These are temporary, fixed membership groups called to solve a specific problem. They are small, focused, and as soon as problem is solved, they disband and reform with new members to address next problem in the priority backlog.</p>
-<p>If you would ask me about advice which way to go, this would be my answer.</p>
-<p>There is no right or wrong way. It is a <strong>spectrum</strong>, as every organization is different, and different levels of standardization, consistency or innovation might be needed. I have to admit that personally I am inclined to be rather on innovation side (the discovered products in the ethnic foods stay with me for life, while my wife’s list is just once off thing, that I will forget the minute I leave the supermarket).</p>
-<p>So here is the set of questions that we should ask ourselves:</p>
-<ul>
-<li>
-<p>are we in regulated industry and need to conform to specific audit requirements? If so, standardization and gated processes are better choice.</p>
-</li>
-<li>
-<p>how innovative we want to be? If innovation is our primary goal, we will want to leave as much freedom to the teams as possible</p>
-</li>
-<li>
-<p>are we working on a product that nobody did before? Again, you will want to experiment with as little constraints as possible (your company’s survival could depend on it after all)</p>
-</li>
-<li>
-<p>how new the technology is that we are intending to use? If it is new, we want to experiment and innovate</p>
-</li>
-<li>
-<p>how difficult it will be to maintain the product in the future? If this is our concern, we will want to standardize more</p>
-</li>
-<li>
-<p>how easy is to acquire talent with needed skills? Again, if it is difficult to find skilled resources, moving towards standardization might be the right answer</p>
-</li>
-<li>
-<p>how complicated the product is going to be? The more complicated integration will be, the more we want to standardize in order to balance the speed.</p>
-</li>
-</ul>
-<p>The bottom line is that the choice is yours. As I mentioned earlier, my personal preference is to be on the innovation side, but due to the role at my organization, I need to carefully evaluate options and find balance, before providing recommendations (here comes the servant leadership part). 
-I hope that the set of questions above can help with the decision. Good luck!</p>
-<p>And by the way, we always look for innovative, inspiring people who push boundaries. If you are one of them, please reach out to me.</p>
+<p>This goes to show that automation and improvement is a continuous process. It would have been easy to abandon the automation and go back to what works. With any automation there will be bumps in the road however it’s important to navigate past these. </p>
+<blockquote>
+<p><img alt="Happy automation" src="../images/automation-task-group-learning-4.png"></p>
+<p><strong>Happy automation!</strong></p>
+</blockquote>
         </div>
 
         
@@ -130,9 +143,9 @@ I hope that the set of questions above can help with the decision. Good luck!</p
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation </a>
-        | <a href="https://wsbctechnicalblog.github.io/standardize-or-not-to-standardize.html" rel="bookmark"
-         title="Permalink to Common Engineering - To Standardize or Not to Standardize, view from a directors point">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a>
+        | <a href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="bookmark"
+         title="Permalink to Automation and the great unknown">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
