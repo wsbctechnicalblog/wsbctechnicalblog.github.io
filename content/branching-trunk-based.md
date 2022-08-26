@@ -8,6 +8,8 @@ Summary: Keeping it simple and avoiding the soul quenching politics
 
 TBD 
 
+[Why we use pull requests with our trunk-based branching strategies](/branching-pull-request.html)
+
 > ![Why](/images/branching-trunk-based-1.png)
 
 TBD 
