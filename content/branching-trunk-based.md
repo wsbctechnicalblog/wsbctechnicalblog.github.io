@@ -70,5 +70,5 @@ Which option is better? You decide and you pick your strategy!
 
 The **trunk-based** branching strategy is straight-forward, well-suited for the 2-pizza sized product team, and lays a solid foundation for our quest for continuous delivery and release on demand. 
 
-Remember, keep it **SIMPLE**!
+Remember, as with everything else, keep it **SIMPLE**!
 
