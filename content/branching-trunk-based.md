@@ -1,5 +1,5 @@
 Title: Trunk-based branching strategy without the bells and whistles
-Date: 2022-08-31
+Date: 2022-09-02
 Category: Posts 
 Tags: engineering, version-control
 Slug: branching-trunk-based
