@@ -8,6 +8,8 @@ Summary: "Every person in your company is a vector. Your progress is determined 
 
 After observing a lot of technical leads and mentors over the past 35+ years of bits & bytes adventures, as well as observing those they influence, I have compiled my short list of top and least effective qualities. Take it with a pinch of salt, read between the lines, and remember it is my list - my views.
 
+---
+
 # Inspiration and leadership is based on a pull, not push model
 
 When you approach the world with a "my way or the highway" mindset, directing, inspecting, monitoring, supervising, and in extreme cases micro managing your operating at the least effective level of leadership. Some common leadership anti-pattern signs:
@@ -15,21 +17,35 @@ When you approach the world with a "my way or the highway" mindset, directing, i
 - **Questioning everything** - there is a fine line (tone) between being curious and questioning.
 - **Dominating discussions** - not allowing your team to self-manage and have vibrant discussions.
 - **Micro managing** - double and triple checking everything, creating a **low-trust** environment.
-- **Directing from the back** - I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader. He was always part of the team, usually leading at the front, at time encouraging everyone at the back carrying extra equipment on long marches, and empowering everyone in our unit to make decisions and lead.
+- **Directing from the back** - I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader. He was always part of the team, usually leading at the front, at times encouraging everyone at the back carrying extra equipment on long marches, and empowering everyone in our unit to take responsibility and make decisions.
 
-I realized that you cannot **push** as a leader, you have to **lead** and **encourage** to pursue a common **goal**.
+>
+> You cannot **push** as a leader, you have to **lead**, **encourage**, and **pull** the team to pursue a common **goal**.
+>
+
+---
 
 # Negative energy sucks the life out of innovation
 
-TBD
+> ![Negative](/images/be-positive-2.png)    
 
-# You are but a piece of the bigger puzzle
+Someone who is negative or continuously criticizes everything and everyone, sucks the passion and energy out of a room like a raging fire consumes oxygen. What is left is a toxic environment, uncooperative engineers, and declining support for your goals,
 
-TBD
+>
+> Remove **toxic** influence from your Twitter, LinkedIn, and other media channels today!
+>
 
-# Union of PEOPLE!
+No matter how dire the situation, if you lead with **passion** and **commitment**, you will find the support you need to move forward and be successful.
 
+---
+
+# You are but a piece of the bigger puzzle - Union of PEOPLE!
+
+>
 > "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users." = [Donovan Brown](https://devblogs.microsoft.com/devops/what-is-devops-donovan/)
+>
+
+Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the borg, the **team**.
 
 TBD
 
@@ -43,13 +59,11 @@ TBD
 
 # Challenge your ecosystem
 
-Last, but not least, you have to challenge your ecosystem to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. 
+Last, but not least, you have to challenge everyone to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. 
 
 For example, we just challenged our engineers with the following:    
 
 > ![Challenge](/images/be-positive-1.png)
 
 What are your experiences and thoughts on this topic?
-
-TBD
 
