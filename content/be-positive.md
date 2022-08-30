@@ -49,17 +49,31 @@ Both Elon's quote, see above, and Donovan's definition of DevOps highlights the 
 
 A true leader extends **trust** and **empowers** every member of the team to self-organize, self-manage, and to make decisions. This ensures that the team and its members become self-sufficient and that they do not miss the leader if absent short- or long-term.
 
+>
+> "_I am the beginning, the end, the one who is many. I am the Borg._", the Borg.
+>
+
 ---
 
 # Lead by example
 
-TBD
+Leaders who inspire me have the following qualities (and more):
+
+- They are **curious** and **listen** to their team and stakeholders to be informed on every individual, understand what can be improved, and to learn what they do not know.
+
+- They **get their hands dirty** and are part of the team, especially when the infamous 2AM production incident call is received.
+
+- They **deliver on promises**. Making promises and not delivering will rapidly erode the team's morale and support.
+
+- They **value people** and their **work-life balance**. Any discussion that touches on the work-life balance or a team member's welfare takes priority above everything else.
 
 ---
 
-# Keep it SIMPLE and REALISTIC
+# TRUST!
 
-TBD
+> ![Trust](/images/be-positive-3.png)  
+
+
 
 ---
 
@@ -67,7 +81,7 @@ TBD
 
 Last, but not least, you have to challenge everyone to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. 
 
-For example, we just challenged our engineers with the following:    
+For example, I just challenged all our engineers with the following:    
 
 > ![Challenge](/images/be-positive-1.png)
 
