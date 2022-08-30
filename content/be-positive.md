@@ -29,10 +29,10 @@ When you approach the world with a "my way or the highway" mindset, directing, i
 
 > ![Negative](/images/be-positive-2.png)    
 
-Someone who is negative or continuously criticizes everything and everyone, sucks the passion and energy out of a room like a raging fire consumes oxygen. What is left is a toxic environment, uncooperative engineers, and declining support for your goals,
+Someone who is negative or continuously criticizes everything and everyone, sucks the passion and energy out of a room like a raging fire consumes oxygen. What remains is a lonely lead in a toxic environment, surrounded by uncooperative engineers, and declining support for their goals,
 
 >
-> Remove **toxic** influence from your Twitter, LinkedIn, and other media channels today!
+> Remove **toxic** influence and noise from your Twitter, LinkedIn, and other collaboration  channels today!
 >
 
 No matter how dire the situation, if you lead with **passion** and **commitment**, you will find the support you need to move forward and be successful.
@@ -45,17 +45,23 @@ No matter how dire the situation, if you lead with **passion** and **commitment*
 > "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users." = [Donovan Brown](https://devblogs.microsoft.com/devops/what-is-devops-donovan/)
 >
 
-Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the borg, the **team**.
+Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the borg, the people, the **team**.
 
-TBD
+A true leader extends **trust** and **empowers** every member of the team to self-organize, self-manage, and to make decisions. This ensures that the team and its members become self-sufficient and that they do not miss the leader if absent short- or long-term.
+
+---
 
 # Lead by example
 
 TBD
 
+---
+
 # Keep it SIMPLE and REALISTIC
 
 TBD
+
+---
 
 # Challenge your ecosystem
 
