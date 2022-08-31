@@ -26,7 +26,7 @@ Trunk-based development is a proven and common practice among high-performing De
 
 > ![Trunk](/images/branching-trunk-based-3.png)
 
-We start with a trunk, that has a hypothetical version of MAJOR 0, MINOR 1, and PATCH 0, aka **0.1.0**. ome point we create a feature branch to build a new feature and another feature branch to address a bug.
+We start with a trunk, that has a hypothetical version of MAJOR 0, MINOR 1, and PATCH 0, aka **0.1.0**. At some point we create a feature branch to build a new feature and another feature branch to address a bug.
 
 When we are ready to deploy we merge our changes back to the **stable** trunk. As discussed in [Why we use pull requests with our trunk-based branching strategies](/branching-pull-request.html), we are stopped by the branch policies that demand a code review by one or more reviewers, closed comments, linked work items, a clean validation build, and healthy code and security scans.
 
