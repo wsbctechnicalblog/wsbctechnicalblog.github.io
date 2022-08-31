@@ -17,8 +17,14 @@ When you approach the world with a "my way or the highway" mindset, directing, i
 - **Questioning everything** - there is a fine line (tone) between being curious and questioning.
 - **Dominating discussions** - not allowing your team to self-manage and have vibrant discussions.
 - **Micromanaging** - double and triple checking everything, creating a **no-trust** environment.
-- **Directing from the back** - I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader in the military. He was always part of the team, usually leading at the front, at times encouraging everyone at the back carrying extra equipment on long marches and empowering everyone in our unit to take responsibility and make decisions.
+- **Directing from behind** - aka command and control.
 
+The last point triggered an interesting discussion with [Andre](https://wsbctechnicalblog.github.io/pages/authors.html). Leaders who subscribe to **servant leadership**, are **leading** from behind, putting people first, and striving to empower everyone. 
+
+I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader in the military. He was always part of the team, usually observing, encouraging, and delegating at the front, at times supporting everyone at the back carrying extra equipment on long marches. His secret sauce was to empower everyone in our unit to take responsibility and make decisions.
+
+>
+> There is a huge difference between **directing** and **leading**!
 >
 > You cannot **push** as a leader, you have to **lead**, **encourage**, and **pull** the team to towards a common **goal**.
 >
