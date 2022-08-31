@@ -10,17 +10,17 @@ After observing a lot of technical leads and mentors over the past 35+ years of 
 
 ---
 
-# Inspiration and leadership is based on a pull, not push model
+# Inspiration and leadership are based on a pull, not push model
 
-When you approach the world with a "my way or the highway" mindset, directing, inspecting, monitoring, supervising, and in extreme cases micro managing your operating at the least effective level of leadership. Some common leadership anti-pattern signs:
+When you approach the world with a "my way or the highway" mindset, directing, inspecting, monitoring, supervising, and in extreme cases micromanaging - the least effective level of leadership. Some common leadership anti-pattern signs:
 
 - **Questioning everything** - there is a fine line (tone) between being curious and questioning.
 - **Dominating discussions** - not allowing your team to self-manage and have vibrant discussions.
-- **Micro managing** - double and triple checking everything, creating a **low-trust** environment.
-- **Directing from the back** - I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader. He was always part of the team, usually leading at the front, at times encouraging everyone at the back carrying extra equipment on long marches, and empowering everyone in our unit to take responsibility and make decisions.
+- **Micromanaging** - double and triple checking everything, creating a **no-trust** environment.
+- **Directing from the back** - I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader in the military. He was always part of the team, usually leading at the front, at times encouraging everyone at the back carrying extra equipment on long marches and empowering everyone in our unit to take responsibility and make decisions.
 
 >
-> You cannot **push** as a leader, you have to **lead**, **encourage**, and **pull** the team to pursue a common **goal**.
+> You cannot **push** as a leader, you have to **lead**, **encourage**, and **pull** the team to towards a common **goal**.
 >
 
 ---
@@ -45,7 +45,7 @@ No matter how dire the situation, if you lead with **passion** and **commitment*
 > "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users." = [Donovan Brown](https://devblogs.microsoft.com/devops/what-is-devops-donovan/)
 >
 
-Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the borg, the people, the **team**.
+Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the Borg, the people, the **team**.
 
 A true leader extends **trust** and **empowers** every member of the team to self-organize, self-manage, and to make decisions. This ensures that the team and its members become self-sufficient and that they do not miss the leader if absent short- or long-term.
 
@@ -73,13 +73,26 @@ Leaders who inspire me have the following qualities (and more):
 
 > ![Trust](/images/be-positive-3.png)  
 
+Here is a great quote:
 
+>
+> "Building trust and taking care of your people is a mechanism for clarity." - L. David Marquet
+>
+
+**Trust** is earned through factors such as psychological safety, transparency, understanding of each other, fairness, involvement in decision-making, and a clear vision. 
+
+A few ideas to make your trust account grow:
+
+- Create a safe space for everyone to speak up and share their feedback. 
+- Explain decisions and directives.
+- Inspire creativity.
+- Foster work:life balance.
 
 ---
 
 # Challenge your ecosystem
 
-Last, but not least, you have to challenge everyone to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. 
+Last, but not least, you must challenge everyone to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. 
 
 For example, I just challenged all our engineers with the following:    
 
