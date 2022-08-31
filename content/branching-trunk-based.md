@@ -30,7 +30,7 @@ We start with a trunk, that has a hypothetical version of MAJOR 0, MINOR 1, and 
 
 When we are ready to deploy we merge our changes back to the **stable** trunk. As discussed in [Why we use pull requests with our trunk-based branching strategies](/branching-pull-request.html), we are stopped by the branch policies that demand a code review by one or more reviewers, closed comments, linked work items, a clean validation build, and healthy code and security scans.
 
-We could, but we will not, argue that with trunk-based development we should be able to commit directly to the **trunk**. Theoretically **yes** - if we are part of a high-performance and high-trust team we can commit **directl** to the trunk, however, in my 35+ years of engineering I have had the priviledge of working for such a team two or three times.have a small, mature, and experienced team that **trusts** 
+We could, but we will not, argue that with trunk-based development we should be able to commit directly to the **trunk**. Theoretically **yes** - if we are part of a high-performance and high-trust team we can commit **directly** to the trunk, however, in my 35+ years of engineering I have had the privilege of working for such a team two or three times.have a small, mature, and experienced team that **trusts** 
 
 When our code has been proven GREEN the changes are merged to the trunk and versioned 0.1.1, followed by the bug fix changes, versioned 0.1.2.
 
