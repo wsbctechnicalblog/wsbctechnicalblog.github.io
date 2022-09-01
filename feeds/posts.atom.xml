@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-08-05T00:00:00-07:00</updated><entry><title>Automation and the great unknown</title><link href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="alternate"></link><published>2022-08-05T00:00:00-07:00</published><updated>2022-08-05T00:00:00-07:00</updated><author><name>Daniel Broderick</name></author><id>tag:wsbctechnicalblog.github.io,2022-08-05:/automation-task-group-learning.html</id><summary type="html">&lt;p&gt;Inadvertently restricting access to thousands of pipelines with a simple automated task group insertion.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The problem: How can the security team run all the tasks like the scans they need to run? &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2022-09-02T00:00:00-07:00</updated><entry><title>Trunk-based branching strategy without the bells and whistles</title><link href="https://wsbctechnicalblog.github.io/branching-trunk-based.html" rel="alternate"></link><published>2022-09-02T00:00:00-07:00</published><updated>2022-09-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-09-02:/branching-trunk-based.html</id><summary type="html">&lt;p&gt;Keeping it simple and avoiding the soul quenching politics&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from the &lt;a href="/branching-pull-request.html"&gt;Why we use pull requests with our trunk-based branching strategies&lt;/a&gt; virtual chat, where we discussed &lt;a href="/pull-requests-friend.html"&gt;pull requests&lt;/a&gt; and briefly touched on trunk-based development. This article is based on a script I prepared for an upcoming innovation workshop, where we will lift the bonnet to explore our blueprints and&lt;/p&gt;
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Why" src="/images/branching-trunk-based-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is one of many branching strategies, our recommended strategy, and the norm with our &lt;a href="./yaml-pipelines-part10.html"&gt;application-type blueprint&lt;/a&gt;-based pipelines to enable &lt;strong&gt;consistency&lt;/strong&gt; and &lt;strong&gt;standardization&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Reasons" src="/images/branching-trunk-based-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By merging &lt;strong&gt;small&lt;/strong&gt; and &lt;strong&gt;frequent&lt;/strong&gt; updates (short-lived feature branches) to a core &lt;strong&gt;trunk&lt;/strong&gt;, master, or main branch, we streamline merging, integration of code, enable continuous integrations, automated tests, continuous code reviews, and automated validations. We guard the trunk to maintain a &lt;strong&gt;green&lt;/strong&gt; source of truth, ready to deploy at any commit.&lt;/p&gt;
+&lt;p&gt;Trunk-based development is a proven and common practice among high-performing DevOps teams, often complemented by feature flags and/or ring-deployments to deploy continuously and release on demand – our future vision. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Getting started&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Trunk" src="/images/branching-trunk-based-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We start with a trunk, that has a hypothetical version of MAJOR 0, MINOR 1, and PATCH 0, aka &lt;strong&gt;0.1.0&lt;/strong&gt;. At some point we create a feature branch to build a new feature and another feature branch to address a bug.&lt;/p&gt;
+&lt;p&gt;When we are ready to deploy we merge our changes back to the &lt;strong&gt;stable&lt;/strong&gt; trunk. As discussed in &lt;a href="/branching-pull-request.html"&gt;Why we use pull requests with our trunk-based branching strategies&lt;/a&gt;, we are stopped by the branch policies that demand a code review by one or more reviewers, closed comments, linked work items, a clean validation build, and healthy code and security scans.&lt;/p&gt;
+&lt;p&gt;We could, but we will not, argue that with trunk-based development we should be able to commit directly to the &lt;strong&gt;trunk&lt;/strong&gt;. Theoretically &lt;strong&gt;yes&lt;/strong&gt; - if we are part of a high-performance and high-trust team we can commit &lt;strong&gt;directly&lt;/strong&gt; to the trunk, however, in my 35+ years of engineering I have had the privilege of working for such a team two or three times.have a small, mature, and experienced team that &lt;strong&gt;trusts&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;When our code has been proven GREEN the changes are merged to the trunk and versioned 0.1.1, followed by the bug fix changes, versioned 0.1.2.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Release branch&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Trunk+Release" src="/images/branching-trunk-based-4.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When we are ready to deploy, we create a label and a release branch from the label, which triggers our continuous integration and delivery pipeline.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Hotfix-1" src="/images/branching-trunk-based-5.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After we deploy to production the unthinkable happens ... we detect a bug! &lt;/p&gt;
+&lt;p&gt;If &lt;strong&gt;not&lt;/strong&gt; serious, we add it to our technical debt and to be fixed with the next feature work.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Hotfix - Option 1&lt;/h1&gt;
+&lt;p&gt;If &lt;strong&gt;serious&lt;/strong&gt;, we create a HOTFIX on the trunk and merge it back to the release branch, which in turn triggers another production deploy.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note that you can perform the merge to trunk and the release branch with one pull request, using the &lt;a href="https://marketplace.visualstudio.com/items?itemName=1ESLighthouseEng.pr-multi-cherry-pick"&gt;PR Multi-Cherry-Pick&lt;/a&gt; extension, developed by the Microsoft Office team. This tool allows you to use the git cherry-pick operation to apply changes to multiple branches.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Hotfix - Option 2&lt;/h1&gt;
+&lt;p&gt;Another option is to apply the hotfix to the release branch and then merge it back to &lt;strong&gt;trunk&lt;/strong&gt;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Hotfix-2" src="/images/branching-trunk-based-6.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Which option is better? You decide and you pick your strategy!&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;trunk-based&lt;/strong&gt; branching strategy is straight-forward, well-suited for the 2-pizza sized product team, and lays a solid foundation for our quest for continuous delivery and release on demand. &lt;/p&gt;
+&lt;p&gt;Remember, as with everything else, keep it &lt;strong&gt;SIMPLE&lt;/strong&gt;!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="version-control"></category></entry><entry><title>Automation and the great unknown</title><link href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="alternate"></link><published>2022-08-05T00:00:00-07:00</published><updated>2022-08-05T00:00:00-07:00</updated><author><name>Daniel Broderick</name></author><id>tag:wsbctechnicalblog.github.io,2022-08-05:/automation-task-group-learning.html</id><summary type="html">&lt;p&gt;Inadvertently restricting access to thousands of pipelines with a simple automated task group insertion.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The problem: How can the security team run all the tasks like the scans they need to run? &lt;/p&gt;
 &lt;p&gt;The idea was simple inject an empty security review task group into the release pipelines, the security team can update the task group whenever they please. Providing a central location for the security items. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Simple idea" src="../images/automation-task-group-learning-1.png"&gt;&lt;/p&gt;
@@ -2483,26 +2529,4 @@ To create the client before we create the code that will serve the client’s ex
 
 &lt;p&gt;The &lt;code&gt;ne(lower(variables['Build.SourceBranchName']), 'merge')&lt;/code&gt; part of the code suppresses the conditional logic if the pipeline run originates from a Pull Request merge validation build.&lt;/p&gt;
 &lt;p&gt;At this stage we suppress all post-build logic to keep it &lt;strong&gt;simple&lt;/strong&gt; but can shift the conditional logic by a few lines to allow the deployment to the &lt;strong&gt;development&lt;/strong&gt; stage, while suppressing others.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt;, but powerful!&lt;/p&gt;</content><category term="Posts"></category><category term="pipelines"></category><category term="tips"></category><category term="x-as-code"></category></entry><entry><title>A peek at our Dream Team Working Agreement Poster</title><link href="https://wsbctechnicalblog.github.io/dream-team-working-agreement-poster.html" rel="alternate"></link><published>2021-10-02T00:00:00-07:00</published><updated>2021-10-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-10-02:/dream-team-working-agreement-poster.html</id><summary type="html">&lt;p&gt;As a team we want to create an empathetic, safe, and vibrant ecosystem&lt;/p&gt;</summary><content type="html">&lt;p&gt;With our Common Engineering team we have a noble vision to &lt;em&gt;"Enable and empower engineering to work together with shared and efficient processes, products, and promote a healthy DevOps mindset, to continuously deliver value to our organization and end-users."&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;As we prepare for the the countdown to launch our mission methods, we are taking the opportunity to inspect and adapt ourselves to create an &lt;strong&gt;empathetic&lt;/strong&gt;, &lt;strong&gt;safe&lt;/strong&gt;, and &lt;strong&gt;vibrant&lt;/strong&gt; team, to continuously look for opportunities to &lt;strong&gt;innovate&lt;/strong&gt; and reduce &lt;strong&gt;waste&lt;/strong&gt;, and to contribute to a &lt;strong&gt;common language.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In this post we are sharing our dream team working agreement poster, which sets team expectations, lays out ways to collaborate, and establishes an atmosphere that encourages failure.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;"Failure is an option here. If things are not failing, you are not innovating enough."&lt;/em&gt; - Elon Musk
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;The dream team poster summarizes what we value and encourage, such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;How we will &lt;strong&gt;optimise meetings&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://agilemanifesto.org"&gt;Agile mindset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;strong&gt;Kanban&lt;/strong&gt; mindset (visualise, flow, improve)&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;DevOps mindset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Our &lt;a href="https://www.tactec.ca/ndtw-resources"&gt;DevOps Core Values&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Poster" src="/images/dream-team-working-agreement-poster-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/dream-team-working-agreement-poster.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Enjoy and remember that we crave candid feedback to sprinkle value over these artifacts!&lt;/p&gt;
-&lt;p&gt;| &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html"&gt;POSTER 1&lt;/a&gt; | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html"&gt;POSTER 2&lt;/a&gt; | &lt;a href="/moving-hundreds-of-pipeline-snowflakes-qr-3.html"&gt;POSTER 3&lt;/a&gt; | POSTER 4 (this) |&lt;/p&gt;
-&lt;hr&gt;</content><category term="Posts"></category><category term="devops"></category><category term="posters"></category></entry></feed>
+&lt;p&gt;&lt;strong&gt;Simple&lt;/strong&gt;, but powerful!&lt;/p&gt;</content><category term="Posts"></category><category term="pipelines"></category><category term="tips"></category><category term="x-as-code"></category></entry></feed>
