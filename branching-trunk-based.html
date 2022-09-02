@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Only changeable design is good design - </title>
+        <title>Trunk-based branching strategy without the bells and whistles - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,61 +32,69 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/only-changeable-design-is-good-design.html" rel="bookmark"
-            title="Permalink to Only changeable design is good design">Only changeable design is good design</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/branching-trunk-based.html" rel="bookmark"
+            title="Permalink to Trunk-based branching strategy without the bells and whistles">Trunk-based branching strategy without the bells and whistles</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 22 April 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 02 September 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Why is changeable design desirable and what's preventing us from achieving it</p>
+            <p>Keeping it simple and avoiding the soul quenching politics</p>
         </div>
     
         <div class="entry-content">
-            <p>I started my coding career in August 1990. Back then, it was customary to write code in full isolation. My first paid job was writing COBOL applications to run on IBM midrange computers. The programs I was writing were monoliths that included everything, from database operations to green screen operations in one big, humongous program (unbeknownst to me, even back then I was a ‘full stack’ developer).</p>
-<p>Back then, the only design activities I was aware of doing was the database design (attempting to achieve the 3rd normal form). After a relatively short stint with COBOL I moved into the desktop-centric fat-client/server world (C++, SQL Server and Windows NT), and then into Java and web development. At that point, it became obvious that without having good design skills, we tended to quickly end up with a <a href="https://en.wikipedia.org/wiki/Big_ball_of_mud#In_computer_programs">Big Ball of Mud</a> systems.</p>
-<h2>Traditional design</h2>
-<p>Traditionally speaking, design is something we work on and then when finished, it gets delivered. Ideally, by finishing the design activities, we hope to have achieved the most optimal design. As such, the design reaches its final form and is not to be further modified.</p>
-<p>The goal is to deliver non-volatile design, and in most real-life situation that goal makes perfect sense.</p>
-<h2>Software design</h2>
-<p>Interestingly, software design does not work the same way as when designing material objects. Software is by its very nature and by intent malleable and pliable (hence the word ‘soft’ as part of its name). As such, software is supposed to be volatile. If software solution hardens, it immediately becomes useless.</p>
-<h2>What prevents changeable software design?</h2>
-<p>A non-surprising answer to this question is that the lack of design skills prevents us from producing changeable design (duh!)</p>
-<p>Back in the <strike>good</strike> old days (before Extreme Programming arrived on the scene) I was spending years writing code all by myself. Not surprisingly, I’ve spent all those years not learning much about software design. Of course, unbeknownst to me, I was stuck in the much-dreaded Expert Beginner state.</p>
-<p>Luckily, after joining a mature team of software engineers, I started getting exposed to pair programming and continuous code reviews. Boy, was I in for a shock at that juncture! What I considered good coding practices was shredded to pieces by my older and more experienced peers.</p>
-<p>But the pain was worth enduring, because I was finally set on the path of continuous improvement. No pain, no gain, but in hindsight, the pain of being heavily scrutinized by my peers was truly worth it. So, a few factors that contribute to preventing us from producing changeable software are (in no particular order):</p>
-<ol>
-<li>Lack of real communication with peers</li>
-<li>Rework avoidance</li>
-<li>Lack of regard for testability</li>
-<li>Absence of Continuous Integration</li>
-</ol>
-<p>Let’s quickly review the above four factors.</p>
-<h2>Lack of real communication with peers</h2>
-<p>Working in isolation by being assigned a ticket or a work item by the managers/scrum masters is not a good way to write software. If the only communication with peers happens during the 15 minutes of daily standups, the quality of the solution will suffer because the design will most likely end up being rigid, difficult, and risky to change. Which is never a good position to be in.</p>
-<h2>Rework avoidance</h2>
-<p>Hoping in vain to be able to deliver a solution that will be correct on the first try is extremely unrealistic. However, oftentimes the organizational culture is centered around rework avoidance (i.e. “if it’s worth doing at all, then it must be done right on the first try”).</p>
-<p>Software is not like that. Software development activities fail if they attempt to mimic activities focused on building material objects. Software development is more akin to writing an essay. If you recall from the school days, when we’re writing an essay, we always start form the first draft, and then iterate, refining the draft until we get the draft into a more presentable shape. In other words, we keep doing the rework on our draft (we keep changing the design and the content we’ve already changed), because we are aware that it is not possible to produce quality design and content on the first pass.</p>
-<p>In software, we call that rework refactoring. Without constant refactoring (i.e. doing it every step of the way), it is not possible to produce changeable design.</p>
-<h2>Lack of regard for testability</h2>
-<p>Not all software developers have testability as the most important part of their discipline. Some leave testing to a separate, independent teams (QA). Developing software with such mindset prevents changeable software design.</p>
-<p>When adding source code statements to the repo without first designing the intended code behaviour for testability, the resulting design is tightly coupled. Any tightly coupled system is not testable. And not being testable, it poses serious risks to making changes to it. That way, we end up with the design that is not changeable.</p>
-<h2>Absence of Continuous Integration</h2>
-<p>Working in isolation fosters the large batches approach. A developer takes a user story or a task to work on and disappears from the radar to spend long hours writing code. Such approach typically results in having many changes made to the code without any regard to the other changes that have possibly been made to the code by other peers working in isolation.</p>
-<p>When the time eventually comes to put all those changes together to assemble a working system, we often learn that the changed code does not work. We then must scramble to somehow resolve those conflicts, and in the process produce a lot of half-baked design. Which results in a design that is difficult and risky to change.</p>
-<h2>How to achieve changeable design?</h2>
-<p>Simply put, to achieve changeable design we must make sure to avoid factors that prevent us from delivering changeable design. In practical terms, the recommended approach is:</p>
-<ol>
-<li>Replace asynchronous communication with real-time collaboration (pair and mob programming)</li>
-<li>Practice continuous refactoring</li>
-<li>Adopt full-on TDD, service virtualization and BDD</li>
-<li>Integrate all changes continuously</li>
-</ol>
+            <p>We pickup from the <a href="/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a> virtual chat, where we discussed <a href="/pull-requests-friend.html">pull requests</a> and briefly touched on trunk-based development. This article is based on a script I prepared for an upcoming innovation workshop, where we will lift the bonnet to explore our blueprints and</p>
+<h2>Why?</h2>
+<blockquote>
+<p><img alt="Why" src="/images/branching-trunk-based-1.png"></p>
+</blockquote>
+<p>It is one of many branching strategies, our recommended strategy, and the norm with our <a href="./yaml-pipelines-part10.html">application-type blueprint</a>-based pipelines to enable <strong>consistency</strong> and <strong>standardization</strong>.</p>
+<blockquote>
+<p><img alt="Reasons" src="/images/branching-trunk-based-2.png"></p>
+</blockquote>
+<p>By merging <strong>small</strong> and <strong>frequent</strong> updates (short-lived feature branches) to a core <strong>trunk</strong>, master, or main branch, we streamline merging, integration of code, enable continuous integrations, automated tests, continuous code reviews, and automated validations. We guard the trunk to maintain a <strong>green</strong> source of truth, ready to deploy at any commit.</p>
+<p>Trunk-based development is a proven and common practice among high-performing DevOps teams, often complemented by feature flags and/or ring-deployments to deploy continuously and release on demand – our future vision. </p>
+<hr>
+<h1>Getting started</h1>
+<blockquote>
+<p><img alt="Trunk" src="/images/branching-trunk-based-3.png"></p>
+</blockquote>
+<p>We start with a trunk, that has a hypothetical version of MAJOR 0, MINOR 1, and PATCH 0, aka <strong>0.1.0</strong>. At some point we create a feature branch to build a new feature and another feature branch to address a bug.</p>
+<p>When we are ready to deploy we merge our changes back to the <strong>stable</strong> trunk. As discussed in <a href="/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a>, we are stopped by the branch policies that demand a code review by one or more reviewers, closed comments, linked work items, a clean validation build, and healthy code and security scans.</p>
+<p>We could, but we will not, argue that with trunk-based development we should be able to commit directly to the <strong>trunk</strong>. Theoretically <strong>yes</strong> - if we are part of a high-performance and high-trust team we can commit <strong>directly</strong> to the trunk, however, in my 35+ years of engineering I have had the privilege of working for such a team two or three times.have a small, mature, and experienced team that <strong>trusts</strong> </p>
+<p>When our code has been proven GREEN the changes are merged to the trunk and versioned 0.1.1, followed by the bug fix changes, versioned 0.1.2.</p>
+<hr>
+<h1>Release branch</h1>
+<blockquote>
+<p><img alt="Trunk+Release" src="/images/branching-trunk-based-4.png"></p>
+</blockquote>
+<p>When we are ready to deploy, we create a label and a release branch from the label, which triggers our continuous integration and delivery pipeline.</p>
+<blockquote>
+<p><img alt="Hotfix-1" src="/images/branching-trunk-based-5.png"></p>
+</blockquote>
+<p>After we deploy to production the unthinkable happens ... we detect a bug! </p>
+<p>If <strong>not</strong> serious, we add it to our technical debt and to be fixed with the next feature work.</p>
+<hr>
+<h1>Hotfix - Option 1</h1>
+<p>If <strong>serious</strong>, we create a HOTFIX on the trunk and merge it back to the release branch, which in turn triggers another production deploy.</p>
+<blockquote>
+<p>Note that you can perform the merge to trunk and the release branch with one pull request, using the <a href="https://marketplace.visualstudio.com/items?itemName=1ESLighthouseEng.pr-multi-cherry-pick">PR Multi-Cherry-Pick</a> extension, developed by the Microsoft Office team. This tool allows you to use the git cherry-pick operation to apply changes to multiple branches.
+</p>
+</blockquote>
+<hr>
+<h1>Hotfix - Option 2</h1>
+<p>Another option is to apply the hotfix to the release branch and then merge it back to <strong>trunk</strong>. </p>
+<blockquote>
+<p><img alt="Hotfix-2" src="/images/branching-trunk-based-6.png"></p>
+</blockquote>
+<p>Which option is better? You decide and you pick your strategy!</p>
+<p>The <strong>trunk-based</strong> branching strategy is straight-forward, well-suited for the 2-pizza sized product team, and lays a solid foundation for our quest for continuous delivery and release on demand. </p>
+<p>Remember, as with everything else, keep it <strong>SIMPLE</strong>!</p>
         </div>
 
         
@@ -103,9 +111,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture </a><a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a>
-        | <a href="https://wsbctechnicalblog.github.io/only-changeable-design-is-good-design.html" rel="bookmark"
-         title="Permalink to Only changeable design is good design">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control </a>
+        | <a href="https://wsbctechnicalblog.github.io/branching-trunk-based.html" rel="bookmark"
+         title="Permalink to Trunk-based branching strategy without the bells and whistles">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
