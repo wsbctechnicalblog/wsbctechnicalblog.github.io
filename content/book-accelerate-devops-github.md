@@ -1,8 +1,8 @@
-Title: Positive energy goes a long way to encourage innovation
-Date: 2022-09-07
+Title: Accelerate DevOps with GitHub Book
+Date: 2022-09-16
 Category: Posts 
 Tags: book, devops
-Slug: book-accelerate-devops-github
+Slug: accelerate-devops-with-github-book
 Author: Willy-Peter Schaub
 Summary: "Enhance software delivery performance with GitHub Issues, Projects, Actions, and Advanced Security" - Michael Kaufman
 
