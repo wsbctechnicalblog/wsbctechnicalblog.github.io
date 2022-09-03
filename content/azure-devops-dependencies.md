@@ -95,7 +95,6 @@ The team also uses the optional [Dependency Tracker](https://marketplace.visuals
 >   - While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.
 >
 
-
 ![NOTE](../images/azure-devops-dependencies-13.png) Personally I prefer how team 1 deals with their dependencies. It is simple, it avoids the noise and complexity of custom and multiple dependency cards and can be combined with the [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) extension or the [Delivery Plans](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) to create visual cues.
 
 ---
@@ -121,6 +120,26 @@ Last, but not least the team uses a [Delivery Plan](https://docs.microsoft.com/e
 >
 
 Other extensions to consider include the [@Scale](https://marketplace.visualstudio.com/items?itemName=solidify.solidify-scale) extension, which delivers a program board on steroids.
+
+---
+
+# Summary of recommended approach
+
+![NOTE](../images/azure-devops-dependencies-13.png)Personally I prefer how the **Delivery Team 1 - Using Dependency Query** defines their dependencies. Here is a high-altitude overview of their process:
+
+1. Delivery team identifies a dependency X (Merlin engine) in feature A (booster).
+2. Delivery team opens feature A and runs dependency [one-click](https://marketplace.visualstudio.com/items?itemName=mohitbagra.witoneclickactions).
+   - Merlin engine is the **predecessor** (must be done first)
+   - Booster is the **successor** (must be done after Merlin engine)
+3. One-click create work item X
+   - Adds **parent-child** to Feature (parent) 
+   - Adds **successor/predecessor** link to Feature (successor)
+4. Team collaborates with common services **Engines** team to define the WHAT, WHY, and WHEN in X.
+5. When common services team is ready to commit, they pull the work item X to their backlog.
+6. Common services optionally changes work item to be parented to one of their Features.
+   - At this time the work item X vanishes off the backlog as a work item on delivery side.
+
+Everyone then uses the dependency queries we covered herein, and/or [@Scale](https://marketplace.visualstudio.com/items?itemName=solidify.solidify-scale), and/or [Delivery Plan](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops), and/or [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) to visualize extension.
 
 How are you dealing with dependencies in Azure DevOps? 
 
