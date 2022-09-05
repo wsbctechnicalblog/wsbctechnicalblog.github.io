@@ -131,13 +131,20 @@ Other extensions to consider include the [@Scale](https://marketplace.visualstud
 2. Delivery team opens feature A and runs dependency [one-click](https://marketplace.visualstudio.com/items?itemName=mohitbagra.witoneclickactions).
    - Merlin engine is the **predecessor** (must be done first)
    - Booster is the **successor** (must be done after Merlin engine)
-3. One-click create work item X
+3. One-click creates work item X
    - Adds **parent-child** to Feature (parent) 
    - Adds **successor/predecessor** link to Feature (successor)
 4. Team collaborates with common services **Engines** team to define the WHAT, WHY, and WHEN in X.
+   - Actionable description.
+   - Realistic acceptance criteria.
+   - Information on WHEN and priority.
 5. When common services team is ready to commit, they pull the work item X to their backlog.
+   - Everyone should "Follow" the work item to be notified of changes.
 6. Common services optionally changes work item to be parented to one of their Features.
    - At this time the work item X vanishes off the backlog as a work item on delivery side.
+   - Once assigned to an iteration, the work item X will appear on the [Delivery Plan](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) showing the delivery and common services teams.
+
+**SIMPLE** and no duplicate or confusing cards.
 
 Everyone then uses the dependency queries we covered herein, and/or [@Scale](https://marketplace.visualstudio.com/items?itemName=solidify.solidify-scale), and/or [Delivery Plan](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops), and/or [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) to visualize extension.
 
