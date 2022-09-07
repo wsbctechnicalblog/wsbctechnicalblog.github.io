@@ -88,14 +88,17 @@ The team also uses the optional [Dependency Tracker](https://marketplace.visuals
 > 
 > - PROS
 >   - Their backlog and board show what they **and** common services teams are responsible to deliver.
->   - Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.> 
+>   - Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.
+>
 > - CONS
 >   - We need a custom dependency work item type.
 >   - There is noise and **waste** on their Kanban board for work their team is not responsible for.
 >   - While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.
 >
 
-![NOTE](../images/azure-devops-dependencies-13.png) Personally I prefer how team 1 deals with their dependencies. It is simple, it avoids the noise and complexity of custom and multiple dependency cards and can be combined with the [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) extension or the [Delivery Plans](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) to create visual cues.
+![NOTE](../images/azure-devops-dependencies-13.png)
+
+Personally I prefer how team 1 deals with their dependencies. It is simple, it avoids the noise and complexity of custom and multiple dependency cards and can be combined with the [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) extension or the [Delivery Plans](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) to create visual cues.
 
 ---
 
@@ -125,7 +128,9 @@ Other extensions to consider include the [@Scale](https://marketplace.visualstud
 
 # Summary of recommended approach
 
-![NOTE](../images/azure-devops-dependencies-13.png)Personally I prefer how the **Delivery Team 1 - Using Dependency Query** defines their dependencies. Here is a high-altitude overview of their process:
+![NOTE](../images/azure-devops-dependencies-13.png)
+
+Personally I prefer how the **Delivery Team 1 - Using Dependency Query** defines their dependencies. Here is a high-altitude overview of their process:
 
 1. Delivery team identifies a dependency X (Merlin engine) in feature A (booster).
 2. Delivery team opens feature A and runs dependency [one-click](https://marketplace.visualstudio.com/items?itemName=mohitbagra.witoneclickactions).
