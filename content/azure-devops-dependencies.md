@@ -51,12 +51,12 @@ The dependency query is using the **Work Items and direct links** query type and
 >
 > **QUERY-BASED DEPENDENCY TRACKING** 
 > 
-> - PROS
+> **PROS**
 >   - Their backlog and board only show what they, as team 1, are responsible to deliver.
 >   - There is no noise or **waste** on their Kanban board.
 >   - Their dependency query has a consistent look & feel as their backlog view.
-> 
-> - CONS
+>
+> **CONS**
 >   - Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
 >
 
