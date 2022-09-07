@@ -39,13 +39,17 @@
 &lt;p&gt;The dependency query is using the &lt;strong&gt;Work Items and direct links&lt;/strong&gt; query type and looks for &lt;strong&gt;predecessor&lt;/strong&gt; link type.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;QUERY-BASED DEPENDENCY TRACKING&lt;/strong&gt; &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;
-  - Their backlog and board only show what they, as team 1, are responsible to deliver.
-  - There is no noise or &lt;strong&gt;waste&lt;/strong&gt; on their Kanban board.
-  - Their dependency query has a consistent look &amp;amp; feel as their backlog view.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;
-  - Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
-&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Their backlog and board only show what they, as team 1, are responsible to deliver.&lt;/li&gt;
+&lt;li&gt;There is no noise or &lt;strong&gt;waste&lt;/strong&gt; on their Kanban board.&lt;/li&gt;
+&lt;li&gt;Their dependency query has a consistent look &amp;amp; feel as their backlog view.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Delivery Team 2 - Using Dependency Work Items&lt;/h1&gt;
@@ -70,15 +74,13 @@
 &lt;p&gt;The team also uses the optional &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker"&gt;Dependency Tracker&lt;/a&gt; extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used currently.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;CARD-BASED DEPENDENCY TRACKING&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;PROS&lt;/li&gt;
 &lt;li&gt;Their backlog and board show what they &lt;strong&gt;and&lt;/strong&gt; common services teams are responsible to deliver.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;CONS&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CONS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;We need a custom dependency work item type.&lt;/li&gt;
 &lt;li&gt;There is noise and &lt;strong&gt;waste&lt;/strong&gt; on their Kanban board for work their team is not responsible for.&lt;/li&gt;
 &lt;li&gt;While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.

@@ -52,12 +52,14 @@ The dependency query is using the **Work Items and direct links** query type and
 > **QUERY-BASED DEPENDENCY TRACKING** 
 > 
 > **PROS**
->   - Their backlog and board only show what they, as team 1, are responsible to deliver.
->   - There is no noise or **waste** on their Kanban board.
->   - Their dependency query has a consistent look & feel as their backlog view.
+>
+> - Their backlog and board only show what they, as team 1, are responsible to deliver.
+> - There is no noise or **waste** on their Kanban board.
+> - Their dependency query has a consistent look & feel as their backlog view.
 >
 > **CONS**
->   - Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
+>
+> - Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
 >
 
 ---
@@ -86,14 +88,16 @@ The team also uses the optional [Dependency Tracker](https://marketplace.visuals
 >
 > **CARD-BASED DEPENDENCY TRACKING** 
 > 
-> - PROS
->   - Their backlog and board show what they **and** common services teams are responsible to deliver.
->   - Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.
+> **PROS**
 >
-> - CONS
->   - We need a custom dependency work item type.
->   - There is noise and **waste** on their Kanban board for work their team is not responsible for.
->   - While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.
+> - Their backlog and board show what they **and** common services teams are responsible to deliver.
+> - Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.
+>
+> **CONS**
+>
+> - We need a custom dependency work item type.
+> - There is noise and **waste** on their Kanban board for work their team is not responsible for.
+> - While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.
 >
 
 ![NOTE](../images/azure-devops-dependencies-13.png)
