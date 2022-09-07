@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Visualizing work item dependencies in Azure Boards - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-dependencies.html" rel="bookmark"
+            title="Permalink to Visualizing work item dependencies in Azure Boards">Visualizing work item dependencies in Azure Boards</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 07 September 2022</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>We want to plan and manage dependencies across multiple teams areas, providing awareness of the dependencies in a simple way.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>This post summarizes the findings from our working group that focused on finding better, simpler, and more reliable ways to plan, manage, and track dependencies in product development.</p>
+<blockquote>
+<p><img alt="Rocket" src="../images/azure-devops-dependencies-1.png"> </p>
+</blockquote>
+<p>I am using a hypothetical scenario of two teams in our <strong>Delivery Teams</strong> Azure DevOps project who have been tasked to build a rocket with two stages and boosters. </p>
+<ol>
+<li>Stage 1 must be built first and includes a SpaceX Raptor 1 engine. </li>
+<li>Stage 2 is built next and includes a SpaceX Raptor 2 engines for Vacuum conditions. </li>
+<li>The boosters with SpaceX Merlin engines are built last. </li>
+</ol>
+<p>All engines are supplied by the <strong>Build Engines</strong> team in another <strong>Common Services</strong> Azure DevOps project.</p>
+<blockquote>
+<p><img alt="Team" src="../images/azure-devops-dependencies-2.png"> </p>
+</blockquote>
+<p>When creating the team backlogs, we use the <strong>predecessor</strong> and <strong>successor</strong> work item link types to craft the dependency tree and guide the teams through a turbulence free development phase. </p>
+<blockquote>
+<p><img alt="Links" src="../images/azure-devops-dependencies-11.png"> </p>
+</blockquote>
+<p>As shown above, the 1-stage Feature (489406) work item has two <strong>successor</strong> links, defining that 1-stage must be completed first. It also has a <strong>predecessor</strong> link to the Raptor v1 engine, which must be available before the 1-stage can be completed.</p>
+<blockquote>
+<p>Refer to <a href="https://docs.microsoft.com/en-us/azure/devops/boards/queries/link-type-reference?view=azure-devops">Reference guide for link types used in Azure DevOps and Azure Boards</a> for details on link types. </p>
+</blockquote>
+<hr>
+<h1>Delivery Team 1 - Using Dependency Query</h1>
+<p>Delivery team 1 has opted to create one Story Enabler work item for the Raptor v1 engine they need from the Build Engines team and link it to the <strong>1-stage</strong> Feature (489406), as shown above. </p>
+<p><strong>IMPORTANT</strong> - The delivery team <strong>1</strong> creates the dependency work item, collaborates with the common services <strong>Engines</strong> team, and once the requirements are clearly defined the work item is <strong>pulled</strong> by the common services team to their backlog. Teams only create work items on their own backlogs and never <strong>push</strong> work items to other backlogs.</p>
+<blockquote>
+<p><img alt="Backlog 1" src="../images/azure-devops-dependencies-3.png"> </p>
+</blockquote>
+<p>Looking at their team backlog there is no visual evidence of the Raptor v1 engine dependency.</p>
+<blockquote>
+<p><img alt="Query" src="../images/azure-devops-dependencies-4.png"> </p>
+</blockquote>
+<p>The team uses a <a href="https://docs.microsoft.com/en-us/azure/devops/boards/queries/wiql-syntax?view=azure-devops">WIQL Query</a> to track and manage their and other team dependencies.  </p>
+<blockquote>
+<p><img alt="Query Edit" src="../images/azure-devops-dependencies-5.png"> </p>
+</blockquote>
+<p>The dependency query is using the <strong>Work Items and direct links</strong> query type and looks for <strong>predecessor</strong> link type.</p>
+<blockquote>
+<p><strong>QUERY-BASED DEPENDENCY TRACKING</strong> </p>
+<ul>
+<li>PROS</li>
+<li>Their backlog and board only show what they, as team 1, are responsible to deliver.</li>
+<li>There is no noise or <strong>waste</strong> on their Kanban board.</li>
+<li>
+<p>Their dependency query has a consistent look &amp; feel as their backlog view.</p>
+</li>
+<li>
+<p>CONS</p>
+</li>
+<li>Their backlog and board show no visual cue of the Raptor v1 engine dependency. 
+</li>
+</ul>
+</blockquote>
+<hr>
+<h1>Delivery Team 2 - Using Dependency Work Items</h1>
+<p>Delivery team 2 has opted to create a dependency work item (489410) and a Story Enabler (489417) work item for the Raptor v2 engine they need from the Build Engines team. The dependency work item (489410) is used as a placeholder work item on the team's backlog linked to the Story Enabler (489417) which is pulled by the Engines Common Services team to their backlog. They use the same placeholder+dependency pair process to add the Booster's dependency on Merlin engines.</p>
+<blockquote>
+<p><img alt="Backlog 2" src="../images/azure-devops-dependencies-6.png"> </p>
+</blockquote>
+<p>Looking at team 2's backlog, we note the following:</p>
+<ol>
+<li>Dependency work item (489410) for v2 Raptor engine is on the backlog, linked as a child to 2-stage Feature (489407).</li>
+<li>Raptor v2 engine Story Enabler (489417) is gone - pulled to the Engine team's backlog.</li>
+<li>Dependency work item (489411) for Merlin engine is on the backlog, linked as a child to Booster Feature (489408).</li>
+<li>Merlin engine Story Enabler (489419) is still on the team 2 backlog, which implies that the common services Engine team is not able to commit to the work item yet.</li>
+</ol>
+<blockquote>
+<p><img alt="Board 2" src="../images/azure-devops-dependencies-7.png"> </p>
+</blockquote>
+<p>Switching to the <strong>Feature</strong> board view, we have a visual cue on both the 2-stage and Booster cards that they have dependencies. Users can click on the dependencies to get more detail and to follow the dependency links.</p>
+<blockquote>
+<p><img alt="Dependency Extension" src="../images/azure-devops-dependencies-10.png"> </p>
+</blockquote>
+<p>The team also uses the optional <a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker">Dependency Tracker</a> extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used currently.</p>
+<blockquote>
+<p><strong>CARD-BASED DEPENDENCY TRACKING</strong> </p>
+<ul>
+<li>PROS</li>
+<li>Their backlog and board show what they <strong>and</strong> common services teams are responsible to deliver.</li>
+<li>
+<p>Their backlog and board show visual cues of the Raptor v2 and Merlin engine dependencies.</p>
+</li>
+<li>
+<p>CONS</p>
+</li>
+<li>We need a custom dependency work item type.</li>
+<li>There is noise and <strong>waste</strong> on their Kanban board for work their team is not responsible for.</li>
+<li>While common services team are unable to commit, we have two (often confusing) cards on the backlog for each dependency.
+</li>
+</ul>
+</blockquote>
+<p><img alt="NOTE" src="../images/azure-devops-dependencies-13.png"></p>
+<p>Personally I prefer how team 1 deals with their dependencies. It is simple, it avoids the noise and complexity of custom and multiple dependency cards and can be combined with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker">Dependency Tracker</a> extension or the <a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops">Delivery Plans</a> to create visual cues.</p>
+<hr>
+<h1>Common Services Team - Building Rockets</h1>
+<p>Let us switch focus to the common services Azure DevOps project and the <strong>Engines</strong> team.</p>
+<blockquote>
+<p><img alt="Backlog" src="../images/azure-devops-dependencies-12.png"> </p>
+</blockquote>
+<p>Looking at their backlog we see the two Raptor engine Story Enablers (489417, 489418) dependencies and a Spike. They could use <a href="https://docs.microsoft.com/en-us/azure/devops/boards/queries/add-tags-to-work-items?view=azure-devops">Tags</a> to create visual cues that two of the work items are dependencies, or they too could consider a custom Dependency work item type.</p>
+<blockquote>
+<p><img alt="Query" src="../images/azure-devops-dependencies-8.png"> </p>
+</blockquote>
+<p>Using a similar WIQL query as the delivery team 2, as above, the Engines team visualize and manage their dependencies.</p>
+<blockquote>
+<p><img alt="Delivery Plan" src="../images/azure-devops-dependencies-9.png"> </p>
+</blockquote>
+<p>Last, but not least the team uses a <a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops">Delivery Plan</a> to visualize their Feature and Requirement backlogs, as well as those of the teams they serve. The Delivery Plan provides provide an interactive visual view of multiple team backlogs and the dependencies.</p>
+<blockquote>
+<p><strong>IMPORTANT</strong> - The Delivery Plan only draws a dependency line for dependencies which has both the successor and predecessor cards visually shown on the plan.
+</p>
+</blockquote>
+<p>Other extensions to consider include the <a href="https://marketplace.visualstudio.com/items?itemName=solidify.solidify-scale">@Scale</a> extension, which delivers a program board on steroids.</p>
+<hr>
+<h1>Summary of recommended approach</h1>
+<p><img alt="NOTE" src="../images/azure-devops-dependencies-13.png"></p>
+<p>Personally I prefer how the <strong>Delivery Team 1 - Using Dependency Query</strong> defines their dependencies. Here is a high-altitude overview of their process:</p>
+<ol>
+<li>Delivery team identifies a dependency X (Merlin engine) in feature A (booster).</li>
+<li>Delivery team opens feature A and runs dependency <a href="https://marketplace.visualstudio.com/items?itemName=mohitbagra.witoneclickactions">one-click</a>.</li>
+<li>Merlin engine is the <strong>predecessor</strong> (must be done first)</li>
+<li>Booster is the <strong>successor</strong> (must be done after Merlin engine)</li>
+<li>One-click creates work item X</li>
+<li>Adds <strong>parent-child</strong> to Feature (parent) </li>
+<li>Adds <strong>successor/predecessor</strong> link to Feature (successor)</li>
+<li>Team collaborates with common services <strong>Engines</strong> team to define the WHAT, WHY, and WHEN in X.</li>
+<li>Actionable description.</li>
+<li>Realistic acceptance criteria.</li>
+<li>Information on WHEN and priority.</li>
+<li>When common services team is ready to commit, they pull the work item X to their backlog.</li>
+<li>Everyone should "Follow" the work item to be notified of changes.</li>
+<li>Common services optionally changes work item to be parented to one of their Features.</li>
+<li>At this time the work item X vanishes off the backlog as a work item on delivery side.</li>
+<li>Once assigned to an iteration, the work item X will appear on the <a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops">Delivery Plan</a> showing the delivery and common services teams.</li>
+</ol>
+<p><strong>SIMPLE</strong> and no duplicate or confusing cards.</p>
+<p>Everyone then uses the dependency queries we covered herein, and/or <a href="https://marketplace.visualstudio.com/items?itemName=solidify.solidify-scale">@Scale</a>, and/or <a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops">Delivery Plan</a>, and/or <a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker">Dependency Tracker</a> to visualize extension.</p>
+<p>How are you dealing with dependencies in Azure DevOps? </p>
+        </div>
+
+        
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24HuV66af9ahG4CwPsLx5F81"+"&opts=16798&num=10&ts=1644344212324");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+
+   
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-devops-dependencies.html" rel="bookmark"
+         title="Permalink to Visualizing work item dependencies in Azure Boards">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(33)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(26)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(44)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(14)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(33)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (114)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
