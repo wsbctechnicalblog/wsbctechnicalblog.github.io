@@ -83,7 +83,7 @@ Switching to the **Feature** board view, we have a visual cue on both the 2-stag
 
 > ![Dependency Extension](../images/azure-devops-dependencies-10.png) 
 
-The team also uses the optional [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used currently.
+The team also uses the optional [Dependency Tracker](https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker) extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used correctly.
 
 >
 > **CARD-BASED DEPENDENCY TRACKING** 
@@ -120,7 +120,7 @@ Using a similar WIQL query as the delivery team 2, as above, the Engines team vi
 
 > ![Delivery Plan](../images/azure-devops-dependencies-9.png) 
 
-Last, but not least the team uses a [Delivery Plan](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) to visualize their Feature and Requirement backlogs, as well as those of the teams they serve. The Delivery Plan provides provide an interactive visual view of multiple team backlogs and the dependencies.
+Last, but not least the team uses a [Delivery Plan](https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops) to visualize their Feature and Requirement backlogs, as well as those of the teams they serve. The Delivery Plan provides an interactive visual view of multiple team backlogs and the dependencies.
 
 >
 > **IMPORTANT** - The Delivery Plan only draws a dependency line for dependencies which has both the successor and predecessor cards visually shown on the plan.
