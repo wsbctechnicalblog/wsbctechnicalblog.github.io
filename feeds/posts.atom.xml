@@ -71,7 +71,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Dependency Extension" src="../images/azure-devops-dependencies-10.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The team also uses the optional &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker"&gt;Dependency Tracker&lt;/a&gt; extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used currently.&lt;/p&gt;
+&lt;p&gt;The team also uses the optional &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-eswm.dependencytracker"&gt;Dependency Tracker&lt;/a&gt; extension to get visual information on their dependencies, timelines, and risks. The extension is not for the faint hearted but delivers phenomenal dependency details when used correctly.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;CARD-BASED DEPENDENCY TRACKING&lt;/strong&gt; &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PROS&lt;/strong&gt;&lt;/p&gt;
@@ -103,7 +103,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Delivery Plan" src="../images/azure-devops-dependencies-9.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Last, but not least the team uses a &lt;a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops"&gt;Delivery Plan&lt;/a&gt; to visualize their Feature and Requirement backlogs, as well as those of the teams they serve. The Delivery Plan provides provide an interactive visual view of multiple team backlogs and the dependencies.&lt;/p&gt;
+&lt;p&gt;Last, but not least the team uses a &lt;a href="https://docs.microsoft.com/en-us/azure/devops/boards/plans/add-edit-delivery-plan?view=azure-devops"&gt;Delivery Plan&lt;/a&gt; to visualize their Feature and Requirement backlogs, as well as those of the teams they serve. The Delivery Plan provides an interactive visual view of multiple team backlogs and the dependencies.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt; - The Delivery Plan only draws a dependency line for dependencies which has both the successor and predecessor cards visually shown on the plan.
 &lt;/p&gt;
