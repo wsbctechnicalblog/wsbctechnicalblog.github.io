@@ -55,3 +55,6 @@ Michael shares his knowledge in books, trainings, and as a frequent speaker at i
 
 Bookmark [DevOps Vancouver BC Canada Meetup](https://www.meetup.com/devops-vancouver-bc-canada/) and keep an eye for the official event announcement. I will come back and update this post as soon as we have a published link to the event.
 
+**Find book here:**
+- [Amazon Canada](https://www.amazon.ca/Accelerate-DevOps-GitHub-software-performance/dp/1801813353)
+- [Amazon US](https://www.amazon.com/Accelerate-DevOps-GitHub-software-performance/dp/1801813353)
