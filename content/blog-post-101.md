@@ -33,6 +33,7 @@ Here is a list of tags we use when creating new content:
 | automation      |  | Automate repetitive tasks and processes. |
 | azure           |  | Microsoft [Azure](https://azure.microsoft.com). |
 | azure-devops    |  | Microsoft [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) services. |
+| books           |  | Reviewing new and recommended books.
 | ceremony        |  | Collaboration ceremonies. |
 | code            |  | Software coding.
 | code-quality |  | Objectively measurable characteristics of the code structure. |
