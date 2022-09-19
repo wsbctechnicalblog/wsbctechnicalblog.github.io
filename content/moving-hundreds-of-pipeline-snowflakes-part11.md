@@ -1,5 +1,5 @@
 Title: Our road to OSS Blueprints - Suppress CD when pipeline runs within PR
-Date: 2021-09-21 
+Date: 2021-09-21
 Category: Posts
 Tags: automation, azure-devops, pipelines, x-as-code
 Slug: yaml-pipelines-part11
