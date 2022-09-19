@@ -18,6 +18,7 @@ In this series we are going to invite you on our journey of grappling with hundr
 - [Part 8: Pipelines - From CI to CD and beyond in one pipeline](/yaml-pipelines-part8.html)
 - [Part 9: Self-service automation - A dream turns into reality](/yaml-pipelines-part9.html)
 - [Part 10: Pipelines - Meet our second generation app-type blueprints](/yaml-pipelines-part10.html)
+- [Part 11: Our road to OSS Blueprints - Suppress CD when pipeline runs within PR](/yaml-pipelines-part11.html) |
 
 Other pipeline posts:
 
@@ -98,5 +99,5 @@ Welcome YAML based pipelines, which we will introduce in [part 2](yaml-pipelines
 
 ---
 
-> Series Bread Crumbs | Part 1, TOC | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | [Part 7](/yaml-pipelines-part7.html) | [Part 8](/yaml-pipelines-part8.html) | [Part 9](/yaml-pipelines-part9.html) | [Part 10](/yaml-pipelines-part10.html) |
+> Series Bread Crumbs | Part 1, TOC | [Part 2](/yaml-pipelines-part2.html) | [Part 3](/yaml-pipelines-part3.html) | [Part 4](/yaml-pipelines-part4.html) | [Part 5](/yaml-pipelines-part5.html) | [Part 6](/yaml-pipelines-part6.html) | [Part 7](/yaml-pipelines-part7.html) | [Part 8](/yaml-pipelines-part8.html) | [Part 9](/yaml-pipelines-part9.html) | [Part 10](/yaml-pipelines-part10.html) | [Part 11](/yaml-pipelines-part11.html) |
 
