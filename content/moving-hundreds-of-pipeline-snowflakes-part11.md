@@ -26,7 +26,7 @@ Pipeline is triggered:
 - By development team that is not ready to deploy yet.
 - As a validation **build** within a pull request, where you only want the continuous integration (CI) to run.
 
-In our *start.yml template we have the optional **suppressCD** parameter:
+In our ```*start.yml``` template we have the optional **suppressCD** parameter:
 
 ```
 extends:
@@ -52,7 +52,7 @@ As a result the CD part of the pipeline will not be injected at queue time.
 
 The optional parameter works well, until you are ready to deploy your solution and you set ```suppressCD = false```. In this case the validation build in a pull request would trigger both the continuous integration (CI) and continuous delivery (CD) pipeline phases. 
 
-This explains this code snippet at the end of the *-CI.yml template, which suppresses the CD part if the pipeline was triggered by a pull request ("merge"):
+This explains this code snippet at the end of the ```*-CI.yml``` template, which suppresses the CD part if the pipeline was triggered by a pull request ("merge"):
 
 ```
 - ${{ if eq(lower(variables['Build.SourceBranchName']), 'merge') }}:
