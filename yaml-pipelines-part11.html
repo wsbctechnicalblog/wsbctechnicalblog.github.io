@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Synchronized 'if' statements considered harmful - </title>
+        <title>Our road to OSS Blueprints - Suppress CD when pipeline runs within PR - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,57 +32,67 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/synchronized-if-statements-considered-harmful.html" rel="bookmark"
-            title="Permalink to Synchronized 'if' statements considered harmful">Synchronized 'if' statements considered harmful</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part11.html" rel="bookmark"
+            title="Permalink to Our road to OSS Blueprints - Suppress CD when pipeline runs within PR">Our road to OSS Blueprints - Suppress CD when pipeline runs within PR</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 08 April 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 21 September 2021</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Duplicated imperative conditional logic leads to proliferation of bugs</p>
+            <p>A glimpse at our OSS progress and how we use the same pipeline in and out of pull requests.</p>
         </div>
     
         <div class="entry-content">
-            <p><a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger Dijkstra's</a> famous letter <a href="https://dl.acm.org/doi/10.1145/362929.362947">"Go To Statement Considered Harmful"</a> was published 53 years ago in the March 1968 <em>Communications of the Association for Computing Machinery (ACM)</em>.</p>
-<p>Today, no one uses <strong>go to</strong> statements anymore. The practice was proven harmful, and the pernicious <strong>go</strong> to statement was replaced by more appropriate statements as part of the structured programming vocabulary.</p>
-<p>Upon closer inspection, though, it turns out that <strong>go to</strong> statement by itself is not that harmful, after all. It simply implements a jump from one statement in the code to another statement in the code. But, so do structured programming language constructs that replaced the <strong>go</strong> to statement. Statements such as <strong>return</strong>, <strong>break</strong>, <strong>continue</strong>. Those statements also implement a jump from one statement in the code to another statement in the code.</p>
-<p>Knowing that, why did Dijkstra think <strong>go to</strong> was so harmful, while <strong>return</strong>/<strong>break</strong>/<strong>continue</strong> etc. aren’t harmful?</p>
-<h2>Cognitive dissonance</h2>
-<p>What Dijkstra had noticed back in 1968 is the discrepancy between how we think and how computers work. We seem to focus most of our thinking toward orienting ourselves in space. We like to read and draw maps, and indicate things that are near or far, over here or over there, etc.</p>
-<p>On the other hand, we don’t seem that well versed in thinking along temporal dimension. Time indicates change, and we mostly dislike change, as it threatens to unsettle us from our familiar comfort zones. We prefer spatial coordinates as they indicate something solid, firm, unchangeable, non-threatening.</p>
-<p>Computers work in the exact opposite fashion. When a computer program runs, it unfolds in time. First this statement gets executed, then that statement, and so on. But these execution steps do not necessarily follow in linear fashion.</p>
-<p>Still, when we read a source code that comprises a computer program, we reason in spatial terms. We start from the top of the page (or top of the screen) and then we parse the code-as-text one line at the time, going sequentially. Until we reach the end of the source code file.</p>
-<p>Trouble is, that’s not how the program behaves. When a program runs, it makes all kinds of hyper-space leaps and bounds. It does not follow any neatly laid out spatial map.</p>
-<p>Imagine a dancing competition where contestants would take snapshots of them dancing and would then send those snapshots to the jury. The jury would review the submitted snapshots and would then announce the winner of the dancing competition.</p>
-<p>Or, imagine a cooking competition where contestants would take snapshots of them making food and would then send those snapshots to the jury. The jury would review the submitted snapshots and would then announce the best chef.</p>
-<p>When we are reviewing a snapshot of the source code, we are equally reducing a very dynamic situation (i.e. a running program) to the set of static freeze-frame snapshots. It gives us a very unrealistic picture of how the program behaves and what is it capable of (this is especially obvious when we examine static snapshots of the code that is doing asynchronous processing).</p>
-<h2>Go to is only harmful when combined with if statements</h2>
-<p><strong>Go to</strong> statement by itself is no different than other control flow statements. It interrupts the linear flow (i.e. after executing current statement, it steps into the statement on the next line below). But so do other flow control statements that were introduced as part of structured programming with the intent to eliminate <strong>go to</strong> statements.</p>
-<p>So, why is it then that Dijkstra considered <strong>go to</strong> harmful? The reason is that only when <strong>go to</strong> gets combined with <strong>if</strong> statements that we create a fertile breeding ground for bugs. For example, if we say:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">orderTotal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">500.00</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+            <hr>
+<h1>Open Sourcing our Application-type CI/CD Blueprints</h1>
+<p>We are on the home stretch to open source our v2 application-type CI/CD blueprints. In fact, we only have one last optimization story enabler to complete, before we will start setting up an OSS repository in GitHub. Thank you for your patience <strong>Said</strong> - we are close!</p>
+<hr>
+<h1>Using the same Application-type CI/CD Blueprints as Pull Request (PR) Validation Build</h1>
+<h2>suppressCD parameter</h2>
+<p>Why do we want to suppress the continuous delivery (CD) part of our CI/CD blueprint-based pipelines?</p>
+<p>Pipeline is triggered:</p>
+<ul>
+<li>By self-service automation, when the configuration is not yet configured.</li>
+<li>By development team that is not ready to deploy yet.</li>
+<li>As a validation <strong>build</strong> within a pull request, where you only want the continuous integration (CI) to run.</li>
+</ul>
+<p>In our <em>start.yml template we have the optional </em><em>suppressCD</em>* parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">extends</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">template</span><span class="o">:</span><span class="w"> </span><span class="n">blueprints</span><span class="sr">/__101__/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">__101__</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">CeBlueprints</span><span class="w"></span>
+<span class="w">  </span><span class="n">parameters</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">portfolioName</span><span class="o">:</span><span class="w">   </span><span class="s1">&#39;__TODO_PORTFOLIO__&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">productName</span><span class="o">:</span><span class="w">     </span><span class="s1">&#39;__TODO_PRODUCT__&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">publishFolder</span><span class="o">:</span><span class="w">   </span><span class="s1">&#39;__TODO_FOLDERNAME__&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">suppressCD</span><span class="o">:</span><span class="w">      </span><span class="kc">true</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">Allow</span><span class="w"> </span><span class="n">engineering</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">immediate</span><span class="w"> </span><span class="n">CI</span><span class="o">/</span><span class="n">build</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="n">configured</span><span class="w"></span>
+<span class="w">    </span><span class="n">modeElite</span><span class="o">:</span><span class="w">       </span><span class="kc">false</span><span class="w"></span>
 </code></pre></div>
 
-<p>that type of control flow has the potential to result in buggy code.</p>
-<p>Without the conditional statement (the <strong>if</strong>) having a simple statement:</p>
-<div class="highlight"><pre><span></span><code><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<p>When set to <strong>true</strong>, this part of the <em>control.yml is </em><em>not</em>* processed. </p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">blueprints</span><span class="o">/</span><span class="n">__101__</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">__101__</span><span class="o">-</span><span class="n">cd</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeBlueprints</span><span class="w"></span>
 </code></pre></div>
 
-<p>is not problematic. Why? Because it is not conditionally controlling the flow of execution. It is simply directing the flow without checking for any specific values.</p>
-<p>Knowing this, one wonders why is it that Dijkstra did not declare <strong>if</strong> statements harmful? The reason is probably that back in 1968, Dijkstra was able to clearly define structured programming discipline, but he did not have the tools at his disposal that would enable him to define the discipline needed for removing the <strong>if</strong> statements. Back then, the concept of object programming was still nascent.</p>
-<p>Today, we have well entrenched knowledge of object-oriented programming, and have great methodologies for replacing imperative <strong>if</strong> statements with more sophisticated code constructs.</p>
-<h2>Business policy rules must be declared in very visible places</h2>
-<p>The most volatile (and most critical) parts of the app code are the parts that automate business policy rules. Those policy rules are governed by conditional logic (i.e. <em>if in this moment the state of the app is such-and-such, then the following expected transformation of values must occur</em>). Because business policy rules are in constant flux, teams are incessantly making changes to the already changed code.</p>
-<p>It is those changes that offer the most fruitful opportunity for authoring bugs. What is the reason for this frequent bug authoring?</p>
-<p>Most of the time the unwanted effects of the change to the code happen if the conditional logic is duplicated. The same logic gets implemented in more than one module/method. This duplication creates opportunities for missing or misplacing the necessary changes.</p>
-<p>If we have implemented imperative conditional logic by using <strong>if-else</strong> statements in some module or method, chances are that there will be some other module or method where the exact same conditional logic will be needed. As the program runs, at various times it will need to make a processing decision based on that specific conditional logic.</p>
-<p>The trouble begins when those varying modules and methods need to be maintained. The business policy rule has changed, and now our code must mirror that change. Being able to make the necessary change in all the affected methods and/or modules is often riskier than it may seem.</p>
-<p>We often call these duplicate instances of conditional logic <strong>synchronized ifs</strong>. If one <strong>if</strong> statement needs to change, all other synchronized <strong>if</strong> statements must change at the same time. Which could quite often be a challenge.</p>
-<p>We must therefore abandon synchronized <strong>ifs</strong> and abstract conditional logic away into a single source of truth. The trick is choosing proper abstraction to accomplish that task. Which is the topic for another blog post.</p>
+<p>As a result the CD part of the pipeline will not be injected at queue time.</p>
+<h2>Suppress CD within PR</h2>
+<p>The optional parameter works well, until you are ready to deploy your solution and you set <code>suppressCD = false</code>. In this case the validation build in a pull request would trigger both the continuous integration (CI) and continuous delivery (CD) pipeline phases. </p>
+<p>This explains this code snippet at the end of the *-CI.yml template, which suppresses the CD part if the pipeline was triggered by a pull request ("merge"):</p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">suppressed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">pull</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">validation</span><span class="w"> </span><span class="n">builds</span><span class="o">!</span><span class="w"> </span>
+<span class="w">    </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">PR</span><span class="w"> </span><span class="n">Validation</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="n">Suppression</span><span class="w"> </span><span class="n">Alert</span><span class="w"></span>
+</code></pre></div>
+
+<p><img alt="magic" src="/images/yaml-pipelines-part11.png"></p>
+<p>It goes hand-in-hand with the second half of the conditional statement after the suppressCD check, as above. The source branch name will be <strong>merge</strong> if the build originated as a pull request merge validation build.</p>
+<p>A simple, but powerful trick!</p>
+<hr>
+<blockquote>
+<p>Series Bread Crumbs | <a href="/why-pipelines-part1.html">Part 1, TOC</a> | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | <a href="/yaml-pipelines-part7.html">Part 7</a> | <a href="/yaml-pipelines-part8.html">Part 8</a> | <a href="/yaml-pipelines-part9.html">Part 9</a> | <a href="/yaml-pipelines-part10.html">Part 10</a> | Part 11 |</p>
+</blockquote>
         </div>
 
         
@@ -99,9 +109,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp </a>
-        | <a href="https://wsbctechnicalblog.github.io/synchronized-if-statements-considered-harmful.html" rel="bookmark"
-         title="Permalink to Synchronized 'if' statements considered harmful">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code </a>
+        | <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part11.html" rel="bookmark"
+         title="Permalink to Our road to OSS Blueprints - Suppress CD when pipeline runs within PR">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
