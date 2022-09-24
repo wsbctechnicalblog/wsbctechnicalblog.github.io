@@ -1,12 +1,12 @@
 Title: Built-in Quality
-Date: 2022-09-23
+Date: 2022-09-30
 Category: Posts
 Tags: azure-devops, eliminate-waste, pipelines, tips
 Slug: built-in-quality
 Author: Willy-Peter Schaub
 Summary: Ensuring that our solutions meet quality guardrails and governance from ideation to deprecation.
 
-Post-deployment audits and inspection does not improve quality - it is usually too late, resulting in spectacular failures from which we can learn, but which are expensive and reputation busters - remember, first impressions last!
+Post-deployment analysis, audits and inspection does not improve quality - it is usually too late, resulting in spectacular failures. While we can learn from these failures, they tend to be expensive and reputation busters - remember, first impressions last!
 
 ![Crash](/images/built-in-quality-1.png)
 
