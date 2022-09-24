@@ -10,7 +10,7 @@ We covered this topic before in [can we enact governance through engineering-fri
 
 Listed from most to least formal:
 
-- **Governance** - "_Is the process of interactions through the laws, norms, power or language of an organized society over a social system (family, tribe, formal or informal organization, a territory or across territories)." - [Wikipedia](https://en.wikipedia.org/wiki/Governance)
+- **Governance** - "_Is the process of interactions through the laws, norms, power or language of an organized society over a social system (family, tribe, formal or informal organization, a territory or across territories)._" - [Wikipedia](https://en.wikipedia.org/wiki/Governance)
 - **Policy** - "_Is a deliberate system of guidelines to guide decisions and achieve rational outcomes. A policy is a statement of intent and is implemented as a procedure or protocol. Policies are generally adopted by a governance body within an organization_" - [Wikipedia](https://en.wikipedia.org/wiki/Policy)
 - **Technical Standards** - "_An established norm or requirement for a repeatable technical task which is applied to a common and repeated use of rules, conditions, guidelines or characteristics for products or related processes and production methods, and related management systems practices._" - [Wikipedia](https://en.wikipedia.org/wiki/Technical_standard)
 
@@ -41,5 +41,5 @@ I recently received an email with a request to migrate a repository named ``WS.I
 
 Had the creator of the repository reviewed our naming guidelines and branching strategy guardrails, we would have a deployable master branch and a user-friendly repository name. For example ``CrossCutting.NuGet.Infrastructure`` would be a lot more intuitive.
 
-This is a very simple example of not operating within our guardrails, which **WASTES** a lot of valuable engineering time on guess-work, creates an **ERROR-PRONE** bridge crossing, and does not empower engineers who have to takeover the artifacts when the creators move on.
+This is a very simple example of not operating within our guardrails, which **WASTES** a lot of valuable engineering time on guess-work, creates an **ERROR-PRONE** bridge crossing, and does not empower engineers who have to takeover the artifacts when the creators move on to new adventures.
 
