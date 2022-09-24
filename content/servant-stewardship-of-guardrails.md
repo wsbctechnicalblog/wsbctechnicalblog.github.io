@@ -6,7 +6,7 @@ Slug: servant-stewardship-of-guardrails
 Author: Willy-Peter Schaub
 Summary: You can chose between governance, policies, or standards, or collaborate with us through guardrails.
 
-We covered this topic before in [can we enact governance through engineering-friendly manifestos and guardrails?](/governance-manifestos-guardrails.html) ... but recent experiences deserve a refresher. First, let us compare the difference between governance, policies, standards, and what we refer to as guardrails.
+We covered this topic before in [can we enact governance through engineering-friendly manifestos and guardrails?](/governance-manifestos-guardrails.html) ... but recent experiences emphasis the need for a quick refresher. First, let us compare the difference between governance, policies, standards, and what we refer to as guardrails.
 
 Listed from most to least formal:
 
@@ -22,7 +22,7 @@ If you have work with engineers, especially those with an Agile and healthy DevO
 
 Our vision is to **Empower engineering through consistent and standardized processes, practices, and products, within guardrails.** We collaborate with experts from different disciplines in our centers of enablement to identify, introduce, and support processes, engineering principles, and products and create **guardrails**. We do not enforce but recommend guardrails to ensure that we reduce the risk of non-compliance and last-minute "stop the bus" decisions.
 
-> A **guardrail** is a less formal version of technical standards which are **recommended**, not **enforced**.
+> A **guardrail** is a less formal version of technical standards which are **recommended**, not **enforced**. The basic content describes the **WHAT** the guardrail is about, **WHY** is it important, and **HOW** to apply it.
 
 When I cover guardrails, I ask engineers to visualize a bridge.
 
@@ -32,7 +32,7 @@ We are your servant stewards of guardrails to support you to cross the bridge sa
 
 ---
 
-# WS.Infrastructure ?!?
+# WS.Infrastructure?!?
 
 I recently received an email with a request to migrate a repository named ``WS.Infrastructure`` to another Azure DevOps project. Here is what went through my mind as IO read the email:
 
