@@ -32,3 +32,5 @@ TBD
 
 TBD
 
+> HINT, HINT ... I hope that our Quality Assurance engineers will create a follow-on post to explore how we build-in and validate quality through our quality assurance services.
+
