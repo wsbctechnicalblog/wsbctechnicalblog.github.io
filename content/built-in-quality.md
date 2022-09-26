@@ -10,7 +10,7 @@ Post-deployment analysis, audits and inspection does not improve quality - it is
 
 ![Crash](/images/built-in-quality-1.png)
 
-Quality must be built-in from the moment a team has an idea until the feature or product is deprecated. Also, it is the responsibility of all stakeholders, such as development, operations, architecture, security, and business. It should therefore comes as no surprise that built-in quality is the North Star of our EDO Common Engineering [Center of Enablement](https://wsbctechnicalblog.github.io/ceremony-overview.html).
+Quality must be built-in from the moment a team has an idea until the feature or product is deprecated. Also, it is the responsibility of all stakeholders, such as development, operations, architecture, security, and business. It should therefore come as no surprise that built-in quality is the North Star of our EDO Common Engineering [Center of Enablement](https://wsbctechnicalblog.github.io/ceremony-overview.html).
 
 Let me explore three (3) of many parts of the **built-in quality** puzzle in our common engineering system.
 
@@ -20,7 +20,7 @@ Let me explore three (3) of many parts of the **built-in quality** puzzle in our
 
 I covered many of the myths of pull requests in [why we use pull requests with our trunk-based branching strategies](https://wsbctechnicalblog.github.io/branching-pull-request.html) and like [Mike Kaufman's](X) definition "_the pull request integration helps you to keep your main branch clean and detect issues before merging and making the code analysis part of the review process_", in his [Accelerate DevOps with GitHub](https://www.amazon.ca/Accelerate-DevOps-GitHub-software-performance/dp/1801813353) book.
 
-The [Azure DevOps Pull Requests](https://sec.ch9.ms/ch9/151a/ba7ad81b-ed67-4dfc-a9fb-4ebf323e151a/CONN17T184_high.mp4) are one piece of our arsenal to be pro- not re-active, and help us raise the quality bar through automated validations and a pair of human eyeballs, if and only if required. When we change our [Azure Pipeline blueprints](https://wsbctechnicalblog.github.io/yaml-pipelines-part10.html), for example, stakeholders from common engineering, operations, security, and/or site reliability engineering are looped in if the change impacts their area of responsibility.
+The [Azure DevOps Pull Requests](https://sec.ch9.ms/ch9/151a/ba7ad81b-ed67-4dfc-a9fb-4ebf323e151a/CONN17T184_high.mp4) are one piece of our arsenal to be pro- not re-active and help us raise the quality bar through automated validations and a pair of human eyeballs, if and only if required. When we change our [Azure Pipeline blueprints](https://wsbctechnicalblog.github.io/yaml-pipelines-part10.html), for example, stakeholders from common engineering, operations, security, and/or site reliability engineering are looped in if the change impacts their area of responsibility.
 
 > **TIP** - Pull Requests are autonomous stewards of our [Guardrails](TBD) and complement our peer-programming, by creating awareness of our engineering efforts across differing engineering disciplines. Fosters **resilience**!  
 
