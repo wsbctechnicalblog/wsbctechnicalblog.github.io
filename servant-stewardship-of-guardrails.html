@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>How to suppress selected logic when running PR validation pipelines - </title>
+        <title>Servant stewardship of guardrails - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,43 +32,48 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/suppress-pipeline-as-code-for-pr.html" rel="bookmark"
-            title="Permalink to How to suppress selected logic when running PR validation pipelines">How to suppress selected logic when running PR validation pipelines</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/servant-stewardship-of-guardrails.html" rel="bookmark"
+            title="Permalink to Servant stewardship of guardrails">Servant stewardship of guardrails</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 04 October 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 28 September 2022</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Solving the pipeline-as-code "chicken or the egg" challenge by suppressing selected logic</p>
+            <p>You can chose between governance, policies, or standards, or collaborate with us through guardrails.</p>
         </div>
     
         <div class="entry-content">
-            <p>With our app-type CI/CD pipeline blueprints we are consolidating the continuous integration (CI) and continuous delivery (CD) pipelines into one pipeline. When you peruse <a href="/yaml-pipelines-part10.html">Part 10: Pipelines - Meet our second generation app-type blueprints</a> you will get an overview of our new pipelines which are <strong>powerful</strong> ... with a twist.</p>
+            <p>We covered this topic before in <a href="/governance-manifestos-guardrails.html">can we enact governance through engineering-friendly manifestos and guardrails?</a> ... but recent experiences emphasis the need for a quick refresher. First, let us compare the difference between governance, policies, standards, and what we refer to as guardrails.</p>
+<p>Listed from most to least formal:</p>
+<ul>
+<li><strong>Governance</strong> - "<em>Is the process of interactions through the laws, norms, power or language of an organized society over a social system (family, tribe, formal or informal organization, a territory or across territories).</em>" - <a href="https://en.wikipedia.org/wiki/Governance">Wikipedia</a></li>
+<li><strong>Policy</strong> - "<em>Is a deliberate system of guidelines to guide decisions and achieve rational outcomes. A policy is a statement of intent and is implemented as a procedure or protocol. Policies are generally adopted by a governance body within an organization</em>" - <a href="https://en.wikipedia.org/wiki/Policy">Wikipedia</a></li>
+<li><strong>Technical Standards</strong> - "<em>An established norm or requirement for a repeatable technical task which is applied to a common and repeated use of rules, conditions, guidelines or characteristics for products or related processes and production methods, and related management systems practices.</em>" - <a href="https://en.wikipedia.org/wiki/Technical_standard">Wikipedia</a></li>
+</ul>
+<p>If you have work with engineers, especially those with an Agile and healthy DevOps mindset, pushing the boundaries through experimentation and innovation is common. Governance, policies, and standards are frowned upon as they generally <strong>restrict</strong> (opposite of empower) rapid innovation.</p>
 <hr>
-<h1>The Twist</h1>
-<p>By consolidating both the continuous integration and delivery logic, we made the pipelines unsuitable to be used as validation pipelines in our Pull Request policies. Why? </p>
-<p>Assume you are creating a pull request to apply a hotfix to a release branch. When the pull request triggers your pipeline, it must wait until the pipeline is complete - which means we must build and deploy to all environments, including production, before the validation pipeline completes. Obviously a "chicken or the egg" and <strong>not</strong> a desired solution.</p>
+<h1>What about Guardrails?</h1>
+<p>Our vision is to <strong>Empower engineering through consistent and standardized processes, practices, and products, within guardrails.</strong> We collaborate with experts from different disciplines in our centers of enablement to identify, introduce, and support processes, engineering principles, and products and create <strong>guardrails</strong>. We do not enforce but recommend guardrails to ensure that we reduce the risk of non-compliance and last-minute "stop the bus" decisions.</p>
+<blockquote>
+<p>A <strong>guardrail</strong> is a less formal version of technical standards which are <strong>recommended</strong>, not <strong>enforced</strong>. The basic content describes the <strong>WHAT</strong> the guardrail is about, <strong>WHY</strong> is it important, and <strong>HOW</strong> to apply it.</p>
+</blockquote>
+<p>When I cover guardrails, I ask engineers to visualize a bridge.</p>
+<p><img alt="Bridge" src="../images/servant-stewardship-of-guardrails-1.png"></p>
+<p>We are your servant stewards of guardrails to support you to cross the bridge safely and swiftly. If, however, you decide to climb on or climb over the guardrails, you are on your own. In other words, do not call us  if someone's hair is on fire, you are sitting in an infamous 2AM-call, or a failed security review stops you from deploying a mission critical release.</p>
 <hr>
-<h1>The Fix</h1>
-<p>We therefore applied a minor fix (or feature) to our blueprints.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
-<span class="c"># DEPLOYMENT</span>
-<span class="c"># 2021</span><span class="nt">.</span><span class="c">10</span><span class="nt">.</span><span class="c">04 WS Suppress CD on &quot;merge&quot; so that we can use PR validation builds</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
-<span class="nb">-</span><span class="c"> ${{ if and(ne(parameters</span><span class="nt">.</span><span class="c">suppressCD</span><span class="nt">,</span><span class="c"> true)</span><span class="nt">,</span><span class="c"> ne(parameters</span><span class="nt">.</span><span class="c">customCDTemplate</span><span class="nt">,</span><span class="c"> &#39;blueprint&#39;)</span><span class="nt">,</span><span class="c"> ne(lower(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranchName&#39;</span><span class="k">]</span><span class="c">)</span><span class="nt">,</span><span class="c"> &#39;merge&#39;)) }}:</span>
-<span class="c">  </span><span class="nb">-</span><span class="c"> template: /Operations/Custom/${{parameters</span><span class="nt">.</span><span class="c">customCDTemplate}}</span><span class="nt">.</span><span class="c">yml</span>
-<span class="c">    parameters:</span>
-<span class="c">      cdParameter: ${{parameters</span><span class="nt">.</span><span class="c">customCDParameter}}</span>
-</code></pre></div>
-
-<p>The <code>ne(lower(variables['Build.SourceBranchName']), 'merge')</code> part of the code suppresses the conditional logic if the pipeline run originates from a Pull Request merge validation build.</p>
-<p>At this stage we suppress all post-build logic to keep it <strong>simple</strong> but can shift the conditional logic by a few lines to allow the deployment to the <strong>development</strong> stage, while suppressing others.</p>
-<p><strong>Simple</strong>, but powerful!</p>
+<h1>WS.Infrastructure?!?</h1>
+<p>I recently received an email with a request to migrate a repository named <code>WS.Infrastructure</code> to another Azure DevOps project. Here is what went through my mind as IO read the email:</p>
+<ul>
+<li><em>Hmmm, what does the TLA (two lettered acronym) <strong>WS</strong> mean? <strong>W</strong>illy <strong>S</strong>chaub, <strong>W</strong>indows <strong>S</strong>ervice, <strong>W</strong>ater <strong>S</strong>tation, ...?</em></li>
+<li><em>Let me peek into the repository and look at the <strong>Infrastructure</strong> stuff ... but there is no typical infrastructure stuff. A platter of long-lived feature branches with NuGet packages focused on infrastructure.</em></li>
+</ul>
+<p>Had the creator of the repository reviewed our naming guidelines and branching strategy guardrails, we would have a deployable master branch and a user-friendly repository name. For example <code>CrossCutting.NuGet.Infrastructure</code> would be a lot more intuitive.</p>
+<p>This is a very simple example of not operating within our guardrails, which <strong>WASTES</strong> a lot of valuable engineering time on guess-work, creates an <strong>ERROR-PRONE</strong> bridge crossing, and does not empower engineers who have to takeover the artifacts when the creators move on to new adventures.</p>
         </div>
 
         
@@ -85,9 +90,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code </a>
-        | <a href="https://wsbctechnicalblog.github.io/suppress-pipeline-as-code-for-pr.html" rel="bookmark"
-         title="Permalink to How to suppress selected logic when running PR validation pipelines">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation </a>
+        | <a href="https://wsbctechnicalblog.github.io/servant-stewardship-of-guardrails.html" rel="bookmark"
+         title="Permalink to Servant stewardship of guardrails">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
