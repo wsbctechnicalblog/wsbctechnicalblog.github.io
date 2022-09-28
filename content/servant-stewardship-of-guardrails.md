@@ -1,5 +1,5 @@
 Title: Servant stewardship of guardrails
-Date: 2022-09-21
+Date: 2022-09-28
 Category: Posts 
 Tags: engineering, learning, innovation
 Slug: servant-stewardship-of-guardrails
