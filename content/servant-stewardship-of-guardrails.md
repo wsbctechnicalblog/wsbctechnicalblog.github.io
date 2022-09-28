@@ -6,7 +6,7 @@ Slug: servant-stewardship-of-guardrails
 Author: Willy-Peter Schaub
 Summary: You can chose between governance, policies, or standards, or collaborate with us through guardrails.
 
-We covered this topic before in [can we enact governance through engineering-friendly manifestos and guardrails?](/governance-manifestos-guardrails.html) ... but recent experiences emphasis the need for a quick refresher. First, let us compare the difference between governance, policies, standards, and what we refer to as guardrails.
+We covered this topic before in [can we enact governance through engineering-friendly manifestos and guardrails?](/governance-manifestos-guardrails.html) ... but recent experiences emphasise the need for a quick refresher. First, let us compare the difference between governance, policies, standards, and what we refer to as guardrails.
 
 Listed from most to least formal:
 
@@ -34,7 +34,7 @@ We are your servant stewards of guardrails to support you to cross the bridge sa
 
 # WS.Infrastructure?!?
 
-I recently received an email with a request to migrate a repository named ``WS.Infrastructure`` to another Azure DevOps project. Here is what went through my mind as IO read the email:
+I recently received an email with a request to migrate a repository named ``WS.Infrastructure`` to another Azure DevOps project. Here is what went through my mind as I read the email:
 
 - _Hmmm, what does the TLA (two lettered acronym) **WS** mean? **W**illy **S**chaub, **W**indows **S**ervice, **W**ater **S**tation, ...?_
 - _Let me peek into the repository and look at the **Infrastructure** stuff ... but there is no typical infrastructure stuff. A platter of long-lived feature branches with NuGet packages focused on infrastructure._
