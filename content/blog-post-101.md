@@ -54,6 +54,7 @@ Here is a list of tags we use when creating new content:
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
 | posters         |  | Quick reference posters and cheat sheets. |
 | quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
+| release         |  | Release management practices and learning. |
 | security        |  | "Trust, but verify " to avoid and function under malicious attacks. |
 | system-programming |  | Automating system operations. |
 | tdd             |  | Test-driven Development. |
