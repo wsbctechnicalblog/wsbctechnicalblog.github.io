@@ -1,5 +1,5 @@
 Title: Our open-source pipeline blueprints have landed!
-Date: 2022-11-04
+Date: 2022-11-09
 Category: Posts
 Tags: azure-devops, pipelines, automation
 Slug: our-open-source-pipeline-blueprints-have-landed
@@ -59,7 +59,7 @@ The three (3) core repositories represent the heart of our blueprint-based [Azur
 
 For more information on the history and a peek under the hood of the blueprints, please peruse our technical blog [pipelines series](https://wsbctechnicalblog.github.io/why-pipelines-part1.html) and anything that is tagged with [pipelines](https://wsbctechnicalblog.github.io/tag/pipelines.html).
 
-Some of the templates contain a ```# STUB PLACEHOLDER``` to hide our internal implementation but maintain the blueprint template dependencies. You will need to implement these ```STUBBED``` templates yourself. Contact our team using the [Discussions](https://github.com/orgs/WorkSafeBC-Common-Engineering/discussions) if you have any questions.
+Some of the templates contain a ```__TODO_<ACTION>_``` placeholders to hide our internal implementation but maintain the blueprint template dependencies and integrity. You will need to search for ```__TODO_``` and implement these ```STUBBED``` templates yourself. Contact our team using the [Discussions](https://github.com/orgs/WorkSafeBC-Common-Engineering/discussions) if you have any questions.
 
 ---
 
