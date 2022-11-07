@@ -1,5 +1,5 @@
 Title: Our open-source pipeline blueprints have landed!
-Date: 2022-11-09
+Date: 2022-11-08
 Category: Posts
 Tags: azure-devops, pipelines, automation
 Slug: our-open-source-pipeline-blueprints-have-landed
