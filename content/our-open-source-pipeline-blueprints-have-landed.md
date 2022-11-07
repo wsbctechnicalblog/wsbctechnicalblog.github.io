@@ -61,6 +61,14 @@ For more information on the history and a peek under the hood of the blueprints,
 
 Some of the templates contain a ```__TODO_<ACTION>_``` placeholders to hide our internal implementation but maintain the blueprint template dependencies and integrity. You will need to search for ```__TODO_``` and implement these ```STUBBED``` templates yourself. Contact our team using the [Discussions](https://github.com/orgs/WorkSafeBC-Common-Engineering/discussions) if you have any questions.
 
+### Getting Started
+
+1. Fork the repositories if you intend to make changes.
+2. Create or use a common engineering Azure DevOps project.
+2. Clone the repositories to your Azure DevOps project.
+3. Search for ```__TODO_``` placeholders in all repositories and adjust to match your Azure DevOps Project(s) and services.
+4. Remember to contribute your changes back using a pull request.
+
 ---
 
 # How to contribute
