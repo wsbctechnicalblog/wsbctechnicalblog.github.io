@@ -8,15 +8,15 @@ Summary: A glimpse at our OSS progress and how we use the same pipeline in and o
 
 ---
 
-# Open Sourcing our Application-type CI/CD Blueprints
+## Open Sourcing our Application-type CI/CD Blueprints
 
 We are on the home stretch to open source our v2 application-type CI/CD blueprints. In fact, we only have one last optimization story enabler to complete, before we will start setting up an OSS repository in GitHub. Thank you for your patience **Said** - we are close!
 
 ---
 
-# Using the same Application-type CI/CD Blueprints as Pull Request (PR) Validation Build 
+## Using the same Application-type CI/CD Blueprints as Pull Request (PR) Validation Build 
 
-## suppressCD parameter
+### suppressCD parameter
 
 Why do we want to suppress the continuous delivery (CD) part of our CI/CD blueprint-based pipelines?
 
@@ -48,7 +48,7 @@ When set to **true**, this part of the *control.yml is **not** processed.
 
 As a result the CD part of the pipeline will not be injected at queue time.
 
-## Suppress CD within PR
+### Suppress CD within PR
 
 The optional parameter works well, until you are ready to deploy your solution and you set ```suppressCD = false```. In this case the validation build in a pull request would trigger both the continuous integration (CI) and continuous delivery (CD) pipeline phases. 
 
