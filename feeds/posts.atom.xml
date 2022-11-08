@@ -24,11 +24,11 @@
 &lt;h3&gt;Samples&lt;/h3&gt;
 &lt;p&gt;The five (5) sample repositories are used by our self-service automation to extract an application-type sample and inject it into the users repository. We reduced the &lt;a href="https://youtu.be/DWuDqCM1t6A"&gt;self-service cycle-time&lt;/a&gt; to less than 15 seconds ... a success story that we will cover in an upcoming self-service automation post. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.azure-function&lt;/li&gt;
-&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.generic-multiple-jobs&lt;/li&gt;
-&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.generic-single-job** &lt;/li&gt;
-&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.nuget-package&lt;/li&gt;
-&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.universal-artifact&lt;/li&gt;
+&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.&lt;strong&gt;azure-function&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.&lt;strong&gt;generic-multiple-jobs&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.&lt;strong&gt;generic-single-job&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.&lt;strong&gt;nuget-package&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;AzureDevOps.Automation.Pipeline.Sample.&lt;strong&gt;universal-artifact&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Core&lt;/h3&gt;
 &lt;p&gt;The three (3) core repositories represent the heart of our blueprint-based &lt;a href="https://azure.microsoft.com/en-ca/products/devops/pipelines"&gt;Azure Pipelines&lt;/a&gt;.&lt;/p&gt;
@@ -50,7 +50,7 @@
 &lt;hr&gt;
 &lt;h1&gt;How to contribute&lt;/h1&gt;
 &lt;p&gt;As mentioned, collaborate with us using the &lt;strong&gt;Discussions&lt;/strong&gt; feature and submit your blueprints changes through &lt;strong&gt;pull requests&lt;/strong&gt; which will be considered, reviewed, integrated, and synchronized by our common engineering open source team of passionate engineers.&lt;/p&gt;
-&lt;p&gt;May the &lt;strong&gt;collaboration&lt;/strong&gt;, have &lt;strong&gt;fun&lt;/strong&gt;, and &lt;strong&gt;innovation&lt;/strong&gt; begin!&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="automation"></category></entry><entry><title>Test Environment Management in a hybrid world</title><link href="https://wsbctechnicalblog.github.io/test-environment-management-in-a-hybrid-world.html" rel="alternate"></link><published>2022-10-12T00:00:00-07:00</published><updated>2022-10-12T00:00:00-07:00</updated><author><name>Shay Vannery</name></author><id>tag:wsbctechnicalblog.github.io,2022-10-12:/test-environment-management-in-a-hybrid-world.html</id><summary type="html">&lt;p&gt;Test Environments are a critical component of any software development lifecycle.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Correctly configured test environments can help detect bugs, errors &amp;amp; other issues early in a controlled setting; saving the development team time, effort, money and stress. And yet, test environments are often an after-thought. &lt;/p&gt;
+&lt;p&gt;May the &lt;strong&gt;collaboration&lt;/strong&gt;, &lt;strong&gt;fun&lt;/strong&gt;, and &lt;strong&gt;innovation&lt;/strong&gt; begin!&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="automation"></category></entry><entry><title>Test Environment Management in a hybrid world</title><link href="https://wsbctechnicalblog.github.io/test-environment-management-in-a-hybrid-world.html" rel="alternate"></link><published>2022-10-12T00:00:00-07:00</published><updated>2022-10-12T00:00:00-07:00</updated><author><name>Shay Vannery</name></author><id>tag:wsbctechnicalblog.github.io,2022-10-12:/test-environment-management-in-a-hybrid-world.html</id><summary type="html">&lt;p&gt;Test Environments are a critical component of any software development lifecycle.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Correctly configured test environments can help detect bugs, errors &amp;amp; other issues early in a controlled setting; saving the development team time, effort, money and stress. And yet, test environments are often an after-thought. &lt;/p&gt;
 &lt;h1&gt;Problems with Test Environment Management&lt;/h1&gt;
 &lt;p&gt;Traditional test environment management is a cumbersome and labor-intensive process. In an organization with a complex technological landscape, this means keeping track of hundreds of applications, related configurations and attributes in complex spreadsheets. &lt;/p&gt;
 &lt;p&gt;As static environments are dependent upon humans for upkeep &amp;amp; maintenance, these environments become inconsistent over time leading to less reliable test results. This sometimes leads to bugs &amp;amp; errors escaping to the Production environment undetected, despite running a battery of tests. Misconfigured environments also make it difficult to troubleshoot and pinpoint the source of bugs and errors. &lt;/p&gt;
