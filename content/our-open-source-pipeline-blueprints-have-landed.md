@@ -43,11 +43,11 @@ We have published a total of eight (8) repositories, consisting of five (5) samp
 
 The five (5) sample repositories are used by our self-service automation to extract an application-type sample and inject it into the users repository. We reduced the [self-service cycle-time](https://youtu.be/DWuDqCM1t6A) to less than 15 seconds ... a success story that we will cover in an upcoming self-service automation post. 
 
-- AzureDevOps.Automation.Pipeline.Sample.azure-function
-- AzureDevOps.Automation.Pipeline.Sample.generic-multiple-jobs
-- AzureDevOps.Automation.Pipeline.Sample.generic-single-job** 
-- AzureDevOps.Automation.Pipeline.Sample.nuget-package
-- AzureDevOps.Automation.Pipeline.Sample.universal-artifact
+- AzureDevOps.Automation.Pipeline.Sample.**azure-function**
+- AzureDevOps.Automation.Pipeline.Sample.**generic-multiple-jobs**
+- AzureDevOps.Automation.Pipeline.Sample.**generic-single-job**
+- AzureDevOps.Automation.Pipeline.Sample.**nuget-package**
+- AzureDevOps.Automation.Pipeline.Sample.**universal-artifact**
 
 ### Core
 
@@ -75,5 +75,5 @@ Some of the templates contain a ```__TODO_<ACTION>_``` placeholders to hide our 
 
 As mentioned, collaborate with us using the **Discussions** feature and submit your blueprints changes through **pull requests** which will be considered, reviewed, integrated, and synchronized by our common engineering open source team of passionate engineers.
 
-May the **collaboration**, have **fun**, and **innovation** begin!
+May the **collaboration**, **fun**, and **innovation** begin!
 
