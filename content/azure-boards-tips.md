@@ -4,7 +4,7 @@ Category: Posts
 Tags: azure-devops, tips
 Slug: azure-boards-tips
 Author: Willy-Peter Schaub
-Summary: A few useful "did you know" tips when using Azure Boards
+Summary: A few useful "did you know" tips when using Azure Boards.
 
 After observing users work with and occasionally struggle with the [Azure Boards](https://azure.microsoft.com/en-ca/products/devops/boards/), it is time for me to share a few tips.
 

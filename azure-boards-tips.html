@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title> Articles by Shay Vannery - </title>
+        <title>Azure Boards Tips - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -22,64 +22,130 @@
             <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
-    <div class="hp-header">
-        <div class="page-header">
-            <div class="content-header">
-                <div id="title-block">
-                <h1><a href="https://wsbctechnicalblog.github.io/"></a></h1>
-                <p class="blurb"></p>
-                </div>
-            </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
         </div>
     </div>
+</div>
     <div class="content">
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-boards-tips.html" rel="bookmark"
+            title="Permalink to Azure Boards Tips">Azure Boards Tips</a></h1>
 
-<h2>Articles by Shay Vannery</h2>
-
-
-<img src="/theme/img/Logo-blogsize.png">
-
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Wed 12 October 2022</div>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 02 December 2022</div>
  
-                <h2><a href="https://wsbctechnicalblog.github.io/test-environment-management-in-a-hybrid-world.html" rel=Bookmark title="Permalink to Test Environment Management in a hybrid world">Test Environment Management in a hybrid world</a></h2>
-                <p>
-                <p>Test Environments are a critical component of any software development lifecycle.</p>            
-                </p>
-                   
-
-            </div>
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>A few useful "did you know" tips when using Azure Boards.</p>
+        </div>
     
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Fri 29 April 2022</div>
- 
-                <h2><a href="https://wsbctechnicalblog.github.io/improving-dora-metrics.html" rel=Bookmark title="Permalink to Improving DORA metrics">Improving DORA metrics</a></h2>
-                <p>
-                <p>We would like to plan how to track and empower engineering to increase deployment frequency, and reduce lead time for change, MTTR, and change failure rates.</p>            
-                </p>
-                   
-
-            </div>
-    
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Fri 04 March 2022</div>
- 
-                <h2><a href="https://wsbctechnicalblog.github.io/continuous-delivery-in-the-enterprise.html" rel=Bookmark title="Permalink to Continuous Delivery in the enterprise">Continuous Delivery in the enterprise</a></h2>
-                <p>
-                <p>Continuous Delivery is no silver bullet and requires persistence, discipline and effort.</p>            
-                </p>
-                   
-
-            </div>
-    
+        <div class="entry-content">
+            <p>After observing users work with and occasionally struggle with the <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a>, it is time for me to share a few tips.</p>
+<hr>
+<h1>Select the right card reordering strategy</h1>
+<blockquote>
+<p><img alt="reordering" src="../images/azure-boards-tips-1.png"> </p>
+</blockquote>
+<p>The board supports two reorder behaviours when you drag and drop your cards. </p>
+<ul>
+<li>Reorder work items when changing columns and update the backlog accordingly. (Default)</li>
+<li>Follow backlog order when changing columns.</li>
 </ul>
+<p>As I <strong>groom</strong> and maintain an <strong>ordered</strong> (prioritised) backlog, I prefer the second behaviour. It drops the card according to the work items order within the backlog. In other words, if it has the highest priority on the backlog it will appear at the top of the column, no matter where you drop it. Once dropped, you can intentionally drag and drop the card within the column, which updates its order (priority)within the column and updates the backlog accordingly.</p>
+<blockquote>
+<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
+<p>GOTO <code>Configure team settings</code>
+Select <code>Card reordering</code> and select the expected reorder strategy.</p>
+</blockquote>
+<hr>
+<h1>Create visual cues on your board</h1>
+<blockquote>
+<p><img alt="cues" src="../images/azure-boards-tips-2.png"> </p>
+</blockquote>
+<p>Maximize your <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a> on your biggest monitor and take two steps back. Can you see visual cues for (1) cards flowing in swim lanes, (2) tags that pop out from the rest to indicate special metadata, such as PRIORITY, and (3) card colours that indicate their states?</p>
+<p>Even though the above board has been blurred, I notice nine (9) cards that are a <code>PRIORITY</code> due to the tag colour, one (1) card that needs to be discussed <code>violet colour</code>, two (2) cards that need to be groomed <code>salmon colour</code>, and two (2) cards that are stale <code>orange colour</code>. Oh, the yellow cards on the right tell me that their <code>iteration path</code> has not yet been set.</p>
+<p>The <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a> delivers powerful <strong>visual cue</strong> features - use them! </p>
+<p>Please do not use the card colour styles to indicate who they have been assigned to. There are only ten (10) possible styles, and you are better off using the <strong>filter</strong> to focus on your work - see below.</p>
+<blockquote>
+<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
+<p>GOTO <code>Configure team settings</code>
+Select <code>Tag colors</code> and define special colours for special tags
+Select <code>Styles</code> and define up to ten (10) styles to stand out.</p>
+</blockquote>
+<p>Here is an example of a rule that turns stale cards orange:</p>
+<blockquote>
+<p><img alt="style" src="../images/azure-boards-tips-7.png"> </p>
+</blockquote>
+<hr>
+<h1>Use the filter!</h1>
+<blockquote>
+<p><img alt="filter" src="../images/azure-boards-tips-3.png"> </p>
+</blockquote>
+<p>The <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Board</a> team implemented a great filter, allowing you to filter you board on <code>work item types</code>, <code>assigned to</code>, <code>Tags</code>, <code>Iterations</code>, <code>Area paths</code>, and <code>Parent Work Items</code> to reduce the noise and allow you to focus on what is important. </p>
+<p>For example, my board is filtered on cards assigned to <code>@Me</code>, <code>Unassigned</code>, and <code>my team's AD group</code> so that I can focus on my work and keep an eye on the unassigned work. </p>
+<hr>
+<h1>My work items are vanishing!?!</h1>
+<blockquote>
+<p><img alt="states" src="../images/azure-boards-tips-4.png"> </p>
+</blockquote>
+<p>Ensure that all work item possible states are mapped to one or more of the <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Board</a> columns. If a state is not mapped against a column, the card will literally <strong>vanish</strong> from your board when its state changes to the unmapped state - the board is literally doing what <strong>you</strong> have configured it to do.</p>
+<blockquote>
+<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
+<p>GOTO <code>Configure team settings</code>
+Select <code>Columns</code> and map the work item states for each column</p>
+</blockquote>
+<hr>
+<h1>Add high-value fields on the card</h1>
+<blockquote>
+<p><img alt="fields" src="../images/azure-boards-tips-4.png"> </p>
+</blockquote>
+<p>The last thing you want to do is click on a card on your Kanban board - <strong>WASTE</strong>! Ensure you have the relevant fields mapped to your card so that in most cases you can simply look at the card to understand what to do next. </p>
+<blockquote>
+<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
+<p>GOTO <code>Configure team settings</code>
+Select <code>Fields</code> and map up to 10 fields in the order they need to appear on your card
+DO NOT check <code>Check if you want to display fields even if they are empty</code> - <strong>WASTE</strong>!</p>
+</blockquote>
+<hr>
+<h1>Do not forget the Delivery Plan!</h1>
+<blockquote>
+<p><img alt="delivery plan" src="../images/azure-boards-tips-4.png"> </p>
+</blockquote>
+<p><a href="https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops">Delivery Plan</a> TBD</p>
+<p>Any other tips to share?</p>
+        </div>
 
+        
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24HuV66af9ahG4CwPsLx5F81"+"&opts=16798&num=10&ts=1644344212324");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+
+   
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-boards-tips.html" rel="bookmark"
+         title="Permalink to Azure Boards Tips">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -160,7 +226,7 @@
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (122)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (122)</li>
                 </ul>
              
             </div>
