@@ -23,7 +23,8 @@ As I **groom** and maintain an **ordered** (prioritised) backlog, I prefer the s
 
 > ![settings](../images/azure-boards-tips-0.png) 
 
-> GOTO ```Configure team settings```
+> **GOTO** ```Configure team settings```. 
+>
 > Select ```Card reordering``` and select the expected reorder strategy.
 
 ---
@@ -42,8 +43,9 @@ Please do not use the card colour styles to indicate who they have been assigned
 
 > ![settings](../images/azure-boards-tips-0.png) 
 
-> GOTO ```Configure team settings```
-> Select ```Tag colors``` and define special colours for special tags
+> **GOTO** ```Configure team settings```. 
+> Select ```Tag colors``` and define special colours for special tags.
+>
 > Select ```Styles``` and define up to ten (10) styles to stand out.
 
 Here is an example of a rule that turns stale cards orange:
@@ -70,8 +72,9 @@ Ensure that all work item possible states are mapped to one or more of the [Azur
 
 > ![settings](../images/azure-boards-tips-0.png) 
 
-> GOTO ```Configure team settings```
-> Select ```Columns``` and map the work item states for each column
+> **GOTO** ```Configure team settings```. 
+>
+> Select ```Columns``` and map the work item states for each column.
 
 ---
 
@@ -83,8 +86,10 @@ The last thing you want to do is click on a card on your Kanban board - **WASTE*
 
 > ![settings](../images/azure-boards-tips-0.png) 
 
-> GOTO ```Configure team settings```
-> Select ```Fields``` and map up to 10 fields in the order they need to appear on your card
+> GOTO ```Configure team settings```. 
+>
+> Select ```Fields``` and map up to 10 fields in the order they need to appear on your card.
+>
 > DO NOT check ```Check if you want to display fields even if they are empty``` - **WASTE**!
 
 ---
@@ -95,8 +100,8 @@ The last thing you want to do is click on a card on your Kanban board - **WASTE*
 
 Lastly, remember the [Delivery Plan](https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops) which allows you to create a delivery board-type plan view combining multiple teams, backlogs, and iteration cadences. The delivery plan configuration of settings and styles is similar to the board, but it also allow you to collapse cards and show dependencies.
 
-> IMPORTANT
-> Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan viw.
+> **IMPORTANT**
+> Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan view.
 
 Any other tips to share?
 

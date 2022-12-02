@@ -13,8 +13,8 @@
 &lt;p&gt;As I &lt;strong&gt;groom&lt;/strong&gt; and maintain an &lt;strong&gt;ordered&lt;/strong&gt; (prioritised) backlog, I prefer the second behaviour. It drops the card according to the work items order within the backlog. In other words, if it has the highest priority on the backlog it will appear at the top of the column, no matter where you drop it. Once dropped, you can intentionally drag and drop the card within the column, which updates its order (priority)within the column and updates the backlog accordingly.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="settings" src="../images/azure-boards-tips-0.png"&gt; &lt;/p&gt;
-&lt;p&gt;GOTO &lt;code&gt;Configure team settings&lt;/code&gt;
-Select &lt;code&gt;Card reordering&lt;/code&gt; and select the expected reorder strategy.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GOTO&lt;/strong&gt; &lt;code&gt;Configure team settings&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;Card reordering&lt;/code&gt; and select the expected reorder strategy.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Create visual cues on your board&lt;/h1&gt;
@@ -27,9 +27,9 @@ Select &lt;code&gt;Card reordering&lt;/code&gt; and select the expected reorder 
 &lt;p&gt;Please do not use the card colour styles to indicate who they have been assigned to. There are only ten (10) possible styles, and you are better off using the &lt;strong&gt;filter&lt;/strong&gt; to focus on your work - see below.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="settings" src="../images/azure-boards-tips-0.png"&gt; &lt;/p&gt;
-&lt;p&gt;GOTO &lt;code&gt;Configure team settings&lt;/code&gt;
-Select &lt;code&gt;Tag colors&lt;/code&gt; and define special colours for special tags
-Select &lt;code&gt;Styles&lt;/code&gt; and define up to ten (10) styles to stand out.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GOTO&lt;/strong&gt; &lt;code&gt;Configure team settings&lt;/code&gt;. 
+Select &lt;code&gt;Tag colors&lt;/code&gt; and define special colours for special tags.&lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;Styles&lt;/code&gt; and define up to ten (10) styles to stand out.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Here is an example of a rule that turns stale cards orange:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -50,8 +50,8 @@ Select &lt;code&gt;Styles&lt;/code&gt; and define up to ten (10) styles to stand
 &lt;p&gt;Ensure that all work item possible states are mapped to one or more of the &lt;a href="https://azure.microsoft.com/en-ca/products/devops/boards/"&gt;Azure Board&lt;/a&gt; columns. If a state is not mapped against a column, the card will literally &lt;strong&gt;vanish&lt;/strong&gt; from your board when its state changes to the unmapped state - the board is literally doing what &lt;strong&gt;you&lt;/strong&gt; have configured it to do.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="settings" src="../images/azure-boards-tips-0.png"&gt; &lt;/p&gt;
-&lt;p&gt;GOTO &lt;code&gt;Configure team settings&lt;/code&gt;
-Select &lt;code&gt;Columns&lt;/code&gt; and map the work item states for each column&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GOTO&lt;/strong&gt; &lt;code&gt;Configure team settings&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;Columns&lt;/code&gt; and map the work item states for each column.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Add high-value fields on the card&lt;/h1&gt;
@@ -61,9 +61,9 @@ Select &lt;code&gt;Columns&lt;/code&gt; and map the work item states for each co
 &lt;p&gt;The last thing you want to do is click on a card on your Kanban board - &lt;strong&gt;WASTE&lt;/strong&gt;! Ensure you have the relevant fields mapped to your card so that in most cases you can simply look at the card to understand what to do next. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="settings" src="../images/azure-boards-tips-0.png"&gt; &lt;/p&gt;
-&lt;p&gt;GOTO &lt;code&gt;Configure team settings&lt;/code&gt;
-Select &lt;code&gt;Fields&lt;/code&gt; and map up to 10 fields in the order they need to appear on your card
-DO NOT check &lt;code&gt;Check if you want to display fields even if they are empty&lt;/code&gt; - &lt;strong&gt;WASTE&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;GOTO &lt;code&gt;Configure team settings&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;Fields&lt;/code&gt; and map up to 10 fields in the order they need to appear on your card.&lt;/p&gt;
+&lt;p&gt;DO NOT check &lt;code&gt;Check if you want to display fields even if they are empty&lt;/code&gt; - &lt;strong&gt;WASTE&lt;/strong&gt;!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1&gt;Do not forget the Delivery Plan!&lt;/h1&gt;
@@ -72,8 +72,8 @@ DO NOT check &lt;code&gt;Check if you want to display fields even if they are em
 &lt;/blockquote&gt;
 &lt;p&gt;Lastly, remember the &lt;a href="https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops"&gt;Delivery Plan&lt;/a&gt; which allows you to create a delivery board-type plan view combining multiple teams, backlogs, and iteration cadences. The delivery plan configuration of settings and styles is similar to the board, but it also allow you to collapse cards and show dependencies.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;IMPORTANT
-Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan viw.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;
+Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan view.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Any other tips to share?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category></entry><entry><title>Our open-source pipeline blueprints have landed!</title><link href="https://wsbctechnicalblog.github.io/our-open-source-pipeline-blueprints-have-landed.html" rel="alternate"></link><published>2022-11-08T00:00:00-08:00</published><updated>2022-11-08T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-11-08:/our-open-source-pipeline-blueprints-have-landed.html</id><summary type="html">&lt;p&gt;Lifting the hood of our consistent, standardized, and self-service based Azure Pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Our group took huge step when we convinced our leadership to empower us to create this technical blog and share our technology journeys, learnings, and innovation with the community back in September 2020. Two years later, we finally managed to dot the &lt;code&gt;i's&lt;/code&gt; and cross the &lt;code&gt;t's&lt;/code&gt; and publish our &lt;a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part10.html"&gt;second-generation application-type blueprints&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;It is hopefully the splash down of a long and innovative collaboration to improve our (community) use of &lt;a href="https://azure.microsoft.com/en-ca/products/devops/pipelines"&gt;Azure Pipelines&lt;/a&gt;.&lt;/p&gt;
