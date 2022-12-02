@@ -64,7 +64,7 @@ For example, my board is filtered on cards assigned to ```@Me```, ```Unassigned`
 
 # My work items are vanishing!?! 
 
-> ![states](../images/azure-boards-tips-4.png) 
+> ![states](../images/azure-boards-tips-6.png) 
 
 Ensure that all work item possible states are mapped to one or more of the [Azure Board](https://azure.microsoft.com/en-ca/products/devops/boards/) columns. If a state is not mapped against a column, the card will literally **vanish** from your board when its state changes to the unmapped state - the board is literally doing what **you** have configured it to do.
 
@@ -91,9 +91,12 @@ The last thing you want to do is click on a card on your Kanban board - **WASTE*
 
 # Do not forget the Delivery Plan!
 
-> ![delivery plan](../images/azure-boards-tips-4.png) 
+> ![delivery plan](../images/azure-boards-tips-5.png) 
 
-[Delivery Plan](https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops) TBD
+Lastly, remember the [Delivery Plan](https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops) which allows you to create a delivery board-type plan view combining multiple teams, backlogs, and iteration cadences. The delivery plan configuration of settings and styles is similar to the board, but it also allow you to collapse cards and show dependencies.
+
+> IMPORTANT
+> Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan viw.
 
 Any other tips to share?
 
