@@ -67,7 +67,7 @@ The second extension, which runs in parallel to the security automation scans, c
 
 A few words of caution:
 
-- This extension point re-used and triggered by all blueprints!
+- This extension point is re-used and triggered by all blueprints!
 - Any tasks running as part of this extension point must be **stable** and **reliable**!
 - This extension point must honour the ```modeElite``` parameter, as discussed below.
 - Validate your extensions using your feature branch and the [ref:](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&tabs=schema#define-a-repositories-resource) parameter before committing any change to your master branch. Once in master, your extensions will affect **all** blueprint-based pipelines.
@@ -92,14 +92,14 @@ And another that runs for the higher (production) environments:
 
 In other words, you can selectively run quality-assurance in all pipelines or only in pipelines that are based on the ```release/*``` or ```release*``` source code branches, destined for production.
 
-Within both these sections, you will find **blueprint** specific sections, allowing you to your quality assurance automation scans for selected blueprints only.
+Within both these sections, you will find **blueprint** specific sections, allowing you to configure your quality assurance automation scans for the selected blueprints only.
 
 ```
 - ${{ if eq( lower(parameters.applicationBlueprint), 'azure-function' ) }}:
     - script: echo deal with qa scan relevant to azure-function application type
 ```
 
-Once you have decided WHEN and for WHICH blueprints you want to run your quality assurance automation scans, insert the into the [qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) template. You **must** honour and deal with the ```modeElite```. 
+Once you have decided WHEN and for WHICH blueprints you want to run your quality assurance automation scans, insert your tasks into the [qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) template. You **must** honour and deal with the ```modeElite```. 
 
 - If ```modeElite = false``` your scans must **succeed** or complete with a **warning** - they are not allowed to throw an error, which would terminate the pipeline.
 - If ```modeElite = true``` your scans must **succeed** or **fail** - any failure must terminate the pipeline.
