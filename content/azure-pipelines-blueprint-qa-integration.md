@@ -56,7 +56,7 @@ Scroll down to line around line 95, where you will find this placeholder:
         arguments:  '--configuration $(buildConfiguration) --no-restore'
 ```
 
-It is the responsibility of the software delivery team to define **consistent**, **comprehensive**, and **quality** continuous integration tests to empower us to automate the unite and regression testing while building the artifacts we want to deploy. You can extend the [building-code](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/building-code/building-code.yml) to validate the health of your unit tests by using a tool such as [Stryker](https://stryker-mutator.io/).
+It is the responsibility of the software delivery team to define **consistent**, **comprehensive**, and **quality** continuous integration tests to empower us to automate the unit and regression testing while building the artifacts we want to deploy. You can extend the [building-code](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/building-code/building-code.yml) to validate the health of your unit tests by using a tool such as [Stryker](https://stryker-mutator.io/).
 
 
 ## Continuous delivery (CD) QA extension points?
