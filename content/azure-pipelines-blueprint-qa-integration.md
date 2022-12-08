@@ -4,7 +4,7 @@ Category: Posts
 Tags: azure-devops, pipelines, oss
 Slug: azure-pipelines-blueprint-qa-integration
 Author: Willy-Peter Schaub
-Summary: WHERE and HOW to integrate quality assurance into our oss pipeline blueprints.
+Summary: WHERE and HOW to integrate quality assurance into our OSS pipeline blueprints.
 
 Let us review and how you can integrate your quality assurance (QA) scans in our [v2 application-type pipeline blueprints](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2).
 
