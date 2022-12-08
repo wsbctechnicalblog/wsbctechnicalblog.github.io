@@ -1,7 +1,7 @@
 Title: Our open-source pipeline blueprints have landed!
 Date: 2022-11-08
 Category: Posts
-Tags: azure-devops, pipelines, automation
+Tags: azure-devops, pipelines, automation, oss
 Slug: our-open-source-pipeline-blueprints-have-landed
 Author: Willy-Peter Schaub
 Summary: Lifting the hood of our consistent, standardized, and self-service based Azure Pipelines. 
