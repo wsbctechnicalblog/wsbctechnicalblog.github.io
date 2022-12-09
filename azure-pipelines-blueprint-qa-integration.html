@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Azure Pipelines Blueprint QA Integration - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipelines-blueprint-qa-integration.html" rel="bookmark"
+            title="Permalink to Azure Pipelines Blueprint QA Integration">Azure Pipelines Blueprint QA Integration</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 09 December 2022</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>WHERE and HOW to integrate quality assurance into our OSS pipeline blueprints.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Let us review and how you can integrate your quality assurance (QA) scans in our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 application-type pipeline blueprints</a>.</p>
+<hr>
+<h1>High-altitude peek at the pipeline flow</h1>
+<p>The following illustration shows a typical continuous delivery pipeline, including continuous integration (CI), continuous delivery (CD), and supporting built-in automation and quality scans. </p>
+<p><img alt="Flow" src="../images/azure-pipelines-blueprint-qa-integration-1.png"></p>
+<p>Let us unpack the pipeline, based on the <strong>azure-function</strong> blueprint. Thanks to the magic of assembling the pipeline instance at queue, not definition time, the higher and release-bound stages only exist if the source branch matches the <code>release/*</code> or <code>release*</code> pattern. The last two stages in the lower, high-churn area are always part of the pipeline and the focus of this discussion.</p>
+<p><img alt="Build" src="../images/azure-pipelines-blueprint-qa-integration-0-build.png"></p>
+<p>The first stage is the continuous integration (CI), aka build, stage which is focused on <strong>building</strong> the product and injecting the <strong>DevSecOps</strong>, <strong>Quality Assurance (QA)</strong> and <strong>building code</strong> scans, managed by our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/boot-strap.yml">boot-strap</a> template.</p>
+<p><img alt="Delivery" src="../images/azure-pipelines-blueprint-qa-integration-0-deploy.png"></p>
+<p>Subsequent stages are all part of the continuous delivery (CD), aka release, pipeline. In our case we deploy to <strong>development</strong> and <strong>system test</strong> environments, followed by the above-mentioned built-in automation and quality scans, the <strong>security review</strong> stage (which my colleague Kevin will discuss soon), and finally we deploy to <strong>staging</strong> and <strong>production</strong> environments. We use <strong>manual approvals</strong> to guard <strong>system test</strong>, <strong>Staging</strong>, and <strong>production</strong> environments, as well as a check for known and trusted templates for the <strong>system test</strong> and higher environments.</p>
+<p>But, you probably want to know where and how to integrate your quality assurance scans.</p>
+<hr>
+<h1>Quality-Assurance (QA) extension points</h1>
+<p><img alt="Delivery" src="../images/azure-pipelines-blueprint-qa-integration-0-qa.png"></p>
+<p>In a nutshell, you have two opportunities to influence and trigger quality assurance automation as part of your continuous delivery pipeline, based on the blueprints. </p>
+<h2>Continuous integration (CI) QA extension points?</h2>
+<p><img alt="CI Integration" src="../images/azure-pipelines-blueprint-qa-integration-2.png"></p>
+<p>You will find the first extension point in the <em>-ci.yml templates, for example <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/azure-function/azure-pipeline-azure-function-ci.yml">azure-pipeline-azure-function-ci.yml</a>. This extension point is </em><em>blueprint</em>* specific!</p>
+<p>Scroll down to line around line 95, where you will find this placeholder:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># CONTINUOUS INTEGRATION TEST</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c">    </span><span class="nb">-</span><span class="c"> task: DotNetCoreCLI@2</span>
+<span class="c">      displayName: &#39;Run Tests&#39;</span>
+<span class="c">      inputs:</span>
+<span class="c">        command:    &#39;test&#39;</span>
+<span class="c">        projects:   &#39;**/*Tests/*</span><span class="nt">.</span><span class="c">csproj&#39;</span>
+<span class="c">        arguments:  &#39;</span><span class="nb">--</span><span class="c">configuration $(buildConfiguration) </span><span class="nb">--</span><span class="c">no</span><span class="nb">-</span><span class="c">restore&#39;</span>
+</code></pre></div>
+
+<p>It is the responsibility of the software delivery team to define <strong>consistent</strong>, <strong>comprehensive</strong>, and <strong>quality</strong> continuous integration tests to empower us to automate the unit and regression testing while building the artifacts we want to deploy. You can extend the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/building-code/building-code.yml">building-code</a> to validate the health of your unit tests by using a tool such as <a href="https://stryker-mutator.io/">Stryker</a>.</p>
+<h2>Continuous delivery (CD) QA extension points?</h2>
+<p><img alt="CD Integration" src="../images/azure-pipelines-blueprint-qa-integration-3.png"></p>
+<p>The second extension, which runs in parallel to the security automation scans, can be found in the<a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml">qa-scans-cd.yml</a> template.</p>
+<p>A few words of caution:</p>
+<ul>
+<li>This extension point is re-used and triggered by all blueprints!</li>
+<li>Any tasks running as part of this extension point must be <strong>stable</strong> and <strong>reliable</strong>!</li>
+<li>This extension point must honour the <code>modeElite</code> parameter, as discussed below.</li>
+<li>Validate your extensions using your feature branch and the <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&amp;tabs=schema#define-a-repositories-resource">ref:</a> parameter before committing any change to your master branch. Once in master, your extensions will affect <strong>all</strong> blueprint-based pipelines.</li>
+</ul>
+<p>If we peek into the template, we realize that we have two main sections. One that runs for lower (non-production) environments:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># QA AUTOMATION FOR LOWER (NON</span><span class="nb">-</span><span class="c">PROD) ENVIRONMENTS STAGE</span>
+<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> ${{ if not(or(eq(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release&#39;)</span><span class="nt">,</span><span class="c"> startsWith(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release/&#39;))) }}:</span>
+</code></pre></div>
+
+<p>And another that runs for the higher (production) environments:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># QA AUTOMATION FOR HIGHER (PROD) ENVIRONMENTS STAGE</span>
+<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> ${{ if or(eq(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release&#39;)</span><span class="nt">,</span><span class="c"> startsWith(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release/&#39;)) }}:</span>
+</code></pre></div>
+
+<p>In other words, you can selectively run quality-assurance in all pipelines or only in pipelines that are based on the <code>release/*</code> or <code>release*</code> source code branches, destined for production.</p>
+<p>Within both these sections, you will find <strong>blueprint</strong> specific sections, allowing you to configure your quality assurance automation scans for the selected blueprints only.</p>
+<div class="highlight"><pre><span></span><code>- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span> <span class="s1">&#39;azure-function&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+    - script: echo deal with qa scan relevant to azure-function application type
+</code></pre></div>
+
+<p>Once you have decided WHEN and for WHICH blueprints you want to run your quality assurance automation scans, insert your tasks into the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml">qa-scans-cd.yml</a> template. You <strong>must</strong> honour and deal with the <code>modeElite</code>. </p>
+<ul>
+<li>If <code>modeElite = false</code> your scans must <strong>succeed</strong> or complete with a <strong>warning</strong> - they are not allowed to throw an error, which would terminate the pipeline.</li>
+<li>If <code>modeElite = true</code> your scans must <strong>succeed</strong> or <strong>fail</strong> - any failure must terminate the pipeline.</li>
+</ul>
+<p>It is up to you whether you deal with <code>eliteMode</code> in the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml">qa-scans-cd.yml</a> template or pass and deal with it in your automation scans.</p>
+<hr>
+<p>That is, it for today folks! Ping me on <a href="https://twitter.com/wpschaub">@wpschaub</a> if you have any questions or feedback. Support for comments will hopefully soon be glued onto our technical blog. Watch the space!</p>
+        </div>
+
+        
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24HuV66af9ahG4CwPsLx5F81"+"&opts=16798&num=10&ts=1644344212324");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+
+   
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipelines-blueprint-qa-integration.html" rel="bookmark"
+         title="Permalink to Azure Pipelines Blueprint QA Integration">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(38)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(37)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(18)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(20)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(45)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (123)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
