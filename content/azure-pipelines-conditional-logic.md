@@ -1,5 +1,5 @@
 Title: Azure Pipelines Conditional Logic
-Date: 2022-12-23
+Date: 2022-12-28
 Category: Posts 
 Tags: azure-devops, pipelines, oss
 Slug: azure-pipelines-conditional-logic
