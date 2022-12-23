@@ -16,7 +16,7 @@ There are likely tons of definitions and views of groups of engineers making up 
 
 > ![Intake](../images/azure-boards-tips-operations-teams-1.png) 
 
-As shown, the focus on processes, products, innovation, and support are creating a  variation of support requests we receive and associated work we plan after triage and prioritization. A challenging, but exciting mix of services we are focused on every day. 
+As shown, the focus on processes, products, innovation, and support are creating a  variation of support requests we receive and associated work that we plan after triage and prioritization. A challenging, but exciting mix of services we are focused on every day. 
 
 If your daily working day looks similar, you may want to consider these learnings from our team.
 
