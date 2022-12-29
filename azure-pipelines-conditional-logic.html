@@ -1,0 +1,294 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Azure Pipelines Conditional Logic - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipelines-conditional-logic.html" rel="bookmark"
+            title="Permalink to Azure Pipelines Conditional Logic">Azure Pipelines Conditional Logic</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 28 December 2022</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Make your YAML pipelines more versatile with conditional expressions.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Let us review why and how we use conditional expressions in our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 application-type pipeline blueprints</a>.</p>
+<hr>
+<h1>What is a conditional expression and why is it "cool"?</h1>
+<p>You can use the <code>if</code>, <code>elseif</code>, and <code>else</code> clauses to conditionally assign values or, as discussed in this blog post, conditionally run a step when a condition is met. </p>
+<p><img alt="Intersection" src="../images/azure-pipelines-conditional-logic-1.png"></p>
+<p>Conditions are defined using <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops">Expressions</a> and built-in <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops#functions">Functions</a>. We have made heavy use of conditional expressions to define what our blueprints assemble at queue (run) time, which is not only a powerful concept, but also allows us to tick off a couple of <strong>classic</strong> Azure Pipeline security risks. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># VARIABLES</span><span class="w"></span>
+<span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">deploy</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeConfiguration</span><span class="w"></span>
+</code></pre></div>
+
+<p>In the example above, we include a <a href="">variable template</a> if, and only if, the <code>suppressCD</code> parameter is not set to <code>true</code>. Note that we are intentionally turning every character in the variable template e to lowercase using the <code>lower</code> <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops#lower">function</a>.</p>
+<hr>
+<h1>Examples in our blueprints</h1>
+<h2>Conditional Quality Assurance and Security Scans</h2>
+<p>As described in our recent <a href="/azure-pipelines-blueprint-qa-integration.html">Azure Pipelines Blueprint QA Integration</a> post, our pipelines are designed to target a <strong>lower</strong> and <strong>higher</strong> environment, whereby the higher is locked down and only included when the artifact originates from a <code>release</code> branch.</p>
+<p><img alt="Typical CI/CD pipeline" src="../images/azure-pipelines-blueprint-qa-integration-1.png"></p>
+<p>Let us peel the example below, layer by layer, which is the template we are using for both the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/dev-sec-ops/security-scans-auto.yml">Security Automation</a> and <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml">Quality Assurance (QA)</a> stages.</p>
+<ul>
+<li>The conditional expression example <code>${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/release'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')) }}:</code> decides if part of the template is included, by checking if the source branch is named <code>release</code> or <code>release/*</code>, where <code>*</code> is a semantic version using the MAJOR.MINOR format. For example: <code>release/1.3</code>.</li>
+<li>The template is divided into three sections of <code>steps</code>, the steps to run for <strong>LOWER</strong> environment artifacts, the steps for the <strong>HIGHER</strong> environment artifacts, and the steps to run for both the <strong>LOWER+HIGHER</strong> environments. All implemented using <code>conditional expressions</code>.</li>
+<li>In the lower, higher, and both lower+higher placeholders, the conditional expression example <code>${{ if eq( lower(parameters.applicationBlueprint), 'azure-function' ) }}:</code> allows us to define application-specific steps to be run.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">applicationBlueprint</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">modeElite</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">boolean</span><span class="w"></span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="bp">false</span><span class="w"></span>
+
+<span class="n">steps</span><span class="p">:</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="c1"># QA AUTOMATION FOR LOWER (NON-PROD) ENVIRONMENTS STAGE</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="p">(</span><span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">)))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s1">&#39;QA CD Lower Environment Automation Placeholder ***&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">applicationBlueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">modeElite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;azure-function&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">deal</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">qa</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">relevant</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">azure</span><span class="o">-</span><span class="n">function</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;nuget-package&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">deal</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">qa</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">relevant</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">nuget</span><span class="o">-</span><span class="n">package</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;universal-artifact&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">deal</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">qa</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">relevant</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">universal</span><span class="o">-</span><span class="n">artifact</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="s1">&#39;universal-artifact&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="s1">&#39;nuget-package&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span><span class="s1">&#39;azure-function&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">UNKNOWN</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="c1"># QA AUTOMATION FOR HIGHER (PROD) ENVIRONMENTS STAGE</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s1">&#39;QA CD Higher Environment Automation Placeholder ***&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">applicationBlueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">modeElite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="o">...</span><span class="w"> </span><span class="n">rinse</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">repeat</span><span class="w"> </span><span class="o">...</span><span class="w"></span>
+
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="c1"># QA AUTOMATION FOR LOWER AND HIGHER (PROD) ENVIRONMENTS STAGE</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s1">&#39;QA CD Lower and Higher Environment Automation Placeholder ***&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Simple, but powerful!</p>
+<h2>Boot-Strap Flow</h2>
+<p><img alt="boot-strap.yml" src="../images/azure-pipelines-conditional-logic-3.png"></p>
+<p>Our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/boot-strap.yml">boot-strap</a> template is our secret sauce that injects <strong>DevSecOps</strong>, <strong>Building Code</strong>, <strong>Toolkits</strong>, and <strong>Application Insights</strong> steps into our continuous integration (CI) pipeline.</p>
+<p>In the 80's I would have written the boot-strap logic as a gigantic <a href="https://en.wikipedia.org/wiki/Assembly_language">Assembler</a> or <a href="https://en.wikipedia.org/wiki/PL/M">V2/PLM</a> switch statement. Back to the future, we have conditional YAML expression that make the experience a lot more readable and user friendly q;-)</p>
+<p>Here is a short extract from our <code>bootstrap</code> template where we checkout our toolbox and call our Application Insights logging steps if the <code>bootstrapMode</code> is set to <code>init</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">...</span><span class="w"> </span><span class="n">snipped</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+
+<span class="o">======================================================</span><span class="w"></span>
+<span class="cp"># BOOTSTRAP TOOLBOX</span>
+<span class="o">======================================================</span><span class="w"></span>
+<span class="cp"># Production Toolbox</span>
+<span class="o">-</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">or</span><span class="p">(</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span><span class="w"> </span><span class="err">&#39;</span><span class="n">init</span><span class="err">&#39;</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span><span class="w"> </span><span class="err">&#39;</span><span class="n">runbuildingcodeonly</span><span class="err">&#39;</span><span class="w"> </span><span class="p">))</span><span class="w"> </span><span class="p">}}</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">checkout</span><span class="o">:</span><span class="w"> </span><span class="n">git</span><span class="o">:</span><span class="c1">//Common-Engineering-System/AzureDevOps.Automation.Pipeline.Toolbox.v2</span>
+
+<span class="o">======================================================</span><span class="w"></span>
+<span class="cp"># BOOTSTRAP AI LOGGING</span>
+<span class="o">======================================================</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">),</span><span class="w"> </span><span class="err">&#39;</span><span class="n">init</span><span class="err">&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Bootstrap</span><span class="w"> </span><span class="n">Telemetry</span><span class="w"> </span><span class="n">START</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">filePath</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">SourcesDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">AzureDevOps</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">Pipeline</span><span class="p">.</span><span class="n">Toolbox</span><span class="p">.</span><span class="n">v2</span><span class="o">/</span><span class="n">toolbox</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">application</span><span class="o">-</span><span class="n">insights</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">event</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">ai</span><span class="p">.</span><span class="n">ps1</span><span class="err">&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nl">arguments</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">OperationId</span><span class="w"> </span><span class="s">&quot;$(Build.BuildNumber).$(Build.BuildId)&quot;</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">Event</span><span class="w">  </span><span class="err">&#39;</span><span class="n">Bootstrap</span><span class="err">&#39;</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">Action</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Start</span><span class="err">&#39;</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">BootstrapMode</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">bootstrapMode</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"> </span>
+<span class="w">                 </span><span class="o">-</span><span class="n">ApplicationType</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">applicationType</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">ApplicationBlueprint</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">PortfolioName</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">portfolioName</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">ProductName</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">productName</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">SourcesDirectory</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">sourcesDirectory</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">VerboseFlag</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">verbose</span><span class="p">}}</span><span class="w"> </span><span class="err">`</span><span class="w"></span>
+<span class="w">                 </span><span class="o">-</span><span class="n">ForceCheck</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">forceCheck</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<span class="w">      </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<span class="w">    </span><span class="nl">continueOnError</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+
+<span class="p">...</span><span class="w"> </span><span class="n">snipped</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+</code></pre></div>
+
+<h2>Conditional Templates</h2>
+<p>The last example is an extract from the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/nuget-package/azure-pipeline-nuget-package-ci.yml">azure-pipeline-nuget-package-ci.yml</a> where we conditionally load a <code>portfolioName/productName</code> specific or a <code>default</code> variable template based on the value of the <code>useDefaultConfig</code> parameter.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># VARIABLES</span><span class="w"></span>
+<span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">useDefaultConfig</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">deploy</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeConfiguration</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">useDefaultConfig</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">deploy</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">config</span><span class="o">/</span><span class="n">nuget</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeConfiguration</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h1>Lastly, a spacing GOTCHA!</h1>
+<p>Finally, let us look at a common gotcha. YAML is <strong>very</strong> space sensitive and the indents are important. For example, only the first two <code>script</code> steps are part of the conditional expression context. The third <code>script</code>, which is not indented will be run irrespective of the conditional expression result.</p>
+<p>We strongly recommend you use <a href="https://code.visualstudio.com/">Visual Studio Code</a> to give visual cues of your code and grouping thereof and the Azure Pipeline YAML <a href="https://johnlokerse.dev/2022/02/07/validating-yaml-using-azure-devops-or-cli/">Validate</a> feature to validate that your syntax is correct. </p>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="p">(</span><span class="ow">or</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">)))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s1">&#39;Security CD Lower Environment Automation Placeholder ***&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">applicationBlueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">modeElite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span><span class="w"></span>
+</code></pre></div>
+
+<p>That is, it for today folks! Ping me on <a href="https://twitter.com/wpschaub">@wpschaub</a> if you have any questions or feedback. </p>
+        </div>
+
+        
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24HuV66af9ahG4CwPsLx5F81"+"&opts=16798&num=10&ts=1644344212324");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+
+   
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipelines-conditional-logic.html" rel="bookmark"
+         title="Permalink to Azure Pipelines Conditional Logic">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(40)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(38)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(20)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(20)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(45)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (125)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
