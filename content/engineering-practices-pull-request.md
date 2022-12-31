@@ -10,16 +10,31 @@ TBD
 
 ---
 
-# TBD
+# What is a pull request (PR)?
 
-> ![Pull Request](../images/engineering-practices-pull-request-1.png) 
+> ![Overview](../images/engineering-practices-pull-request-1.png) 
+
+TBD
+
+---
+
+# How do we recommend using the pull request (PR)?
+
+> ![Workflow](../images/engineering-practices-pull-request-2.png) 
+
+TBD
+
+---
+
+# What is our accountability as PR reviewers?
+
+> ![Accountability](../images/engineering-practices-pull-request-3.png) 
 
 TBD
 
 ---
 
 # References
-
 
 - [Our road to OSS Blueprints - Suppress CD when pipeline runs within Pull Request](/yaml-pipelines-part11.html)
 - [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html)
