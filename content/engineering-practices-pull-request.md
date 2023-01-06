@@ -18,7 +18,7 @@ TBD
 
 ---
 
-# How do we recommend using the pull request (PR)?
+# What is the pull request (PR) workflow?
 
 > ![Workflow](../images/engineering-practices-pull-request-2.png) 
 
