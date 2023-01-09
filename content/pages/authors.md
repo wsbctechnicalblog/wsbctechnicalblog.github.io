@@ -77,6 +77,16 @@ Read Laurent's posts [here](../author/laurent-blain.html)
 
 ---
 
+## Martin Lacey
+
+![Martin Lacey](../images/Martin-mug.png)
+
+Innovative, solutions-driven Software Specialist with over 40 years leading and contributing to the planning, architecture, and development of n-tiered object-oriented software and mission-critical business and engineering applications in a wide range of industries. Involved in research, planning, design architecture, and development of n-tiered mission-critical business and engineering applications, using Waterfall and Agile methods with the latest technologies and best practices.
+
+Read Martin's posts [here](../author/martin-lacey.html)
+
+---
+
 ## Said Akram
 
 ![Said Akram](../images/Said-mug.jpeg)
