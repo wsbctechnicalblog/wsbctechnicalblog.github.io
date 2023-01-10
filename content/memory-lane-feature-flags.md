@@ -16,7 +16,7 @@ We had a really great turnout and a vibrant meetup hosted by [Andre Kaminski](ht
 
 - Entropy in DevOps Teams: Andrew Rose
 - The Virtues of Being T-shaped: Kyle Young
-- Progressive Exposure Using Feature Flags: [Willy Schaub](https://wsbctechnicalblog.github.io/pages/authors.html)
+- Progressive Exposure Using Feature Flags: [Willy-Peter Schaub](https://wsbctechnicalblog.github.io/pages/authors.html)
 
 > ![Pipeline](/images/memory-lane-feature-flags-3.png)
 

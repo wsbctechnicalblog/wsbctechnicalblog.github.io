@@ -3,7 +3,7 @@ Date: 2022-06-22
 Category: Events
 Tags: event,learning
 Slug: demo-technical-blog-1
-Author: Willy Schaub
+Author: Willy-Peter Schaub
 Summary: Creating a demo pull request and post for our technical blog demo.
 
 I have been invited to share our insights into how we are experimenting and present our WorkSafeBC technical blog. To show how we moved from ideation to action, gather feedback, and connect with the audience I decided to create a pull request - which will be turned into an actual blog post by the time you read this. 

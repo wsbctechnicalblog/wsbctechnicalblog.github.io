@@ -40,11 +40,11 @@ Fast-forward another 1.5 years, I find myself working with colleagues who are em
 
 Today, I am leading the now official Enterprise Development and Operations (EDO) Common Engineering team, filled with passionate, exceptionally smart, and down-to-earth engineers, collaborating with management that walks-the-talk, trusts, and supports our drive for simplicity, consistency, security, empowerment, and unrestricted collaboration to continue to build connections. Around me, I have observed     a growth in servant leaders, who appreciate the value of people and the importance of collaboration and empowering everyone to become a leader. 
 
-> “Bosses demand respect, delegate and hold people accountable. Leaders collaborate and hold themselves accountable.” – Willy Schaub
+> “Bosses demand respect, delegate and hold people accountable. Leaders collaborate and hold themselves accountable.” – Willy-Peter Schaub
 
 We are an empowered team, focused and serious when we must be, brainwashed by SpaceX and Elon’s infamous quotes (my doing), always reminding each other of our quest for a healthy work:life balance and the importance of having fun.  You can peruse Why are we a (the) place to work for? to get an insight into our team.
 
 I recently stood at the same spot, looking at the entrance sign. It dawned on me that a mere 3.5 years has passed. The phenomenal change is not only exciting but obliterates any doubts and concerns I had when I was calming myself down for my interview. I see how our innovation and technology work not only supports our overall  organizational vision but will take us places we may not have dreamt of.
 
-> “As a leader I want to serve and protect my team, and encourage and empower everyone’s creativity, passion, purpose, and strengths. I want to leave an empowered team and not be missed.” – Willy Schaub
+> “As a leader I want to serve and protect my team, and encourage and empower everyone’s creativity, passion, purpose, and strengths. I want to leave an empowered team and not be missed.” – Willy-Peter Schaub
 

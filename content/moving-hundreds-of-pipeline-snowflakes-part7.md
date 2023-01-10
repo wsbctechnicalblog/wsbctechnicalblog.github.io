@@ -92,7 +92,7 @@ extends:
 
 In case you have not counted yourself: A mere twenty-two (22) lines of configuration code, with only four (4) TODO that require minimal effort!
 
-> "*It took me a few minutes to setup our entire continuous deployment (CD) proof-of-concept (PoC) environment, after which I was able to focus on the CD experiments. I am Said's App-type blueprints #1 fan!*" - [Willy Schaub](https://www.linkedin.com/in/wpschaub/)
+> "*It took me a few minutes to setup our entire continuous deployment (CD) proof-of-concept (PoC) environment, after which I was able to focus on the CD experiments. I am Said's App-type blueprints #1 fan!*" - [Willy-Peter Schaub](https://www.linkedin.com/in/wpschaub/)
 
 Another nugget you may have missed in the platter of configuration code, is the **extends** template. It enables [Security through templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/security/templates?view=azure-devops) and allows us to set a required template check gate for resources and environments. More on that when we share our CD PoC results.
  
