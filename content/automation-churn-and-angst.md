@@ -3,7 +3,7 @@ Date: 2022-07-29
 Category: Posts
 Tags: automation, learning 
 Slug: automation-churn-and-angst
-Author: Willy Schaub
+Author: Willy-Peter Schaub
 Summary: Doing a manual and mind-numbing task twice or more? Automate!
 
 The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – [Core DevOps Values]( https://www.tactec.ca/devops-core-values). Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.

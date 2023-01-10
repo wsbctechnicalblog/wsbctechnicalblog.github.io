@@ -28,5 +28,5 @@ See [Our quest to share our knowledge with the world, keeping it interesting and
 
 ![Contact](/images/readme-4.png)
 
-If you need more information or have feedback, please contact Willy Schaub. You can find his contact details in the [authors](https://wsbctechnicalblog.github.io/pages/authors.html) page.
+If you need more information or have feedback, please contact Willy-Peter Schaub. You can find his contact details in the [authors](https://wsbctechnicalblog.github.io/pages/authors.html) page.
 

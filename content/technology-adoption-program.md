@@ -6,7 +6,7 @@ Slug: technology-adoption-program
 Author: Laurent Blain
 Summary: Selecting a new process or product without surprising or blindsiding anyone.
 
-> Co-author: [Willy Schaub](https://wsbctechnicalblog.github.io/author/willy-peter-schaub.html), from Common Engineering.
+> Co-author: [Willy-Peter Schaub](https://wsbctechnicalblog.github.io/author/willy-peter-schaub.html), from Common Engineering.
 
 **Autonomous** teams have organizational latitude to establish their own internal goals and work practices. Combined with **Master** and **Purpose** these teams can be very effective, as outlined by Daniel Pink in [What Motivates Us](https://www.bing.com/videos/search?q=Drive%3a+The+Surprising+Truth+About+What+Motivates+Us).
 
