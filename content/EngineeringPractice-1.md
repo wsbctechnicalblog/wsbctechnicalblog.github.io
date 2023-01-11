@@ -14,28 +14,11 @@ improving will be the subject matter explored with the goal to invigorate
 vibrant collaboration and innovation, and indeed experimentation and tenacity 
 when things don't go as desired.
 
----
-
-# TDD and PowerShell Dojo Planning
-Please attend our upcoming workshop on January 19th to determine 
-structure, format, and content priority for TDD and PowerShell Dojo's.
-
-•	INVITE TITLE: Interactive EDO Common Engineering Dojos Discussion
-
-•	DATE: January 19th, 2023
-
-•	TIME: 11:00-11:55
-
-Also please note that Patrick Major has created a great recording of how to do TDD in a low-touch / no-touch
-coding approach for internal or private methods using reflections.  This was presented at the 
-Developer CoP - Platform & Technology session Jan-11-2023.  The recording can be
-found here: [Unit Test Private Members](https://wcbbc.sharepoint.com/:v:/s/AzureDevOpsIAWorkgroups/EbdlghataNVAgG_74P9ALMEBjZ-onvwuvVozie2kXkF22w?e=JJUOJE)
-
 
 ---
 # Metrics and Quantitative Measures
 We have begun the process of calculating various metrics on software created at
-WSBC, through the use of Sonar Cube in the build and deploy pipelines.
+WSBC, using SonarQube in the build and deploy pipelines.
 These will soon be augmented by Stryker to generate mutant test cases and validate them, 
 as well as the Roslyn Analyzer for further code analysis.  
 
