@@ -1,5 +1,5 @@
 Title: Engineering Practice Nuggets
-Date: 2023-01-10
+Date: 2023-01-18
 Category: Posts 
 Tags: agile, architecture, code, code-quality, design, engineering, technical-excellence, tdd, tips, learning, innovation
 Slug: EngineeringPractice-1
