@@ -1,7 +1,7 @@
 Title: Pull Request empowered by engineering practices
 Date: 2023-01-13
 Category: Posts 
-Tags: azure-devops, tips, engineering, code-quality
+Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: pull-request-empowered-by-engineering-practices
 Author: Willy-Peter Schaub
 Summary: Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines. 
