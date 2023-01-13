@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Pull Request is your friend not foe! - </title>
+        <title>Pull Request empowered by engineering practices - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,86 +32,142 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-requests-friend.html" rel="bookmark"
-            title="Permalink to Pull Request is your friend not foe!">Pull Request is your friend not foe!</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
+            title="Permalink to Pull Request empowered by engineering practices">Pull Request empowered by engineering practices</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 19 October 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 13 January 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>There is a debate around the value of pull requests (PR), fueled by unfortunate misunderstandings.</p>
+            <p>Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines.</p>
         </div>
     
         <div class="entry-content">
-            <p><em>"The primary reason we use PRs is to encourage quality in the commits that are made to our code repositories"</em> - <a href="https://gist.github.com/mikepea/863f63d6e37281e329f8">GitHub Pull request Etiguette</a></p>
-<h1>Start simple</h1>
-<p>Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trunk), and a short-lived feature branch, as shown below.</p>
-<p><img alt="Feature Branch" src="/images/Pull-Request-is-your-friend-not-foe-1.jpg"></p>
-<ol>
-<li>Create a short-lived feature branch.</li>
-<li>Work on new work or a bug fix.</li>
-<li>Merge (commit) changes to the target branch.</li>
-<li>Continuous Integration (CI) build is triggered.</li>
-</ol>
-<p><img alt="Caution" src="/images/Pull-Request-is-your-friend-not-foe-2.png"></p>
-<p>Simple, but potentially dangerous. As the CI build is triggered after changes have been committed to the target branch, we could have a broken build and an undeployable branch. To make matters worse, anyone creating a new feature branch from an undeployable branch has just inherited a lot of unproductive pain!</p>
-<h1>Embrace the four-eyes principle</h1>
-<p><img alt="Four-Eyes Principle" src="/images/Pull-Request-is-your-friend-not-foe-3.jpg"></p>
-<p>The four-eyes principle requires that at least four eyes, in other words, validate any change by at least two people. With <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops">Azure DevOps</a> we can define <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> to protect target branches, such as requiring:</p>
+            <p>Let us take a look at our latest pull request workflow and hopefully spark a few discussions that will empower all of us to embrace the pull request (PR) feature effectively.  </p>
+<hr>
+<h1>What is a pull request (PR)?</h1>
+<p>Pull Requests (PR) enable us to change, review, and merge code. We can add policies to your PRs to enable code quality in key branches using policies, validation builds, code-quality, and security scans. We all want to protect key branches such as trunk, master, or main, which should always be stable and deployable – the single source of truth.</p>
+<blockquote>
+<p><strong>MYTH</strong>  - Pull-requests slow down your continuous integration value stream! A pull request takes as long as you and your process allow it to sit in a corner to gather dust. We encourage our engineers to track the lead and cycle times of pull requests using the <a href="https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport">Pull Request Completion Report</a> and to collaborate with their peers to ensure that pull requests do not go stale. Also, the more you SHIFT-LEFT and present the evidence to the Pull Request validations, the more you can automate and thereby eradicate expensive human reviews and associated cycle times.
+</p>
+</blockquote>
+<hr>
+<h1>What is the pull request (PR) workflow?</h1>
+<p>There are many pull request (PR) strategies. Here is the one we recommend for our common engineering ecosystem, based on our <a href="/branching-trunk-based.html">trunk-based</a> branching strategy.</p>
+<blockquote>
+<p><img alt="Workflow" src="../images/engineering-practices-pull-request-1.png"> </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>LEGEND</th>
+<th>~~</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td>Create a feature branch from the trunk/master/main branch, representing a unique feature, bug, or hotfix.</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>Make code changes to implement the associated feature or fix.</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>When ready to start collaboration, create a DRAFT PR to merge your feature branch to the trunk/master/main branch.</td>
+</tr>
+<tr>
+<td>D</td>
+<td></td>
+<td>DRAFT PR allow vibrant collaboration, without triggering Branch Policies, page 53, validations or notifying PR reviewers.</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>Manually trigger branch policy validations, such as the validation build.</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>When ready to merge code changes to the trunk/master/main branch, publish the PR.</td>
+</tr>
+<tr>
+<td>P</td>
+<td></td>
+<td>When a PR is published, reviewers are notified and Branch Policies become mandatory. Set the PR completion to manual or automatically, whereby automatic completion is triggered when all Branch Policies are validated.</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>When a code change is committed within a published PR, all reviewer approvals are reset, and reviewers are duly notified.</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>With every commit, all Branch Policies are automatically re-validated.</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>Ready to merge changes – done with code changes.</td>
+</tr>
+<tr>
+<td>G</td>
+<td></td>
+<td>The PR verifies that all Branch Policies are met.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The PR will not complete manually or automatically until all validations are met.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Users with elevated permissions can force complete the PR, irrespective of the state of validations.</td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td>Code changes are merged to the source branch, which in turn triggers the continuous integration (CI) pipeline.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>MYTH</strong> - Pull-requests are manual interventions. With a high-TRUST team, we can define mandatory <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> and <strong>optional</strong> approvals. That way collaboration is encouraged, but the PR will auto-complete as soon as all Branch Policies, are validated. No manual blocks, just validated  built-in quality.
+</p>
+</blockquote>
+<hr>
+<h1>What is our accountability as PR reviewers?</h1>
+<p>Which brings us to an important topic – the <strong>responsibility</strong> and <strong>accountability</strong> of PR reviewers.</p>
+<p>If you are included in a pull request as an optional reviewer, you can review and collaborate within the context of the pull request. If you are included as a required reviewer, you must review and approve the PR so that the Branch Policies are met.</p>
+<p>While collaboration, continuous learning, information exchange, and guidance are important aspects of the pull request workflow, every reviewer, whether optional or required, is accountable to keep an eye on the following when reviewing a PR:</p>
 <ul>
-<li>Minimum number of reviewers (required and optional)</li>
-<li>Linked work items (adds the context and traceability)</li>
-<li>Resolved comments (all discussions and recommendations actioned)</li>
-<li>Limited merge types</li>
-<li>Successful build (which includes security scans, tests, etc.)</li>
-<li>Thumbs up from other services</li>
+<li>Bad coding practices.</li>
+<li>Deviations and breach of security practices.</li>
+<li>Deviations and breach of engineering practices.</li>
+<li>Deviations and breach of repository, pipeline, or quality guardrails.</li>
 </ul>
-<blockquote>
-<p>We can require some or all of the above policies.</p>
-</blockquote>
-<h1>Welcome Pull Request</h1>
-<blockquote>
-<p>Pull Request is a change validation workflow, not a feature of the version control service.</p>
-</blockquote>
-<p><img alt="Welcome" src="/images/Pull-Request-is-your-friend-not-foe-4.png"></p>
-<p>When we define one or more branch policies, we enforce them on <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.</p>
-<blockquote>
-<p>By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. However, that is a topic for another day.</p>
-</blockquote>
-<p>Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.</p>
-<p><img alt="Pull Request Workflow" src="/images/Pull-Request-is-your-friend-not-foe-5.jpg"></p>
-<ol>
-<li>Create a short-lived feature branch.</li>
-<li>Work on new work or a bug fix.</li>
-<li>Create a <strong>DRAFT</strong> pull request, which enables collaboration, work item linking, and manual build validation policies.</li>
-<li>When we are ready to have our pull request reviewed and completed, we can <strong>PUBLISH</strong> our draft pull request.</li>
-<li>Pre-defined optional and required reviewers are assigned and notified, policies are evaluated, and voting is enabled. The validation builds are triggered and perform a pre-merge validation - if the build(s) fail, the Pull Request cannot be completed.</li>
-<li>When all policies are met, the Pull Request can be completed.</li>
-<li>Associated changes are merged to the target branch.</li>
-<li>Which, as before, triggers the continuous integration (CI) build.</li>
-</ol>
-<p>We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 and 4 above.</p>
-<blockquote>
-<p>Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!</p>
-<p>Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build, as we need the results to review the changes effectively. See YAML sample below.</p>
-</blockquote>
-<p>The advantages of Pull Requests are evident:
-- Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
-- Guardrail are validated and enforced
-- Automation of validations, which could (or not) include humanoid involvement</p>
-<h1>YAML Sample</h1>
-<p>Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w">  </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w">    </span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span><span class="w"></span>
-</code></pre></div>
-
-<p>Thoughts?</p>
+<p>As we automate the validations, the accountability and need to review PRs manually diminishes for our engineers.</p>
+<hr>
+<h1>References</h1>
+<ul>
+<li><a href="/yaml-pipelines-part11.html">Our road to OSS Blueprints - Suppress CD when pipeline runs within Pull Request</a></li>
+<li><a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a></li>
+<li><a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests">Pull requests</a></li>
+<li><a href="/pull-requests-friend.html">Pull Request is your friend not foe!</a></li>
+<li><a href="/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a></li>
+</ul>
         </div>
 
         
@@ -128,9 +184,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control </a>
-        | <a href="https://wsbctechnicalblog.github.io/pull-requests-friend.html" rel="bookmark"
-         title="Permalink to Pull Request is your friend not foe!">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a>
+        | <a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
+         title="Permalink to Pull Request empowered by engineering practices">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
