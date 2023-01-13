@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>How to minimize queueing - </title>
+        <title>Pull Request empowered by engineering practices - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,71 +32,142 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/how-to-minimize-queueing.html" rel="bookmark"
-            title="Permalink to How to minimize queueing">How to minimize queueing</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
+            title="Permalink to Pull Request empowered by engineering practices">Pull Request empowered by engineering practices</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 23 December 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 13 January 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Adopt the humble approach to only work in smallest possible batches with limited work-in-progress</p>
+            <p>Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines.</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Queue" src="../images/queue.png"></p>
-<p>In my previous post <a href="https://wsbctechnicalblog.github.io/flow-of-work.html">Systems thinking and the flow of work</a>, I tried to describe the sluggish/unpredictable software delivery caused by queueing and looping. Adding speed bumps introduces unwanted wait time that is exacerbated by frequent requests for retries. A gated phase, a quality inspection gate, often finds fault with proposed changes and asks the authoring team to try again. Those retries add significant amount of waste to the process.</p>
-<p>How to avoid such unwanted delays? There are a few ideas that may help:</p>
-<ol>
-<li>Insist on getting clear expectations</li>
-<li>Insist on vertically slicing the expected delivery</li>
-<li>Insisting on starting together, working together, finishing together</li>
-<li>Insist on smallest possible batches</li>
-</ol>
-<p>Let’s examine these ideas.</p>
-<h2>Insist on getting clear expectations</h2>
-<p>While it may seem obvious that clear expectations are needed, every now and then we receive expectations that are somewhat muddled. By muddled I mean not carefully thought through. The rationale is that it is quicker to start building the hypothesized solution than it is to spend extra time hammering out the expectation.</p>
-<p>The problem is that oftentimes it is a false math to assume so. Rushing to implement a half-baked expectation tends to result in bloat. We will see later in this article why is bloat extremely wasteful.</p>
-<p>Another problem is that muddled expectation may send us off on a wild geese chase. I will use an example from my career to illustrate that pattern (names will be withheld to protect the innocent):</p>
-<p>I was once consulting for a large organization whose Credit department was experiencing series of issues. To cut the long story short, that department somehow could not properly balance their books. The ledger was for some reason always off, and that was causing a lot of churn.</p>
-<p>I did initial interview with stakeholders and was informed that the reason the processing in their department was often so wrong boiled down to inadequate software system they were using at that time, as well as down to staff errors – ‘fat fingers’ data entry mistakes and so on. They would like me to help them design better software solution that would preclude human data entry errors and also set the books straight.</p>
-<p>Makes sense. So, I started drilling deeper into the business domain, to understand business policy rules and document the expectations with regards to various use cases.</p>
-<p>That’s where the muddled expectations started entering the picture. I was getting several half-baked, imprecise use cases. Such muddled use cases could not be tested, and as such could not be automated.</p>
-<p>Naturally, I pressed upon the stakeholders to provide me with clearer expectations. To which I started receiving annoyed responses, such as “I don’t know; you are the software developer, you figure it out!”</p>
-<p>It was clear to me, at that point, that the entire project was a no go, and I gracefully bowed out.</p>
-<p>Moral of the story – insisting on crisp and clear expectations is necessary. Without it, we cannot even know if it makes sense to continue being engaged on the project.</p>
-<h2>Insist on vertically slicing the expected delivery</h2>
-<p>Once the expectation is clearly stated, it is important to abstain from overbidding. Instead of knee-jerk agreeing to implement the expectation as it is stated, it is more prudent to investigate the possibility of vertically slicing it. Commit to delivering the solution iteratively, rather than in one big fell swoop. Explain to the stakeholders that the intention is to engage them in swift and frequent delivery. Such approach is needed to gather quick and valuable feedback from them.</p>
-<p>In my experience, stakeholders tend to appreciate such transparency and such proactive engagement. The upside is that it will give the delivery team much better chances of attaining predictive delivery of value.</p>
-<h2>Insisting on starting together, working together, finishing together</h2>
-<p>Once the expectation has been vertically sliced, abstain from assigning individual tasks to individual team members and asking them to scatter and work in parallel, in isolation. Instead, attempt to start as a whole team. Look into the vertically sliced expectation, decide which aspect of the implementation is of the highest priority, then get together and start working on it as a team. Every member who has the so-called ‘skin in the game’ should be present from the get-go. This is important so that every member has a full understanding and a complete grasp of what is going on in the process of building.</p>
-<p>Continue working in such fashion. The ideal model is synchronous collaboration, sometimes called ‘keyboardless programming’. In this mode of collaboration, decisions regarding the design of the system are made by team members who are <strong>not</strong> sitting at the keyboard. The implementation of those decisions is performed by the so-called “driver”. Another important aspect of such mode of working is <strong>continuous rotation</strong>; every 5 minutes or so, the driver gets up and joins the navigators, while someone else steps in and becomes the driver.</p>
-<p>Eventually, the mob programming session described above reaches the stage where all team members agree that the solution has reached the “shippable state”. At that point, they finish together and move on to working on the next slice.</p>
-<h2>Insist on smallest possible batches</h2>
-<p>The secret sauce to avoiding queuing and retries is in the art of crafting small batches. Let’s first define what is meant by ‘batch’:</p>
-<p>A batch is defined as a group of items that move together from one step to the next step in the process.</p>
-<p>What is meant by ‘item’? Typically, an item denotes a unit of change that affects the system. It could be a code diff or a configuration diff.</p>
-<p>The more of these items (i.e., diffs) we bundle up and push into the integration and delivery workflow, the larger the batch we must deal with.</p>
-<p>Consider a smallest possible batch: a single item comprising a single diff (such as, for example, a one-line correction in the code syntax). When such batch arrives for inspection, it is so light-footed and innocuous that it will be a breeze to approve.</p>
-<p>Compare that with a large batch that contains hundreds of items, each item consisting of dozens or even hundreds of diffs. Obviously, when such bloated batch arrives at the inspection gate, it will cause a lot of consternation. And rightly so. Alarm bells go off, red flags are raised, and the inspection crew now need to roll up their sleeves and pour over the minutia of that batch. They now have their work cut out for them, and it may take days, even weeks, until the batch either gets cleared (“good to go to the next gated phase”) or gets sent back for a retry (“better luck next time!”).</p>
-<p>And of course, such large batch necessitates long wait queuing times. While the inspection crew is heads down examining the bloated batch, nothing else is moving in the queue. We now have a serious bottleneck.</p>
-<h2>Benefits of small batches</h2>
-<p>There are numerous benefits of working in small batches. Here I will quickly list some of them:</p>
+            <p>Let us take a look at our latest pull request workflow and hopefully spark a few discussions that will empower all of us to embrace the pull request (PR) feature effectively.  </p>
+<hr>
+<h1>What is a pull request (PR)?</h1>
+<p>Pull Requests (PR) enable us to change, review, and merge code. We can add policies to your PRs to enable code quality in key branches using policies, validation builds, code-quality, and security scans. We all want to protect key branches such as trunk, master, or main, which should always be stable and deployable – the single source of truth.</p>
+<blockquote>
+<p><strong>MYTH</strong>  - Pull-requests slow down your continuous integration value stream! A pull request takes as long as you and your process allow it to sit in a corner to gather dust. We encourage our engineers to track the lead and cycle times of pull requests using the <a href="https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport">Pull Request Completion Report</a> and to collaborate with their peers to ensure that pull requests do not go stale. Also, the more you SHIFT-LEFT and present the evidence to the Pull Request validations, the more you can automate and thereby eradicate expensive human reviews and associated cycle times.
+</p>
+</blockquote>
+<hr>
+<h1>What is the pull request (PR) workflow?</h1>
+<p>There are many pull request (PR) strategies. Here is the one we recommend for our common engineering ecosystem, based on our <a href="/branching-trunk-based.html">trunk-based</a> branching strategy.</p>
+<blockquote>
+<p><img alt="Workflow" src="../images/engineering-practices-pull-request-1.png"> </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>LEGEND</th>
+<th>~~</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td>Create a feature branch from the trunk/master/main branch, representing a unique feature, bug, or hotfix.</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>Make code changes to implement the associated feature or fix.</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>When ready to start collaboration, create a DRAFT PR to merge your feature branch to the trunk/master/main branch.</td>
+</tr>
+<tr>
+<td>D</td>
+<td></td>
+<td>DRAFT PR allow vibrant collaboration, without triggering Branch Policies, page 53, validations or notifying PR reviewers.</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>Manually trigger branch policy validations, such as the validation build.</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>When ready to merge code changes to the trunk/master/main branch, publish the PR.</td>
+</tr>
+<tr>
+<td>P</td>
+<td></td>
+<td>When a PR is published, reviewers are notified and Branch Policies become mandatory. Set the PR completion to manual or automatically, whereby automatic completion is triggered when all Branch Policies are validated.</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>When a code change is committed within a published PR, all reviewer approvals are reset, and reviewers are duly notified.</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>With every commit, all Branch Policies are automatically re-validated.</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>Ready to merge changes – done with code changes.</td>
+</tr>
+<tr>
+<td>G</td>
+<td></td>
+<td>The PR verifies that all Branch Policies are met.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>The PR will not complete manually or automatically until all validations are met.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Users with elevated permissions can force complete the PR, irrespective of the state of validations.</td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td>Code changes are merged to the source branch, which in turn triggers the continuous integration (CI) pipeline.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>MYTH</strong> - Pull-requests are manual interventions. With a high-TRUST team, we can define mandatory <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> and <strong>optional</strong> approvals. That way collaboration is encouraged, but the PR will auto-complete as soon as all Branch Policies, are validated. No manual blocks, just validated  built-in quality.
+</p>
+</blockquote>
+<hr>
+<h1>What is our accountability as PR reviewers?</h1>
+<p>Which brings us to an important topic – the <strong>responsibility</strong> and <strong>accountability</strong> of PR reviewers.</p>
+<p>If you are included in a pull request as an optional reviewer, you can review and collaborate within the context of the pull request. If you are included as a required reviewer, you must review and approve the PR so that the Branch Policies are met.</p>
+<p>While collaboration, continuous learning, information exchange, and guidance are important aspects of the pull request workflow, every reviewer, whether optional or required, is accountable to keep an eye on the following when reviewing a PR:</p>
 <ul>
-<li>Reduction in errors</li>
-<li>Faster feedback</li>
-<li>Reduction in deployment risk</li>
-<li>Increase in frequency of delivering customer value</li>
-<li>Reduction in mean time to recover in case of defects</li>
-<li>Improvement in psychological safety
-​​​​​​​</li>
+<li>Bad coding practices.</li>
+<li>Deviations and breach of security practices.</li>
+<li>Deviations and breach of engineering practices.</li>
+<li>Deviations and breach of repository, pipeline, or quality guardrails.</li>
 </ul>
-<p>Small batches introduce small, localized changes. That approach reduces the risk of damaging the system operations, as the small change is contained, and the blast radius is quite limited.</p>
-<p>Customers also benefit as they get to enjoy the value sooner than they would if the teams worked with large batches.</p>
+<p>As we automate the validations, the accountability and need to review PRs manually diminishes for our engineers.</p>
+<hr>
+<h1>References</h1>
+<ul>
+<li><a href="/yaml-pipelines-part11.html">Our road to OSS Blueprints - Suppress CD when pipeline runs within Pull Request</a></li>
+<li><a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a></li>
+<li><a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests">Pull requests</a></li>
+<li><a href="/pull-requests-friend.html">Pull Request is your friend not foe!</a></li>
+<li><a href="/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a></li>
+</ul>
         </div>
 
         
@@ -113,9 +184,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates </a>
-        | <a href="https://wsbctechnicalblog.github.io/how-to-minimize-queueing.html" rel="bookmark"
-         title="Permalink to How to minimize queueing">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
+         title="Permalink to Pull Request empowered by engineering practices">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
