@@ -54,8 +54,8 @@ ServiceNow or the product own download page.
 We are busily creating Phase II, enabling a Search capability and populating the
 table cells based on a query to live *editable* data in SharePoint.
 
-In a future post, we will dig deaper into the Product Catalog; how it has eveloved 
-to support and enhance our development teams navigation, eduction, and adoption of
+In a future post, we will dig deeper into the Product Catalog; how it has evoloved 
+to support and enhance our development teams navigation, education, and adoption of
 technology recommended for our development community.
 
 ---
