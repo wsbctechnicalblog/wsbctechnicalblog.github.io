@@ -16,10 +16,10 @@ These powerful nuggets of knowledge, patterns and practices, and key areas that 
 
 In addition to the four standard DevOps metrics:
 
-- Deployment Frequency �How often an organization successfully releases to production
-- Lead Time for Changes �The amount of time it takes a commit to get into production
-- Change Failure Rate �The percentage of deployments causing a failure in production
-- Time to Restore Service �How long it takes an organization to recover from a failure in production
+- **Deployment Frequency** - How often an organization successfully releases to production
+- **Lead Time for Changes** - The amount of time it takes a commit to get into production
+- **Change Failure Rate** - The percentage of deployments causing a failure in production
+- **Time to Restore Service** - How long it takes an organization to recover from a failure in production
 
 We have begun the process of calculating various metrics on software created at WSBC, using SonarQube in the build and deploy pipelines. These will soon be augmented by Stryker to generate mutant test cases and validate them, as well as the Roslyn Analyzer for further code analysis.  
 
