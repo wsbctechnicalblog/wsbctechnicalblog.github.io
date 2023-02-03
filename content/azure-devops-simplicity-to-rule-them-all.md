@@ -101,7 +101,7 @@ When you are dealing with multiple Azure DevOps Team projects, you may end up wi
 
 If you are the **green** engineer, you will **hate** the Azure DevOps powered engineering process. It is complex and anything but user-friendly and empowering - and no fault of Azure DevOps!
 
-One of our working groups invested well-spent time to understand our security model and come up with a **simpler** and **user-friendly** security model. It still defines AD groups per Azure DevOps Team project for AD groups providing **administrative** and **elevated** permissions but introduces other AD groups that span all of the Azure DevOps Team Projects that should be **one"".
+One of our working groups invested well-spent time to understand our security model and come up with a **simpler** and **user-friendly** security model. It still defines AD groups per Azure DevOps Team project for AD groups providing **administrative** and **elevated** permissions to enforce the least-privilege policy, but introduces other AD groups that span all of the Azure DevOps Team Projects that should be **one"".
 
 > ![Simple Security Model](../images/azure-devops-simplicity-to-rule-them-all-4.png) 
 
