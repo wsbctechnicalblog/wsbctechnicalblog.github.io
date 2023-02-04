@@ -24,9 +24,9 @@ It does not take long to realize that supporting thousands of CI/CD [Azure Pipel
 We invested in creating the pillars for **guardrails**, **automation**, **consistency**, and **self-service automation**. See these posts for more details:
 
 - [Can government agencies be innovative?](https://wsbctechnicalblog.github.io/can-government-agencies-be-innovative.html)
-- [https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html](https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html)
+- [Can we enact governance through engineering-friendly manifestos and guardrails?](https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html)
 - [Our open-source pipeline blueprints have landed!](https://wsbctechnicalblog.github.io/our-open-source-pipeline-blueprints-have-landed.html)
-- [https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html](https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html)
+- [Self-service automation - A dream turns into reality](https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html)
 
 ---
 
