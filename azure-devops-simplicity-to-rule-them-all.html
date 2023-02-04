@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Automation Mayhem and Angst is normal - </title>
+        <title>Azure Devops simplicity to rule them all - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,74 +32,102 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="bookmark"
-            title="Permalink to Automation Mayhem and Angst is normal">Automation Mayhem and Angst is normal</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-simplicity-to-rule-them-all.html" rel="bookmark"
+            title="Permalink to Azure Devops simplicity to rule them all">Azure Devops simplicity to rule them all</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 29 July 2022</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 03 February 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Doing a manual and mind-numbing task twice or more? Automate!</p>
+            <p>Keep Azure DevOps setup simple and avoid a lot of pain and waste!</p>
         </div>
     
         <div class="entry-content">
-            <p>The simplest form of automation replaces meek, rudimentary, and manual tasks with digitized processes. While automation is part of the deoxyribonucleic acid (DNA) of a healthy DevOps mindset, we should continue to “strive to innovate and improve beyond repeatable processes and frameworks” – <a href="https://www.tactec.ca/devops-core-values">Core DevOps Values</a>. Therefore, instead of focusing on examples of automation we have introduces to help us maintain 2000+ continuous delivery pipelines and associates services, I will focus on the emotional side of automation in this brief post. The automation samples and “gotchas” will follow soon.</p>
-<blockquote>
-<p><img alt="Angst Chart" src="../images/automation-churn-and-angst-3.jpg"></p>
-</blockquote>
+            <p>It is seldom that you have an opportunity to plan and deploy your engineering process using <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> from the ground up - a greenfield deployment not previously polluted by snowflakes (variations of the same) and custom development (everyone has a preference). If you do, I have two recommendations:</p>
+<ol>
+<li>Keep it <strong>simple</strong>.</li>
+<li>Create <strong>one</strong> Azure DevOps Project to rule them all.</li>
+</ol>
+<p>Which reminds me of <a href="https://devblogs.microsoft.com/devops/what-is-devops-donovan/">Donovan Brown's</a> infamous definition of DevOps "<em>DevOps is the union of people, process, and products to enable continuous delivery of value to our end users</em>", and his iconic statement "<em>You cannot buy DevOps and install it.</em>" I even created laptop stickers for his DevOps definition, as it is crisp and balances my belief in the value of DevOps. Unfortunately, Microsoft renamed their product to Azure DevOps, making the argument of his iconic statement a real challenge to uphold.</p>
+<p>This post, however, is based on learning lessons the hard way and preparing a brownfield that had years of development based on autonomy over guardrails and storms of snowflakes. It took us a year of hard work, amazing innovations, and grit …</p>
 <hr>
-<h1>Brace yourself for instability and churn</h1>
-<blockquote>
-<p><img alt="Churn" src="../images/automation-churn-and-angst-1.png"></p>
-</blockquote>
-<p>After we identify, analyze, and prioritize a manual and mind-numbing task we <strong>BUILD</strong> our automation code, as shown in the “Automation Angst” illustration. After <strong>BUILD</strong>, follows <strong>VALIDATE</strong>, during which we validate the automation script, the pre- and post-automation state, and the overall outcome of the automation exercise. </p>
-<p>There is usually an initial spike of churn as the automation <strong>failures</strong> due to unexpected outliers or when we realize that a task that is super easy for a human is a not suited for our binary machines.</p>
-<p>What follows are a few less dramatic spikes as we revise and fine <strong>TUNE</strong> the automation. There are new feature requests, triggered by new improvement ideas, refactoring, and revisions to reduce technical debt – until we finally make the <strong>GO-FOR-LAUNCH</strong> call.</p>
-<p><img alt="Turn it off" src="../images/automation-churn-and-angst-3.png"></p>
-<p>This type of Microsoft Teams chat message is not uncommon as you flip the automation from dormant to active and it is tempting to disable the automation as requested. However, to be able to fine tune the automation, I urge you not to flip the switch back to dormant. Instead work with the stakeholders, especially the agitated ones, to continuously improve the automation – there is never a good time to action the automation churn! </p>
-<blockquote>
-<p><strong>LEARNINGS</strong></p>
+<h1>Simplicity and consistency over Snowflakes!</h1>
+<p>It does not take long to realize that supporting thousands of CI/CD <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops">Azure Pipelines</a>, <a href="https://learn.microsoft.com/en-us/azure/devops/REPOS/?view=azure-devops">azure Repos</a>, and <a href="https://learn.microsoft.com/en-us/azure/devops/ARTIFACTS/?view=azure-devops">Azure Artifacts</a> that have drifted from each other is neither sustainable, nor cost effective. We had some bright engineers create pipelines running steps in parallel, using a platter of custom extensions, and scripts that makes any engineer’s heart rate shoot through the roof with excitement. Until the engineer leaves the organization and another engineer has the responsibility of maintaining the artwork and deal with a hotfix at the same time. Multiply this by a hundred to a thousand fold and you quickly realize complexity, cost, and un-maintainability of a technology <strong>waste</strong>, that is supposed to empower the engineers to deliver continuous value.</p>
+<p>We invested in creating the pillars for <strong>guardrails</strong>, <strong>automation</strong>, <strong>consistency</strong>, and <strong>self-service automation</strong>. See these posts for more details:</p>
 <ul>
-<li>
-<p><strong>Remain critical</strong> to identify and promote the automation that add value, and to deprecate unviable automation.</p>
-</li>
-<li>
-<p><strong>Do not despair</strong> when automation takes time and effort to fine-tune and integrate into our existing processes. 
-</p>
-</li>
+<li><a href="https://wsbctechnicalblog.github.io/can-government-agencies-be-innovative.html">Can government agencies be innovative?</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html">https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/our-open-source-pipeline-blueprints-have-landed.html">Our open-source pipeline blueprints have landed!</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html">https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html</a></li>
 </ul>
-</blockquote>
 <hr>
-<h1>“Angst” that will never really go away</h1>
+<h1>Lean on out-of-the-box features</h1>
+<p>Whenever a user requests a new custom extension to be installed from [Azure DevOps Marketplace)https://marketplace.visualstudio.com/azuredevops/), make sure you ask the five (5) WHYs! </p>
+<p>While it is fun and exciting to watch a delighted end-user, you will soon receive little patience and understanding when the  users have an issue with the extension or are looking for new features. Worst of all, if an extension is deprecated or a vulnerability is detected by security, there is very little of support and service level agreements you can rely on with <strong>free</strong> extensions.</p>
+<p>Keeping it simple and relying on out-of-the-box service features, keeps the feature and maintenance under control. If you must invest in an extension, I recommend that you:</p>
+<p>Pick extensions with:</p>
 <blockquote>
-<p><img alt="Angst" src="../images/automation-churn-and-angst-2.png"></p>
+<p><img alt="Verified Logos" src="../images/azure-devops-simplicity-to-rule-them-all-1.png"></p>
 </blockquote>
-<p>The major turbulence we experience while working on process automation is the “Angst” when we realize the potential of the automation on our operational environment.</p>
-<blockquote>
-<p><img alt="Oops" src="../images/automation-churn-and-angst-4.png"></p>
-</blockquote>
-<p>As highlighted in the "Automation Angst” illustration the fear of <strong>FAILURE</strong> spikes at the start and declines gradually as we make progress with fine-tuning and continuous improvement of our automation. The Angst is normal - embrace it as your guardian of built-in quality and embrace the continuous <strong>FAILURES</strong> to advance your automation.</p>
-<p>While I have no recipe for sleepless nights where you mull over thousands of lines of config-as-code, wake up in a sweat dreaming of scrum masters and engineers pounding on your door after breaking their pipeline, or pondering over when to click the launch button, I can reassure you that my entire team is still intact and promoting automation as a pivotal pillar. At some point you simply have to click on the <strong>ENTER</strong> button and watch the action q-;) </p>
-<blockquote>
-<p><strong>LEARNINGS</strong></p>
 <ul>
-<li>
-<p><strong>FAILURE is an option here. If things are not failing, you are not innovating enough.</strong> - Elon Musk.</p>
-</li>
-<li>
-<p><strong>Gradually increase the blast radius</strong>. Use feature flags or other strategies to gradually increase the area of impact (blast radius) of your automation. The <strong>big bang</strong> strategy is not only bold, but mote t minimizes your chance to continuously automate, observe, learn, and refine.
-</p>
-</li>
+<li>The <strong>verified domain</strong> and the <strong>top publisher</strong> validations - they imply commitment through exemplary policies, quality, reliability, and support.</li>
+<li>A high number of <strong>installs</strong>.</li>
+<li>A high average rating (<strong>stars</strong>), Q&amp;A, and Ratings &amp; Reviews that give you a warm and fuzzy feeling.</li>
 </ul>
-</blockquote>
+<p>Remember, once an extension is installed, it quickly becomes a critical feature of your user’s processes, making it difficult to reverse or exchange.</p>
 <hr>
-<h1>What are your automation experiences?</h1>
-<p>What are your automation stories? I am looking for the good, the bad, and the ugly 😊 Ping me on <a href="https://twitter.com/wpschaub">@wpschaub</a> or <a href="https://www.linkedin.com/in/wpschaub/">LinkedIN</a> until we enable the commenting feature below.</p>
+<h1>Governance Reporting is a must</h1>
+<p>It is important that you can monitor and audit your engineering process for consistency, standardization, adherence to guardrails and standards, and identify when configurations start drifting apart. </p>
+<p>We invested in a platter of automated reporting, via the <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">Azure DevOps REST API</a>, and have also embraces the phenomenal work done by <a href="https://twitter.com/vinijmoura">Vinicius Moura</a> with his <a href="https://github.com/vinijmoura/Azure-DevOps">Azure-DevOps</a> open source project on GitHub.</p>
+<blockquote>
+<p><em>List all Release Definitions, Stages, and Approvers on Classic Releases in Azure DevOps</em>
+<img alt="Sample Report" src="../images/azure-devops-simplicity-to-rule-them-all-2.png"> </p>
+</blockquote>
+<p>Not only are we able to answer most questions from internal audits in seconds, we are able to continuously observe the health of our engineering process and get a nudge when things are about to drift off the rails.</p>
+<hr>
+<h1>One project to rule them all!</h1>
+<p>I will keep this section very short and refer you to the excellent <a href="https://nkdagility.com/blog/one-team-project/">One Team Project to rule them all</a> post by <a href="https://nkdagility.com/">Martin Hinshelwood</a>.</p>
+<p>Again, I wish that Microsoft had not called it a Team Project, as it has resulted in years of confusion and migraines. As Martin correctly emphasizes in his blog a Team Project cannot be equated to a Visual Studio Project, a software, or whatever project. Project &lt;&gt; project! </p>
+<p>If only I had a dollar for every wasteFUL discussion that goes:</p>
+<ul>
+<li>User: "<em>Please create me a new Azure DevOps Project.</em>"</li>
+<li><strong>WHY?</strong></li>
+<li>User: "<em>We are starting a new project.</em>"</li>
+<li><strong>WHY</strong> can we not just create a new Team for you in our mainstream Azure DevOps Team Project?</li>
+<li>User: "<em>We feel that we need a new project, not a new team?</em>"</li>
+<li><strong>WHY?</strong></li>
+<li>User: "<em>Because we are starting a new project.</em>"</li>
+<li>...</li>
+</ul>
+<p>After 5-years of pushing for a "one project to rule them all" we are now staring at multiple Azure DevOps Team projects that have drifted apart from each other, making it sheer impossible to consolidate all Azure Repositories and Azure Pipelines, while maintaining all the history mandated by policies.</p>
+<p>Avoid the pain and start with "<strong>one project to rule them all!</strong>"</p>
+<hr>
+<h1>Use Active Directory (AD) groups to authorize users</h1>
+<p>Another hard lesson we learnt over time:</p>
+<ul>
+<li>Use <strong>Active Directory (AD)</strong> groups to authorize users.</li>
+<li>Keep your security model <strong>simple</strong> and number of AD groups <strong>low</strong>.</li>
+<li><strong>Delegate</strong> the auditing and membership management of AD groups.</li>
+<li><strong>Automate</strong> the creation of AD groups and adding and removing of user memberships.</li>
+</ul>
+<p>When you are dealing with multiple Azure DevOps Team projects, you may end up with a security model like the following.</p>
+<blockquote>
+<p><img alt="Complex Security Model" src="../images/azure-devops-simplicity-to-rule-them-all-3.png"> </p>
+</blockquote>
+<p>If you are the <strong>green</strong> engineer, you will <strong>hate</strong> the Azure DevOps powered engineering process. It is complex and anything but user-friendly and empowering - and no fault of Azure DevOps!</p>
+<p>One of our working groups invested well-spent time to understand our security model and come up with a <strong>simpler</strong> and <strong>user-friendly</strong> security model. It still defines AD groups per Azure DevOps Team project for AD groups providing <strong>administrative</strong> and <strong>elevated</strong> permissions to enforce the least-privilege policy, but introduces other AD groups that span all of the Azure DevOps Team Projects that should be **one"".</p>
+<blockquote>
+<p><img alt="Simple Security Model" src="../images/azure-devops-simplicity-to-rule-them-all-4.png"> </p>
+</blockquote>
+<p>Now if we had "one team project to rule them all" we would have started with the same security model from the start.</p>
+<hr>
+<p>Hopefully this post gives you a few pointers to mull over, to help you transform your Azure DevOps powered engineering process, and avoid a lot of the <strong>WASTE</strong> and <strong>challenges</strong> we endured over the past few years.</p>
+<p>I am excited our state of the engineering process. <strong>Watch the space</strong>, as we shine the light on upcoming innovations, new and better ways to innovate, and empower our engineers through service excellence. </p>
         </div>
 
         
@@ -116,9 +144,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
-        | <a href="https://wsbctechnicalblog.github.io/automation-churn-and-angst.html" rel="bookmark"
-         title="Permalink to Automation Mayhem and Angst is normal">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-devops-simplicity-to-rule-them-all.html" rel="bookmark"
+         title="Permalink to Azure Devops simplicity to rule them all">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
