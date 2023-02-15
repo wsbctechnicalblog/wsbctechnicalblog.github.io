@@ -9,6 +9,8 @@ Summary: Be careful not to annoy Azure DevOps with your automated maintenance jo
 When you automate your operational support and maintenance of [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "_last time it 100% worked for sure with no issues_" call for help.
 
 > Example 1 of an automation meltdown
+>
+> ![failure](../images/azure-devops-transient-faults-1.png)
 
 ```
 Service Unavailable
@@ -43,6 +45,10 @@ You probably triggered a **throttling** or **circuit breaker** pattern, which Az
 Here is a simple **retry pattern** that allows you to retry the operation after going to sleep for a while. You may have to play with and increase the ```$retryValue``` default value, depending on the REST API you are calling. 
 
 1.13 has worked for me and my automation scripts to date.
+
+> Retry logic
+>
+> ![bandaid](../images/azure-devops-transient-faults-2.png)
 
 ```
 $retryCount = 3

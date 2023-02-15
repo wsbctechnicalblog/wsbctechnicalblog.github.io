@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Find the capabilities and IP addresses of an Azure DevOps agent - </title>
+        <title>Azure DevOps Transient Faults - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,97 +32,97 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="bookmark"
-            title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Find the capabilities and IP addresses of an Azure DevOps agent</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="bookmark"
+            title="Permalink to Azure DevOps Transient Faults">Azure DevOps Transient Faults</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 12 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 15 February 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.</p>
+            <p>Be careful not to annoy Azure DevOps with your automated maintenance jobs!</p>
         </div>
     
         <div class="entry-content">
-            <h1>Why should we care about an Azure DevOps Agent?</h1>
-<p>To use our <a href="https://wsbctechnicalblog.github.io/index.html">Azure Pipelines</a>, we need the agents. Every time one of our pipelines is triggered, it comes to life on one or more jobs, which are hosted and run an agent.</p>
-<p>Azure DevOps offers two types of agents. <strong>Microsoft-hosted</strong> agents are a software as a service (SaaS) offering, where maintenance and upgrades are taken care of for you. Our recommended type of agents!</p>
-<p><strong>Self-hosted agents</strong> give you more control of access and installed software needed for special builds and deployments. For example, we have a self-hosted pool to service our good old <strong>Cobol</strong> builds.</p>
-<hr>
-<h1>How to determine the capabilities of an Azure DevOps Agent</h1>
-<p>We often get the question: "What software is installed on the agent?" In other words, how do we determine the capabilities of each Azure DevOPs agent.</p>
-<p>For self-hosted agents you can go to your Azure DevOps <strong>organizational</strong> setting, Agent pools, select <strong>pool</strong>, select <strong>Agents</strong>, select an <strong>agent</strong>, and finally, select <strong>Capabilities</strong>. You will be presented with the agent's system capabilities, variables, paths, and installed software, as shown below.</p>
+            <p>When you automate your operational support and maintenance of <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a>, such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "<em>last time it 100% worked for sure with no issues</em>" call for help.</p>
 <blockquote>
-<p>Capabilities of a <strong>self-hosted</strong> agent</p>
-<p><img alt="AzDO Agent Details" src="/images/azuredevops-agent-info-1.png"></p>
+<p>Example 1 of an automation meltdown</p>
+<p><img alt="failure" src="../images/azure-devops-transient-faults-1.png"></p>
 </blockquote>
-<p>When you select a Microsoft-hosted agent and pool, the presented capabilities are less exciting.</p>
-<blockquote>
-<p>Capabilities of a <strong>Microsoft-hosted</strong> agent</p>
-<p><img alt="AzDO Agent LAck of Details" src="/images/azuredevops-agent-info-2.png"></p>
-</blockquote>
-<p>You need to visit the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation and scroll down to the <strong>Software</strong> section. Peruse a list of hosted agents, classic pipeline editor specifications, YAML image labels, and links to software available on each type of agent.</p>
-<blockquote>
-<p>Azure DevOps Agent Documentation</p>
-<p><img alt="AzDO Agent Documentation" src="/images/azuredevops-agent-info-3.png"></p>
-</blockquote>
-<p>Select your agent, click on the included software hyperlink, and voila, you have a detailed report of the agent's capabilities.</p>
-<blockquote>
-<p>Azure DevOps Agent Capabilities Documentation</p>
-<p><img alt="AzDO Agent Capabilties Documentation" src="/images/azuredevops-agent-info-4.png"></p>
-</blockquote>
-<hr>
-<h1>How to determine the IP addresses of an Azure DevOps Agent</h1>
-<p>The <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation also gives you information on how to identify possible IP ranges for Microsoft-hosted agents. This information is pivotal if you need to allow the agents to make their way from the public internet, through your firewall, to collaborate with one of your services.</p>
-<p>Unfortunately, you will also find some small print ... well, it is the same sized font and the note is placed on a prominent Indigo background. It is easy to miss the highlighted part, as shown below, that mentions that the IP addresses for the macOS agents are not included.</p>
-<blockquote>
-<p>macOS Addresses are a mystery</p>
-<p><img alt="macOS Address Mystery" src="/images/azuredevops-agent-info-5.png"></p>
-</blockquote>
-<p>First thought is to queue a investigative pipeline on one of the macOS agents and run the <strong>ipconfig getifaddr en0</strong> command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.</p>
-<p>Try this:</p>
-<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">task:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
-<span class="w">  </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">curl</span><span class="w"> </span><span class="n">ipecho</span><span class="p">.</span><span class="n">net</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">errorActionPreference</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="k">continue</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>Service Unavailable
+Service Unavailable
+HTTP Error 503. The service is unavailable.
 </code></pre></div>
 
-<p>It reveals the public IP address:</p>
-<div class="highlight"><pre><span></span><code>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
+<blockquote>
+<p>Example 2 of an automation meltdown</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Azure DevOps Services Unavailable
 
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
+    Azure DevOps Services
 
-... SNIPPED FOR BLOG POST ...
-
-<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center; flex: 1; &quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Your IP is 13.105.49.13<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-
-...SNIPPED FOR BLOG POST...
+        Sorry! Our services aren&#39;t available right now.
+        We&#39;re working to restore all services as quickly as
+        possible. Please check back soon.
+        To see the latest status on our services, please 
+        visit our support page.
 </code></pre></div>
 
-<p>Lastly, who owns the IP address we just found?</p>
-<p>Visit <a href="https://ipinfo.io/13.105.49.13">13.105.49.13 IP Address Details - IPinfo.io</a> for the answer:</p>
-<blockquote>
-<p>IP address "BINGO!"</p>
-<p><img alt="IPinfo.io" src="/images/azuredevops-agent-info-6.png"></p>
-</blockquote>
+<p>In both cases I ended up having to intervene manually and restart the maintenance job. Muda!</p>
+<h1>Transient fault</h1>
+<p>You probably triggered a <strong>throttling</strong> or <strong>circuit breaker</strong> pattern, which Azure DevOps uses to protect itself against excessive load or potential <code>denial of service</code> attacks. If you do not deal with the transient fault you will end up with failed automation, wasted time, and <strong>manual</strong> intervention - more <strong>WASTE</strong>.</p>
 <hr>
-<p>A big thank you to <a href="https://www.linkedin.com/in/lukas-wilson-8792ba172/">Lukas Wilson</a>, one of our resident Azure gurus, who helped with the IP address exploration. </p>
-<h1>Reference Information</h1>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted agents</a></li>
-<li><a href="https://wsbctechnicalblog.github.io/index.html">Part 1: Pipelines - Why bother and what are our nightmares and options?</a></li>
-</ul>
+<h1>Dealing with transient fault</h1>
+<p>Here is a simple <strong>retry pattern</strong> that allows you to retry the operation after going to sleep for a while. You may have to play with and increase the <code>$retryValue</code> default value, depending on the REST API you are calling. </p>
+<p>1.13 has worked for me and my automation scripts to date.</p>
+<blockquote>
+<p>Retry logic</p>
+<p><img alt="bandaid" src="../images/azure-devops-transient-faults-2.png"></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">3</span><span class="w"></span>
+<span class="o">$</span><span class="nt">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">13</span><span class="w"></span>
+<span class="o">$</span><span class="nt">retryCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">1</span><span class="w"></span>
+
+<span class="nt">for</span><span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="w"> </span><span class="nt">-lt</span><span class="w"> </span><span class="o">$</span><span class="nt">retryCount</span><span class="o">;</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="o">++</span><span class="w"> </span><span class="o">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">try</span><span class="w"> </span>
+<span class="w">    </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">call</span><span class="w"> </span><span class="err">Azure</span><span class="w"> </span><span class="err">DevOps</span><span class="w"> </span><span class="err">REST</span><span class="w"> </span><span class="err">API</span><span class="w"></span>
+<span class="w">        </span><span class="err">$result</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Invoke-RestMethod</span><span class="w"> </span><span class="err">-Uri</span><span class="w"> </span><span class="err">$url</span><span class="w"> </span><span class="err">-ContentType</span><span class="w"> </span><span class="err">&quot;application/json&quot;</span><span class="w"> </span><span class="err">-Headers</span><span class="w"> </span><span class="err">$headers</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">processing</span><span class="w"></span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">catch</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">logic</span><span class="w"></span>
+<span class="w">        </span><span class="err">if</span><span class="w"> </span><span class="err">(</span><span class="w"> </span><span class="err">$failureCount</span><span class="w"> </span><span class="err">-eq</span><span class="w"> </span><span class="err">$retryCheck</span><span class="w"> </span><span class="err">)</span><span class="w"></span>
+<span class="w">        </span><span class="err">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">ensure</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">pipeline</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">warning</span><span class="w"></span>
+<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;##vso</span><span class="cp">[</span><span class="nx">task.complete</span> <span class="n">result</span><span class="o">=</span><span class="nx">SucceededWithIssues</span><span class="p">;</span><span class="cp">]</span><span class="err">SUCCEEDED</span><span class="w"> </span><span class="err">WITH</span><span class="w"> </span><span class="err">ISSUES&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="err">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">else</span><span class="w"> </span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">Logging</span><span class="w"></span>
+<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;Sleep</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">then</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">processing</span><span class="w"> </span><span class="err">loop.</span><span class="w"> </span><span class="n">Count</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; $failureCount &quot;</span><span class="w"> </span><span class="n">Sleep</span><span class="o">:</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"></span>
+<span class="w">            </span><span class="n">Write-Output</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="o">.</span><span class="n">Exception</span><span class="o">.</span><span class="n">Message</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">retry</span><span class="w"></span>
+<span class="w">            </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="n">failureCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="err">Start-Sleep</span><span class="w"> </span><span class="err">-Seconds</span><span class="w"> </span><span class="err">$retrySleep</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w">   </span>
+</code></pre></div>
+
+<p>Simple, yet effective.</p>
+<hr>
+<p>Read <a href="https://opensource.com/article/19/9/transient-faults-devops">3 ways to handle transient faults for DevOps</a> for more details on transient faults.</p>
         </div>
 
         
@@ -139,9 +139,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
-        | <a href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="bookmark"
-         title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="bookmark"
+         title="Permalink to Azure DevOps Transient Faults">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
