@@ -1,5 +1,5 @@
 Title: Azure DevOps Transient Faults
-Date: 2023.02.17
+Date: 2023.02.15
 Category: Posts 
 Tags: azure-devops, tips
 Slug: azure-devops-transient-faults
@@ -8,11 +8,29 @@ Summary: Be careful not to annoy Azure DevOps with your automated maintenance jo
 
 When you automate your operational support and maintenance of [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "_last time it 100% worked for sure with no issues_" call for help.
 
+> Example 1 of an automation meltdown
+
 ```
 Service Unavailable
 Service Unavailable
 HTTP Error 503. The service is unavailable.
 ```
+
+> Example 2 of an automation meltdown
+
+```
+Azure DevOps Services Unavailable
+               
+    Azure DevOps Services
+            
+        Sorry! Our services aren't available right now.
+        We're working to restore all services as quickly as
+        possible. Please check back soon.
+        To see the latest status on our services, please 
+        visit our support page.
+```
+
+In both cases I ended up having to intervene manually and restart the maintenance job. Muda!
 
 # Transient fault
 
