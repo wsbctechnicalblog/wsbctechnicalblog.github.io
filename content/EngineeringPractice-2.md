@@ -1,5 +1,5 @@
 Title: Engineering Practice Nuggets - Naming Conventions
-Date: 2023-01-18
+Date: 2023-02-18
 Category: Posts 
 Tags: agile, architecture, code, code-quality, design, engineering, technical-excellence, tdd, tips, learning, innovation
 Slug: EngineeringPractice-2
@@ -13,12 +13,13 @@ in the aim of improving clarity of purpose and understanding its nature, and how
 
 When we talk about software, we are specifically addressing naming conventions and standards, patterns that
 can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
-or playful ways; this should be avoided in our software and thought of as an anti-pattern.  
+or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
+useful approach to naming *things* to the benifit of our software quality and maintainability.
 
 ---
 # Why are Naming Conventions Important?
 
-We define conventions and standards so that the purpose and intent of the an object variable can be inferred (i.e. its *Name*), and indeed
+We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its *Name*), and indeed
 be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
 across all products, projects, and development teams.  It is more important to define a convention and *stick with it*, than it is
 to pick the *best* one - it may come down to style preferences and patterns that everyone agrees on.
@@ -39,7 +40,7 @@ Lets explore these standards, and the patterns that we use *by convension* to im
 
 ---
 # Date Convention 
-Dates are so common, we run into it just about every day :).  
+Dates are so common, we run into them just about every day :).  
 
 We need a standard way to represent a date, since it can be used in filename and 
 data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a descreasing scope pattern.  Additional,
@@ -68,8 +69,8 @@ If you adopt the rule of only using Alpha-numerics, you will be well prepared fo
 ---
 
 # Standard Terms
-You should also be managing a library of standard terms, with their encoded (Naming Convention applied) definition and usage.  When defining
-a name for an object - consult the library of standar terms first to see if words you want to use have been standardized on.  If it is
+You should also concider managing a library of standard terms, with their encoded (Naming Convention applied) *name*, definition and usage.  
+When defining a name for an object - consult the library of standar terms first to see if words you want to use have been standardized on.  If it is
 there, use it; if it is not, add it.
 
 *Remeber* this is organization wide set of terms used for all sofware endevours - be careful when selecting terms that mean the same
