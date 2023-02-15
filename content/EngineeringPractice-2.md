@@ -68,7 +68,7 @@ If you adopt the rule of only using Alpha-numerics, you will be well prepared fo
 ---
 
 # Standard Terms
-You should also being a library of standard terms, with their encoded (Naming Convention applied) definition and usage.  When defining
+You should also be managing a library of standard terms, with their encoded (Naming Convention applied) definition and usage.  When defining
 a name for an object - consult the library of standar terms first to see if words you want to use have been standardized on.  If it is
 there, use it; if it is not, add it.
 
