@@ -14,7 +14,7 @@ in the aim of improving clarity of purpose and understanding its nature, and how
 When we talk about software, we are specifically addressing naming conventions and standards, patterns that
 can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
 or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
-useful approach to naming *things* to the benifit of our software quality and maintainability.
+useful approach to naming *things* to the benifit of our software quality and maintainability, and in fact scaleability.
 
 ---
 # Why are Naming Conventions Important?
