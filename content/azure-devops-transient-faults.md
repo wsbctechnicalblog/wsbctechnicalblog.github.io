@@ -6,8 +6,13 @@ Slug: azure-devops-transient-faults
 Author: Willy-Peter Schaub
 Summary: Be careful not to annoy Azure DevOps with your automated maintenance jobs!
 
-When you automate your operational support and maintenance of [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "500 Internal Server Error", or a "_last time it 100% worked for sure with no issues_" call for help.
+When you automate your operational support and maintenance of [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "_last time it 100% worked for sure with no issues_" call for help.
 
+```
+Service Unavailable
+Service Unavailable
+HTTP Error 503. The service is unavailable.
+```
 
 # Transient fault
 
