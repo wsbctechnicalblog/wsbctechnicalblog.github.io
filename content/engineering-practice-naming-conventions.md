@@ -1,8 +1,8 @@
-Title: Engineering Practices Convention
+Title: Engineering Practice Naming Conventions
 Date: 2023-02-17
 Category: Posts 
 Tags: code, code-quality, engineering, technical-excellence
-Slug: engineering-practices-convention
+Slug: engineering-practice-naming-conventions
 Author: Martin M. Lacey
 Summary: Naming Convention Nuggets of Knowledge and Best Practices
 
