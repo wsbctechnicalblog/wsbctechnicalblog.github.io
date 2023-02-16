@@ -1,7 +1,7 @@
 Title: Engineering Practice Nuggets
 Date: 2023-01-18
 Category: Posts 
-Tags: agile, architecture, code, code-quality, design, engineering, technical-excellence, tdd, tips, learning, innovation
+Tags: code-quality, design, engineering, technical-excellence
 Slug: EngineeringPractice-1
 Author: Martin M. Lacey
 Summary: Nuggets of Knowledge and Best Practices in Software Engineering
