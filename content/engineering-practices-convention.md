@@ -1,8 +1,8 @@
-Title: Engineering Practice Nuggets - Naming Conventions
-Date: 2023-02-18
+Title: Engineering Practices Convention
+Date: 2023-02-17
 Category: Posts 
-Tags: agile, architecture, code, code-quality, design, engineering, technical-excellence, tdd, tips, learning, innovation
-Slug: EngineeringPractice-2
+Tags: code, code-quality, engineering, technical-excellence
+Slug: engineering-practices-convention
 Author: Martin M. Lacey
 Summary: Naming Convention Nuggets of Knowledge and Best Practices
 
@@ -17,6 +17,7 @@ or playful ways; this should be avoided in our software and thought of as an ant
 useful approach to naming *things* to the benifit of our software quality and maintainability, and in fact scaleability.
 
 ---
+
 # Why are Naming Conventions Important?
 
 We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its *Name*), and indeed
@@ -36,10 +37,12 @@ organization-wide standard *Nameing Convention* you will experience the followin
 There are other pillars in creating exceptional software as well, and we'll
 explore those is upcoming articles.
 
-Lets explore these standards, and the patterns that we use *by convension* to improve our software and unlock automation.
+Let us explore these standards, and the patterns that we use *by convension* to improve our software and unlock automation.
 
 ---
+
 # Date Convention 
+
 Dates are so common, we run into them just about every day :).  
 
 We need a standard way to represent a date, since it can be used in filename and 
@@ -47,7 +50,9 @@ data we generate such as processing and event logs.  Some examples could be YYMM
 you might optionally include a time component suffix as well HHMMSSmmmm.
 
 ---
+
 # Case Convention
+
 When we create *things* that have compound names - names that contain multple words combined into a single string - we may want to deliniate
 where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.
 
@@ -60,7 +65,9 @@ where each word begins. There are several popular conventions to apply Capital L
 * Kebab Case (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.
 
 ---
+
 # Special Characters
+
 It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
 have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
 When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
@@ -69,10 +76,11 @@ If you adopt the rule of only using Alpha-numerics, you will be well prepared fo
 ---
 
 # Standard Terms
+
 You should also concider managing a library of standard terms, with their encoded (Naming Convention applied) *name*, definition and usage.  
 When defining a name for an object - consult the library of standar terms first to see if words you want to use have been standardized on.  If it is
 there, use it; if it is not, add it.
 
-*Remeber* this is organization wide set of terms used for all sofware endevours - be careful when selecting terms that mean the same
+*REMEMBER* this is organization wide set of terms used for all sofware endevours - be careful when selecting terms that mean the same
 across all development teams.
 
