@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Engineering Practice Nuggets - </title>
+        <title>Engineering Practice Naming Conventions - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,46 +32,85 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-1.html" rel="bookmark"
-            title="Permalink to Engineering Practice Nuggets">Engineering Practice Nuggets</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="bookmark"
+            title="Permalink to Engineering Practice Naming Conventions">Engineering Practice Naming Conventions</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Martin M. Lacey on Wed 18 January 2023</div>
+        <div class="read-more">Posted by Martin M. Lacey on Fri 17 February 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Nuggets of Knowledge and Best Practices in Software Engineering</p>
+            <p>Naming Convention Nuggets of Knowledge and Best Practices</p>
         </div>
     
         <div class="entry-content">
-            <p>When we design, build, and deploy software we aim to apply patterns and learned best practices in order to produce consistent and robust solutions that are of the highest quality and lowest possible technical dept (burden to maintain).</p>
-<p>These powerful nuggets of knowledge, patterns and practices, and key areas that we are evolving and improving will be the subject matter explored with the goal to invigorate vibrant collaboration and innovation, and indeed experimentation and tenacity when things don't go as desired.</p>
+            <h1>What's in a Name?</h1>
+<p>How we name and categorize things conveys meaning and intent - what it <em>is</em> and possibly <em>how</em> it should be used.  All
+in the aim of improving clarity of purpose and understanding its nature, and how it should be used.</p>
+<p>When we talk about software, we are specifically addressing naming conventions and standards, patterns that
+can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
+or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
+useful approach to naming <em>things</em> to the benefit of our software quality and maintainability, and in fact scalability.</p>
 <hr>
-<h1>Metrics and Quantitative Measures</h1>
-<p>In addition to the four standard DevOps metrics:</p>
+<h1>Why are Naming Conventions Important?</h1>
+<p>We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its <em>Name</em>), and indeed
+be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
+across all products, projects, and development teams.  It is more important to define a convention and <em>stick with it</em>, than it is
+to pick the <em>best</em> one - it may come down to style preferences and patterns that everyone agrees on.</p>
+<p>Naming conventions can apply to all <em>things</em> in your software; for folders, files, variables, classes, methods, and even project files and solutions. Deciding on and following your convention is a cornerstone to creating great software.  When you adopt and follow an 
+organization-wide standard <em>Naming Convention</em> you will experience the following benefits:</p>
 <ul>
-<li><strong>Deployment Frequency</strong> - How often an organization successfully releases to production</li>
-<li><strong>Lead Time for Changes</strong> - The amount of time it takes a commit to get into production</li>
-<li><strong>Change Failure Rate</strong> - The percentage of deployments causing a failure in production</li>
-<li><strong>Time to Restore Service</strong> - How long it takes an organization to recover from a failure in production</li>
+<li>Smooth Operation - When your data is easy to find, it is easy to extract the required knowledge and make decisions based on it. There won’t be any delay in getting information, and this ensures smooth administration in your organization without any bottlenecks.</li>
+<li>Better Version Control - Information gets constantly updated in an organizational setting. To make sure you are using the most recent version, you need to tag it accordingly in your file name. This helps you avoid errors associated with outdated knowledge.</li>
+<li>Save Time and Money - When you avoid duplication through proper naming conventions, you can save a lot of time and money. You won’t have to spend time looking for lost files and there will be no need to create new versions of already existing files.</li>
+<li>Automation - you can anticipate file and folder names, enabling process automation such as build pipelines and code scans</li>
 </ul>
-<p>We have begun the process of calculating various metrics on software created at WSBC, using SonarQube in the build and deploy pipelines. These will soon be augmented by Stryker to generate mutant test cases and validate them, as well as the Roslyn Analyzer for further code analysis.  </p>
-<p>These measurements are calculated when the pipeline for a product is invoked, providing us with statistical data that we can use to gauge the quality improvements over time.</p>
+<p>There are other pillars in creating exceptional software as well, and we'll
+explore those is upcoming articles.</p>
+<p>Let us explore these standards, and the patterns that we use <em>by convention</em> to improve our software and unlock automation.</p>
 <hr>
-<h1>Engineering Capability Maturity</h1>
-<p>We are now developing a Capability Maturity Model for Software Engineering Practices at WSBC, similar to the Maturity Model for Agile practices combined with CMM for Software - and supported by Scaled Agile Framework for the Enterprise (SAFe).  </p>
-<p>We are working to identify the capabilities at each level and how to measure them, and how to put processes in place or refine existing processes  to support their improvement and cultivate an open culture of experiment-fail-learn and share as discussed in <a href="/fail-learn-reset.html">Fail, Learn, Reset!</a>.</p>
+<h1>Date Convention</h1>
+<p>Dates are so common, we run into them just about every day :).  </p>
+<p>We need a standard way to represent a date, since it can be used in filename and 
+data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a decreasing scope pattern.  Additional,
+you might optionally include a time component suffix as well HHMMSSmmmm.</p>
 <hr>
-<h1>EDO Ce Recommended Product Catalog</h1>
-<p>The EDO Recommended Product Catalog is getting a radical facelift, with a cool new periodic-table style layout with pop-up cells that clearly describe the product and purpose and current version.  Clicking on the tile opens a modal dialog describing the product in full, with links to download either from ServiceNow or the product own download page.</p>
-<p>We are busily creating Phase II, enabling a Search capability and populating the table cells based on a query to live <em>editable</em> data in SharePoint.</p>
-<p>In a future post, we will dig deeper into the Product Catalog; how it has evolved to support and enhance our development teams navigation, education, and adoption of technology recommended for our development community.</p>
+<h1>Case Convention</h1>
+<p>When we create <em>things</em> that have compound names - names that contain multiple words combined into a single string - we may want to delineate
+where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.</p>
+<ul>
+<li>
+<p><strong>Camel Case</strong> (camelCase) - This involves capitalizing all words except the first word and removing the space in between them. For instance, 'product table id' can be written as productTableId.</p>
+</li>
+<li>
+<p><strong>Pascal Case</strong> (PascalCase) - This involves capitalizing all words in the name, including the first, and removing the space in between them. For instance, 'product table id' can be written as ProductTableId.</p>
+</li>
+<li>
+<p><strong>Snake Case</strong> (snake_case) - This type of naming combines words simply by replacing the space with an underscore (_). The same example used above can be written as product_table_id.</p>
+</li>
+<li>
+<p><strong>Kebab Case</strong> (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.</p>
+</li>
+</ul>
 <hr>
-<p>Watch this space for bi-weekly Engineering Practice updates, latest developments, and recommended best practices, techniques, patterns, and methods recommended for building the next generation of interconnected loosely-coupled systems and services in our <em>Software Factory Vision</em>.</p>
+<h1>Special Characters</h1>
+<p>It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
+have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
+When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
+If you adopt the rule of only using Alpha-numerics, you will be well prepared for such situations.</p>
+<hr>
+<h1>Standard Terms</h1>
+<p>You should also consider managing a library of standard terms, with their encoded (Naming Convention applied) <em>name</em>, definition and usage.<br>
+When defining a name for an object - consult the library of standard terms first to see if words you want to use have been standardized on.  If it is
+there, use it; if it is not, add it.</p>
+<blockquote>
+<p><strong>REMEMBER</strong> this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
+across all development teams.</p>
+</blockquote>
         </div>
 
         
@@ -88,9 +127,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture </a><a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/design.html">design </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">tdd </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation </a>
-        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-1.html" rel="bookmark"
-         title="Permalink to Engineering Practice Nuggets">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="bookmark"
+         title="Permalink to Engineering Practice Naming Conventions">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
@@ -121,20 +160,17 @@
            <div class="large-6 tag-cloud column">
                 <h3>Tags</h3>
                 <ul>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(43)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(23)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(21)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(23)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(6)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(22)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(13)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(14)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(43)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(21)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(12)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(13)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">tdd</a>(13)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(30)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(6)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(29)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(5)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(38)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(3)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
@@ -146,12 +182,15 @@
                     <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(22)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(16)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
@@ -178,7 +217,7 @@
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (130)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (131)</li>
                 </ul>
              
             </div>
