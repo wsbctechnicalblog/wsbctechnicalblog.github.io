@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-15T00:00:00-08:00</updated><entry><title>Azure DevOps Transient Faults</title><link href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="alternate"></link><published>2023-02-15T00:00:00-08:00</published><updated>2023-02-15T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-15:/azure-devops-transient-faults.html</id><summary type="html">&lt;p&gt;Be careful not to annoy Azure DevOps with your automated maintenance jobs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you automate your operational support and maintenance of &lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt;, such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "&lt;em&gt;last time it 100% worked for sure with no issues&lt;/em&gt;" call for help.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-17T00:00:00-08:00</updated><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
+&lt;p&gt;How we name and categorize things conveys meaning and intent - what it &lt;em&gt;is&lt;/em&gt; and possibly &lt;em&gt;how&lt;/em&gt; it should be used.  All
+in the aim of improving clarity of purpose and understanding its nature, and how it should be used.&lt;/p&gt;
+&lt;p&gt;When we talk about software, we are specifically addressing naming conventions and standards, patterns that
+can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
+or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
+useful approach to naming &lt;em&gt;things&lt;/em&gt; to the benefit of our software quality and maintainability, and in fact scalability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why are Naming Conventions Important?&lt;/h1&gt;
+&lt;p&gt;We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its &lt;em&gt;Name&lt;/em&gt;), and indeed
+be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
+across all products, projects, and development teams.  It is more important to define a convention and &lt;em&gt;stick with it&lt;/em&gt;, than it is
+to pick the &lt;em&gt;best&lt;/em&gt; one - it may come down to style preferences and patterns that everyone agrees on.&lt;/p&gt;
+&lt;p&gt;Naming conventions can apply to all &lt;em&gt;things&lt;/em&gt; in your software; for folders, files, variables, classes, methods, and even project files and solutions. Deciding on and following your convention is a cornerstone to creating great software.  When you adopt and follow an 
+organization-wide standard &lt;em&gt;Naming Convention&lt;/em&gt; you will experience the following benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smooth Operation - When your data is easy to find, it is easy to extract the required knowledge and make decisions based on it. There won’t be any delay in getting information, and this ensures smooth administration in your organization without any bottlenecks.&lt;/li&gt;
+&lt;li&gt;Better Version Control - Information gets constantly updated in an organizational setting. To make sure you are using the most recent version, you need to tag it accordingly in your file name. This helps you avoid errors associated with outdated knowledge.&lt;/li&gt;
+&lt;li&gt;Save Time and Money - When you avoid duplication through proper naming conventions, you can save a lot of time and money. You won’t have to spend time looking for lost files and there will be no need to create new versions of already existing files.&lt;/li&gt;
+&lt;li&gt;Automation - you can anticipate file and folder names, enabling process automation such as build pipelines and code scans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are other pillars in creating exceptional software as well, and we'll
+explore those is upcoming articles.&lt;/p&gt;
+&lt;p&gt;Let us explore these standards, and the patterns that we use &lt;em&gt;by convention&lt;/em&gt; to improve our software and unlock automation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Date Convention&lt;/h1&gt;
+&lt;p&gt;Dates are so common, we run into them just about every day :).  &lt;/p&gt;
+&lt;p&gt;We need a standard way to represent a date, since it can be used in filename and 
+data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a decreasing scope pattern.  Additional,
+you might optionally include a time component suffix as well HHMMSSmmmm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Case Convention&lt;/h1&gt;
+&lt;p&gt;When we create &lt;em&gt;things&lt;/em&gt; that have compound names - names that contain multiple words combined into a single string - we may want to delineate
+where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Camel Case&lt;/strong&gt; (camelCase) - This involves capitalizing all words except the first word and removing the space in between them. For instance, 'product table id' can be written as productTableId.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pascal Case&lt;/strong&gt; (PascalCase) - This involves capitalizing all words in the name, including the first, and removing the space in between them. For instance, 'product table id' can be written as ProductTableId.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Snake Case&lt;/strong&gt; (snake_case) - This type of naming combines words simply by replacing the space with an underscore (_). The same example used above can be written as product_table_id.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Kebab Case&lt;/strong&gt; (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Special Characters&lt;/h1&gt;
+&lt;p&gt;It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
+have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
+When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
+If you adopt the rule of only using Alpha-numerics, you will be well prepared for such situations.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Standard Terms&lt;/h1&gt;
+&lt;p&gt;You should also consider managing a library of standard terms, with their encoded (Naming Convention applied) &lt;em&gt;name&lt;/em&gt;, definition and usage.&lt;br&gt;
+When defining a name for an object - consult the library of standard terms first to see if words you want to use have been standardized on.  If it is
+there, use it; if it is not, add it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;REMEMBER&lt;/strong&gt; this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
+across all development teams.&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Azure DevOps Transient Faults</title><link href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="alternate"></link><published>2023-02-15T00:00:00-08:00</published><updated>2023-02-15T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-15:/azure-devops-transient-faults.html</id><summary type="html">&lt;p&gt;Be careful not to annoy Azure DevOps with your automated maintenance jobs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you automate your operational support and maintenance of &lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt;, such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "&lt;em&gt;last time it 100% worked for sure with no issues&lt;/em&gt;" call for help.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Example 1 of an automation meltdown&lt;/p&gt;
 &lt;p&gt;&lt;img alt="failure" src="../images/azure-devops-transient-faults-1.png"&gt;&lt;/p&gt;
@@ -152,7 +214,7 @@ HTTP Error 503. The service is unavailable.
 &lt;p&gt;Now if we had "one team project to rule them all" we would have started with the same security model from the start.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Hopefully this post gives you a few pointers to mull over, to help you transform your Azure DevOps powered engineering process, and avoid a lot of the &lt;strong&gt;WASTE&lt;/strong&gt; and &lt;strong&gt;challenges&lt;/strong&gt; we endured over the past few years.&lt;/p&gt;
-&lt;p&gt;I am excited our state of the engineering process. &lt;strong&gt;Watch the space&lt;/strong&gt;, as we shine the light on upcoming innovations, new and better ways to innovate, and empower our engineers through service excellence. &lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="eliminate-waste"></category></entry><entry><title>Engineering Practice Nuggets</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-1.html" rel="alternate"></link><published>2023-01-18T00:00:00-08:00</published><updated>2023-01-18T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-01-18:/engineering-practice-1.html</id><summary type="html">&lt;p&gt;Nuggets of Knowledge and Best Practices in Software Engineering&lt;/p&gt;</summary><content type="html">&lt;p&gt;When we design, build, and deploy software we aim to apply patterns and learned best practices in order to produce consistent and robust solutions that are of the highest quality and lowest possible technical dept (burden to maintain).&lt;/p&gt;
+&lt;p&gt;I am excited our state of the engineering process. &lt;strong&gt;Watch the space&lt;/strong&gt;, as we shine the light on upcoming innovations, new and better ways to innovate, and empower our engineers through service excellence. &lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="eliminate-waste"></category></entry><entry><title>Engineering Practice Nuggets</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-nuggets.html" rel="alternate"></link><published>2023-01-18T00:00:00-08:00</published><updated>2023-01-18T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-01-18:/engineering-practice-nuggets.html</id><summary type="html">&lt;p&gt;Nuggets of Knowledge and Best Practices in Software Engineering&lt;/p&gt;</summary><content type="html">&lt;p&gt;When we design, build, and deploy software we aim to apply patterns and learned best practices in order to produce consistent and robust solutions that are of the highest quality and lowest possible technical dept (burden to maintain).&lt;/p&gt;
 &lt;p&gt;These powerful nuggets of knowledge, patterns and practices, and key areas that we are evolving and improving will be the subject matter explored with the goal to invigorate vibrant collaboration and innovation, and indeed experimentation and tenacity when things don't go as desired.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Metrics and Quantitative Measures&lt;/h1&gt;
@@ -175,7 +237,7 @@ HTTP Error 503. The service is unavailable.
 &lt;p&gt;We are busily creating Phase II, enabling a Search capability and populating the table cells based on a query to live &lt;em&gt;editable&lt;/em&gt; data in SharePoint.&lt;/p&gt;
 &lt;p&gt;In a future post, we will dig deeper into the Product Catalog; how it has evolved to support and enhance our development teams navigation, education, and adoption of technology recommended for our development community.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Watch this space for bi-weekly Engineering Practice updates, latest developments, and recommended best practices, techniques, patterns, and methods recommended for building the next generation of interconnected loosely-coupled systems and services in our &lt;em&gt;Software Factory Vision&lt;/em&gt;.&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="architecture"></category><category term="code"></category><category term="code-quality"></category><category term="design"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="tdd"></category><category term="tips"></category><category term="learning"></category><category term="innovation"></category></entry><entry><title>Pull Request empowered by engineering practices</title><link href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="alternate"></link><published>2023-01-13T00:00:00-08:00</published><updated>2023-01-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-01-13:/pull-request-empowered-by-engineering-practices.html</id><summary type="html">&lt;p&gt;Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Let us take a look at our latest pull request workflow and hopefully spark a few discussions that will empower all of us to embrace the pull request (PR) feature effectively.  &lt;/p&gt;
+&lt;p&gt;Watch this space for bi-weekly Engineering Practice updates, latest developments, and recommended best practices, techniques, patterns, and methods recommended for building the next generation of interconnected loosely-coupled systems and services in our &lt;em&gt;Software Factory Vision&lt;/em&gt;.&lt;/p&gt;</content><category term="Posts"></category><category term="code-quality"></category><category term="design"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Pull Request empowered by engineering practices</title><link href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="alternate"></link><published>2023-01-13T00:00:00-08:00</published><updated>2023-01-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-01-13:/pull-request-empowered-by-engineering-practices.html</id><summary type="html">&lt;p&gt;Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Let us take a look at our latest pull request workflow and hopefully spark a few discussions that will empower all of us to embrace the pull request (PR) feature effectively.  &lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;What is a pull request (PR)?&lt;/h1&gt;
 &lt;p&gt;Pull Requests (PR) enable us to change, review, and merge code. We can add policies to your PRs to enable code quality in key branches using policies, validation builds, code-quality, and security scans. We all want to protect key branches such as trunk, master, or main, which should always be stable and deployable – the single source of truth.&lt;/p&gt;
@@ -2757,44 +2819,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;h2&gt;Why are sea charts more realistic?&lt;/h2&gt;
 &lt;p&gt;When sailing a boat across the sea, we are not restricted by the rails or by the paved roads. We are not even restricted by the dirt roads. The sea is wide open for exploring.&lt;/p&gt;
 &lt;p&gt;But the flexibility comes at a cost. Our sailing will be smooth if we catch the tail wind. But if we are counting and betting on the continuous presence of the tail wind, we’d be in for an unpleasant surprise. Because the weather conditions are volatile and unpredictable, we may experience head winds. Those types of winds are highly undesirable because they impede our progress by slowing us down and even pushing us off the planned course.&lt;/p&gt;
-&lt;p&gt;Knowing that, we are better equipped to deal with the &lt;strong&gt;VUCA&lt;/strong&gt; situation. Yes, by agreeing to avoid charging ahead in the straight line we may appear to be losing track of our goals, but in reality we are rolling with the punches and making sure we persist in our efforts to reach our destination. That way, we never sacrifice the precision of our plans.&lt;/p&gt;</content><category term="Posts"></category><category term="strategy"></category><category term="planning"></category></entry><entry><title>Journal 1 - What is origin of our common engineering team?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-1.html" rel="alternate"></link><published>2021-12-06T13:13:00-08:00</published><updated>2021-12-06T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-06:/common-engineering-journal-1.html</id><summary type="html">&lt;p&gt;Learning about the genesis of our EDO Common Engineering (EDO Ce) team&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I joined the Cloud Operations and Infrastructure team in 2018, I explored the variety of snowflakes decorating continuous integration and delivery pipelines, engineering practices, repositories, and solution architectures. While I agree with &lt;a href="https://en.wikipedia.org/wiki/Drive:_The_Surprising_Truth_About_What_Motivates_Us"&gt;Daniel Pink&lt;/a&gt; that knowledge workers have a need for autonomy to self-direct and manage their own lives, it must thrive within the context of engineering guardrails and organizational governance.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Daniel Pink" src="../images/common-engineering-journal-1-2.png"&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Autonomy&lt;/strong&gt; - Works exceptionally well in an environment where an engineers owns a feature from ideation to deprecation. Healthy DevOps mindset!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;RED FLAG&lt;/strong&gt; - When ownership of a feature is transferred to a sustainment, maintenance, site reliability, or any other team it is pivotal to balance autonomy with consistency and standarization. NOT a healthy DevOps mindset!
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I began to poke the hornet's nest in our architecture, development, operations, and security teams, which inspired guidance I contributed to the &lt;a href="https://www.tactec.ca/ndtw-resources/"&gt;Navigating DevOps through Waterfalls&lt;/a&gt; book. I highlighted the risk of &lt;strong&gt;autonomy without guardrails&lt;/strong&gt;, especially in an environment plagued by organizational silos that stifle collaboration and where ownership is transferred from team to team. We will be reflecting on this in future journals, as our common engineering team is promoting for engineers to own a feature from ideation to deprecation.  &lt;/p&gt;
-&lt;p&gt;On the 21st October 2019 I chose to consolidate the guidance, frequently asked questions and answers, knowledgebase, manifestos, and guardrails in an open wiki. The contents of the wiki is based on knowledge I gathered during collaboration, troubleshooting, breakfast and lunches, and informal meetups with fellow engineers in our atrium. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="CeS" src="../images/common-engineering-journal-1-3.png"&gt;&lt;/p&gt;
-&lt;p&gt;To this date, the wiki remains to be our &lt;strong&gt;go-to&lt;/strong&gt; place for engineering processes, security, standardization, collaboration, as well as the manifestos that started it all.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="CeS" src="../images/common-engineering-journal-1-4.png"&gt;&lt;/p&gt;
-&lt;p&gt;A few months ago I became aware that there were plans to promote our informal common engineering system, to a more strategic common engineering team.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;CeS Journal, entry #1&lt;/h1&gt;
-&lt;p&gt;For our journal, let us fast-forward to 6th December 2021, which marks the 67th day of our EDO Ce team, which emerged from the informal and rebellious common engineering system like a mythical Phoenix.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Journal Countdown" src="../images/common-engineering-journal-1-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;The EDO Ce team was launched with a leadership mandate to empower every engineer by standardizing practices and products, and stewarding guardrails to promote engineering consistency, enablement, security, and simplicity. &lt;/p&gt;
-&lt;p&gt;We agreed that our formal goals are to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Enable collaboration through active working groups, community of practices, and workshops.&lt;/li&gt;
-&lt;li&gt;Steward guardrails (lightweight governance) to foster consistency, maintainability, security, and simplicity.&lt;/li&gt;
-&lt;li&gt;Nurture the courage to experiment and fail, and breed a culture of continuous learning and innovation, and transparency.&lt;/li&gt;
-&lt;li&gt;Empower engineering to embrace high DevOps performance.&lt;/li&gt;
-&lt;li&gt;Foster the courage to tackle the status quo!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;My personal leadership vision is to: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Encourage and enable everyone’s creativity, passion, purpose, and strengths!&lt;/li&gt;
-&lt;li&gt;Declare war on WASTE, such as cycle time, excessive meetings, complexity, and manual processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;While we are all inspired by the phenomenal pace of innovation with &lt;a href="https://www.spacex.com/"&gt;SpaceX&lt;/a&gt;, and &lt;a href="https://en.wikipedia.org/wiki/Elon_Musk"&gt;Elon Musk's&lt;/a&gt; mantra to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Make requirements less dumb&lt;/li&gt;
-&lt;li&gt;Try to delete part of the process&lt;/li&gt;
-&lt;li&gt;Simplify or optimize&lt;/li&gt;
-&lt;li&gt;Accelerate cycle time&lt;/li&gt;
-&lt;li&gt;Automate&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the next journal update, I will explore &lt;em&gt;"why we need the common engineering team?"&lt;/em&gt; and how we navigate the endless friction between the demand by engineering for full autonomy and the quest to create a common (common == all of ours) engineering mindset.&lt;/p&gt;
-&lt;p&gt;See you next time!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="journal"></category></entry></feed>
+&lt;p&gt;Knowing that, we are better equipped to deal with the &lt;strong&gt;VUCA&lt;/strong&gt; situation. Yes, by agreeing to avoid charging ahead in the straight line we may appear to be losing track of our goals, but in reality we are rolling with the punches and making sure we persist in our efforts to reach our destination. That way, we never sacrifice the precision of our plans.&lt;/p&gt;</content><category term="Posts"></category><category term="strategy"></category><category term="planning"></category></entry></feed>
