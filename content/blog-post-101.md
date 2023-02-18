@@ -1,7 +1,7 @@
 Title: Our quest to share our knowledge with the world, keeping it interesting and informal
 Date: 2021-07-02
 Category: Posts 
-Tags: learning
+Tags: ai, innovation
 Slug: blog-post-101
 Author: Willy-Peter Schaub
 Summary: Understand how to navigate and create content for our technical blog.
@@ -29,6 +29,7 @@ Here is a list of tags we use when creating new content:
 | TAG             |~~| FOCUS   |
 |-----------------|--|---------|
 | agile           |  | Agile, Kanban, SAFe, and other frameworks to plan, track, and collaborate across teams. |
+| ai              |  | Artificial intelligence, machine learning, and intelligent bots. |
 | architecture    |  | Software architecture. | 
 | automation      |  | Automate repetitive tasks and processes. |
 | azure           |  | Microsoft [Azure](https://azure.microsoft.com). |
@@ -36,19 +37,19 @@ Here is a list of tags we use when creating new content:
 | books           |  | Reviewing new and recommended books.
 | ceremony        |  | Collaboration ceremonies. |
 | code            |  | Software coding.
-| code-quality |  | Objectively measurable characteristics of the code structure. |
+| code-quality    |  | Objectively measurable characteristics of the code structure. |
 | continuous-delivery |  | Uninterrupted flow of delivery of changes from development to production |
 | delivery-on-demand |  | Ability to deliver/release changes to the system any time business demands those changes be put in front of customers. |
-| design |  | Structuring the system and the code in the most optimal fashion. |
+| design          |  | Structuring the system and the code in the most optimal fashion. |
 | devops          |  | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |
-| dojo |  | Psychologically safe place dedicated to perfecting one's skills. |
+| dojo            |  | Psychologically safe place dedicated to perfecting one's skills. |
 | eliminate-waste |  | Continuous drive to avoid and reduce wasteful processes and products. |
 | engineering     |  | Software engineering. |
 | event           |  | Meetup, training, workshop, and other event gatherings. |
 | feature-flags   |  | Separating deploy from release through feature toggles / flags. |
-| innovation |  | Disrupting the status quo by proposing hypotheses and conducting observable/repeatable experiments to corroborate or falsify proposed hypotheses. |
-| journal |  | Regular EDO Common Engineering journal entries to share our progress, failures, and learnings. |
-| lean |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
+| innovation      |  | Disrupting the status quo by proposing hypotheses and conducting observable/repeatable experiments to corroborate or falsify proposed hypotheses. |
+| journal         |  | Regular EDO Common Engineering journal entries to share our progress, failures, and learnings. |
+| lean            |  | Maintaining low inventory, slim work in progress buffer and eliminating any duplications by practicing single source of truth paradigm. |
 | learning        |  | Continuous learning. |
 | metrics         |  | Telemetry, logging, metrics, and other evidence-based learnings. |
 | oss             |  | Open source software initiatives and discussions. |
@@ -60,12 +61,12 @@ Here is a list of tags we use when creating new content:
 | system-programming |  | Automating system operations. |
 | tdd             |  | Test-driven Development. |
 | technical-excellence |  | Focus on satisfying the minimum acceptable standard of quality in terms of security, safety, reliability, resilience, and performance. |
-| testability |  | Designing changes to the system in such way that they are 100% testable in a deterministic fashion. |
+| testability     |  | Designing changes to the system in such way that they are 100% testable in a deterministic fashion. |
 | testing         |  | Test to raise the quality bar and deploy with confidence. |
 | tips            |  | Tips and tricks. |
 | version-control |  | Secure, version, and collaborate to build better code. |  
 | workflow        |  | Streamline repetitive tasks and processes.
-| x-as-code |  | Virtualizing any aspect of the computing machinery. |
+| x-as-code       |  | Virtualizing any aspect of the computing machinery. |
 | xp              |  | Extreme programming ( XP) software development methodology. |
 
 
