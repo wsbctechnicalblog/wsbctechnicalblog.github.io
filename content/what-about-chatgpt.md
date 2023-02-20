@@ -44,11 +44,12 @@ We will have an uphill battle to convince our legal, freedom of information and 
 
 # AI <> Humanoid
 
-While many are scared that machines will take over our planet, we can rest assured that a machine will never be able to replace a human. Machines will never be able to demonstrate empathy or passion. 
+While many are scared that machines will take over our planet, we can rest assured that a machine will never be able to replace a human. Machines will never be able to demonstrate **empathy** or **passion**. 
 
 ---
 
 I hope that artificial intelligence is based in Azimov’s Laws of robotics
+
 1.	The robot shall not harm human or, by inaction allow a human to come to harm. 
 2.	The robot shall obey any instructions given to it by humans. 
 3.	The robot shall avoid actions or situations which could cause it to come to harm itself.
