@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-17T00:00:00-08:00</updated><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-22T00:00:00-08:00</updated><entry><title>Azure DevOps Pipeline OSS v2.1 Flow</title><link href="https://wsbctechnicalblog.github.io/azure-devops-pipeline-oss-v2-1-flow.html" rel="alternate"></link><published>2023-02-22T00:00:00-08:00</published><updated>2023-02-22T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-22:/azure-devops-pipeline-oss-v2-1-flow.html</id><summary type="html">&lt;p&gt;Two pull requests with pipeline updates for your perusal.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently enhanced our in-house Azure Pipelines v2 application-type blueprints. Although we deemed the latest blueprint as too WorkSafeBC specific and therefore have not published it, we posted two pull requests with an update to the git-tools-git-version.yml template, &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/13"&gt;PR#13&lt;/a&gt;, and an update to the overall pipeline workflow, &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;PR#14&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Path Version Variable&lt;/h1&gt;
+&lt;p&gt;The change in the git-tools-git-version.yml template is subtle. By adding line &lt;code&gt;83&lt;/code&gt; we create and set both the &lt;code&gt;semVersion&lt;/code&gt; and the &lt;code&gt;patchVersion&lt;/code&gt; variable.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;81&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;powershell&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;82&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;83&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/13"&gt;Pull Request 13&lt;/a&gt; for details.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ALSO SEE:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/sharing-variables-amongst-agents.html"&gt;How to share variables amongst Azure Pipeline agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/sharing-variables-with-stages-and-jobs.html"&gt;Gotchas when sharing variables with Azure DevOps stages and jobs&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Pre-Production Automation Stage&lt;/h1&gt;
+&lt;p&gt;With the v2 blueprints we introduced the &lt;code&gt;Quality Assurance Automation&lt;/code&gt; and &lt;code&gt;Security Automation&lt;/code&gt; stages, allowing you to run quality assurance automation after deploying to development or system test environment, as well as security automation before triggering a security review.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v2 pipeline flow&lt;/p&gt;
+&lt;p&gt;&lt;img alt="v2" src="../images/azure-devops-pipeline-oss-v2-1-flow-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As per &lt;a href="https://github.com/orgs/WorkSafeBC-Common-Engineering/discussions/4#discussioncomment-5002914"&gt;discussion with 604Kev&lt;/a&gt; we introduced a pre-production automation stage, allowing you to perform trivial tasks before deploying to production environments, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Notifying release management&lt;/li&gt;
+&lt;li&gt;Creating work items of Azure Boards for tracking&lt;/li&gt;
+&lt;li&gt;Telemetry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v2.1 pipeline flow&lt;/p&gt;
+&lt;p&gt;&lt;img alt="v2.1" src="../images/azure-devops-pipeline-oss-v2-1-flow-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;Pull Request 14&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
 &lt;p&gt;How we name and categorize things conveys meaning and intent - what it &lt;em&gt;is&lt;/em&gt; and possibly &lt;em&gt;how&lt;/em&gt; it should be used.  All
 in the aim of improving clarity of purpose and understanding its nature, and how it should be used.&lt;/p&gt;
 &lt;p&gt;When we talk about software, we are specifically addressing naming conventions and standards, patterns that
@@ -2798,25 +2834,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;/blockquote&gt;
 &lt;p&gt;C U in 2023 to disprove or prove my hypothesis q;-)&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Anything else that helps you to manage your emails?&lt;/p&gt;</content><category term="Posts"></category><category term="tips"></category></entry><entry><title>Replace road maps with sea charts</title><link href="https://wsbctechnicalblog.github.io/replace-roadmaps-with-seacharts.html" rel="alternate"></link><published>2021-12-10T00:00:00-08:00</published><updated>2021-12-10T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-10:/replace-roadmaps-with-seacharts.html</id><summary type="html">&lt;p&gt;Adopt more modest planning strategy by treating the journey as if sailing trecherous waters&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Dojo" src="../images/seachart.png"&gt;&lt;/p&gt;
-&lt;p&gt;Roadmaps are a familiar way to represent a strategic vision. We start from our current position, we then pinpoint our strategic goal/destination, and then map our projected journey by placing strategic milestones to be hit along the way.&lt;/p&gt;
-&lt;p&gt;Roadmaps are very useful in situations that are predictable and free of hazards. However, we live in the world that is not so predictable. The challenges are manifold, including global challenges such as the unpredictable pandemics, climate changes, economic turmoil, and so on. As our world is becoming more global and the blast radius of various changes keeps attaining ever wider reach, we are starting to recognize and acknowledge that we live in the so-called &lt;strong&gt;VUCA&lt;/strong&gt; world.&lt;/p&gt;
-&lt;h2&gt;What is &lt;strong&gt;VUCA&lt;/strong&gt;?&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Volatility%2c_uncertainty%2c_complexity_and_ambiguity"&gt;&lt;strong&gt;VUCA&lt;/strong&gt;&lt;/a&gt; is an acronym first used in 1987; it stands for:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;V&lt;/strong&gt;olatility&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;U&lt;/strong&gt;ncertainty&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;C&lt;/strong&gt;omplexity&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;mbiguity&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;If we recognize and acknowledge that we operate inside such environment, we begin to realize that roadmaps are not that useful. For example, two years ago we may have mapped an ambitious roadmap which then got completely invalidated when the pandemic hit in March 2020. Less than a year ago we may have projected another roadmap that got perturbed by the unexpected regulation to provide paid sick leave for employees affected by COVID-19. And so on; examples of volatility and uncertainty abound.&lt;/p&gt;
-&lt;h2&gt;Why do roadmaps tend to be imprecise?&lt;/h2&gt;
-&lt;p&gt;Roadmaps assume that all factors affecting the desired outcome are understood and managed. If we chart the direction, from our current position, to the desired destination, we feel we can draw a road leading from here to there. We also feel that the road is well paved, smooth, with clearly mapped pit stops, landmarks, and milestones.&lt;/p&gt;
-&lt;p&gt;In reality (as we’ve seen), &lt;strong&gt;VUCA&lt;/strong&gt; interferes without asking for our opinion or for our permission. It doesn’t even give us the slightest hint of warning. Volatility seems to appear randomly, creating uncertainty, complexity, and ambiguity.&lt;/p&gt;
-&lt;p&gt;And because we’ve invested a lot of energy into producing the roadmap, the temptation to stick to it persists. We’d often rather ignore the warning signals around us than agree to cut our losses and ditch the precious roadmap.&lt;/p&gt;
-&lt;p&gt;That bias leads to imprecision. By continuing on the now invalidated roadmap, we run the risk of not hitting our desired destination, and instead finding ourselves in an unfamiliar territory.&lt;/p&gt;
-&lt;p&gt;When that happens, we need to act carefully. Here is an analogy: if we buy a car and sit down and drive around, after a while we may park somewhere, get out, and look around. If, at that point, we realize that we do not like the place where we’ve arrived, we should not invest in buying a new car. Instead, we should invest in making better plans that get us to the desired destination.&lt;/p&gt;
-&lt;h2&gt;Why are sea charts more realistic?&lt;/h2&gt;
-&lt;p&gt;When sailing a boat across the sea, we are not restricted by the rails or by the paved roads. We are not even restricted by the dirt roads. The sea is wide open for exploring.&lt;/p&gt;
-&lt;p&gt;But the flexibility comes at a cost. Our sailing will be smooth if we catch the tail wind. But if we are counting and betting on the continuous presence of the tail wind, we’d be in for an unpleasant surprise. Because the weather conditions are volatile and unpredictable, we may experience head winds. Those types of winds are highly undesirable because they impede our progress by slowing us down and even pushing us off the planned course.&lt;/p&gt;
-&lt;p&gt;Knowing that, we are better equipped to deal with the &lt;strong&gt;VUCA&lt;/strong&gt; situation. Yes, by agreeing to avoid charging ahead in the straight line we may appear to be losing track of our goals, but in reality we are rolling with the punches and making sure we persist in our efforts to reach our destination. That way, we never sacrifice the precision of our plans.&lt;/p&gt;</content><category term="Posts"></category><category term="strategy"></category><category term="planning"></category></entry></feed>
+&lt;p&gt;Anything else that helps you to manage your emails?&lt;/p&gt;</content><category term="Posts"></category><category term="tips"></category></entry></feed>

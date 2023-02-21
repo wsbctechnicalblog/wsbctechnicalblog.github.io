@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-17T00:00:00-08:00</updated><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-02-22T00:00:00-08:00</updated><entry><title>Azure DevOps Pipeline OSS v2.1 Flow</title><link href="https://wsbctechnicalblog.github.io/azure-devops-pipeline-oss-v2-1-flow.html" rel="alternate"></link><published>2023-02-22T00:00:00-08:00</published><updated>2023-02-22T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-22:/azure-devops-pipeline-oss-v2-1-flow.html</id><summary type="html">&lt;p&gt;Two pull requests with pipeline updates for your perusal.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently enhanced our in-house Azure Pipelines v2 application-type blueprints. Although we deemed the latest blueprint as too WorkSafeBC specific and therefore have not published it, we posted two pull requests with an update to the git-tools-git-version.yml template, &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/13"&gt;PR#13&lt;/a&gt;, and an update to the overall pipeline workflow, &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;PR#14&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Path Version Variable&lt;/h1&gt;
+&lt;p&gt;The change in the git-tools-git-version.yml template is subtle. By adding line &lt;code&gt;83&lt;/code&gt; we create and set both the &lt;code&gt;semVersion&lt;/code&gt; and the &lt;code&gt;patchVersion&lt;/code&gt; variable.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;81&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;powershell&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;82&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mf"&gt;83&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/13"&gt;Pull Request 13&lt;/a&gt; for details.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ALSO SEE:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/sharing-variables-amongst-agents.html"&gt;How to share variables amongst Azure Pipeline agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/sharing-variables-with-stages-and-jobs.html"&gt;Gotchas when sharing variables with Azure DevOps stages and jobs&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Pre-Production Automation Stage&lt;/h1&gt;
+&lt;p&gt;With the v2 blueprints we introduced the &lt;code&gt;Quality Assurance Automation&lt;/code&gt; and &lt;code&gt;Security Automation&lt;/code&gt; stages, allowing you to run quality assurance automation after deploying to development or system test environment, as well as security automation before triggering a security review.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v2 pipeline flow&lt;/p&gt;
+&lt;p&gt;&lt;img alt="v2" src="../images/azure-devops-pipeline-oss-v2-1-flow-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As per &lt;a href="https://github.com/orgs/WorkSafeBC-Common-Engineering/discussions/4#discussioncomment-5002914"&gt;discussion with 604Kev&lt;/a&gt; we introduced a pre-production automation stage, allowing you to perform trivial tasks before deploying to production environments, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Notifying release management&lt;/li&gt;
+&lt;li&gt;Creating work items of Azure Boards for tracking&lt;/li&gt;
+&lt;li&gt;Telemetry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v2.1 pipeline flow&lt;/p&gt;
+&lt;p&gt;&lt;img alt="v2.1" src="../images/azure-devops-pipeline-oss-v2-1-flow-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;Pull Request 14&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
 &lt;p&gt;How we name and categorize things conveys meaning and intent - what it &lt;em&gt;is&lt;/em&gt; and possibly &lt;em&gt;how&lt;/em&gt; it should be used.  All
 in the aim of improving clarity of purpose and understanding its nature, and how it should be used.&lt;/p&gt;
 &lt;p&gt;When we talk about software, we are specifically addressing naming conventions and standards, patterns that
@@ -2793,44 +2829,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;h2&gt;Why are sea charts more realistic?&lt;/h2&gt;
 &lt;p&gt;When sailing a boat across the sea, we are not restricted by the rails or by the paved roads. We are not even restricted by the dirt roads. The sea is wide open for exploring.&lt;/p&gt;
 &lt;p&gt;But the flexibility comes at a cost. Our sailing will be smooth if we catch the tail wind. But if we are counting and betting on the continuous presence of the tail wind, we’d be in for an unpleasant surprise. Because the weather conditions are volatile and unpredictable, we may experience head winds. Those types of winds are highly undesirable because they impede our progress by slowing us down and even pushing us off the planned course.&lt;/p&gt;
-&lt;p&gt;Knowing that, we are better equipped to deal with the &lt;strong&gt;VUCA&lt;/strong&gt; situation. Yes, by agreeing to avoid charging ahead in the straight line we may appear to be losing track of our goals, but in reality we are rolling with the punches and making sure we persist in our efforts to reach our destination. That way, we never sacrifice the precision of our plans.&lt;/p&gt;</content><category term="Posts"></category><category term="strategy"></category><category term="planning"></category></entry><entry><title>Journal 1 - What is origin of our common engineering team?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-1.html" rel="alternate"></link><published>2021-12-06T13:13:00-08:00</published><updated>2021-12-06T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-06:/common-engineering-journal-1.html</id><summary type="html">&lt;p&gt;Learning about the genesis of our EDO Common Engineering (EDO Ce) team&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I joined the Cloud Operations and Infrastructure team in 2018, I explored the variety of snowflakes decorating continuous integration and delivery pipelines, engineering practices, repositories, and solution architectures. While I agree with &lt;a href="https://en.wikipedia.org/wiki/Drive:_The_Surprising_Truth_About_What_Motivates_Us"&gt;Daniel Pink&lt;/a&gt; that knowledge workers have a need for autonomy to self-direct and manage their own lives, it must thrive within the context of engineering guardrails and organizational governance.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Daniel Pink" src="../images/common-engineering-journal-1-2.png"&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Autonomy&lt;/strong&gt; - Works exceptionally well in an environment where an engineers owns a feature from ideation to deprecation. Healthy DevOps mindset!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;RED FLAG&lt;/strong&gt; - When ownership of a feature is transferred to a sustainment, maintenance, site reliability, or any other team it is pivotal to balance autonomy with consistency and standarization. NOT a healthy DevOps mindset!
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I began to poke the hornet's nest in our architecture, development, operations, and security teams, which inspired guidance I contributed to the &lt;a href="https://www.tactec.ca/ndtw-resources/"&gt;Navigating DevOps through Waterfalls&lt;/a&gt; book. I highlighted the risk of &lt;strong&gt;autonomy without guardrails&lt;/strong&gt;, especially in an environment plagued by organizational silos that stifle collaboration and where ownership is transferred from team to team. We will be reflecting on this in future journals, as our common engineering team is promoting for engineers to own a feature from ideation to deprecation.  &lt;/p&gt;
-&lt;p&gt;On the 21st October 2019 I chose to consolidate the guidance, frequently asked questions and answers, knowledgebase, manifestos, and guardrails in an open wiki. The contents of the wiki is based on knowledge I gathered during collaboration, troubleshooting, breakfast and lunches, and informal meetups with fellow engineers in our atrium. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="CeS" src="../images/common-engineering-journal-1-3.png"&gt;&lt;/p&gt;
-&lt;p&gt;To this date, the wiki remains to be our &lt;strong&gt;go-to&lt;/strong&gt; place for engineering processes, security, standardization, collaboration, as well as the manifestos that started it all.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="CeS" src="../images/common-engineering-journal-1-4.png"&gt;&lt;/p&gt;
-&lt;p&gt;A few months ago I became aware that there were plans to promote our informal common engineering system, to a more strategic common engineering team.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;CeS Journal, entry #1&lt;/h1&gt;
-&lt;p&gt;For our journal, let us fast-forward to 6th December 2021, which marks the 67th day of our EDO Ce team, which emerged from the informal and rebellious common engineering system like a mythical Phoenix.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Journal Countdown" src="../images/common-engineering-journal-1-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;The EDO Ce team was launched with a leadership mandate to empower every engineer by standardizing practices and products, and stewarding guardrails to promote engineering consistency, enablement, security, and simplicity. &lt;/p&gt;
-&lt;p&gt;We agreed that our formal goals are to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Enable collaboration through active working groups, community of practices, and workshops.&lt;/li&gt;
-&lt;li&gt;Steward guardrails (lightweight governance) to foster consistency, maintainability, security, and simplicity.&lt;/li&gt;
-&lt;li&gt;Nurture the courage to experiment and fail, and breed a culture of continuous learning and innovation, and transparency.&lt;/li&gt;
-&lt;li&gt;Empower engineering to embrace high DevOps performance.&lt;/li&gt;
-&lt;li&gt;Foster the courage to tackle the status quo!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;My personal leadership vision is to: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Encourage and enable everyone’s creativity, passion, purpose, and strengths!&lt;/li&gt;
-&lt;li&gt;Declare war on WASTE, such as cycle time, excessive meetings, complexity, and manual processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;While we are all inspired by the phenomenal pace of innovation with &lt;a href="https://www.spacex.com/"&gt;SpaceX&lt;/a&gt;, and &lt;a href="https://en.wikipedia.org/wiki/Elon_Musk"&gt;Elon Musk's&lt;/a&gt; mantra to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Make requirements less dumb&lt;/li&gt;
-&lt;li&gt;Try to delete part of the process&lt;/li&gt;
-&lt;li&gt;Simplify or optimize&lt;/li&gt;
-&lt;li&gt;Accelerate cycle time&lt;/li&gt;
-&lt;li&gt;Automate&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the next journal update, I will explore &lt;em&gt;"why we need the common engineering team?"&lt;/em&gt; and how we navigate the endless friction between the demand by engineering for full autonomy and the quest to create a common (common == all of ours) engineering mindset.&lt;/p&gt;
-&lt;p&gt;See you next time!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="journal"></category></entry></feed>
+&lt;p&gt;Knowing that, we are better equipped to deal with the &lt;strong&gt;VUCA&lt;/strong&gt; situation. Yes, by agreeing to avoid charging ahead in the straight line we may appear to be losing track of our goals, but in reality we are rolling with the punches and making sure we persist in our efforts to reach our destination. That way, we never sacrifice the precision of our plans.&lt;/p&gt;</content><category term="Posts"></category><category term="strategy"></category><category term="planning"></category></entry></feed>
