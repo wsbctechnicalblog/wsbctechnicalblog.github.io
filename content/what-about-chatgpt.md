@@ -60,5 +60,5 @@ Let me ask my son, Thorsten who studied psychology, to review my post and share 
 
 # Closing thoughts by [(T)horsten]( https://twitter.com/tschaub18)
 
-TBD
+@TBD@Waiting for paragraph from T@
 
