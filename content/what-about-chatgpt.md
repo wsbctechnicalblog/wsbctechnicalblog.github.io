@@ -22,7 +22,7 @@ Respect as I programmed on the Intel 80186 processor, which had a 16-bit data wi
 
 ---
 
-# I loathe the dump chat bots
+# I loathe the dumb chat bots
 
 ![Dumb Robot](../images/what-about-chatgpt-4.png)
  
@@ -36,7 +36,7 @@ We have all experienced it. You spend hours reading static web pages from your f
  
 What excites me about artificial intelligence is that we can turn the dialog with the machine into a meaningful conversation, making it possible for the machine to continuously learn, ask clarification questions, and investigate and formulate a detailed response in the background. Multi, continuous, repetitive, and context switching tasking is no problem for our binary companions.
 
-I dream of a common engineering bot that can be the friendly onboarding buddy, an engineer’s patient wingman, and the first point contact for all technical and operational support. If anyone wants to raise this as an idea for the upcoming InnoFest / Hackathon, then you have both by vote and support! 
+I dream of a common engineering bot that can be the friendly onboarding buddy, an engineer’s patient wingman, and the first point contact for all technical and operational support. If anyone wants to raise this as an idea for the upcoming InnoFest / Hackathon, then you have both my vote and support! 
 
 We will have an uphill battle to convince our legal, freedom of information and protection of privacy act, and especially our security team, but having a conversation with an intelligent bot makes it all worth it. 
 
