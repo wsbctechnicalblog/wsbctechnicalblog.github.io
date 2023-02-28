@@ -60,5 +60,16 @@ Let me ask my son, Thorsten who studied psychology, to review my post and share 
 
 # Closing thoughts by [(T)horsten]( https://twitter.com/tschaub18)
 
-@TBD@Waiting for paragraph from T@
+As Willy said, a machine will never be able to replace a human. Given that statement, I prompted ChatGPT with the following question: “Do you have empathy?”
+
+This is the response I got: "As an artificial intelligence language model, I do not have emotions or feelings in the same way that humans do. While I can recognize and understand emotions based on the input I receive, I do not have the capacity to experience empathy or any other emotions. My primary function is to process information and provide responses based on that information.”
+
+So, what separates machines from humans? Humans have historically been compared to other beings as superior in intelligence, language, culture, technology, and self-awareness. AI models overshadow humans in intelligence, language, and technology, but cannot compensate in areas of culture and self-awareness. Self-awareness is the pivotal aspect that separates humans from other beings, including machines. It allows us to be aware of ourselves, others and have the ability to reflect on our own thoughts and feelings. These feelings drive the understanding humans have of the world, and the reality we create within it.
+
+What does this mean? If thinking about this in a rather simplistic way, is that for a machine to produce an output, it requires an initial input, which is ultimately driven by human emotions. 
+
+While I believe AI models are progressively taking over the world and can be an intimidating force to accept, it cannot replace humans as a whole. A common understanding in Psychology is that we cannot predict human behaviour with absolute surety, because at the core of our beings, every human being is different. Human beings are reactive, mainly driven by emotions. 
+
+AI models are already relevant in human society, what is important is that we recognize the limitations of these machines. Humans do have weaknesses that are fundamental to emotions, such as being irrational. A machine or so called AI-model, will never be irrational and rather just produce answers that are statistically driven by human input, which is still based on emotions.
+
 
