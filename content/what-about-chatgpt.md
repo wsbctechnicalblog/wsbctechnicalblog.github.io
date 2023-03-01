@@ -1,9 +1,9 @@
 Title: What about ChatGPT?
-Date: 2023.02.22
+Date: 2023.03.01
 Category: Posts 
-Tags: <COMMA SEPARATED LIST OF TAGS. See blog-post-101.md for allowed tags.>
+Tags: ai, learning
 Slug: what-about-chatgpt
-Author: <Willy-Peter Schaub
+Author: Willy-Peter Schaub
 Summary: A question that made me speechless at a recent Navigating the Future event.
 
 A colleague asked a great question at a recent Navigating the Future event, which I answered with “I have no answer for you today.” To my defence, I was not feeling well at the time, had a cracking headache, and was therefore trying to hide in the audience. But … the reason I had no actionable answer was that I have been mulling over [ChatGPT]( https://openai.com/blog/chatgpt) and [OpenAI]( https://openai.com) for weeks, balancing a deep-rooted fear with respect for artificial intelligence. 
@@ -58,7 +58,7 @@ Let me ask my son, Thorsten who studied psychology, to review my post and share 
 
 ---
 
-# Closing thoughts by [(T)horsten]( https://twitter.com/tschaub18)
+# Closing thoughts by [(T)horsten](https://twitter.com/tschaub18)
 
 As Willy said, a machine will never be able to replace a human. Given that statement, I prompted ChatGPT with the following question: “Do you have empathy?”
 
@@ -71,5 +71,4 @@ What does this mean? If thinking about this in a rather simplistic way, is that 
 While I believe AI models are progressively taking over the world and can be an intimidating force to accept, it cannot replace humans as a whole. A common understanding in Psychology is that we cannot predict human behaviour with absolute surety, because at the core of our beings, every human being is different. Human beings are reactive, mainly driven by emotions. 
 
 AI models are already relevant in human society, what is important is that we recognize the limitations of these machines. Humans do have weaknesses that are fundamental to emotions, such as being irrational. A machine or so called AI-model, will never be irrational and rather just produce answers that are statistically driven by human input, which is still based on emotions.
-
 
