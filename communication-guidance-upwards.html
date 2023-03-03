@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Do not automate anything unless you automate the tests - </title>
+        <title>Communication Guidance Upwards - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,53 +32,71 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automate-tests.html" rel="bookmark"
-            title="Permalink to Do not automate anything unless you automate the tests">Do not automate anything unless you automate the tests</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/communication-guidance-upwards.html" rel="bookmark"
+            title="Permalink to Communication Guidance Upwards">Communication Guidance Upwards</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 04 November 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 03 March 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Automating critical systems operations without having automated tests is risky practice</p>
+            <p>Before you ask for anything, get clarity on the five WHYs!</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Automate QA" src="../images/qatrex.jpg"></p>
-<p>There are three types of automated tests that software engineers focus on:</p>
-<ol>
-<li>Customer-facing functionality</li>
-<li>Code structure quality</li>
-<li>Systems operations</li>
-</ol>
-<h2>Customer-facing functionality</h2>
-<p>Teams build and ship features that enable customers to perform self-service activities. Customers appreciate the convenience of being in the driver’s seat and availing themselves of many useful and needed services.</p>
-<p>The desired behaviour of the systems that teams are building must be fully tested before it is placed in front of paying customers. It is extremely desirable to make the systems fully testable by writing automated tests. Such tests are faster and more reliable than manual tests. They enable teams to engage in continuous delivery while minimizing the risk of introducing defects.</p>
-<h2>Code structure quality</h2>
-<p>Unlike automating the tests that guarantee the desired behaviour of the system, automating the tests that guarantee the code structure quality is a bit trickier. Code structure quality hinges on many industry accepted design principles. Static code analysis tools can provide the metrics that expose the level of the code structure quality. Where the tricky part enters the picture is in deciding which of those metrics are a necessary factor when it comes to assessing the code structure quality.</p>
-<p>While the automated tests that verify customer-facing behaviour (i.e., functionality) are by their nature binary (i.e., either the functionality is present or it isn’t present), automated tests that assess the code structure quality are quite nuanced. It is up to the company’s quality standards to establish the bar – the minimum acceptable quality of the code structure that gets shipped to production.</p>
-<h2>Systems operations</h2>
-<p>When I started my career in the 1990s, the company I worked for (BC InfoHealth, cutting payroll for all hospitals in British Columbia) was still running their business on mainframe computers. Those behemoth machines were situated in the sealed, air-conditioned computer room with a crew of computer operators buzzing around wearing white lab coats (sounds like a scene from some futuristic movie).</p>
-<p>Back in the day, operating those large computer systems was completely manual. One of the reasons mainframe computers got phased out was the unwieldiness of the operations. It was too slow, cumbersome, tedious, and quirky, not to mention exorbitantly expensive.</p>
-<p>Fast forward to today when we finally managed to completely commoditize the computing infrastructure (infrastructure-as-code). Since infrastructure is code, that means it is fully programmable. And that’s why there is a big push toward automating all systems operations.</p>
-<p>To automate systems operations, one must become proficient in systems programming. Programming systems operations is not necessarily the same as programming business applications. If we are to efficiently program any systems operations, we need to understand how those systems work.</p>
-<p>I have seen plenty of very knowledgeable systems programmers write very elaborate programs that automatically run intricate computer operations. I remember reviewing large source code files, containing tens of thousands of lines of code per file. And in almost every of those large files, the code was far from being trivial. Hundreds, if not thousands of nested if-else statements, hundreds of try-catch blocks of code. It’s a veritable jungle!</p>
-<p>Whenever I review any such large files containing the code that runs intricate computer operations, I always make a point to ask the authors: “How did you test this and how do you plan to keep testing the changes going forward?”</p>
-<p>The answer always manages to shock me: “We always test it manually!”</p>
-<p>What is odd in that situation is that experts who spend a lot of time writing sophisticated programs and scripts to automate computer operations never seem to write automated tests. Almost always (in my experience), they resort to manual testing.</p>
-<p>That arrangement raises all sorts of red flags in my mind. When I look at those intricate and convoluted nested if-else statements and those numerous try-catch blocks of code, all I see is plenty of danger zones. If whoever is maintaining those automated scripts does not fully understand the logic governing the automation, they run a huge risk of introducing serious bugs while maintaining the automated system operations.</p>
-<h2>Never write any automated processing without first having automated tests that cover it</h2>
-<p>I think it would be foolhardy to produce a lot of automation without having tests that run any time we make any changes to the automated system and alert us if anything gets broken. That, in my mind, would be an absolute minimal requirement for a well-engineered solution.</p>
-<p>We have adopted and implemented TDD practices in WorkSafeBC. However, those practices only pertain to automating the processing of business policy rules. When it comes to automating systems operations, we don’t have any TDD, nor other automated testing strategy. Seems like we always tend to resort to manual testing when making changes to the source code that automates critical system operations.</p>
-<p>It is high time to mitigate the risks and discontinue such approach and to adopt and implement the test-first approach. It is very important to first and foremost implement executable expectation when automating any aspect of the system operation. Once we have that executable expectation up and running, we can safely proceed to implement the code that will automate the actual operation. That way, we will produce a safety net of tightly knit automated tests that will guarantee we won’t inadvertently break anything nor introduce any regression when maintaining, enhancing, enriching, or repurposing any of our automated operations.</p>
-<h2>Conclusion</h2>
-<p>Software engineers serve the business needs by automating business processes. But in addition to that, software engineers engage in continuous improvement of the processes that deliver the business automation.</p>
-<p>While the automation of the business processes is delivered via carefully chosen testing strategy, automation of the critical systems operations lacks such well-engineered strategy. It is critically important that we adopt stringent test-first approach to automating critical systems operations. The criticality is even more urgent when we realize that automated system processing always runs a risk of creating catastrophic damages by programmatically elevating the permissions during runtime. All it takes is for an automated program/script to issue the <strong>RunAs</strong> command, and the program elevates itself to the highest level of authority on the system. Basically, the program becomes a super user, capable to doing anything on the system!</p>
-<p>We must make sure any such unauthorized breaches of security get caught by the tests before the automated script/program reaches production.</p>
+            <p>I am working on my communication and collaboration skills. Although these posts will not be of a technical nature, they will benefit us all. I learn by doing and sharing and I love getting candid feedback from you, as well as from my manager and mentor.</p>
+<p>In recent courses I learnt that the impact of communication is made up of 7% words, 38% tone, and 55% cues. </p>
+<blockquote>
+<p><img alt="communication" src="../images/communication-guidance-upwards-0.png"></p>
+</blockquote>
+<p>That is for interactive communication! For written communication we lose the cues, making the words and tone even more important.</p>
+<hr>
+<h1>Communicating upwards to executive domain</h1>
+<p>Our leaders are typically driven by <strong>goals</strong>, focused on the <strong>bottom line</strong>, and push for progress at a <strong>rapid</strong> pace. If our communication and proposals are too complex, they quickly become overburdened with the complexities, and are more likely to become dismissive.</p>
+<p>We must paint a picture of success, clearly describe the <strong>WHY</strong>, and <strong>HOW</strong> we will affect the goals and bottom line. Communicate your idea/plan/request directly and objectively - no fillers, no waffling, no noise, and no redundant nouns.</p>
+<p>If you are a <strong>dreamer</strong> like I am, you must balance your <strong>dream</strong> with <strong>reality</strong> or be viewed as overly optimistic and disruptive. </p>
+<p>I created a basic template to help me document initiatives when I need stakeholder advice, buy-in, and support. I am encouraging my team to use the same template when they have an idea, or if I ask them to create a plan.</p>
+<p>Hope the template will help you as well.</p>
+<hr>
+<h1>Proposal Template</h1>
+<p>Here is the template I created.</p>
+<blockquote>
+<p><img alt="Template" src="../images/communication-guidance-upwards-1.png"></p>
+</blockquote>
+<ul>
+<li>Slides 1 (cover), 2 (quotes), 9 (references), and 10 (Q&amp;A) are intended for presentations.</li>
+<li>Slide 3: <strong>PROBLEM TO SOLVE</strong> - Before you commit your <strong>problem</strong> to paper, investigate the root cause. The five (5) WHYs technique is an effective way for you to do <strong>root</strong> cause analysis and to find the root cause of any problem. It is also an effective way for your audience to test your <strong>problem definition</strong>.</li>
+</ul>
+<blockquote>
+<p>“<em>The basis of Toyota’s scientific approach is to ask why five times whenever we find a problem … By repeating why five times, the nature of the problem as well as its solution becomes clear.</em>“ Taiichi Ohno</p>
+</blockquote>
+<ul>
+<li>Slide 4: <strong>OVERVIEW</strong> - A crisp overview of the proposal - <strong>WHAT</strong> is it all about.</li>
+<li>Slide 5: <strong>BENEFITS</strong> - Outline the benefits of investing in the proposal - <strong>WHAT</strong> is the value.</li>
+<li>Slide 6: <strong>PROBLEM TO SOLVE</strong> - If proposal is focused on a problem, describe the problem to be resolved.  </li>
+<li>Slide 7: <strong>INNOVATION</strong> - If the proposal is focused on an innovation, describe the innovation to invest in.</li>
+<li>Slide 8: <strong>EXPECTED OUTCOME</strong> - This is the most important part, which describes the outcome and value proposition in the following format:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="nv">We</span> <span class="nv">want</span> <span class="nv">to</span> <span class="o">&lt;</span><span class="nv">WHAT</span><span class="o">&gt;</span>.
+        <span class="nv">I</span> <span class="nv">recommend</span> <span class="nv">that</span> <span class="o">&lt;</span><span class="nv">HOW</span>,<span class="nv">WHAT</span><span class="o">&gt;</span>. 
+        <span class="nv">There</span> <span class="nv">are</span> <span class="nv">several</span> <span class="nv">benefits</span>:
+            <span class="nv">First</span>, <span class="o">&lt;</span><span class="nv">CORE</span> <span class="nv">VALUE</span><span class="o">&gt;</span>. 
+            <span class="nv">Also</span>, <span class="o">&lt;</span><span class="nv">OTHER</span> <span class="nv">VALUE</span><span class="o">&gt;</span>. 
+            <span class="nv">Finally</span>, <span class="o">&lt;</span><span class="nv">OTHER</span> <span class="nv">VALUE</span><span class="o">&gt;</span>.
+    <span class="nv">Imagine</span>, <span class="k">if</span> <span class="o">&lt;</span><span class="nv">WHAT</span><span class="o">&gt;</span>, <span class="nv">we</span> <span class="nv">will</span> <span class="o">&lt;</span><span class="nv">VALUE</span><span class="o">&gt;</span>.
+</code></pre></div>
+
+<p>Remember to keep your communication crisp. The left sample is focused on the salient points and keeping the details (verbiage) in the speaker notes for reference. Avoid the slide on the right - you will lose your audience!</p>
+<blockquote>
+<p><img alt="crisp versus noisy" src="../images/communication-guidance-upwards-2.png"></p>
+</blockquote>
+<p>Hope this helps you with your next communication.</p>
+<hr>
+<p>Remember, less is more! Know your audience and make every word count!</p>
         </div>
 
         
@@ -94,10 +112,10 @@
 
     </section>
     <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing </a><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD </a><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming </a>
-        | <a href="https://wsbctechnicalblog.github.io/automate-tests.html" rel="bookmark"
-         title="Permalink to Do not automate anything unless you automate the tests">Permalink</a>            
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
+        | <a href="https://wsbctechnicalblog.github.io/communication-guidance-upwards.html" rel="bookmark"
+         title="Permalink to Communication Guidance Upwards">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
@@ -186,8 +204,8 @@
                 <h3>Categories</h3>
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (1)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (133)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (133)</li>
                 </ul>
              
             </div>
