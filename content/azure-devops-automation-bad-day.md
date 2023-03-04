@@ -42,7 +42,7 @@ Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support
 
 # 2AM CALL @ high noon
 
-Just before high-noon we were getting pulled into **all hands-on deck**, also known as the **infamous 2AM-call** collaboration sessions. One of our Azure Pipelines had deployed all the way to production after getting the ```thumbs-up``` from our security engineers, skipping our **Staging (ST)** and **Production (PR)** pre-approval gates. By passing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. 
+Just before high-noon we were getting pulled into **all hands-on deck**, also known as the **infamous 2AM-call** collaboration sessions. One of our Azure Pipelines had deployed all the way to production after getting the ```thumbs-up``` from our security engineers, skipping our **Staging (ST)** and **Production (PR)** pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. 
 
 > ![](../images/azure-devops-automation-bad-day-5.png) 
 
