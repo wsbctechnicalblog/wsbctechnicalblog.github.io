@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Automation Bad Day - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
+            title="Permalink to Automation Bad Day">Automation Bad Day</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 06 March 2023</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Clearly yesterday was a bad day.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>"<em>Clearly yesterday was a bad day</em>" is a quote by <a href="https://www.linkedin.com/in/brharry/">Brian Harry</a> in his <a href="https://devblogs.microsoft.com/bharry/bad-day/">Bad Day</a> blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. </p>
+<p>In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (<strong>c-a-c</strong>) era was born. The CSV files and associated automation using the Azure DevOps <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a>, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.</p>
+<blockquote>
+<p><strong>Outcome</strong>: Consistency, standardization, security, and time-savings!</p>
+</blockquote>
+<p>Let us have a peak at one of our demo <code>c-a-c</code> files to understand the automation process.</p>
+<hr>
+<h1>Our configuration-as-code (c-a-c)</h1>
+<blockquote>
+<p><img alt="c-a-c" src="../images/azure-devops-automation-bad-day-1.png"></p>
+</blockquote>
+<p>At the top is a typical Azure Pipeline, delivering artifacts to a number of stage environments, with four humanoid gates.</p>
+<p>At the bottom is a demo <code>c-a-c</code> CSV file, with one row per stage. Each row defines the pre approver(s), the post-approver(s), and the approval method. When our <code>c-a-c</code> automation runs, it restores the Azure Pipeline pre- and post-approvals to the last known and desired configuration if the Set value is <code>Yes</code>. In other words, if you fiddle with the approvals manually, the automation will overwrite your changes when it runs.</p>
+<p>Although the actual <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a> logic is not trivial, our <code>c-a-c</code> concept is.</p>
+<hr>
+<h1>Meltdown timeline</h1>
+<p>Our bad day actually started on March 2nd at high-noon, when my colleague Daniel ran the latest <code>c-a-c</code> file I fine-tuned for hours. Fortunately, I opted against a big-bang <code>c-a-c</code> reset and only had about 15% of the 2,500 Azure Pipelines and their stages configured with <code>Set=Yes</code>. The automation ran like a dream.</p>
+<p>At around 15:00 our delivery teams reported that their pipelines were failing, unable to connect to an agent. At first, we all suspected our automation, because the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> was showing an <code>Everything is looking good</code> status.</p>
+<blockquote>
+<p><img alt="timeline" src="../images/azure-devops-automation-bad-day-2.png"></p>
+</blockquote>
+<p>Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support tickets the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> switched to an <code>unhealthy</code> status due to the <a href="https://status.dev.azure.com/_event/371776903">Pipeline error: Failure in sending the provision message</a> incident. Little did we know that this incident actually reduced the blast radius of our bad day, as most teams opted for another day by the time the Azure Agents were back to a healthy state. </p>
+<hr>
+<h1>2AM CALL @ high noon</h1>
+<p>Just before high-noon we were getting pulled into <strong>all hands-on deck</strong>, also known as the <strong>infamous 2AM-call</strong> collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our <strong>Staging (ST)</strong> and <strong>Production (PR)</strong> pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. </p>
+<blockquote>
+<p><img alt="" src="../images/azure-devops-automation-bad-day-5.png"> </p>
+</blockquote>
+<p>In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. </p>
+<blockquote>
+<p><img alt="c-a-c meltdown" src="../images/azure-devops-automation-bad-day-3.png"> </p>
+</blockquote>
+<p>We determined that the automation run, from the previous day, had purged, not set, the pre-approver(s) for all processed pipelines. In other words, the only gate between production and the delivery teams was the Security Review <strong>post</strong>-approver.</p>
+<hr>
+<h1>Core Issue</h1>
+<p>As all software glitches, the root cause was a trivial typo. Note the missing <code>s</code> in the <strong>Pre Approver</strong> column header.</p>
+<blockquote>
+<p><img alt="core issue" src="../images/azure-devops-automation-bad-day-4.png"> </p>
+</blockquote>
+<p>As a result, the automation did exactly what my configuration file instructed it to do.</p>
+<ul>
+<li>System Test (SY), Staging (SR), and Production (PR) Stage were updated as <code>Set=Yes</code>.</li>
+<li>Pre-approvers were purged as the value for <code>Pre-Approvers</code> was <code>null</code>.</li>
+</ul>
+<p>Another quote from Brian's post comes to mind here: "<em>The hard thing about this is that anything can go wrong and it’s only obvious in hindsight what you should have been protecting against</em>".</p>
+<hr>
+<h1>Remediate &amp; Learn</h1>
+<p>Our focus was, as expected, to restore the health of our Azure Pipelines. Fortunately, only a small subset of Azure Pipelines was affected, thanks to Microsoft outage and our close collaboration with our DevSecOps team.</p>
+<ul>
+<li>Pipelines not triggered by a change to the <code>release</code> branch, were stopped by our artifact filters.</li>
+<li>Pipelines that made it through to the <strong>Security Review</strong> stage, where stopped cold by our security engineers.</li>
+</ul>
+<p>In parallel we fixed the <code>c-a-c</code> header and triggered the automation to undo the damage. We also took the opportunity to add pre-automation validation to reduce the likelihood of a recurrence.</p>
+<p>And, most importantly, we shared the status of the incident, analysis, root cause, and remediation transparently. </p>
+<hr>
+<p>A huge <strong>THANK YOU</strong> to our vigilant delivery team, security engineers, operations engineers, and my team for keeping cool and focused throughout the turbulent Friday.</p>
+<p>Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!</p>
+        </div>
+
+        
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24HuV66af9ahG4CwPsLx5F81"+"&opts=16798&num=10&ts=1644344212324");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+
+   
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
+        | <a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
+         title="Permalink to Automation Bad Day">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+    <!-- disqus  -->
+</div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(45)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(40)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(30)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(13)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(14)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(45)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (1)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (134)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
