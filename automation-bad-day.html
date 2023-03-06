@@ -7,7 +7,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Quality of Design - </title>
+        <title>Automation Bad Day - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -32,68 +32,79 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/quality-of-design.html" rel="bookmark"
-            title="Permalink to Quality of Design">Quality of Design</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
+            title="Permalink to Automation Bad Day">Automation Bad Day</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Wed 27 October 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 06 March 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Adopt design principles to ensure highest quality of the code design</p>
+            <p>Clearly yesterday was a bad day.</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Quality of design" src="../images/quality-of-design.png"></p>
-<p>Quality of design in software engineering is focused on the code structure. There are many ways to implement the desired behaviour of a software product. Careless implementation of desired behaviour delivers poor quality of design. Consequently, the quality of the delivery gets compromised.</p>
-<p>It is therefore paramount to invest time and effort to ensure that quality of the designed code structure is optimal. There are two branches of industry standards that serve as guidelines when it comes to producing optimal quality of the designed code structure:</p>
-<ol>
-<li>Design principles</li>
-<li>Design patterns</li>
-</ol>
-<p>Design patterns have been introduced more than 25 years ago (<a href="https://www.amazon.ca/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?dchild=1&amp;gclid=Cj0KCQjw8eOLBhC1ARIsAOzx5cH-0nZehpHbrYfJBmdgtJ5AAfU0wYOyyHk4LrPvKjNjmsHAy31fcO8aAlsVEALw_wcB&amp;hvadid=353255290729&amp;hvdev=c&amp;hvlocphy=9001545&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=362995041334244275&amp;hvtargid=kwd-301036555631&amp;hydadcr=26084_9772498&amp;keywords=design+patterns+gang+of+four&amp;qid=1635370689&amp;sr=8-1">Design Patterns: Elements of Reusable Object-Oriented Software</a>, published in 1994). Most software engineers are by now familiar with many design patterns, which is a great improvement compared to earlier days of software engineering practices.</p>
-<p>Design principles, on the other hand, are still not as widely accepted as design patterns are. Now may be a good time to pay a bit closer attention to what design principles mean and how to adopt them in our daily practice.</p>
-<h2>What are design principles?</h2>
-<p>Organizing structural components of a software system should be following accepted industry standards. These standards comprise the body of design principles.</p>
-<p>The standardized body of design principles has two levels of abstraction:</p>
-<ol>
-<li>Coarse-grained design principles</li>
-<li>Fine-grained design principles</li>
-</ol>
-<p>Coarse-grained design principles are difficult to apply in daily practice because they are quite abstract. There are four coarse-grained design principles:</p>
-<ol>
-<li>Low coupling</li>
-<li>High cohesion</li>
-<li>Low complexity</li>
-<li>Proper encapsulation</li>
-</ol>
-<p>Fine-grained design principles are less abstract and therefore easier to apply in daily practice. Adhering to fine-grained design principles ensures adherence to more abstract, coarse-grained design principles.</p>
-<h2>What are the benefits of design principles?</h2>
-<p>Design principles are helpful in building common basis of architectural knowledge. By following guidelines on how to implement fine-grained design principles, software engineers get enabled to build, understand, and maintain high-quality software systems. Systems built following design principles can successfully grow into large scale systems. Following those principles is also helpful in preventing us from unforeseen pitfalls.</p>
-<h2>An example of fine-grained design principle</h2>
-<p>An example of a fine-grained design principle may help understand the benefit of mastering those principles. For this exercise let’s have a quick look at <strong>Option Operand Principle (OOP)</strong>:</p>
-<p>Every routine, method, or function operates on certain values. Those values are referred to as <em>operands</em>. Typically, operands make their way into the body of a routine, method, or function by being passed in as an argument, or a parameter. The OOP principle states:</p>
+            <p>"<em>Clearly yesterday was a bad day</em>" is a quote by <a href="https://www.linkedin.com/in/brharry/">Brian Harry</a> in his <a href="https://devblogs.microsoft.com/bharry/bad-day/">Bad Day</a> blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. </p>
+<p>In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (<strong>c-a-c</strong>) era was born. The CSV files and associated automation using the Azure DevOps <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a>, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.</p>
 <blockquote>
-<p>The argument of a routine should only include operands (no options).</p>
+<p><strong>Outcome</strong>: Consistency, standardization, security, and time-savings!</p>
 </blockquote>
-<p>What is meant by ‘option’ in the above principle? We can view option in two ways:</p>
-<ol>
-<li>Option that the client calling the routine does not provide a value for the argument</li>
-<li>Option that is passed in as an argument but is not treated as an argument</li>
-</ol>
-<p>In the first case, the onus is on the creator of the routine to provide a default value that will kick in in case the client chooses not to provide the value (i.e., in case the argument contains NULL value).</p>
-<p>In the second case, a value passed in as an argument is not being operated on by the routine. If the routine does not operate on a value passed in, that value is viewed as an option, not as an operand.</p>
-<p>Both cases of violating the OOP principle are considered bad code smell, with the first case being viewed as a mild code smell while the second case a more serious case of bad code smell.</p>
-<p>Providing default value for cases when the client chooses not to provide the value for an argument is a code smell because it places the onus on the routine to implement reasonable escape hatch (which may not always be easily achievable), while it may give the client code a false understanding of what to expect when calling the routine.</p>
-<p>Providing an option when calling a routine places onus on the called routine to handle the decision logic. That responsibility is better left to the calling client; they need some processing done; they should possess sufficient understanding which routine to call.</p>
-<h2>Detecting violations of the OOP principle</h2>
-<p>While it is very desirable to be able to automatically detect violations of this principle, in practice it is proving to be a tough challenge. Static code analyzers cannot easily distinguish between operands and options. The only time when it is possible to detect violations of this principle automatically and unambiguously is if the option type is Boolean. In such case it is obvious that Boolean argument serves to split the code into two paths and decide the mode of operation.</p>
-<h2>Conclusion​​​​​​​</h2>
-<p>There are numerous design principles that guide us in producing high quality structure of a software product. Adhering to those principles protects us from various pitfalls and improves the overall quality and maintainability of our system. In this episode I’ve reviewed only one design principle, to provide a simple example and a foretaste of how those principles may apply in our daily practice.</p>
+<p>Let us have a peak at one of our demo <code>c-a-c</code> files to understand the automation process.</p>
+<hr>
+<h1>Our configuration-as-code (c-a-c)</h1>
+<blockquote>
+<p><img alt="c-a-c" src="../images/azure-devops-automation-bad-day-1.png"></p>
+</blockquote>
+<p>At the top is a typical Azure Pipeline, delivering artifacts to a number of stage environments, with four humanoid gates.</p>
+<p>At the bottom is a demo <code>c-a-c</code> CSV file, with one row per stage. Each row defines the pre approver(s), the post-approver(s), and the approval method. When our <code>c-a-c</code> automation runs, it restores the Azure Pipeline pre- and post-approvals to the last known and desired configuration if the Set value is <code>Yes</code>. In other words, if you fiddle with the approvals manually, the automation will overwrite your changes when it runs.</p>
+<p>Although the actual <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a> logic is not trivial, our <code>c-a-c</code> concept is.</p>
+<hr>
+<h1>Meltdown timeline</h1>
+<p>Our bad day actually started on March 2nd at high-noon, when my colleague Daniel ran the latest <code>c-a-c</code> file I fine-tuned for hours. Fortunately, I opted against a big-bang <code>c-a-c</code> reset and only had about 15% of the 2,500 Azure Pipelines and their stages configured with <code>Set=Yes</code>. The automation ran like a dream.</p>
+<p>At around 15:00 our delivery teams reported that their pipelines were failing, unable to connect to an agent. At first, we all suspected our automation, because the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> was showing an <code>Everything is looking good</code> status.</p>
+<blockquote>
+<p><img alt="timeline" src="../images/azure-devops-automation-bad-day-2.png"></p>
+</blockquote>
+<p>Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support tickets the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> switched to an <code>unhealthy</code> status due to the <a href="https://status.dev.azure.com/_event/371776903">Pipeline error: Failure in sending the provision message</a> incident. Little did we know that this incident actually reduced the blast radius of our bad day, as most teams opted for another day by the time the Azure Agents were back to a healthy state. </p>
+<hr>
+<h1>2AM CALL @ high noon</h1>
+<p>Just before high-noon we were getting pulled into <strong>all hands-on deck</strong>, also known as the <strong>infamous 2AM-call</strong> collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our <strong>Staging (ST)</strong> and <strong>Production (PR)</strong> pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. </p>
+<blockquote>
+<p><img alt="" src="../images/azure-devops-automation-bad-day-5.png"> </p>
+</blockquote>
+<p>In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. </p>
+<blockquote>
+<p><img alt="c-a-c meltdown" src="../images/azure-devops-automation-bad-day-3.png"> </p>
+</blockquote>
+<p>We determined that the automation run, from the previous day, had purged, not set, the pre-approver(s) for all processed pipelines. In other words, the only gate between production and the delivery teams was the Security Review <strong>post</strong>-approver.</p>
+<hr>
+<h1>Core Issue</h1>
+<p>As all software glitches, the root cause was a trivial typo. Note the missing <code>s</code> in the <strong>Pre Approver</strong> column header.</p>
+<blockquote>
+<p><img alt="core issue" src="../images/azure-devops-automation-bad-day-4.png"> </p>
+</blockquote>
+<p>As a result, the automation did exactly what my configuration file instructed it to do.</p>
+<ul>
+<li>System Test (SY), Staging (SR), and Production (PR) Stage were updated as <code>Set=Yes</code>.</li>
+<li>Pre-approvers were purged as the value for <code>Pre-Approvers</code> was <code>null</code>.</li>
+</ul>
+<p>Another quote from Brian's post comes to mind here: "<em>The hard thing about this is that anything can go wrong and it’s only obvious in hindsight what you should have been protecting against</em>".</p>
+<hr>
+<h1>Remediate &amp; Learn</h1>
+<p>Our focus was, as expected, to restore the health of our Azure Pipelines. Fortunately, only a small subset of Azure Pipelines was affected, thanks to Microsoft outage and our close collaboration with our DevSecOps team.</p>
+<ul>
+<li>Pipelines not triggered by a change to the <code>release</code> branch, were stopped by our artifact filters.</li>
+<li>Pipelines that made it through to the <strong>Security Review</strong> stage, where stopped cold by our security engineers.</li>
+</ul>
+<p>In parallel we fixed the <code>c-a-c</code> header and triggered the automation to undo the damage. We also took the opportunity to add pre-automation validation to reduce the likelihood of a recurrence.</p>
+<p>And, most importantly, we shared the status of the incident, analysis, root cause, and remediation transparently. </p>
+<hr>
+<p>A huge <strong>THANK YOU</strong> to our vigilant delivery team, security engineers, operations engineers, and my team for keeping cool and focused throughout the turbulent Friday.</p>
+<p>Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!</p>
         </div>
 
         
@@ -110,9 +121,9 @@
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/design.html">design </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
-        | <a href="https://wsbctechnicalblog.github.io/quality-of-design.html" rel="bookmark"
-         title="Permalink to Quality of Design">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
+        | <a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
+         title="Permalink to Automation Bad Day">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
