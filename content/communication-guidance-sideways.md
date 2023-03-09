@@ -7,6 +7,22 @@ Summary: <TBD>
 
 We pickup from [Communication Guidance Upwards](/communication-guidance-upwards), where we discussed how to communicate upwards to executive domain. In this post I will share my thoughts on communicating ```sideways```, with my peer managers, and ```rearwards```, with my team.
 
+> ![up-side-rear](../images/communication-guidance-sideways-1.png)
+
+The proposed value and outcome format, as proposed in the upwards communication can be re-used for sideways and rearwards communication.
+
+```
+    We want to <WHAT>.
+        I recommend that <HOW,WHAT>. 
+        There are several benefits:
+            First, <CORE VALUE>. 
+            Also, <OTHER VALUE>. 
+            Finally, <OTHER VALUE>.
+    Imagine, if <WHAT>, we will <VALUE>.
+```
+
+Let us start by communicating sideways.
+
 ---
 
 # Communicating sideways with per managers
