@@ -55,7 +55,7 @@ For me, the most important part on the illustration is my team and I. It is my r
 
 > ![up-side-rear](../images/communication-guidance-sideways-3.png)
 
-To improve reward communication, I recommend that you:
+To improve rearward communication, I recommend that you:
 
 - **Establish transparency** empowering everyone to be informed, pro-active and supportive.
 - **Establish open and safe communication** encouraging everyone to share their ideas, concerns, thoughts, and even feel safe to **vent** as needed.
