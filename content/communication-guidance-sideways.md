@@ -3,7 +3,7 @@ Date: 2023-03-17
 Tags: learning
 Slug: communication-guidance-sideways
 Author: Willy-Peter Schaub
-Summary: <TBD>
+Summary: "Not to be missed after you depart." - L.David Marquet
 
 We pickup from [Communication Guidance Upwards](/communication-guidance-upwards), where we discussed how to communicate upwards to executive domain. In this post I will share my thoughts on communicating ```sideways```, with my peer managers, and ```rearwards```, with my team.
 
@@ -51,7 +51,7 @@ To improve the sideways communication and collaboration, I recommend that you:
 
 # Communicating rearwards with my team
 
-For me, the most important part on the illustration is my team and I. It is my responsibility to lead them, protect them, and empower them. As quoted by L.David Marquet in [Turn the Ship Around](https://davidmarquet.com/turn-the-ship-around-book/), we "give our team control over WHAT they work on and HOW they work", creating a team of leaders and allowing you "not to be missed after you depart."
+For me, the most important part on the illustration is my team and I. It is my responsibility to lead them, protect them, and empower them. As quoted by L. David Marquet in [Turn the Ship Around](https://davidmarquet.com/turn-the-ship-around-book/), we "give our team control over WHAT they work on and HOW they work", creating a team of leaders and allowing you "not to be missed after you depart."
 
 > ![up-side-rear](../images/communication-guidance-sideways-3.png)
 
