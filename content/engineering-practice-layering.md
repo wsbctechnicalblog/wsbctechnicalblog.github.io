@@ -57,7 +57,7 @@ rules and validation logic from user-interface and back-end (data service) infra
 
 - **User Interface** - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.
 - **Business Logic** - The layer containing the business rules and logical processes, work-flows, and validation rules.
-- **Data Access** - The layer is concerned with storage and retrieval of data and other artifacts used by the application to perform its funtion.
+- **Data Access** - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its funtion.
 
 Each of these layers is focused on a separate logical area of concern, uses different tools and has a different pupose.  Each of
 these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  
