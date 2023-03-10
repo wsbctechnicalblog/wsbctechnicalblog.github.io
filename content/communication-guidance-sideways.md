@@ -1,5 +1,5 @@
 Title: Communication Guidance Sideways (Part 2)
-Date: 2023-03-15
+Date: 2023-03-17
 Tags: learning
 Slug: communication-guidance-sideways
 Author: Willy-Peter Schaub
