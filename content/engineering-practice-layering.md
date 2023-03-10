@@ -9,33 +9,33 @@ Summary: Application Layering - Separation of Concerns Architecture Principle
 # What is layering?
 
 Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
-the areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
+those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
 technology involved in any given layer, and collaborate with other specialists where the layers interface.
 
 This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing
-is created that identifies each aspect of construction as a layered endevor.  Once the design is signed-off, the foundation whole is dug and the concrete foundation
-is poured - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one level in the 
+is created that identifies each aspect of construction as a layered endevor.  Once the design is signed-off, a hole is dug, a frame and rebar is placed within and the concrete
+is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
 building at a time.  
 
-After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up to each level
+After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
 of the building.  The 4th layer of work invovles completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
 fixtures and appliances are installed, switches installed and connected, paint applied and carpet or hardwood flooring is installed.
 
-This is no different in software - except the layers are logical only and can be ommited or subverted by the unwarry.  Lets examine this more closely next.
+This is no different in software - except the layers are logical, containing only code that address a paticular area of interest.  But because it is code, each layer can be ommited or subverted by the unwarry.  Lets examine this more closely next.
 
 ---
 
 # Why is Layering Important?
 
-Layering in Software is a fundamental design principle, enabling us to create lasting code of highest quality - and maintainability.  When we layer our software, we
+In Software, *Layering* is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability & testability.  When we layer our software, we
 are aknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independantly. 
 This create a technology
-stack and interfaces between the layers that promote concistency at the communication channels bewteen layers (public interfaces), and independance of each layer itself.  Each layer
-can be independently tested and verified when we employ additional architectual principles such as Dependency Inversion and Encapsulation.
+stack and loosely coupled interfaces between the layers that promote concistency at the communication channels bewteen layers (re: public interfaces), and independance of each layer itself.  Each layer
+can also be tested and verified independantly when we employ additional architectual principles such as Dependency Inversion and Encapsulation.
 
 Like the construction 
 example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
-more easily understood.
+more easily understood.  Indeed, this understanding leads to abstraction of fundamentable behaviours that can organized the code into hierarchies and promote non-duplication of function.
 
 When we layer, we are more prepared for evolving the software as independent peices in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.
 
@@ -52,15 +52,24 @@ retrieve data from a database or file system.
 
 # What are the Layers in Software Architecture
  
-Architectually, software applications can be logically constructed following the separation of concerns principle by separating core business behaviour logic from user-interface and back-end infrastructure.  Each of
-these logical layers should be in separate projects within the application solution, which helps enforce the separation of concerns principle.  
+Architectually, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
+rules and validation logic from user-interface and back-end (data service) infrastructure.  
+
+- **User Interface** - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.
+- **Business Logic** - The layer containing business rules, logical processes, work-flows, and validation rules.
+- **Data Access** - The layer conerned with storage and retrieval of data and other artifacts used by the application to perform its funtion.
+
+Each of these layers is focused on a separate logical area of concern, uses different tools and has a different pupose.  Each of
+these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  
+
 Ideally, The Business Rules and Logic should not depend on any other projects in the application.
 
 ---
 
 # Different Layering Scenarios
 
-As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design.  These layers can then be organized into four distict scenarios, shown here.
+As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
+organized into four distict scenarios, shown here.
 
 ![Architecture Scenarios](/Images/n-tier-architecture.png)
 
