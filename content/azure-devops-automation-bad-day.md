@@ -44,7 +44,7 @@ Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support
 
 Just before high-noon we were getting pulled into **all hands-on deck**, also known as the **infamous 2AM-call** collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our **Staging (ST)** and **Production (PR)** pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. 
 
-> ![](../images/azure-devops-automation-bad-day-5.png) 
+> ![2AM Call](../images/azure-devops-automation-bad-day-5.png) 
 
 In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. 
 
