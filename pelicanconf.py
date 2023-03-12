@@ -13,6 +13,9 @@ DEFAULT_LANG = 'en'
 
 THEME = 'brick'
 
+GISQUS_SITENAME  = 'WorkSafeBC-Common-Engineering/Common.Engineering.Discussion'
+
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None

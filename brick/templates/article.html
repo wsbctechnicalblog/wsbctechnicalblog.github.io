@@ -42,7 +42,8 @@
         {% endfor %}
         -->
     </footer>
-    <!-- disqus {{ DISQUS_SITENAME }} -->
+    {% if GISQUS_SITENAME %}
     {% include 'article_giscus.html' %}
+    {% endif %}
 </div>
 {% endblock %}
