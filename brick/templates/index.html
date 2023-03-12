@@ -8,6 +8,7 @@
 {% set cnt = 0 %}
 <img src="/theme/img/Logo-blogsize.png">
 
+
 {% for article in articles_page.object_list %}
     {% if cnt < 2 %}
         {% if articles_page.has_previous() %}
