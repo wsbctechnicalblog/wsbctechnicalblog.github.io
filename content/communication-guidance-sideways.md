@@ -25,7 +25,7 @@ Before we peek into sideways communication, I must highlight an important epipha
 
 ---
 
-# Communicating sideways with per managers
+# Communicating sideways with peer managers
 
 As the L1, L2, L3, and L4 team we must collaborate, actively listen, co-operate, partner to work to meet common and organizational goals, and most importantly **TRUST** each other. For example, if I have a problem or am struggling with an unknown or challenging process, I need to be able to rely on my peers, reach out for help, and know that we will confront any challenge and follow-through until we have a solution.  The same can be said for my team of engineers, who themselves are a cluster of collaborative peers.
 

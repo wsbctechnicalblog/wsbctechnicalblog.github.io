@@ -22,4 +22,5 @@ DELETE_OUTPUT_DIRECTORY = False
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GISQUS_SITENAME  = 'WorkSafeBC-Common-Engineering/Common.Engineering.Discussion'
+GOOGLE_ANALYTICS = 'G-23L7QXSDYM'
