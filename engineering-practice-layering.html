@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Checkout your git repos at the right time! - </title>
+        <title>Engineering Practice Layering - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,59 +33,97 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/checkout-at-the-right-time.html" rel="bookmark"
-            title="Permalink to Checkout your git repos at the right time!">Checkout your git repos at the right time!</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="bookmark"
+            title="Permalink to Engineering Practice Layering">Engineering Practice Layering</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 21 September 2021</div>
+        <div class="read-more">Posted by Martin M. Lacey on Wed 15 March 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Let us explore why the sequence of <strong>checkout</strong> steps are important in your Azure Pipeline.</p>
+            <p>Application Layering - Separation of Concerns Architecture Principle</p>
         </div>
     
         <div class="entry-content">
-            <p>In <a href="https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html">Two ways to share your toolbox with your pipelines</a> we reviewed two strategies to share scripts and config files with your Azure (YAML) Pipelines. </p>
-<p><img alt="WIN:WIN" src="../images/checkout-at-the-right-time-1.png"> </p>
-<p>As discussed, the <code>checkout: git://&lt;AzDO-PROJECT&gt;/&lt;REPO-NAME&gt; path: &lt;PATH&gt;</code> gem gets a tick for <strong>SIMPLICITY</strong> and a tick for <strong>PERFORMANCE</strong>. But ... as always, there is a catch. </p>
-<blockquote>
-<p>YES - There are other options, such as <a href="https://www.powershellgallery.com/">PowerShell Gallery</a>, but we intentionally only compared the two <code>checkout:</code> versus <code>Universal Artifact</code> options.</p>
-</blockquote>
+            <h1>What is layering?</h1>
+<p>Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
+those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
+technology involved in any given layer and collaborate with other specialists where the layers interface.</p>
+<p>This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing is created that identifies each aspect of construction as a layered endeavor.  Once the design is signed-off, a hole is dug, a frame and rebar are placed within and the concrete is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
+building at a time.  </p>
+<p>After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
+of the building.  The 4th layer of work involves completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
+fixtures and appliances are installed, switches installed and connected, paint applied, and carpet or hardwood flooring is installed.</p>
+<p>This is no different in software - except the layers are logical, containing only code that address a particular area of interest.  But because it is code, each layer can be ommitted or subverted by the unwary.  Let's examine this more closely next.</p>
 <hr>
-<h1>Run pipeline blueprint regression tests</h1>
-<p>When I ran the regression tests my excitement grew as the generic-single-job and generic-multiple-jobs blueprints passed with flying colours. Next, the app-type Universal Artifact blueprint created the templates that triggered a continuous integration, followed by a continuous delivery to a development and production Universal Azure Artifact. </p>
-<p>Next, I ran the regression test for our app-type azure-function blueprint, which <strong>failed</strong> with the following error:</p>
-<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">dotnet</span><span class="o">/</span><span class="n">sdk</span><span class="o">/</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">413</span><span class="o">/</span><span class="n">Sdks</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">NET</span><span class="o">.</span><span class="n">Sdk</span><span class="o">/</span><span class="n">targets</span><span class="o">/</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">PackageDependencyResolution</span><span class="o">.</span><span class="n">targets</span><span class="p">(</span><span class="mi">241</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">NETSDK1004</span><span class="p">:</span><span class="w"> </span><span class="n">Assets</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="s1">&#39;/home/vsts/work/1/s/AzureDevOps.Automation.Pipeline.Sample.azure-function/Src/AzureFunction.Sample/AzureFunction.Sample/obj/project.assets.json&#39;</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">found</span><span class="o">.</span><span class="w"> </span><span class="n">Run</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">NuGet</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">restore</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">file</span><span class="o">.</span><span class="w"></span>
-</code></pre></div>
-
-<p>Which lights up as the following failure in the <strong>build</strong> step of the continuous integration pipeline.</p>
-<p><img alt="ERROR" src="../images/checkout-at-the-right-time-2.png"> </p>
-<h1>Said to the rescue!</h1>
-<p>My colleague Said, the author of the Azure Function Blueprint, was intrigued and vanished in his binary lab. After a brief pause, he was back with a smile.</p>
-<p><img alt="Said Akram" src="/images/Said-mug.jpeg"></p>
-<p><em>"The checkout runs after the restore step, which will override all the nuget packages/files needed by the build step. Hence, the missing project.assets.json. I will advise adding the checkout steps at the job level (first step of the job) and avoid nesting checkouts in other templates."</em> - Said Akram</p>
-<p>Looking at the continuous integration pipeline flow, as shown below, it is evident that the <strong>Restore</strong> step runs before the <strong><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&amp;tabs=schema%2Cparameter-schema#checkout">checkout</a></strong> step that checks out source code of our Azure Function solution. </p>
-<p>In fact, we identified another bug - we checked out the source code at the start of the job and again after the restore.</p>
-<p><img alt="SEQUENCE" src="../images/checkout-at-the-right-time-3.png"></p>
-<p>Time to <strong>FAIL-FAST</strong>!</p>
-<h1>Call checkout: at the right time!</h1>
-<p>What I <strong>love</strong> about pipeline-as-code, is that we were able to fix the issue by tweaking two templates, issuing a pull request, and waiting for the validation build to give us the "thumbs up."</p>
-<p>As shown, the <strong>Restore</strong> now runs before the <code>checkout</code>. </p>
-<p><img alt="CORRECTION" src="../images/checkout-at-the-right-time-4.png"></p>
-<p>To cut a long ~~story~~ post short. Make sure you run the <code>checkout:self</code> at the beginning of your pipeline, so that dependent tasks, such as <strong>Restore</strong>, can reference the solution source code. You can run the other <code>checkout: git://&lt;AzDO-PROJECT&gt;/&lt;REPO-NAME&gt;</code> to checkout your toolbox with scripts and/or configuration as needed.</p>
-<p>Thanks for reading and thank you <strong>Said</strong> for the tip!</p>
+<h1>Why is Layering Important?</h1>
+<p>In Software, <em>Layering</em> is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability &amp; testability.  When we layer our software, we
+are acknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independently. 
+This creates a technology stack and loosely coupled interfaces between the layers that promote consistency at the communication channels between layers (re: public interfaces), and independence of each layer itself.  Each layer
+can also be tested and verified independently when we employ additional architectural principles such as Dependency Inversion and Encapsulation.</p>
+<p>Like the construction example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
+more easily understood.  Indeed, this understanding leads to abstraction of fundamental behaviours that can organized the code into hierarchies and promote non-duplication of function.</p>
+<p>When we layer, we are more prepared for evolving the software as independent pieces in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.</p>
+<hr>
+<h1>Separation of Concerns Principle</h1>
+<p>Layering is the result of following the <em>Separation of Concerns</em> design principle, which states that software should be separated based on the kind
+of work it performs.  When viewed from this lens, we can clearly see what should be in the User Interface collection of code - the code that deals
+with artifacts used to collect or format data for display, and what code performs and enforces business rules and procedures, versus the code used to store and
+retrieve data from a database or file system. </p>
+<hr>
+<h1>What are the Layers in Software Architecture</h1>
+<p>Architecturally, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
+rules and validation logic from user-interface and back-end (data service) infrastructure.  </p>
+<ul>
+<li><strong>User Interface</strong> - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.</li>
+<li><strong>Business Logic</strong> - The layer containing the business rules and logical processes, workflows, and validation rules.</li>
+<li><strong>Data Access</strong> - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its function.</li>
+</ul>
+<p>Each of these layers is focused on a separate logical area of concern, uses different tools and has a different purpose.  Each of
+these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  </p>
+<p>Ideally, The Business Rules and Logic should not depend on any other projects in the application.</p>
+<hr>
+<h1>Different Layering Scenarios</h1>
+<p>As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
+organized into four distinct scenarios, shown here.</p>
+<blockquote>
+<p><img alt="Architecture Scenarios" src="../images/engineering-practice-layering-1.png"></p>
+<p><em>Image sourced from</em> <a href="https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html"><em>Programming Stuff: What is meant by “N Tier”?</em></a>
+</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Classic</strong> - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to <em>Boundary Bleed</em> and messy spaghetti code.</p>
+</li>
+<li>
+<p><strong>Two-Tier</strong> - In this scenario, the data access layer is distinctly separated from all other code, which resides in the main project for the application.  This represents an understanding that data access and the object-relation-mapping (ORM) is a distinct aspect of a software application and requires specialized knowledge.</p>
+</li>
+<li>
+<p><strong>Three-Tier</strong> - This is a further refinement and maturation of the software architecture, uniquely placing the business rules (requirements) and logic (processes) within a distinct layer free from presentation and data access specialized coding needs.</p>
+</li>
+<li>
+<p><strong>N-Tier</strong> - This is the holy-grail, where workflow is separated from the Presentation layer, and accesses the business services layer which uses the data services layer for storage and retrieval; all layers can be distributed across CPU and machine boundaries to achieve scale and reach.  </p>
+</li>
+</ul>
+<hr>
+<h1>What is Boundary Bleed</h1>
+<p>Boundary Bleed occurs when you violate the separate of concerns principle and allow non-built-in types to be exposed through multiple layers.  For example, if you
+create a class in your data service layer, and return it to your business service layer, and that in turn returns that same class to the presentation layer; you've
+passed a class through 2 layers and inadvertently coupled the presentation layer with the data service layer.  This makes your code more brittle and harder to test, where changes
+can have unexpected side-effects.  This is <em>Boundary Bleed</em>, and it should be avoided and considered as an anti-pattern.</p>
+<hr>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
-        | <a href="https://wsbctechnicalblog.github.io/checkout-at-the-right-time.html" rel="bookmark"
-         title="Permalink to Checkout your git repos at the right time!">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="bookmark"
+         title="Permalink to Engineering Practice Layering">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
