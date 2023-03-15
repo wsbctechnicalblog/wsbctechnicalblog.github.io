@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-06T00:00:00-08:00</updated><entry><title>Automation Bad Day</title><link href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="alternate"></link><published>2023-03-06T00:00:00-08:00</published><updated>2023-03-06T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-06:/automation-bad-day.html</id><summary type="html">&lt;p&gt;Clearly yesterday was a bad day.&lt;/p&gt;</summary><content type="html">&lt;p&gt;"&lt;em&gt;Clearly yesterday was a bad day&lt;/em&gt;" is a quote by &lt;a href="https://www.linkedin.com/in/brharry/"&gt;Brian Harry&lt;/a&gt; in his &lt;a href="https://devblogs.microsoft.com/bharry/bad-day/"&gt;Bad Day&lt;/a&gt; blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-15T00:00:00-07:00</updated><entry><title>Engineering Practice Layering</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="alternate"></link><published>2023-03-15T00:00:00-07:00</published><updated>2023-03-15T00:00:00-07:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-15:/engineering-practice-layering.html</id><summary type="html">&lt;p&gt;Application Layering - Separation of Concerns Architecture Principle&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is layering?&lt;/h1&gt;
+&lt;p&gt;Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
+those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
+technology involved in any given layer and collaborate with other specialists where the layers interface.&lt;/p&gt;
+&lt;p&gt;This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing is created that identifies each aspect of construction as a layered endeavor.  Once the design is signed-off, a hole is dug, a frame and rebar are placed within and the concrete is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
+building at a time.  &lt;/p&gt;
+&lt;p&gt;After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
+of the building.  The 4th layer of work involves completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
+fixtures and appliances are installed, switches installed and connected, paint applied, and carpet or hardwood flooring is installed.&lt;/p&gt;
+&lt;p&gt;This is no different in software - except the layers are logical, containing only code that address a particular area of interest.  But because it is code, each layer can be ommitted or subverted by the unwary.  Let's examine this more closely next.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why is Layering Important?&lt;/h1&gt;
+&lt;p&gt;In Software, &lt;em&gt;Layering&lt;/em&gt; is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability &amp;amp; testability.  When we layer our software, we
+are acknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independently. 
+This creates a technology stack and loosely coupled interfaces between the layers that promote consistency at the communication channels between layers (re: public interfaces), and independence of each layer itself.  Each layer
+can also be tested and verified independently when we employ additional architectural principles such as Dependency Inversion and Encapsulation.&lt;/p&gt;
+&lt;p&gt;Like the construction example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
+more easily understood.  Indeed, this understanding leads to abstraction of fundamental behaviours that can organized the code into hierarchies and promote non-duplication of function.&lt;/p&gt;
+&lt;p&gt;When we layer, we are more prepared for evolving the software as independent pieces in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Separation of Concerns Principle&lt;/h1&gt;
+&lt;p&gt;Layering is the result of following the &lt;em&gt;Separation of Concerns&lt;/em&gt; design principle, which states that software should be separated based on the kind
+of work it performs.  When viewed from this lens, we can clearly see what should be in the User Interface collection of code - the code that deals
+with artifacts used to collect or format data for display, and what code performs and enforces business rules and procedures, versus the code used to store and
+retrieve data from a database or file system. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;What are the Layers in Software Architecture&lt;/h1&gt;
+&lt;p&gt;Architecturally, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
+rules and validation logic from user-interface and back-end (data service) infrastructure.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt; - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Business Logic&lt;/strong&gt; - The layer containing the business rules and logical processes, workflows, and validation rules.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Access&lt;/strong&gt; - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each of these layers is focused on a separate logical area of concern, uses different tools and has a different purpose.  Each of
+these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  &lt;/p&gt;
+&lt;p&gt;Ideally, The Business Rules and Logic should not depend on any other projects in the application.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Different Layering Scenarios&lt;/h1&gt;
+&lt;p&gt;As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
+organized into four distinct scenarios, shown here.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Architecture Scenarios" src="../images/engineering-practice-layering-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image sourced from&lt;/em&gt; &lt;a href="https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html"&gt;&lt;em&gt;Programming Stuff: What is meant by “N Tier”?&lt;/em&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Classic&lt;/strong&gt; - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to &lt;em&gt;Boundary Bleed&lt;/em&gt; and messy spaghetti code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Two-Tier&lt;/strong&gt; - In this scenario, the data access layer is distinctly separated from all other code, which resides in the main project for the application.  This represents an understanding that data access and the object-relation-mapping (ORM) is a distinct aspect of a software application and requires specialized knowledge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Three-Tier&lt;/strong&gt; - This is a further refinement and maturation of the software architecture, uniquely placing the business rules (requirements) and logic (processes) within a distinct layer free from presentation and data access specialized coding needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;N-Tier&lt;/strong&gt; - This is the holy-grail, where workflow is separated from the Presentation layer, and accesses the business services layer which uses the data services layer for storage and retrieval; all layers can be distributed across CPU and machine boundaries to achieve scale and reach.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;What is Boundary Bleed&lt;/h1&gt;
+&lt;p&gt;Boundary Bleed occurs when you violate the separate of concerns principle and allow non-built-in types to be exposed through multiple layers.  For example, if you
+create a class in your data service layer, and return it to your business service layer, and that in turn returns that same class to the presentation layer; you've
+passed a class through 2 layers and inadvertently coupled the presentation layer with the data service layer.  This makes your code more brittle and harder to test, where changes
+can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, and it should be avoided and considered as an anti-pattern.&lt;/p&gt;
+&lt;hr&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Automation Bad Day</title><link href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="alternate"></link><published>2023-03-06T00:00:00-08:00</published><updated>2023-03-06T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-06:/automation-bad-day.html</id><summary type="html">&lt;p&gt;Clearly yesterday was a bad day.&lt;/p&gt;</summary><content type="html">&lt;p&gt;"&lt;em&gt;Clearly yesterday was a bad day&lt;/em&gt;" is a quote by &lt;a href="https://www.linkedin.com/in/brharry/"&gt;Brian Harry&lt;/a&gt; in his &lt;a href="https://devblogs.microsoft.com/bharry/bad-day/"&gt;Bad Day&lt;/a&gt; blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. &lt;/p&gt;
 &lt;p&gt;In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (&lt;strong&gt;c-a-c&lt;/strong&gt;) era was born. The CSV files and associated automation using the Azure DevOps &lt;a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1"&gt;REST API&lt;/a&gt;, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Outcome&lt;/strong&gt;: Consistency, standardization, security, and time-savings!&lt;/p&gt;
@@ -25,7 +91,7 @@
 &lt;h1&gt;2AM CALL @ high noon&lt;/h1&gt;
 &lt;p&gt;Just before high-noon we were getting pulled into &lt;strong&gt;all hands-on deck&lt;/strong&gt;, also known as the &lt;strong&gt;infamous 2AM-call&lt;/strong&gt; collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our &lt;strong&gt;Staging (ST)&lt;/strong&gt; and &lt;strong&gt;Production (PR)&lt;/strong&gt; pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="../images/azure-devops-automation-bad-day-5.png"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="2AM Call" src="../images/azure-devops-automation-bad-day-5.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. &lt;/p&gt;
 &lt;blockquote&gt;
@@ -2715,76 +2781,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;/blockquote&gt;
 &lt;p&gt;By sharing and collaborating within a joint(mob)-ownership, we not only solve communication problems, enable decision making, avoid toxic politics and harmful context switching, but more importantly accept shared responsibility for every adventure. The “them and us” and associated “finger-pointing” fades away as we grow as a team, fueled by delighted end-users.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Mob programming" src="../images/mob-ownership-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="quality"></category><category term="eliminate-waste"></category></entry><entry><title>Journal 2 - Why do we need our common engineering team?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-2.html" rel="alternate"></link><published>2021-12-20T13:13:00-08:00</published><updated>2021-12-20T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-20:/common-engineering-journal-2.html</id><summary type="html">&lt;p&gt;Introducing the voice of reason and stewards of guardrails&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are T+74 calendar days into the journey of our EDO Common Engineering team and it is time to share and update our team journal, post 2. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="T+73" src="../images/common-engineering-journal-2-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Changing the culture and mindset of engineers and business stakeholders of an organization based on stringent security policies, processes, and segregation of duties takes grit, tenacity, a thick skin, and lots of patience. It often feels like trying to change course of a massive oil-tanker travelling through heavy seas at full speed. &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;WHY do we need our EDO Common Engineering Team?&lt;/h1&gt;
-&lt;p&gt;We want everyone to embrace a healthy DevOps mindset to empower development and operations collaboration and enable us, as an organization, to “delight our end-users”, most importantly our BC employers and workers, our WorkSafeBC workers, and IT engineers. It is important we shift the focus from creating technological marvels and snowflakes, to reducing waste, automate everything automable, and delivering value to our end-users.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;When you boarded your last cross-Atlantic flight, were you interested in how the plane was assembled and which processes or products were used? I believe your response is "NO". What you cared about was the outcome, landing safe and on time at your destination.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Therefore, our goal is not just automation and enabling technology, but to deliver &lt;strong&gt;value&lt;/strong&gt;. Any innovation, transformation, or measured value is worthless, unless we can continuously deliver value to our end-users. It is important to understand that DevOps is not a silver bullet, nor is it a product we can buy and install. It is a mindset that enables people to &lt;strong&gt;collaborate&lt;/strong&gt; and follow a known &lt;strong&gt;process&lt;/strong&gt; enabled by &lt;strong&gt;products&lt;/strong&gt; to deliver &lt;strong&gt;value&lt;/strong&gt; to our end users.&lt;/p&gt;
-&lt;p&gt;Also, instead of starting with a focus on our burning platform, our team agreed to focus on establishing an efficient system of highways, roads and railroads that enable both our business and engineering teams to focus on outcomes that delight our end-users. Automated circuit-breakers and smoke detectors monitor the health of our ecosystem, while we continuously improving outcomes.&lt;/p&gt;
-&lt;p&gt;We need to empower engineers and products to integrate and shift-left security, create quality governance guardrails and documentation, leverage the Azure cloud to its fullest potential, encourage experimentation, and a tolerance for failure to fuel innovation.&lt;/p&gt;
-&lt;p&gt;Noble goals, but back to our core question: "&lt;em&gt;WHY do we need the EDO Common Engineering team?&lt;/em&gt; &lt;/p&gt;
-&lt;p&gt;As mentioned in &lt;a href="https://wsbctechnicalblog.github.io/common-engineering-journal-1.html"&gt;"what is origin of our common engineering team"&lt;/a&gt; we are the catalyst to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Encourage and enable everyone’s creativity, passion, purpose, and strengths!&lt;/li&gt;
-&lt;li&gt;Empower all stakeholders to continuously deliver quality &lt;strong&gt;value&lt;/strong&gt; to our &lt;strong&gt;delighted end-users&lt;/strong&gt;, while stewarding our guardrails to promote &lt;strong&gt;consistency&lt;/strong&gt;, &lt;strong&gt;standardization&lt;/strong&gt;, and &lt;strong&gt;security&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Declare war on WASTE, such as cycle time, excessive meetings, complexity, and manual processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;WHAT is the goal of our 90-day Roadmap?&lt;/h1&gt;
-&lt;p&gt;When we lit the candle of our team's first stage, our goal for the first 90-days after launch was to lay the foundations and ensure that we have:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A common and sound &lt;strong&gt;vision&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Vibrant &lt;strong&gt;collaboration&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;An atmosphere encouraging &lt;strong&gt;failure&lt;/strong&gt;, &lt;strong&gt;learning&lt;/strong&gt;, and continuous &lt;strong&gt;innovation&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;A healthy &lt;strong&gt;DevOps&lt;/strong&gt; mindset - "&lt;em&gt;DevOps is the union of people, process, and products to enable continuous delivery of value to our end users&lt;/em&gt;", by &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan Brown&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Once we have a foundation, we plan to enable, foster, and steward &lt;strong&gt;COLLABORATION&lt;/strong&gt;, engineering &lt;strong&gt;PRACTICES&lt;/strong&gt;, and &lt;strong&gt;QUALITY&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;HOW have we fared after 74 days?&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Falcon Heavy" src="../images/common-engineering-journal-2-5.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The team took off like a &lt;a href="https://www.spacex.com/vehicles/falcon-heavy/"&gt;SpaceX Falcon Heavy&lt;/a&gt; and it is extremely difficult to cherry-pick from our running list of achievements linked to our backlog of &lt;strong&gt;culture&lt;/strong&gt;, &lt;strong&gt;collaboration&lt;/strong&gt;, &lt;strong&gt;innovation&lt;/strong&gt;, &lt;strong&gt;practices&lt;/strong&gt;, and &lt;strong&gt;kaizen&lt;/strong&gt; work. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;BURNOUT!&lt;/strong&gt; - Although everyone loves to watch teams take off and perform at maximum capacity, we must ensure that we throttle back to avoid inevitable &lt;strong&gt;stress&lt;/strong&gt; and &lt;strong&gt;burnout&lt;/strong&gt; which will impact &lt;strong&gt;quality&lt;/strong&gt; and &lt;strong&gt;health&lt;/strong&gt; negatively.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I will pick the top 3 on my personal favourites list and invite my colleagues to add another journal entry with their favourites.&lt;/p&gt;
-&lt;h2&gt;LITE Self-Service Automation&lt;/h2&gt;
-&lt;p&gt;The first preview of our self-service automation prototype which creates an Azure Repo, inserts an application-type specific sample, an Azure Pipeline based on an application-type CI|CD YAML-based blueprint, and queues the pipeline ... in a mere 8 seconds! &lt;/p&gt;
-&lt;h2&gt;EDO Ce Common Engineering Center of Enablement&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="T+73" src="../images/common-engineering-journal-2-4.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We launched the collaboration program to dog|cat-food our working agreements, checklists, and ceremony portal for the &lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt; (CoE), &lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;, &lt;a href="/townhall.html"&gt;Townhall&lt;/a&gt;, &lt;a href="../ceremony-working-group.html"&gt;Working Group&lt;/a&gt;, and &lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt; (CoP) ceremonies.&lt;/p&gt;
-&lt;p&gt;The EDO Ce Center of Enablement triggers the &lt;strong&gt;Common Language&lt;/strong&gt;, &lt;strong&gt;Containerization&lt;/strong&gt;, and &lt;strong&gt;Crank-it-up-board v2&lt;/strong&gt; working groups, with a few more such as &lt;strong&gt;Healthy mindset for continuous delivery and release on demand&lt;/strong&gt;, &lt;strong&gt;Automate everything automatable for Azure DevOps governance printing&lt;/strong&gt; using &lt;a href="https://github.com/vinijmoura/Azure-DevOps"&gt;vinijmoura/Azure-DevOps&lt;/a&gt;, and &lt;strong&gt;Application-type CICD blueprint&lt;/strong&gt; rolling onto the launch pad.&lt;/p&gt;
-&lt;h2&gt;WAR on Silos!&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="T+73" src="../images/common-engineering-journal-2-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;When we started with the common engineering system in 2019, we experienced turbulence created by our siloed culture and stringent processes. The latter will raise its head again when we discuss how we &lt;strong&gt;improve our value streams&lt;/strong&gt; and &lt;strong&gt;innovate&lt;/strong&gt; supporting processes and products in future. &lt;/p&gt;
-&lt;p&gt;Organizational silos exist for a number of reasons, such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Creating &lt;strong&gt;isolated&lt;/strong&gt; groups with common interests and experiences.&lt;/li&gt;
-&lt;li&gt;Creating working relationships, based on personal experiences - we typically favour working with colleagues with whom we have had positive experiences and &lt;strong&gt;isolate&lt;/strong&gt; ourselves from those that are associated with turbulence.&lt;/li&gt;
-&lt;li&gt;Reorganizations that create a churn in the organizational culture - we often go "heads down" and focus on our work as the organization changes, &lt;strong&gt;isolating&lt;/strong&gt; ourselves from the noise and fallout.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="T+73" src="../images/common-engineering-journal-2-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;For us to &lt;strong&gt;innovate&lt;/strong&gt; and be &lt;strong&gt;productive&lt;/strong&gt; we must eradicate &lt;strong&gt;isolation&lt;/strong&gt; and foster a culture based on &lt;strong&gt;trust&lt;/strong&gt;, &lt;strong&gt;exchange of ideas&lt;/strong&gt; and &lt;strong&gt;collaboration&lt;/strong&gt;. The reason I am smiling from ear to ear, is that our EDO Ce Center of Enablement and associated EDO Working Groups is enabling and demonstrating &lt;strong&gt;vibrant collaboration&lt;/strong&gt; with (in no specific order) Enterprise Architecture, Solution Architecture, Sustainment, Site Reliability Engineering, DevSecOps, Development, Cloud Operations, Innovation, Release Management, and EDO Common Engineering.&lt;/p&gt;
-&lt;p&gt;The appetite and interest in continuous &lt;strong&gt;innovation&lt;/strong&gt;, &lt;strong&gt;Consistency&lt;/strong&gt;, &lt;strong&gt;Standardization&lt;/strong&gt;, and the removal of &lt;strong&gt;waste&lt;/strong&gt; and associated &lt;strong&gt;snowflakes / accidental complexity&lt;/strong&gt; is both exciting and refreshing! &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;Feedback from my colleagues&lt;/h2&gt;
-&lt;p&gt;Alex's favourite part and I quote: &lt;em&gt;"My favourite part of our first 90 days journey (which hasn't ended yet) is formulating clear expectations coming from the stakeholders. That creates clarity in my mind, which is very important to me."&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;That is it for today. Ping me on &lt;a href="https://www.twitter.com/wpschaub"&gt;twitter&lt;/a&gt; if you have any questions. &lt;/p&gt;
-&lt;p&gt;See you next journal update!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="journal"></category></entry></feed>
+&lt;p&gt;Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="quality"></category><category term="eliminate-waste"></category></entry></feed>

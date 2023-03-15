@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-06T00:00:00-08:00</updated><entry><title>Automation Bad Day</title><link href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="alternate"></link><published>2023-03-06T00:00:00-08:00</published><updated>2023-03-06T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-06:/automation-bad-day.html</id><summary type="html">&lt;p&gt;Clearly yesterday was a bad day.&lt;/p&gt;</summary><content type="html">&lt;p&gt;"&lt;em&gt;Clearly yesterday was a bad day&lt;/em&gt;" is a quote by &lt;a href="https://www.linkedin.com/in/brharry/"&gt;Brian Harry&lt;/a&gt; in his &lt;a href="https://devblogs.microsoft.com/bharry/bad-day/"&gt;Bad Day&lt;/a&gt; blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-15T00:00:00-07:00</updated><entry><title>Engineering Practice Layering</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="alternate"></link><published>2023-03-15T00:00:00-07:00</published><updated>2023-03-15T00:00:00-07:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-15:/engineering-practice-layering.html</id><summary type="html">&lt;p&gt;Application Layering - Separation of Concerns Architecture Principle&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is layering?&lt;/h1&gt;
+&lt;p&gt;Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
+those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
+technology involved in any given layer and collaborate with other specialists where the layers interface.&lt;/p&gt;
+&lt;p&gt;This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing is created that identifies each aspect of construction as a layered endeavor.  Once the design is signed-off, a hole is dug, a frame and rebar are placed within and the concrete is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
+building at a time.  &lt;/p&gt;
+&lt;p&gt;After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
+of the building.  The 4th layer of work involves completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
+fixtures and appliances are installed, switches installed and connected, paint applied, and carpet or hardwood flooring is installed.&lt;/p&gt;
+&lt;p&gt;This is no different in software - except the layers are logical, containing only code that address a particular area of interest.  But because it is code, each layer can be ommitted or subverted by the unwary.  Let's examine this more closely next.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why is Layering Important?&lt;/h1&gt;
+&lt;p&gt;In Software, &lt;em&gt;Layering&lt;/em&gt; is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability &amp;amp; testability.  When we layer our software, we
+are acknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independently. 
+This creates a technology stack and loosely coupled interfaces between the layers that promote consistency at the communication channels between layers (re: public interfaces), and independence of each layer itself.  Each layer
+can also be tested and verified independently when we employ additional architectural principles such as Dependency Inversion and Encapsulation.&lt;/p&gt;
+&lt;p&gt;Like the construction example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
+more easily understood.  Indeed, this understanding leads to abstraction of fundamental behaviours that can organized the code into hierarchies and promote non-duplication of function.&lt;/p&gt;
+&lt;p&gt;When we layer, we are more prepared for evolving the software as independent pieces in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Separation of Concerns Principle&lt;/h1&gt;
+&lt;p&gt;Layering is the result of following the &lt;em&gt;Separation of Concerns&lt;/em&gt; design principle, which states that software should be separated based on the kind
+of work it performs.  When viewed from this lens, we can clearly see what should be in the User Interface collection of code - the code that deals
+with artifacts used to collect or format data for display, and what code performs and enforces business rules and procedures, versus the code used to store and
+retrieve data from a database or file system. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;What are the Layers in Software Architecture&lt;/h1&gt;
+&lt;p&gt;Architecturally, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
+rules and validation logic from user-interface and back-end (data service) infrastructure.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt; - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Business Logic&lt;/strong&gt; - The layer containing the business rules and logical processes, workflows, and validation rules.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Access&lt;/strong&gt; - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each of these layers is focused on a separate logical area of concern, uses different tools and has a different purpose.  Each of
+these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  &lt;/p&gt;
+&lt;p&gt;Ideally, The Business Rules and Logic should not depend on any other projects in the application.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Different Layering Scenarios&lt;/h1&gt;
+&lt;p&gt;As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
+organized into four distinct scenarios, shown here.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Architecture Scenarios" src="../images/engineering-practice-layering-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image sourced from&lt;/em&gt; &lt;a href="https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html"&gt;&lt;em&gt;Programming Stuff: What is meant by “N Tier”?&lt;/em&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Classic&lt;/strong&gt; - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to &lt;em&gt;Boundary Bleed&lt;/em&gt; and messy spaghetti code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Two-Tier&lt;/strong&gt; - In this scenario, the data access layer is distinctly separated from all other code, which resides in the main project for the application.  This represents an understanding that data access and the object-relation-mapping (ORM) is a distinct aspect of a software application and requires specialized knowledge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Three-Tier&lt;/strong&gt; - This is a further refinement and maturation of the software architecture, uniquely placing the business rules (requirements) and logic (processes) within a distinct layer free from presentation and data access specialized coding needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;N-Tier&lt;/strong&gt; - This is the holy-grail, where workflow is separated from the Presentation layer, and accesses the business services layer which uses the data services layer for storage and retrieval; all layers can be distributed across CPU and machine boundaries to achieve scale and reach.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;What is Boundary Bleed&lt;/h1&gt;
+&lt;p&gt;Boundary Bleed occurs when you violate the separate of concerns principle and allow non-built-in types to be exposed through multiple layers.  For example, if you
+create a class in your data service layer, and return it to your business service layer, and that in turn returns that same class to the presentation layer; you've
+passed a class through 2 layers and inadvertently coupled the presentation layer with the data service layer.  This makes your code more brittle and harder to test, where changes
+can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, and it should be avoided and considered as an anti-pattern.&lt;/p&gt;
+&lt;hr&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Automation Bad Day</title><link href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="alternate"></link><published>2023-03-06T00:00:00-08:00</published><updated>2023-03-06T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-06:/automation-bad-day.html</id><summary type="html">&lt;p&gt;Clearly yesterday was a bad day.&lt;/p&gt;</summary><content type="html">&lt;p&gt;"&lt;em&gt;Clearly yesterday was a bad day&lt;/em&gt;" is a quote by &lt;a href="https://www.linkedin.com/in/brharry/"&gt;Brian Harry&lt;/a&gt; in his &lt;a href="https://devblogs.microsoft.com/bharry/bad-day/"&gt;Bad Day&lt;/a&gt; blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. &lt;/p&gt;
 &lt;p&gt;In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (&lt;strong&gt;c-a-c&lt;/strong&gt;) era was born. The CSV files and associated automation using the Azure DevOps &lt;a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1"&gt;REST API&lt;/a&gt;, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Outcome&lt;/strong&gt;: Consistency, standardization, security, and time-savings!&lt;/p&gt;
@@ -25,7 +91,7 @@
 &lt;h1&gt;2AM CALL @ high noon&lt;/h1&gt;
 &lt;p&gt;Just before high-noon we were getting pulled into &lt;strong&gt;all hands-on deck&lt;/strong&gt;, also known as the &lt;strong&gt;infamous 2AM-call&lt;/strong&gt; collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our &lt;strong&gt;Staging (ST)&lt;/strong&gt; and &lt;strong&gt;Production (PR)&lt;/strong&gt; pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="../images/azure-devops-automation-bad-day-5.png"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="2AM Call" src="../images/azure-devops-automation-bad-day-5.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. &lt;/p&gt;
 &lt;blockquote&gt;
@@ -2757,39 +2823,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;p&gt;We terminate the working group, perform a retrospective, and &lt;strong&gt;optionally&lt;/strong&gt; spin up a new working group to complete the work, if and only if it still deemed valuable. THe intentionally limit the lifetime of working groups to keep them focused and energized.&lt;/p&gt;
 &lt;h2&gt;What happens at a +1 Townhall?&lt;/h2&gt;
 &lt;p&gt;We present the overall health of our collaboration, experimentation, and innovation ecosystem, as well as an update and optional demos by each active CoE.&lt;/p&gt;
-&lt;p&gt;Any other questions?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category></entry><entry><title>Systems thinking and the flow of work</title><link href="https://wsbctechnicalblog.github.io/flow-of-work.html" rel="alternate"></link><published>2021-12-15T00:00:00-08:00</published><updated>2021-12-15T00:00:00-08:00</updated><author><name>Alex Bunardzic</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-15:/flow-of-work.html</id><summary type="html">&lt;p&gt;Speeding up software development may not speed up the delivery&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Yoda" src="../images/yoda.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Everyone is busy and yet few things are ever finished.&lt;/em&gt; -Anonymous&lt;/p&gt;
-&lt;p&gt;Delivery of the planned workload often appears unpredictable. Let’s examine what processes contribute to that lack of reliable predictability.&lt;/p&gt;
-&lt;h2&gt;How reliable are the estimates?&lt;/h2&gt;
-&lt;p&gt;If the expected delivery fails to materialize, usually the first suspect is poor estimates. If the team bids on a certain feature and estimates it at one timeboxed cycle (i.e., one iteration), but the feature gets delivered after three or four iterations, the team’s ability to accurately estimate is placed under suspicion.&lt;/p&gt;
-&lt;p&gt;However, the team is only one component of a larger system, and the delivery workflow travels throughout the entire system. A team cannot reliably predict how will the workflow get processed throughout the system.&lt;/p&gt;
-&lt;p&gt;A larger, more holistic system view is needed if we are to understand the overall delivery process. Without gaining such insights, we will continue to be somewhat mystified why is our workflow slow and unpredictable.&lt;/p&gt;
-&lt;h2&gt;Ask developers to work faster&lt;/h2&gt;
-&lt;p&gt;Because of the lack of the insight into the overall working of the entire system, the bottlenecks may get wrongly identified. What we see typically happen is development gets erroneously perceived as the bottleneck. The slowness of delivery gets attributed to the pace of software development. Management attempts to address these ‘bottlenecks’ by either hiring more staff, or by purchasing more advanced tools, or by retraining the staff, or the combination thereof.&lt;/p&gt;
-&lt;p&gt;What that amounts to is basically asking software development staff to work faster. The thinking is that if the developers were to pick up the speed by certain level of magnitude (say, by 50%), then the value delivery will improve in speed by 50%.&lt;/p&gt;
-&lt;p&gt;A good time to take a closer look into this line of reasoning.&lt;/p&gt;
-&lt;h2&gt;Software delivery queues&lt;/h2&gt;
-&lt;p&gt;Software development is always done in isolation. The reason is that changes done to the software code are always assumed to be somewhat faulty. It is much more likely that a change made to the source code is less than optimal. Because of that, we instigate processes in the form of delivery queues. These queues/quality gates are created to make sure software does not get released without inspection.&lt;/p&gt;
-&lt;p&gt;Queues are, by their very nature, speed bumps. Their only job is to slow down the delivery.&lt;/p&gt;
-&lt;p&gt;Why the need to slow down? As mentioned, we don’t trust raw changes to the software, and thus enforce points of inspection.&lt;/p&gt;
-&lt;h2&gt;Software delivery loops&lt;/h2&gt;
-&lt;p&gt;Putting speed bumps on the road to releasing software improves our chances of delivering quality products. However, to blindly assume a happy path and smooth sailing, where all changes get carefully inspected and vetted by the gatekeepers, would be overly optimistic and naïve. More likely than not, the inspection will catch some issues with the proposed changes. When that happens, the proposed change gets sent back to authors. This sendoff then creates a loop.&lt;/p&gt;
-&lt;p&gt;It would also be overly optimistic to assume that it’s always a single loop. Not every request for a fix gets done to the gatekeepers’ satisfaction. We often see the loop (i.e., back to the authors) occur more than once. Try again!&lt;/p&gt;
-&lt;h2&gt;Queues and loops eat up the cycles&lt;/h2&gt;
-&lt;p&gt;The inspection process is never instantaneous. When the requested change arrives at the inspection queue, it is extremely unlikely that the gatekeepers responsible for inspecting the change are immediately available to look at it. They’re busy servicing other requests. The newly arrived change request must “take a number” and then wait in the queue for the number to be called.&lt;/p&gt;
-&lt;p&gt;How long will the wait be? There is no definitive, precise answer to that question. It depends on many things, most of them completely unpredictable.&lt;/p&gt;
-&lt;p&gt;The team who is planning to release their changes is now forced to leave their changes alone; they then either start idling (which causes the management to frown – low utilization rates), or they get to work on something else. The wait time spent in the queue is wasting precious cycles. Not only are the teams waiting, but customers are also waiting for the new functionality/feature/fix.&lt;/p&gt;
-&lt;p&gt;What happens when the gatekeepers finally get to work on the request? They will spend some time examining it, and that time could be substantial. The outcome could be positive (i.e., everything a-okay, go to the next gated phase), or negative (i.e., “we found a defect, sending it back to the team who authored it and now need to fix it”).&lt;/p&gt;
-&lt;p&gt;Now we have a loop. The team who authored the defect receives the request for fixing it, and places it on their queue (“take a number”). Since they are busy working on something else, the request needs to wait for the team to free up their time and attend to it.&lt;/p&gt;
-&lt;p&gt;How long is that wait time going to be? There is no definitive, precise answer. It depends on many things, many of those things also unpredictable.&lt;/p&gt;
-&lt;h2&gt;Will speeding up the development make a significant impact?&lt;/h2&gt;
-&lt;p&gt;If we were to trace the time spent on handoffs (i.e., idling in the queue, waiting for the next available inspectors, reassigning the team to work on something else while they’re waiting) as well as trace the time spent on examining/inspecting the change, plus the time spent on looping back with requests to fix the discovered issues, we will notice that it tends to be of a higher order of magnitude larger compared to the time spent developing software.&lt;/p&gt;
-&lt;p&gt;Since any time spent waiting in the queue is unproductive time, we should go ahead and label it as waste (waste of time). Waste is to be avoided, however in the current model of software development process, such waste seems unavoidable. Our challenge then is to try to reduce it. Reduce the unproductive time.&lt;/p&gt;
-&lt;p&gt;The added stress caused by this mode of working causes another waste – cognitive dissonance that arises from the frequent context switching. The flow of the work gets interrupted, teams get frustrated, customers place additional pressure by complaining about the sluggish speed of delivery.&lt;/p&gt;
-&lt;p&gt;Is it possible to speed up the development process? Definitely – there is always room for improvement. But is that going to make a significant dent in the overall speed of delivery? Probably not.&lt;/p&gt;
-&lt;p&gt;The real improvement will happen when we focus on reducing the unproductive idling. Instead of investing time and effort in finding ways to speed up the development, it may be better to work on reducing the queue wait time, eliminating the loops, and minimizing the context switching stress.&lt;/p&gt;
-&lt;p&gt;Once we remedy the queuing, inspecting, and looping time waste, speeding up the development process will start showing significant improvements. But not before the remedial intervention.&lt;/p&gt;
-&lt;h2&gt;Would more precise estimating help?&lt;/h2&gt;
-&lt;p&gt;The assumption that every development task can be precisely estimated still leaves the problem of unpredictable idling time caused by queues and loops. As we’ve seen, the grand total time spent on making the change and then seeing that change in production is quite unpredictable. It doesn’t really help knowing how long predictable activities will take if we have no way of knowing how long unpredictable activities will take.&lt;/p&gt;
-&lt;h2&gt;What is the solution?&lt;/h2&gt;
-&lt;p&gt;The only plausible solution to this challenge is to strive to reduce, minimize, or even eliminate queues and loops. If we get to the point where we do not need handoffs, there would be no need for queues caused by asynchronous inspection. Once that happens, estimating individual software development tasks will make more sense, as it will offer closer approximation of the delivery time.&lt;/p&gt;</content><category term="Posts"></category><category term="quality"></category><category term="technical-excellence"></category><category term="estimates"></category></entry></feed>
+&lt;p&gt;Any other questions?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category></entry></feed>
