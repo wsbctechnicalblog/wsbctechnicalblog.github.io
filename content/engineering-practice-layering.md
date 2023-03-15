@@ -67,7 +67,11 @@ Ideally, The Business Rules and Logic should not depend on any other projects in
 As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
 organized into four distinct scenarios, shown here.
 
-![Architecture Scenarios](../images/engineering-practice-layering-1.png)
+>
+> ![Architecture Scenarios](../images/engineering-practice-layering-1.png)
+>
+> _Image sourced from_ [_Programming Stuff: What is meant by “N Tier”?_](https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html)
+>
 
 - **Classic** - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to *Boundary Bleed* and messy spaghetti code.
 
