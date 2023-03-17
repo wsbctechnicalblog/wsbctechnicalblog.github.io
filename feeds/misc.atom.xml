@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- misc</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-03T00:00:00-08:00</updated><entry><title>Communication Guidance Upwards</title><link href="https://wsbctechnicalblog.github.io/communication-guidance-upwards.html" rel="alternate"></link><published>2023-03-03T00:00:00-08:00</published><updated>2023-03-03T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-03:/communication-guidance-upwards.html</id><summary type="html">&lt;p&gt;Before you ask for anything, get clarity on the five WHYs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am working on my communication and collaboration skills. Although these posts will not be of a technical nature, they will benefit us all. I learn by doing and sharing and I love getting candid feedback from you, as well as from my manager and mentor.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- misc</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-17T00:00:00-07:00</updated><entry><title>Communication Guidance Sideways (Part 2)</title><link href="https://wsbctechnicalblog.github.io/communication-guidance-sideways.html" rel="alternate"></link><published>2023-03-17T00:00:00-07:00</published><updated>2023-03-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-17:/communication-guidance-sideways.html</id><summary type="html">&lt;p&gt;"Not to be missed after you depart." - L.David Marquet&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from &lt;a href="/communication-guidance-upwards"&gt;Communication Guidance Upwards&lt;/a&gt;, where we discussed how to communicate upwards to executive domain. In this post I will share my thoughts on communicating &lt;code&gt;sideways&lt;/code&gt;, with my peer managers, and &lt;code&gt;rearwards&lt;/code&gt;, with my team.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The proposed value and outcome format, as proposed in the upwards communication can be re-used for sideways and rearwards communication.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="nv"&gt;We&lt;/span&gt; &lt;span class="nv"&gt;want&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
+        &lt;span class="nv"&gt;I&lt;/span&gt; &lt;span class="nv"&gt;recommend&lt;/span&gt; &lt;span class="nv"&gt;that&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;HOW&lt;/span&gt;,&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;. 
+        &lt;span class="nv"&gt;There&lt;/span&gt; &lt;span class="nv"&gt;are&lt;/span&gt; &lt;span class="nv"&gt;several&lt;/span&gt; &lt;span class="nv"&gt;benefits&lt;/span&gt;:
+            &lt;span class="nv"&gt;First&lt;/span&gt;, &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;CORE&lt;/span&gt; &lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;. 
+            &lt;span class="nv"&gt;Also&lt;/span&gt;, &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt; &lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;. 
+            &lt;span class="nv"&gt;Finally&lt;/span&gt;, &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt; &lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
+    &lt;span class="nv"&gt;Imagine&lt;/span&gt;, &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;, &lt;span class="nv"&gt;we&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Before we peek into sideways communication, I must highlight an important epiphany I had. In the illustration, as above, you will notice my team in the center, with me (L4) communicating upwards, as discussed in &lt;a href="/communication-guidance-upwards"&gt;Communication Guidance Upwards&lt;/a&gt;, sideways, and rearwards. The epiphany is that what we are about to discuss as sideways and rearwards communication exists twice - #1 is my team and I, #2 are my peer managers and my leader L1. &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Communicating sideways with peer managers&lt;/h1&gt;
+&lt;p&gt;As the L1, L2, L3, and L4 team we must collaborate, actively listen, co-operate, partner to work to meet common and organizational goals, and most importantly &lt;strong&gt;TRUST&lt;/strong&gt; each other. For example, if I have a problem or am struggling with an unknown or challenging process, I need to be able to rely on my peers, reach out for help, and know that we will confront any challenge and follow-through until we have a solution.  The same can be said for my team of engineers, who themselves are a cluster of collaborative peers.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To improve the sideways communication and collaboration, I recommend that you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Be respectful&lt;/strong&gt;, caring, and never talk down to them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Practice Active listening&lt;/strong&gt;, to understand your peers as humanoids and their unique needs. Silence is an effective ally!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use clear and concise language&lt;/strong&gt;, no TLAs (two/three lettered acronyms), technical jargon, and as my Geography teacher always said no "waffling." Keep it simple, short, concise, and clear. Do not forget to follow up to ensure that your peers are clear on expectations and next steps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be pro-active&lt;/strong&gt;, create a communication matrix and regularly reach out to your peers to build a strong and trusting relationship.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus on solutions&lt;/strong&gt; over placing blame or critique. As I always tell my team - "we will burn up or succeed as a team."&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some leadership anti-patterns you may recognize, for future discussion:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Knights in shining armour.&lt;/li&gt;
+&lt;li&gt;Blasphemous dictators.&lt;/li&gt;
+&lt;li&gt;Zero trust, omnipresent, micro-managers.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Communicating rearwards with my team&lt;/h1&gt;
+&lt;p&gt;For me, the most important part on the illustration is my team and I. It is my responsibility to lead them, protect them, and empower them. As quoted by L. David Marquet in &lt;a href="https://davidmarquet.com/turn-the-ship-around-book/"&gt;Turn the Ship Around&lt;/a&gt;, we "give our team control over WHAT they work on and HOW they work", creating a team of leaders and allowing you "not to be missed after you depart."&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To improve rearward communication, I recommend that you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Establish transparency&lt;/strong&gt; empowering everyone to be informed, pro-active and supportive.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Establish open and safe communication&lt;/strong&gt; encouraging everyone to share their ideas, concerns, thoughts, and even feel safe to &lt;strong&gt;vent&lt;/strong&gt; as needed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be respectful&lt;/strong&gt;, as discussed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Practice Active listening&lt;/strong&gt;, as discussed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use clear and concise language&lt;/strong&gt;, as discussed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Provide regular and candid feedback&lt;/strong&gt; on goals, performance, and opportunities to continuously improve.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be approachable&lt;/strong&gt; and available to your team, which brings me to a few more leadership anti-patterns you may recognize:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;"Always behind closed doors office hermit."&lt;/li&gt;
+&lt;li&gt;"Secretive and vanishing Houdini."&lt;/li&gt;
+&lt;li&gt;"Command and control dictator."
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Lastly, why do I refer to rearward communication. Well, something I learnt in my military days was to always lead by example and in the front, which means my team is not only behind me, but also &lt;strong&gt;has my back&lt;/strong&gt;. &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Remember, less is more! Know your audience and make every word count!&lt;/p&gt;</content><category term="misc"></category><category term="learning"></category></entry><entry><title>Communication Guidance Upwards</title><link href="https://wsbctechnicalblog.github.io/communication-guidance-upwards.html" rel="alternate"></link><published>2023-03-03T00:00:00-08:00</published><updated>2023-03-03T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-03:/communication-guidance-upwards.html</id><summary type="html">&lt;p&gt;Before you ask for anything, get clarity on the five WHYs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am working on my communication and collaboration skills. Although these posts will not be of a technical nature, they will benefit us all. I learn by doing and sharing and I love getting candid feedback from you, as well as from my manager and mentor.&lt;/p&gt;
 &lt;p&gt;In recent courses I learnt that the impact of communication is made up of 7% words, 38% tone, and 55% cues. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="communication" src="../images/communication-guidance-upwards-0.png"&gt;&lt;/p&gt;
