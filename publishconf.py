@@ -20,7 +20,5 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 DELETE_OUTPUT_DIRECTORY = False
 
 # Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
 GISQUS_SITENAME  = "WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
 GOOGLE_ANALYTICS = "G-23L7QXSDYM"
