@@ -16,7 +16,7 @@ In [Fail, Learn, Reset](/fail-learn-reset.html) I explored how I encourage every
 > - a fracturing or giving way under stress
 >
 
-Personally, I prefer of **FAILURE** as an "unexpected outcome" of doing, trying, evolving, or experimenting.
+Personally, I prefer to think of **FAILURE** as an "unexpected outcome" of doing, trying, evolving, or experimenting.
 
 > ![Unexpected Result](../images/fail-learn-reset-transform-1.png)
 
@@ -61,6 +61,10 @@ Yes, we ```tried``` and ```experimented``` with a new structure for a year. We r
 ---
 
 See change as an ```opportunity```, not as a threat!
+
+>
+> "_What makes humans different? Our ability to adapt to change; the more we do it, the more comfortable we are with this disruption as an opportunity._" - Martin Lacey
+>
 
 What are your thoughts?
 
