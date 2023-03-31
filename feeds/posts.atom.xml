@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-15T00:00:00-07:00</updated><entry><title>Engineering Practice Layering</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="alternate"></link><published>2023-03-15T00:00:00-07:00</published><updated>2023-03-15T00:00:00-07:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-15:/engineering-practice-layering.html</id><summary type="html">&lt;p&gt;Application Layering - Separation of Concerns Architecture Principle&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is layering?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-03-31T00:00:00-07:00</updated><entry><title>Fail, Learn, Reset, Transform!</title><link href="https://wsbctechnicalblog.github.io/fail-learn-reset-transform.html" rel="alternate"></link><published>2023-03-31T00:00:00-07:00</published><updated>2023-03-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-31:/fail-learn-reset-transform.html</id><summary type="html">&lt;p&gt;“Success is not final, failure is not fatal, it is the courage to continue that counts.” – Winston Churchill&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/fail-learn-reset.html"&gt;Fail, Learn, Reset&lt;/a&gt; I explored how I encourage everyone in my team and our group to accept failure as an opportunity to learn and how we are trying hard to eradicate the &lt;strong&gt;fear of failure&lt;/strong&gt; that often accompanies the &lt;strong&gt;imposter syndrome&lt;/strong&gt;. In conversations, I realized that the &lt;a href="/fail-learn-reset.html"&gt;Fail, Learn, Reset&lt;/a&gt; post was very engineering focused, but that the concept of learning from failures applies to everything.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;FAILURE&lt;/strong&gt; comes in many shapes and sizes. Here are a few of many definitions from the Merriam-Webster Dictionary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lack of success&lt;/li&gt;
+&lt;li&gt;a falling short&lt;/li&gt;
+&lt;li&gt;a fracturing or giving way under stress
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Personally, I prefer to think of &lt;strong&gt;FAILURE&lt;/strong&gt; as an "unexpected outcome" of doing, trying, evolving, or experimenting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Unexpected Result" src="../images/fail-learn-reset-transform-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Which brings me to "transform" in today's blog post title.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;It is about how (I / we) can transform&lt;/h1&gt;
+&lt;p&gt;When we look at the continuous circle of doing, trying, evolving, experimenting, reflecting, learning, and adjusting, it is important to realize that the LEARN + ADJUST steps are crucial. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="I/We" src="../images/fail-learn-reset-transform-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We need to reflect and transform continuously, otherwise we enter the world of insanity.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"The definition of insanity is doing the same thing over and over and expecting different results." - Albert Einstein
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Two anti-patterns that drive me crazy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Paralysis&lt;/strong&gt; - If you have ever had the displeasure of working with a team that turns every retrospective into a complaining, venting, and blame saga, you know what I mean. Instead of reflecting, learning, and deciding how we / I can change (&lt;strong&gt;transform&lt;/strong&gt;) to make the next iteration better, these paralyzed teams drown in misery and hope for change that never comes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stagnation&lt;/strong&gt; - We have done it this way for decades and it has always worked for us. Sure, the postal office worker stamping envelopes by hand is doing a great job, but not in an efficient way. As a result the worker will always be &lt;strong&gt;too busy&lt;/strong&gt; to embrace new ways of automating and improving the stamping; giving relief and spare time to &lt;strong&gt;experiment&lt;/strong&gt; and &lt;strong&gt;innovate&lt;/strong&gt;. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Ask not what your country can do for you – ask what you can do for your country." - John F. Kennedy
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Next time you get to the learn and adjust stages, take a step back, &lt;a href="https://examinedexistence.com/the-navy-seal-breathing-technique-to-calm-down/"&gt;breathe&lt;/a&gt;, and then ask yourself:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What have we / I learned?&lt;/li&gt;
+&lt;li&gt;What can we / I improve before we re-try?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;OMG, not another reorganization!?!&lt;/h1&gt;
+&lt;p&gt;Another great example is when we as a group announce that we are going to reorganize again. The &lt;code&gt;paralyzed&lt;/code&gt; teams will once again spiral into a dark place, while teams with a healthy Agile and DevOps mindset will embrace the opportunity to change.&lt;/p&gt;
+&lt;p&gt;Yes, we &lt;code&gt;tried&lt;/code&gt; and &lt;code&gt;experimented&lt;/code&gt; with a new structure for a year. We realized that we have not managed to evolve to where we wanted to be. We &lt;code&gt;learn&lt;/code&gt; from the experience, we &lt;code&gt;adjust&lt;/code&gt; (reorganize), and we embrace new ways.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;See change as an &lt;code&gt;opportunity&lt;/code&gt;, not as a threat!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"&lt;em&gt;What makes humans different? Our ability to adapt to change; the more we do it, the more comfortable we are with this disruption as an opportunity.&lt;/em&gt;" - Martin Lacey
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Embrace change!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="learning"></category><category term="innovation"></category></entry><entry><title>Engineering Practice Layering</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="alternate"></link><published>2023-03-15T00:00:00-07:00</published><updated>2023-03-15T00:00:00-07:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-15:/engineering-practice-layering.html</id><summary type="html">&lt;p&gt;Application Layering - Separation of Concerns Architecture Principle&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is layering?&lt;/h1&gt;
 &lt;p&gt;Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
 those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
 technology involved in any given layer and collaborate with other specialists where the layers interface.&lt;/p&gt;
@@ -2779,48 +2829,4 @@ Fast forward to today, and looking back, I can gather some of my observations an
 &lt;p&gt;Alex's favourite part and I quote: &lt;em&gt;"My favourite part of our first 90 days journey (which hasn't ended yet) is formulating clear expectations coming from the stakeholders. That creates clarity in my mind, which is very important to me."&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;That is it for today. Ping me on &lt;a href="https://www.twitter.com/wpschaub"&gt;twitter&lt;/a&gt; if you have any questions. &lt;/p&gt;
-&lt;p&gt;See you next journal update!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="journal"></category></entry><entry><title>Why can I not just create a working group?</title><link href="https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html" rel="alternate"></link><published>2021-12-17T13:13:00-08:00</published><updated>2021-12-17T13:13:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2021-12-17:/ceremony-focus-single-source.html</id><summary type="html">&lt;p&gt;It all depends on the context - [CoE] Working Group&lt;/p&gt;</summary><content type="html">&lt;p&gt;When we launched our &lt;a href="/ceremony-center-of-enablement.html"&gt;Center of Enablement&lt;/a&gt; (CoE), &lt;a href="/dojo-events.html"&gt;Dojo&lt;/a&gt;, &lt;a href="/townhall.html"&gt;Townhall&lt;/a&gt;, &lt;a href="../ceremony-working-group.html"&gt;Working Group&lt;/a&gt;, and &lt;a href="/ceremony-community-of-practice.html"&gt;Community of Practice&lt;/a&gt; (CoP) ceremonies, we triggered vibrant collaboration (which is good) and created confusion (which is bad) with working groups. In the &lt;a href="/ceremony-overview.html"&gt;An overview of our key collaboration ceremonies&lt;/a&gt; we described the difference between the ceremonies, the importance of the terms of reference (why are we here), and the process of creating one or more of the ceremonies.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;What is the difference between a working group and a CoE Working group?&lt;/h1&gt;
-&lt;p&gt;A &lt;strong&gt;working group&lt;/strong&gt; is a group of people working together to collaborate and achieve specified goals. The lifespan of a working group can last anywhere between minutes to years, although we strongly recommend &lt;strong&gt;the shorter the better&lt;/strong&gt; mindset. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you are referring to this generic type of working group, you can spin one up whenever you need to.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;A &lt;strong&gt;CoE working group&lt;/strong&gt; is sponsored by one or more Centers of Enablement, its terms of reference (vision, goals, hypothesis) a subset of and supporting the CoE terms of reference. In other words, there is a strong dependency between a sponsoring and other collaborating CoEs.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you are referring to the CoE working group, you need a CoE to spin up a short-lived CoE Working Group.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="F1" src="../images/ceremony-focus-single-source-0.png"&gt; &lt;/p&gt;
-&lt;p&gt;Think of the CoE as the Ferrari racing team (long-lived) and the CoE Working Group  as the team that performs one of the pit stops (short-lived). The CoE cannot succeed without the CoE Working Group and relies heavily on their feedback to improve.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Let us look at the CoE flow of value&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="CoE" src="../images/ceremony-focus-single-source-1.png"&gt; &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(1)&lt;/strong&gt; - A Centre of Enablement (CoE) is created to assemble people from different disciplines to collaborate and enable our organization to shift across multiple disciplines to create a place where the highest standards are maintained. Every CoE is a coalition for change, made of these pillars: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Provide thought leadership, vision, and direction.&lt;/li&gt;
-&lt;li&gt;Provide good practice and guardrails (aka governance).&lt;/li&gt;
-&lt;li&gt;Establish collaboration with key stakeholders and other CoEs to abolish silos.&lt;/li&gt;
-&lt;li&gt;Trigger working groups, dojos, and community of practices to implement research, education, and outcomes. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;(2)&lt;/strong&gt; - All CoE synchronize on a regular basis to exchange learnings, failures, and ensure that as a whole, the CoEs bubble up to a common vision for the organization.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Working Group" src="../images/ceremony-focus-single-source-2.png"&gt; &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(3)&lt;/strong&gt; and &lt;strong&gt;(4)&lt;/strong&gt; - The CoE triggers one or more CoE working groups, each focused on a subset of the CoE goals, their backlogs linked to he CoE backlog, and their vision supporting the CoE's vision. Every CoE working group is:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Short-lived!&lt;/strong&gt; - The working group's lifetime is limited to the CoE's lifetime and a maximum of 2 program increments (10 weeks). See FAQ for more details.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Laser focused!&lt;/strong&gt; - Focus on experiments, (dis)prove hypothesis, make recommendations, and minimal viable products.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A slice!&lt;/strong&gt; - Take baby steps, focus on a vertical slice, and do &lt;strong&gt;not&lt;/strong&gt; try to solve the world's problems.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="Flow" src="../images/ceremony-focus-single-source-3.png"&gt; &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(5)&lt;/strong&gt; and &lt;strong&gt;(6)&lt;/strong&gt; - Information flows from the CoE Working Group back to the CoE, where it is vetted and consolidated into the CoE knowledgebase.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(7)&lt;/strong&gt; - Each CoE will synchronize and exchange the learnings from the working groups during the Co&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;FAQ&lt;/h1&gt;
-&lt;h2&gt;What happens when a CoE is terminated?&lt;/h2&gt;
-&lt;p&gt;When we terminate a CoE, all associated CoE Working Groups, CoE Dojos, and CoE Community of Practices are terminated as well. All learnings, failures, etc. are maintained for future reference.&lt;/p&gt;
-&lt;h2&gt;What happens when a CoE Working Group's lifetime expires?&lt;/h2&gt;
-&lt;p&gt;We terminate the working group, perform a retrospective, and &lt;strong&gt;optionally&lt;/strong&gt; spin up a new working group to complete the work, if and only if it still deemed valuable. THe intentionally limit the lifetime of working groups to keep them focused and energized.&lt;/p&gt;
-&lt;h2&gt;What happens at a +1 Townhall?&lt;/h2&gt;
-&lt;p&gt;We present the overall health of our collaboration, experimentation, and innovation ecosystem, as well as an update and optional demos by each active CoE.&lt;/p&gt;
-&lt;p&gt;Any other questions?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category></entry></feed>
+&lt;p&gt;See you next journal update!&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="journal"></category></entry></feed>
