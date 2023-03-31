@@ -38,8 +38,8 @@ We need to reflect and transform continuously, otherwise we enter the world of i
 
 Two anti-patterns that drive me crazy:
 
-- **Paralysis** - If you have ever had the displeasure of working with a team that turns every retrospective into a complaining, venting, and blame saga, you know what I mean. Instead of reflecting, learning, and deciding how we / I can change (**transform**) to make the next iteration better, these paralyzed teams drown in self-pity and the hope for change that never comes.
-- **Stagnation** - We have done it this way for decades and it has always worked for us. Sure, the postal office worker stamping envelopes by hand is doing a great job, but not in an efficient way. As a result the worker will always be **too busy** to embrace new ways of automating and improving the stamping. giving relief and spare time to **experiment**. 
+- **Paralysis** - If you have ever had the displeasure of working with a team that turns every retrospective into a complaining, venting, and blame saga, you know what I mean. Instead of reflecting, learning, and deciding how we / I can change (**transform**) to make the next iteration better, these paralyzed teams drown in misery and hope for change that never comes.
+- **Stagnation** - We have done it this way for decades and it has always worked for us. Sure, the postal office worker stamping envelopes by hand is doing a great job, but not in an efficient way. As a result the worker will always be **too busy** to embrace new ways of automating and improving the stamping; giving relief and spare time to **experiment** and **innovate**. 
 
 >
 > “Ask not what your country can do for you – ask what you can do for your country." - John F. Kennedy
@@ -66,5 +66,5 @@ See change as an ```opportunity```, not as a threat!
 > "_What makes humans different? Our ability to adapt to change; the more we do it, the more comfortable we are with this disruption as an opportunity._" - Martin Lacey
 >
 
-What are your thoughts?
+Embrace change!
 
