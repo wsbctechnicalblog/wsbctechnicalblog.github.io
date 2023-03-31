@@ -34,7 +34,7 @@ Note a few important points:
 
 > ![visual](../images/azure-boards-tips-stop-messing-with-our-backlog-2.png) 
 
-When you set the ```Card reordering``` feature to ```Work items reorder when changing columns and the backlog reflects the new order``` **magic** happens when you drag a card from one column to the other on the board.
+When you set the ```Card reordering``` feature to ```Work items follow the backlog order when changing columns``` **magic** happens when you drag a card from one column to the other on the board.
 
 In our example above, we are dragging the **E2** card from the **FUNNEL** to the **ACTIVE** column and the center **SWIMLANE**. As you drop the card **anywhere** in the column, the board positions it correctly using the groomed and ordered backlog. As shown, the card will be placed above **D2**, because on the backlog **E2** is positioned before **D2**.
 
