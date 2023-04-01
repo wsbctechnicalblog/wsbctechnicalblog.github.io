@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Part 1: Pipelines - Why bother and what are our nightmares and options? - </title>
+        <title>Azure Boards Tips - Stop messing with our backlog! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,114 +33,72 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="bookmark"
-            title="Permalink to Part 1: Pipelines - Why bother and what are our nightmares and options?">Part 1: Pipelines - Why bother and what are our nightmares and options?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-stop-messing-with-our-backlog.html" rel="bookmark"
+            title="Permalink to Azure Boards Tips - Stop messing with our backlog!">Azure Boards Tips - Stop messing with our backlog!</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Sat 19 December 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Sun 02 April 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.</p>
+            <p>A few useful "did you know" tips when using Azure Boards.</p>
         </div>
     
         <div class="entry-content">
-            <p>In this series we are going to invite you on our journey of grappling with hundreds of inconsistent and often conflicting continuous delivery pipelines, to evolving to unified pipelines, template-driven pipelines, and eventually self-service automation. We will break down our journey into these multiple parts:</p>
+            <p>We explored the <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a> in <a href="/azure-boards-tips.html">Azure Boards Tips</a> and <a href="/azure-boards-tips-operations-team.html">Azure Boards Tips for Operations Teams</a>. However, I failed to emphasize one important rule when you are working with my team, as well as the teams stewarded by my colleague, Agent #9 from our <a href="https://www.tactec.ca/ndtw-resources/">Navigating DevOps through Waterfalls</a> adventure.</p>
+<blockquote>
+<p>Feel free to visit and peruse <code>our</code> backlog, however, <strong>do not</strong> make any changes on <code>our</code> backlog!**</p>
+<p><img alt="look" src="../images/azure-boards-tips-stop-messing-with-our-backlog-0.png"> 
+</p>
+</blockquote>
+<hr>
+<h1>The board is a visualization</h1>
+<blockquote>
+<p><img alt="visual" src="../images/azure-boards-tips-stop-messing-with-our-backlog-1.png"> </p>
+</blockquote>
+<p>The <strong>BACKLOG</strong>, as shown on the left, is an ordered and prioritized flat or hierarchical list of deliverables, features, technical debt, and other bits and pieces that should be implemented to deliver value to delighted end-users. The <strong>BOARD</strong> is a <code>visual</code> representation of the same data, commonly categorized in columns and swim lanes.</p>
+<p>Note a few important points:</p>
 <ul>
-<li>Part 1: Pipelines - Why bother and what are our nightmares and options? (this)</li>
-<li><a href="/yaml-pipelines-part2.html">Part 2: Pipelines - Introduction, variables and why spaces matter</a></li>
-<li><a href="/yaml-pipelines-part3.html">Part 3: Pipelines - Basic building blocks as templates and sprinkling on telemetry</a></li>
-<li><a href="/yaml-pipelines-part4.html">Part 4: Pipelines - Magic of queue time assembly</a></li>
-<li><a href="/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a></li>
-<li><a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a></li>
-<li><a href="/yaml-pipelines-part7.html">Part 7: Pipelines - There is more! Simplicity and enablement, courtesy of the app-type blueprint-based YAML pipelines</a></li>
-<li><a href="/yaml-pipelines-part8.html">Part 8: Pipelines - From CI to CD and beyond in one pipeline</a></li>
-<li><a href="/yaml-pipelines-part9.html">Part 9: Self-service automation - A dream turns into reality</a></li>
-<li><a href="/yaml-pipelines-part10.html">Part 10: Pipelines - Meet our second generation app-type blueprints</a></li>
-<li><a href="/yaml-pipelines-part11.html">Part 11: Our road to OSS Blueprints - Suppress CD when pipeline runs within PR</a> |</li>
-</ul>
-<p>Other pipeline posts:</p>
-<ul>
-<li><a href="/experiment-yaml-1.html">Azure DevOps Experimentation - YAML Conditionals, Parameters, and Triggers</a></li>
-<li><a href="/sharing-variables-amongst-agents.html">How to share variables amongst Azure Pipeline agents</a></li>
-<li><a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a></li>
-<li><a href="/sharing-variables-with-stages-and-jobs.html">Gotchas when share variables with Azure DevOps stages and jobs</a></li>
-</ul>
-<p>Pipeline quick reference poster posts:</p>
-<ul>
-<li><a href="/moving-hundreds-of-pipeline-snowflakes-qr-2.html">Quick Reference Sheet for Application-type Blueprint-based Pipelines</a></li>
-<li><a href="/moving-hundreds-of-pipeline-snowflakes-qr-3.html">Quick Reference Sheet for Pipeline Terminology</a></li>
-<li><a href="/moving-hundreds-of-pipeline-snowflakes-qr-1.html">Quick Reference Sheet for YAML and Generic Blueprint-based Pipelines</a></li>
+<li><strong>ordered</strong> and <strong>prioritized</strong> list</li>
+<li><strong>visual</strong> representation</li>
+<li>items at the <strong>TOP</strong> have the highest priority</li>
 </ul>
 <hr>
-<h1>Why Pipelines?</h1>
+<h1>The correct, but not default way</h1>
 <blockquote>
-<p><em>"Continuous Delivery Pipeline Value Stream Mapping The Continuous Delivery Pipeline (CDP) represents the workflows, activities, and automation needed to shepherd a new piece of functionality from ideation to an on-demand release of value to the end user."</em> - © Scaled Agile, Inc.</p>
+<p><img alt="visual" src="../images/azure-boards-tips-stop-messing-with-our-backlog-2.png"> </p>
 </blockquote>
-<p>As alluded to by the quote from Scaled Agile, we are not talking about pipelines to carry oil, but pipelines that help us automate continuous integration and delivery tasks. Examples include the automation of guardrail automations, such as SonarQube, WhiteSource, and Building Code scans and validations.</p>
-<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-1.png"></p>
-<p>Pipelines enable engineering to continuously deliver value, map and improve their processes and workflows, promoting consistency and reliability across the organisation.</p>
-<h1>Snowflakes</h1>
-<p>A healthy DevOps mindset promotes the line of autonomy. Above the line the organization defines its vision and governance to ensure alignment with regulatory, legal, and other requirements. Below the line the engineering teams own their process, with full autonomy to plan WHO, WHEN, and HOW they will accomplish their work.</p>
-<p>If, however, there is a lack of blueprints, design practices, and governance, each team will design and develop their pipelines slightly differently. </p>
-<p>The outcome are unique <strong>snowflakes</strong> that promote rapid evolution (positive) and a diversity of pipelines that can become hard to maintain, support, and innovate (negative).</p>
-<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-2.jpg"></p>
-<p>With hundreds of continuous delivery pipelines the <strong>Sec</strong> and <strong>Ops</strong> in DevSecOps began to buckle detecting and fixing vulnerabilities and other guardrail leaks.</p>
-<h1>Emergence of Unified Pipelines</h1>
-<p>In 2018 we decided to grab the pipelines by their valves to tackle the spread of unique pipeline patterns by defining an <strong>Unified</strong> <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=%20Does%20Azure%20Pipelines%20work%20with%20my%20language,code%20to%20multiple%20targets.%20Targets%20include...%20More%20">Azure Pipeline</a> design pattern. The pattern promoted the following principles:</p>
-<ul>
-<li>Automate everything automatable</li>
-<li>Build once</li>
-</ul>
-<blockquote>
-<p>We encourage engineering teams to create a <strong>release</strong> build artifact, with debug symbols published to our symbol server.</p>
-</blockquote>
-<ul>
-<li>Continuous integration and delivery</li>
-<li>Continuous streamlining and improvement</li>
-<li>Maintain one build definition</li>
-</ul>
-<blockquote>
-<p>Instead of a developer and release pipeline, create <strong>one</strong> unified pipeline that locks down the higher environments.</p>
-</blockquote>
-<ul>
-<li>Maintain one release pipeline definition</li>
-<li>Scan for vulnerabilities early, often, and fail fast</li>
-<li>Streamlined approvals</li>
-</ul>
-<blockquote>
-<p>By optimising our approvals, we cut down on the complexity and delay, we inherited from previous years, decades, ... </p>
-</blockquote>
-<ul>
-<li>Test early, often, and fail fast</li>
-<li>Traceability and observability of releases</li>
-</ul>
-<blockquote>
-<p>Nobody wants a <em>"where did this build come from"</em> treasure hunt when joining a 2AM incident call.</p>
-</blockquote>
-<p>What followed was a mind-numbing and expensive era of aligning all snowflakes to the unified design pattern, using the Azure Pipelines GUI editor to manipulate the pipeline json-based configuration. Even though we are using re-usable <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops#:~:text=In%20Azure%20Pipelines%2C%20you%20can%20version%20your%20own,is%20appended%20to%20the%20task%20group%20version%20number.">Task Groups</a> and <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&amp;tabs=yaml">Variable Groups</a> we had to invest thousands of error-prone clicks - there has to be a better way!?!</p>
-<p>We managed to persue our goals of <strong>aligning</strong> with architecture and security guardrails; <strong>consistency</strong> through design practices, automation, and collaboration; <strong>simplicity</strong> to create maintainable pipelines; and <strong>enabling</strong> and <strong>empowering</strong> our common engineering system.</p>
-<h1>Hackathon triggers a course change</h1>
-<p>A radical hackathon idea in 2019 investigated latest technology trends that promised pipeline-as-code, templates, and other facinating features that promise to enable our ultimate goal of self-service automation. Our hackathon idea was not amongst the winners, but is one of the few ideas that continued to simmer and change the world of our continuous delivery pipelines.</p>
-<p>It triggered a pipeline working group, awareness workshops, and even four laptop stickers to highlight unified pipeline, multi-stage, CI+CD, and self-service automation champions.</p>
-<p><img alt="CICD Pipeline" src="/images/moving-hundreds-of-pipeline-snowflakes-part1-3.png"></p>
-<p>Welcome YAML based pipelines, which we will introduce in <a href="/yaml-pipelines-part2.html">part 2</a> of this series.</p>
+<p>When you set the <code>Card reordering</code> feature to <code>Work items follow the backlog order when changing columns</code> <strong>magic</strong> happens when you drag a card from one column to the other on the board.</p>
+<p>In our example above, we are dragging the <strong>E2</strong> card from the <strong>FUNNEL</strong> to the <strong>ACTIVE</strong> column and the center <strong>SWIMLANE</strong>. As you drop the card <strong>anywhere</strong> in the column, the board positions it correctly using the groomed and ordered backlog. As shown, the card will be placed above <strong>D2</strong>, because on the backlog <strong>E2</strong> is positioned before <strong>D2</strong>.</p>
+<p>After dragging the card, both Agent #9 and Agent #13 are <code>happy</code> as their pristine, ordered, and prioritized single source of truth backlog remains unchanged.</p>
+<p>Unfortunately, this is not the default mode with <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a>.</p>
 <hr>
+<h1>The default, but not correct way</h1>
 <blockquote>
-<p>Series Bread Crumbs | Part 1, TOC | <a href="/yaml-pipelines-part2.html">Part 2</a> | <a href="/yaml-pipelines-part3.html">Part 3</a> | <a href="/yaml-pipelines-part4.html">Part 4</a> | <a href="/yaml-pipelines-part5.html">Part 5</a> | <a href="/yaml-pipelines-part6.html">Part 6</a> | <a href="/yaml-pipelines-part7.html">Part 7</a> | <a href="/yaml-pipelines-part8.html">Part 8</a> | <a href="/yaml-pipelines-part9.html">Part 9</a> | <a href="/yaml-pipelines-part10.html">Part 10</a> | <a href="/yaml-pipelines-part11.html">Part 11</a> |</p>
+<p><img alt="visual" src="../images/azure-boards-tips-stop-messing-with-our-backlog-3.png"> </p>
 </blockquote>
+<p>The default <code>Card reordering</code> feature is set to <code>Work items reorder when changing columns and the backlog reflects the new order</code>.</p>
+<p>In our example above, we are dragging the <strong>E2</strong> card from the <strong>FUNNEL</strong> to the <strong>ACTIVE</strong> column and the center <strong>SWIMLANE</strong>. As we drop the card after the <strong><em>-</em></strong> card, the board positions it where we drop it.</p>
+<p>After dragging the card, both Agent #9 and Agent #13 are <code>unhappy</code> as their pristine, ordered, and prioritized backlog remains has been changed. While the tragedy is not evident with this simple example, consider hundreds of cards being dragged and dropped by a team per day. The backlog turns into a single pile of mess very quickly, making the board the single source of truth. </p>
+<hr>
+<h1>Upset with the current default?</h1>
+<p>It is obviously a personal / team preference as to whether the backlog or the board are their single source of truth. For me, the <strong>backlog</strong> which I groom regularly like an immaculate Rose Garden, is my single source of truth. The <strong>Board</strong> is a <code>visualization</code> of the same data using the backlog as source.</p>
+<ul>
+<li>Am I wrong to be upset with the default option selected by Microsoft?</li>
+<li>What are your thoughts?</li>
+</ul>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
-        | <a href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html" rel="bookmark"
-         title="Permalink to Part 1: Pipelines - Why bother and what are our nightmares and options?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-boards-tips-stop-messing-with-our-backlog.html" rel="bookmark"
+         title="Permalink to Azure Boards Tips - Stop messing with our backlog!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
