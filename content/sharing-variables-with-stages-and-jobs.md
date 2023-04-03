@@ -6,7 +6,7 @@ Slug: sharing-variables-with-stages-and-jobs
 Author: Willy-Peter Schaub
 Summary: Understanding and avoiding gotchas that may keep you up at 2AM, troubleshooting YAML-based Azure Pipelines
 
-I assume that you have read our [How to share variables amongst Azure Pipeline agents](/sharing-variables-with-stages-and-jobs.html), which shared a few turbulent moments we experienced while troubleshooting this feature earlier this year. With this post we continue our troubleshooting excursion to highlight a few gotchas that have caused lots of head scratching.
+I assume that you have read our [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html), which shared a few turbulent moments we experienced while troubleshooting this feature earlier this year. With this post we continue our troubleshooting excursion to highlight a few gotchas that have caused lots of head scratching.
 
 ---
 
