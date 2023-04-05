@@ -26,7 +26,7 @@ The first is the iron, the servers, that host the outcome of our software develo
 > ![Cloud Accountability](../images/what-keeps-us-awake-at-night-patching-1.png)
 > Image Source: [Shared responsibility in the cloud](https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility) 
 
-The image, I loaned from a Microsoft article, clearly shows that we are accountable for our servers and that we take responsibility to keep them up-to-date and secure. As we move to platform as a service (PaaS) or software as a service (SaaS) we delegate the accountability to the hosting vendor.
+The image, I loaned from a Microsoft article, clearly shows that we are accountable for our servers and that we take responsibility to keep them up-to-date and secure. As we move to platform-as-a-service (PaaS) or software-as-a-service (SaaS) we delegate the accountability to the hosting vendor.
 
 This area will be covered in a future post by one of our operations-focused engineers, but it is worth mentioning my personal checklist:
 
@@ -71,6 +71,10 @@ If you have Agile Teams within an ART Flow, you could rotate the housekeeping ba
 > ![TD Rotation](../images/what-keeps-us-awake-at-night-patching-2.png)
 
 As shown, each team in the Agile Flow will focus on housekeeping for an iteration, followed by one or more iterations of delivering business features and value. During an innovation and planning iteration, also known as a +1, all teams would park new features and housekeeping, and focus on innovation.
+
+> **IMPORTANT**
+> Sustainment, maintenance, and housekeeping is something that should be part of every engineer's responsibility, similar to built-in quality. Avoid creating sustainment-only teams - most engineers will otherwise avoid it like the plague.
+>  
 
 **PROS**
 
