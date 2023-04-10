@@ -1,5 +1,5 @@
 Title: What keeps us awake at night - Technical Debt
-Date: 2023-04-10
+Date: 2023-04-12
 Category: Posts 
 Tags: azure, azure-devops, eliminate-waste
 Slug: what-keeps-us-awake-at-night-patching
