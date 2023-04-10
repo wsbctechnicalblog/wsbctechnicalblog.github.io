@@ -86,7 +86,7 @@ As shown, each team in the Agile Flow will focus on housekeeping for an iteratio
 - Focus of housekeeping in an iteration is focused only on the Agile team's technical debt.
 - Other teams may skip housekeeping for 2 or more consecutive iterations.
 
-## Option 3 - Continuous housekeeping
+## Option 3 - Continuous housekeeping (my personal recommendation)
 
 Alternatively, every Agile team in every Agile Flow can commit to one, two, or more items from their technical debt backlog, or commit to a predefined percentage of capacity dedicated to housekeeping activities, in parallel to delivering new features and value.
 
