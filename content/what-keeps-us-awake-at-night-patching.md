@@ -15,7 +15,7 @@ Personally, I agree with all of the above, but have a very specific visual that 
 > ![Technical Debt](../images/what-keeps-us-awake-at-night-patching-0.png)
 > Source [Jurassic Park](https://www.pastemagazine.com/movies/jurassic-park/the-12-best-quotes-from-jurassic-park)
 
-I am currently having sleepless nights with technical debt and vulnerabilities in two areas.
+I am currently having sleepless nights with technical debt in two areas.
 
 ---
 
