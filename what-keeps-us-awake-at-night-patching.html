@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>DevOps value proposition - </title>
+        <title>What keeps us awake at night - Technical Debt - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,46 +33,119 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/devops-value-proposition.html" rel="bookmark"
-            title="Permalink to DevOps value proposition">DevOps value proposition</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/what-keeps-us-awake-at-night-patching.html" rel="bookmark"
+            title="Permalink to What keeps us awake at night - Technical Debt">What keeps us awake at night - Technical Debt</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 30 December 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 12 April 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>DevOps introduces simultaneous focus on expectations, architecture, design, testing, building, releasing, and running the system</p>
+            <p>Empower engineering without compromising security</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="DevOps Yoda" src="../images/DevOps.jpeg"></p>
-<p>Software engineering consists of four distinct activities:</p>
-<ol>
-<li>Envisioning software</li>
-<li>Creating software</li>
-<li>Releasing software</li>
-<li>Running software</li>
-</ol>
-<p>Traditionally, those four activities were compartmentalized into four distinct divisions/departments/teams. There are departments and teams that work on envisioning/hypothesizing and gathering the requirements. There is a hand-off from those upstream departments to the downstream software creation departments (consisting of software architects, modelers, designers, coders, and testers).</p>
-<p>There is a hand-off from those upstream software creation departments to downstream software release departments. Those departments consist of release engineers who are concerned with mitigating risks via proper change control processes.</p>
-<p>There is a hand-off from those upstream software release departments to downstream sustainment and reliability departments. Those teams are responsible for running the released software and keeping the lights on.</p>
-<p>The above arrangement has proven inefficient when it comes to competing on the mainstream market. Any change necessary for improving the quality of the service takes way too long, due to the gated phases and asynchronous “take a number” approach to attending to the process. Value stream delivery tends to be very choppy and unpredictable following the traditional software engineering model.</p>
-<h2>There is room for improvement</h2>
-<p>The proposed improvement arrived in the form of Extreme Programming, Agile Manifesto, and DevOps. In a nutshell, the proposed change starts with the suggestion to remove the above four silos and to combine all four distinct activities (envisioning, creating, releasing, and running) into a single activity. DevOps is a discipline that is based on doing all those four activities simultaneously. DevOps teams engage in envisioning, creating, releasing, and running software as part of their daily activities.</p>
-<p>What would be the advantages of this newfangled approach? The constraints of being expected to perform all four activities at once forces organizations to focus on reducing the average batch sizes and limiting the number of items being worked on at the same time (limited Work in Progress).</p>
-<p>As a result, it gets easier to ensure technical excellence and overall quality of the value delivered to the paying customers, because issues and errors caught tend to be small, with a very limited blast radius.</p>
+            <p>The obvious question that comes mind is: "<strong>What is technical debt?</strong>" I asked <a href="https://chat.openai.com/chat">ChatGPT</a> and got the following response: "<em>Technical debt is a term used in software development to describe the additional work required to maintain and update a codebase developed using suboptimal practices. It can occur due to factors such as tight deadlines or the use of quick-and-dirty coding practices that prioritize speed over code quality and maintainability. Technical debt can result in higher long-term costs and slower development, limiting the ability of the software to adapt to changing business needs. Therefore, it is important to manage and minimize technical debt to reduce risks and ensure the sustainability of software development projects.</em>"</p>
+<p>In a continued conversation another important nugget emerged from <a href="https://chat.openai.com/chat">ChatGPT</a>: "<em>Technical debt is typically considered to be self-imposed.</em>"</p>
+<p>Personally, I agree with all of the above, but have a very specific visual that pops up in my mind whenever I am part of a discussion where technical debt raises its ugly head:</p>
+<blockquote>
+<p><img alt="Technical Debt" src="../images/what-keeps-us-awake-at-night-patching-0.png">
+Source <a href="https://www.pastemagazine.com/movies/jurassic-park/the-12-best-quotes-from-jurassic-park">Jurassic Park</a></p>
+</blockquote>
+<p>I am currently having sleepless nights with technical debt in two areas.</p>
+<hr>
+<h1>Toxic server debt</h1>
+<p>The first is the iron, the servers, that host the outcome of our software development. </p>
+<blockquote>
+<p><img alt="Cloud Accountability" src="../images/what-keeps-us-awake-at-night-patching-1.png">
+Image Source: <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility">Shared responsibility in the cloud</a> </p>
+</blockquote>
+<p>The image, I loaned from a Microsoft article, clearly shows that we are accountable for our servers and that we take responsibility to keep them up-to-date and secure. As we move to platform-as-a-service (PaaS) or software-as-a-service (SaaS) we delegate the accountability to the hosting vendor.</p>
+<p>This area will be covered in a future post by one of our operations-focused engineers, but it is worth mentioning my personal checklist:</p>
+<ul>
+<li>Use <strong>SaaS</strong> where you can. Someone else is accountable for solution and hosting infrastructure.</li>
+<li>Use <strong>PaaS</strong> for custom built solutions. Someone else is accountable for hosting infrastructure.</li>
+<li>Perform continuous patching and upgrading of frameworks in <strong>IaaS</strong> and <strong>on-prem</strong>. You are responsible!</li>
+</ul>
+<p>Now for the second area.</p>
+<hr>
+<h1>Turbulent application WASTE</h1>
+<p>We intentionally and unintentionally gather WASTE, vulnerabilities, and technical debt in with our software development solutions when using 3rd-party frameworks, extensions, or services. We have to adapt to a dynamic and continuously evolving world. </p>
+<p>For example, when using the .NET framework, we need a strategy to understand which versions are supported, which versions we recommend as an organization, and how we upgrade hundred to thousands of solutions.</p>
+<p>The strategy could guide us as follows:</p>
+<ul>
+<li>Support latest and latest - 1 versions of .NET.</li>
+<li>Upgrade the hosting servers you own, accordingly.</li>
+<li>Upgrade the solutions you own, accordingly.</li>
+<li>Do it as soon as possible. If you make a conscious decision to defer the upgrade, you have just made your pile of technical debt grow.</li>
+</ul>
+<blockquote>
+<p><strong>FOCUS ON TECHNICAL DEBT</strong></p>
+<ul>
+<li>Too <strong>much</strong> - unable to deliver continuous new value to your customers.</li>
+<li>Too <strong>little</strong> - unable to deliver new value to your customers when your solutions drown in WASTE. In addition, you will create STRESS and eventually BURNOUT your engineers during ad-hoc remediation spikes.</li>
+</ul>
+</blockquote>
+<h2>Option 1 - Reactive housekeeping</h2>
+<p>I do not support the reactive <strong>spikes</strong> of remediating vulnerabilities and reducing technical debt remediation. It makes no sense!</p>
+<blockquote>
+<p><img alt="Reactive" src="../images/what-keeps-us-awake-at-night-patching-4.png"></p>
+</blockquote>
+<p>Note that the deliver of value is drastically reduced over three iterations. NOT a customer friendly experience!</p>
+<h2>Option 2 - Rotate housekeeping accountability</h2>
+<p>If you have Agile Teams within an ART Flow, you could rotate the housekeeping baton and associated accountability between the teams. </p>
+<blockquote>
+<p><img alt="TD Rotation" src="../images/what-keeps-us-awake-at-night-patching-2.png"></p>
+</blockquote>
+<p>As shown, each team in the Agile Flow will focus on housekeeping for an iteration, followed by one or more iterations of delivering business features and value. During an innovation and planning iteration, also known as a +1, all teams would park new features and housekeeping, and focus on innovation.</p>
+<blockquote>
+<p><strong>IMPORTANT</strong>
+Sustainment, maintenance, and housekeeping is something that should be part of every engineer's responsibility, similar to built-in quality. Avoid creating sustainment-only teams - most engineers will otherwise avoid it like the plague.
+</p>
+</blockquote>
+<p><strong>PROS</strong></p>
+<ul>
+<li>Accountability and responsibility of housekeeping is <strong>shared</strong>.</li>
+<li>Overall, the ART Flow delivers a <strong>continuous flow</strong> of business and innovation value.</li>
+</ul>
+<p><strong>CONS</strong></p>
+<ul>
+<li>Focus of housekeeping in an iteration is focused only on the Agile team's technical debt.</li>
+<li>Other teams may skip housekeeping for 2 or more consecutive iterations.</li>
+</ul>
+<h2>Option 3 - Continuous housekeeping (my personal recommendation)</h2>
+<p>Alternatively, every Agile team in every Agile Flow can commit to one, two, or more items from their technical debt backlog, or commit to a predefined percentage of capacity dedicated to housekeeping activities, in parallel to delivering new features and value.</p>
+<blockquote>
+<p><img alt="TD Slicing" src="../images/what-keeps-us-awake-at-night-patching-3.png"></p>
+</blockquote>
+<p>As shown above, the <strong>tax</strong> on each team is minimal and there are no costly and disruptive remediation spikes. As shown below there is a continuous flow of innovation and business value - Agile Team and customer FRIENDLY experience!</p>
+<blockquote>
+<p><img alt="Value flow" src="../images/what-keeps-us-awake-at-night-patching-5.png"></p>
+</blockquote>
+<p><strong>PROS</strong></p>
+<ul>
+<li>Continuous flow of value.</li>
+<li>Continuous reduction of WASTE.</li>
+<li>Ability to plan and budget for the housekeeping.</li>
+<li>Cannot think of a CON q;-)</li>
+</ul>
+<hr>
+<h2>Continuous vacuum cleaning!</h2>
+<p>I compare the continuous housekeeping to vacuuming our float home. If everyone in my family owns a chore and I do vacuuming on a regular weekly cadence, I typically spend 45-60 minutes collecting dust. If I ignore my responsibilities, I have to spend hours cleaning, often at the most inopportune time.</p>
+<p>I favour the former, because I can plan it and it only briefly distracts me from more interesting tasks, such as watching the Formula One grand-prix, or writing these posts.</p>
+<p>How are you dealing with technical debt? What are your learnings? Your pain points?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a>
-        | <a href="https://wsbctechnicalblog.github.io/devops-value-proposition.html" rel="bookmark"
-         title="Permalink to DevOps value proposition">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="https://wsbctechnicalblog.github.io/what-keeps-us-awake-at-night-patching.html" rel="bookmark"
+         title="Permalink to What keeps us awake at night - Technical Debt">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
