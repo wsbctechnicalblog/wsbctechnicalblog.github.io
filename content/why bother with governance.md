@@ -6,7 +6,7 @@ Slug: why-bother-with-governance
 Author: Willy-Peter Schaub
 Summary: Why bother with governance when no-one can find it?
 
- will not waste your time with the **why** and **what** of governance, guardrails, policies, and standards has been covered in [Servant stewardship of guardrails](/servant-stewardship-of-guardrails.html) and [Can we enact governance through engineering-friendly manifestos and guardrails](/governance-manifestos-guardrails.html). Instead, I want us to have a discussion as to why it is so difficult to encourage engineering to remain within guardrails, to collaborate to make improvements, and to steward the guardrails that are intended to keep us all from danger.  
+I will not waste your time with the **why** and **what** of governance, guardrails, policies, and standards have been covered in [Servant stewardship of guardrails](/servant-stewardship-of-guardrails.html) and [Can we enact governance through engineering-friendly manifestos and guardrails](/governance-manifestos-guardrails.html). Instead, I want us to have a discussion as to why it is so difficult to encourage engineering to remain within guardrails, to collaborate to make improvements, and to steward the guardrails that intend to keep us all from danger.  
 
 ---
 
