@@ -1,4 +1,4 @@
-Title: BCIT Computer Systems Technology Industry Sponsored Student Project (ISSP)2
+Title: BCIT Computer Systems Technology Industry Sponsored Student Project (ISSP)
 Date: 2023-05-25
 Category: Posts 
 Tags: event, oss
@@ -14,7 +14,7 @@ Today, I had another moment of pride, as I listened to the presentation delivere
 
 # The project
 
-We (primarily Andreas Mertens, GitHub: AndreasNVI) developed the Technology Framework Monitor (TFM) product to gather information about every project within an [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) organization. The product scans every [Azure Repository](https://azure.microsoft.com/en-us/products/devops/repos/), analyses the projects within each repository, and saves data in a SQL Server database for further analysis and reporting.
+We (primarily AndreasM, GitHub: AndreasNVI) developed the Technology Framework Monitor (TFM) product to gather information about every project within an [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) organization. The product scans every [Azure Repository](https://azure.microsoft.com/en-us/products/devops/repos/), analyses the projects within each repository, and saves data in a SQL Server database for further analysis and reporting.
 
 Examples of information collected and analyzed:
 
