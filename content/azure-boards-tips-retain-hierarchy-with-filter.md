@@ -30,7 +30,7 @@ A feature I discovered is the "keep hierarchy with filters" toggle under **View 
 
 > ![Hierarchy Flag](../images/azure-boards-tips-retain-hierarchy-with-filter-3.png) 
 
-If you toggle that to **On** you get the view I believe should be the default. Best pf both worlds ... filter set, and parent and child hierarchy enabled q;-)
+If you toggle that to **On** you get the view I believe should be the default. Best of both worlds ... filter set, and parent and child hierarchy enabled.
 
 > ![Filter not removed](../images/azure-boards-tips-retain-hierarchy-with-filter-4.png) 
 
