@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title></title>
+        <title>Azure Boards Tips - Retain hierarchy with filter - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -26,8 +26,6 @@
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
-            <div id="title-block">
-            </div>
         </div>
     </div>
 </div>
@@ -35,33 +33,76 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-<h2>Articles tagged with process </h2>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-retain-hierarchy-with-filter.html" rel="bookmark"
+            title="Permalink to Azure Boards Tips - Retain hierarchy with filter">Azure Boards Tips - Retain hierarchy with filter</a></h1>
 
-
-
-
-
-<blocks cols="2">
-        <div class="sec-article">
-            <div class="read-more">Tue 23 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/plate-emptying.html" rel=Bookmark title="Permalink to Plate-emptying is not the same as Done">Plate-emptying is not the same as Done</a></h3>
-            <p>
-            <p>Maximizing the utilization of the time spent on creating software is a surefire way to drive the team into a brickwall</p>            
-            </p>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 05 June 2023</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Why does the hierarchy view [not] vanish when selecting a filter?</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We continue the journey of feature discovery with the <a href="https://azure.microsoft.com/en-us/products/devops">AzureDevOps</a> Board, which we started with <a href="/azure-boards-tips.html">Azure Boards Tips</a>, <a href="/azure-boards-tips-stop-messing-with-our-backlog.html">Azure Boards Tips for Operations Teams</a>, and <a href="azure-boards-tips-operations-teams">Azure Boards Tips for Operations Teams</a>.</p>
+<hr>
+<h1>Odd behaviour when using the backlog filter</h1>
+<p>We often find ourselves switching the <a href="https://azure.microsoft.com/en-us/products/devops/boards/">Azure Board</a> to the backlog view and enable parents, giving us a hierarchical view as shown below. </p>
+<blockquote>
+<p><img alt="Hierarchy" src="../images/azure-boards-tips-retain-hierarchy-with-filter-1.png"> </p>
+</blockquote>
+<p>Then we use the filter to show a subset of the work items, in this case those with a state of <strong>Active</strong>.</p>
+<blockquote>
+<p><img alt="Filter removes hierarchy" src="../images/azure-boards-tips-retain-hierarchy-with-filter-2.png"></p>
+</blockquote>
+<p>An annoying side effect of using filters, is that the hierarchical view disappears.</p>
+<hr>
+<h1>Flip a toggle to get the view you want</h1>
+<p>A feature I discovered is the "keep hierarchy with filters" toggle under <strong>View Options</strong>. </p>
+<blockquote>
+<p><img alt="Hierarchy Flag" src="../images/azure-boards-tips-retain-hierarchy-with-filter-3.png"> </p>
+</blockquote>
+<p>If you toggle that to <strong>On</strong> you get the view I believe should be the default. Best of both worlds ... filter set, and parent and child hierarchy enabled.</p>
+<blockquote>
+<p><img alt="Filter not removed" src="../images/azure-boards-tips-retain-hierarchy-with-filter-4.png"> </p>
+</blockquote>
+<hr>
+<p>Any other tips to share?</p>
         </div>
 
-        <div class="sec-article">
-            <div class="read-more">Wed 17 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/what-is-value.html" rel=Bookmark title="Permalink to How do we know what our customers value?">How do we know what our customers value?</a></h3>
-            <p>
-            <p>We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.</p>            
-            </p>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-boards-tips-retain-hierarchy-with-filter.html" rel="bookmark"
+         title="Permalink to Azure Boards Tips - Retain hierarchy with filter">Permalink</a>            
         </div>
-
-</blocks>
-
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -124,7 +165,7 @@
                     <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
@@ -145,7 +186,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (143)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (143)</li>
                 </ul>
              
             </div>
