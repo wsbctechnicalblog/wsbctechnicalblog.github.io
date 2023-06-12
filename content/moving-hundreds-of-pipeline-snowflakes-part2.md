@@ -61,7 +61,7 @@ steps:
 ```
 
 It is evident that:
-- It is triggered on changes on the **master** branch.
+- It is triggered on changes on the **main** branch.
 - It is queued on the latest **ubuntu** agent pool - other options include macOS and Windows.
 - It runs two steps, hosted in one stage, containing one job.
 
