@@ -1,5 +1,5 @@
 Title: Engineering Practice & Processes
-Date: 2023-02-17
+Date: 2023-06-14
 Category: Posts 
 Tags: code, code-quality, engineering, technical-excellence
 Slug: engineering-practice-practices-processes
