@@ -17,14 +17,14 @@ When I think about software engineering, I think of a modern digital factory whe
 # Inner Workings & Collaboration
 
 Our Common Engineering team is responsible for the inner workings of this software engineering factory, as their product to extend and improve – and automate everywhere possible.  There have been great strides in the past 10 years in the thinking and implementation of the managed software environment which has led to automation and streamlining of the process.  Our Ce team has embraced this mindset with continuous improvement and new implementations in automation of our Continuous Integration (CI) build pipelines including Continuous Deployment (CD) and On-Demand Delivery.  From the perspective of the infrastructure as a service, the Ce team continues to apply software engineering practices – adopting Infrastructure-as-Code (IaC) and Configuration-as-Code (CaC) using version control repositories to manage and track changes.  Lessons and best practices also apply here, and bite when they are not fully embraced; naming conventions and standard practices enable automation, and we are seeing the benefits of that software engineering mindset.
+
 >
 > ![Active Collaboration](../images/engineering-practice-practices-processes-1.png)
->
 >
 > Figure – Active Collaboration to create “one” view, “one” team. See https://wsbctechnicalblog.github.io/ceremony-overview.html for details on CoE.
 >
 
-# Enginerring Mission
+# Engineering Mission
 
 Engineering a software application starts with a mission – and that mission is articulated by our Solution Architecture team in concert with other business groups (their customers).  This is an exciting point of collaboration between our Ce and Architecture groups as well; we can help them to discover and implement their deliverables in an Agile, evolving product and business landscape; to work together to find the best solutions to keeping the software factory running smoothly.  To communicate and apply lessons we’ve learned in standardization, integration, creating blueprints, and automation collaboratively.
 
@@ -44,5 +44,4 @@ When and how the Technology Adoption Process (TAP) gets triggered is another are
 # Lifecycle Support
 
 The Common Engineering team supports the entire Software Product Engineering lifecycle from ideation to deprecation & decommissioning, working collaboratively with other teams to ensure our processes and practices are visible and well defined.  In doing so, we expose opportunities for improvement, further collaboration and automation.
- 
 
