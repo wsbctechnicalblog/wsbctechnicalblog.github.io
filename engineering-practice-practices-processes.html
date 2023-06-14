@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Engineering Practice Layering - </title>
+        <title>Engineering Practice & Processes - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,97 +33,51 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="bookmark"
-            title="Permalink to Engineering Practice Layering">Engineering Practice Layering</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-practices-processes.html" rel="bookmark"
+            title="Permalink to Engineering Practice & Processes">Engineering Practice & Processes</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Martin M. Lacey on Wed 15 March 2023</div>
+        <div class="read-more">Posted by Martin M. Lacey on Wed 14 June 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Application Layering - Separation of Concerns Architecture Principle</p>
+            <p>Software Engineering Practices &amp; Process</p>
         </div>
     
         <div class="entry-content">
-            <h1>What is layering?</h1>
-<p>Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
-those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
-technology involved in any given layer and collaborate with other specialists where the layers interface.</p>
-<p>This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing is created that identifies each aspect of construction as a layered endeavor.  Once the design is signed-off, a hole is dug, a frame and rebar are placed within and the concrete is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
-building at a time.  </p>
-<p>After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
-of the building.  The 4th layer of work involves completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
-fixtures and appliances are installed, switches installed and connected, paint applied, and carpet or hardwood flooring is installed.</p>
-<p>This is no different in software - except the layers are logical, containing only code that address a particular area of interest.  But because it is code, each layer can be ommitted or subverted by the unwary.  Let's examine this more closely next.</p>
-<hr>
-<h1>Why is Layering Important?</h1>
-<p>In Software, <em>Layering</em> is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability &amp; testability.  When we layer our software, we
-are acknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independently. 
-This creates a technology stack and loosely coupled interfaces between the layers that promote consistency at the communication channels between layers (re: public interfaces), and independence of each layer itself.  Each layer
-can also be tested and verified independently when we employ additional architectural principles such as Dependency Inversion and Encapsulation.</p>
-<p>Like the construction example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
-more easily understood.  Indeed, this understanding leads to abstraction of fundamental behaviours that can organized the code into hierarchies and promote non-duplication of function.</p>
-<p>When we layer, we are more prepared for evolving the software as independent pieces in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.</p>
-<hr>
-<h1>Separation of Concerns Principle</h1>
-<p>Layering is the result of following the <em>Separation of Concerns</em> design principle, which states that software should be separated based on the kind
-of work it performs.  When viewed from this lens, we can clearly see what should be in the User Interface collection of code - the code that deals
-with artifacts used to collect or format data for display, and what code performs and enforces business rules and procedures, versus the code used to store and
-retrieve data from a database or file system. </p>
-<hr>
-<h1>What are the Layers in Software Architecture</h1>
-<p>Architecturally, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
-rules and validation logic from user-interface and back-end (data service) infrastructure.  </p>
-<ul>
-<li><strong>User Interface</strong> - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.</li>
-<li><strong>Business Logic</strong> - The layer containing the business rules and logical processes, workflows, and validation rules.</li>
-<li><strong>Data Access</strong> - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its function.</li>
-</ul>
-<p>Each of these layers is focused on a separate logical area of concern, uses different tools and has a different purpose.  Each of
-these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  </p>
-<p>Ideally, The Business Rules and Logic should not depend on any other projects in the application.</p>
-<hr>
-<h1>Different Layering Scenarios</h1>
-<p>As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
-organized into four distinct scenarios, shown here.</p>
+            <h1>The Software Engineering Landscape</h1>
+<p>When thinking of software engineering, we need to have a clear vision and utility of practices we employ and the processes we follow.  Firstly, software and software engineering does not exist in a vacuum; it exists to provide a service and solution to a customer facing problem – to create a viable product that not only meets the need but embraces the problem space to become a beacon of hope and vision in the domain of the end-user.  What we build has a purpose and a life of service to provide, to enhance and embrace changes that meet an evolving domain.  This is the fundamental viewpoint for a product focused software engineering practice – and the drive to efficiency, quality, and best practices is seen from that lens.</p>
+<h1>The Software Factory</h1>
+<p>When I think about software engineering, I think of a modern digital factory where humans are the creativity engines working along and within a well-defined and open, interconnected set of processes that not only guide the engineers but enhance their effectiveness and creativity while not wavering on quality.  To get this right, we need to have the right kind of infrastructure to support the product engineering mindset.  In fact, the infrastructure is itself software and a set of process and is the internal facing product to be consumed by our other software engineering teams in pursuit of the product deliveries; you can see the fractal nature of this.</p>
+<h1>Inner Workings &amp; Collaboration</h1>
+<p>Our Common Engineering team is responsible for the inner workings of this software engineering factory, as their product to extend and improve – and automate everywhere possible.  There have been great strides in the past 10 years in the thinking and implementation of the managed software environment which has led to automation and streamlining of the process.  Our Ce team has embraced this mindset with continuous improvement and new implementations in automation of our Continuous Integration (CI) build pipelines including Continuous Deployment (CD) and On-Demand Delivery.  From the perspective of the infrastructure as a service, the Ce team continues to apply software engineering practices – adopting Infrastructure-as-Code (IaC) and Configuration-as-Code (CaC) using version control repositories to manage and track changes.  Lessons and best practices also apply here, and bite when they are not fully embraced; naming conventions and standard practices enable automation, and we are seeing the benefits of that software engineering mindset.</p>
 <blockquote>
-<p><img alt="Architecture Scenarios" src="../images/engineering-practice-layering-1.png"></p>
-<p><em>Image sourced from</em> <a href="https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html"><em>Programming Stuff: What is meant by “N Tier”?</em></a>
+<p><img alt="Active Collaboration" src="../images/engineering-practice-practices-processes-1.png"></p>
+<p>Figure – Active Collaboration to create “one” view, “one” team. See https://wsbctechnicalblog.github.io/ceremony-overview.html for details on CoE.
 </p>
 </blockquote>
-<ul>
-<li>
-<p><strong>Classic</strong> - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to <em>Boundary Bleed</em> and messy spaghetti code.</p>
-</li>
-<li>
-<p><strong>Two-Tier</strong> - In this scenario, the data access layer is distinctly separated from all other code, which resides in the main project for the application.  This represents an understanding that data access and the object-relation-mapping (ORM) is a distinct aspect of a software application and requires specialized knowledge.</p>
-</li>
-<li>
-<p><strong>Three-Tier</strong> - This is a further refinement and maturation of the software architecture, uniquely placing the business rules (requirements) and logic (processes) within a distinct layer free from presentation and data access specialized coding needs.</p>
-</li>
-<li>
-<p><strong>N-Tier</strong> - This is the holy-grail, where workflow is separated from the Presentation layer, and accesses the business services layer which uses the data services layer for storage and retrieval; all layers can be distributed across CPU and machine boundaries to achieve scale and reach.  </p>
-</li>
-</ul>
-<hr>
-<h1>What is Boundary Bleed</h1>
-<p>Boundary Bleed occurs when you violate the separate of concerns principle and allow non-built-in types to be exposed through multiple layers.  For example, if you
-create a class in your data service layer, and return it to your business service layer, and that in turn returns that same class to the presentation layer; you've
-passed a class through 2 layers and inadvertently coupled the presentation layer with the data service layer.  This makes your code more brittle and harder to test, where changes
-can have unexpected side-effects.  This is <em>Boundary Bleed</em>, and it should be avoided and considered as an anti-pattern.</p>
-<hr>
+<h1>Engineering Mission</h1>
+<p>Engineering a software application starts with a mission – and that mission is articulated by our Solution Architecture team in concert with other business groups (their customers).  This is an exciting point of collaboration between our Ce and Architecture groups as well; we can help them to discover and implement their deliverables in an Agile, evolving product and business landscape; to work together to find the best solutions to keeping the software factory running smoothly.  To communicate and apply lessons we’ve learned in standardization, integration, creating blueprints, and automation collaboratively.</p>
+<h1>Inception</h1>
+<p>The primary deliverable from the SA team is the Architecture Definition Document (ADD); a broadly scoped and multi-layered specification that covers a breadth technical and functional viewpoint.  The SA’s should build from a reference to the Azure Architecture and together with the Center of Enablement (CoE) create a library of organizational architecture patterns to be adopted or extended during ADD creation.   In an evolving (Agile / SAFe) product life cycle, the ADD needs to be iterative in nature as some viewpoints get more clarity and detail with time.  Some viewpoints have significant impact when altered, others can evolve without too much risk; these areas and work-flows need to be defined and documents to add clarity to the process, which can lead to process improvements and automation.  Currently the mechanics for crafting an ADD (word, Visio, draw.io, AzDO wiki), where it is stored, and its structural contents are not easily understood or consistent applied.  The content of the ADD’s should be based upon reusable design patterns that are referenced and possibly extended to avoid duplication of effort lack of consistent implementation across products.</p>
+<h1>Ideation</h1>
+<p>The Design Review Group (DRG) is the multi-disciplinary group including senior members from Common Engineering, Architecture, Security, and Cloud Operation areas whose task is to review and ensure the integrity of each product ADD.  As the ADD needs to evolve with the Agile products it is intended to describe and support, so too does the cadence, process and mechanics of the DRG.  Common Engineering is committed to assisting the Architecture team define the processes needed to support the needs of product design definition and review, creating the needed artifact to support and possibly automate the workflow where possible and practical.  Currently the DRG uses an Azure board to track the process of ADD creation and approval.  </p>
+<h1>Technology Adoption</h1>
+<p>When and how the Technology Adoption Process (TAP) gets triggered is another area that Common Engineering and the Architecture Groups can collaborate.  We have automated the inflow of requests to make the initial request for new technology at WSBC so that it sends a confirmation email to the requesting individual and add an entry into the TAP Azure boards setup to track processing of adoption requests through the TAP process.  Once a product has been approved for adoption, it should become an entry on the Product Catalog; this is another area of automation Ce team can help provide.  The TAP process needs to be supported by Common Engineering to help govern the landscape of technology we can reasonably consume and use consistently across products, product lines, and ARTs.</p>
+<h1>Lifecycle Support</h1>
+<p>The Common Engineering team supports the entire Software Product Engineering lifecycle from ideation to deprecation &amp; decommissioning, working collaboratively with other teams to ensure our processes and practices are visible and well defined.  In doing so, we expose opportunities for improvement, further collaboration and automation.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
         | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
-        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="bookmark"
-         title="Permalink to Engineering Practice Layering">Permalink</a>            
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-practices-processes.html" rel="bookmark"
+         title="Permalink to Engineering Practice & Processes">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
