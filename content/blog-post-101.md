@@ -65,6 +65,7 @@ Here is a list of tags we use when creating new content:
 | testing         |  | Test to raise the quality bar and deploy with confidence. |
 | tips            |  | Tips and tricks. |
 | version-control |  | Secure, version, and collaborate to build better code. |  
+| water-cooler    |  | Crisp and focused discussions from captured at our water-coolers. |
 | workflow        |  | Streamline repetitive tasks and processes.
 | x-as-code       |  | Virtualizing any aspect of the computing machinery. |
 | xp              |  | Extreme programming ( XP) software development methodology. |
