@@ -10,7 +10,7 @@ Water cooler talk occurs when we take a break from work, socialize with each oth
 
 > ![Why is WSBC Cool?](../images/water-cooler-talk-why-is-wsbc-such-a-cool-place-0.png) 
 
-For me it is the **culture**, the **flexibility** of working from home, the **opportunity** to dabble with old, current, and future technologies, the **leadership**, based on **empowering** and **trusting** staff, and amazing benefits.
+For me it is the **culture**, the **flexibility** of working from home, the **opportunity** to dabble with old, current, and future technologies, the **leadership**, based on **empowering** and **trusting** staff, and amazing benefits. We even get the opportunity to write a cookbook to explain our history with Azure Pipelines, our future, and share all our gotchas and learnings - tentative title is "Continuous Integration and Delivery Pipelines Cookbook".
 
 My manager just published the following informative article, which touches on a number of important pillars to create an empowered culture: [Leading the Change: How Exemplary Behaviours, Team Support, and a Safe Environment Foster Innovation](https://cloud.cioreview.com/cxoinsight/leading-the-change-how-exemplary-behaviours-team-support-and-a-safe-environment-foster-innovation-nid-37684-cid-17.html).
 
