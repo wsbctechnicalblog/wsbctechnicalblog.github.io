@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-07-19T00:00:00-07:00</updated><entry><title>Water Cooler Talk - Why is WSBC such a cool place?</title><link href="https://wsbctechnicalblog.github.io/water-cooler-talk-why-is-wsbc-such-a-cool-place.html" rel="alternate"></link><published>2023-07-19T00:00:00-07:00</published><updated>2023-07-19T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-07-19:/water-cooler-talk-why-is-wsbc-such-a-cool-place.html</id><summary type="html">&lt;p&gt;At a recent water cooler we chatted about why WorkSafeBC is such a cool place to work for.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Water cooler talk occurs when we take a break from work, socialize with each other, and collaborate about things like hobbies, favourite beer brews, and other fun topics not associated with work.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-07-23T00:00:00-07:00</updated><entry><title>Water Cooler Talk - Why Azure Devops is not a silver bullet</title><link href="https://wsbctechnicalblog.github.io/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet.html" rel="alternate"></link><published>2023-07-23T00:00:00-07:00</published><updated>2023-07-23T00:00:00-07:00</updated><author><name>&lt;Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-07-23:/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet.html</id><summary type="html">&lt;p&gt;Yes, I LOVE Azure DevOps, but it is not the answer to the universe.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="AzdO the silver bullet" src="../images/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt; is a software as a service (SaaS) product that &lt;strong&gt;empowers&lt;/strong&gt; you to plan smarter, collaborate better, and ship faster. Integrated with &lt;a href="https://learn.microsoft.com/en-us/azure/?product=popular"&gt;Azure&lt;/a&gt; services, Azure DevOps is geared for software development.&lt;/p&gt;
+&lt;p&gt;The latter, &lt;strong&gt;geared for software developnment&lt;/strong&gt;, is key. Recently when I received a request to create a new Azure DevOps project, with special requests for GANTT extensions and serious push back on the &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/plans/track-dependencies?view=azure-devops"&gt;Delivery Plan&lt;/a&gt; and &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/boards/kanban-quickstart?view=azure-devops"&gt;Kanban Boared&lt;/a&gt; features.&lt;/p&gt;
+&lt;p&gt;I wanted to know more ... a lot more. It quickly became apparent that the team were only interested in the Azure Boards service, the CMMI process, and were only going to use Azure DevOps to track a waterfall project.&lt;/p&gt;
+&lt;p&gt;After considering the &lt;strong&gt;license&lt;/strong&gt; cost, required &lt;strong&gt;training&lt;/strong&gt;, and especially the &lt;strong&gt;support of extensions&lt;/strong&gt; not used by the rest of the organization, I recommended the user to consider &lt;a href="https://www.microsoft.com/en-ca/microsoft-365/project/compare-microsoft-project-management-software"&gt;Microsoft Project&lt;/a&gt; instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;It is important to use the right tool for the right job!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Sledgehammer" src="../images/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="water-cooler"></category><category term="azure-devops"></category></entry><entry><title>Water Cooler Talk - Why is WSBC such a cool place?</title><link href="https://wsbctechnicalblog.github.io/water-cooler-talk-why-is-wsbc-such-a-cool-place.html" rel="alternate"></link><published>2023-07-19T00:00:00-07:00</published><updated>2023-07-19T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-07-19:/water-cooler-talk-why-is-wsbc-such-a-cool-place.html</id><summary type="html">&lt;p&gt;At a recent water cooler we chatted about why WorkSafeBC is such a cool place to work for.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Water cooler talk occurs when we take a break from work, socialize with each other, and collaborate about things like hobbies, favourite beer brews, and other fun topics not associated with work.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Why is WSBC Cool?" src="../images/water-cooler-talk-why-is-wsbc-such-a-cool-place-0.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2848,53 +2859,4 @@ I am NOT saying that is the best strategy but based on experimentation it fits o
 &lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt; Avoid focusing on teams and/or individuals to avoid the misuse of the metrics to influence performance reviews. We succeed or fail as one!
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;What are your views on metrics?&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="metrics"></category><category term="devops"></category></entry><entry><title>Having a sound Technology Adoption Process is pivotal to innovation</title><link href="https://wsbctechnicalblog.github.io/technology-adoption-program.html" rel="alternate"></link><published>2022-02-15T13:13:00-08:00</published><updated>2022-02-15T13:13:00-08:00</updated><author><name>Laurent Blain</name></author><id>tag:wsbctechnicalblog.github.io,2022-02-15:/technology-adoption-program.html</id><summary type="html">&lt;p&gt;Selecting a new process or product without surprising or blindsiding anyone.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;Co-author: &lt;a href="https://wsbctechnicalblog.github.io/author/willy-peter-schaub.html"&gt;Willy-Peter Schaub&lt;/a&gt;, from Common Engineering.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; teams have organizational latitude to establish their own internal goals and work practices. Combined with &lt;strong&gt;Master&lt;/strong&gt; and &lt;strong&gt;Purpose&lt;/strong&gt; these teams can be very effective, as outlined by Daniel Pink in &lt;a href="https://www.bing.com/videos/search?q=Drive%3a+The+Surprising+Truth+About+What+Motivates+Us"&gt;What Motivates Us&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Figure 1 - The wrong way!
-&lt;img alt="Waste" src="../images/technology-adoption-program-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Typical, but not recommended way for an autonomous team to acquire new processes and products:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Assume the right of self-organization and self-management.&lt;/li&gt;
-&lt;li&gt;Acquire processes or products in isolation.&lt;/li&gt;
-&lt;li&gt;Release the solution, using products unknown to the rest of the organization - a Unicorn.&lt;/li&gt;
-&lt;li&gt;The solution fails during deployment, or worse in production impacting end-users.&lt;/li&gt;
-&lt;li&gt;Operations are alerted, but ill-equipped to assist, as they are caught completely off-guard by the new technology used.&lt;/li&gt;
-&lt;li&gt;Infamous 2AM call is triggered, focused on determining and remediating the root cause, maintaining a customer-focus and value-first mindset.&lt;/li&gt;
-&lt;li&gt;Due to the isolated way the autonomous team operated, and the mystical Unicorn detected (too) late in the continuous delivery phase, the collaboration between development, operation, and other stakeholders becomes unproductive and toxic.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Do you recognize this practice?&lt;/strong&gt; If yes, you are familiar with &lt;strong&gt;WASTE&lt;/strong&gt;ful deployment delays, unexpected costs, and a frequent loss of &lt;strong&gt;TRUST&lt;/strong&gt; between engineering teams.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why we need to do better!&lt;/h1&gt;
-&lt;p&gt;To ensure that we can continuously deliver value to delighted end-users, we must find a better way.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Figure 2 - The right way!
-&lt;img alt="Value" src="../images/technology-adoption-program-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;Assume the right of self-organization and self-management but operate within organizational guardrails.&lt;/li&gt;
-&lt;li&gt;Acquire processes or products in collaboration with all stakeholders, such as architecture, operations, site reliability engineering, and &lt;a href="https://wsbctechnicalblog.github.io/common-engineering-journal-2.html"&gt;common engineering&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Release the solution, using known processes and products, operating within guardrails that ensure consistency, standardization, security, and simplicity.&lt;/li&gt;
-&lt;li&gt;Instead of dealing with 2AM calls, engineering can raise the awareness of the new processes and products, sharing the value with the rest of the organization through &lt;a href="https://wsbctechnicalblog.github.io/dojo-events.html"&gt;dojos&lt;/a&gt; and &lt;a href="https://wsbctechnicalblog.github.io/ceremony-community-of-practice.html"&gt;communities of practice&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Likewise, &lt;a href="https://wsbctechnicalblog.github.io/ceremony-working-group.html"&gt;working groups&lt;/a&gt; can be productive and preemptive, empowering engineering with re-usable blueprints to make the adoption of new processes and products simple.&lt;/li&gt;
-&lt;li&gt;Collaboration becomes vibrant, based on &lt;strong&gt;TRUST&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The core difference between the two ways of adopting new processes and products boils down to collaboration, trust, and guardrails that guide, not limit innovation.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Technology Adoption Program (TAP)&lt;/h1&gt;
-&lt;p&gt;Enterprise Architecture introduced the Technology Adoption Program (TAP), as shown below, which guides us to adopt, assess, approve, and embrace new technology (processes and products). Instead of re-inventing the wheel, our Common Engineering Center of Enablement decided to base our process and product adoption program on the existing Technology Adoption Program (TAP) - &lt;strong&gt;re-use&lt;/strong&gt;!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Figure 3 - Technology Adoption Program (flow)
-&lt;img alt="Value" src="../images/technology-adoption-program-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The TAP lights up when combined with our common engineering ecosystem, in which the &lt;a href="https://wsbctechnicalblog.github.io/ceremony-center-of-enablement.html"&gt;centres of enablement&lt;/a&gt; (CoE) provide thought leadership, vision, direction, guardrails, and sponsor vibrant and laser focused working groups to &lt;strong&gt;ASSESS&lt;/strong&gt;, &lt;strong&gt;TRIAL&lt;/strong&gt;, and &lt;strong&gt;ADOPT&lt;/strong&gt; new technologies. Both the CoE and sponsored Working Groups are based on people from different disciplines, encouraging vibrant collaboration and awareness amongst all stakeholders.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;COLLABORATION FROM THE START&lt;/strong&gt; - we can ensure that new technology is supported by the innovation programs, such as pipeline blueprints and self-service, once organizational approval is received. This ensures that we can empower engineering to “hit the ground running” with new technologies.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;By the time a process or product is approved, it is neither unknown, nor a mystical Unicorn. Instead, awareness and self-service automation programs are aware and supportive of the new technology, which not only enables and empowers engineering, but reduces &lt;strong&gt;WASTE&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;How do you balance autonomy and standardization in your organization?&lt;/p&gt;</content><category term="Posts"></category><category term="architecture"></category><category term="devops"></category><category term="technical-excellence"></category></entry></feed>
+&lt;p&gt;What are your views on metrics?&lt;/p&gt;</content><category term="Posts"></category><category term="learning"></category><category term="metrics"></category><category term="devops"></category></entry></feed>
