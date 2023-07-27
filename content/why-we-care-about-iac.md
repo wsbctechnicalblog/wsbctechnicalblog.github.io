@@ -24,7 +24,7 @@ During the presentation, there was one particular slide that stood out, capturin
 
 > ![Flash of the past](../images/why-we-care-about-iac-2.png) 
 
-Fast forwarding to 2013, it becomes evident that Infrastructure as Code (IaC) is far from a novel concept!
+Fast forwarding to 2023, it becomes evident that Infrastructure as Code (IaC) is far from a novel concept!
 
 ---
 
