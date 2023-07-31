@@ -14,4 +14,14 @@ In this episode, we team up with industry giants Microsoft to embark on an excit
 
 > [![Podcast](../images/innovation-podcast-wsbc-msft-1.png)](https://youtu.be/e_OwVcZNRcg)
 
+**Topics**
+ 
+1.  Why all Developers should be using co-pilot
+2.  How to build Artificial Intelligence (AI) co-pilots for your own apps
+3.  Learn about responsible AI
+4.  Recommended Microsoft certifications for AI
+5.  What are the skills required for AI
+6.  Concerns about privacy, security as it relates to AI
+
 Click [here](https://youtu.be/e_OwVcZNRcg) to listen to the conversation.
+
