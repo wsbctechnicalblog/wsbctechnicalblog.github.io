@@ -1,4 +1,4 @@
-Title: Why do we care about infrastrucure-as-code (IaC)?
+Title: Why do we care about infrastructure-as-code (IaC)?
 Date: 2024-08-02
 Category: Posts 
 Tags: azure, azure-devops, pipelines
