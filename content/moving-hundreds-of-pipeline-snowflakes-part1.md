@@ -26,6 +26,7 @@ Other pipeline posts:
 - [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html)
 - [Pipeline-as-code wrapped with Pull Requests](/pipelines-as-code-pr.html)
 - [Gotchas when share variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html)
+- [Why do we care about infrastrucure-as-code (IaC)?](/why-we-care-about-iac.html)
 
 Pipeline quick reference poster posts:
 
