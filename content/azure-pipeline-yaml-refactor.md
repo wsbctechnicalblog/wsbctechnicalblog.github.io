@@ -21,7 +21,7 @@ Indeed, we are currently in the process of integrating infrastructure-as-code (I
 
 > ![IaC](../images/ azure-pipeline-yaml-refactor.png) 
 
-If we have a quick look at the basic [101 sample variable template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/__101__/azure-pipeline-__101__-config.yml) you will notice that we have a **FLAT** configuration file.
+If we have a quick look at the basic [101 sample variable template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/commit/eee9e2e895e8869e1f4fc8e7b55b1973b469351f#diff-34a1ea16e45e933dd3f78d78dd2752204483355a45237fb33d7a31b1bb51e383) you will notice that we have a **FLAT** configuration file.
 
 ```
 variables:
@@ -84,19 +84,35 @@ variables:
 # TODO Add your variables here
 ```
 
-As a result, each time a new parameter is introduced, it necessitates an update to the [control template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/__101__/azure-pipeline-__101__-control.yml) to incorporate and transmit the extra parameter. This process has proven to be exasperating, labor-intensive, prone to errors, and ultimately, not a sustainable approach. It's far from straightforward and, therefore, presents a significant challenge.
+As a result, each time a new parameter is introduced, it necessitates an update to the [control template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/eee9e2e895e8869e1f4fc8e7b55b1973b469351f/blueprints/__101__/azure-pipeline-__101__-control.yml) to incorporate and transmit the extra parameter. This process has proven to be exasperating, labor-intensive, prone to errors, and ultimately, not a sustainable approach. It is far from straightforward and, therefore, presents a significant challenge and **WASTE**.
 
 ---
 
 # Exploring options
 
-<TBD>
+## YAML Update August 13, 2013
+
+Over the long weekend, I enjoyed a delightful blend of relaxation and productivity. In between moments of unwinding with videos and tending to our adorable 10-week-old Dachshund puppy, I found myself immersed in the world of re-coding our ```__101__``` blueprint templates. Little did I know that this seemingly innocent endeavor would lead me on a tumultuous journey of debugging challenges.
+
+Azure DevOps YAML, unfortunately, proved to be an intricate maze to navigate. One perplexing discovery was that it steadfastly refuses to accommodate variables of the object type or arrays of objects. The reasoning behind this limitation remains elusive, but take my word for it – this kind of support is conspicuously absent and an area in the binary space that I will defer for another rainy day.
+
+This experience has taught me that even in the realm of coding, surprises abound. Despite the setbacks, I'm determined to continue refining our blueprint templates and conquering the intricacies of Azure DevOps YAML. Who knows what other insights and discoveries await as I press on with determination?
+
+## YAML Update August 14, 2023
+
+Following yet another early morning coding expedition and a debugging session that spanned the lunchtime hours, I made a pivotal decision. I opted to roll back our variable template to its simpler form, opting for straightforward variables. To address the array of objects within objects, I ingeniously integrated them as parameters within the control template. While this solution may not epitomize perfection, it undoubtedly provided a remedy for the crash debacle that had marred the weekend.
+
+Moreover, the ripple effect of this adjustment extended its benefits to both the Continuous Deployment (CD) and Continuous Integration (CI) stages. Looking ahead, this approach promises to streamline the Infrastructure as Code (IaC) stage templates as well. These incremental strides within the realm of YAML Pipelines might seem small in scale, yet they represent a significant leap forward for our blueprint endeavors.
+
+Initiating the submission of a draft pull request, I now find myself in a state of anticipation, eagerly awaiting the candid feedback of my colleagues. The outcome holds the promise of insights that will undoubtedly enrich the project and refine its trajectory q;-)
+
+## August 15, 2023
 
 # My pull request and future solution (I hope)
 
 <SOLUTION>
 
-# What is the im[pact on our open-source project?
+# What is the impact on our open-source project?
 
 <IMPACT ON OSS>
 
