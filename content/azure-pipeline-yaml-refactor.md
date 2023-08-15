@@ -15,7 +15,7 @@ For those who are new to this concept, I have compiled a selection of blog links
 
 ---
 
-# OK, Why are we here?
+# OK, why are we here?
 
 Indeed, we are currently in the process of integrating infrastructure-as-code (IaC) into our v2 blueprints. This advancement entails the inclusion of a substantial number of parameters within our variable template files. As a consequence, a series of sleepless nights has ensued for our team. To provide a visual depiction, please refer to the illustration below, where the newly added components are represented in pink.
 
@@ -90,7 +90,7 @@ As a result, each time a new parameter is introduced, it necessitates an update 
 
 # Exploring options
 
-## YAML Update August 13, 2013
+### YAML update August 13, 2013
 
 Over the long weekend, I enjoyed a delightful blend of relaxation and productivity. In between moments of unwinding with videos and tending to our adorable 10-week-old Dachshund puppy, I found myself immersed in the world of re-coding our ```__101__``` blueprint templates. Little did I know that this seemingly innocent endeavor would lead me on a tumultuous journey of debugging challenges.
 
@@ -98,19 +98,40 @@ Azure DevOps YAML, unfortunately, proved to be an intricate maze to navigate. On
 
 This experience has taught me that even in the realm of coding, surprises abound. Despite the setbacks, I'm determined to continue refining our blueprint templates and conquering the intricacies of Azure DevOps YAML. Who knows what other insights and discoveries await as I press on with determination?
 
-## YAML Update August 14, 2023
+> 
+> **LEARNING 1** - Defining YAML objects or array of objects as variables in an Azure Pipeline variable template is a no-go! You can do it with parameters, not variables.
+>
+
+### YAML update August 14, 2023
 
 Following yet another early morning coding expedition and a debugging session that spanned the lunchtime hours, I made a pivotal decision. I opted to roll back our variable template to its simpler form, opting for straightforward variables. To address the array of objects within objects, I ingeniously integrated them as parameters within the control template. While this solution may not epitomize perfection, it undoubtedly provided a remedy for the crash debacle that had marred the weekend.
 
-Moreover, the ripple effect of this adjustment extended its benefits to both the Continuous Deployment (CD) and Continuous Integration (CI) stages. Looking ahead, this approach promises to streamline the Infrastructure as Code (IaC) stage templates as well. These incremental strides within the realm of YAML Pipelines might seem small in scale, yet they represent a significant leap forward for our blueprint endeavors.
+> 
+> **LEARNING 2** - Simplify in small steps, not in a big bang. Otherwise you may embrace lots of debugging and unwinding of code changes.
+>
+
+Moreover, the ripple effect of this adjustment extended its benefits to the Continuous Deployment (CD) stage templates. Looking ahead, this approach promises to streamline the Infrastructure as Code (IaC) stage templates as well. These incremental strides within the realm of YAML Pipelines might seem small in scale, yet they represent a significant leap forward for our blueprint endeavors.
 
 Initiating the submission of a draft pull request, I now find myself in a state of anticipation, eagerly awaiting the candid feedback of my colleagues. The outcome holds the promise of insights that will undoubtedly enrich the project and refine its trajectory q;-)
 
-## August 15, 2023
+### YAML update August 15, 2023
 
-# My pull request and future solution (I hope)
+<TBD>
 
-<SOLUTION>
+---
+
+# Revision of the proposed solution
+### Changes in our ```__101__``` *-**control**.yml template
+
+<TBD>
+
+### Changes in our ```__101__``` *-**cd**.yml template
+
+<TBD>
+
+### Changes in our ```__101__``` *-**cd-stage**.yml template
+
+<TBD> 
 
 # What is the impact on our open-source project?
 
