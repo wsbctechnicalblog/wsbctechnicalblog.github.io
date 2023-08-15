@@ -116,28 +116,159 @@ Initiating the submission of a draft pull request, I now find myself in a state 
 
 ### YAML update August 15, 2023
 
-<TBD>
+> 
+> **TIP** - Be sure to follow these steps before embarking on collaborative pull requests: stage your latest changes, commit them, and push them to the repository. Neglecting to push your changes can lead to confusion and inefficiencies, especially if the absence of a push results in non-sequential or illogical changes.
+>
+
+XXXXXX TBD XXXXXX
 
 ---
 
 # Revision of the proposed solution
+
+### Changes in our ```__101__``` *-**config**.yml template
+
+Regrettably, the concept of using variables to define objects and arrays of objects had to be abandoned as discussed. Instead, I have reverted back to the previous flat structure. Additionally, I have incorporated a state variable in place of the former name stage. I will delve into this further in our upcoming conversation.
+
+Here is an extract, with the **__101__** sample configuration data:
+
+```
+# -----------------------------------------------
+# Development Stage
+- name:  developmentStageActive
+  value: true
+- name:  developmentStageEnvName
+  value: '<tbd>'
+- name:  developmentStageVmImage
+  value: '<tbd>'
+- name:  developmentStageTestData
+  value: 'Development Stage Test Data'
+
+```
+
 ### Changes in our ```__101__``` *-**control**.yml template
 
-<TBD>
+The latest enhancement involves the creation of an array comprising stage configuration objects and supplementary parameters. Specifically, each stage environment now possesses its own dedicated object. To illustrate, I have provided an excerpt from the development stage below:
+
+```
+ ${{ if and(ne(parameters.suppressCD, true), ne(lower(variables['Build.SourceBranchName']), 'merge')) }}:
+  - template: /blueprints/__101__/azure-pipeline-__101__-cd.yml@CeBlueprints
+    parameters:
+      stage:
+        development:
+          config:
+            active:                       ${{variables.developmentStageActive}}
+            nameEnv:                      ${{variables.developmentStageEnvName}}
+            nameVM:                       ${{variables.developmentStageVmImage}}
+            testData:                     ${{variables.developmentStageTestData}}
+          applicationBlueprint:           ${{parameters.applicationBlueprint}}                         
+          modeElite:                      ${{parameters.modeElite}}
+# TODO pass your configuration variables here
+```
+
+This new approach aims to streamline stage management and configuration. I am eager to explore the finer details in our upcoming discussions.
 
 ### Changes in our ```__101__``` *-**cd**.yml template
 
-<TBD>
+Gone are the days of relying solely on a growing list of parameters and stage names to orchestrate our deployment pipeline. Instead, we have adopted a more dynamic and adaptable strategy by focusing on the ```*.config.active``` value. This value serves as the driving force behind the inclusion or exclusion of stages from the pipeline. This approach provides a remarkable level of flexibility, enabling us to make adjustments without the fear of brittleness that stage names might introduce.
+
+Let us explore this transformation through a tangible example. Below, you will find an excerpt showcasing the new approach in action, specifically in the context of the development and system test stages:
+
+```
+parameters:
+- name:     stage
+  type:     object
+  
+stages:
+
+# -----------------------------------------------------------------
+# DEVELOPMENT STAGE
+# -----------------------------------------------------------------
+
+- ${{ if eq(parameters.stage.development.config.active, true) }}:
+  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+    parameters:
+      name:                         'Development'
+      displayName:                  'Development (DV)'
+      config:                       ${{parameters.stage.development.config}}
+      dependsOn:
+      - ContinuousIntegration
+
+# -----------------------------------------------------------------
+# SYSTEM TEST STAGE
+# ------------------------------------------------------------------
+- ${{ if eq(parameters.stage.systemTest.config.active, true) }}:
+  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+    parameters:
+      name:                         'SystemTest'
+      displayName:                  'System Test (SY)'
+      config:                       ${{parameters.stage.systemTest.config}}
+      dependsOn:
+      - ContinuousIntegration
+      - ${{ if eq(parameters.stage.development.config.active, true) }}:
+        - Development
+
+```
+
+This snippet underscores how the cd template's revamped structure empowers us to effortlessly manage stages, pass configuration data, and adapt to evolving deployment needs.
 
 ### Changes in our ```__101__``` *-**cd-stage**.yml template
 
-<TBD> 
+Lastly, the culmination of our efforts leads to the seamless flow of configuration and dependency objects into the ```*cd-stage**.yml``` deployment stage template, an evolution that not only facilitates innovation but also encourages extension. This pivotal enhancement brings forth a user experience that is notably simplified and intuitive.
+
+```
+parameters:
+- name:     name
+  type:     string
+- name:     displayName
+  type:     string
+- name:     config
+  type:     object
+  default:  []
+- name:     dependsOn
+  type:     object
+  default:  []
+
+stages:
+
+# ------------------------------------------------------------------
+# STAGE
+# ------------------------------------------------------------------
+
+- stage:         ${{parameters.name}}
+  displayName:   ${{parameters.displayName}}
+  ${{ if ne(length(parameters.dependsOn), 0) }}:
+    dependsOn:
+      - ${{ each stage in parameters.dependsOn }}:
+        - ${{stage}}
+  variables:
+      currentVersion: $[ stageDependencies.ContinuousIntegration.ContinuousIntegration.outputs['setSemVersion.semVersion'] ]
+  pool:
+    vmImage:     ${{parameters.config.nameVM}}
+  jobs:
+  - deployment:  ${{parameters.name}}
+    environment: ${{parameters.config.nameEnv}}
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo name = ${{parameters.name}}
+          - script: echo testData = ${{parameters.config.testData}}
+```
+
+In comparison to managing an expanding list of parameters, working with a comprehensive object empowers us to navigate complexities effortlessly. This shift provides a fertile ground for creativity and expansion, enabling us to embrace new possibilities and adapt to evolving deployment landscapes with remarkable ease.
 
 # What is the impact on our open-source project?
 
-<IMPACT ON OSS>
+In line with our commitment to progress and collaboration, we are excited to announce that the [AzureDevOps.Automation.Pipeline.Templates.v2
+](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) open-source project is about to undergo a significant update. This update will reflect the advancements we have made and the enhancements we are introducing to our in-house blueprints.
+
+>
+> **CAUTION** - this is potentially a breaking change if you are relying on the default blueprints in the [
+WorkSafeBC Common Engineering](https://github.com/WorkSafeBC-Common-Engineering) project. 
 
 ---
 
-<CLOSE - SUMMARY >
+As we embrace this enhanced approach, we look forward to a future where deployment processes are not only efficient but also versatile, setting the stage for continuous innovation with our continuous integration, delivery, and provisioning pipelines.
 
+Thoughts?
