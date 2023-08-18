@@ -19,7 +19,7 @@ For those who are new to this concept, I have compiled a selection of blog links
 
 Indeed, we are currently in the process of integrating infrastructure-as-code (IaC) into our v2 blueprints. This advancement entails the inclusion of a substantial number of parameters within our variable template files. As a consequence, a series of sleepless nights has ensued for our team. To provide a visual depiction, please refer to the illustration below, where the newly added components are represented in pink.
 
-> ![IaC](../images/ azure-pipeline-yaml-refactor.png) 
+> ![IaC](../images/azure-pipeline-yaml-refactor-1.png) 
 
 If we have a quick look at the basic [101 sample variable template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/commit/eee9e2e895e8869e1f4fc8e7b55b1973b469351f#diff-34a1ea16e45e933dd3f78d78dd2752204483355a45237fb33d7a31b1bb51e383) you will notice that we have a **FLAT** configuration file.
 
@@ -114,13 +114,20 @@ Moreover, the ripple effect of this adjustment extended its benefits to the Cont
 
 Initiating the submission of a draft pull request, I now find myself in a state of anticipation, eagerly awaiting the candid feedback of my colleagues. The outcome holds the promise of insights that will undoubtedly enrich the project and refine its trajectory q;-)
 
-### YAML update August 15, 2023
+### YAML update August 18, 2023
 
 > 
 > **TIP** - Be sure to follow these steps before embarking on collaborative pull requests: stage your latest changes, commit them, and push them to the repository. Neglecting to push your changes can lead to confusion and inefficiencies, especially if the absence of a push results in non-sequential or illogical changes.
 >
 
-XXXXXX TBD XXXXXX
+> ![IaC](../images/azure-pipeline-yaml-refactor-2.png) 
+
+I have received the 'thumbs up' from all of our stakeholders, except for Daniel, who is currently enjoying a well-deserved vacation. This marks the successful completion of the first phase of my simplification journey. Moving forward, the next steps are as follows:
+
+- Publish this post.
+- Initiate a Pull Request (PR) for open-source synchronization - Phase 1.
+- Commence the process of updating our existing blueprints to align with the changes.
+- Proceed with the submission of a Pull Request (PR) for open-source synchronization - Phase 2.
 
 ---
 
