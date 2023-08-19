@@ -1,8 +1,8 @@
-Title: <TRY KEEP TITLE SIMILAR TO SLUG WITHOUT - AND SENTENCE CASING>
+Title: Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management
 Date: 2023-08-21
 Category: Posts
 Tags: azure-devops, pipelines, engineering
-Slug: azure-pipeline-yaml-refactor
+Slug: azure-pipeline-yaml-refactor-parameter-objects
 Author: Willy-Peter Schaub
 Summary: Seizing the chance to enhance and optimize our CI/CD/IaC pipelines.
 
