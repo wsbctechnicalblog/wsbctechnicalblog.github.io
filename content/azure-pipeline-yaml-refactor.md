@@ -1,5 +1,5 @@
 Title: Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management
-Date: 2023-08-21
+Date: 2023-08-23
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-yaml-refactor-parameter-objects
@@ -128,6 +128,8 @@ I have received the 'thumbs up' from all of our stakeholders, except for Daniel,
 - Initiate a Pull Request (PR) for open-source synchronization - Phase 1.
 - Commence the process of updating our existing blueprints to align with the changes.
 - Proceed with the submission of a Pull Request (PR) for open-source synchronization - Phase 2.
+
+> Here is the pull request (PR) that matches the internal PR I submitted for REVIEW: [Synchronize 101 simplifications from in-house](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/22).
 
 ---
 
