@@ -1,0 +1,406 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-yaml-refactor-parameter-objects.html" rel="bookmark"
+            title="Permalink to Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management">Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 23 August 2023</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Seizing the chance to enhance and optimize our CI/CD/IaC pipelines.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>I understand that you may have been delving into our open-source endeavor, which revolves around Azure Pipelines for continuous integration and continuous delivery, employing YAML-based methodologies. If this initiative has not caught your attention yet, I highly recommend acquainting yourself with our  source project, focused on YAML-based continuous integratuion and continuous delivery Azure Pipelines. If not, you better explore our open-source <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">WorkSafeBC Common Engineering</a> project as a starting point.</p>
+<p>For those who are new to this concept, I have compiled a selection of blog links that you might find valuable for a comprehensive understanding:
+- <a href="https://wsbctechnicalblog.github.io/why-pipelines-part1.html">Part 1: Pipelines - Why bother and what are our nightmares and options?</a>
+- <a href="https://wsbctechnicalblog.github.io/azure-devops-pipeline-oss-v2-1-flow.html">Azure DevOps Pipeline OSS v2.1 Flow</a>
+- <a href="https://wsbctechnicalblog.github.io/azure-pipelines-blueprint-qa-integration.html">Azure Pipelines Blueprint QA Integration</a></p>
+<hr>
+<h1>OK, why are we here?</h1>
+<p>Indeed, we are currently in the process of integrating infrastructure-as-code (IaC) into our v2 blueprints. This advancement entails the inclusion of a substantial number of parameters within our variable template files. As a consequence, a series of sleepless nights has ensued for our team. To provide a visual depiction, please refer to the illustration below, where the newly added components are represented in pink.</p>
+<blockquote>
+<p><img alt="IaC" src="../images/azure-pipeline-yaml-refactor-1.png"> </p>
+</blockquote>
+<p>If we have a quick look at the basic <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/commit/eee9e2e895e8869e1f4fc8e7b55b1973b469351f#diff-34a1ea16e45e933dd3f78d78dd2752204483355a45237fb33d7a31b1bb51e383">101 sample variable template</a> you will notice that we have a <strong>FLAT</strong> configuration file.</p>
+<div class="highlight"><pre><span></span><code><span class="c">variables:</span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># Blueprint: __101__</span>
+<span class="c">#</span>
+<span class="c"># If you are not going to use all stages</span><span class="nt">,</span><span class="c"> as below</span><span class="nt">,</span><span class="c"> you can suppress them by simply commenting out</span>
+<span class="c"># or removing their entire configuration section</span><span class="nt">.</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># DEVelopment Stage</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> name:  developmentStageName</span>
+<span class="c">  value: &#39;Development&#39; # Do not change stage name value</span>
+<span class="nb">-</span><span class="c"> name:  developmentStageEnvName</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="nb">-</span><span class="c"> name:  developmentStageVmImage</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="c"># TODO Add your variables here</span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># System Test Stage</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> name:  systemTestStageName</span>
+<span class="c">  value: &#39;SystemTest&#39; # Do not change stage name value</span>
+<span class="nb">-</span><span class="c"> name:  systemTestStageEnvName</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="nb">-</span><span class="c"> name:  systemTestStageVmImage</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="c"># TODO Add your variables here</span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># Security Review Stage</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> name:  securityReviewStageEnvName</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># Staging Stage</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> name:  stagingStageName</span>
+<span class="c">  value: &#39;Staging&#39; # Do not change stage name value</span>
+<span class="nb">-</span><span class="c"> name:  stagingStageEnvName</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="nb">-</span><span class="c"> name:  stagingStageVmImage</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="c"># TODO Add your variables here</span>
+
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># PRODuction Test Stage</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="nb">-</span><span class="c"> name:  productionStageName</span>
+<span class="c">  value: &#39;Production&#39; # Do not change stage name value</span>
+<span class="nb">-</span><span class="c"> name:  productionStageEnvName</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="nb">-</span><span class="c"> name:  productionStageVmImage</span>
+<span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
+<span class="c"># TODO Add your variables here</span>
+</code></pre></div>
+
+<p>As a result, each time a new parameter is introduced, it necessitates an update to the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/eee9e2e895e8869e1f4fc8e7b55b1973b469351f/blueprints/__101__/azure-pipeline-__101__-control.yml">control template</a> to incorporate and transmit the extra parameter. This process has proven to be exasperating, labor-intensive, prone to errors, and ultimately, not a sustainable approach. It is far from straightforward and, therefore, presents a significant challenge and <strong>WASTE</strong>.</p>
+<hr>
+<h1>Exploring options</h1>
+<h3>YAML update August 13, 2013</h3>
+<p>Over the long weekend, I enjoyed a delightful blend of relaxation and productivity. In between moments of unwinding with videos and tending to our adorable 10-week-old Dachshund puppy, I found myself immersed in the world of re-coding our <code>__101__</code> blueprint templates. Little did I know that this seemingly innocent endeavor would lead me on a tumultuous journey of debugging challenges.</p>
+<p>Azure DevOps YAML, unfortunately, proved to be an intricate maze to navigate. One perplexing discovery was that it steadfastly refuses to accommodate variables of the object type or arrays of objects. The reasoning behind this limitation remains elusive, but take my word for it – this kind of support is conspicuously absent and an area in the binary space that I will defer for another rainy day.</p>
+<p>This experience has taught me that even in the realm of coding, surprises abound. Despite the setbacks, I'm determined to continue refining our blueprint templates and conquering the intricacies of Azure DevOps YAML. Who knows what other insights and discoveries await as I press on with determination?</p>
+<blockquote>
+<p><strong>LEARNING 1</strong> - Defining YAML objects or array of objects as variables in an Azure Pipeline variable template is a no-go! You can do it with parameters, not variables.
+</p>
+</blockquote>
+<h3>YAML update August 14, 2023</h3>
+<p>Following yet another early morning coding expedition and a debugging session that spanned the lunchtime hours, I made a pivotal decision. I opted to roll back our variable template to its simpler form, opting for straightforward variables. To address the array of objects within objects, I ingeniously integrated them as parameters within the control template. While this solution may not epitomize perfection, it undoubtedly provided a remedy for the crash debacle that had marred the weekend.</p>
+<blockquote>
+<p><strong>LEARNING 2</strong> - Simplify in small steps, not in a big bang. Otherwise you may embrace lots of debugging and unwinding of code changes.
+</p>
+</blockquote>
+<p>Moreover, the ripple effect of this adjustment extended its benefits to the Continuous Deployment (CD) stage templates. Looking ahead, this approach promises to streamline the Infrastructure as Code (IaC) stage templates as well. These incremental strides within the realm of YAML Pipelines might seem small in scale, yet they represent a significant leap forward for our blueprint endeavors.</p>
+<p>Initiating the submission of a draft pull request, I now find myself in a state of anticipation, eagerly awaiting the candid feedback of my colleagues. The outcome holds the promise of insights that will undoubtedly enrich the project and refine its trajectory q;-)</p>
+<h3>YAML update August 18, 2023</h3>
+<blockquote>
+<p><strong>TIP</strong> - Be sure to follow these steps before embarking on collaborative pull requests: stage your latest changes, commit them, and push them to the repository. Neglecting to push your changes can lead to confusion and inefficiencies, especially if the absence of a push results in non-sequential or illogical changes.
+</p>
+<p><img alt="IaC" src="../images/azure-pipeline-yaml-refactor-2.png"> </p>
+</blockquote>
+<p>I have received the 'thumbs up' from all of our stakeholders, except for Daniel, who is currently enjoying a well-deserved vacation. This marks the successful completion of the first phase of my simplification journey. Moving forward, the next steps are as follows:</p>
+<ul>
+<li>Publish this post.</li>
+<li>Initiate a Pull Request (PR) for open-source synchronization - Phase 1.</li>
+<li>Commence the process of updating our existing blueprints to align with the changes.</li>
+<li>Proceed with the submission of a Pull Request (PR) for open-source synchronization - Phase 2.</li>
+</ul>
+<blockquote>
+<p>Here is the pull request (PR) that matches the internal PR I submitted for REVIEW: <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/22">Synchronize 101 simplifications from in-house</a>.</p>
+</blockquote>
+<hr>
+<h1>Revision of the proposed solution</h1>
+<h3>Changes in our <code>__101__</code> <em>-</em><em>config</em>*.yml template</h3>
+<p>Regrettably, the concept of using variables to define objects and arrays of objects had to be abandoned as discussed. Instead, I have reverted back to the previous flat structure. Additionally, I have incorporated a state variable in place of the former name stage. I will delve into this further in our upcoming conversation.</p>
+<p>Here is an extract, with the <strong><strong>101</strong></strong> sample configuration data:</p>
+<div class="highlight"><pre><span></span><code># -----------------------------------------------
+# Development Stage
+- name:  developmentStageActive
+  value: true
+- name:  developmentStageEnvName
+  value: &#39;&lt;tbd&gt;&#39;
+- name:  developmentStageVmImage
+  value: &#39;&lt;tbd&gt;&#39;
+- name:  developmentStageTestData
+  value: &#39;Development Stage Test Data&#39;
+</code></pre></div>
+
+<h3>Changes in our <code>__101__</code> <em>-</em><em>control</em>*.yml template</h3>
+<p>The latest enhancement involves the creation of an array comprising stage configuration objects and supplementary parameters. Specifically, each stage environment now possesses its own dedicated object. To illustrate, I have provided an excerpt from the development stage below:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">blueprints</span><span class="o">/</span><span class="n">__101__</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">__101__</span><span class="o">-</span><span class="n">cd</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeBlueprints</span><span class="w"></span>
+<span class="w">    </span><span class="n">parameters</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">stage</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">development</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="n">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="n">active</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageActive</span><span class="p">}}</span><span class="w"></span>
+<span class="w">            </span><span class="n">nameEnv</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageEnvName</span><span class="p">}}</span><span class="w"></span>
+<span class="w">            </span><span class="n">nameVM</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageVmImage</span><span class="p">}}</span><span class="w"></span>
+<span class="w">            </span><span class="n">testData</span><span class="p">:</span><span class="w">                     </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageTestData</span><span class="p">}}</span><span class="w"></span>
+<span class="w">          </span><span class="n">applicationBlueprint</span><span class="p">:</span><span class="w">           </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w">                         </span>
+<span class="w">          </span><span class="n">modeElite</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span><span class="w"></span>
+<span class="c1"># TODO pass your configuration variables here</span><span class="w"></span>
+</code></pre></div>
+
+<p>This new approach aims to streamline stage management and configuration. I am eager to explore the finer details in our upcoming discussions.</p>
+<h3>Changes in our <code>__101__</code> <em>-</em><em>cd</em>*.yml template</h3>
+<p>Gone are the days of relying solely on a growing list of parameters and stage names to orchestrate our deployment pipeline. Instead, we have adopted a more dynamic and adaptable strategy by focusing on the <code>*.config.active</code> value. This value serves as the driving force behind the inclusion or exclusion of stages from the pipeline. This approach provides a remarkable level of flexibility, enabling us to make adjustments without the fear of brittleness that stage names might introduce.</p>
+<p>Let us explore this transformation through a tangible example. Below, you will find an excerpt showcasing the new approach in action, specifically in the context of the development and system test stages:</p>
+<div class="highlight"><pre><span></span><code>parameters:
+- name:     stage
+  type:     object
+
+stages:
+
+# -----------------------------------------------------------------
+# DEVELOPMENT STAGE
+# -----------------------------------------------------------------
+
+- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+    parameters:
+      name:                         &#39;Development&#39;
+      displayName:                  &#39;Development (DV)&#39;
+      config:                       <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
+      dependsOn:
+      - ContinuousIntegration
+
+# -----------------------------------------------------------------
+# SYSTEM TEST STAGE
+# ------------------------------------------------------------------
+- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+    parameters:
+      name:                         &#39;SystemTest&#39;
+      displayName:                  &#39;System Test (SY)&#39;
+      config:                       <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
+      dependsOn:
+      - ContinuousIntegration
+      - <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+        - Development
+</code></pre></div>
+
+<p>This snippet underscores how the cd template's revamped structure empowers us to effortlessly manage stages, pass configuration data, and adapt to evolving deployment needs.</p>
+<h3>Changes in our <code>__101__</code> <em>-</em><em>cd-stage</em>*.yml template</h3>
+<p>Lastly, the culmination of our efforts leads to the seamless flow of configuration and dependency objects into the <code>*cd-stage**.yml</code> deployment stage template, an evolution that not only facilitates innovation but also encourages extension. This pivotal enhancement brings forth a user experience that is notably simplified and intuitive.</p>
+<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">name</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">displayName</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">config</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span><span class="w"></span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">dependsOn</span><span class="w"></span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span><span class="w"></span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="w"></span>
+
+<span class="n">stages</span><span class="p">:</span><span class="w"></span>
+
+<span class="c1"># ------------------------------------------------------------------</span><span class="w"></span>
+<span class="c1"># STAGE</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------------------</span><span class="w"></span>
+
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w">   </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">displayName</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">stage</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">stage</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">currentVersion</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setSemVersion.semVersion&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">vmImage</span><span class="p">:</span><span class="w">     </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameVM</span><span class="p">}}</span><span class="w"></span>
+<span class="w">  </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">deployment</span><span class="p">:</span><span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
+<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameEnv</span><span class="p">}}</span><span class="w"></span>
+<span class="w">    </span><span class="n">strategy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">runOnce</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">deploy</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
+<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">testData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">testData</span><span class="p">}}</span><span class="w"></span>
+</code></pre></div>
+
+<p>In comparison to managing an expanding list of parameters, working with a comprehensive object empowers us to navigate complexities effortlessly. This shift provides a fertile ground for creativity and expansion, enabling us to embrace new possibilities and adapt to evolving deployment landscapes with remarkable ease.</p>
+<h1>What is the impact on our open-source project?</h1>
+<p>In line with our commitment to progress and collaboration, we are excited to announce that the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">AzureDevOps.Automation.Pipeline.Templates.v2
+</a> open-source project is about to undergo a significant update. This update will reflect the advancements we have made and the enhancements we are introducing to our in-house blueprints.</p>
+<blockquote>
+<p><strong>CAUTION</strong> - this is potentially a breaking change if you are relying on the default blueprints in the <a href="https://github.com/WorkSafeBC-Common-Engineering">
+WorkSafeBC Common Engineering</a> project. </p>
+</blockquote>
+<hr>
+<p>As we embrace this enhanced approach, we look forward to a future where deployment processes are not only efficient but also versatile, setting the stage for continuous innovation with our continuous integration, delivery, and provisioning pipelines.</p>
+<p>Thoughts?</p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-yaml-refactor-parameter-objects.html" rel="bookmark"
+         title="Permalink to Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(51)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(42)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(17)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(34)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(23)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(45)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(9)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (149)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
