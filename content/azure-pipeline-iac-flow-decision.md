@@ -1,5 +1,5 @@
 Title: Let us Elevate Our CI/IaC/CD Azure Pipeline Flow Together!
-Date: 2023-09-??
+Date: 2023-09-19
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-iac-flow-decision
