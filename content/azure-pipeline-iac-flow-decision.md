@@ -6,7 +6,7 @@ Slug: azure-pipeline-iac-flow-decision
 Author: Willy-Peter Schaub
 Summary: Streamline Your Process: Isolating the Provision and Deployment Steps for Efficiency?
 
-Continuing from our previous guide on [Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management](/azure-pipeline-yaml-refactor.html), we have now successfully wrapped up our latest Minimally Viable Product (MVP) 2. This milestone encompasses the implementation of infrastructure-as-code provisioning logic, illustrated below.
+Continuing from our previous guide on [Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management](/azure-pipeline-yaml-refactor-parameter-objects.html), we have now successfully wrapped up our latest Minimally Viable Product (MVP) 2. This milestone encompasses the implementation of infrastructure-as-code provisioning logic, illustrated below.
 
 > ![IaC Pipeline Run](../images/azure-pipeline-iac-flow-decision-1.png) 
 
