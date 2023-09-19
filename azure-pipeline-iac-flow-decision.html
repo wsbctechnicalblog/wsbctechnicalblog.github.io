@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Automation Bad Day - </title>
+        <title>Let us Elevate Our CI/IaC/CD Azure Pipeline Flow Together! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,87 +33,100 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
-            title="Permalink to Automation Bad Day">Automation Bad Day</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-iac-flow-decision.html" rel="bookmark"
+            title="Permalink to Let us Elevate Our CI/IaC/CD Azure Pipeline Flow Together!">Let us Elevate Our CI/IaC/CD Azure Pipeline Flow Together!</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 06 March 2023</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 19 September 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Clearly yesterday was a bad day.</p>
+            <p>Streamline Your Process: Isolating the Provision and Deployment Steps for Efficiency?</p>
         </div>
     
         <div class="entry-content">
-            <p>"<em>Clearly yesterday was a bad day</em>" is a quote by <a href="https://www.linkedin.com/in/brharry/">Brian Harry</a> in his <a href="https://devblogs.microsoft.com/bharry/bad-day/">Bad Day</a> blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. </p>
-<p>In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (<strong>c-a-c</strong>) era was born. The CSV files and associated automation using the Azure DevOps <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a>, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.</p>
+            <p>Continuing from our previous guide on <a href="/azure-pipeline-yaml-refactor.html">Navigating Azure DevOps Complexity: Harnessing Objects to Simplify YAML Template Parameter Management</a>, we have now successfully wrapped up our latest Minimally Viable Product (MVP) 2. This milestone encompasses the implementation of infrastructure-as-code provisioning logic, illustrated below.</p>
 <blockquote>
-<p><strong>Outcome</strong>: Consistency, standardization, security, and time-savings!</p>
+<p><img alt="IaC Pipeline Run" src="../images/azure-pipeline-iac-flow-decision-1.png"> </p>
 </blockquote>
-<p>Let us have a peak at one of our demo <code>c-a-c</code> files to understand the automation process.</p>
-<hr>
-<h1>Our configuration-as-code (c-a-c)</h1>
+<p>We had a BINGO moment!</p>
+<h1>Application-type recipes</h1>
+<p>Before I address my question, let me encapsulate the fundamental concept of our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">WorkSafeBC Common Engineering v2 Blueprint</a>  pipelines:</p>
+<ol>
+<li>When a team embarks on creating a solution, they simply choose the desired application type from our user-friendly self-service menu. After confirming a few essential details, they can initiate the process with a single click.
+Our self-service chef swiftly generates an Azure Repository, adhering to our established naming conventions for consistency.</li>
+<li>A sample of the selected application type is promptly uploaded to the repository, including essential common libraries like logging, ensuring standardized practices.</li>
+<li>An Azure Pipeline is then configured, seamlessly integrated into the repository, and automatically triggered to complete the CI-only phase, ensuring an automated workflow and development environment.</li>
+<li>As the Azure Pipeline is queued, it undergoes dynamic assembly using the application-type v2 blueprint templates, infusing a touch of magic while maintaining steadfast consistency.</li>
+<li>Furthermore, a variable configuration template is introduced, imparting solution-specific variables to be seamlessly integrated as parameters - think of it as an all-YAML braai (barbeque), blending elements seamlessly.</li>
+</ol>
+<p>This streamlined process exemplifies our commitment to efficiency, standardization, and automation in every facet of our pipeline workflows."</p>
+<h1>So what is our MVP 2 all about?</h1>
+<p>Let us kick things off with MVP1, where our primary objective was to deliver a parameterized YAML-based template that seamlessly integrates into step 4 of the process outlined above. Our main concern was not the specific provisioning method, but rather ensuring that it adheres to YAML-based standards, is well-parameterized, and eliminates any wasteful hard-coding.</p>
+<p>In MVP2, we successfully showcased the injection of this template into our v2 blueprints, with a specific focus on the development environment. Following some hours of dedicated effort in refining and fine-tuning MVP1, we proudly unveiled our inaugural CI+IaC+CD pipeline - the BINGO moment.</p>
+<h1>Back to the question: Segregate or separate IaC from CD?</h1>
+<p>I will present two workflows: a separate and a segregated pipeline flow. The steps 1-5 remain consistent:</p>
+<ol>
+<li>The pipeline is queued.</li>
+<li>The solution-specific variable configuration template is introduced. We deliberately integrated the IaC and CD configurations into a single, unified template. This consolidation ensures that many components, which are commonly shared and reused by both IaC and CD, are seamlessly pulled from the config repository.</li>
+<li>The infrastructure-as-code (IaC) template tailored to the application type is fetched from the IaC repository and seamlessly integrated into the pipeline.</li>
+<li>The build/CI (continuous integration) and release/CD (continuous delivery) templates specific to the application type are sourced from the templates.v2 repository and seamlessly integrated into the pipeline.</li>
+<li>The CI Flow initiates the application-type setup, compiles the solution, conducts thorough testing, and performs scans for vulnerabilities, ensuring adherence to high-quality coding practices.</li>
+</ol>
 <blockquote>
-<p><img alt="c-a-c" src="../images/azure-devops-automation-bad-day-1.png"></p>
+<p><strong>GEM 1</strong> 
+The configuration, infrastructure-as-code, and pipeline-as-code repositories are accessible by all engineers - transparency.</p>
+<p><strong>GEM 2</strong>
+The repositories and associated policies allows our engineers to recommend configuration changes through a pull request, and our platform and enabling engineers (stewards) to validate the configuration changes.</p>
 </blockquote>
-<p>At the top is a typical Azure Pipeline, delivering artifacts to a number of stage environments, with four humanoid gates.</p>
-<p>At the bottom is a demo <code>c-a-c</code> CSV file, with one row per stage. Each row defines the pre approver(s), the post-approver(s), and the approval method. When our <code>c-a-c</code> automation runs, it restores the Azure Pipeline pre- and post-approvals to the last known and desired configuration if the Set value is <code>Yes</code>. In other words, if you fiddle with the approvals manually, the automation will overwrite your changes when it runs.</p>
-<p>Although the actual <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a> logic is not trivial, our <code>c-a-c</code> concept is.</p>
-<hr>
-<h1>Meltdown timeline</h1>
-<p>Our bad day actually started on March 2nd at high-noon, when my colleague Daniel ran the latest <code>c-a-c</code> file I fine-tuned for hours. Fortunately, I opted against a big-bang <code>c-a-c</code> reset and only had about 15% of the 2,500 Azure Pipelines and their stages configured with <code>Set=Yes</code>. The automation ran like a dream.</p>
-<p>At around 15:00 our delivery teams reported that their pipelines were failing, unable to connect to an agent. At first, we all suspected our automation, because the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> was showing an <code>Everything is looking good</code> status.</p>
+<p>Step 6 is the focal point of this post, where I introduce two distinct flow patterns, representing the core topic of discussion.</p>
+<h3>Separated Flow</h3>
+<p>The infrastructure-as-code (IaC) and continuous delivery (CD) steps operate independently and are overseen by our application-type *control.yml template. Essentially, this template incorporates the IaC blueprint for every environment we intend to provision, ensuring all environments are set up before initiating the CD process</p>
 <blockquote>
-<p><img alt="timeline" src="../images/azure-devops-automation-bad-day-2.png"></p>
+<p><img alt="IaC Flow A" src="../images/azure-pipeline-iac-flow-decision-2.png"></p>
 </blockquote>
-<p>Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support tickets the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> switched to an <code>unhealthy</code> status due to the <a href="https://status.dev.azure.com/_event/371776903">Pipeline error: Failure in sending the provision message</a> incident. Little did we know that this incident actually reduced the blast radius of our bad day, as most teams opted for another day by the time the Azure Agents were back to a healthy state. </p>
-<hr>
-<h1>2AM CALL @ high noon</h1>
-<p>Just before high-noon we were getting pulled into <strong>all hands-on deck</strong>, also known as the <strong>infamous 2AM-call</strong> collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our <strong>Staging (ST)</strong> and <strong>Production (PR)</strong> pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. </p>
-<blockquote>
-<p><img alt="2AM Call" src="../images/azure-devops-automation-bad-day-5.png"> </p>
-</blockquote>
-<p>In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. </p>
-<blockquote>
-<p><img alt="c-a-c meltdown" src="../images/azure-devops-automation-bad-day-3.png"> </p>
-</blockquote>
-<p>We determined that the automation run, from the previous day, had purged, not set, the pre-approver(s) for all processed pipelines. In other words, the only gate between production and the delivery teams was the Security Review <strong>post</strong>-approver.</p>
-<hr>
-<h1>Core Issue</h1>
-<p>As all software glitches, the root cause was a trivial typo. Note the missing <code>s</code> in the <strong>Pre Approver</strong> column header.</p>
-<blockquote>
-<p><img alt="core issue" src="../images/azure-devops-automation-bad-day-4.png"> </p>
-</blockquote>
-<p>As a result, the automation did exactly what my configuration file instructed it to do.</p>
+<p><strong>PROs</strong></p>
 <ul>
-<li>System Test (SY), Staging (SR), and Production (PR) Stage were updated as <code>Set=Yes</code>.</li>
-<li>Pre-approvers were purged as the value for <code>Pre-Approvers</code> was <code>null</code>.</li>
+<li>IaC and CD are logically and visually isolated from each other.</li>
+<li>IaC and CD Azure Pipelines environments can be defined in separate environments. </li>
 </ul>
-<p>Another quote from Brian's post comes to mind here: "<em>The hard thing about this is that anything can go wrong and it’s only obvious in hindsight what you should have been protecting against</em>".</p>
-<hr>
-<h1>Remediate &amp; Learn</h1>
-<p>Our focus was, as expected, to restore the health of our Azure Pipelines. Fortunately, only a small subset of Azure Pipelines was affected, thanks to Microsoft outage and our close collaboration with our DevSecOps team.</p>
+<p><strong>CONs</strong></p>
 <ul>
-<li>Pipelines not triggered by a change to the <code>release</code> branch, were stopped by our artifact filters.</li>
-<li>Pipelines that made it through to the <strong>Security Review</strong> stage, where stopped cold by our security engineers.</li>
+<li>The visual representation of the runtime pipeline flow will be twice as long.</li>
+<li>The logic for determining which stages to run and which to ignore will be duplicated in both the <em>control.yml and </em>CD.yml templates. This introduces potential for duplication and drift</li>
 </ul>
-<p>In parallel we fixed the <code>c-a-c</code> header and triggered the automation to undo the damage. We also took the opportunity to add pre-automation validation to reduce the likelihood of a recurrence.</p>
-<p>And, most importantly, we shared the status of the incident, analysis, root cause, and remediation transparently. </p>
+<h3>Aggregated Flow</h3>
+<p>The infrastructure-as-code (IaC) and continuous delivery (CD) steps operate as one and are overseen by our application-type *CD.yml template. Essentially, we provision the environment, then deploy the solution to the environment in the same deployment job context.</p>
+<blockquote>
+<p><img alt="IaC Flow B" src="../images/azure-pipeline-iac-flow-decision-3.png"> </p>
+</blockquote>
+<p><strong>PROs</strong></p>
+<ul>
+<li>The visual representation of the runtime pipeline flow will remain consistent.</li>
+<li>The logic for determining which stages to run and which to ignore will not be redundant.</li>
+<li>Azure Pipeline environments are recycled, minimizing duplication and streamlining administration efforts.</li>
+<li>The application-type *control.yml template maintains its simplicity.</li>
+<li>The application-type *CD.yml only requires one additional statement per environment: include IaC template.</li>
+</ul>
+<p><strong>CONs</strong></p>
+<ul>
+<li>IaC and CD are not logically and visually isolated from each other. </li>
+</ul>
+<p>It is likely you have gathered that I am inclined towards the aggregated flow. What am I missing?</p>
 <hr>
-<p>A huge <strong>THANK YOU</strong> to our vigilant delivery team, security engineers, operations engineers, and my team for keeping cool and focused throughout the turbulent Friday.</p>
-<p>Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!</p>
+<p><strong>Which of the two flow patterns do you favor, and what are your reasons?</strong> Your input and candid feedback are highly valuable in shaping a CI/IaC/CD v2 blueprint grounded in the highest engineering standards.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
-        | <a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
-         title="Permalink to Automation Bad Day">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-iac-flow-decision.html" rel="bookmark"
+         title="Permalink to Let us Elevate Our CI/IaC/CD Azure Pipeline Flow Together!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
