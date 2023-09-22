@@ -18,8 +18,8 @@ Our self-service chef swiftly generates an Azure Repository, adhering to our est
 &lt;h1&gt;So what is our MVP 2 all about?&lt;/h1&gt;
 &lt;p&gt;Let us kick things off with MVP1, where our primary objective was to deliver a parameterized YAML-based template that seamlessly integrates into step 4 of the process outlined above. Our main concern was not the specific provisioning method, but rather ensuring that it adheres to YAML-based standards, is well-parameterized, and eliminates any wasteful hard-coding.&lt;/p&gt;
 &lt;p&gt;In MVP2, we successfully showcased the injection of this template into our v2 blueprints, with a specific focus on the development environment. Following some hours of dedicated effort in refining and fine-tuning MVP1, we proudly unveiled our inaugural CI+IaC+CD pipeline - the BINGO moment.&lt;/p&gt;
-&lt;h1&gt;Back to the question: Segregate or separate IaC from CD?&lt;/h1&gt;
-&lt;p&gt;I will present two workflows: a separate and a segregated pipeline flow. The steps 1-5 remain consistent:&lt;/p&gt;
+&lt;h1&gt;Back to the question: Segregate or Aggregate IaC from CD?&lt;/h1&gt;
+&lt;p&gt;I will present two workflows: a segregated and an aggregated pipeline flow. The steps 1-5 remain consistent:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The pipeline is queued.&lt;/li&gt;
 &lt;li&gt;The solution-specific variable configuration template is introduced. We deliberately integrated the IaC and CD configurations into a single, unified template. This consolidation ensures that many components, which are commonly shared and reused by both IaC and CD, are seamlessly pulled from the config repository.&lt;/li&gt;
@@ -34,7 +34,7 @@ The configuration, infrastructure-as-code, and pipeline-as-code repositories are
 The repositories and associated policies allows our engineers to recommend configuration changes through a pull request, and our platform and enabling engineers (stewards) to validate the configuration changes.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Step 6 is the focal point of this post, where I introduce two distinct flow patterns, representing the core topic of discussion.&lt;/p&gt;
-&lt;h3&gt;Separated Flow&lt;/h3&gt;
+&lt;h3&gt;Segregated Flow&lt;/h3&gt;
 &lt;p&gt;The infrastructure-as-code (IaC) and continuous delivery (CD) steps operate independently and are overseen by our application-type *control.yml template. Essentially, this template incorporates the IaC blueprint for every environment we intend to provision, ensuring all environments are set up before initiating the CD process&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="IaC Flow A" src="../images/azure-pipeline-iac-flow-decision-2.png"&gt;&lt;/p&gt;

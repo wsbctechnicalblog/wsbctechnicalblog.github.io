@@ -31,9 +31,9 @@ Let us kick things off with MVP1, where our primary objective was to deliver a p
 
 In MVP2, we successfully showcased the injection of this template into our v2 blueprints, with a specific focus on the development environment. Following some hours of dedicated effort in refining and fine-tuning MVP1, we proudly unveiled our inaugural CI+IaC+CD pipeline - the BINGO moment.
 
-# Back to the question: Segregate or separate IaC from CD?
+# Back to the question: Segregate or Aggregate IaC from CD?
 
-I will present two workflows: a separate and a segregated pipeline flow. The steps 1-5 remain consistent:
+I will present two workflows: a segregated and an aggregated pipeline flow. The steps 1-5 remain consistent:
 
 1. The pipeline is queued.
 2. The solution-specific variable configuration template is introduced. We deliberately integrated the IaC and CD configurations into a single, unified template. This consolidation ensures that many components, which are commonly shared and reused by both IaC and CD, are seamlessly pulled from the config repository.
@@ -49,7 +49,7 @@ I will present two workflows: a separate and a segregated pipeline flow. The ste
 
 Step 6 is the focal point of this post, where I introduce two distinct flow patterns, representing the core topic of discussion.
 
-### Separated Flow
+### Segregated Flow
 
 The infrastructure-as-code (IaC) and continuous delivery (CD) steps operate independently and are overseen by our application-type *control.yml template. Essentially, this template incorporates the IaC blueprint for every environment we intend to provision, ensuring all environments are set up before initiating the CD process
 
