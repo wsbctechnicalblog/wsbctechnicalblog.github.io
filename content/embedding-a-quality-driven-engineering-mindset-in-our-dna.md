@@ -42,6 +42,10 @@ Gone are the days of simply tossing tasks over the wall to different roles like 
 
 When you operate with a healthy [DevOps](https://www.donovanbrown.com/post/what-is-devopss) mindset, you will also be familiar with the "product mindset", which implies that we, as a team, are accountable for our solution from ideation to deprecation. Until we switch off the solution lights, we own the accountability for QUALITY!
 
+>
+> Love a comment from my colleague: "_Pride, feeling like you've created and contributed to something you are proud of - that is the inner spirit we need to kindle._"
+>
+
 Switch to [Shift from project to product thinking](/shift-from-project-to-product-thinking.html) for more insight into the product mindset.
 
 Alternatively as per GPT: "_Thinking like a product team encourages a mindset that prioritizes the value delivered to end-users. This perspective helps ensure that the software being developed is aligned with the needs and expectations of the users, leading to more successful and impactful products. It also fosters a sense of ownership and **accountability for the quality** and functionality of the software, which ultimately leads to higher-quality solutions. Thinking like a product team also encourages collaboration, innovation, and a focus on continuous improvement, which are all essential elements for building successful software products._"
@@ -63,6 +67,7 @@ Scalability: Guardrails facilitate scaling efforts by ensuring that new code and
 - **Cost-Efficiency** by avoiding previous mistakes, saving time, and money.
 - **Forward-thinking** promoted by promoting practices that are known, proven, and sustainable. This benefits the maintenance and evolution of solutions over time.
 - **Avoid rigid and monolithic architectures** which impede the system's adaptability and evolution, especially in today's rapidly changing technological landscape. 
+- **Wotk smarter and more efficiently** to optimise and capitalise on down time.
 
 There are many more examples, but I need to touch on my 80:20 rule and then stop venting.
 
