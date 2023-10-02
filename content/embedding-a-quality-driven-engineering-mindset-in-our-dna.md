@@ -62,6 +62,7 @@ Scalability: Guardrails facilitate scaling efforts by ensuring that new code and
 - **Confidence** created when everyone follows set of guidelines to follow, enciuraging creative problem-solving and innovation.
 - **Cost-Efficiency** by avoiding previous mistakes, saving time, and money.
 - **Forward-thinking** promoted by promoting practices that are known, proven, and sustainable. This benefits the maintenance and evolution of solutions over time.
+- **Avoid rigid and monolithic architectures** which impede the system's adaptability and evolution, especially in today's rapidly changing technological landscape. 
 
 There are many more examples, but I need to touch on my 80:20 rule and then stop venting.
 
