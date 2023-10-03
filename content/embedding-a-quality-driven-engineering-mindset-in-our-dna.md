@@ -1,5 +1,5 @@
 Title: Embedding a Quality-Driven Engineering Mindset in Our DNA
-Date: 2023-10-03
+Date: 2023-10-02
 Category: Posts 
 Tags: engineering, eliminate-waste, quality
 Slug:embedding-a-quality-driven-engineering-mindset-in-our-dna
@@ -67,7 +67,7 @@ Scalability: Guardrails facilitate scaling efforts by ensuring that new code and
 - **Cost-Efficiency** by avoiding previous mistakes, saving time, and money.
 - **Forward-thinking** promoted by promoting practices that are known, proven, and sustainable. This benefits the maintenance and evolution of solutions over time.
 - **Avoid rigid and monolithic architectures** which impede the system's adaptability and evolution, especially in today's rapidly changing technological landscape. 
-- **Wotk smarter and more efficiently** to optimise and capitalise on down time.
+- **Work smarter and more efficiently** to optimise and capitalise on down time.
 
 There are many more examples, but I need to touch on my 80:20 rule and then stop venting.
 
