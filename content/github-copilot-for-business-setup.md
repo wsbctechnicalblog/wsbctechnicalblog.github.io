@@ -16,7 +16,7 @@ Terminology which will make things easier.
 |---------------------|-------------|
 | Entra ID            | New name for Azure Active Directory, for example **fabrikam.com**. |
 | Personal GitHub Account | Personal GitHub account, for example [wpschaub](https://github.com/wpschaub). |
-| EMU Account         | [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) account \<ID\>_\<Shortcode/>, for example **wschaub_fabrikam**. |
+| EMU Account         | [Enterprise Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) account \<ID\>_\<Shortcode/>, for example **wschaub_fabrikam**. |
 | EMU Admin           | EMU Administrator, for example **admin_fabikam**. 
 | EMU Enterprise Name | EMU Enterprise name, for example **fabrikam**. |
 | EMU Enterprise URL  | EMU Enterprise link, for example **fabrikam**. |
@@ -61,7 +61,7 @@ This is likely the section everyone is eager to dive into – welcoming your Art
 
 ## Before you begin!
 
-- First you need to logout of GitHub in your default web browser.  
+- First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  
 - Then go to Visual Studio (VS) Code and sign-out. 
 - Make sure you IDE is the latest version.
 
