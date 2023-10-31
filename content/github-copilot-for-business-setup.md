@@ -115,6 +115,8 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
 - Now you are ready to explore the walkthroughs and get started!  😊
 
+  > ![Welcome](../images/github-copilot-for-business-setup-10.png)
+
 ---
 
 If you sign-out from GitHub on your default browser, as per **before you begin**, you can save yourself a lot of pain! Have fun chatting with your AI Pair Engineer Copilot and watch this space for follow-up posts my my colleagues evaluating their Copilot.
