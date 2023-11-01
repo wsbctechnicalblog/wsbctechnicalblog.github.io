@@ -4,7 +4,7 @@ Category: Posts
 Tags: ai, github
 Slug: github-copilot-for-business-setup
 Author: <Willy-Peter Schaub
-Summary: Getting started with GitHub Copilot - Step 1: Setup.
+Summary: Getting started with GitHub Copilot - Part 1: Setup.
 
 To kickstart your journey with the GitHub Copilot for Business product, we first need to configure both the service-side and user-side environments. In this guide, we will walk you through the steps we took and highlight any potential obstacles you may encounter along the way.
 
