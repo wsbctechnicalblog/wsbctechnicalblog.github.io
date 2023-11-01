@@ -12,17 +12,16 @@ To kickstart your journey with the GitHub Copilot for Business product, we first
 
 Terminology which will make things easier.
 
-| TERMINOLOGY         |~~| DESCRIPTION |
-|---------------------|--|-------------|
-| Entra ID            |  | New name for Azure Active Directory, for example **fabrikam.com**. |
-| Personal GitHub Account |  | Personal GitHub account, for example [wpschaub](https://github.com/wpschaub). |
-| EMU Account         |  | [Enterprise Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) account \<ID\>_\<Shortcode/>, for example **wschaub_fabrikam**. |
-| EMU Admin           |  | EMU Administrator, for example **admin_fabikam**. 
-| EMU Enterprise Name |  | EMU Enterprise name, for example **fabrikam**. |
-| EMU Enterprise URL  |  | EMU Enterprise link, for example **fabrikam**. |
-| EMU Shortcode       |  | EMU alias, for example https://github.com/enterprises/fabrikam. |
-| GitHub Organization |  | [Git Hub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations), for example **fabrikam_innovation**. |
-| GitHub Team         |  | [GitHub Team](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams), for example **GitHub Copilot Evaluation**. |
+- **Entra ID** - **New name for Azure Active Directory, for example ``fabrikam.com``.
+- **Personal GitHub Account** - Personal GitHub account, for example [wpschaub](https://github.com/wpschaub).
+- **EMU Account** - [Enterprise Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) account \<ID\>_\<Shortcode/>, for example ``wschaub_fabrikam``.
+- **EMU Admin** - EMU Administrator, for example ``admin_fabikam``. 
+- **EMU Enterprise** - EMU Enterprise name, for example ``fabrikam``.
+- **EMU Enterprise URL** - EMU Enterprise link, for example ``https://github.com/enterprises/fabrikam``.
+- **EMU Shortcode** - EMU alias, for example https://github.com/enterprises/fabrikam.
+- **GitHub Organization** - [Git Hub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations), for example ``fabrikam_innovation``.
+- **GitHub Team** - [GitHub Team](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams), for example ``GitHub Copilot Evaluation``.
+
 
 Below is an insightful illustration sourced from [GitHub](HTTPS://GITHUB.COM) that provides a user-friendly overview of Enterprise Managed Users (EMU).
 
@@ -62,6 +61,7 @@ The [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@lat
 - [Enable Copilot at the Enterprise Level](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-copilot-in-your-enterprise).
 - In your Organization of choice, [enable Copilot for the user/team of choice](https://docs.github.com/en/enterprise-cloud@latest/copilot/configuring-github-copilot/configuring-github-copilot-settings-in-your-organization). In our scenario, we handle GitHub team membership through an Azure Directory (AD) group. Being a member of the AD group automatically grants you membership in the GitHub team, providing access to a GitHub Copilot license.
 
+
  Single-signon is alive and well. At this point you should be able to login with your ``EMU Admin`` and your ``corporate`` cedentials.
 
 ---
@@ -75,6 +75,7 @@ This is likely the section everyone is eager to dive into – welcoming your Art
 - First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  
 - Then go to Visual Studio (VS) Code and sign-out. 
 - Make sure you IDE is the latest version.
+
 
 Failure to do so may lead you down the same nightmarish path I experienced last weekend.
 
@@ -100,6 +101,7 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
   > ![Verify](../images/github-copilot-for-business-setup-4.png)
 
 - Now it is time to start exploring!!!
+
 
 ## Visual Studio Code
 
