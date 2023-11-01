@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Start together work together finish together - </title>
+        <title>GitHub Copilot for Business Setup - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,64 +33,184 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/start-together-work-together-finish-together.html" rel="bookmark"
-            title="Permalink to Start together work together finish together">Start together work together finish together</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/github-copilot-for-business-setup.html" rel="bookmark"
+            title="Permalink to GitHub Copilot for Business Setup">GitHub Copilot for Business Setup</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 07 May 2021</div>
+        <div class="read-more">Posted by <Willy-Peter Schaub on Wed 01 November 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Speed up the delivery process by avoiding queuing and needless looping</p>
+            <p>Getting started with GitHub Copilot - Step 1: Setup.</p>
         </div>
     
         <div class="entry-content">
-            <p><strong>Note</strong>: This article was inspired by the amazing research <a href="https://blog.amplitude.com/author/john-cutler">John Cutler</a> keeps doing</p>
-<p>Every organization starts any software development initiative by examining the opportunities and then selecting the highest priority ones. Once that selection happens, teams move on to work on formulating the expectations. What is the proposed system supposed to offer to the paying customers/end users?</p>
-<p>Formulated expectations get formalized as user stories, which in turn get vertically sliced and worked on in a typical combination of iterative/incremental fashion. Once fully tested, the expectations get released and the system runs in production environment. Rinse, repeat.</p>
-<h2>Traditional waterfall approach</h2>
-<p>In the familiar waterfall scenario, each of the above described phases get done in strict isolation following the incremental model. At each gated phase, proposed changes get formulated, reviewed, signed off and then frozen. Change management insists that once frozen, expectations cannot be revisited. We move forward in strictly incremental fashion (i.e. we only possibly iterate at the stages 4 and 5). The gated phases typically happen in the following order:</p>
-<ol>
-<li><strong>Opportunity selection</strong> (once selected and signed off, the opportunity gets slated for implementation of the solution which will harvest its potential)</li>
-<li><strong>Formulating the expectations</strong> (typically, the expectations get formulated as a laundry list of features); once formulated, the workload gets planned and then the expectations get handed off to the design team</li>
-<li><strong>Design the solution</strong>; teams take careful approach to design the system which will meet all the signed off and frozen expectations; once the design is finished and reviewed, it gets signed off and frozen – change management precludes any further changes to the signed off design</li>
-<li><strong>The build team gets the design blueprints and commences the build activities</strong>; since no changes to the design nor to the expectations are permitted at that stage, the only team that is busy is the team building the solution</li>
-<li><strong>Once the build team reaches the ‘code complete’ stage, the built solution is handed off to the testing team</strong>; the process waits while the testers examine the solution and if any defects or malfunctioning that are deemed as show-stoppers are found, the built solution is pushed into the queue, looping it back to the build team to fix the issues</li>
-<li>Finally, after obtaining the clearance from the testers and other stakeholders, <strong>the operations team releases the solution to production</strong></li>
-<li>Once in production, the <strong>SRE specialists take over and are running the system</strong></li>
-</ol>
-<h2>Why abandon/revise the waterfall model?</h2>
-<p>Software development industry at large seems to lean aggressively toward abandoning the above described waterfall model. What are the reasons for such abandonment?</p>
-<ol>
-<li><strong>Slow in the making</strong>: waterfall increments take time. Significant effort is needed at each stage of the game. Long stretches of time needed to complete each stage create large overheads necessary to coordinate, synchronize and manage the teams.</li>
-<li><strong>Meagre utilization</strong>: each gated phase takes significant time to complete while blocking all other teams from working on the solution. While teams responsible for opportunity selection are working hard on identifying and prioritizing useful opportunities, business analysts, architects, designers, coders, testers, sysadmins, security specialists, SREs etc. are idling. As the process moves from one gated phase to another, upstream and downstream teams remain underutilized, waiting for their turn to do something useful.</li>
-<li><strong>Unrealistic expectations</strong>: time waits for no one, and while initially it may have seemed that identified opportunities have the potential to strengthen company’s position on the market, if the organization runs on sluggish processes the shift in the market and political climate is at danger of going unnoticed. By the time the organization finally releases the solution, chances are that it lags and the company may discover that the solution is inadequate, sometimes even harmful.</li>
-<li><strong>Insufficient quality</strong>: betting the future on formulating the Big Plan Upfront means that the engineers claim they have all the knowledge necessary to correctly architect, design, implement and test the proposed solution. That is rarely the case and waiting until the very last moment to test the already built solution is not the optimal way to ensure technical excellence.</li>
-</ol>
-<h2>What are the alternatives to the waterfall model?</h2>
-<p>A stock answer is agile processes, but there are several stages of maturity in agile:</p>
-<ol>
-<li><strong>Simplest (or classic) agile</strong>: combine the build and test gated phases into a single phase, run by a single team. Testers/security experts are not waiting on coders to get to the ‘code complete’ stage but are instead working side-by-side with the coders, helping with testing every diff.</li>
-<li><strong>Agile that removes the release silo</strong>: combine the build, test, and release gated phases into a single phase run by a single team. Testers working side-by-side with coders while release specialists move into continuously releasing the tested diffs.</li>
-<li><strong>Agile that includes designers as team members</strong>: all the above specialists (coders, testers, release engineers) work together while also including designers into the team. That way, designers get to respond to the issues discovered by the coders and testers during the process of building and verifying.</li>
-<li><strong>Agile as DevOps</strong>: the above team, consisting of designers, coders, testers, and release engineers, adds SREs and other operations specialists to the team. They all work together on issues discovered along the way.</li>
-<li><strong>Agile as Feature Factory</strong>: the above team begins tight collaboration with business engineers who work on creating and modifying the expectations. As the team moves forward and discovers issues with the current state of design, technical excellence etc., the team feeds the details back into the business engineers who adjust the expectations.</li>
-<li><strong>Agile as Product Team with “mini CEO”</strong>: The last remaining gated phase silo (<strong>Opportunity selection</strong>) gets removed and the “mini CEO” becomes involved in the process of building the system. Selected opportunities are not cast in stone anymore but remain open to be examined by the “mini CEO” and reviewed to accommodate discovered market pressures.</li>
-<li><strong>Product Team</strong>: the entire team (i.e. the Whole Team) collaborates in real time on continually adding value to the organization. The team is actively engaged in seeking valuable opportunities and solving problems that arrive while attempting to provide automated systems that harvest identified opportunities.</li>
-</ol>
-<p>Ideally, the best results and the most optimal utilizations are achieved when the whole team starts together, works together, and finishes together.</p>
+            <p>To kickstart your journey with the GitHub Copilot for Business product, we first need to configure both the service-side and user-side environments. In this guide, we will walk you through the steps we took and highlight any potential obstacles you may encounter along the way.</p>
+<h2>Useful Terminology</h2>
+<p>Terminology which will make things easier.</p>
+<table>
+<thead>
+<tr>
+<th>TERMINOLOGY</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entra ID</td>
+<td>New name for Azure Active Directory, for example <strong>fabrikam.com</strong>.</td>
+</tr>
+<tr>
+<td>Personal GitHub Account</td>
+<td>Personal GitHub account, for example <a href="https://github.com/wpschaub">wpschaub</a>.</td>
+</tr>
+<tr>
+<td>EMU Account</td>
+<td><a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users">Enterprise Managed Users (EMU)</a> account \&lt;ID>_\<Shortcode/>, for example <strong>wschaub_fabrikam</strong>.</td>
+</tr>
+<tr>
+<td>EMU Admin</td>
+<td>EMU Administrator, for example <strong>admin_fabikam</strong>.</td>
+</tr>
+<tr>
+<td>EMU Enterprise Name</td>
+<td>EMU Enterprise name, for example <strong>fabrikam</strong>.</td>
+</tr>
+<tr>
+<td>EMU Enterprise URL</td>
+<td>EMU Enterprise link, for example <strong>fabrikam</strong>.</td>
+</tr>
+<tr>
+<td>EMU Shortcode</td>
+<td>EMU alias, for example https://github.com/enterprises/fabrikam.</td>
+</tr>
+<tr>
+<td>GitHub Organization</td>
+<td><a href="https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations">Git Hub Organization</a>, for example <strong>fabrikam_innovation</strong>.</td>
+</tr>
+<tr>
+<td>GitHub Team</td>
+<td><a href="https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams">GitHub Team</a>, for example <strong>GitHub Copilot Evaluation</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an insightful illustration sourced from <a href="HTTPS://GITHUB.COM">GitHub</a> that provides a user-friendly overview of Enterprise Managed Users (EMU).</p>
+<blockquote>
+<p><img alt="EMU Overview" src="../images/github-copilot-for-business-setup-1.png"></p>
+</blockquote>
+<h1>Service-side Setup</h1>
+<p>The <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users">GitHub Managed Users (EMU)</a> is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:</p>
+<ul>
+<li>Setup a <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users">GitHub Managed Users (EMU)</a>.</li>
+<li>Chat with your Microsoft / GitHub account manager and request  enterprise.</li>
+<li>Setup the IdP Connection</li>
+<li>Install <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aad.fabrikamenterprisemanageduseroidc?tab=Overview">GitHub EMU Application</a>.</li>
+<li>Step 1: Preparations</li>
+<li>Involve a person with AAD Admin Access</li>
+<li>Create a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">Personal Access Token</a> for the <code>EMU Admin</code> account</li>
+<li>Step 2: Connect GitHub to AAD using OIDC</li>
+<li>Have these handy: <code>EMU Name</code>, <code>EMU Enterprise URL</code>, and <code>EMU shortcode</code>!</li>
+<li>Follow all steps in the <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/configuring-oidc-for-enterprise-managed-users">GitHub Docs: Configuring OIDC for Enterprise Managed Users</a> to setup the connection.</li>
+<li>Step 3: Configure SCIM Provisioning</li>
+<li>Have these handy: <code>EMU Name</code>, <code>EMU Enterprise URL</code>, <code>EMU shortcode</code>, and your tenant URL, for example <code>https://api.github.com/scim/v2/enterprises/fabrikam</code>!</li>
+<li>Follow all the steps in <a href="https://learn.microsoft.com/en-us/entra/identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial">Azure Tutorial: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning</a>.</li>
+<li>Step 4: Once connected, connect subscription</li>
+<li>Have these handy: <code>GitHub Organization</code> and <code>GitHub Team</code> names.</li>
+<li><a href="https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/connecting-an-azure-subscription#connecting-your-azure-subscription-to-your-enterprise-account">Connect an Azure Subscription ID</a> to pay for Copilot.</li>
+<li><a href="https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-copilot-in-your-enterprise">Enable Copilot at the Enterprise Level</a>.</li>
+<li>In your Organization of choice, <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/configuring-github-copilot/configuring-github-copilot-settings-in-your-organization">enable Copilot for the user/team of choice</a>. In our scenario, we handle GitHub team membership through an Azure Directory (AD) group. Being a member of the AD group automatically grants you membership in the GitHub team, providing access to a GitHub Copilot license.</li>
+</ul>
+<p>Single-signon is alive and well. At this point you should be able to login with your <code>EMU Admin</code> and your <code>corporate</code> cedentials.</p>
+<hr>
+<h1>User-side Setup</h1>
+<p>This is likely the section everyone is eager to dive into – welcoming your Artificial Intelligence (AI) Copilot and embarking on a journey of exploration to reap numerous benefits. These include heightened productivity, enhanced quality, accelerated experimentation and learning, and bolstered engineering confidence.</p>
+<h2>Before you begin!</h2>
+<ul>
+<li>First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  </li>
+<li>Then go to Visual Studio (VS) Code and sign-out. </li>
+<li>Make sure you IDE is the latest version.</li>
+</ul>
+<p>Failure to do so may lead you down the same nightmarish path I experienced last weekend.</p>
+<h2>Visual Studio ENterprise / Professional</h2>
+<blockquote>
+<p>A special <strong>thank you</strong> to my copilot, <a href="https://wsbctechnicalblog.github.io/pages/authors.html">Martin Lacey</a>], who completed the setup first, giving us the dos and do nots, as well as the screenshots.
+</p>
+</blockquote>
+<ul>
+<li>Open Visual Studio Enterprise and go to <code>Profile &gt; Add Account</code>.</li>
+<li>This will open your browser. Use your corporate account, for <code>demo_fabrikam</code>. Your account name will be different, but follow the same format.</li>
+<li>Once you enter your account name (no password) and press <code>enter</code>, you will be directed to the following web page after a short moment.</li>
+</ul>
+<blockquote>
+<p><img alt="Authenticate" src="../images/github-copilot-for-business-setup-2.png"></p>
+</blockquote>
+<ul>
+<li>Click on <code>Authorize GitHub</code>.</li>
+</ul>
+<blockquote>
+<p><img alt="Authorize" src="../images/github-copilot-for-business-setup-3.png"></p>
+</blockquote>
+<ul>
+<li>Close Visual Studio and restart it.</li>
+<li>Verify that you are now connected.</li>
+</ul>
+<blockquote>
+<p><img alt="Verify" src="../images/github-copilot-for-business-setup-4.png"></p>
+</blockquote>
+<ul>
+<li>Now it is time to start exploring!!!</li>
+</ul>
+<h2>Visual Studio Code</h2>
+<ul>
+<li>Ensure you are running at least version 1.83, dated September 2023, by checking for updates.</li>
+</ul>
+<blockquote>
+<p><img alt="Check for updates" src="../images/github-copilot-for-business-setup-5.png"></p>
+</blockquote>
+<ul>
+<li>If not already done, install GitHub CoPilot:</li>
+</ul>
+<blockquote>
+<p><img alt="Install Copilot" src="../images/github-copilot-for-business-setup-6.png"></p>
+</blockquote>
+<ul>
+<li>After installation, log in to GitHub using your EMU Account (GitHub Enterprise Managed Users) such as <code>demo_fabrikam</code>. Alternatively, you can modify your profile to add the GitHub account.</li>
+</ul>
+<blockquote>
+<p><img alt="&lt;SAMPLE PIC&gt;" src="../images/github-copilot-for-business-setup-7.png"></p>
+</blockquote>
+<ul>
+<li>Authorize the access.</li>
+</ul>
+<blockquote>
+<p><img alt="Authorize" src="../images/github-copilot-for-business-setup-8.png"></p>
+</blockquote>
+<ul>
+<li>Once authorized, you will see the following view within VS Code.</li>
+</ul>
+<blockquote>
+<p><img alt="Check authorization" src="../images/github-copilot-for-business-setup-9.png"></p>
+</blockquote>
+<ul>
+<li>Now you are ready to explore the walkthroughs and get started!  😊</li>
+</ul>
+<blockquote>
+<p><img alt="Welcome" src="../images/github-copilot-for-business-setup-10.png"></p>
+</blockquote>
+<hr>
+<p>If you sign-out from GitHub on your default browser, as per <strong>before you begin</strong>, you can save yourself a lot of pain! Have fun chatting with your AI Pair Engineer Copilot and watch this space for follow-up posts my my colleagues evaluating their Copilot.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp </a>
-        | <a href="https://wsbctechnicalblog.github.io/start-together-work-together-finish-together.html" rel="bookmark"
-         title="Permalink to Start together work together finish together">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/github.html">github </a>
+        | <a href="https://wsbctechnicalblog.github.io/github-copilot-for-business-setup.html" rel="bookmark"
+         title="Permalink to GitHub Copilot for Business Setup">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
