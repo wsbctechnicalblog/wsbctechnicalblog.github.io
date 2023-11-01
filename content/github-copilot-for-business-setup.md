@@ -65,10 +65,9 @@ This is likely the section everyone is eager to dive into – welcoming your Art
 - Then go to Visual Studio (VS) Code and sign-out. 
 - Make sure you IDE is the latest version.
 
-
 Failure to do so may lead you down the same nightmarish path I experienced last weekend.
 
-## Visual Studio ENterprise / Professional
+## Visual Studio Enterprise / Professional
 
 >
 > A special **thank you** to my copilot, [Martin Lacey](https://wsbctechnicalblog.github.io/pages/authors.html)], who completed the setup first, giving us the dos and do nots, as well as the screenshots.
@@ -93,11 +92,17 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
 ## Visual Studio Code
 
+>
+> If you sign-out from GitHub on your default browser now, as per **before you begin**, you can save yourself a lot of pain! 
+>
+
+- Open Visual Studio Code (VS Code).
 - Ensure you are running at least version 1.83, dated September 2023, by checking for updates.
 
   > ![Check for updates](../images/github-copilot-for-business-setup-5.png)
 
-- If not already done, install GitHub CoPilot:
+- Go to ``View > Command Palette`` or press ``Ctrl + Shift + P``.
+- Search for ``GitHub Copilot: Install`` and select it.
   
   > ![Install Copilot](../images/github-copilot-for-business-setup-6.png)
 
@@ -113,11 +118,11 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
   > ![Check authorization](../images/github-copilot-for-business-setup-9.png)
 
-- Now you are ready to explore the walkthroughs and get started!  😊
+- Now you are ready to explore the walkthroughs and get started!  
 
   > ![Welcome](../images/github-copilot-for-business-setup-10.png)
 
 ---
 
-If you sign-out from GitHub on your default browser, as per **before you begin**, you can save yourself a lot of pain! Have fun chatting with your AI Pair Engineer Copilot and watch this space for follow-up posts my my colleagues evaluating their Copilot.
+Have fun chatting with your AI Pair Engineer Copilot and watch this space for follow-up posts by my colleagues evaluating their Copilot. I am already crafting a "GitHub Copilot for Business FAQ" post 😊.
 
