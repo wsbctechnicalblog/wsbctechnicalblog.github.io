@@ -32,20 +32,35 @@ Below is an insightful illustration sourced from [GitHub](HTTPS://GITHUB.COM) th
 
 The [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:
 
-| STEP |~~| CHECKLIST |
-|------|--|-----------|
-| Setup a [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users). |  | Chat with your Microsoft / GitHub account manager and request EMU. |  |  |
-| Setup the IdP Connection |  | Install [GitHub EMU Application](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aad.fabrikamenterprisemanageduseroidc?tab=Overview). |
-| Step 1: Preparations |  | Involve a person with AAD Admin Access. 
-|                      |  | Create a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) for the ``EMU Admin`` account. |
-| Step 2: Connect GitHub to AAD using OIDC |  | Have these handy: ``EMU Name``, ``EMU Enterprise URL``, and ``EMU shortcode``! |
-|                                          |  |  Follow all steps in the [GitHub Docs: Configuring OIDC for Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/configuring-oidc-for-enterprise-managed-users) to setup the connection. |
-| Step 3: Configure SCIM Provisioning |  | Have these handy: ``EMU Name``, ``EMU Enterprise URL``, ``EMU shortcode``, and your tenant URL, for example ``https://api.github.com/scim/v2/enterprises/fabrikam``! |
-|                                     |  | Follow all the steps in [Azure Tutorial: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial). |
-| Step 4: Once connected, connect subscription |  | Have these handy: ``GitHub Organization`` and ``GitHub Team`` names.
-|                                              |  | [Connect an Azure Subscription ID](https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/connecting-an-azure-subscription#connecting-your-azure-subscription-to-your-enterprise-account) to pay for Copilot. |
-|                                              |  | [Enable Copilot at the Enterprise Level](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-copilot-in-your-enterprise). |
-|                                              |  | In your Organization of choice, [enable Copilot for the user/team of choice](https://docs.github.com/en/enterprise-cloud@latest/copilot/configuring-github-copilot/configuring-github-copilot-settings-in-your-organization). In our scenario, we handle GitHub team membership through an Azure Directory (AD) group. Being a member of the AD group automatically grants you membership in the GitHub team, providing access to a GitHub Copilot license. |
+#### Setup a [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users).
+
+- Chat with your Microsoft / GitHub account manager and request EMU.
+
+#### Setup the IdP Connection
+
+- Install [GitHub EMU Application](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aad.fabrikamenterprisemanageduseroidc?tab=Overview).
+
+#### Step 1: Preparations
+
+- Involve a person with AAD Admin Access. 
+- Create a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) for the ``EMU Admin`` account.
+
+#### Step 2: Connect GitHub to AAD using OIDC
+
+- Have these handy: ``EMU Name``, ``EMU Enterprise URL``, and ``EMU shortcode``!
+- Follow all steps in the [GitHub Docs: Configuring OIDC for Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/configuring-oidc-for-enterprise-managed-users) to setup the connection.
+
+#### Step 3: Configure SCIM Provisioning
+
+- Have these handy: ``EMU Name``, ``EMU Enterprise URL``, ``EMU shortcode``, and your tenant URL, for example ``https://api.github.com/scim/v2/enterprises/fabrikam``!
+- Follow all the steps in [Azure Tutorial: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial).
+
+#### Step 4: Once connected, connect subscription
+
+- Have these handy: ``GitHub Organization`` and ``GitHub Team`` names.
+- [Connect an Azure Subscription ID](https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/connecting-an-azure-subscription#connecting-your-azure-subscription-to-your-enterprise-account) to pay for Copilot.
+- [Enable Copilot at the Enterprise Level](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-copilot-in-your-enterprise).
+- In your Organization of choice, [enable Copilot for the user/team of choice](https://docs.github.com/en/enterprise-cloud@latest/copilot/configuring-github-copilot/configuring-github-copilot-settings-in-your-organization). In our scenario, we handle GitHub team membership through an Azure Directory (AD) group. Being a member of the AD group automatically grants you membership in the GitHub team, providing access to a GitHub Copilot license.
 
  Single-signon is alive and well. At this point you should be able to login with your ``EMU Admin`` and your ``corporate`` cedentials.
 
