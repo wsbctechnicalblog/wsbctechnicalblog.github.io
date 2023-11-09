@@ -1,12 +1,12 @@
 Title: GitHub Copilot for Business FAQ
-Date: 2023-12-01
+Date: 2023-11-10
 Category: Posts 
 Tags: ai, github
 Slug: github-copilot-for-business-faq
-Author: <Willy-Peter Schaub
+Author: Willy-Peter Schaub
 Summary: Frequently Asked Questions (FAQ) that have been mushrooming during our evaluation phase. Part 2 - FAQ.
 
-Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page provide you with comprehensive answers to common questions raised by our engineers about [GitHub Copilot for Business](https://resources.github.com/copilot-for-business), an innovative tool that revolutionizes code development through intelligent suggestions and auto-completion. Whether you are a seasoned engineer or just starting out, this FAQ page aims to enhance your experience with GitHub Copilot and address any inquiries you may have. If you do not find the information you are looking for, feel free to reach out through the provided channels, and we will be happy to assist you.
+Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page provide you with comprehensive answers to common questions raised by our engineers about [GitHub Copilot for Business](https://resources.github.com/copilot-for-business), an innovative tool that revolutionizes code development through intelligent suggestions and auto-completion. Whether you are a seasoned engineer or just starting out, this FAQ page aims to enhance your experience with GitHub Copilot and address any inquiries you may have. If you do not find the information you are looking for, feel free to reach out through the provided discussion channel, and we will be happy to assist you.
 
 # Frequently asked questions (FAQ)
 
@@ -18,4 +18,4 @@ Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page prov
 
 ---
 
-I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute, feel free to leave a comment below.
+I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.
