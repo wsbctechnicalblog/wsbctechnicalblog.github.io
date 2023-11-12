@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2023-11-12T00:00:00-08:00</updated><entry><title>GitHub Copilot for Business FAQ</title><link href="https://wsbctechnicalblog.github.io/github-copilot-for-business-faq.html" rel="alternate"></link><published>2023-11-12T00:00:00-08:00</published><updated>2023-11-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-11-12:/github-copilot-for-business-faq.html</id><summary type="html">&lt;p&gt;Frequently Asked Questions (FAQ) that have been mushrooming during our evaluation phase. Part 2 - FAQ.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page provide you with comprehensive answers to common questions raised by our engineers about &lt;a href="https://resources.github.com/copilot-for-business"&gt;GitHub Copilot for Business&lt;/a&gt;, an innovative tool that revolutionizes code development through intelligent suggestions and auto-completion. Whether you are a seasoned engineer or just starting out, this FAQ page aims to enhance your experience with GitHub Copilot and address any inquiries you may have. If you do not find the information you are looking for, feel free to reach out through the provided discussion channel, and we will be happy to assist you.&lt;/p&gt;
 &lt;h1&gt;Frequently asked questions (FAQ)&lt;/h1&gt;
-&lt;h3&gt;2023.11.01&lt;/h3&gt;
+&lt;hr&gt;
 &lt;h4&gt;1. Can I be logged onto GitHub with my &lt;code&gt;corporate&lt;/code&gt; and &lt;code&gt;personal&lt;/code&gt; GitHub account at the same time?&lt;/h4&gt;
 &lt;p&gt;Currently, simultaneous support for two accounts is not available. However, you can switch between accounts by logging out of the current account and logging into the other one.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h4&gt;2. What is the difference between Copilot for &lt;code&gt;Business&lt;/code&gt; and Copilot for &lt;code&gt;Individuals&lt;/code&gt;?&lt;/h4&gt;
 &lt;p&gt;See &lt;a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-for-business#understanding-the-differences-between-copilot-for-business-and-copilot-for-individuals"&gt;Understanding the differences between Copilot for Business and Copilot for Individuals&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;2023.11.02&lt;/h3&gt;
+&lt;hr&gt;
 &lt;h4&gt;3. Why am I seeing this error in my Copilot log?&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;[INFO] [auth] [2023-11-02T14:57:44.993Z] Invalid copilot token: missing token: 403&lt;/code&gt;
