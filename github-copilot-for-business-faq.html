@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Azure Devops simplicity to rule them all - </title>
+        <title>GitHub Copilot for Business FAQ - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,110 +33,64 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-simplicity-to-rule-them-all.html" rel="bookmark"
-            title="Permalink to Azure Devops simplicity to rule them all">Azure Devops simplicity to rule them all</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/github-copilot-for-business-faq.html" rel="bookmark"
+            title="Permalink to GitHub Copilot for Business FAQ">GitHub Copilot for Business FAQ</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 03 February 2023</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Sun 12 November 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Keep Azure DevOps setup simple and avoid a lot of pain and waste!</p>
+            <p>Frequently Asked Questions (FAQ) that have been mushrooming during our evaluation phase. Part 2 - FAQ.</p>
         </div>
     
         <div class="entry-content">
-            <p>It is seldom that you have an opportunity to plan and deploy your engineering process using <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> from the ground up - a greenfield deployment not previously polluted by snowflakes (variations of the same) and custom development (everyone has a preference). If you do, I have two recommendations:</p>
-<ol>
-<li>Keep it <strong>simple</strong>.</li>
-<li>Create <strong>one</strong> Azure DevOps Project to rule them all.</li>
-</ol>
-<p>Which reminds me of <a href="https://devblogs.microsoft.com/devops/what-is-devops-donovan/">Donovan Brown's</a> infamous definition of DevOps "<em>DevOps is the union of people, process, and products to enable continuous delivery of value to our end users</em>", and his iconic statement "<em>You cannot buy DevOps and install it.</em>" I even created laptop stickers for his DevOps definition, as it is crisp and balances my belief in the value of DevOps. Unfortunately, Microsoft renamed their product to Azure DevOps, making the argument of his iconic statement a real challenge to uphold.</p>
-<p>This post, however, is based on learning lessons the hard way and preparing a brownfield that had years of development based on autonomy over guardrails and storms of snowflakes. It took us a year of hard work, amazing innovations, and grit …</p>
+            <p>Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page provide you with comprehensive answers to common questions raised by our engineers about <a href="https://resources.github.com/copilot-for-business">GitHub Copilot for Business</a>, an innovative tool that revolutionizes code development through intelligent suggestions and auto-completion. Whether you are a seasoned engineer or just starting out, this FAQ page aims to enhance your experience with GitHub Copilot and address any inquiries you may have. If you do not find the information you are looking for, feel free to reach out through the provided discussion channel, and we will be happy to assist you.</p>
+<h1>Frequently asked questions (FAQ)</h1>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>QUESTION</th>
+<th>ANSWER</th>
+<th>REVISION DATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Can I be logged onto GitHub with my <code>corporate</code> and <code>personal</code> GitHub account at the same time?</td>
+<td>Currently, simultaneous support for two accounts is not available. However, you can switch between accounts by logging out of the current account and logging into the other one.</td>
+<td>2023.11.01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>What is the difference between Copilot for <code>Business</code> and Copilot for <code>Individuals</code>?</td>
+<td>See <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-for-business#understanding-the-differences-between-copilot-for-business-and-copilot-for-individuals">Understanding the differences between Copilot for Business and Copilot for Individuals</a>.</td>
+<td>2023.11.01</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Why am I seeing this error in my Copilot log?<br/><code>[INFO] [auth] [2023-11-02T14:57:44.993Z] Invalid copilot token: missing token: 403</code><br/><code>[ERROR] [default] [2023-11-02T14:57:45.005Z] Extension activation failed: "User not authorized"</code></td>
+<td>Your GitHub Copilot for Business license is not currently valid. If you are using an active directory (AD) group for license management, it is possible that you have been removed from the AD group or were never added in the first place.</td>
+<td>2023.11.02</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h1>Simplicity and consistency over Snowflakes!</h1>
-<p>It does not take long to realize that supporting thousands of CI/CD <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops">Azure Pipelines</a>, <a href="https://learn.microsoft.com/en-us/azure/devops/REPOS/?view=azure-devops">azure Repos</a>, and <a href="https://learn.microsoft.com/en-us/azure/devops/ARTIFACTS/?view=azure-devops">Azure Artifacts</a> that have drifted from each other is neither sustainable, nor cost effective. We had some bright engineers create pipelines running steps in parallel, using a platter of custom extensions, and scripts that makes any engineer’s heart rate shoot through the roof with excitement. Until the engineer leaves the organization and another engineer has the responsibility of maintaining the artwork and deal with a hotfix at the same time. Multiply this by a hundred to a thousand fold and you quickly realize complexity, cost, and un-maintainability of a technology <strong>waste</strong>, that is supposed to empower the engineers to deliver continuous value.</p>
-<p>We invested in creating the pillars for <strong>guardrails</strong>, <strong>automation</strong>, <strong>consistency</strong>, and <strong>self-service automation</strong>. See these posts for more details:</p>
-<ul>
-<li><a href="https://wsbctechnicalblog.github.io/can-government-agencies-be-innovative.html">Can government agencies be innovative?</a></li>
-<li><a href="https://wsbctechnicalblog.github.io/governance-manifestos-guardrails.html">Can we enact governance through engineering-friendly manifestos and guardrails?</a></li>
-<li><a href="https://wsbctechnicalblog.github.io/our-open-source-pipeline-blueprints-have-landed.html">Our open-source pipeline blueprints have landed!</a></li>
-<li><a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part9.html">Self-service automation - A dream turns into reality</a></li>
-</ul>
-<hr>
-<h1>Lean on out-of-the-box features</h1>
-<p>Whenever a user requests a new custom extension to be installed from [Azure DevOps Marketplace)https://marketplace.visualstudio.com/azuredevops/), make sure you ask the five (5) WHYs! </p>
-<p>While it is fun and exciting to watch a delighted end-user, you will soon receive little patience and understanding when the  users have an issue with the extension or are looking for new features. Worst of all, if an extension is deprecated or a vulnerability is detected by security, there is very little of support and service level agreements you can rely on with <strong>free</strong> extensions.</p>
-<p>Keeping it simple and relying on out-of-the-box service features, keeps the feature and maintenance under control. If you must invest in an extension, I recommend that you:</p>
-<p>Pick extensions with:</p>
-<blockquote>
-<p><img alt="Verified Logos" src="../images/azure-devops-simplicity-to-rule-them-all-1.png"></p>
-</blockquote>
-<ul>
-<li>The <strong>verified domain</strong> and the <strong>top publisher</strong> validations - they imply commitment through exemplary policies, quality, reliability, and support.</li>
-<li>A high number of <strong>installs</strong>.</li>
-<li>A high average rating (<strong>stars</strong>), Q&amp;A, and Ratings &amp; Reviews that give you a warm and fuzzy feeling.</li>
-</ul>
-<p>Remember, once an extension is installed, it quickly becomes a critical feature of your user’s processes, making it difficult to reverse or exchange.</p>
-<hr>
-<h1>Governance Reporting is a must</h1>
-<p>It is important that you can monitor and audit your engineering process for consistency, standardization, adherence to guardrails and standards, and identify when configurations start drifting apart. </p>
-<p>We invested in a platter of automated reporting, via the <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">Azure DevOps REST API</a>, and have also embraces the phenomenal work done by <a href="https://twitter.com/vinijmoura">Vinicius Moura</a> with his <a href="https://github.com/vinijmoura/Azure-DevOps">Azure-DevOps</a> open source project on GitHub.</p>
-<blockquote>
-<p><em>List all Release Definitions, Stages, and Approvers on Classic Releases in Azure DevOps</em>
-<img alt="Sample Report" src="../images/azure-devops-simplicity-to-rule-them-all-2.png"> </p>
-</blockquote>
-<p>Not only are we able to answer most questions from internal audits in seconds, we are able to continuously observe the health of our engineering process and get a nudge when things are about to drift off the rails.</p>
-<hr>
-<h1>One project to rule them all!</h1>
-<p>I will keep this section very short and refer you to the excellent <a href="https://nkdagility.com/blog/one-team-project/">One Team Project to rule them all</a> post by <a href="https://nkdagility.com/">Martin Hinshelwood</a>.</p>
-<p>Again, I wish that Microsoft had not called it a Team Project, as it has resulted in years of confusion and migraines. As Martin correctly emphasizes in his blog a Team Project cannot be equated to a Visual Studio Project, a software, or whatever project. Project &lt;&gt; project! </p>
-<p>If only I had a dollar for every wasteFUL discussion that goes:</p>
-<ul>
-<li>User: "<em>Please create me a new Azure DevOps Project.</em>"</li>
-<li><strong>WHY?</strong></li>
-<li>User: "<em>We are starting a new project.</em>"</li>
-<li><strong>WHY</strong> can we not just create a new Team for you in our mainstream Azure DevOps Team Project?</li>
-<li>User: "<em>We feel that we need a new project, not a new team?</em>"</li>
-<li><strong>WHY?</strong></li>
-<li>User: "<em>Because we are starting a new project.</em>"</li>
-<li>...</li>
-</ul>
-<p>After 5-years of pushing for a "one project to rule them all" we are now staring at multiple Azure DevOps Team projects that have drifted apart from each other, making it sheer impossible to consolidate all Azure Repositories and Azure Pipelines, while maintaining all the history mandated by policies.</p>
-<p>Avoid the pain and start with "<strong>one project to rule them all!</strong>"</p>
-<hr>
-<h1>Use Active Directory (AD) groups to authorize users</h1>
-<p>Another hard lesson we learnt over time:</p>
-<ul>
-<li>Use <strong>Active Directory (AD)</strong> groups to authorize users.</li>
-<li>Keep your security model <strong>simple</strong> and number of AD groups <strong>low</strong>.</li>
-<li><strong>Delegate</strong> the auditing and membership management of AD groups.</li>
-<li><strong>Automate</strong> the creation of AD groups and adding and removing of user memberships.</li>
-</ul>
-<p>When you are dealing with multiple Azure DevOps Team projects, you may end up with a security model like the following.</p>
-<blockquote>
-<p><img alt="Complex Security Model" src="../images/azure-devops-simplicity-to-rule-them-all-3.png"> </p>
-</blockquote>
-<p>If you are the <strong>green</strong> engineer, you will <strong>hate</strong> the Azure DevOps powered engineering process. It is complex and anything but user-friendly and empowering - and no fault of Azure DevOps!</p>
-<p>One of our working groups invested well-spent time to understand our security model and come up with a <strong>simpler</strong> and <strong>user-friendly</strong> security model. It still defines AD groups per Azure DevOps Team project for AD groups providing <strong>administrative</strong> and <strong>elevated</strong> permissions to enforce the least-privilege policy, but introduces other AD groups that span all of the Azure DevOps Team Projects that should be **one"".</p>
-<blockquote>
-<p><img alt="Simple Security Model" src="../images/azure-devops-simplicity-to-rule-them-all-4.png"> </p>
-</blockquote>
-<p>Now if we had "one team project to rule them all" we would have started with the same security model from the start.</p>
-<hr>
-<p>Hopefully this post gives you a few pointers to mull over, to help you transform your Azure DevOps powered engineering process, and avoid a lot of the <strong>WASTE</strong> and <strong>challenges</strong> we endured over the past few years.</p>
-<p>I am excited our state of the engineering process. <strong>Watch the space</strong>, as we shine the light on upcoming innovations, new and better ways to innovate, and empower our engineers through service excellence. </p>
+<p>I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
-        | <a href="https://wsbctechnicalblog.github.io/azure-devops-simplicity-to-rule-them-all.html" rel="bookmark"
-         title="Permalink to Azure Devops simplicity to rule them all">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/github.html">github </a>
+        | <a href="https://wsbctechnicalblog.github.io/github-copilot-for-business-faq.html" rel="bookmark"
+         title="Permalink to GitHub Copilot for Business FAQ">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
