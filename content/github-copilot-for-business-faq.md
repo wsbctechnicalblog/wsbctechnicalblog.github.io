@@ -1,5 +1,5 @@
 Title: GitHub Copilot for Business FAQ
-Date: 2023-11-10
+Date: 2023-11-12
 Category: Posts 
 Tags: ai, github
 Slug: github-copilot-for-business-faq
