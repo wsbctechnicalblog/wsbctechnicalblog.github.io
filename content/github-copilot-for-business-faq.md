@@ -33,4 +33,10 @@ Your GitHub Copilot for Business license is not currently valid. If you are usin
 
 ---
 
+#### 4. Can I use two different browsers that are connected to each of my two different GitHub accounts?
+
+According to [Cσʅιɳ DҽɱႦσʋʂƙყ](https://twitter.com/colindembovsky) you can do one better - "_In the browser you can now natively switch accounts: [Switching between accounts](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts#about-switching-between-your-accounts). For logging in to Copilot, you have to switch accounts if you want to bounce between work and personal accounts._"
+
+---
+
 I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.
