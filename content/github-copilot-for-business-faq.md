@@ -10,6 +10,8 @@ Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page prov
 
 # Frequently asked questions (FAQ)
 
+Checkout part 1 - [Also checkout our [GitHub Copilot for Business Setup](/github-copilot-for-business-setup.html) blog post😊 if you have setup questions.
+
 ---
 
 #### 1. Can I be logged onto GitHub with my ``corporate`` and ``personal`` GitHub account at the same time?
