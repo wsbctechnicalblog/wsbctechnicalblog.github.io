@@ -10,7 +10,7 @@ Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page prov
 
 # Frequently asked questions (FAQ)
 
-Checkout part 1 - [Also checkout our [GitHub Copilot for Business Setup](/github-copilot-for-business-setup.html) blog post😊 if you have setup questions.
+Checkout our [GitHub Copilot for Business Setup](/github-copilot-for-business-setup.html) blog post😊 if you have **setup** questions.
 
 ---
 
