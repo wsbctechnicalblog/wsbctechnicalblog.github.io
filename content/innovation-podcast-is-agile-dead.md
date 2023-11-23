@@ -10,7 +10,7 @@ In this insightful podcast, [Marius de Beer](https://www.linkedin.com/in/marius-
 
 Marius explores the dynamic evolution of Agile, emphasizing its significance in today's fast-paced world and stressing the imperative for organizations to prioritize resilience. He shares valuable insights into his evolving coaching approach, underlining the crucial importance of implementing desired behavior promptly and leveraging human behavior as a catalyst for positive change.
 
-> [![Podcast](../images/innovation-podcast-is-agile-dead-1.png)](https://youtu.be/e_OwVcZNRcg)
+> [![Podcast](../images/innovation-podcast-is-agile-dead-1.png)](hhttps://www.youtube.com/watch?v=yOl487Qt8eM)
 
 Click [here](https://www.youtube.com/watch?v=yOl487Qt8eM) to listen to the conversation.
 
