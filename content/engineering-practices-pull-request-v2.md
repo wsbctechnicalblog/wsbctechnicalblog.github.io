@@ -16,23 +16,16 @@ Long-lived branches are at every increasing risk of “Merge-Hell” – wasted 
 
 # Key Principles of Trunk-Based Development
 
-Short-Lived Branches: In T-B-Dev, developers create short-lived branches that are quickly merged back into the main trunk. This minimizes the risk of integration issues and promotes a continuous flow of code.
+- **Short-Lived Branches**: In T-B-Dev, developers create short-lived branches that are quickly merged back into the main trunk. This minimizes the risk of integration issues and promotes a continuous flow of code.
+- **Continuous Integration**: T-B-Dev relies heavily on continuous integration practices, ensuring that changes are regularly integrated into the main branch. Automated tests play a crucial role in maintaining code quality.
+- **Feature Toggles**: Feature toggles allow developers to hide incomplete or experimental features behind a toggle, enabling them to merge code into the main branch without affecting the user experience.
+- **Code Reviews**: Despite the direct commits to the main branch, code reviews remain an integral part of the T-B-Dev workflow. Developers can still submit pull requests for their changes, allowing for a thorough review process.
+- **Small and Atomic Commits**: Developers should make small, atomic commits to the main branch, focusing on one logical change at a time. This makes it easier to understand and review changes during the pull request process.
+- **Automated Testing**: Automated tests, including unit tests, integration tests, and any other relevant checks, should be an integral part of the pull request process. This ensures that changes do not introduce regressions and maintain the overall stability of the codebase.
+- **Collaboration and Communication**: Pull requests in T-B-Dev serve as a means of communication among team members. Developers can discuss changes, provide feedback, and address concerns within the context of the pull request.
+- **Feature Flags and Rollouts**: Utilize feature flags to control the release of new features. This allows for gradual rollouts and easy rollback in case of unexpected issues.
 
-Continuous Integration: T-B-Dev relies heavily on continuous integration practices, ensuring that changes are regularly integrated into the main branch. Automated tests play a crucial role in maintaining code quality.
-
-Feature Toggles: Feature toggles allow developers to hide incomplete or experimental features behind a toggle, enabling them to merge code into the main branch without affecting the user experience.
-
-Code Reviews: Despite the direct commits to the main branch, code reviews remain an integral part of the T-B-Dev workflow. Developers can still submit pull requests for their changes, allowing for a thorough review process.
-
-**Small and Atomic Commits**: Developers should make small, atomic commits to the main branch, focusing on one logical change at a time. This makes it easier to understand and review changes during the pull request process.
-
-**Automated Testing**: Automated tests, including unit tests, integration tests, and any other relevant checks, should be an integral part of the pull request process. This ensures that changes do not introduce regressions and maintain the overall stability of the codebase.
-
-**Collaboration and Communication**: Pull requests in T-B-Dev serve as a means of communication among team members. Developers can discuss changes, provide feedback, and address concerns within the context of the pull request.
-
-**Feature Flags and Rollouts**: Utilize feature flags to control the release of new features. This allows for gradual rollouts and easy rollback in case of unexpected issues.
-
-**The Pull-Request Workflow Process**: The Pull-Request workflow is best illustrated with the following diagram:
+**The Pull-Request Workflow Process** is best illustrated with the following diagram:
 
 > ![Workflow](../images/engineering-practices-pull-request-1.png) 
    
