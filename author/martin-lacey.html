@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Configuration and/or Dependency Management - </title>
+        <title> Articles by Martin Lacey - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -23,98 +23,41 @@
             <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
-<div class="hp-header-inner">
-    <div class="page-header">
-        <div class="content-header">
+    <div class="hp-header">
+        <div class="page-header">
+            <div class="content-header">
+                <div id="title-block">
+                <h1><a href="https://wsbctechnicalblog.github.io/"></a></h1>
+                <p class="blurb"></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
     <div class="content">
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/configuration-and-or-dependency-management.html" rel="bookmark"
-            title="Permalink to Configuration and/or Dependency Management">Configuration and/or Dependency Management</a></h1>
 
-<img src="/theme/img/Logo-blogsize.png"><br />
-<div class="content-article">
-    <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 26 May 2023</div>
+<h2>Articles by Martin Lacey</h2>
+
+
+<img src="/theme/img/Logo-blogsize.png">
+
+
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Mon 04 December 2023</div>
  
-   </header>
-    <section class='article'>
-        
-        <div class="entry-summary">
-            <p>What am I missing? Is this not a common dependency challenge?</p>
-        </div>
-    
-        <div class="entry-content">
-            <p>I do not have experience in this area and am slowly, but surely, losing my marbles as no-one seems to have an answer.</p>
-<hr>
-<h1>System Center Configuration Manager to the rescue ... or not?</h1>
-<p>Yes, we are using Microsoft System Center Configuration Manager, to report on the health of our virtual servers, installed products, and missed patches. In essence, we know exactly WHAT is installed and WHAT is vulnerable - that is a goo thing, no?</p>
-<blockquote>
-<p><img alt="Installed applications" src="../images/configuration-and-or-dependency-management-1.png"> </p>
-<p>In the above example, we know we are running application A, B, and C, as well as dependencies .NET 2, 3, and 6. We alerted that .NET 2 and .NET 3 are end-of-life (EOL) and therefore a vulnerability.</p>
-</blockquote>
-<h1>Team Framework Monitor</h1>
-<p>We have also developed a tool, called Team Framework Monitor (TFM), which we recently open-sourced. See <a href="/bcit-computer-systems-technology-industry-sponsored-student-project.html">BCIT Computer Systems Technology Industry Sponsored Student Project.html</a> for details. </p>
-<p>Using the tool, we regularly scan all our <a href="https://azure.microsoft.com/en-us/products/devops/repos/">Azure DevOps</a> repositories to produce a report of applications, their dependencies, and whether any of their dependencies are end-of-live (EOL) - another precious gem, no?</p>
-<blockquote>
-<p><img alt="Application codebase" src="../images/configuration-and-or-dependency-management-2.png"> </p>
-<p>In the above example, we know we have upgraded application A and B to use .NET 6. We have addressed two vulnerabilities in two of our applications in the codebase. </p>
-</blockquote>
-<h1>Dependency Management Dilemma</h1>
-<p>And here is my dilemma. </p>
-<ol>
-<li>We diligently address the vulnerabilities on the server by removing .NET 2 and .NET 3.</li>
-<li>We trigger continuous delivery which deploys the latest versions of application A, B, and C.</li>
-<li>We smile, go home, and relax.</li>
-<li>At 2-AM in the morning, our phones ring off the hook - application C is down. Production incident.</li>
-<li>Root cause analysis determines that application C is still dependent on .NET 3.</li>
-</ol>
-<p>Sound familiar?</p>
-<blockquote>
-<p><img alt="The challenge" src="../images/configuration-and-or-dependency-management-3.png"></p>
-</blockquote>
-<p>Neither System Center Configuration Manager, nor any of the other expensive products we use can <strong>pro-actively</strong> warn us and avoid the 2AM call by generating a report such as this:</p>
-<blockquote>
-<p><img alt="The ask" src="../images/configuration-and-or-dependency-management-4.png"></p>
-</blockquote>
-<p>Obviously, we can spend manual effort to create yet another Excel workbook, with Pivot Tables that will help us figure our that we cannot remove .NET 3 yet. But ... there must be a smarter, more automated strategy?!?</p>
-<hr>
-<p>How are YOU solving this challenge? Do you have any case studies of organizations that have mastered this challenge?</p>
-<p>Comment below and let us start an interesting discussion!</p>
-        </div>
+                <h2><a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html" rel=Bookmark title="Permalink to Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow">Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow</a></h2>
+                <p>
+                <p>How to implement a pull request workflow within the context of a trunk-based development.</p>            
+                </p>
+                   
 
-    </section>
-    <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
-        | <a href="https://wsbctechnicalblog.github.io/configuration-and-or-dependency-management.html" rel="bookmark"
-         title="Permalink to Configuration and/or Dependency Management">Permalink</a>            
-        </div>
-        <!-- metaldata 
-        -->
-    </footer>
-        <hr>
-        <div id="gisqus_thread"></div>
-        <script src="https://giscus.app/client.js"
-            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
-            data-repo-id="R_kgDOIGjt-Q"
-            data-category="Technical Blog"
-            data-category-id="DIC_kwDOIGjt-c4CU007"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="light"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-        </script></div>
+            </div>
+    
+</ul>
+
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -201,7 +144,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (156)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (156)</li>
                 </ul>
              
             </div>
