@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Configuration and/or Dependency Management - </title>
+        <title>Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,66 +33,68 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/configuration-and-or-dependency-management.html" rel="bookmark"
-            title="Permalink to Configuration and/or Dependency Management">Configuration and/or Dependency Management</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html" rel="bookmark"
+            title="Permalink to Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow">Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 26 May 2023</div>
+        <div class="read-more">Posted by Martin Lacey on Mon 04 December 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>What am I missing? Is this not a common dependency challenge?</p>
+            <p>How to implement a pull request workflow within the context of a trunk-based development.</p>
         </div>
     
         <div class="entry-content">
-            <p>I do not have experience in this area and am slowly, but surely, losing my marbles as no-one seems to have an answer.</p>
-<hr>
-<h1>System Center Configuration Manager to the rescue ... or not?</h1>
-<p>Yes, we are using Microsoft System Center Configuration Manager, to report on the health of our virtual servers, installed products, and missed patches. In essence, we know exactly WHAT is installed and WHAT is vulnerable - that is a goo thing, no?</p>
+            <p>In the ever-evolving landscape of software development, choosing the right development workflow is crucial for ensuring efficiency, collaboration, and code quality. One such strategy gaining prominence is the Trunk-Based Development (T-B-Dev) strategy, and in this blog post, we will explore how to implement a pull request workflow within the context of T-B-Dev.</p>
+<h1>Understanding Trunk-Based Development</h1>
+<p>Trunk-Based Development is a version control strategy that promotes continuous integration by encouraging developers to commit their changes directly to the main branch (often referred to as the "trunk"). This strategy stands in contrast to feature branching workflows, where developers create long-lived branches for each feature.  </p>
+<p>Long-lived branches are at every increasing risk of “Merge-Hell” – wasted energy resolving merge conflicts with other developers and their commits to the main branch and are not the recommended approach.</p>
+<h1>Key Principles of Trunk-Based Development</h1>
+<ul>
+<li><strong>Short-Lived Branches</strong>: In T-B-Dev, developers create short-lived branches that are quickly merged back into the main trunk. This minimizes the risk of integration issues and promotes a continuous flow of code.</li>
+<li><strong>Continuous Integration</strong>: T-B-Dev relies heavily on continuous integration practices, ensuring that changes are regularly integrated into the main branch. Automated tests play a crucial role in maintaining code quality.</li>
+<li><strong>Feature Toggles</strong>: Feature toggles allow developers to hide incomplete or experimental features behind a toggle, enabling them to merge code into the main branch without affecting the user experience.</li>
+<li><strong>Code Reviews</strong>: Despite the direct commits to the main branch, code reviews remain an integral part of the T-B-Dev workflow. Developers can still submit pull requests for their changes, allowing for a thorough review process.</li>
+<li><strong>Small and Atomic Commits</strong>: Developers should make small, atomic commits to the main branch, focusing on one logical change at a time. This makes it easier to understand and review changes during the pull request process.</li>
+<li><strong>Automated Testing</strong>: Automated tests, including unit tests, integration tests, and any other relevant checks, should be an integral part of the pull request process. This ensures that changes do not introduce regressions and maintain the overall stability of the codebase.</li>
+<li><strong>Collaboration and Communication</strong>: Pull requests in T-B-Dev serve as a means of communication among team members. Developers can discuss changes, provide feedback, and address concerns within the context of the pull request.</li>
+<li><strong>Feature Flags and Rollouts</strong>: Utilize feature flags to control the release of new features. This allows for gradual rollouts and easy rollback in case of unexpected issues.</li>
+</ul>
+<p><strong>The Pull-Request Workflow Process</strong> is best illustrated with the following diagram:</p>
 <blockquote>
-<p><img alt="Installed applications" src="../images/configuration-and-or-dependency-management-1.png"> </p>
-<p>In the above example, we know we are running application A, B, and C, as well as dependencies .NET 2, 3, and 6. We alerted that .NET 2 and .NET 3 are end-of-life (EOL) and therefore a vulnerability.</p>
+<p><img alt="Workflow" src="../images/engineering-practices-pull-request-1.png"> </p>
 </blockquote>
-<h1>Team Framework Monitor</h1>
-<p>We have also developed a tool, called Team Framework Monitor (TFM), which we recently open-sourced. See <a href="/bcit-computer-systems-technology-industry-sponsored-student-project.html">BCIT Computer Systems Technology Industry Sponsored Student Project.html</a> for details. </p>
-<p>Using the tool, we regularly scan all our <a href="https://azure.microsoft.com/en-us/products/devops/repos/">Azure DevOps</a> repositories to produce a report of applications, their dependencies, and whether any of their dependencies are end-of-live (EOL) - another precious gem, no?</p>
-<blockquote>
-<p><img alt="Application codebase" src="../images/configuration-and-or-dependency-management-2.png"> </p>
-<p>In the above example, we know we have upgraded application A and B to use .NET 6. We have addressed two vulnerabilities in two of our applications in the codebase. </p>
-</blockquote>
-<h1>Dependency Management Dilemma</h1>
-<p>And here is my dilemma. </p>
+<p>Let’s review this diagram in detail and examine each step in the process of building your code-feature branch and committing back to the main (trunk).</p>
 <ol>
-<li>We diligently address the vulnerabilities on the server by removing .NET 2 and .NET 3.</li>
-<li>We trigger continuous delivery which deploys the latest versions of application A, B, and C.</li>
-<li>We smile, go home, and relax.</li>
-<li>At 2-AM in the morning, our phones ring off the hook - application C is down. Production incident.</li>
-<li>Root cause analysis determines that application C is still dependent on .NET 3.</li>
+<li><strong>Branching Best Practices</strong>: Before creating a short-lived feature branch, ensure your local repository is up to date at branch initiation. This step is crucial in preventing merge complications, emphasizing the significance of minimizing the branch's lifespan. Opt for pulling more frequently than less to sidestep potential issues.</li>
+<li><strong>Code Development and Testing</strong>: Develop your code changes comprehensively, incorporating both Unit and Integration tests to ensure robust functionality and reliability.</li>
+<li><strong>Initiating Collaboration</strong>: Initiate collaboration by creating a Draft Pull Request (PR). This serves as the starting point for collaboration among team developers. The Draft PR fosters dynamic collaboration without triggering Branch Policies, validations, or notifying PR reviewers.</li>
+<li><strong>Manual Validation Steps</strong>: Manually trigger branch policy validations, such as the validation build, as required. Confirm that your code successfully passes validations, iterating on code changes if necessary.</li>
+<li><strong>PR Publishing and Mandatory Policies</strong>: When ready to merge code changes into the main branch, publish the PR. PR publication notifies reviewers, and branch policies become mandatory. PR completion can be set to manual or automatic, with the latter triggered upon the verification of all policies.</li>
+<li><strong>Commit Impact on PR</strong>: Any committed code changes within a published PR reset all reviewer approvals, triggering notifications according to our branch policies.</li>
+<li><strong>Automatic Re-validation on Commit</strong>: With each commit, all policies are automatically re-validated, ensuring continuous compliance throughout the development process.</li>
+<li><strong>Code Changes Completion</strong>: Declare code changes as ready to merge. The PR acts as a gatekeeper, ensuring all policies are met before proceeding.</li>
+<li><strong>Mandatory Policy Compliance for PR Completion</strong>: Manual or automatic completion of the PR is contingent upon meeting all branch policies. Once achieved, the code seamlessly merges into the main (trunk). Note that users with elevated permissions can force complete the PR, overriding validation states. Following the merge, the continuous integration (CI) pipeline is triggered from the source branch.  </li>
 </ol>
-<p>Sound familiar?</p>
+<h1>Conclusion</h1>
+<p>In conclusion, adopting a pull request workflow within the Trunk-Based Development strategy offers a balance between the advantages of continuous integration and the collaborative nature of code reviews. By following the key principles and best practices outlined in this blog post, development teams can seamlessly integrate changes into the main branch while ensuring code quality, collaboration, and overall project success.</p>
+<p>Remember, the essence of Trunk-Based Development lies in its simplicity and focus on delivering value continuously. Embrace this workflow, tailor it to your team's needs, and witness the positive impact it can have on your software development lifecycle.</p>
 <blockquote>
-<p><img alt="The challenge" src="../images/configuration-and-or-dependency-management-3.png"></p>
+<p>MYTH BUSTER: And no, the pull request is not a gated process! Apart from the invaluable collaboration, you can fully automate the branch policy and build validations, as well as other validations, such as checking the state of a ServiceNow change request. 
+</p>
 </blockquote>
-<p>Neither System Center Configuration Manager, nor any of the other expensive products we use can <strong>pro-actively</strong> warn us and avoid the 2AM call by generating a report such as this:</p>
-<blockquote>
-<p><img alt="The ask" src="../images/configuration-and-or-dependency-management-4.png"></p>
-</blockquote>
-<p>Obviously, we can spend manual effort to create yet another Excel workbook, with Pivot Tables that will help us figure our that we cannot remove .NET 3 yet. But ... there must be a smarter, more automated strategy?!?</p>
-<hr>
-<p>How are YOU solving this challenge? Do you have any case studies of organizations that have mastered this challenge?</p>
-<p>Comment below and let us start an interesting discussion!</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
-        | <a href="https://wsbctechnicalblog.github.io/configuration-and-or-dependency-management.html" rel="bookmark"
-         title="Permalink to Configuration and/or Dependency Management">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html" rel="bookmark"
+         title="Permalink to Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
