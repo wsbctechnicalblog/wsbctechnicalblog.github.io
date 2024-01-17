@@ -41,7 +41,25 @@ PS: Donovan is also the author of the infamous definition of DevOps I am still u
 
 # Why Release on Demand?
 
-TBD
+**Release on Demand** is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.
+
+For example, Microsoft continuously rolls our [Azure DevOps]( https://azure.microsoft.com/en-us/products/devops/) updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.
+
+> ![Flags](/images/engineering-practices-why-release-on-demand-2.png)
+
+Peruse [Deploying new releases: Feature flags or rings?](https://opensource.com/article/18/2/feature-flags-ring-deployment-model) and [Release on Demand - Scaled Agile Framework](https://scaledagileframework.com/release-on-demand/) for more details.
+
+Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!
+
+See [VSTS - The Road to Continuous Delivery with Visual Studio Team Services](https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services).
+
+But, WHY bother? Here are several advantages that come to mind:
+
+- **Customer**-centric delivery!
+- **Continuous** delivery of features.
+- **Incremental** and **manageable** release of features.
+- **Flexibility** for business and IT.
+- Encourage collaboration, **feedback**, and a **fail-fast** mindset.
 
 ---
 
