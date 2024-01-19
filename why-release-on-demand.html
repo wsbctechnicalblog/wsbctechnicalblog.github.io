@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>How do we know what our customers value? - </title>
+        <title>Why release on demand? - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,77 +33,73 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/what-is-value.html" rel="bookmark"
-            title="Permalink to How do we know what our customers value?">How do we know what our customers value?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
+            title="Permalink to Why release on demand?">Why release on demand?</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Wed 17 November 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 19 January 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.</p>
+            <p>Exploring the deployment rings, continuous delivery and deployment, to discuss release on demand.</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Dojo" src="../images/buffett.jpg"></p>
-<p>Common wisdom defines value as something that customers are willing to pay for. That line of thinking is applicable to repeatable processes, such as manufacturing.</p>
-<p>When it comes to digital product development, processes are not nearly as repeatable as they are in manufacturing. In the new product development, what customers might find valuable are often unclear. In such environment, we need a new definition of value. That definition must support the discovery of who our customers are and what their needs are.</p>
-<h2>Validated learning</h2>
-<p>Since value is not known upfront, we must engage in the process of learning what value for the customer might be (“Value is what customers actually want”, Womack and Jones, Lean Thinking).</p>
-<p>Another guiding principle for finding out value is by Gerald M. Weinberg: “Value is what people are willing to pay (or do) to have their requirements met.”</p>
-<p>The only plausible way to perform the process of validated learning is to adopt the <a href="https://wsbctechnicalblog.github.io/hypothesis-driven-development.html">hypothesis-driven development</a>. We do not push our ideas of what customers may be willing to pay for; instead, we switch to the pull model of working.</p>
-<p>Pull means doing work in response to the immediate downstream demand.</p>
-<p>To be able to gain insight into the downstream demand, we need to propose a hypothesis and immediately implement it. Once implemented, the modified product gets placed in customers’ hands, and we collect feedback by observing customer behaviour.</p>
-<p>That feedback, collected via implemented hypothesis, is then used to validate the hypothesis. It can either corroborate the hypothesis (in the sense of “yes, we were right, that change indeed delivers value to the customer”), or it can falsify the hypothesis (“it looks like we were wrong in assuming that the change will deliver value to the customer”).</p>
+            <p>Before I get into the main subject of this blog post – why our goal is to release on demand – I want to quickly talk about deployment rings, continuous delivery and deployment, and what they mean. These topics are all connected in the DevOps DNA and backed by Azure DevOps, the foundation of our software development lifecycle (SDLC).</p>
+<hr>
+<h1>Deployment Rings - managing impact!</h1>
+<p>The concept of ring-based deployment, initially introduced in Jez Humble's "Continuous Delivery" as canary deployments, strategically minimizes the impact on end users by incrementally and systematically rolling out changes in production. Employing deployment rings allows for a thorough assessment of the impact, often referred to as the "blast radius," achieved through meticulous observation, testing, telemetry analysis, and crucially, user feedback. </p>
 <blockquote>
-<p>“The trick to learning rapidly is creating small cheap experiments that will inform a decision you’re trying to make” -Joshua Kerievsky</p>
+<p><img alt="Rings" src="/images/engineering-practices-why-release-on-demand-1.png"></p>
 </blockquote>
-<h2>Establish the pull model of working</h2>
-<p>Once the value has been identified, the delivery of the value should be mapped into steps. Each step must contribute, in a partial way, to the delivered value. It is vitally important that the necessary steps occur in tight sequence. That way, value flows smoothly to the customers.</p>
-<p>Why is it called ‘pull model of working’? Customer behaviour (identified via hypothesis-driven development) pulls the value from the next upstream delivery. Customer behaviour determines which hypothesis will enter (will be pulled into) the value stream.</p>
-<h2>Seek perfection</h2>
-<p>Common wisdom warns us that perfect is the enemy of good. In this case, however, we seek perfection not by being dissatisfied with the good, but by eliminating waste.</p>
-<p>Well established value stream with steps necessary to implement the pull mode of working can easily be invalidated if we allow waste to enter the process and to begin festering. It is paramount to keep a watchful eye on any signs of waste and to diligently eliminate it.</p>
-<h2>What is waste?</h2>
-<p>Anything that is not positively identified as value is waste.</p>
-<p>For example, imposing an inspection gate at the final step of value stream delivery is waste. It is not possible to inspect quality into a product. Finding out that the value is defective after the value has already been implemented is completely wasteful. Garbage in, garbage out.</p>
-<p>Inspection must be eliminated and replaced with the full-fledged shift-left process that favors early and frequent failures that happen all the way upstream.</p>
-<h2>How to measure flow?</h2>
-<p>Flow is characterized by four metrics:</p>
-<ol>
-<li><em>Cycle time</em> (how long does it take from starting to work on a hypothesis to fulfilling the hypothesis)</li>
-<li><em>Lead time</em> (how long does it take from the moment we collected validated learning to fulfilling it)</li>
-<li><em>Throughput</em> (the number of steps completed in a fixed amount of time)</li>
-<li><em>Work-in-Progress, or WIP</em> (the amount of work that has started but not completed)</li>
-</ol>
-<p>It should be obvious that the more we manage to eliminate waste, the smoother and tighter the flow will get. The goal is to achieve short cycles, shorten the lead time, increase the throughput while minimizing the WIP.</p>
-<p>What is this tightening of flow buying us? The short answer is <em>increased frequency of feedback</em>.</p>
-<h2>Factors that threaten to slow down flow</h2>
-<ol>
-<li><em>High WIP</em> – as a leading indicator of cycle time WIP is the primary intervention point to enable us to establish, or interrupt, the flow. High WIP introduces speed bumps into the flow. Reducing the WIP speeds up the flow.</li>
-<li><em>Multitasking</em> – it’s a deception that maximizing the utilization of people and resources increases the throughput; fully utilized highway becomes a parking lot.</li>
-<li><em>Minimize slack</em> – tightening the screws and cramming more work into a queue has about the same level of effectiveness as jamming more paper into the printer hoping that will increase the speed of printing.</li>
-</ol>
-<h2>Making changes in how we work</h2>
-<p>We’ve been tasked with focusing on continuous improvement. It is not possible to continuously improve without experimentation and rapid learning. It is therefore useful to adopt a work discipline that is based on several principles:</p>
+<p>This approach, used to deploy Azure DevOps, enables the gradual deployment of binary bits, facilitating the concurrent operation of multiple production releases. For more detail, peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a>.</p>
+<hr>
+<h1>Continuous Delivery and Deployment - deploying to one or more environments!</h1>
+<p>In the distant year of 2016, I sought insights from my ALM Ranger colleague to delineate the distinction between continuous delivery and continuous deployment. </p>
+<p>Here is what <a href="https://www.linkedin.com/in/darquewarrior/">Donovan Brown</a> had to say: "<em>Continuous Delivery is the ability to use the output from the CI to build and deploy the new known good build to <strong>one or more environments</strong> automatically. There is a subtle difference between Continuous <strong>Delivery</strong> and Continuous <strong>Deployment</strong>. The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through <strong>several</strong> environments, ultimately ending up in production, which may include automated UI, load and performance tests and approvals along the way.</em>"</p>
+<p>PS: Donovan is also the author of the infamous definition of DevOps I am still using to this day - <a href="https://www.donovanbrown.com/post/what-is-devops">What is DevOps</a>. Collectively, we acknowledged the prevailing notion that DevOps transcends being a product; it is not something one can simply purchase or install. Yet, this perception took an interesting turn with the advent of Azure DevOps.</p>
+<hr>
+<h1>Deployment versus Release - giving the business and users a choice!</h1>
+<p><strong>Deployment</strong> is the process of moving a build or application from one environment to another. It involves copying files, configuring settings, and setting up the infrastructure necessary for the application to run. In Azure DevOps, deployment usually refers to the tasks involved in taking an artifact and installing it in different environments such as development, testing, and production.  </p>
+<p><strong>Release</strong>, on the other hand, is the process of making a version of your application available to users or customers. It is the end result of the development and testing process and signifies that a particular set of features or changes is ready for production use.</p>
+<hr>
+<h1>Why Release on Demand?</h1>
+<p><strong>Release on Demand</strong> is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.</p>
+<p>For example, Microsoft continuously rolls our <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.</p>
+<blockquote>
+<p><img alt="Flags" src="/images/engineering-practices-why-release-on-demand-2.png"></p>
+</blockquote>
+<p>Peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> and <a href="https://scaledagileframework.com/release-on-demand/">Release on Demand - Scaled Agile Framework</a> for more details.</p>
+<p>Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!</p>
+<p>See <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a>.</p>
+<p>But, WHY bother? Here are several advantages that come to mind:</p>
 <ul>
-<li><em>Leave task lists behind</em>. We should not focus on <em>things we want to do</em>; instead, focus on the minimum essential completion criteria. What do we have to do to deliver this minimum essential completion sooner?</li>
-<li><em>Stop measuring outputs</em>; only measure required <em>outcomes</em>.</li>
-<li><em>Stop starting and start finishing</em>. Favor dealing with steps that are closest to the finish line. Ignore steps that are still stuck at early stages of the flow.</li>
-<li><em>Set WIP ceilings</em>. Each step comprising the value delivery process must have a WIP cap. Periodically revisit those WIP caps and experiment by making the WIP capacity even smaller. Did the experiment accelerate the delivery, or did it slow the delivery down?</li>
+<li><strong>Customer</strong>-centric delivery!</li>
+<li><strong>Continuous</strong> delivery of features.</li>
+<li><strong>Incremental</strong> and <strong>manageable</strong> release of features.</li>
+<li><strong>Flexibility</strong> for business and IT.</li>
+<li>Encourage collaboration, <strong>feedback</strong>, and a <strong>fail-fast</strong> mindset.</li>
+</ul>
+<hr>
+<h1>References</h1>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project">Applying DevOps to a Software Development Project</a> / August 2016</li>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a> / December 2017</li>
+<li><a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> / February, 2018</li>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/may/devops-any-language-any-platform-with-azure-devops-projects">Any Language, Any Platform with Azure DevOps Projects</a> / May 2018</li>
 </ul>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/value.html">value </a><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric </a><a href="https://wsbctechnicalblog.github.io/tag/process.html">process </a><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean </a>
-        | <a href="https://wsbctechnicalblog.github.io/what-is-value.html" rel="bookmark"
-         title="Permalink to How do we know what our customers value?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
+         title="Permalink to Why release on demand?">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

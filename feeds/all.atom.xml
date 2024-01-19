@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-01-16T00:00:00-08:00</updated><entry><title>What are all those Warning and Information outputs from a build and why should I care if its not an error?</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-warnings-information-messages.html" rel="alternate"></link><published>2024-01-16T00:00:00-08:00</published><updated>2024-01-16T00:00:00-08:00</updated><author><name>Martin Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-01-16:/engineering-practices-warnings-information-messages.html</id><summary type="html">&lt;p&gt;Reasons why is it important to pay attention to all the warning and information message generated when compiling your code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my fourth decades of experience as a software engineer, paying close attention to warnings and information messages generated during the compile step has proven to be immensely important. Here are some reasons why I find it crucial:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-01-19T00:00:00-08:00</updated><entry><title>Why release on demand?</title><link href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="alternate"></link><published>2024-01-19T00:00:00-08:00</published><updated>2024-01-19T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-01-19:/why-release-on-demand.html</id><summary type="html">&lt;p&gt;Exploring the deployment rings, continuous delivery and deployment, to discuss release on demand.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Before I get into the main subject of this blog post – why our goal is to release on demand – I want to quickly talk about deployment rings, continuous delivery and deployment, and what they mean. These topics are all connected in the DevOps DNA and backed by Azure DevOps, the foundation of our software development lifecycle (SDLC).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Deployment Rings - managing impact!&lt;/h1&gt;
+&lt;p&gt;The concept of ring-based deployment, initially introduced in Jez Humble's "Continuous Delivery" as canary deployments, strategically minimizes the impact on end users by incrementally and systematically rolling out changes in production. Employing deployment rings allows for a thorough assessment of the impact, often referred to as the "blast radius," achieved through meticulous observation, testing, telemetry analysis, and crucially, user feedback. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Rings" src="/images/engineering-practices-why-release-on-demand-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This approach, used to deploy Azure DevOps, enables the gradual deployment of binary bits, facilitating the concurrent operation of multiple production releases. For more detail, peruse &lt;a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model"&gt;Deploying new releases: Feature flags or rings?&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Continuous Delivery and Deployment - deploying to one or more environments!&lt;/h1&gt;
+&lt;p&gt;In the distant year of 2016, I sought insights from my ALM Ranger colleague to delineate the distinction between continuous delivery and continuous deployment. &lt;/p&gt;
+&lt;p&gt;Here is what &lt;a href="https://www.linkedin.com/in/darquewarrior/"&gt;Donovan Brown&lt;/a&gt; had to say: "&lt;em&gt;Continuous Delivery is the ability to use the output from the CI to build and deploy the new known good build to &lt;strong&gt;one or more environments&lt;/strong&gt; automatically. There is a subtle difference between Continuous &lt;strong&gt;Delivery&lt;/strong&gt; and Continuous &lt;strong&gt;Deployment&lt;/strong&gt;. The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through &lt;strong&gt;several&lt;/strong&gt; environments, ultimately ending up in production, which may include automated UI, load and performance tests and approvals along the way.&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;PS: Donovan is also the author of the infamous definition of DevOps I am still using to this day - &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;What is DevOps&lt;/a&gt;. Collectively, we acknowledged the prevailing notion that DevOps transcends being a product; it is not something one can simply purchase or install. Yet, this perception took an interesting turn with the advent of Azure DevOps.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Deployment versus Release - giving the business and users a choice!&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Deployment&lt;/strong&gt; is the process of moving a build or application from one environment to another. It involves copying files, configuring settings, and setting up the infrastructure necessary for the application to run. In Azure DevOps, deployment usually refers to the tasks involved in taking an artifact and installing it in different environments such as development, testing, and production.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Release&lt;/strong&gt;, on the other hand, is the process of making a version of your application available to users or customers. It is the end result of the development and testing process and signifies that a particular set of features or changes is ready for production use.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Why Release on Demand?&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Release on Demand&lt;/strong&gt; is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.&lt;/p&gt;
+&lt;p&gt;For example, Microsoft continuously rolls our &lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt; updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Flags" src="/images/engineering-practices-why-release-on-demand-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Peruse &lt;a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model"&gt;Deploying new releases: Feature flags or rings?&lt;/a&gt; and &lt;a href="https://scaledagileframework.com/release-on-demand/"&gt;Release on Demand - Scaled Agile Framework&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!&lt;/p&gt;
+&lt;p&gt;See &lt;a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services"&gt;VSTS - The Road to Continuous Delivery with Visual Studio Team Services&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But, WHY bother? Here are several advantages that come to mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Customer&lt;/strong&gt;-centric delivery!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Continuous&lt;/strong&gt; delivery of features.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Incremental&lt;/strong&gt; and &lt;strong&gt;manageable&lt;/strong&gt; release of features.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; for business and IT.&lt;/li&gt;
+&lt;li&gt;Encourage collaboration, &lt;strong&gt;feedback&lt;/strong&gt;, and a &lt;strong&gt;fail-fast&lt;/strong&gt; mindset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project"&gt;Applying DevOps to a Software Development Project&lt;/a&gt; / August 2016&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services"&gt;VSTS - The Road to Continuous Delivery with Visual Studio Team Services&lt;/a&gt; / December 2017&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model"&gt;Deploying new releases: Feature flags or rings?&lt;/a&gt; / February, 2018&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/may/devops-any-language-any-platform-with-azure-devops-projects"&gt;Any Language, Any Platform with Azure DevOps Projects&lt;/a&gt; / May 2018&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="engineering"></category><category term="automation"></category></entry><entry><title>What are all those Warning and Information outputs from a build and why should I care if its not an error?</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-warnings-information-messages.html" rel="alternate"></link><published>2024-01-16T00:00:00-08:00</published><updated>2024-01-16T00:00:00-08:00</updated><author><name>Martin Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-01-16:/engineering-practices-warnings-information-messages.html</id><summary type="html">&lt;p&gt;Reasons why is it important to pay attention to all the warning and information message generated when compiling your code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my fourth decades of experience as a software engineer, paying close attention to warnings and information messages generated during the compile step has proven to be immensely important. Here are some reasons why I find it crucial:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. Code Quality and Best Practices:&lt;/strong&gt; - I've observed that compiler warnings often signal potential issues in the code that might not hinder compilation but can lead to runtime errors or unexpected behavior. Addressing these warnings ensures that I adhere to coding standards and best practices.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. Performance Optimization:&lt;/strong&gt; - Some compiler messages provide insights into performance-related concerns. By heeding these warnings, I can make optimizations that significantly enhance the overall performance of the software.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3. Security Concerns:&lt;/strong&gt; - My expertise in security and content syndication has emphasized the significance of heeding certain warnings that may indicate potential security vulnerabilities in the code. Ignoring these warnings might expose the software to security risks.&lt;/p&gt;
@@ -2625,82 +2667,4 @@ Dependencies are only shown for predecessor/successor links and dependency lines
 &lt;/blockquote&gt;
 &lt;p&gt;Which option is better? You decide and you pick your strategy!&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;trunk-based&lt;/strong&gt; branching strategy is straight-forward, well-suited for the 2-pizza sized product team, and lays a solid foundation for our quest for continuous delivery and release on demand. &lt;/p&gt;
-&lt;p&gt;Remember, as with everything else, keep it &lt;strong&gt;SIMPLE&lt;/strong&gt;!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="version-control"></category></entry><entry><title>Automation and the great unknown</title><link href="https://wsbctechnicalblog.github.io/automation-task-group-learning.html" rel="alternate"></link><published>2022-08-05T00:00:00-07:00</published><updated>2022-08-05T00:00:00-07:00</updated><author><name>Daniel Broderick</name></author><id>tag:wsbctechnicalblog.github.io,2022-08-05:/automation-task-group-learning.html</id><summary type="html">&lt;p&gt;Inadvertently restricting access to thousands of pipelines with a simple automated task group insertion.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The problem: How can the security team run all the tasks like the scans they need to run? &lt;/p&gt;
-&lt;p&gt;The idea was simple inject an empty security review task group into the release pipelines, the security team can update the task group whenever they please. Providing a central location for the security items. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Simple idea" src="../images/automation-task-group-learning-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Automation to the rescue&lt;/h1&gt;
-&lt;p&gt;The automation was written, fired off by a YAML pipeline and the empty task group was injected. Over 3000 pipelines were updated. The injection automation runs weekly to inject the task group to any new pipelines that may be created.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Automation 2 the rescue" src="../images/automation-task-group-learning-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Using the REST API all that had to be done was create the JSON payload and send it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;{
-    &amp;quot;environment&amp;quot;: {},
-    &amp;quot;refName&amp;quot;: &amp;quot;&amp;quot;,
-    &amp;quot;enabled&amp;quot;: true,
-    &amp;quot;alwaysRun&amp;quot;: true,
-    &amp;quot;taskId&amp;quot;: &amp;quot;$TaskGroupID&amp;quot;,
-    &amp;quot;version&amp;quot;: &amp;quot;1.*&amp;quot;,
-    &amp;quot;name&amp;quot;: &amp;quot;$TaskGroupName&amp;quot;,
-    &amp;quot;continueOnError&amp;quot;: true,
-    &amp;quot;timeoutInMinutes&amp;quot;: 0,
-    &amp;quot;retryCountOnTaskFailure&amp;quot;: 0,
-    &amp;quot;definitionType&amp;quot;: &amp;quot;metaTask&amp;quot;,
-    &amp;quot;overrideInputs&amp;quot;: {},
-    &amp;quot;condition&amp;quot;: &amp;quot;succeededOrFailed()&amp;quot;,
-    &amp;quot;inputs&amp;quot;: {}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Job done – or so it was thought.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2&gt;Users cannot edit&lt;/h2&gt;
-&lt;p&gt;The team got a call a few weeks later that some users could no longer edit their releases, there was an error saving due to an issue with the security review stage.&lt;/p&gt;
-&lt;p&gt;How strange? Users could edit before, a quick check of the permissions yield no results as to why. &lt;/p&gt;
-&lt;p&gt;After working with a user we discovered the steps that allowed editing and steps to invoke the error. &lt;/p&gt;
-&lt;p&gt;What was not known at this stage was why. What was causing this? The security review task group was working, the release pipeline was working. Saving – nope.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;Exporting and comparing&lt;/h2&gt;
-&lt;p&gt;The pipeline JSON definition was exported before and after changes that enabled users to edit – low and behold a variable that the security team were using in one of the tasks was a parameter in the task group. This was not present when injecting the empty security task group.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;The Fix&lt;/h2&gt;
-&lt;p&gt;The automation was not injecting this parameter into the definition. This caused the error when certain users saved. The automation was Injecting an empty task group though this task group was no longer empty. &lt;/p&gt;
-&lt;p&gt;The automation needed to reflect this. &lt;/p&gt;
-&lt;p&gt;A quick edit of the automation and users are back in business.&lt;/p&gt;
-&lt;p&gt;Below one can see the input field that is required when using the REST API.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;environment&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;taskId&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$TaskGroupID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;1.*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$TaskGroupName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;refName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;enabled&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;alwaysRun&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;continueOnError&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;timeoutInMinutes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;retryCountOnTaskFailure&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;definitionType&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;metaTask&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;overrideInputs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;condition&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;succeededOrFailed()&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;inputs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;variableName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;variableValue&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Lesson learnt&lt;/strong&gt;, anytime a new variable or parameter is required the automation will have to be modified to add this input in.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;Back to happy customers!!!&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Happy Customers" src="../images/automation-task-group-learning-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This goes to show that automation and improvement is a continuous process. It would have been easy to abandon the automation and go back to what works. With any automation there will be bumps in the road however it’s important to navigate past these. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Happy automation" src="../images/automation-task-group-learning-4.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Happy automation!&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="automation"></category><category term="learning"></category><category term="tips"></category><category term="azure-devops"></category></entry></feed>
+&lt;p&gt;Remember, as with everything else, keep it &lt;strong&gt;SIMPLE&lt;/strong&gt;!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="version-control"></category></entry></feed>
