@@ -1,5 +1,5 @@
 Title: Why Mutant Testing?
-Date: 2024-01-16
+Date: 2024-01-24
 Category: Posts 
 Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: engineering-practices-why-mutant-testing
@@ -19,19 +19,19 @@ Having that in the back of our minds, let's delve into why developers should emb
 
 Having discovered Mutant testing, I have come to appreciate what it can really do when used correctly.  While this list is not exhausted, here are the top 5 reason why I would adopt Mutant testing into your development practice:
 
-**1.	Uncovering Weaknesses in Unit Tests:** 
+**1. Uncovering Weaknesses in Unit Tests:** 
 •	While Unit Tests are effective in validating specific functionalities, they might not catch all potential issues. Mutant Testing introduces variations or 'mutants' in the code to simulate different scenarios. This helps identify weaknesses in existing Unit Tests, ensuring they are robust and cover a broader range of scenarios.
 
-**2.	Enhancing Code Quality:**
+**2. Enhancing Code Quality:**
 •	Mutant Testing acts as an additional layer of scrutiny for your codebase. By introducing small changes (mutations) and checking if tests detect them, developers can enhance the overall quality of the code. This process helps catch subtle bugs and improves the reliability of the software.
 
-**3.	Detecting Redundant Code:**
+**3. Detecting Redundant Code:**
 •	Mutant Testing often reveals redundant or dead code that Unit Tests may overlook. It prompts developers to reconsider the necessity of certain code segments, leading to cleaner and more efficient code.
 
-**4.	Strengthening Test Suites:**
+**4. Strengthening Test Suites:**
 •	Mutant Testing is an excellent way to ensure that your test suite is comprehensive. By challenging the existing tests with mutated code, you can identify areas where the test coverage is lacking. This, in turn, helps in building a more robust and reliable test suite.
 
-**5.	Building Confidence in Code Changes:**
+**5. Building Confidence in Code Changes:**
 •	Developers often make changes to the codebase, and Mutant Testing provides an extra layer of confidence before committing those changes. Knowing that mutants are caught by tests provides assurance that modifications are less likely to introduce unforeseen issues.
 
 
@@ -39,16 +39,14 @@ Having discovered Mutant testing, I have come to appreciate what it can really d
 
 To further compound the benifits of Mutant testing, lets examine why Unit Tests alone aren't good enough.
 
-**1.	Limited Scenario Coverage:**
+**1. Limited Scenario Coverage:**
 •	Unit Tests primarily focus on individual components in isolation. While they are essential, they might not cover complex interactions between different parts of the code. Mutant Testing broadens the scope by examining the combined effects of mutations across the entire codebase.
 
-**2.	False Sense of Security:**
+**2. False Sense of Security:**
 •	Relying solely on Unit Tests can create a false sense of security. Developers may assume that passing unit tests mean the code is flawless. Mutant Testing acts as a reality check, challenging this assumption and ensuring a more comprehensive validation.
 
-**3.	Evolution of Code Complexity:**
+**3. Evolution of Code Complexity:**
 •	As software evolves, the complexity of the codebase increases. Unit Tests, while critical, might struggle to keep up with this growing complexity. Mutant Testing provides a dynamic approach to continuously evaluate the code against evolving standards.
-
-
 
 # Conclusion
 

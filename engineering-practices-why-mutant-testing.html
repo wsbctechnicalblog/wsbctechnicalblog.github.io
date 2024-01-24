@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title></title>
+        <title>Why Mutant Testing? - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -26,8 +26,6 @@
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
-            <div id="title-block">
-            </div>
         </div>
     </div>
 </div>
@@ -35,33 +33,78 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-<h2>Articles tagged with process </h2>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practices-why-mutant-testing.html" rel="bookmark"
+            title="Permalink to Why Mutant Testing?">Why Mutant Testing?</a></h1>
 
-
-
-
-
-<blocks cols="2">
-        <div class="sec-article">
-            <div class="read-more">Tue 23 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/plate-emptying.html" rel=Bookmark title="Permalink to Plate-emptying is not the same as Done">Plate-emptying is not the same as Done</a></h3>
-            <p>
-            <p>Maximizing the utilization of the time spent on creating software is a surefire way to drive the team into a brickwall</p>            
-            </p>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Martin Lacey on Wed 24 January 2024</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>What is Mutant testing and why is it so valuable?</p>
+        </div>
+    
+        <div class="entry-content">
+            <h1>Understanding Mutant Testing</h1>
+<p>In the realm of software development, Mutant Testing is a crucial practice that goes beyond traditional Unit Testing.  When I write unit tests, I always have in the back of my mind a nagging question – what have I missed?  It’s like playing chess with yourself, no matter how you spin the board, you always have your own perspective, and it is very difficult to divorce yourself from that original viewpoint.  You will test what you coded for, and what you expect – and its tricky to see otherwise.</p>
+<p>Mutant testing, also known as mutation testing, is a software testing technique designed to evaluate the effectiveness of a test suite by introducing artificial faults or mutations <strong>into the source code itself</strong> (only temporarily!). The goal is to assess the ability of the existing tests to detect these mutations. If the tests can identify the mutations, it indicates that the test suite is robust; otherwise, it implies potential weaknesses in the testing strategy.</p>
+<p>Having that in the back of our minds, let's delve into why developers should embrace Mutant Testing and why relying solely on Unit Tests might not be sufficient.  Put your goggles on, we are taking a deep dive to explore!</p>
+<h1>So, Why Mutant Testing?</h1>
+<p>Having discovered Mutant testing, I have come to appreciate what it can really do when used correctly.  While this list is not exhausted, here are the top 5 reason why I would adopt Mutant testing into your development practice:</p>
+<p><strong>1. Uncovering Weaknesses in Unit Tests:</strong> 
+•   While Unit Tests are effective in validating specific functionalities, they might not catch all potential issues. Mutant Testing introduces variations or 'mutants' in the code to simulate different scenarios. This helps identify weaknesses in existing Unit Tests, ensuring they are robust and cover a broader range of scenarios.</p>
+<p><strong>2. Enhancing Code Quality:</strong>
+•   Mutant Testing acts as an additional layer of scrutiny for your codebase. By introducing small changes (mutations) and checking if tests detect them, developers can enhance the overall quality of the code. This process helps catch subtle bugs and improves the reliability of the software.</p>
+<p><strong>3. Detecting Redundant Code:</strong>
+•   Mutant Testing often reveals redundant or dead code that Unit Tests may overlook. It prompts developers to reconsider the necessity of certain code segments, leading to cleaner and more efficient code.</p>
+<p><strong>4. Strengthening Test Suites:</strong>
+•   Mutant Testing is an excellent way to ensure that your test suite is comprehensive. By challenging the existing tests with mutated code, you can identify areas where the test coverage is lacking. This, in turn, helps in building a more robust and reliable test suite.</p>
+<p><strong>5. Building Confidence in Code Changes:</strong>
+•   Developers often make changes to the codebase, and Mutant Testing provides an extra layer of confidence before committing those changes. Knowing that mutants are caught by tests provides assurance that modifications are less likely to introduce unforeseen issues.</p>
+<h1>Why Just Having Unit Tests Isn't Good Enough</h1>
+<p>To further compound the benifits of Mutant testing, lets examine why Unit Tests alone aren't good enough.</p>
+<p><strong>1. Limited Scenario Coverage:</strong>
+•   Unit Tests primarily focus on individual components in isolation. While they are essential, they might not cover complex interactions between different parts of the code. Mutant Testing broadens the scope by examining the combined effects of mutations across the entire codebase.</p>
+<p><strong>2. False Sense of Security:</strong>
+•   Relying solely on Unit Tests can create a false sense of security. Developers may assume that passing unit tests mean the code is flawless. Mutant Testing acts as a reality check, challenging this assumption and ensuring a more comprehensive validation.</p>
+<p><strong>3. Evolution of Code Complexity:</strong>
+•   As software evolves, the complexity of the codebase increases. Unit Tests, while critical, might struggle to keep up with this growing complexity. Mutant Testing provides a dynamic approach to continuously evaluate the code against evolving standards.</p>
+<h1>Conclusion</h1>
+<p>In conclusion, Mutant Testing complements Unit Testing by offering a more comprehensive assessment of the code's robustness. It is a powerful tool in the developer's arsenal, ensuring that software not only meets the requirements but also withstands the challenges posed by mutations in the codebase.</p>
         </div>
 
-        <div class="sec-article">
-            <div class="read-more">Wed 17 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/what-is-value.html" rel=Bookmark title="Permalink to How do we know what our customers value?">How do we know what our customers value?</a></h3>
-            <p>
-            <p>We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.</p>            
-            </p>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practices-why-mutant-testing.html" rel="bookmark"
+         title="Permalink to Why Mutant Testing?">Permalink</a>            
         </div>
-
-</blocks>
-
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -127,7 +170,7 @@
                     <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
@@ -148,7 +191,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (161)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (161)</li>
                 </ul>
              
             </div>
