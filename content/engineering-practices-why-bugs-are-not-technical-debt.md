@@ -14,9 +14,14 @@ In the realm of software development, the term "technical debt" has gained signi
 
 Technical debt is often defined as the accumulated cost of suboptimal design and implementation choices made during the software development process. These choices, akin to financial debt, may lead to future challenges, increased maintenance costs, and hindered development velocity. Common examples include shortcuts, lack of documentation, and architectural compromises.  When left unaddressed, technical debt accumulates to the point where new feature and functionality become increasingly difficult or impossible to accomplish.
 
+> ![Technical Debt](../images/engineering-practices-why-bugs-are-not-technical-debt-1.png) 
+
 # The Bug Dilemma:
 
 While it's undeniable that software bugs can contribute to increased maintenance efforts and compromise user experience, categorizing all bugs as technical debt oversimplifies the complexity of software development. Bugs can arise from various sources, including unforeseen interactions, external dependencies, or changing requirements. Unlike technical debt, which stems from conscious choices, bugs are not always a result of shortcuts or suboptimal decisions.
+
+> ![Technical Debt](../images/engineering-practices-why-bugs-are-not-technical-debt-2.png) 
+
 
 # Nuances in Bug Classification:
 
