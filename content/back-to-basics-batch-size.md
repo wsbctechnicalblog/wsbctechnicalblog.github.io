@@ -20,7 +20,7 @@ Let us visualize a few example and spot these advantages.
 
 >
 > ![Build a rocket](/images/back-to-basics-batch-size-alert.png)
-> **CAUTION** - I am intentionally skipping a very important and related topic, which will be covered in the follow-up blog post - **Work in-Progress** (WIP). Without it, leaning towards smaller batch sizes would lead to a nuclear tye reaction (a process in which two particles collide, to produce one or more particles), followed by a similar meltdown.
+> **CAUTION** - I am intentionally skipping a very important and related topic, which will be covered in the follow-up blog post - **Work in-Progress** (WIP). Without it, leaning towards smaller batch sizes would lead to a nuclear type reaction (a process in which two particles collide, to produce one or more particles), followed by a similar meltdown.
 >
 
 ---
