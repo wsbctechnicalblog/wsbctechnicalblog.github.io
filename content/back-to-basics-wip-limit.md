@@ -19,11 +19,11 @@ I will waste no time on covering the Azure DevOps Board - refer to [Azure Boards
 
 # The rocket factory wakes up
 
-TBD
+We embark on our exploration equipped with two rocket orders and three additional spare engines, anticipating the possibility of engine failure during hot staging. We start by placing the associated cards onto our visual [Azure DevOps Board](https://azure.microsoft.com/en-us/products/devops/boards/).
 
 > ![Board with 2 rockets ordered](../images/back-to-basics-wip-limit-1.png) 
 
-TBD
+Our team promptly initiates the assembly process for all engines, including the first and second stages. We depend on vendors to provide critical and secretive parts of the payloads, and to streamline this process, we will temporarily place these cards in the ORIENT column while we clarify the specific requirements.
 
 > ![Board with 2 rockets ordered](../images/back-to-basics-wip-limit-2.png) 
 
@@ -37,7 +37,7 @@ A probable sequence of events would produce lots of low atmosphere and vacuum en
 
 > ![Board with meltdown](../images/back-to-basics-wip-limit-3.png)
 
-TBD
+We must control the progression of work to guarantee a seamless and uninterrupted delivery of value across every stage, steering clear of any abrupt surges or bottlenecks at particular points in the process.
 
 ---
 
@@ -67,5 +67,16 @@ Let us set the following WIP limits on the assembly stages:
 
 If we were to replay the operations in our factory, we could seamlessly integrate and roll out the first and second stages for rocket A for a hot stage test. Subsequently, we would repeat this process for rocket B, preparing it for its hot staging phase. The synchronicity of these efforts would result in both rockets being completed, poised and waiting for their payload. It sets the stage for an eagerly anticipated countdown and a spectacular launch once the final components are in place. In parallel we also complete the spare engines, which allow us to fail-fast in hot staging and replace faulty engines, before the payloads are delivered.
 
-> ![Board with 2 rockets ordered](../images/back-to-basics-wip-limit-4.png) 
+> ![Board with 2 rockets ordered](../images/back-to-basics-wip-limit-4.png)
+
+---
+
+# Closing note
+
+Let us conclude by exploring two Kanban posters from our comprehensive quick reference collection. These visual aids will help illustrate key ingredients for effectively embracing the fundamentals:
+
+
+> ![Kanban Board](../images/back-to-basics-wip-limit-5.png)
+ 
+> ![Kanban Basics](../images/back-to-basics-wip-limit-6.png)
 
