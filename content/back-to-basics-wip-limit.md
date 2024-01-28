@@ -1,7 +1,7 @@
 Title: Back to Basics: WIP Limit
 Date: <YYYY-MM-DD>
 Category: Posts 
-Tags: agile, azuredevops, learning, 101
+Tags: agile, azure-devops, learning, 101
 Slug: back-to-basics-wip-limit
 Author: Willy-Peter Schaub
 Summary: Dealing with a Kanban Board meltdown, by controlling the work in progress.
