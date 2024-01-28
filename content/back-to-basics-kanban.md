@@ -25,5 +25,25 @@ Here is an extract from one of our quick reference posters that covers the basic
 
 ---
 
-<CLOSE - SUMMARY >
+# Bad Smoke Signals
+
+Here are some signs that you should examine your flow and try to make it more efficient:
+
+> ![Bad Flows](../images/back-to-basics-kanban-2.png) 
+
+XXX
+
+---
+
+# Actionable Cards
+
+It annoys me when I have to deal with a card that I cannot act on. Here are cards that should be discarded or should cause the [Andon cord](https://en.wikipedia.org/wiki/Andon_(manufacturing)) to be pulled:
+
+XXX
+
+
+
+---
+
+You can use [Azure Boards](https://azure.microsoft.com/en-us/products/devops/boards/) to apply Kanban principles, whether you work with Kanban only or combine Kanban (operational support) and Scrum (innovation), like we do. I'm a visual thinker, so I find the visual signals from Kanban very helpful. Have fun!
 
