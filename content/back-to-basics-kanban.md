@@ -12,16 +12,16 @@ here are the main components of a Kanban system and a few reference links:
 
 - **Kanban Board** - [Azure Boards](https://azure.microsoft.com/en-us/products/devops/boards/), [Azure Boards Tips](/azure-boards-tips.html), [Azure Boards Tips for Operations Teams](/azure-boards-tips-operations-team.html), [Azure Boards Tips - Stop messing with our backlog!](/azure-boards-tips-stop-messing-with-our-backlog.html), [Azure Boards Tips - Retain hierarchy with filter](/azure-boards-tips-retain-hierarchy-with-filter.html), [Visualizing work item dependencies in Azure Boards](/azure-devops-dependencies.html), and [Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps](/agile-planning-choice.html)
 - **Cards** - [About work items and work item types](https://learn.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&tabs=agile-process), 
-- **Work in Progress (WIP)** - [Back to Basics - WIP Limit](/back-to-basics-wip-limit.html) 
+- **Work in Progress (WIP)** - [Back to Basics: WIP Limit](/back-to-basics-wip-limit.html) 
 - **Limits  Signals (States)** - [About workflow states in backlogs and boards](https://learn.microsoft.com/en-us/azure/devops/boards/work-items/workflow-and-state-categories?view=azure-devops&tabs=agile-process) 
 
 ---
 
-# <HEADING 1>
+# Kanban Principles and Practices
 
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
+Here is an extract from one of our quick reference posters that covers the basic Kanban Principles and Practices:
 
-<TBD>
+> ![Principles and Practices](../images/back-to-basics-kanban-1.png) 
 
 ---
 
