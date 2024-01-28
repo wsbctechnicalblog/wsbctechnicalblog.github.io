@@ -1,7 +1,7 @@
 Title: Back to Basics: Batch Size
 Date: 2024-01-31
 Category: Posts 
-Tags: agile, learning
+Tags: agile, learning, 101
 Slug: back-to-basics-batch-size
 Author: Willy-Peter Schaub
 Summary: Balancing noise and agility with smaller batch sizes.
