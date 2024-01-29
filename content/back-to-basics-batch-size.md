@@ -66,7 +66,7 @@ By reducing the batch size to three (3), we gain the flexibility to construct th
 
 > ![Build a rocket in small batches](/images/back-to-basics-batch-size-3.png)
 
-By reducing the batch size to one, we see magic starting to happen. Previous pros turn into cons, such as quick feedback loops, adaptability, reduced risk, improved efficiently and dependency management, better resource utilization, continuous experimentation and improvement, and vibrant collaboration. We, for example, realise that engine (1) and (2) are identical and interchangeable, that although engines 1/2 (lower-atmosphere nozzle) and 5 (vacuum nozzle) are different, their parts are identical and interchangeable.
+By reducing the batch size to one, we see magic starting to happen. Previous cons turn into pros, such as quick feedback loops, adaptability, reduced risk, improved efficiently and dependency management, better resource utilization, continuous experimentation and improvement, and vibrant collaboration. We, for example, realise that engine (1) and (2) are identical and interchangeable, that although engines 1/2 (lower-atmosphere nozzle) and 5 (vacuum nozzle) are different, their parts are identical and interchangeable.
 
 Dedicate some time to tuning into SpaceX's live streams from Boca Chica, and you will witness an ongoing process of experimentation, relentless improvement, and the application of small batch sizes in the construction of the Starship—the epitome of rockets.
 
