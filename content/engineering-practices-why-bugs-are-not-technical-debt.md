@@ -20,7 +20,7 @@ Technical debt is often defined as the accumulated cost of suboptimal design and
 
 While it's undeniable that software bugs can contribute to increased maintenance efforts and compromise user experience, categorizing all bugs as technical debt oversimplifies the complexity of software development. Bugs can arise from various sources, including unforeseen interactions, external dependencies, or changing requirements. Unlike technical debt, which stems from conscious choices, bugs are not always a result of shortcuts or suboptimal decisions.
 
-> ![Technical Debt](../images/engineering-practices-why-bugs-are-not-technical-debt-2.png) 
+> ![Technical Debt](../images/engineering-practices-why-bugs-are-not-technical-debt-2b.png) 
 
 
 # Nuances in Bug Classification:
