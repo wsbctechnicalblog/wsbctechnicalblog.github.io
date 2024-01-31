@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Pull Request empowered by engineering practices - </title>
+        <title></title>
         <meta charset="utf-8" />
         
 </head>
@@ -26,6 +26,8 @@
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
+            <div id="title-block">
+            </div>
         </div>
     </div>
 </div>
@@ -33,172 +35,24 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
-            title="Permalink to Pull Request empowered by engineering practices">Pull Request empowered by engineering practices</a></h1>
+<h2>Articles tagged with 101 </h2>
 
-<img src="/theme/img/Logo-blogsize.png"><br />
-<div class="content-article">
-    <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 13 January 2023</div>
- 
-   </header>
-    <section class='article'>
-        
-        <div class="entry-summary">
-            <p>Pull Requests (PR) enable us improve built-in quality, engineering practices, and streamline our continuous integration pipelines.</p>
-        </div>
-    
-        <div class="entry-content">
-            <p>Let us take a look at our latest pull request workflow and hopefully spark a few discussions that will empower all of us to embrace the pull request (PR) feature effectively.  </p>
-<hr>
-<h1>What is a pull request (PR)?</h1>
-<p>Pull Requests (PR) enable us to change, review, and merge code. We can add policies to your PRs to enable code quality in key branches using policies, validation builds, code-quality, and security scans. We all want to protect key branches such as trunk, master, or main, which should always be stable and deployable – the single source of truth.</p>
-<blockquote>
-<p><strong>MYTH</strong>  - Pull-requests slow down your continuous integration value stream! A pull request takes as long as you and your process allow it to sit in a corner to gather dust. We encourage our engineers to track the lead and cycle times of pull requests using the <a href="https://marketplace.visualstudio.com/items?itemName=OneLuckiDev.prApprovalReport">Pull Request Completion Report</a> and to collaborate with their peers to ensure that pull requests do not go stale. Also, the more you SHIFT-LEFT and present the evidence to the Pull Request validations, the more you can automate and thereby eradicate expensive human reviews and associated cycle times.
-</p>
-</blockquote>
-<hr>
-<h1>What is the pull request (PR) workflow?</h1>
-<p>There are many pull request (PR) strategies. Here is the one we recommend for our common engineering ecosystem, based on our <a href="/branching-trunk-based.html">trunk-based</a> branching strategy.</p>
-<blockquote>
-<p><img alt="Workflow" src="../images/engineering-practices-pull-request-1.png"> </p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>LEGEND</th>
-<th>~~</th>
-<th>DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td></td>
-<td>Create a feature branch from the trunk/master/main branch, representing a unique feature, bug, or hotfix.</td>
-</tr>
-<tr>
-<td>2</td>
-<td></td>
-<td>Make code changes to implement the associated feature or fix.</td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td>When ready to start collaboration, create a DRAFT PR to merge your feature branch to the trunk/master/main branch.</td>
-</tr>
-<tr>
-<td>D</td>
-<td></td>
-<td>DRAFT PR allow vibrant collaboration, without triggering Branch Policies, page 53, validations or notifying PR reviewers.</td>
-</tr>
-<tr>
-<td>4</td>
-<td></td>
-<td>Manually trigger branch policy validations, such as the validation build.</td>
-</tr>
-<tr>
-<td>5</td>
-<td></td>
-<td>When ready to merge code changes to the trunk/master/main branch, publish the PR.</td>
-</tr>
-<tr>
-<td>P</td>
-<td></td>
-<td>When a PR is published, reviewers are notified and Branch Policies become mandatory. Set the PR completion to manual or automatically, whereby automatic completion is triggered when all Branch Policies are validated.</td>
-</tr>
-<tr>
-<td>6</td>
-<td></td>
-<td>When a code change is committed within a published PR, all reviewer approvals are reset, and reviewers are duly notified.</td>
-</tr>
-<tr>
-<td>7</td>
-<td></td>
-<td>With every commit, all Branch Policies are automatically re-validated.</td>
-</tr>
-<tr>
-<td>8</td>
-<td></td>
-<td>Ready to merge changes – done with code changes.</td>
-</tr>
-<tr>
-<td>G</td>
-<td></td>
-<td>The PR verifies that all Branch Policies are met.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>The PR will not complete manually or automatically until all validations are met.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Users with elevated permissions can force complete the PR, irrespective of the state of validations.</td>
-</tr>
-<tr>
-<td>9</td>
-<td></td>
-<td>Code changes are merged to the source branch, which in turn triggers the continuous integration (CI) pipeline.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>MYTH</strong> - Pull-requests are manual interventions. With a high-TRUST team, we can define mandatory <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> and <strong>optional</strong> approvals. That way collaboration is encouraged, but the PR will auto-complete as soon as all Branch Policies, are validated. No manual blocks, just validated  built-in quality.
-</p>
-</blockquote>
-<hr>
-<h1>What is our accountability as PR reviewers?</h1>
-<p>Which brings us to an important topic – the <strong>responsibility</strong> and <strong>accountability</strong> of PR reviewers.</p>
-<p>If you are included in a pull request as an optional reviewer, you can review and collaborate within the context of the pull request. If you are included as a required reviewer, you must review and approve the PR so that the Branch Policies are met.</p>
-<p>While collaboration, continuous learning, information exchange, and guidance are important aspects of the pull request workflow, every reviewer, whether optional or required, is accountable to keep an eye on the following when reviewing a PR:</p>
-<ul>
-<li>Bad coding practices.</li>
-<li>Deviations and breach of security practices.</li>
-<li>Deviations and breach of engineering practices.</li>
-<li>Deviations and breach of repository, pipeline, or quality guardrails.</li>
-</ul>
-<p>As we automate the validations, the accountability and need to review PRs manually diminishes for our engineers.</p>
-<hr>
-<h1>References</h1>
-<ul>
-<li><a href="/yaml-pipelines-part11.html">Our road to OSS Blueprints - Suppress CD when pipeline runs within Pull Request</a></li>
-<li><a href="/pipelines-as-code-pr.html">Pipeline-as-code wrapped with Pull Requests</a></li>
-<li><a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests">Pull requests</a></li>
-<li><a href="/pull-requests-friend.html">Pull Request is your friend not foe!</a></li>
-<li><a href="/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a></li>
-</ul>
+
+
+
+
+<blocks cols="2">
+        <div class="sec-article">
+            <div class="read-more">Wed 31 January 2024</div>
+
+            <h3><a href="https://wsbctechnicalblog.github.io/back-to-basics-batch-size.html" rel=Bookmark title="Permalink to Back to Basics: Batch Size">Back to Basics: Batch Size</a></h3>
+            <p>
+            <p>Balancing noise and agility with smaller batch sizes.</p>            
+            </p>
         </div>
 
-    </section>
-    <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
-        | <a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html" rel="bookmark"
-         title="Permalink to Pull Request empowered by engineering practices">Permalink</a>            
-        </div>
-        <!-- metaldata 
-        -->
-    </footer>
-        <hr>
-        <div id="gisqus_thread"></div>
-        <script src="https://giscus.app/client.js"
-            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
-            data-repo-id="R_kgDOIGjt-Q"
-            data-category="Technical Blog"
-            data-category-id="DIC_kwDOIGjt-c4CU007"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="light"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-        </script></div>
+</blocks>
+
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -225,7 +79,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(25)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(35)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(1)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(28)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(12)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(57)</li>
@@ -286,7 +140,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (8)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (163)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (163)</li>
                 </ul>
              
             </div>
