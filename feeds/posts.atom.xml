@@ -289,6 +289,10 @@
 &lt;hr&gt;
 &lt;h4&gt;4. Can I use two different browsers that are connected to each of my two different GitHub accounts?&lt;/h4&gt;
 &lt;p&gt;According to &lt;a href="https://twitter.com/colindembovsky"&gt;Cσʅιɳ DҽɱႦσʋʂƙყ&lt;/a&gt; you can do one better - "&lt;em&gt;In the browser you can now natively switch accounts: &lt;a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts#about-switching-between-your-accounts"&gt;Switching between accounts&lt;/a&gt;. For logging in to Copilot, you have to switch accounts if you want to bounce between work and personal accounts.&lt;/em&gt;"&lt;/p&gt;
+&lt;h4&gt;5. Any useful troubleshooting links?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/visualstudio/ide/work-with-github-accounts?view=vs-2022#troubleshooting-sign-in-issues"&gt;Troubleshooting sign in issues&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="github"></category></entry><entry><title>GitHub Copilot for Business Setup</title><link href="https://wsbctechnicalblog.github.io/github-copilot-for-business-setup.html" rel="alternate"></link><published>2023-11-01T00:00:00-07:00</published><updated>2023-11-01T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-11-01:/github-copilot-for-business-setup.html</id><summary type="html">&lt;p&gt;Getting started with GitHub Copilot - Part 1: Setup.&lt;/p&gt;</summary><content type="html">&lt;p&gt;To kickstart your journey with the GitHub Copilot for Business product, we first need to configure both the service-side and user-side environments. In this guide, we will walk you through the steps we took and highlight any potential obstacles you may encounter along the way.&lt;/p&gt;
 &lt;h2&gt;Useful Terminology&lt;/h2&gt;
@@ -309,6 +313,11 @@
 &lt;p&gt;&lt;img alt="EMU Overview" src="../images/github-copilot-for-business-setup-1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1&gt;Service-side Setup&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
+If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
+&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;The &lt;a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users"&gt;GitHub Managed Users (EMU)&lt;/a&gt; is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:&lt;/p&gt;
 &lt;h4&gt;Setup a &lt;a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users"&gt;GitHub Managed Users (EMU)&lt;/a&gt;.&lt;/h4&gt;
 &lt;ul&gt;
@@ -346,9 +355,9 @@
 &lt;p&gt;This is likely the section everyone is eager to dive into – welcoming your Artificial Intelligence (AI) Copilot and embarking on a journey of exploration to reap numerous benefits. These include heightened productivity, enhanced quality, accelerated experimentation and learning, and bolstered engineering confidence.&lt;/p&gt;
 &lt;h2&gt;Before you begin!&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  &lt;/li&gt;
-&lt;li&gt;Then go to Visual Studio (VS) Code and sign-out. &lt;/li&gt;
-&lt;li&gt;Make sure you IDE is the latest version.&lt;/li&gt;
+&lt;li&gt;First you need to logout of GitHub in your default web browser. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;This is a crucial step - easy to just ignore it at your own peril!&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Disconnect from Virtual Private Network (VPN).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Failure to do so may lead you down the same nightmarish path I experienced last weekend.&lt;/p&gt;
 &lt;h2&gt;Visual Studio Enterprise / Professional&lt;/h2&gt;
@@ -357,8 +366,16 @@
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;Make sure your IDE is the latest version.&lt;/li&gt;
 &lt;li&gt;Open Visual Studio Enterprise and go to &lt;code&gt;Profile &amp;gt; Add Account&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;This will open your browser. Use your corporate account, for &lt;code&gt;demo_fabrikam&lt;/code&gt;. Your account name will be different, but follow the same format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
+For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;Once you enter your account name (no password) and press &lt;code&gt;enter&lt;/code&gt;, you will be directed to the following web page after a short moment.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -404,6 +421,9 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/github-copilot-for-business-setup-7.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
+For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;Authorize the access.&lt;/li&gt;
@@ -418,7 +438,15 @@
 &lt;p&gt;&lt;img alt="Check authorization" src="../images/github-copilot-for-business-setup-9.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;Now you are ready to explore the walkthroughs and get started!  &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trust the local certs on your machine so that the self signed cert is no longer untrusted. Install a plugin named &lt;strong&gt;win-ca&lt;/strong&gt;, go into extension Settings of the extension, and change the &lt;strong&gt;inject-option&lt;/strong&gt; from &lt;strong&gt;Replace&lt;/strong&gt; to &lt;strong&gt;Append&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart Visual Studio Code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now you are ready to explore the walkthroughs and get started!  &lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Welcome" src="../images/github-copilot-for-business-setup-10.png"&gt;&lt;/p&gt;

@@ -68,6 +68,11 @@
 <p><img alt="EMU Overview" src="../images/github-copilot-for-business-setup-1.png"></p>
 </blockquote>
 <h1>Service-side Setup</h1>
+<blockquote>
+<p><img alt="Alert" src="/images/back-to-basics-batch-size-alert.png">
+If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
+</p>
+</blockquote>
 <p>The <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users">GitHub Managed Users (EMU)</a> is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:</p>
 <h4>Setup a <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users">GitHub Managed Users (EMU)</a>.</h4>
 <ul>
@@ -105,9 +110,9 @@
 <p>This is likely the section everyone is eager to dive into – welcoming your Artificial Intelligence (AI) Copilot and embarking on a journey of exploration to reap numerous benefits. These include heightened productivity, enhanced quality, accelerated experimentation and learning, and bolstered engineering confidence.</p>
 <h2>Before you begin!</h2>
 <ul>
-<li>First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  </li>
-<li>Then go to Visual Studio (VS) Code and sign-out. </li>
-<li>Make sure you IDE is the latest version.</li>
+<li>First you need to logout of GitHub in your default web browser. </li>
+<li><strong>This is a crucial step - easy to just ignore it at your own peril!</strong></li>
+<li>Disconnect from Virtual Private Network (VPN).</li>
 </ul>
 <p>Failure to do so may lead you down the same nightmarish path I experienced last weekend.</p>
 <h2>Visual Studio Enterprise / Professional</h2>
@@ -116,8 +121,16 @@
 </p>
 </blockquote>
 <ul>
+<li>Make sure your IDE is the latest version.</li>
 <li>Open Visual Studio Enterprise and go to <code>Profile &gt; Add Account</code>.</li>
 <li>This will open your browser. Use your corporate account, for <code>demo_fabrikam</code>. Your account name will be different, but follow the same format.</li>
+</ul>
+<blockquote>
+<p><img alt="Alert" src="/images/back-to-basics-batch-size-alert.png">
+For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+</p>
+</blockquote>
+<ul>
 <li>Once you enter your account name (no password) and press <code>enter</code>, you will be directed to the following web page after a short moment.</li>
 </ul>
 <blockquote>
@@ -163,6 +176,9 @@
 </ul>
 <blockquote>
 <p><img alt="&lt;SAMPLE PIC&gt;" src="../images/github-copilot-for-business-setup-7.png"></p>
+<p><img alt="Alert" src="/images/back-to-basics-batch-size-alert.png">
+For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+</p>
 </blockquote>
 <ul>
 <li>Authorize the access.</li>
@@ -177,7 +193,15 @@
 <p><img alt="Check authorization" src="../images/github-copilot-for-business-setup-9.png"></p>
 </blockquote>
 <ul>
-<li>Now you are ready to explore the walkthroughs and get started!  </li>
+<li>
+<p>Trust the local certs on your machine so that the self signed cert is no longer untrusted. Install a plugin named <strong>win-ca</strong>, go into extension Settings of the extension, and change the <strong>inject-option</strong> from <strong>Replace</strong> to <strong>Append</strong>.</p>
+</li>
+<li>
+<p>Restart Visual Studio Code.</p>
+</li>
+<li>
+<p>Now you are ready to explore the walkthroughs and get started!  </p>
+</li>
 </ul>
 <blockquote>
 <p><img alt="Welcome" src="../images/github-copilot-for-business-setup-10.png"></p>
