@@ -372,8 +372,8 @@
 &lt;li&gt;This will open your browser. Use your corporate account, for &lt;code&gt;demo_fabrikam&lt;/code&gt;. Your account name will be different, but follow the same format.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
-For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;&lt;/p&gt;
+&lt;p&gt;For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;

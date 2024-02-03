@@ -95,6 +95,7 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
 > 
 > ![Alert](/images/back-to-basics-batch-size-alert.png)
+>
 > For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
 >
 
