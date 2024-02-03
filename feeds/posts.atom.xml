@@ -289,6 +289,7 @@
 &lt;hr&gt;
 &lt;h4&gt;4. Can I use two different browsers that are connected to each of my two different GitHub accounts?&lt;/h4&gt;
 &lt;p&gt;According to &lt;a href="https://twitter.com/colindembovsky"&gt;Cσʅιɳ DҽɱႦσʋʂƙყ&lt;/a&gt; you can do one better - "&lt;em&gt;In the browser you can now natively switch accounts: &lt;a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts#about-switching-between-your-accounts"&gt;Switching between accounts&lt;/a&gt;. For logging in to Copilot, you have to switch accounts if you want to bounce between work and personal accounts.&lt;/em&gt;"&lt;/p&gt;
+&lt;hr&gt;
 &lt;h4&gt;5. Any useful troubleshooting links?&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/visualstudio/ide/work-with-github-accounts?view=vs-2022#troubleshooting-sign-in-issues"&gt;Troubleshooting sign in issues&lt;/a&gt;&lt;/li&gt;
@@ -314,8 +315,8 @@
 &lt;/blockquote&gt;
 &lt;h1&gt;Service-side Setup&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
-If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;&lt;/p&gt;
+&lt;p&gt;If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The &lt;a href="https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users"&gt;GitHub Managed Users (EMU)&lt;/a&gt; is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:&lt;/p&gt;
@@ -421,8 +422,8 @@ For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. Fo
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/github-copilot-for-business-setup-7.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;
-For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+&lt;p&gt;&lt;img alt="Alert" src="/images/back-to-basics-batch-size-alert.png"&gt;&lt;/p&gt;
+&lt;p&gt;For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;

@@ -30,6 +30,7 @@ Below is an insightful illustration sourced from [GitHub](HTTPS://GITHUB.COM) th
 
 > 
 > ![Alert](/images/back-to-basics-batch-size-alert.png)
+>
 > If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
 >
 
@@ -134,6 +135,7 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
   > 
   > ![Alert](/images/back-to-basics-batch-size-alert.png)
+  >
   > For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
   >
 
