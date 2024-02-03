@@ -39,6 +39,10 @@ Your GitHub Copilot for Business license is not currently valid. If you are usin
 
 According to [Cσʅιɳ DҽɱႦσʋʂƙყ](https://twitter.com/colindembovsky) you can do one better - "_In the browser you can now natively switch accounts: [Switching between accounts](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts#about-switching-between-your-accounts). For logging in to Copilot, you have to switch accounts if you want to bounce between work and personal accounts._"
 
+#### 5. Any useful troubleshooting links?
+
+- [Troubleshooting sign in issues](https://learn.microsoft.com/en-us/visualstudio/ide/work-with-github-accounts?view=vs-2022#troubleshooting-sign-in-issues)
+
 ---
 
 I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.
