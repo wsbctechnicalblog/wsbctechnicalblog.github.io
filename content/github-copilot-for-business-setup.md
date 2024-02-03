@@ -22,12 +22,16 @@ Terminology which will make things easier.
 - **GitHub Organization** - [Git Hub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations), for example ``fabrikam_innovation``.
 - **GitHub Team** - [GitHub Team](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams), for example ``GitHub Copilot Evaluation``.
 
-
 Below is an insightful illustration sourced from [GitHub](HTTPS://GITHUB.COM) that provides a user-friendly overview of Enterprise Managed Users (EMU).
 
 > ![EMU Overview](../images/github-copilot-for-business-setup-1.png)
 
 # Service-side Setup
+
+> 
+> ![Alert](/images/back-to-basics-batch-size-alert.png)
+> If you are exclusively configuring your (laptop) environment for GitHub Copilot, please bypass this section and proceed directly to the User-side Setup for streamlined instructions.
+>
 
 The [GitHub Managed Users (EMU)](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users) is comprehensive, though it is detailed to the extent that you might overlook a crucial step (as we did). Here are the key steps:
 
@@ -72,10 +76,9 @@ This is likely the section everyone is eager to dive into – welcoming your Art
 
 ## Before you begin!
 
-- First you need to logout of GitHub in your default web browser. This is a crucial step - easy to just ignore it at your own peril!  
-- Then go to Visual Studio (VS) Code and sign-out. 
-- Make sure you IDE is the latest version.
-
+- First you need to logout of GitHub in your default web browser. 
+  - **This is a crucial step - easy to just ignore it at your own peril!**
+- Disconnect from Virtual Private Network (VPN).
 
 Failure to do so may lead you down the same nightmarish path I experienced last weekend.
 
@@ -85,8 +88,15 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 > A special **thank you** to my copilot, [Martin Lacey](https://wsbctechnicalblog.github.io/pages/authors.html)], who completed the setup first, giving us the dos and do nots, as well as the screenshots.
 >
 
+- Make sure your IDE is the latest version.
 - Open Visual Studio Enterprise and go to ``Profile > Add Account``.
 - This will open your browser. Use your corporate account, for ``demo_fabrikam``. Your account name will be different, but follow the same format.
+
+> 
+> ![Alert](/images/back-to-basics-batch-size-alert.png)
+> For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+>
+
 - Once you enter your account name (no password) and press ``enter``, you will be directed to the following web page after a short moment.
 
   > ![Authenticate](../images/github-copilot-for-business-setup-2.png)
@@ -101,7 +111,6 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
   > ![Verify](../images/github-copilot-for-business-setup-4.png)
 
 - Now it is time to start exploring!!!
-
 
 ## Visual Studio Code
 
@@ -123,6 +132,11 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 
   > ![<SAMPLE PIC>](../images/github-copilot-for-business-setup-7.png)
 
+  > 
+  > ![Alert](/images/back-to-basics-batch-size-alert.png)
+  > For fellow engineers at WorkSafeBC, use your primary ID, suffixed with _wsbc. For example XXYYYYY_wsbc.
+  >
+
 - Authorize the access.
 
   > ![Authorize](../images/github-copilot-for-business-setup-8.png)
@@ -130,6 +144,10 @@ Failure to do so may lead you down the same nightmarish path I experienced last 
 - Once authorized, you will see the following view within VS Code.
 
   > ![Check authorization](../images/github-copilot-for-business-setup-9.png)
+
+- Trust the local certs on your machine so that the self signed cert is no longer untrusted. Install a plugin named **win-ca**, go into extension Settings of the extension, and change the **inject-option** from **Replace** to **Append**.
+
+- Restart Visual Studio Code.
 
 - Now you are ready to explore the walkthroughs and get started!  
 
