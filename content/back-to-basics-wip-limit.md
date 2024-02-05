@@ -1,5 +1,5 @@
 Title: Back to Basics: WIP Limit
-Date: <YYYY-MM-DD>
+Date: 2024-02-05
 Category: Posts 
 Tags: agile, azure-devops, learning, 101
 Slug: back-to-basics-wip-limit
