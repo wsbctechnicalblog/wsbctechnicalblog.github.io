@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-02-05T00:00:00-08:00</updated><entry><title>Back to Basics: WIP Limit</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-wip-limit.html" rel="alternate"></link><published>2024-02-05T00:00:00-08:00</published><updated>2024-02-05T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-02-05:/back-to-basics-wip-limit.html</id><summary type="html">&lt;p&gt;Dealing with a Kanban Board meltdown, by controlling the work in progress.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from where we left off in  &lt;a href="/back-to-basics-batch-size.html"&gt;Back to Basics: Batch Size&lt;/a&gt; and the following warning:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-02-09T00:00:00-08:00</updated><entry><title>Back to Basics: Kanban</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-kanban.html" rel="alternate"></link><published>2024-02-09T00:00:00-08:00</published><updated>2024-02-09T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-02-09:/back-to-basics-kanban.html</id><summary type="html">&lt;p&gt;"Kanban" is Japanese for "visual card" or "signal."&lt;/p&gt;</summary><content type="html">&lt;p&gt;Kanban is a method of visually managing work processes, often used in lean and just-in-time production. It was developed by Taiichi Ohno for Toyota as a way to improve manufacturing efficiency and the word &lt;strong&gt;Kanban&lt;/strong&gt;&lt;em&gt; means &lt;/em&gt;&lt;em&gt;visual card&lt;/em&gt;&lt;em&gt; or &lt;/em&gt;&lt;em&gt;signal&lt;/em&gt;* in Japanese. The system uses visual cues to initiate and manage workflow processes.&lt;/p&gt;
+&lt;p&gt;Main components of a Kanban system and a few reference links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kanban Board&lt;/strong&gt; - &lt;a href="https://azure.microsoft.com/en-us/products/devops/boards/"&gt;Azure Boards&lt;/a&gt;, &lt;a href="/azure-boards-tips.html"&gt;Azure Boards Tips&lt;/a&gt;, &lt;a href="/azure-boards-tips-operations-team.html"&gt;Azure Boards Tips for Operations Teams&lt;/a&gt;, &lt;a href="/azure-boards-tips-stop-messing-with-our-backlog.html"&gt;Azure Boards Tips - Stop messing with our backlog!&lt;/a&gt;, &lt;a href="/azure-boards-tips-retain-hierarchy-with-filter.html"&gt;Azure Boards Tips - Retain hierarchy with filter&lt;/a&gt;, &lt;a href="/azure-devops-dependencies.html"&gt;Visualizing work item dependencies in Azure Boards&lt;/a&gt;, and &lt;a href="/agile-planning-choice.html"&gt;Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cards&lt;/strong&gt; - &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&amp;amp;tabs=agile-process"&gt;About work items and work item types&lt;/a&gt;, &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Work in Progress (WIP)&lt;/strong&gt; - &lt;a href="/back-to-basics-wip-limit.html"&gt;Back to Basics: WIP Limit&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Limits  Signals (States)&lt;/strong&gt; - &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/work-items/workflow-and-state-categories?view=azure-devops&amp;amp;tabs=agile-process"&gt;About workflow states in backlogs and boards&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Kanban Principles and Practices&lt;/h1&gt;
+&lt;p&gt;An extract from one of our quick reference posters that covers the basic Kanban Principles and Practices:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Principles and Practices" src="../images/back-to-basics-kanban-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Bad Smoke Signals&lt;/h1&gt;
+&lt;p&gt;Here are some signs that you should examine your flow and try to make it more efficient:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Bad Flows" src="../images/back-to-basics-kanban-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You want a smooth flow of cards (work) across the entire boards, with no visual bottlenecks (delays), or states (columns) that are idling.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Actionable Cards&lt;/h1&gt;
+&lt;p&gt;It annoys me when I have to deal with a card that I cannot act on. Here are cards that should be discarded or should cause the &lt;a href="https://en.wikipedia.org/wiki/Andon_(manufacturing)"&gt;Andon cord&lt;/a&gt; to be pulled:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Title is cryptic, description and acceptance critera are blank, and card is tagged as an urgent dependency.&lt;/li&gt;
+&lt;li&gt;Title is actionable, but description and acceptance criteria are marked as "to be defined" (TBD).&lt;/li&gt;
+&lt;li&gt;Title and description are actionable, but acceptance criteria is blank or TBD.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My team does not accept these cards onto our board anymore. We send back any card that is added to our board without our consent, with a polite "non actionable" reply. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Build a rocket" src="/images/back-to-basics-batch-size-alert.png"&gt;
+An actionable &lt;strong&gt;ACCEPTANCE CRITERIA&lt;/strong&gt; is Key! Acceptance criteria serve as essential conditions for the approval of a Kanban card (Azure DevOps Work Item)[https://learn.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&amp;amp;tabs=agile-process], either met or not met - it is a binary 1 or 0! They require &lt;strong&gt;clarity&lt;/strong&gt;, &lt;strong&gt;conciseness&lt;/strong&gt;, &lt;strong&gt;user-focus&lt;/strong&gt;, and &lt;strong&gt;testability&lt;/strong&gt;: Statements are formulated to be verifiable, allowing for the creation of tests that objectively assess whether the criteria are met**. 
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Examples of an acceptance criteria for a complete rocket: &lt;/p&gt;
+&lt;h3&gt;GOOD acceptance criteria&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Propulsion&lt;/strong&gt;
+- Propulsion system specifications are clearly documented.
+- Successful static firing tests confirm thrust performance and stability.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Navigation&lt;/strong&gt;
+- Navigation controls accurately adjust the rocket's trajectory in a simulated space environment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Launch Sequence&lt;/strong&gt;:**
+- Concise checklist guides the rocket from ignition to the designated orbit.
+- Emergency procedures are summarized for quick reference.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Payload&lt;/strong&gt;
+- Payload deployment ensures the safe release of the payload into the specified orbit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mission Success&lt;/strong&gt;
+- Success is defined by the payload achieving and maintaining the intended orbit.
+- Safety features prioritize both the rocket launch and the protection of the payload.&lt;/p&gt;
+&lt;h3&gt;BAD acceptance criteria&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Blank.&lt;/li&gt;
+&lt;li&gt;To be defined (TBD).&lt;/li&gt;
+&lt;li&gt;Rocket launches successfully.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Minimal cards&lt;/h3&gt;
+&lt;p&gt;To avoid garbage entering your system and your Kanban workflow, here is a simple, yet effective card:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Bad Flows" src="../images/back-to-basics-kanban-3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;You can use &lt;a href="https://azure.microsoft.com/en-us/products/devops/boards/"&gt;Azure Boards&lt;/a&gt; to apply Kanban principles, whether you work with Kanban only or combine Kanban (operational support) and Scrum (innovation), like we do. I am a visual thinker, so I find the visual signals from Kanban very helpful. Have fun!&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="azure-devops"></category><category term="learning"></category><category term="101"></category></entry><entry><title>Back to Basics: WIP Limit</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-wip-limit.html" rel="alternate"></link><published>2024-02-05T00:00:00-08:00</published><updated>2024-02-05T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-02-05:/back-to-basics-wip-limit.html</id><summary type="html">&lt;p&gt;Dealing with a Kanban Board meltdown, by controlling the work in progress.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from where we left off in  &lt;a href="/back-to-basics-batch-size.html"&gt;Back to Basics: Batch Size&lt;/a&gt; and the following warning:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Build a rocket" src="/images/back-to-basics-batch-size-alert.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CAUTION&lt;/strong&gt; - I am intentionally skipping a very important and related topic, which will be covered in the follow-up blog post - &lt;strong&gt;Work in-Progress&lt;/strong&gt; (WIP). Without it, leaning towards smaller batch sizes would lead to a nuclear type reaction (a process in which two particles collide, to produce one or more particles), followed by a similar meltdown.
@@ -2484,86 +2546,4 @@ Dependencies are only shown for predecessor/successor links and dependency lines
 &lt;p&gt;Bookmark &lt;a href="https://www.meetup.com/devops-vancouver-bc-canada/"&gt;DevOps Vancouver BC Canada Meetup&lt;/a&gt; and keep an eye for the official event announcement. I will come back and update this post as soon as we have a published link to the event.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Find book here:&lt;/strong&gt;
 - &lt;a href="https://www.amazon.ca/Accelerate-DevOps-GitHub-software-performance/dp/1801813353"&gt;Amazon Canada&lt;/a&gt;
-- &lt;a href="https://www.amazon.com/Accelerate-DevOps-GitHub-software-performance/dp/1801813353"&gt;Amazon US&lt;/a&gt;&lt;/p&gt;</content><category term="Posts"></category><category term="book"></category><category term="devops"></category></entry><entry><title>Positive energy goes a long way to encourage innovation</title><link href="https://wsbctechnicalblog.github.io/be-positive.html" rel="alternate"></link><published>2022-09-09T00:00:00-07:00</published><updated>2022-09-09T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2022-09-09:/be-positive.html</id><summary type="html">&lt;p&gt;"Every person in your company is a vector. Your progress is determined by the sum of all vectors." - Elon Musk&lt;/p&gt;</summary><content type="html">&lt;p&gt;After observing a lot of technical leads and mentors over the past 35+ years of bits &amp;amp; bytes adventures, as well as observing those they influence, I have compiled my short list of top and least effective qualities. Take it with a pinch of salt, read between the lines, and remember it is my list - my views.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Inspiration and leadership are based on a pull, not push model&lt;/h1&gt;
-&lt;p&gt;When you approach the world with a "my way or the highway" mindset, directing, inspecting, monitoring, supervising, and in extreme cases micromanaging - the least effective level of leadership. Some common leadership anti-pattern signs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Questioning everything&lt;/strong&gt; - there is a fine line (tone) between being curious and questioning.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Dominating discussions&lt;/strong&gt; - not allowing your team to self-manage and have vibrant discussions.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Micromanaging&lt;/strong&gt; - double and triple checking everything, creating a &lt;strong&gt;no-trust&lt;/strong&gt; environment.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Directing from behind&lt;/strong&gt; - aka command and control.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The last point triggered an interesting discussion with &lt;a href="https://wsbctechnicalblog.github.io/pages/authors.html"&gt;Andre&lt;/a&gt;. Leaders who subscribe to &lt;strong&gt;servant leadership&lt;/strong&gt;, are &lt;strong&gt;leading&lt;/strong&gt; from behind, putting people first, and striving to empower everyone. &lt;/p&gt;
-&lt;p&gt;I witnessed true leadership in the early 80's when I served with a humble, but phenomenal leader in the military. He was always part of the team, usually observing, encouraging, and delegating at the front, at times supporting everyone at the back carrying extra equipment on long marches. His secret sauce was to empower everyone in our unit to take responsibility and make decisions.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There is a huge difference between &lt;strong&gt;directing&lt;/strong&gt; and &lt;strong&gt;leading&lt;/strong&gt;!&lt;/p&gt;
-&lt;p&gt;You cannot &lt;strong&gt;push&lt;/strong&gt; as a leader, you have to &lt;strong&gt;lead&lt;/strong&gt;, &lt;strong&gt;encourage&lt;/strong&gt;, and &lt;strong&gt;pull&lt;/strong&gt; the team to towards a common &lt;strong&gt;goal&lt;/strong&gt;.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Negative energy sucks the life out of innovation&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Negative" src="/images/be-positive-2.png"&gt;    &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Someone who is negative or continuously criticizes everything and everyone, sucks the passion and energy out of a room like a raging fire consumes oxygen. What remains is a lonely lead in a toxic environment, surrounded by uncooperative engineers, and declining support for their goals,&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Remove &lt;strong&gt;toxic&lt;/strong&gt; influence and noise from your Twitter, LinkedIn, and other collaboration  channels today!
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;No matter how dire the situation, if you lead with &lt;strong&gt;passion&lt;/strong&gt; and &lt;strong&gt;commitment&lt;/strong&gt;, you will find the support you need to move forward and be successful.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;You are but a piece of the bigger puzzle - Union of PEOPLE!&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;"DevOps is the union of people, process, and products to enable continuous delivery of value to our end users." = &lt;a href="https://devblogs.microsoft.com/devops/what-is-devops-donovan/"&gt;Donovan Brown&lt;/a&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Both Elon's quote, see above, and Donovan's definition of DevOps highlights the importance of the collective, the Borg, the people, the &lt;strong&gt;team&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;A true leader extends &lt;strong&gt;trust&lt;/strong&gt; and &lt;strong&gt;empowers&lt;/strong&gt; every member of the team to self-organize, self-manage, and to make decisions. This ensures that the team and its members become self-sufficient and that they do not miss the leader if absent short- or long-term.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;"&lt;em&gt;I am the beginning, the end, the one who is many. I am the Borg.&lt;/em&gt;", the Borg.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Lead by example&lt;/h1&gt;
-&lt;p&gt;Leaders who inspire me have the following qualities (and more):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;They are &lt;strong&gt;curious&lt;/strong&gt; and &lt;strong&gt;listen&lt;/strong&gt; to their team and stakeholders to be informed on every individual, understand what can be improved, and to learn what they do not know.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They &lt;strong&gt;get their hands dirty&lt;/strong&gt; and are part of the team, especially when the infamous 2AM production incident call is received.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They &lt;strong&gt;deliver on promises&lt;/strong&gt;. Making promises and not delivering will rapidly erode the team's morale and support.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;They &lt;strong&gt;value people&lt;/strong&gt; and their &lt;strong&gt;work-life balance&lt;/strong&gt;. Any discussion that touches on the work-life balance or a team member's welfare takes priority above everything else.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;TRUST!&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Trust" src="/images/be-positive-3.png"&gt;  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Here is a great quote:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;"Building trust and taking care of your people is a mechanism for clarity." - L. David Marquet
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Trust&lt;/strong&gt; is earned through factors such as psychological safety, transparency, understanding of each other, fairness, involvement in decision-making, and a clear vision. &lt;/p&gt;
-&lt;p&gt;A few ideas to make your trust account grow:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Create a safe space for everyone to speak up and share their feedback. &lt;/li&gt;
-&lt;li&gt;Explain decisions and directives.&lt;/li&gt;
-&lt;li&gt;Inspire creativity.&lt;/li&gt;
-&lt;li&gt;Foster work:life balance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;Challenge your ecosystem&lt;/h1&gt;
-&lt;p&gt;Last, but not least, you must challenge everyone to continuously learn, innovate, learn from failures, innovate, strive to be a tiny bit better tomorrow. Our common engineering ecosystem uses a platter of motivators and challenges to keep our engineers on their toes. &lt;/p&gt;
-&lt;p&gt;For example, I just challenged all our engineers with the following:    &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Challenge" src="/images/be-positive-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;What are your experiences and thoughts on this topic?&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="learning"></category><category term="innovation"></category></entry></feed>
+- &lt;a href="https://www.amazon.com/Accelerate-DevOps-GitHub-software-performance/dp/1801813353"&gt;Amazon US&lt;/a&gt;&lt;/p&gt;</content><category term="Posts"></category><category term="book"></category><category term="devops"></category></entry></feed>

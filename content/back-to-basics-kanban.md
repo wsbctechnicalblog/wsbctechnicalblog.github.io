@@ -1,5 +1,5 @@
 Title: Back to Basics: Kanban
-Date: <YYYY-MM-DD>
+Date: 2024-02-09
 Category: Posts 
 Tags: agile, azure-devops, learning, 101
 Slug: back-to-basics-kanban
