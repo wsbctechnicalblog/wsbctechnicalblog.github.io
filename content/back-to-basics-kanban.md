@@ -55,20 +55,25 @@ Examples of an acceptance criteria for a complete rocket:
 ### GOOD acceptance criteria
 
 **Propulsion**
+
 - Propulsion system specifications are clearly documented.
 - Successful static firing tests confirm thrust performance and stability.
 
 **Navigation**
+
 - Navigation controls accurately adjust the rocket's trajectory in a simulated space environment.
 
-**Launch Sequence**:**
+**Launch Sequence**
+
 - Concise checklist guides the rocket from ignition to the designated orbit.
 - Emergency procedures are summarized for quick reference.
 
 **Payload**
+
 - Payload deployment ensures the safe release of the payload into the specified orbit.
 
 **Mission Success**
+
 - Success is defined by the payload achieving and maintaining the intended orbit.
 - Safety features prioritize both the rocket launch and the protection of the payload.
 
