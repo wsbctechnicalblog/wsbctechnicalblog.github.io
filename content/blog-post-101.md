@@ -28,6 +28,7 @@ Here is a list of tags we use when creating new content:
 
 | TAG             |~~| FOCUS   |
 |-----------------|--|---------|
+| 101             |  | Back to basics. |
 | agile           |  | Agile, Kanban, SAFe, and other frameworks to plan, track, and collaborate across teams. |
 | ai              |  | Artificial intelligence, machine learning, and intelligent bots. |
 | architecture    |  | Software architecture. | 
