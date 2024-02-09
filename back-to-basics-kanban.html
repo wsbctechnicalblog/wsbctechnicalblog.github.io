@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why release on demand? - </title>
+        <title>Back to Basics: Kanban - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,73 +33,93 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
-            title="Permalink to Why release on demand?">Why release on demand?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-kanban.html" rel="bookmark"
+            title="Permalink to Back to Basics: Kanban">Back to Basics: Kanban</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 19 January 2024</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 09 February 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Exploring the deployment rings, continuous delivery and deployment, to discuss release on demand.</p>
+            <p>"Kanban" is Japanese for "visual card" or "signal."</p>
         </div>
     
         <div class="entry-content">
-            <p>Before I get into the main subject of this blog post – why our goal is to release on demand – I want to quickly talk about deployment rings, continuous delivery and deployment, and what they mean. These topics are all connected in the DevOps DNA and backed by Azure DevOps, the foundation of our software development lifecycle (SDLC).</p>
-<hr>
-<h1>Deployment Rings - managing impact!</h1>
-<p>The concept of ring-based deployment, initially introduced in Jez Humble's "Continuous Delivery" as canary deployments, strategically minimizes the impact on end users by incrementally and systematically rolling out changes in production. Employing deployment rings allows for a thorough assessment of the impact, often referred to as the "blast radius," achieved through meticulous observation, testing, telemetry analysis, and crucially, user feedback. </p>
-<blockquote>
-<p><img alt="Rings" src="/images/engineering-practices-why-release-on-demand-1.png"></p>
-</blockquote>
-<p>This approach, used to deploy Azure DevOps, enables the gradual deployment of binary bits, facilitating the concurrent operation of multiple production releases. For more detail, peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a>.</p>
-<hr>
-<h1>Continuous Delivery and Deployment - deploying to one or more environments!</h1>
-<p>In the distant year of 2016, I sought insights from my ALM Ranger colleague to delineate the distinction between continuous delivery and continuous deployment. </p>
-<p>Here is what <a href="https://www.linkedin.com/in/darquewarrior/">Donovan Brown</a> had to say: "<em>Continuous Delivery is the ability to use the output from the CI to build and deploy the new known good build to <strong>one or more environments</strong> automatically. There is a subtle difference between Continuous <strong>Delivery</strong> and Continuous <strong>Deployment</strong>. The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through <strong>several</strong> environments, ultimately ending up in production, which may include automated UI, load and performance tests and approvals along the way.</em>"</p>
-<p>PS: Donovan is also the author of the infamous definition of DevOps I am still using to this day - <a href="https://www.donovanbrown.com/post/what-is-devops">What is DevOps</a>. Collectively, we acknowledged the prevailing notion that DevOps transcends being a product; it is not something one can simply purchase or install. Yet, this perception took an interesting turn with the advent of Azure DevOps.</p>
-<hr>
-<h1>Deployment versus Release - giving the business and users a choice!</h1>
-<p><strong>Deployment</strong> is the process of moving a build or application from one environment to another. It involves copying files, configuring settings, and setting up the infrastructure necessary for the application to run. In Azure DevOps, deployment usually refers to the tasks involved in taking an artifact and installing it in different environments such as development, testing, and production.  </p>
-<p><strong>Release</strong>, on the other hand, is the process of making a version of your application available to users or customers. It is the end result of the development and testing process and signifies that a particular set of features or changes is ready for production use.</p>
-<hr>
-<h1>Why Release on Demand?</h1>
-<p><strong>Release on Demand</strong> is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.</p>
-<p>For example, Microsoft continuously rolls our <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.</p>
-<blockquote>
-<p><img alt="Flags" src="/images/engineering-practices-why-release-on-demand-2.png"></p>
-</blockquote>
-<p>Peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> and <a href="https://scaledagileframework.com/release-on-demand/">Release on Demand - Scaled Agile Framework</a> for more details.</p>
-<p>Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!</p>
-<p>See <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a>.</p>
-<p>But, WHY bother? Here are several advantages that come to mind:</p>
+            <p>Kanban is a method of visually managing work processes, often used in lean and just-in-time production. It was developed by Taiichi Ohno for Toyota as a way to improve manufacturing efficiency and the word <strong>Kanban</strong><em> means </em><em>visual card</em><em> or </em><em>signal</em>* in Japanese. The system uses visual cues to initiate and manage workflow processes.</p>
+<p>Main components of a Kanban system and a few reference links:</p>
 <ul>
-<li><strong>Customer</strong>-centric delivery!</li>
-<li><strong>Continuous</strong> delivery of features.</li>
-<li><strong>Incremental</strong> and <strong>manageable</strong> release of features.</li>
-<li><strong>Flexibility</strong> for business and IT.</li>
-<li>Encourage collaboration, <strong>feedback</strong>, and a <strong>fail-fast</strong> mindset.</li>
+<li><strong>Kanban Board</strong> - <a href="https://azure.microsoft.com/en-us/products/devops/boards/">Azure Boards</a>, <a href="/azure-boards-tips.html">Azure Boards Tips</a>, <a href="/azure-boards-tips-operations-team.html">Azure Boards Tips for Operations Teams</a>, <a href="/azure-boards-tips-stop-messing-with-our-backlog.html">Azure Boards Tips - Stop messing with our backlog!</a>, <a href="/azure-boards-tips-retain-hierarchy-with-filter.html">Azure Boards Tips - Retain hierarchy with filter</a>, <a href="/azure-devops-dependencies.html">Visualizing work item dependencies in Azure Boards</a>, and <a href="/agile-planning-choice.html">Enable Agile, Kanban, Scrum, or SAFe with Azure DevOps</a></li>
+<li><strong>Cards</strong> - <a href="https://learn.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&amp;tabs=agile-process">About work items and work item types</a>, </li>
+<li><strong>Work in Progress (WIP)</strong> - <a href="/back-to-basics-wip-limit.html">Back to Basics: WIP Limit</a> </li>
+<li><strong>Limits  Signals (States)</strong> - <a href="https://learn.microsoft.com/en-us/azure/devops/boards/work-items/workflow-and-state-categories?view=azure-devops&amp;tabs=agile-process">About workflow states in backlogs and boards</a> </li>
 </ul>
 <hr>
-<h1>References</h1>
+<h1>Kanban Principles and Practices</h1>
+<p>An extract from one of our quick reference posters that covers the basic Kanban Principles and Practices:</p>
+<blockquote>
+<p><img alt="Principles and Practices" src="../images/back-to-basics-kanban-1.png"> </p>
+</blockquote>
+<hr>
+<h1>Bad Smoke Signals</h1>
+<p>Here are some signs that you should examine your flow and try to make it more efficient:</p>
+<blockquote>
+<p><img alt="Bad Flows" src="../images/back-to-basics-kanban-2.png"> </p>
+</blockquote>
+<p>You want a smooth flow of cards (work) across the entire boards, with no visual bottlenecks (delays), or states (columns) that are idling.</p>
+<hr>
+<h1>Actionable Cards</h1>
+<p>It annoys me when I have to deal with a card that I cannot act on. Here are cards that should be discarded or should cause the <a href="https://en.wikipedia.org/wiki/Andon_(manufacturing)">Andon cord</a> to be pulled:</p>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project">Applying DevOps to a Software Development Project</a> / August 2016</li>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a> / December 2017</li>
-<li><a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> / February, 2018</li>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/may/devops-any-language-any-platform-with-azure-devops-projects">Any Language, Any Platform with Azure DevOps Projects</a> / May 2018</li>
+<li>Title is cryptic, description and acceptance critera are blank, and card is tagged as an urgent dependency.</li>
+<li>Title is actionable, but description and acceptance criteria are marked as "to be defined" (TBD).</li>
+<li>Title and description are actionable, but acceptance criteria is blank or TBD.</li>
 </ul>
+<p>My team does not accept these cards onto our board anymore. We send back any card that is added to our board without our consent, with a polite "non actionable" reply. </p>
+<blockquote>
+<p><img alt="Build a rocket" src="/images/back-to-basics-batch-size-alert.png">
+An actionable <strong>ACCEPTANCE CRITERIA</strong> is Key! Acceptance criteria serve as essential conditions for the approval of a Kanban card (Azure DevOps Work Item)[https://learn.microsoft.com/en-us/azure/devops/boards/work-items/about-work-items?view=azure-devops&amp;tabs=agile-process], either met or not met - it is a binary 1 or 0! They require <strong>clarity</strong>, <strong>conciseness</strong>, <strong>user-focus</strong>, and <strong>testability</strong>: Statements are formulated to be verifiable, allowing for the creation of tests that objectively assess whether the criteria are met**. 
+</p>
+</blockquote>
+<p>Examples of an acceptance criteria for a complete rocket: </p>
+<h3>GOOD acceptance criteria</h3>
+<p><strong>Propulsion</strong>
+- Propulsion system specifications are clearly documented.
+- Successful static firing tests confirm thrust performance and stability.</p>
+<p><strong>Navigation</strong>
+- Navigation controls accurately adjust the rocket's trajectory in a simulated space environment.</p>
+<p><strong>Launch Sequence</strong>:**
+- Concise checklist guides the rocket from ignition to the designated orbit.
+- Emergency procedures are summarized for quick reference.</p>
+<p><strong>Payload</strong>
+- Payload deployment ensures the safe release of the payload into the specified orbit.</p>
+<p><strong>Mission Success</strong>
+- Success is defined by the payload achieving and maintaining the intended orbit.
+- Safety features prioritize both the rocket launch and the protection of the payload.</p>
+<h3>BAD acceptance criteria</h3>
+<ul>
+<li>Blank.</li>
+<li>To be defined (TBD).</li>
+<li>Rocket launches successfully.</li>
+</ul>
+<h3>Minimal cards</h3>
+<p>To avoid garbage entering your system and your Kanban workflow, here is a simple, yet effective card:</p>
+<blockquote>
+<p><img alt="Bad Flows" src="../images/back-to-basics-kanban-3.png"> </p>
+</blockquote>
+<hr>
+<p>You can use <a href="https://azure.microsoft.com/en-us/products/devops/boards/">Azure Boards</a> to apply Kanban principles, whether you work with Kanban only or combine Kanban (operational support) and Scrum (innovation), like we do. I am a visual thinker, so I find the visual signals from Kanban very helpful. Have fun!</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
-        | <a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
-         title="Permalink to Why release on demand?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/101.html">101 </a>
+        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-kanban.html" rel="bookmark"
+         title="Permalink to Back to Basics: Kanban">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
