@@ -36,19 +36,29 @@ An actionable &lt;strong&gt;ACCEPTANCE CRITERIA&lt;/strong&gt; is Key! Acceptanc
 &lt;/blockquote&gt;
 &lt;p&gt;Examples of an acceptance criteria for a complete rocket: &lt;/p&gt;
 &lt;h3&gt;GOOD acceptance criteria&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Propulsion&lt;/strong&gt;
-- Propulsion system specifications are clearly documented.
-- Successful static firing tests confirm thrust performance and stability.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Navigation&lt;/strong&gt;
-- Navigation controls accurately adjust the rocket's trajectory in a simulated space environment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Launch Sequence&lt;/strong&gt;:**
-- Concise checklist guides the rocket from ignition to the designated orbit.
-- Emergency procedures are summarized for quick reference.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Payload&lt;/strong&gt;
-- Payload deployment ensures the safe release of the payload into the specified orbit.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Mission Success&lt;/strong&gt;
-- Success is defined by the payload achieving and maintaining the intended orbit.
-- Safety features prioritize both the rocket launch and the protection of the payload.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Propulsion&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Propulsion system specifications are clearly documented.&lt;/li&gt;
+&lt;li&gt;Successful static firing tests confirm thrust performance and stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Navigation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigation controls accurately adjust the rocket's trajectory in a simulated space environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Launch Sequence&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Concise checklist guides the rocket from ignition to the designated orbit.&lt;/li&gt;
+&lt;li&gt;Emergency procedures are summarized for quick reference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Payload&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Payload deployment ensures the safe release of the payload into the specified orbit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Mission Success&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Success is defined by the payload achieving and maintaining the intended orbit.&lt;/li&gt;
+&lt;li&gt;Safety features prioritize both the rocket launch and the protection of the payload.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;BAD acceptance criteria&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Blank.&lt;/li&gt;
