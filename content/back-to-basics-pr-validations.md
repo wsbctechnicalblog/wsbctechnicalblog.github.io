@@ -1,5 +1,5 @@
 Title: Back to Basics: Pull-Request (PR) Validations
-Date: 2024-MM-DD
+Date: 2024-02-12
 Category: Posts 
 Tags: azure-devops, engineering
 Slug: back-to-basics-pr-validations
