@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why release on demand? - </title>
+        <title>Back to Basics: Pull-Request (PR) Validations - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,73 +33,64 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
-            title="Permalink to Why release on demand?">Why release on demand?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-pr-validations.html" rel="bookmark"
+            title="Permalink to Back to Basics: Pull-Request (PR) Validations">Back to Basics: Pull-Request (PR) Validations</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 19 January 2024</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 12 February 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Exploring the deployment rings, continuous delivery and deployment, to discuss release on demand.</p>
+            <p>Why run a validation build in your pull-request?</p>
         </div>
     
         <div class="entry-content">
-            <p>Before I get into the main subject of this blog post – why our goal is to release on demand – I want to quickly talk about deployment rings, continuous delivery and deployment, and what they mean. These topics are all connected in the DevOps DNA and backed by Azure DevOps, the foundation of our software development lifecycle (SDLC).</p>
-<hr>
-<h1>Deployment Rings - managing impact!</h1>
-<p>The concept of ring-based deployment, initially introduced in Jez Humble's "Continuous Delivery" as canary deployments, strategically minimizes the impact on end users by incrementally and systematically rolling out changes in production. Employing deployment rings allows for a thorough assessment of the impact, often referred to as the "blast radius," achieved through meticulous observation, testing, telemetry analysis, and crucially, user feedback. </p>
+            <p><a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> provides powerful <a href="https://azure.microsoft.com/en-us/products/devops/repos/">Azure Repos</a>, which in turn support feature-rich pull requests, which allow us to perform supervised changes, reviews, and code merges. Again we covered pull requests in previous blog posts, such as <a href="https://wsbctechnicalblog.github.io/branching-pull-request.html">Why we use pull requests with our trunk-based branching strategies</a>, <a href="https://wsbctechnicalblog.github.io/pull-request-empowered-by-engineering-practices.html">Pull Request empowered by engineering practices</a>, and <a href="https://wsbctechnicalblog.github.io/pull-requests-friend.htm">https://wsbctechnicalblog.github.io/pull-requests-friend.html</a>, which allows us to be laser focused on "why bother with a validation build?"</p>
+<h1>WHY do we enforce branch policies?</h1>
+<p>Azure DevOps makes sure that our engineering process follows the technical governance with consistent policies. </p>
 <blockquote>
-<p><img alt="Rings" src="/images/engineering-practices-why-release-on-demand-1.png"></p>
+<p><img alt="PR Types" src="/images/back-to-basics-pr-validations-1.png"></p>
 </blockquote>
-<p>This approach, used to deploy Azure DevOps, enables the gradual deployment of binary bits, facilitating the concurrent operation of multiple production releases. For more detail, peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a>.</p>
-<hr>
-<h1>Continuous Delivery and Deployment - deploying to one or more environments!</h1>
-<p>In the distant year of 2016, I sought insights from my ALM Ranger colleague to delineate the distinction between continuous delivery and continuous deployment. </p>
-<p>Here is what <a href="https://www.linkedin.com/in/darquewarrior/">Donovan Brown</a> had to say: "<em>Continuous Delivery is the ability to use the output from the CI to build and deploy the new known good build to <strong>one or more environments</strong> automatically. There is a subtle difference between Continuous <strong>Delivery</strong> and Continuous <strong>Deployment</strong>. The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through <strong>several</strong> environments, ultimately ending up in production, which may include automated UI, load and performance tests and approvals along the way.</em>"</p>
-<p>PS: Donovan is also the author of the infamous definition of DevOps I am still using to this day - <a href="https://www.donovanbrown.com/post/what-is-devops">What is DevOps</a>. Collectively, we acknowledged the prevailing notion that DevOps transcends being a product; it is not something one can simply purchase or install. Yet, this perception took an interesting turn with the advent of Azure DevOps.</p>
-<hr>
-<h1>Deployment versus Release - giving the business and users a choice!</h1>
-<p><strong>Deployment</strong> is the process of moving a build or application from one environment to another. It involves copying files, configuring settings, and setting up the infrastructure necessary for the application to run. In Azure DevOps, deployment usually refers to the tasks involved in taking an artifact and installing it in different environments such as development, testing, and production.  </p>
-<p><strong>Release</strong>, on the other hand, is the process of making a version of your application available to users or customers. It is the end result of the development and testing process and signifies that a particular set of features or changes is ready for production use.</p>
-<hr>
-<h1>Why Release on Demand?</h1>
-<p><strong>Release on Demand</strong> is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.</p>
-<p>For example, Microsoft continuously rolls our <a href="https://azure.microsoft.com/en-us/products/devops/">Azure DevOps</a> updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.</p>
+<p>The illustration depicts three of many possible pull request workflows. In the first one, we make a feature branch, change the code, and commit the changes directly or through a pull request, without any supervision. The second one adds a <strong>human code</strong> review, which can be used for verification, peer reviews, knowledge sharing, and collaboration. Although this reduces the chance of a failure after the merge, we depend on the review to be careful, not just a “click.” The third flow adds a <strong>verification</strong> step, where we can include <strong>automated validations</strong> defined as branch policies, such as minimum number of reviewers, security and other scan results, and linking the code changes to one or more work items. </p>
+<p>Branch policies set at the Azure repos root and tightened at the repo level are applied in the pull-request validations and improve quality and alignment with guardrails, policies, and/or governance.</p>
+<p>For example, we always require these as a minimum:</p>
+<ul>
+<li>Case Sensitivity to prevent case-sensitivity conflicts.</li>
+<li>Reserved Names to prevent forbidden file and folder names.</li>
+<li>Maximum path length to prevent paths that may exceed Windows or Linux path lengths.</li>
+<li>Minimum number of reviewers. (2)</li>
+<li>Requestor can approve. (No)</li>
+<li>Reset code reviewer votes when there are recent changes. (Yes)</li>
+<li>Check for linked work items. (Yes)</li>
+<li>Check for comment resolution. (Yes)</li>
+</ul>
+<p>And we suggest:</p>
+<ul>
+<li>Build validation</li>
+</ul>
+<p>See <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/about-pull-requests?view=azure-devops#branch-policies-and-pull-requests">Branch policies and pull requests</a> for more details on branch policies.</p>
+<h1>WHY do we recommend a validation build?</h1>
+<p>Simple ...</p>
 <blockquote>
-<p><img alt="Flags" src="/images/engineering-practices-why-release-on-demand-2.png"></p>
+<p><img alt="Add BUild Validation" src="/images/back-to-basics-pr-validations-2.png"></p>
 </blockquote>
-<p>Peruse <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> and <a href="https://scaledagileframework.com/release-on-demand/">Release on Demand - Scaled Agile Framework</a> for more details.</p>
-<p>Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!</p>
-<p>See <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a>.</p>
-<p>But, WHY bother? Here are several advantages that come to mind:</p>
-<ul>
-<li><strong>Customer</strong>-centric delivery!</li>
-<li><strong>Continuous</strong> delivery of features.</li>
-<li><strong>Incremental</strong> and <strong>manageable</strong> release of features.</li>
-<li><strong>Flexibility</strong> for business and IT.</li>
-<li>Encourage collaboration, <strong>feedback</strong>, and a <strong>fail-fast</strong> mindset.</li>
-</ul>
+<p>By adding a verification build, as shown, we can ensure that all the criteria have been met, and that the changes are buildable. We have more confidence that the continuous integration build will not break unexpectedly after the merge.</p>
+<h1>WHY v2 CI/CD Blueprints complement PR validations</h1>
+<p>The v2 CI/CD blueprints have many features and innovations, which you should explore. As explained in <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part11.html">Our road to OSS Blueprints - Suppress CD when pipeline runs within Pull Request</a>, the blueprints can detect when they run in a pull request (as a validation build) and only do the CI part and skip the CD part. This lets teams use the <strong>same pipeline</strong> for both the build validation and the continuous integration and delivery. <strong>Simple!</strong></p>
 <hr>
-<h1>References</h1>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project">Applying DevOps to a Software Development Project</a> / August 2016</li>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a> / December 2017</li>
-<li><a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> / February, 2018</li>
-<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/may/devops-any-language-any-platform-with-azure-devops-projects">Any Language, Any Platform with Azure DevOps Projects</a> / May 2018</li>
-</ul>
+<p>Thoughts? Questions? Start a discussion below.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
-        | <a href="https://wsbctechnicalblog.github.io/why-release-on-demand.html" rel="bookmark"
-         title="Permalink to Why release on demand?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-pr-validations.html" rel="bookmark"
+         title="Permalink to Back to Basics: Pull-Request (PR) Validations">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
