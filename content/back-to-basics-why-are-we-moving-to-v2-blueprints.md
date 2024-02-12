@@ -1,5 +1,5 @@
 Title: Back to Basics: Why are we moving to v2 CI/CD Blueprints for Azure Pipelines?
-Date: 2024-02-15
+Date: 2024-02-16
 Category: Posts 
 Tags: agile, azure-devops, pipelines, 101
 Slug: back-to-basics-why-are-we-moving-to-v2-blueprints
@@ -14,7 +14,7 @@ In this post, I will only answer the question of **WHY** and let you peruse our 
 
 # WHY are we moving away from and disabling classic Azure Pipelines?
 
-The following image previous shows that **Classic** pipelines are the new name for the pipelines that started with MSBuild in Team Foundation Server (TFS) 2005, developed to XAML-based pipelines in TFS 2010, and finally to visual JSON-based pipelines in TFS 2015. 
+The following image shows that **Classic** pipelines are the new name for the pipelines that started with MSBuild in Team Foundation Server (TFS) 2005, developed to XAML-based pipelines in TFS 2010, and finally to visual JSON-based pipelines in TFS 2015. 
 
 > ![Classic](/images/back-to-basics-why-are-we-moving-to-v2-blueprints-0.png)
 
@@ -38,7 +38,7 @@ We are leaving the Classic pipelines behind for these reasons:
 
 # WHY are we moving to YAML-based Azure Pipelines?
 
-The YAML pipeline introduced an exciting new era, launching in early 2019 with TFS 2019. It signaled a CI/CD solution designed from scratch on aN INNOVATIVE whiteboard.
+The YAML pipeline introduced an exciting new era, launching in early 2019 with TFS 2019. It signaled a CI/CD solution designed from scratch on an INNOVATIVE whiteboard.
 
 The main benefits of switching to YAML are:  
 
