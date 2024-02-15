@@ -4,7 +4,7 @@ Category: Posts
 Tags: azure-devops, pipelines, oss, engineering
 Slug: back-to-basics-oss
 Author: Willy-Peter Schaub
-Summary: Dealing with a Kanban Board meltdown, by controlling the work in progress.
+Summary: X
 
 TBD
 
