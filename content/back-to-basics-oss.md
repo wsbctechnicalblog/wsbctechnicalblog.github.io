@@ -41,6 +41,10 @@ The Technology Framework Monitor project is a side project by [Andreas Mertens](
 
 Some features of the TFM product are to do a scan that will go through projects with different file extensions, get a file list, and store information in the SQL database. The file list information gathered can include which .NET version, .nuget package versions, npm package versions and more depending on the configuration settings. The data being published is stored in the SQL server database for analysis and reporting purposes.
 
+>
+> ![TFM Observation](/images/back-to-basics-oss-2.png)
+>
+
 In 2023, we were lucky to work with Andreas and two BCIT students, Daniel Chellapan and [Samuel Tjahjadi]( https://www.linkedin.com/in/samuel-tjahjadi-952b03205/), on a special project to refactor and open-source the project, once again sharing our learnings and an OSS solution that serves as a pivotal tool to address several critical issues within software development, including:
 
 - **Outdated Products**: Identify and flag end-of-life (EoL) technologies, such as out of support versions of .NET, across various solutions stored in Azure Repositories. By pinpointing these outdated products, development teams can prioritize updates and ensure they are leveraging the latest features, performance enhancements, and security patches.
