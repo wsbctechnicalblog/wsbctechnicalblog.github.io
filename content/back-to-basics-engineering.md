@@ -78,7 +78,14 @@ Sorted alphabetically ...
 - **TEAM** - help the team succeed. "We are in this together."
 - **TRUST** - trust is crucial for creating strong bonds between colleagues, teams, and organizations.
 
-I have been a software engineer for four decades and I **LOVE** my work - which is why I have probably never felt like working in my life q;-)
+Expressions that send shivers down my spine when uttered by someone claiming to be an engineer
+
+- _I have no time top explore and learn._
+- _Why would I want to learn something new?_
+- _It is 5 o'clock and time to call it a day. We will troubleshoot tomorrow._
+- _No need to change, this has worked for us for many years._
+
+I have been a software engineer for four decades and **LOVE** my work - which is why I have probably never felt like working in my life q;-)
 
 ---
 
