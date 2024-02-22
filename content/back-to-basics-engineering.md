@@ -62,23 +62,27 @@ Finally, I want to discuss what traits are essential for being an engineer. As y
 
 > ![DNA](/images/back-to-basics-engineering-3.png)
 
-- **FAIL** - do not be afraid to try new things and fail. "_If things are not failing, you are not innovating enough._" - Elon Musk.
-- **TRUST** - trust is crucial for creating strong bonds between colleagues, teams, and organizations.
-- **TEAM** - help the team succeed. "_We are in this together._"
-- **LOGIC** - having a logical mind and analytical skills.
-- **COLLABORATE** - collaboration and presentation skills and a constant desire to improve them.
-- **DETAIL** - notice the details.
-- **INNOVATE** - think creatively, experiment continuously, learn, pivot, and apply new ideas.
-- **CURIOSITY** - peek under the hood, open the black-box, and show an unstoppable curiosity of finding out the WHAT, WHO, and WHY.
-- **SOLVE PROBLEMS** - problem-solving skill and eagerness to constantly overcome and solve problems we face daily.
-- **IMPROVE** - make things better, more efficient and effective.  
-- **OPTIMISM** - stay optimistic when dealing with challenges and uncertainties that are part of an engineer's world.
+Sorted alphabetically ...
+
 - **CHANGE** - thirst for change, evolution, and continuous learning.
+- **COLLABORATE** - collaboration and presentation skills and a constant desire to improve them.
+- **CURIOSITY** - peek under the hood, open the black-box, and show an unstoppable curiosity of finding out the WHAT, WHO, and WHY.
+- **DETAIL** - notice the details.
+- **FAIL** - do not be afraid to try new things and fail. "If things are not failing, you are not innovating enough." - Elon Musk.
+- **IMPROVE** - make things better, more efficient and effective.
+- **INNOVATE** - think creatively, experiment continuously, learn, pivot, and apply new ideas.
+- **LOGIC** - having a logical mind and analytical skills.
+- **OPTIMISM** - stay optimistic when dealing with challenges and uncertainties that are part of an engineer's world.
 - **PASSION** - show a deep passion and strong commitment to specialized and generalized knowledge and role areas.
+- **SOLVE PROBLEMS** - problem-solving skill and eagerness to constantly overcome and solve problems we face daily.
+- **TEAM** - help the team succeed. "We are in this together."
+- **TRUST** - trust is crucial for creating strong bonds between colleagues, teams, and organizations.
 
 I have been a software engineer for four decades and I **LOVE** my work - which is why I have probably never felt like working in my life q;-)
 
 ---
 
 Am I off course? What are your thoughts on this topic?
+
+_Special thanks to Office 365 Copilot for helping me copy-edit this post_.
 
