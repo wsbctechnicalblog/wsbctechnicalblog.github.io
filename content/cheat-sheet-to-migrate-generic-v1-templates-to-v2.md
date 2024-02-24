@@ -8,3 +8,4 @@ Summary: TBD
 
 TBD
 
+![v1 --> v2](../images/cheat-sheet-to-migrate-generic-v1-templates-to-v2-1.png)
