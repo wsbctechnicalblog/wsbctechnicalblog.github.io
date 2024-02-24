@@ -18,7 +18,7 @@ Our open-source software (OSS) projects, [wsbctechnicalblog](https://github.com/
 > ![Pipeline status](/images/back-to-basics-oss-1.png)
 >
 
-Moreover, the drift and sprawl of pipeline configuration snowflakes complicates reuse and inflates support and maintenance overheads and cst of ownership. Analogous to architectural blueprints, our standardized pipeline templates—both generic and application-specific—facilitate the swift and uniform creation of countless delivery pipelines. This approach champions:
+Moreover, the drift and sprawl of pipeline configuration snowflakes complicates reuse and inflates support and maintenance overheads and cost of ownership. Analogous to architectural blueprints, our standardized pipeline templates — both generic and application-specific — facilitate the swift and uniform creation of countless delivery pipelines. This approach champions:
 
 - **Consistency**: Using predefined pipeline templates, we ensure uniformity across our delivery processes. This consistency minimizes errors and discrepancies, fostering predictability and reliability in our software delivery lifecycle.
 - **Standardization**: Standardized pipeline blueprints establish a common framework for development teams to follow. This alignment streamlines collaboration, simplifies onboarding of new team members, and enhances overall efficiency by reducing the need for custom solutions.
@@ -31,7 +31,7 @@ Moreover, the drift and sprawl of pipeline configuration snowflakes complicates 
 > **EXPLORE** our [Application-type CI/CD blueprint template](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) OSS project, collaborate, and continuously improve the templates with us. 
 >
 
-To get an insight into WHY we engineered these blueprints, HOW they evolved, and HOW we use them, please refer to the [Part 1: Pipelines - Why bother and what are our nightmares and options?](/why-pipelines-part1.html) series. We are also working on a v2 blueprint cookbook, which we may self-publish this year - watch the space.
+To get an insight into WHY we engineered these blueprints, HOW they evolved, and HOW we use them, please refer to the [Part 1: Pipelines - Why bother and what are our nightmares and options?](/why-pipelines-part1.html) series. We are also working on a v2 blueprint cookbook, which we may self-publish this year - watch this space.
 
 ---
 
