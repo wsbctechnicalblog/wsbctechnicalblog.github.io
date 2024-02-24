@@ -78,7 +78,7 @@ Sorted alphabetically ...
 - **TEAM** - help the team succeed. "We are in this together."
 - **TRUST** - trust is crucial for creating strong bonds between colleagues, teams, and organizations.
 
-Expressions that send shivers down my spine when uttered by someone claiming to be an engineer
+Expressions that send shivers down my spine when uttered by someone claiming to be an engineer:
 
 - _I have no time to explore and learn._
 - _Why would I want to learn something new?_
