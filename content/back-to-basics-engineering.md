@@ -1,5 +1,5 @@
-Back to Basics - Engineering
-Date: <YYYY-MM-DD>
+Title: Back to Basics - Engineering
+Date: 2024-02-26
 Category: Posts 
 Tags: engineering
 Slug: back-to-basics-engineering

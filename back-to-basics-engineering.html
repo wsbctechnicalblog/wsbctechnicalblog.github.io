@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Automation enables engineering to focus on value - </title>
+        <title>Back to Basics - Engineering - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,130 +33,100 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-lesson-1.html" rel="bookmark"
-            title="Permalink to Automation enables engineering to focus on value">Automation enables engineering to focus on value</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-engineering.html" rel="bookmark"
+            title="Permalink to Back to Basics - Engineering">Back to Basics - Engineering</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Sat 21 August 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 26 February 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Asking yourself why you are performing a set of manual tasks again and again? If yes, automate!</p>
+            <p>The notion of developers relying on testers to validate changes can be so startling that it feels like my head might explode.</p>
         </div>
     
         <div class="entry-content">
-            <p>That is a question I ask myself a few times a day ... and too often answer with "nah, creating an automation script sounds like more work." But, is it really more work and are we true to our goals of alignment, automation, consistency, enablement, simplicity, and reduction of waste? </p>
-<p>When I picked a maintenance card, based on previous automation, from our Kanban board today, I decided to do a quick calculation of what effort ... if any ... I am saving by NOT doing the maintenance by hand.</p>
+            <p>I am from an era characterized by distinct roles of programmers, testers, and systems analysts, each with their specialized tasks and a rigid handoff of responsibilities for testing. However, over past decades I have transitioned into a modern <strong>DevOps</strong> landscape where <strong>engineers</strong> function as integral members of cross-functional teams. In this DevOps environment, every team member holds themselves accountable for the entire product lifecycle, from conceptualization to retirement, fostering a collective commitment to product excellence, quality assurance, and delighted end-users.</p>
+<p>To thrive in our software development ecosystem, it is imperative for all team members to grasp these fundamental principles:</p>
+<ul>
+<li><strong>Embracing cross-functional product teams</strong>, where diverse expertise converges to achieve common goals.</li>
+<li><strong>Cultivating a T-shaped engineering mindset</strong>, blending deep expertise in one area with a broad understanding across disciplines.</li>
+<li><strong>Understanding the key traits that define an effective engineer</strong>, encompassing technical prowess, adaptability, collaborative spirit, and a relentless pursuit of excellence.</li>
+</ul>
+<p>Let me delve into these three pillars.</p>
 <hr>
-<h1>Case Study #1: Creating Iteration Paths</h1>
-<p>Roughly every two years must add 12 program increments, each with 5 iterations to our Azure DevOps (AzDO) projects and then map them to all the AzDO Teams within the AzDO project.</p>
-<p>I decided to invest some of my personal time to get some rough estimates on how long this exercise takes. Here is a summary of effort in our sandbox:</p>
-<table>
-<thead>
-<tr>
-<th>MANUAL TASK</th>
-<th align="right">REF</th>
-<th>-</th>
-<th align="right">SECONDS</th>
-<th>-</th>
-<th align="right">CLICKS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Create a program increment</td>
-<td align="right">1</td>
-<td></td>
-<td align="right">13</td>
-<td></td>
-<td align="right">9</td>
-</tr>
-<tr>
-<td>Create five (5) iterations under the program increment</td>
-<td align="right">2</td>
-<td></td>
-<td align="right">65</td>
-<td></td>
-<td align="right">90</td>
-</tr>
-<tr>
-<td>Map five iterations to a team</td>
-<td align="right">3</td>
-<td></td>
-<td align="right">11</td>
-<td></td>
-<td align="right">9</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-5.png"> </p>
-<p>So, this does not look to bad, if you make no typos. What is important to remember is that the Azure DevOps user interface only allows you to add 5 iterations to a team at a time ... not very productive, but that is a story for another post.</p>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-1.png"> </p>
-<p>The number of projects and teams is volatile, but today I would have to update 257 teams across 25 projects. Does not sound too bad. Let me get <strong>rough</strong> estimates on how many times I would have to click my keyboard and how long I would have to spend behind my laptop this weekend.</p>
-<blockquote>
-<p><strong>TASK</strong></p>
-<p>Add 12 program increments, each with 5 iterations, to each project (25) and map the (12*5=60) iterations to each team (257) in each project.</p>
-</blockquote>
-<p>Here is a visual after creating one program increment with 5 iterations:</p>
-<p><img alt="Task" src="../images/automation-lesson-1-2.png"> </p>
-<table>
-<thead>
-<tr>
-<th align="center">REF</th>
-<th>CALCULATION</th>
-<th align="right">SECONDS</th>
-<th>-</th>
-<th align="right">CLICKS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td>12 PIs * 25 projects * x = 300 * x</td>
-<td align="right">3900</td>
-<td></td>
-<td align="right">2700</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td>12 PIs * 25 projects * x = 300 * x</td>
-<td align="right">19500</td>
-<td></td>
-<td align="right">27000</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td>(120/5) * 257 teams  * x = 6168 * x</td>
-<td align="right">67848</td>
-<td></td>
-<td align="right">55512</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>TOTALS</strong></p>
-<p><strong>Seconds</strong>: 91248 = 25.367 hours and <strong>Clicks</strong> : 85212</p>
-</blockquote>
-<p>So, if I fill up my Ovomaltine mug on Saturday morning at 9AM, I will be done with the task by Sunday morning just before 11AM. A typical operational task and doable, no?!? </p>
-<p><img alt="Iteration Mapping" src="../images/automation-lesson-1-3.png"> </p>
+<h1>Cross-functional product team</h1>
+<p>A cross-functional product team is a group of people who have various abilities and experiences and work together as a unit to accomplish a common objective related to the development, evaluation, deployment, upkeep, and enhancement of a product from beginning to end. Each team member contributes their distinct viewpoint, knowledge, and skills to form a product team that can adapt to changing needs and take responsibility for quality and service excellence.</p>
+<p>Terminology that has no place in a effective cross-functional product team:</p>
+<ul>
+<li><em>Them and us.</em></li>
+<li><em>Organizational and/or responsibility silos.</em></li>
+<li><em>Specific role functions, such as developers and testers.</em></li>
+</ul>
+<p>I like to call a cross-functional product team a smooth-working team of engineers.</p>
 <hr>
-<h1>Compare it to our automation scripts</h1>
-<p>OK, now let us look at the facts ...</p>
-<p><img alt="Robot versus Humanoid" src="../images/automation-lesson-1-4.png"> </p>
-<p>I do not believe that we need to discuss this any further for "your Penny to drop" that automation, at the right time, is <strong>cost effective</strong>, <strong>productive</strong>, and <strong>consistent</strong>. Also, there is a lot less <strong>WASTE</strong>!</p>
-<p>Have a great weekend!</p>
+<h1>T-Shaped Engineers</h1>
+<blockquote>
+<p><img alt="t-shaped" src="/images/back-to-basics-engineering-1.png"></p>
+</blockquote>
+<p>A T-shaped engineer is a term that refers to a professional who has both specialization in one area and a wide range of skills and knowledge across various areas. </p>
+<p>The <strong>vertical</strong> part of the "T" represents the specialization – the depth of knowledge and skill in a particular technical area, such as software development. </p>
+<p>The <strong>horizontal</strong> part of the "T" shows the engineer's ability to cooperate and work across different technical areas, such as project management, communication, teamwork, problem-solving skills, and <strong>quality assurance</strong>.</p>
+<blockquote>
+<p><img alt="quality" src="/images/back-to-basics-engineering-2.png"></p>
+</blockquote>
+<p>I argue, for example, that <strong>quality</strong> is the responsibility of every member of the team. This includes development, maintaining, running, and analyzing quality assurance – such as unit, integration, system, and regression tests.</p>
+<p>As shown above, I expect everyone on the product team to be experienced in, to own, and to collaborate around <strong>QUALITY</strong>.</p>
+<p>Some terms that are not helpful in a productive cross-functional product team:</p>
+<ul>
+<li><em>Not my job.</em></li>
+<li><em>Not my responsibility.</em></li>
+<li><em>You do the coding, I do the testing – or vice versa.</em></li>
+</ul>
+<hr>
+<h1>Effective Engineers</h1>
+<p>Finally, I want to discuss what traits are essential for being an engineer. As you can see below, I look for thirteen (13) traits in engineers who join our team(s).</p>
+<blockquote>
+<p><img alt="DNA" src="/images/back-to-basics-engineering-3.png"></p>
+</blockquote>
+<p>Sorted alphabetically ...</p>
+<ul>
+<li><strong>CHANGE</strong> - thirst for change, evolution, and continuous learning.</li>
+<li><strong>COLLABORATE</strong> - collaboration and presentation skills and a constant desire to improve them.</li>
+<li><strong>CURIOSITY</strong> - peek under the hood, open the black-box, and show an unstoppable curiosity of finding out the WHAT, WHO, and WHY.</li>
+<li><strong>DETAIL</strong> - notice the details.</li>
+<li><strong>FAIL</strong> - do not be afraid to try new things and fail. "If things are not failing, you are not innovating enough." - Elon Musk.</li>
+<li><strong>IMPROVE</strong> - make things better, more efficient and effective.</li>
+<li><strong>INNOVATE</strong> - think creatively, experiment continuously, learn, pivot, and apply new ideas.</li>
+<li><strong>LOGIC</strong> - having a logical mind and analytical skills.</li>
+<li><strong>OPTIMISM</strong> - stay optimistic when dealing with challenges and uncertainties that are part of an engineer's world.</li>
+<li><strong>PASSION</strong> - show a deep passion and strong commitment to specialized and generalized knowledge and role areas.</li>
+<li><strong>SOLVE PROBLEMS</strong> - problem-solving skill and eagerness to constantly overcome and solve problems we face daily.</li>
+<li><strong>TEAM</strong> - help the team succeed. "We are in this together."</li>
+<li><strong>TRUST</strong> - trust is crucial for creating strong bonds between colleagues, teams, and organizations.</li>
+</ul>
+<p>Expressions that send shivers down my spine when uttered by someone claiming to be an engineer:</p>
+<ul>
+<li><em>I have no time to explore and learn.</em></li>
+<li><em>Why would I want to learn something new?</em></li>
+<li><em>It is 5 o'clock and time to call it a day. We will troubleshoot tomorrow.</em></li>
+<li><em>No need to change, this has worked for us for many years.</em></li>
+</ul>
+<p>I have been a software engineer for four decades and <strong>LOVE</strong> my work - which is why I have probably never felt like working in my life q;-)</p>
+<hr>
+<p>Am I off course? What are your thoughts on this topic?</p>
+<p><em>Special thanks to Office 365 Copilot for helping me copy-edit this post</em>.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
-        | <a href="https://wsbctechnicalblog.github.io/automation-lesson-1.html" rel="bookmark"
-         title="Permalink to Automation enables engineering to focus on value">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-engineering.html" rel="bookmark"
+         title="Permalink to Back to Basics - Engineering">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
