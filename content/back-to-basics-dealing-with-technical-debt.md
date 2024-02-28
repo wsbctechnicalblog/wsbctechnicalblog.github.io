@@ -6,9 +6,7 @@ Slug: back-to-basics-dealing-with-technical-debt
 Author: Willy-Peter Schaub
 Summary: Breaking Free: A Guide to Tackling Technical Debt Head-On
 
-Upon initial review of our [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops) technical debt backlog, it became evident that we face a pivotal challenge in our pursuit of QUALITY and INNOVATION.
-
-Dealing with the seemingly impossible can be daunting for any DevOps product team. Similar to financial debt, addressing technical debt demands a well-defined strategy and commitment to implementation, leaving no space for compromise or excuses.
+Upon initial review of our [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops) technical debt backlog, it became evident that we face a pivotal challenge in our pursuit of QUALITY and INNOVATION. Dealing with the seemingly impossible can be daunting for any DevOps product team. Similar to financial debt, addressing technical debt demands a well-defined strategy and commitment to implementation, leaving no space for compromise or excuses.
 
 To commence your technical debt remediation journey, consider the following steps:
 
