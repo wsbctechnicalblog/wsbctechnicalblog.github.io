@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Do not automate anything unless you automate the tests - </title>
+        <title>Cheat sheet to migrate generic v1 templates to v2 - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,61 +33,71 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automate-tests.html" rel="bookmark"
-            title="Permalink to Do not automate anything unless you automate the tests">Do not automate anything unless you automate the tests</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/cheat-sheet-to-migrate-generic-v1-templates-to-v2.html" rel="bookmark"
+            title="Permalink to Cheat sheet to migrate generic v1 templates to v2">Cheat sheet to migrate generic v1 templates to v2</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Thu 04 November 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 01 March 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Automating critical systems operations without having automated tests is risky practice</p>
+            <p>Questioning the recommended approach to upgrades and the use of generic templates.</p>
         </div>
     
         <div class="entry-content">
-            <p><img alt="Automate QA" src="../images/qatrex.jpg"></p>
-<p>There are three types of automated tests that software engineers focus on:</p>
+            <p>We shared our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a> for <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops">Azure Pipelines</a> as open source, which include our generic templates that we created as a temporary solution to replace the classic Azure Build Pipelines for continuous integration (CI). They are helpful to begin with YAML-based build pipelines and link them with classic Azure Release Pipelines, but not our preferred approach. We will explain more about that later.</p>
+<hr>
+<h1>v1 versus v2 generic template</h1>
+<p>First, let us answer our engineer's question of how to migrate from our v1 generic templates to the v2 versions. The image below compares v1 with v2, as at 2024-02-22. The only differences (all highlighted in yellow) are minor cleanups and:</p>
+<ul>
+<li>Repository reference name (<strong>@CeBlueprints</strong>) and repository name (<strong>*.v2</strong>) reference the repository with the v2 templates and blueprints, aka <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a>.</li>
+<li>The v2 template uses the <strong>checkout: self</strong>, before calling the git-tools-git-version.yml template. Checkout <a href="https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html">Two ways to share your toolbox with your pipelines</a> and <a href="https://wsbctechnicalblog.github.io/checkout-at-the-right-time.html">Checkout your git repos at the right time!</a> for an explanation of why we moved to using <strong>checkout</strong>. </li>
+</ul>
+<blockquote>
+<p><img alt="v1 --&gt; v2" src="../images/cheat-sheet-to-migrate-generic-v1-templates-to-v2-1.png"></p>
+</blockquote>
+<hr>
+<h1>Make the right choice!</h1>
+<p>Before you proceed with the migration, you need to determine <strong>WHY</strong> you should be using the generic template. Here is a simple checklist to help you with the decision:</p>
 <ol>
-<li>Customer-facing functionality</li>
-<li>Code structure quality</li>
-<li>Systems operations</li>
+<li><strong>Is there a v2 CI/CD blueprint for your application type?</strong> If yes, use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprint</a>. We are phasing out the <strong>classic</strong> Azure Pipelines and so should you.</li>
+<li>Else, <strong>Do you have to use a Classic Azure Release Pipeline?</strong> If yes, use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a> for your CI/Build pipeline.</li>
+<li><strong>Do you need the multi-job v2 generic template?</strong> <strong>NO</strong>, we strongly recommend keeping it simple and only using the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a>. You should only use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-multiple-jobs/azure-pipeline-generic-multiple-jobs-start.yml">multi-job template</a> in rare situations and try to avoid it as it makes things more complicated and can put pressure on your Azure DevOps agents. See <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a> for an explanation of the two types of generic templates.</li>
 </ol>
-<h2>Customer-facing functionality</h2>
-<p>Teams build and ship features that enable customers to perform self-service activities. Customers appreciate the convenience of being in the driver’s seat and availing themselves of many useful and needed services.</p>
-<p>The desired behaviour of the systems that teams are building must be fully tested before it is placed in front of paying customers. It is extremely desirable to make the systems fully testable by writing automated tests. Such tests are faster and more reliable than manual tests. They enable teams to engage in continuous delivery while minimizing the risk of introducing defects.</p>
-<h2>Code structure quality</h2>
-<p>Unlike automating the tests that guarantee the desired behaviour of the system, automating the tests that guarantee the code structure quality is a bit trickier. Code structure quality hinges on many industry accepted design principles. Static code analysis tools can provide the metrics that expose the level of the code structure quality. Where the tricky part enters the picture is in deciding which of those metrics are a necessary factor when it comes to assessing the code structure quality.</p>
-<p>While the automated tests that verify customer-facing behaviour (i.e., functionality) are by their nature binary (i.e., either the functionality is present or it isn’t present), automated tests that assess the code structure quality are quite nuanced. It is up to the company’s quality standards to establish the bar – the minimum acceptable quality of the code structure that gets shipped to production.</p>
-<h2>Systems operations</h2>
-<p>When I started my career in the 1990s, the company I worked for (BC InfoHealth, cutting payroll for all hospitals in British Columbia) was still running their business on mainframe computers. Those behemoth machines were situated in the sealed, air-conditioned computer room with a crew of computer operators buzzing around wearing white lab coats (sounds like a scene from some futuristic movie).</p>
-<p>Back in the day, operating those large computer systems was completely manual. One of the reasons mainframe computers got phased out was the unwieldiness of the operations. It was too slow, cumbersome, tedious, and quirky, not to mention exorbitantly expensive.</p>
-<p>Fast forward to today when we finally managed to completely commoditize the computing infrastructure (infrastructure-as-code). Since infrastructure is code, that means it is fully programmable. And that’s why there is a big push toward automating all systems operations.</p>
-<p>To automate systems operations, one must become proficient in systems programming. Programming systems operations is not necessarily the same as programming business applications. If we are to efficiently program any systems operations, we need to understand how those systems work.</p>
-<p>I have seen plenty of very knowledgeable systems programmers write very elaborate programs that automatically run intricate computer operations. I remember reviewing large source code files, containing tens of thousands of lines of code per file. And in almost every of those large files, the code was far from being trivial. Hundreds, if not thousands of nested if-else statements, hundreds of try-catch blocks of code. It’s a veritable jungle!</p>
-<p>Whenever I review any such large files containing the code that runs intricate computer operations, I always make a point to ask the authors: “How did you test this and how do you plan to keep testing the changes going forward?”</p>
-<p>The answer always manages to shock me: “We always test it manually!”</p>
-<p>What is odd in that situation is that experts who spend a lot of time writing sophisticated programs and scripts to automate computer operations never seem to write automated tests. Almost always (in my experience), they resort to manual testing.</p>
-<p>That arrangement raises all sorts of red flags in my mind. When I look at those intricate and convoluted nested if-else statements and those numerous try-catch blocks of code, all I see is plenty of danger zones. If whoever is maintaining those automated scripts does not fully understand the logic governing the automation, they run a huge risk of introducing serious bugs while maintaining the automated system operations.</p>
-<h2>Never write any automated processing without first having automated tests that cover it</h2>
-<p>I think it would be foolhardy to produce a lot of automation without having tests that run any time we make any changes to the automated system and alert us if anything gets broken. That, in my mind, would be an absolute minimal requirement for a well-engineered solution.</p>
-<p>We have adopted and implemented TDD practices in WorkSafeBC. However, those practices only pertain to automating the processing of business policy rules. When it comes to automating systems operations, we don’t have any TDD, nor other automated testing strategy. Seems like we always tend to resort to manual testing when making changes to the source code that automates critical system operations.</p>
-<p>It is high time to mitigate the risks and discontinue such approach and to adopt and implement the test-first approach. It is very important to first and foremost implement executable expectation when automating any aspect of the system operation. Once we have that executable expectation up and running, we can safely proceed to implement the code that will automate the actual operation. That way, we will produce a safety net of tightly knit automated tests that will guarantee we won’t inadvertently break anything nor introduce any regression when maintaining, enhancing, enriching, or repurposing any of our automated operations.</p>
-<h2>Conclusion</h2>
-<p>Software engineers serve the business needs by automating business processes. But in addition to that, software engineers engage in continuous improvement of the processes that deliver the business automation.</p>
-<p>While the automation of the business processes is delivered via carefully chosen testing strategy, automation of the critical systems operations lacks such well-engineered strategy. It is critically important that we adopt stringent test-first approach to automating critical systems operations. The criticality is even more urgent when we realize that automated system processing always runs a risk of creating catastrophic damages by programmatically elevating the permissions during runtime. All it takes is for an automated program/script to issue the <strong>RunAs</strong> command, and the program elevates itself to the highest level of authority on the system. Basically, the program becomes a super user, capable to doing anything on the system!</p>
-<p>We must make sure any such unauthorized breaches of security get caught by the tests before the automated script/program reaches production.</p>
+<hr>
+<h1>OK back to: How to migrate from v1 to v2 generic build-only template?</h1>
+<h3>Migrate v1 --&gt; v2, option 1 – move your pipeline to v2 (recommended)</h3>
+<ol>
+<li>Create a new pipeline, using the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a>.</li>
+<li>Look for <strong>TODO</strong> placeholders and migrate (copy-paste) the code from your v1 to your new v2-based Azure Pipeline.</li>
+<li>Reconnect your classic Azure Release Pipeline to the new v2-based Azure Pipeline.</li>
+<li>Validate the new pipeline.</li>
+<li>Deprecate (delete) your old v1-based pipeline.</li>
+</ol>
+<p>Simple!</p>
+<h3>Migrate v1 --&gt; v2, option 2 – upgrade your v1 pipeline</h3>
+<p>Using the comparison between v1 and v2 as per image above, update your v1 pipeline and upgrade it to the v2 pipeline format, following these basic steps:</p>
+<ol>
+<li>Update template repo name from CeSTemplates to <strong>CeBlueprints</strong>.</li>
+<li>Update template repo name, by appending <strong>.v2</strong>.</li>
+<li>Remove variables section and add checkout logic under at the beginning of the stage definition.</li>
+<li>Rename /Templates/ to <strong>templates/</strong>.</li>
+<li>Use either <strong>dotnet</strong> or <strong>other</strong> for applicationType.</li>
+<li>Validate the updated pipeline.</li>
+</ol>
+<p>Hope our internal "how to" discussions are interesting and add value to the open source <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a>.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing </a><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD </a><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming </a>
-        | <a href="https://wsbctechnicalblog.github.io/automate-tests.html" rel="bookmark"
-         title="Permalink to Do not automate anything unless you automate the tests">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/cheat-sheet-to-migrate-generic-v1-templates-to-v2.html" rel="bookmark"
+         title="Permalink to Cheat sheet to migrate generic v1 templates to v2">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

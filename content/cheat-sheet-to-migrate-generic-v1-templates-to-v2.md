@@ -1,5 +1,5 @@
 Title: Cheat sheet to migrate generic v1 templates to v2
-Date: YYYY-MM-DD
+Date: 2024-03-01
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: cheat-sheet-to-migrate-generic-v1-templates-to-v2
