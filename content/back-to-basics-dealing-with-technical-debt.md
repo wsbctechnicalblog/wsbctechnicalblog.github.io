@@ -1,4 +1,4 @@
-Title: Back to Basics: Kanban
+Title: Back to Basics: Dealing with Technical Debt
 Date: 2024-03-06
 Category: Posts 
 Tags: agile, azure-devops, engineering
