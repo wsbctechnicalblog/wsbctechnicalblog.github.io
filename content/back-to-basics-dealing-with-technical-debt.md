@@ -1,5 +1,5 @@
 Title: Back to Basics: Kanban
-Date: YYYY-MM-DD
+Date: 2024-03-06
 Category: Posts 
 Tags: agile, azure-devops, engineering
 Slug: back-to-basics-dealing-with-technical-debt
