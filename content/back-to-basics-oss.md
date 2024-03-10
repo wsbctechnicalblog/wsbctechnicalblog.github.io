@@ -1,5 +1,5 @@
 Title: Back to Basics: Open Source Software (OSS)
-Date: 2024-02-XX
+Date: 2024-03-11
 Category: Posts 
 Tags: azure-devops, pipelines, oss, engineering
 Slug: back-to-basics-oss
@@ -37,7 +37,7 @@ To get an insight into WHY we engineered these blueprints, HOW they evolved, and
 
 # Technology Framework Monitor (TFM)
 
-The Technology Framework Monitor project is a side project by [Andreas Mertens](TBD), who wanted to help us find out the use of outdated versions of .NET that are used by solutions in hundreds of Azure Repos. The TFM product will go through and collect information on every project in an Azure Developer Operations organization, or repository, check the files inside, and then save the data collected into a Microsoft Standard Query Language (SQL) server database.
+The Technology Framework Monitor project is a side project by [Andreas Mertens](/pages/authors.html), who wanted to help us find out the use of outdated versions of .NET that are used by solutions in hundreds of Azure Repos. The TFM product will go through and collect information on every project in an Azure Developer Operations organization, or repository, check the files inside, and then save the data collected into a Microsoft Standard Query Language (SQL) server database.
 
 Some features of the TFM product are to do a scan that will go through projects with different file extensions, get a file list, and store information in the SQL database. The file list information gathered can include which .NET version, .nuget package versions, npm package versions and more depending on the configuration settings. The data being published is stored in the SQL server database for analysis and reporting purposes.
 
@@ -61,4 +61,4 @@ Since then, we have to keep telling Andreas to add a technical enabler card to o
 
 ---
 
-Handing over to [Andreas Mertens](TBD), who will start blogging on this blog on these open source topics. He will lift and explore the bits and bytes under the bonnet! 
+Handing over to [Andreas Mertens](/pages/authors.html), who will start blogging on this blog on these open source topics. He will lift and explore the bits and bytes under the bonnet! 
