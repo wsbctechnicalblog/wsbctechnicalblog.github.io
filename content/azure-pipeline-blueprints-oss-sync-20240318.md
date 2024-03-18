@@ -30,7 +30,7 @@ If you need them, ping me!
 >
 > ![.NET EOL](../images/azure-pipeline-blueprints-oss-sync-20240318-1.png)
 
-Anticipating the impending end of support for .NET 6 in November, we have taken proactive measures to elevate both our open-source and internal blueprints to the latest version of .NET 8.
+Anticipating the impending end of support for .NET 6 in November, we have taken proactive measures to elevate our open-source and internal blueprints to the latest version of .Net 8 by default, but will support .Net 6 as an option.
 
 ---
 
