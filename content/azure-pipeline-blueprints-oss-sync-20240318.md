@@ -1,12 +1,12 @@
 Title: Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240318
-Date: 2024-03-22
+Date: 2024-03-20
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-oss-sync-20240318
 Author: Willy-Peter Schaub
 Summary: “_Constantly think about how you could be doing things better._” - Elon Musk.
 
-We decided to align our internal blueprint updates with the cutting-edge templates provided by [WorkSafeBC-Common-Engineering](https://github.com/WorkSafeBC-Common-Engineering), an open-source project. This synchronization guarantees that you are always equipped with the most up-to-date enhancements and innovations from our team. Below is an overview of all the recent modifications.
+We decided to align our internal blueprint updates with the cutting-edge templates provided by [WorkSafeBC-Common-Engineering](https://github.com/WorkSafeBC-Common-Engineering), an open-source project. This synchronization guarantees that you are always equipped with the most up-to-date enhancements and innovations from our team. Below is an overview of all the recent modifications. You can review the latest template changes in this closed [pull request](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/25).
 
 ---
 
