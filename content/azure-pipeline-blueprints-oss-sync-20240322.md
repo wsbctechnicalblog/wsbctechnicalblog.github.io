@@ -16,7 +16,7 @@ This open-source update is minor, but aligns our NuGet-Package blueprint with th
 
 Changes:
 
-- **blueprints/nuget-package/azure-pipeline-nuget-package-cd-stage.yml** - eplace the configuration variables with the ```config``` object, which encapsulates an array of data structures.. 
+- **blueprints/nuget-package/azure-pipeline-nuget-package-cd-stage.yml** - replace the configuration variables with the ```config``` object, which encapsulates an array of data structures.
 - **blueprints/nuget-package/azure-pipeline-nuget-package-cd.yml** - 
 Replace the conditionals using ```text``` stage names with ```boolean``` stage validations for a simpler and less error-prone approach.
 - **blueprints/nuget-package/azure-pipeline-nuget-package-config.yml** - remove the stage names designated as ```text``` and replace them with ```boolean``` values.
