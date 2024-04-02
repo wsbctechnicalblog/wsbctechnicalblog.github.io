@@ -11,7 +11,7 @@ The ongoing evolution of our Technology Framework Monitor (TFM) open-source proj
 ---
 
 >
-> [Click here to peruse associated Pull Request](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/27)
+> [Click here to peruse associated Pull Request](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Technology-Framework-Monitor/pull/27)
 >
 
 Changes as documented by Andreas Mertens encompasses four main changes:
