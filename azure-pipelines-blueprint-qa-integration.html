@@ -68,9 +68,9 @@
 <p><img alt="CI Integration" src="../images/azure-pipelines-blueprint-qa-integration-2.png"></p>
 <p>You will find the first extension point in the <em>-ci.yml templates, for example <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/azure-function/azure-pipeline-azure-function-ci.yml">azure-pipeline-azure-function-ci.yml</a>. This extension point is </em><em>blueprint</em>* specific!</p>
 <p>Scroll down to line around line 95, where you will find this placeholder:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span>
 <span class="c"># CONTINUOUS INTEGRATION TEST</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span>
 <span class="c">    </span><span class="nb">-</span><span class="c"> task: DotNetCoreCLI@2</span>
 <span class="c">      displayName: &#39;Run Tests&#39;</span>
 <span class="c">      inputs:</span>
@@ -91,23 +91,23 @@
 <li>Validate your extensions using your feature branch and the <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&amp;tabs=schema#define-a-repositories-resource">ref:</a> parameter before committing any change to your master branch. Once in master, your extensions will affect <strong>all</strong> blueprint-based pipelines.</li>
 </ul>
 <p>If we peek into the template, we realize that we have two main sections. One that runs for lower (non-production) environments:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span>
 <span class="c"># QA AUTOMATION FOR LOWER (NON</span><span class="nb">-</span><span class="c">PROD) ENVIRONMENTS STAGE</span>
-<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> ${{ if not(or(eq(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release&#39;)</span><span class="nt">,</span><span class="c"> startsWith(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release/&#39;))) }}:</span>
 </code></pre></div>
 
 <p>And another that runs for the higher (production) environments:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span>
 <span class="c"># QA AUTOMATION FOR HIGHER (PROD) ENVIRONMENTS STAGE</span>
-<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">-----------------------------------------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> ${{ if or(eq(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release&#39;)</span><span class="nt">,</span><span class="c"> startsWith(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release/&#39;)) }}:</span>
 </code></pre></div>
 
 <p>In other words, you can selectively run quality-assurance in all pipelines or only in pipelines that are based on the <code>release/*</code> or <code>release*</code> source code branches, destined for production.</p>
 <p>Within both these sections, you will find <strong>blueprint</strong> specific sections, allowing you to configure your quality assurance automation scans for the selected blueprints only.</p>
-<div class="highlight"><pre><span></span><code>- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span> <span class="s1">&#39;azure-function&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
-    - script: echo deal with qa scan relevant to azure-function application type
+<div class="highlight"><pre><span></span><code>-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">),</span> <span class="s1">&#39;azure-function&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">    </span>-<span class="w"> </span>script:<span class="w"> </span>echo<span class="w"> </span>deal<span class="w"> </span>with<span class="w"> </span>qa<span class="w"> </span>scan<span class="w"> </span>relevant<span class="w"> </span>to<span class="w"> </span>azure-function<span class="w"> </span>application<span class="w"> </span>type
 </code></pre></div>
 
 <p>Once you have decided WHEN and for WHICH blueprints you want to run your quality assurance automation scans, insert your tasks into the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml">qa-scans-cd.yml</a> template. You <strong>must</strong> honour and deal with the <code>modeElite</code>. </p>

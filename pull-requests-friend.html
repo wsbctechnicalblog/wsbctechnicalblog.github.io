@@ -107,9 +107,9 @@
 - Automation of validations, which could (or not) include humanoid involvement</p>
 <h1>YAML Sample</h1>
 <p>Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span>
 <span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w">  </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w">    </span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span>
 </code></pre></div>
 
 <p>Thoughts?</p>

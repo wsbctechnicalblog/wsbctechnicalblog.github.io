@@ -81,45 +81,45 @@ PowerShell Script to the Rescue</p>
 <h1>Samples</h1>
 <p>Here are two sample scripts we added to our ever-growing library of automation and maintenance scripts to update the read-only Closed Date field. We want to change the dates back to the post migration dates, which we can extract from the Excel workbook we created in pre-migration step 1, so that the data on boards and the backlog looks valid.</p>
 <h2>Set Changed Date Script</h2>
-<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span><span class="w"></span>
-<span class="na">param(</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $orgName</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;ORG&gt;&quot;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $patToken</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;PAT&gt;&quot;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $workItemID</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;invalid&gt;&quot;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $dateTime</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;invalid&gt;&quot;</span><span class="w"></span>
-<span class="na">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span>
+<span class="na">param(</span>
+<span class="w">  </span><span class="na">[string]   $orgName</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;ORG&gt;&quot;,</span>
+<span class="w">  </span><span class="na">[string]   $patToken</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;PAT&gt;&quot;,</span>
+<span class="w">  </span><span class="na">[string]   $workItemID</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;invalid&gt;&quot;,</span>
+<span class="w">  </span><span class="na">[string]   $dateTime</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;invalid&gt;&quot;</span>
+<span class="na">)</span>
 
-<span class="c1"># Authentication header</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Convert]::ToBase64String($basicAuth)</span><span class="w"></span>
-<span class="na">$headers</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span><span class="w"></span>
+<span class="c1"># Authentication header</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Convert]::ToBase64String($basicAuth)</span>
+<span class="na">$headers</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span>
 
-<span class="c1"># Setup Request</span><span class="w"></span>
-<span class="na">$request</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://dev.azure.com/&quot; + $orgName + &quot;/&quot; + &quot;_apis/wit/workitems/&quot; + $workItemID + &quot;?bypassRules=true&amp;api-version=6.0&quot;</span><span class="w"></span>
+<span class="c1"># Setup Request</span>
+<span class="na">$request</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://dev.azure.com/&quot; + $orgName + &quot;/&quot; + &quot;_apis/wit/workitems/&quot; + $workItemID + &quot;?bypassRules=true&amp;api-version=6.0&quot;</span>
 
-<span class="c1"># Setup Body</span><span class="w"></span>
+<span class="c1"># Setup Body</span>
 <span class="na">$json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
-<span class="na">&#39;[</span><span class="w"></span>
-<span class="na">{&quot;op&quot;:&quot;add&quot;,&quot;path&quot;:&quot;/fields/Microsoft.VSTS.Common.ClosedDate&quot;,&quot;value&quot;:&quot;&#39; + $dateTime + &#39;&quot;},</span><span class="w"></span>
-<span class="na">{&quot;op&quot;:&quot;add&quot;,&quot;path&quot;:&quot;/fields/System.History&quot;,&quot;value&quot;:&quot;Post-migration Closed Date correction to reflect original, not migration, date.&quot;}</span><span class="w"></span>
-<span class="na">]&#39;</span><span class="w"></span>
+<span class="na">&#39;[</span>
+<span class="na">{&quot;op&quot;</span><span class="o">:</span><span class="s">&quot;add&quot;,&quot;path&quot;:&quot;/fields/Microsoft.VSTS.Common.ClosedDate&quot;,&quot;value&quot;:&quot;&#39; + $dateTime + &#39;&quot;},</span>
+<span class="na">{&quot;op&quot;</span><span class="o">:</span><span class="s">&quot;add&quot;,&quot;path&quot;:&quot;/fields/System.History&quot;,&quot;value&quot;:&quot;Post-migration Closed Date correction to reflect original, not migration, date.&quot;}</span>
+<span class="na">]&#39;</span>
 
-<span class="c1"># Call Request</span><span class="w"></span>
-<span class="na">try</span><span class="w"></span>
-<span class="na">{</span><span class="w"></span>
-<span class="w">  </span><span class="na">Write-Host &quot;Updating work item: $workItemID&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method PATCH -Body $json -ContentType &#39;application/json-patch+json&#39;</span><span class="w"></span>
-<span class="na">}</span><span class="w"></span>
-<span class="na">catch </span><span class="w"></span>
-<span class="na">{</span><span class="w"></span>
-<span class="w">    </span><span class="na">Write-Host &quot;Error setting date - &quot; $PSItem.Exception.Message</span><span class="w"></span>
-<span class="w">    </span><span class="na">Write-Host  $_.Exception|format-list -force</span><span class="w"></span>
-<span class="na">}</span><span class="w"></span>
+<span class="c1"># Call Request</span>
+<span class="na">try</span>
+<span class="na">{</span>
+<span class="w">  </span><span class="na">Write-Host &quot;Updating work item</span><span class="o">:</span><span class="w"> </span><span class="s">$workItemID&quot;</span>
+<span class="w">  </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method PATCH -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="na">}</span>
+<span class="na">catch </span>
+<span class="na">{</span>
+<span class="w">    </span><span class="na">Write-Host &quot;Error setting date - &quot; $PSItem.Exception.Message</span>
+<span class="w">    </span><span class="na">Write-Host  $_.Exception|format-list -force</span>
+<span class="na">}</span>
 </code></pre></div>
 
 <h2>Calling Script</h2>
-<div class="highlight"><pre><span></span><code># Batch 1
+<div class="highlight"><pre><span></span><code><span class="gh">#</span> Batch 1
 ..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;
 ..\Scripts\Update_Work_Item_ClosedDate.ps1 -orgName &quot;&lt;ORG&gt;&quot; -patToken &quot;&lt;PAT&gt;&quot; -workItemID &quot;&lt;WI #&gt;&quot; -dateTime &quot;&lt;DATE FROM EXCEL WORKBOOK&gt;T13:00:00.00-08:00&quot;
 </code></pre></div>

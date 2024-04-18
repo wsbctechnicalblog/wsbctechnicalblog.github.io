@@ -64,16 +64,16 @@
 <hr>
 <h1>STEP 1: Define a variable to be shared</h1>
 <p>We define three variables, named secretValue1, secretValue2, and secretValue3 in our job called StageOneJobOne. Note that we explicitly name two of the steps and leave one as default. Sounds simple, but this will bite is later on.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable1</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable3</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable1</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable3</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span>
 </code></pre></div>
 
 <p>The last task, replaces the <a href="https://marketplace.visualstudio.com/items?itemName=dutchworkz.DisplayAllVariables">Display all variables</a> extension, I commonly used to dump all variables. A bonus is that unlike the extension, the bash task runs on any agent.</p>
@@ -92,18 +92,18 @@ SETVARIABLE3_SECRETVALUE3: BINGO-3!
 <hr>
 <h1>STEP 2: Reference variable in another job with the same stage</h1>
 <p>Next we reference  the variables in another job and echo their values.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobTwo</span><span class="w"></span>
-<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># Gotcha #1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobTwo</span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">      </span><span class="c1"># Gotcha #1</span>
 <span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;secretValue2&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_1</span><span class="w"></span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_1</span>
 </code></pre></div>
 
 <p>Looking at the stage log, we immediately notice that our first <code>var1</code> variable has been resolved as expected, the second <code>var2</code> variable is blank?!?</p>
@@ -114,23 +114,23 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 <hr>
 <h1>STEP 3: Reference variable in another job in a different stage</h1>
 <p>Next we reference the variables in another job from another stage and echo the value. The sample shows the use of a stage and a job variable and highlights the importance of using your second tattoo, which uses <strong>stageDependencies...</strong> instead of <strong>dependencies...</strong> we used before. In fact, the sample intentionally uses both, to welcome GOTCHA #2.</p>
-<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwo</span><span class="w"></span>
-<span class="w">  </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span><span class="w"></span>
-<span class="w">  </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">varStage</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwoJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">      </span><span class="n">var3</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_2</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwo</span>
+<span class="w">  </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span>
+<span class="w">  </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">    </span><span class="n">varStage</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="n">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwoJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">      </span><span class="n">var3</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_2</span>
 </code></pre></div>
 
 <p>Looking at the job's log file, we immediately notice the GOTCHA.</p>
@@ -149,89 +149,89 @@ If you refer to your forearm and look at the tattoo for mapping a variable withi
 </ol>
 <hr>
 <p>Last, but not least, here is the complete sample code for the pipeline we experimented with. Enjoy!</p>
-<div class="highlight"><pre><span></span><code><span class="n">stages</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">stages</span><span class="p">:</span>
 
-<span class="c1"># ##################################################################################################</span><span class="w"></span>
-<span class="c1"># STAGE ONE</span><span class="w"></span>
-<span class="c1"># ##################################################################################################</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span><span class="w"></span>
-<span class="w">  </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># STAGE 1 JOB 1</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable1</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable3</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span><span class="w"></span>
+<span class="c1"># ##################################################################################################</span>
+<span class="c1"># STAGE ONE</span>
+<span class="c1"># ##################################################################################################</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span>
+<span class="w">  </span><span class="n">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c1"># STAGE 1 JOB 1</span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue1;isOutput=true]BINGO-1!&quot;</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable1</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue2;isOutput=true]BINGO-2!&quot;</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=secretValue3;isOutput=true]BINGO-3!&quot;</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">SetVariable3</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span>
 
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># STAGE 1 JOB 2</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobTwo</span><span class="w"></span>
-<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># Gotcha #1</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c1"># STAGE 1 JOB 2</span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobTwo</span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">      </span><span class="c1"># Gotcha #1</span>
 <span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;secretValue2&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_1</span><span class="w"></span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_1</span>
 
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># STAGE 1 JOB 3</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobThree</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c1"># STAGE 1 JOB 3</span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobThree</span>
 <span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobTwo</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobTwo</span>
 <span class="w">    </span><span class="n">condition</span><span class="p">:</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;BINGO-1!&#39;</span><span class="p">)</span><span class="w"> </span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;macOS-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;macOS-latest&#39;</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
 
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># STAGE 1 JOB 4</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobFour</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c1"># STAGE 1 JOB 4</span>
+<span class="w">  </span><span class="c1"># ------------------------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageOneJobFour</span>
 <span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobTwo</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"> </span><span class="n">server</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobOne</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">StageOneJobTwo</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"> </span><span class="n">server</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var1</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
 
-<span class="c1"># ##################################################################################################</span><span class="w"></span>
-<span class="c1"># STAGE TWO</span><span class="w"></span>
-<span class="c1"># ##################################################################################################</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwo</span><span class="w"></span>
-<span class="w">  </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span><span class="w"></span>
-<span class="w">  </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">varStage</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwoJobOne</span><span class="w"></span>
-<span class="w">    </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">      </span><span class="n">var3</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_2</span><span class="w"></span>
+<span class="c1"># ##################################################################################################</span>
+<span class="c1"># STAGE TWO</span>
+<span class="c1"># ##################################################################################################</span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwo</span>
+<span class="w">  </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"> </span><span class="n">StageOne</span>
+<span class="w">  </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">    </span><span class="n">varStage</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="n">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="p">:</span><span class="w"> </span><span class="n">StageTwoJobOne</span>
+<span class="w">    </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">      </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;windows-latest&#39;</span>
+<span class="w">    </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">var2</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">      </span><span class="n">var3</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">dependencies</span><span class="o">.</span><span class="n">StageOne</span><span class="o">.</span><span class="n">StageOneJobOne</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;SetVariable1.secretValue1&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">varStage</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+<span class="w">      </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">GOTCHA_2</span>
 </code></pre></div>
         </div>
 

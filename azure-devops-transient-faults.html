@@ -84,40 +84,40 @@ HTTP Error 503. The service is unavailable.
 <p>Retry logic</p>
 <p><img alt="bandaid" src="../images/azure-devops-transient-faults-2.png"></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">3</span><span class="w"></span>
-<span class="o">$</span><span class="nt">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">13</span><span class="w"></span>
-<span class="o">$</span><span class="nt">retryCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">3</span>
+<span class="o">$</span><span class="nt">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">13</span>
+<span class="o">$</span><span class="nt">retryCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="nt">retryCount</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">1</span>
 
 <span class="nt">for</span><span class="w"> </span><span class="o">(</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="w"> </span><span class="nt">-lt</span><span class="w"> </span><span class="o">$</span><span class="nt">retryCount</span><span class="o">;</span><span class="w"> </span><span class="o">$</span><span class="nt">failureCount</span><span class="o">++</span><span class="w"> </span><span class="o">)</span><span class="w"> </span>
-<span class="p">{</span><span class="w"></span>
+<span class="p">{</span>
 <span class="w">    </span><span class="err">try</span><span class="w"> </span>
-<span class="w">    </span><span class="err">{</span><span class="w"></span>
-<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">call</span><span class="w"> </span><span class="err">Azure</span><span class="w"> </span><span class="err">DevOps</span><span class="w"> </span><span class="err">REST</span><span class="w"> </span><span class="err">API</span><span class="w"></span>
-<span class="w">        </span><span class="err">$result</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Invoke-RestMethod</span><span class="w"> </span><span class="err">-Uri</span><span class="w"> </span><span class="err">$url</span><span class="w"> </span><span class="err">-ContentType</span><span class="w"> </span><span class="err">&quot;application/json&quot;</span><span class="w"> </span><span class="err">-Headers</span><span class="w"> </span><span class="err">$headers</span><span class="w"></span>
+<span class="w">    </span><span class="err">{</span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">call</span><span class="w"> </span><span class="err">Azure</span><span class="w"> </span><span class="err">DevOps</span><span class="w"> </span><span class="err">REST</span><span class="w"> </span><span class="err">API</span>
+<span class="w">        </span><span class="err">$result</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">Invoke-RestMethod</span><span class="w"> </span><span class="err">-Uri</span><span class="w"> </span><span class="err">$url</span><span class="w"> </span><span class="err">-ContentType</span><span class="w"> </span><span class="err">&quot;application/json&quot;</span><span class="w"> </span><span class="err">-Headers</span><span class="w"> </span><span class="err">$headers</span>
 
-<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">processing</span><span class="w"></span>
-<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">...</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">processing</span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">...</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nt">catch</span><span class="w"> </span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">logic</span><span class="w"></span>
-<span class="w">        </span><span class="err">if</span><span class="w"> </span><span class="err">(</span><span class="w"> </span><span class="err">$failureCount</span><span class="w"> </span><span class="err">-eq</span><span class="w"> </span><span class="err">$retryCheck</span><span class="w"> </span><span class="err">)</span><span class="w"></span>
-<span class="w">        </span><span class="err">{</span><span class="w"></span>
-<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">ensure</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">pipeline</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">warning</span><span class="w"></span>
-<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;##vso</span><span class="cp">[</span><span class="nx">task.complete</span> <span class="n">result</span><span class="o">=</span><span class="nx">SucceededWithIssues</span><span class="p">;</span><span class="cp">]</span><span class="err">SUCCEEDED</span><span class="w"> </span><span class="err">WITH</span><span class="w"> </span><span class="err">ISSUES&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="err">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">logic</span>
+<span class="w">        </span><span class="err">if</span><span class="w"> </span><span class="err">(</span><span class="w"> </span><span class="err">$failureCount</span><span class="w"> </span><span class="err">-eq</span><span class="w"> </span><span class="err">$retryCheck</span><span class="w"> </span><span class="err">)</span>
+<span class="w">        </span><span class="err">{</span>
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">ensure</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">pipeline</span><span class="w"> </span><span class="err">shows</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">warning</span>
+<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;##vso</span><span class="cp">[</span><span class="nx">task.complete</span><span class="w"> </span><span class="nx">result</span><span class="o">=</span><span class="nx">SucceededWithIssues</span><span class="p">;</span><span class="cp">]</span><span class="err">SUCCEEDED</span><span class="w"> </span><span class="err">WITH</span><span class="w"> </span><span class="err">ISSUES&quot;</span>
+<span class="w">            </span><span class="err">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="nt">else</span><span class="w"> </span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">Logging</span><span class="w"></span>
-<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;Sleep</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">then</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">processing</span><span class="w"> </span><span class="err">loop.</span><span class="w"> </span><span class="n">Count</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; $failureCount &quot;</span><span class="w"> </span><span class="n">Sleep</span><span class="o">:</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"></span>
-<span class="w">            </span><span class="n">Write-Output</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="o">.</span><span class="n">Exception</span><span class="o">.</span><span class="n">Message</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">Logging</span>
+<span class="w">            </span><span class="err">Write-Output</span><span class="w"> </span><span class="err">&quot;Sleep</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">then</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">processing</span><span class="w"> </span><span class="err">loop.</span><span class="w"> </span><span class="n">Count</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; $failureCount &quot;</span><span class="w"> </span><span class="n">Sleep</span><span class="o">:</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span>
+<span class="w">            </span><span class="n">Write-Output</span><span class="w"> </span><span class="err">$</span><span class="n">_</span><span class="o">.</span><span class="n">Exception</span><span class="o">.</span><span class="n">Message</span>
 
-<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">retry</span><span class="w"></span>
-<span class="w">            </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="n">failureCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="err">Start-Sleep</span><span class="w"> </span><span class="err">-Seconds</span><span class="w"> </span><span class="err">$retrySleep</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="err">}</span><span class="w"></span>
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">retry</span>
+<span class="w">            </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">retrySleep</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="err">$</span><span class="n">failureCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span>
+<span class="w">            </span><span class="err">Start-Sleep</span><span class="w"> </span><span class="err">-Seconds</span><span class="w"> </span><span class="err">$retrySleep</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="err">}</span>
 <span class="err">}</span><span class="w">   </span>
 </code></pre></div>
 

@@ -54,47 +54,47 @@
 <blockquote>
 <p>Experimentation Sample Code</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">none</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">trigger</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">none</span>
 
-<span class="n">parameters</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">branch</span><span class="w"></span>
-<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Branch Name&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="n">string</span><span class="w"></span>
-<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w"> </span><span class="n">release</span><span class="w"></span>
-<span class="w">  </span><span class="n">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">rElEaSe</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">ReLeAsE</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Release</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">release</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="k">master</span><span class="w"></span>
+<span class="n">parameters</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">branch</span>
+<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Branch Name&#39;</span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="n">string</span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w"> </span><span class="n">release</span>
+<span class="w">  </span><span class="n">values</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">rElEaSe</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">ReLeAsE</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Release</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">release</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="k">master</span>
 
-<span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span><span class="w"></span>
+<span class="n">pool</span><span class="p">:</span>
+<span class="w">  </span><span class="n">vmImage</span><span class="p">:</span><span class="w"> </span><span class="n">windows</span><span class="o">-</span><span class="n">latest</span>
 
-<span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">keyFinal</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Bingo!&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="n">keyRef</span><span class="p">:</span><span class="w">   </span><span class="s1">&#39;keyFinal&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="n">keyTest</span><span class="p">:</span><span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}}</span><span class="w"></span>
+<span class="n">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="n">keyFinal</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Bingo!&#39;</span>
+<span class="w">  </span><span class="n">keyRef</span><span class="p">:</span><span class="w">   </span><span class="s1">&#39;keyFinal&#39;</span>
+<span class="w">  </span><span class="n">keyTest</span><span class="p">:</span><span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}}</span>
 
-<span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">!</span><span class="w"></span>
-<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Welcome&#39;</span><span class="w"></span>
+<span class="n">steps</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">!</span>
+<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Welcome&#39;</span>
 
-<span class="c1"># Referencing</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">keyTest</span><span class="p">)</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span><span class="w"></span>
+<span class="c1"># Referencing</span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">keyTest</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">keyRef</span><span class="p">}})</span>
 
-<span class="c1"># Run-time Parameters</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">}}</span><span class="w"></span>
+<span class="c1"># Run-time Parameters</span>
+<span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">}}</span>
 
-<span class="c1"># Lower</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;release&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Bingo</span><span class="o">!</span><span class="w"></span>
+<span class="c1"># Lower</span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">branch</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;release&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Bingo</span><span class="o">!</span>
 
-<span class="c1"># Release only</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">or</span><span class="p">(</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Release</span><span class="o">!</span><span class="w"></span>
+<span class="c1"># Release only</span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">or</span><span class="p">(</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release/&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">Release</span><span class="o">!</span>
 </code></pre></div>
 
 <h1>Triggers</h1>

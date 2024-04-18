@@ -90,7 +90,7 @@
 <blockquote>
 <p>SAMPLE: Variables using simple notation</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="o">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="o">:</span>
 <span class="w">  </span><span class="n">portfolioName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span><span class="w"> </span>
 <span class="w">  </span><span class="n">productName</span><span class="o">:</span><span class="w">   </span><span class="s1">&#39;TODO REPLACE WITH PRODUCT NAME&#39;</span><span class="w"> </span>
 </code></pre></div>
@@ -99,12 +99,12 @@
 <blockquote>
 <p>SAMPLE: Variables using key:value pair notation and variable template extract</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">portfolioName</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">portfolioName</span>
 <span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;TODO </span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;TODO REPLACE WITH PROGRAM NAME&#39;</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">CD</span><span class="o">/</span><span class="n">Config</span><span class="o">/$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">}}</span><span class="o">.$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">productName</span><span class="p">}}</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeSTemplates</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;TODO REPLACE WITH PORTFOLIO NAME&#39;</span>
+<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;TODO REPLACE WITH PROGRAM NAME&#39;</span>
+<span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">CD</span><span class="o">/</span><span class="n">Config</span><span class="o">/$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">}}</span><span class="o">.$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">productName</span><span class="p">}}</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
 </code></pre></div>
 
 <h2><strong>CI</strong> template tweaks</h2>
@@ -114,20 +114,20 @@
 </blockquote>
 <div class="highlight"><pre><span></span><code>parameters:
 ...
-- name:     customCDTemplate
-  type:     string
-  default:  &#39;blueprint&#39; 
+-<span class="w"> </span>name:<span class="w">     </span>customCDTemplate
+<span class="w">  </span>type:<span class="w">     </span>string
+<span class="w">  </span>default:<span class="w">  </span>&#39;blueprint&#39;<span class="w"> </span>
 
 ...
 
-# DEPLOYMENT
+#<span class="w"> </span>DEPLOYMENT
 
-- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">ne</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
-  - template: CD/Custom/<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="cp">}</span>}.yml@CeSTemplates
-- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
-  - template: CD/Blueprints/<span class="nt">&lt;appType&gt;</span>CDTemplate.yml@CeSTemplates
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">ne</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>CD/Custom/<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="cp">}</span>}.yml@CeSTemplates
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span> <span class="n">parameters</span><span class="o">.</span><span class="n">customCDTemplate</span><span class="p">,</span> <span class="s1">&#39;blueprint&#39;</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>CD/Blueprints/<span class="nt">&lt;appType&gt;</span>CDTemplate.yml@CeSTemplates
 
-# END OF PIPELINE
+#<span class="w"> </span>END<span class="w"> </span>OF<span class="w"> </span>PIPELINE
 </code></pre></div>
 
 <p>We are experimenting and fine tuning our variable and CD templates and therefore it would be overzealous to include them in entirety. </p>
@@ -135,13 +135,13 @@
 <blockquote>
 <p>SAMPLE: Variable template extract</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="o">...</span><span class="w"></span>
-<span class="c1"># DEVelopment Stage</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">developmentStageEnvName</span><span class="w"></span>
-<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;POC_DEV&#39;</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">developmentStageVmImage</span><span class="w"></span>
-<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">...</span>
+<span class="c1"># DEVelopment Stage</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">developmentStageEnvName</span>
+<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;POC_DEV&#39;</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">  </span><span class="n">developmentStageVmImage</span>
+<span class="w">  </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ubuntu-latest&#39;</span>
 </code></pre></div>
 
 <p>For the CD Blueprint, you should explore <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs">deployment jobs</a> and associated strategies. To start, we opted to experiment with the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops#runonce-deployment-strategy">runOnce</a> strategy.</p>
@@ -220,13 +220,13 @@
 <p><img alt="CICD Blueprint Architecture" src="/images/moving-hundreds-of-pipeline-snowflakes-part8-3.png"></p>
 </blockquote>
 <p>The actual conditional logic is trivial. Here is an example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># STAGING STAGE</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">or</span><span class="p">(</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/hotfix&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Staging&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityScans</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityReview</span><span class="w"></span>
-<span class="w">  </span><span class="o">...</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># STAGING STAGE</span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">or</span><span class="p">(</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/hotfix&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranch&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;refs/heads/release&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Staging&#39;</span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityScans</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">SecurityReview</span>
+<span class="w">  </span><span class="o">...</span>
 </code></pre></div>
 
 <p>Mission accomplished :) Happy ~~wife~~ Security engineers, happy life! </p>

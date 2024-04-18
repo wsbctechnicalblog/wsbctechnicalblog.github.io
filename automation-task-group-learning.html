@@ -97,24 +97,24 @@
 <p>The automation needed to reflect this. </p>
 <p>A quick edit of the automation and users are back in business.</p>
 <p>Below one can see the input field that is required when using the REST API.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;taskId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupID&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.*&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupName&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;refName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;alwaysRun&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;continueOnError&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;timeoutInMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;retryCountOnTaskFailure&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;definitionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;metaTask&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;overrideInputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;succeededOrFailed()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;variableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;variableValue&quot;</span><span class="w"></span>
-<span class="w">              </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="s2">&quot;taskId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.*&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$TaskGroupName&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;refName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;alwaysRun&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;continueOnError&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;timeoutInMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;retryCountOnTaskFailure&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;definitionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;metaTask&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;overrideInputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="s2">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;succeededOrFailed()&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="s2">&quot;variableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;variableValue&quot;</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p><strong>Lesson learnt</strong>, anytime a new variable or parameter is required the automation will have to be modified to add this input in.</p>
