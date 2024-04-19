@@ -57,10 +57,10 @@
 <hr>
 <h1>The Fix</h1>
 <p>We therefore applied a minor fix (or feature) to our blueprints.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span>
 <span class="c"># DEPLOYMENT</span>
 <span class="c"># 2021</span><span class="nt">.</span><span class="c">10</span><span class="nt">.</span><span class="c">04 WS Suppress CD on &quot;merge&quot; so that we can use PR validation builds</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> ${{ if and(ne(parameters</span><span class="nt">.</span><span class="c">suppressCD</span><span class="nt">,</span><span class="c"> true)</span><span class="nt">,</span><span class="c"> ne(parameters</span><span class="nt">.</span><span class="c">customCDTemplate</span><span class="nt">,</span><span class="c"> &#39;blueprint&#39;)</span><span class="nt">,</span><span class="c"> ne(lower(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranchName&#39;</span><span class="k">]</span><span class="c">)</span><span class="nt">,</span><span class="c"> &#39;merge&#39;)) }}:</span>
 <span class="c">  </span><span class="nb">-</span><span class="c"> template: /Operations/Custom/${{parameters</span><span class="nt">.</span><span class="c">customCDTemplate}}</span><span class="nt">.</span><span class="c">yml</span>
 <span class="c">    parameters:</span>

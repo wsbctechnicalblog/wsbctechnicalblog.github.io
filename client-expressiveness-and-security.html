@@ -66,23 +66,23 @@
 <p>Unlike desktop apps, which execute the processing logic using compiled, binary code that is not publicly available, web apps (SPAs) execute the processing logic using the scripted code that is publicly available. Being publicly available, it becomes exploitable. Security therefore gets easily compromised.</p>
 <p>For example, let’s examine the situation where front-end developers are collaborating with back-end developers who are building APIs. Front-end dev notices: “This page needs <em>customer id</em> and <em>full name</em>; could you please create an API end-point with the response format <code>{first_name; last_name}</code>, given the value of <em>customer_id</em>?”</p>
 <p>The API developers oblige and enable the client to send the query that specifies <em>customer id</em> and returns customers <em>full name</em>. Like so:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="err">cus</span><span class="kc">t</span><span class="err">omer(id</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="err">las</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="err">cus</span><span class="kc">t</span><span class="err">omer(id</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="err">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span>
+<span class="w">        </span><span class="err">las</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>This expressive power given to the front-end developer is also the expressive power given to the end-users who may be keen on exploring those powers. Some of those end-users could potentially be hostile users. It is difficult to imagine a computing environment that could be less secure than a web browser. Which means that expressive front-end development platforms produce a field day for malicious/hostile end-users.</p>
 <p>This creates a huge problem: almost anything our front-end developer can do hostile users can do as well. A hostile user can easily figure out the API by inspecting HTTP Requests (in general, a very easy task not requiring advanced reverse engineering skills). Once the API has been grasped, hostile user can doctor the above query as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="err">cus</span><span class="kc">t</span><span class="err">omer(id</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="err">las</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="err">credi</span><span class="kc">t</span><span class="err">_card_</span><span class="kc">nu</span><span class="err">mber</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="err">cus</span><span class="kc">t</span><span class="err">omer(id</span><span class="p">:</span><span class="w"> </span><span class="mi">123456789</span><span class="err">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span>
+<span class="w">        </span><span class="err">las</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me</span><span class="p">,</span>
+<span class="w">        </span><span class="err">credi</span><span class="kc">t</span><span class="err">_card_</span><span class="kc">nu</span><span class="err">mber</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Ouch! Even if the end-user is not hostile (could be merely curious), the properly secured system should never allow such query to be successfully executed.</p>

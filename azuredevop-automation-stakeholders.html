@@ -92,125 +92,125 @@ requirements, you must find ways to:</p>
 </ul>
 <h1>Automation solution</h1>
 <p>And voila, here is the PowerShell script that has been running weekly for more than a year.</p>
-<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span><span class="w"></span>
-<span class="na">param(</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $orgName</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;experimentation-sandbox&quot;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[int]      $months</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-2&quot;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[int]      $actionSet</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">0,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[int]      $purgeUnknown</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">0,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $patToken</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;PAT&gt;,</span><span class="w"></span>
-<span class="w">  </span><span class="na">[string]   $outputfile</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reset-Idle-Users-To-Stakeholders.md&quot;</span><span class="w"></span>
-<span class="na">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[CmdletBinding()]</span>
+<span class="na">param(</span>
+<span class="w">  </span><span class="na">[string]   $orgName</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;experimentation-sandbox&quot;,</span>
+<span class="w">  </span><span class="na">[int]      $months</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-2&quot;,</span>
+<span class="w">  </span><span class="na">[int]      $actionSet</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">0,</span>
+<span class="w">  </span><span class="na">[int]      $purgeUnknown</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">0,</span>
+<span class="w">  </span><span class="na">[string]   $patToken</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;PAT&gt;,</span>
+<span class="w">  </span><span class="na">[string]   $outputfile</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reset-Idle-Users-To-Stakeholders.md&quot;</span>
+<span class="na">)</span>
 
-<span class="na">Write-Host &quot;&quot;</span><span class="w"></span>
-<span class="na">Write-Host &quot;&gt;&gt;&gt; QUERY MEMBER ENTITLEMENTS&quot;</span><span class="w"></span>
-<span class="na">Write-Host &quot;&quot;</span><span class="w"></span>
+<span class="na">Write-Host &quot;&quot;</span>
+<span class="na">Write-Host &quot;&gt;&gt;&gt; QUERY MEMBER ENTITLEMENTS&quot;</span>
+<span class="na">Write-Host &quot;&quot;</span>
 
-<span class="c1"># Initialise outputfile</span><span class="w"></span>
-<span class="c1">#$logFile = (&quot;{0}-{1}&quot; -f [DateTime]::Now.ToString(&quot;yyyyMMdd&quot;), $outputfile)</span><span class="w"></span>
-<span class="na">$logFile</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">$outputfile;</span><span class="w"></span>
-<span class="na">&quot;|{0}|{1}|{2}|&quot; -f &quot;Organsation&quot;, &quot;Months&quot;, &quot;Actionset&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="na">&quot;|---|:-:|:-:|&quot;                                         | add-content -path $logFile</span><span class="w"></span>
-<span class="na">&quot;|{0}|{1}|{2}|&quot; -f $orgName, $months, $actionSet        | add-content -path $logFile</span><span class="w"></span>
-<span class="na">&quot;---&quot;                                                   | add-content -path $logFile</span><span class="w"></span>
-<span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f &quot;Name&quot;, &quot;Last Access&quot;, &quot;License&quot;, &quot;License Name&quot;, &quot;Action&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="na">&quot;|---|---|---|---|---|&quot;                                 | add-content -path $logFile</span><span class="w"></span>
+<span class="c1"># Initialise outputfile</span>
+<span class="c1">#$logFile = (&quot;{0}-{1}&quot; -f [DateTime]::Now.ToString(&quot;yyyyMMdd&quot;), $outputfile)</span>
+<span class="na">$logFile</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">$outputfile</span><span class="c1">;</span>
+<span class="na">&quot;|{0}|{1}|{2}|&quot; -f &quot;Organsation&quot;, &quot;Months&quot;, &quot;Actionset&quot; | add-content -path $logFile</span>
+<span class="na">&quot;|---|</span><span class="o">:</span><span class="s">-:|:-:|&quot;                                         | add-content -path $logFile</span>
+<span class="na">&quot;|{0}|{1}|{2}|&quot; -f $orgName, $months, $actionSet        | add-content -path $logFile</span>
+<span class="na">&quot;---&quot;                                                   | add-content -path $logFile</span>
+<span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f &quot;Name&quot;, &quot;Last Access&quot;, &quot;License&quot;, &quot;License Name&quot;, &quot;Action&quot; | add-content -path $logFile</span>
+<span class="na">&quot;|---|---|---|---|---|&quot;                                 | add-content -path $logFile</span>
 
-<span class="c1"># Authentication header</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span><span class="w"></span>
-<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Convert]::ToBase64String($basicAuth)</span><span class="w"></span>
-<span class="na">$headers</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span><span class="w"></span>
+<span class="c1"># Authentication header</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">(&quot;{0}:{1}&quot; -f &quot;&quot;,$patToken)</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Text.Encoding]::UTF8.GetBytes($basicAuth)</span>
+<span class="na">$basicAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[System.Convert]::ToBase64String($basicAuth)</span>
+<span class="na">$headers</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">@{Authorization=(&quot;Basic {0}&quot; -f $basicAuth)}</span>
 
-<span class="c1"># Requests</span><span class="w"></span>
-<span class="na">$request_GetEntitlements</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements?top=10000&amp;api-version=5.1-preview.2&quot;;</span><span class="w"></span>
-<span class="na">$request_UpdateEntitlementsPre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements/&quot;;</span><span class="w"></span>
-<span class="na">$request_UpdateEntitlementsPost</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;?api-version=5.1-preview.2&quot;;</span><span class="w"></span>
-<span class="na">$json</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;[{&quot;from&quot;: &quot;&quot;,&quot;op&quot;: &quot;replace&quot;,&quot;path&quot;: &quot;/accessLevel&quot;,&quot;value&quot;: {&quot;accountLicenseType&quot;: &quot;stakeholder&quot;,&quot;licensingSource&quot;: &quot;account&quot;}}]&#39;;</span><span class="w"></span>
+<span class="c1"># Requests</span>
+<span class="na">$request_GetEntitlements</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements?top=10000&amp;api-version=5.1-preview.2&quot;</span><span class="c1">;</span>
+<span class="na">$request_UpdateEntitlementsPre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://vsaex.dev.azure.com/&quot; + $orgName + &quot;/_apis/userentitlements/&quot;</span><span class="c1">;</span>
+<span class="na">$request_UpdateEntitlementsPost</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;?api-version=5.1-preview.2&quot;</span><span class="c1">;</span>
+<span class="na">$json</span><span class="w">                            </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;[{&quot;from&quot;: &quot;&quot;,&quot;op&quot;: &quot;replace&quot;,&quot;path&quot;: &quot;/accessLevel&quot;,&quot;value&quot;: {&quot;accountLicenseType&quot;: &quot;stakeholder&quot;,&quot;licensingSource&quot;: &quot;account&quot;}}]&#39;</span><span class="c1">;</span>
 
-<span class="c1"># Data</span><span class="w"></span>
-<span class="na">$members</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s">New-Object System.Collections.ArrayList</span><span class="w"></span>
-<span class="na">[int] $count</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">0;</span><span class="w"></span>
-<span class="na">[string] $basic</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Basic&quot;;</span><span class="w"></span>
-<span class="na">[string] $basicTest</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Basic + Test Plans&quot;;</span><span class="w"></span>
-<span class="na">[string] $stakeholder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Stakeholder&quot;; </span><span class="w"></span>
+<span class="c1"># Data</span>
+<span class="na">$members</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s">New-Object System.Collections.ArrayList</span>
+<span class="na">[int] $count</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="c1">;</span>
+<span class="na">[string] $basic</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Basic&quot;</span><span class="c1">;</span>
+<span class="na">[string] $basicTest</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Basic + Test Plans&quot;</span><span class="c1">;</span>
+<span class="na">[string] $stakeholder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Stakeholder&quot;</span><span class="c1">; </span>
 
-<span class="c1"># Get Entitlements</span><span class="w"></span>
-<span class="na">$response</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request_GetEntitlements -headers $headers -Method Get</span><span class="w"></span>
-<span class="na">$response.items | ForEach-Object { $members.add($_.id) | out-null }</span><span class="w"></span>
+<span class="c1"># Get Entitlements</span>
+<span class="na">$response</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request_GetEntitlements -headers $headers -Method Get</span>
+<span class="na">$response.items | ForEach-Object { $members.add($_.id) | out-null }</span>
 
-<span class="c1"># List Members </span><span class="w"></span>
-<span class="na">Write-Host &quot;&quot;</span><span class="w"></span>
-<span class="na">Write-Host &quot;&gt;&gt;&gt; LIST ENTITLEMENTS &quot;</span><span class="w"></span>
-<span class="na">Write-Host &quot;&quot;</span><span class="w"></span>
+<span class="c1"># List Members </span>
+<span class="na">Write-Host &quot;&quot;</span>
+<span class="na">Write-Host &quot;&gt;&gt;&gt; LIST ENTITLEMENTS &quot;</span>
+<span class="na">Write-Host &quot;&quot;</span>
 
-<span class="na">$response.items | ForEach-Object {</span><span class="w"></span>
-<span class="w">  </span><span class="na">$name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.user.displayName;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$date</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[DateTime]$_.lastAccessedDate;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$expired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Get-Date;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$expired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$expired.AddMonths($months);</span><span class="w"></span>
-<span class="w">  </span><span class="na">$license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.accessLevel.AccountLicenseType;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$licenseName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.accessLevel.LicenseDisplayName;</span><span class="w"></span>
-<span class="w">  </span><span class="na">$count++;</span><span class="w"></span>
+<span class="na">$response.items | ForEach-Object {</span>
+<span class="w">  </span><span class="na">$name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.user.displayName</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$date</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[DateTime]$_.lastAccessedDate</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$expired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Get-Date</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$expired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$expired.AddMonths($months)</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.accessLevel.AccountLicenseType</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$licenseName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[string]$_.accessLevel.LicenseDisplayName</span><span class="c1">;</span>
+<span class="w">  </span><span class="na">$count++;</span>
 
-<span class="w">  </span><span class="c1"># Forcefully remove never activated users</span><span class="w"></span>
-<span class="w">  </span><span class="na">if ( $purgeUnknown -eq 1 )</span><span class="w"></span>
-<span class="w">  </span><span class="na">{</span><span class="w"></span>
-<span class="w">    </span><span class="na">if ( $date.Year -eq 1 ) {</span><span class="w"></span>
-<span class="w">      </span><span class="na">$date</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[DateTime]$_.dateCreated;</span><span class="w"></span>
-<span class="w">    </span><span class="na">}</span><span class="w"></span>
-<span class="w">  </span><span class="na">}</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Forcefully remove never activated users</span>
+<span class="w">  </span><span class="na">if ( $purgeUnknown -eq 1 )</span>
+<span class="w">  </span><span class="na">{</span>
+<span class="w">    </span><span class="na">if ( $date.Year -eq 1 ) {</span>
+<span class="w">      </span><span class="na">$date</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">[DateTime]$_.dateCreated</span><span class="c1">;</span>
+<span class="w">    </span><span class="na">}</span>
+<span class="w">  </span><span class="na">}</span>
 
-<span class="w">  </span><span class="na">if ( $expired -gt $date ) {</span><span class="w"></span>
+<span class="w">  </span><span class="na">if ( $expired -gt $date ) {</span>
 
-<span class="w">    </span><span class="c1"># Prepare request for the expired user</span><span class="w"></span>
-<span class="w">    </span><span class="na">$request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$request_UpdateEntitlementsPre + $_.id + $request_UpdateEntitlementsPost;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Prepare request for the expired user</span>
+<span class="w">    </span><span class="na">$request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$request_UpdateEntitlementsPre + $_.id + $request_UpdateEntitlementsPost</span><span class="c1">;</span>
 
-<span class="w">    </span><span class="c1"># NEVER ACTIVATED</span><span class="w"></span>
-<span class="w">    </span><span class="na">if ( $date.Year -eq 1 )</span><span class="w"></span>
-<span class="w">    </span><span class="na">{</span><span class="w"></span>
-<span class="w">      </span><span class="na">if ( $licenseName -ne $stakeholder ) {</span><span class="w"></span>
-<span class="w">        </span><span class="na">Write-Host &quot; ** IGNORE NEVER ACCESSED - ** &quot; &quot; Name: &quot; $name &quot; Date Created: &quot; $_.dateCreated &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span><span class="w"></span>
-<span class="w">      </span><span class="na">}</span><span class="w"></span>
-<span class="w">    </span><span class="na">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># BASIC</span><span class="w"></span>
-<span class="w">    </span><span class="na">elseif ( $licenseName -eq $basic ) {</span><span class="w"></span>
-<span class="w">      </span><span class="na">if ( $actionSet -ne 0 ) {</span><span class="w"></span>
-<span class="w">        </span><span class="na">try {</span><span class="w"></span>
-<span class="w">            </span><span class="na">Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span><span class="w"></span>
-<span class="w">            </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span><span class="w"></span>
-<span class="w">            </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="w">        </span><span class="na">}</span><span class="w"></span>
-<span class="w">        </span><span class="na">catch {</span><span class="w"></span>
-<span class="w">          </span><span class="na">Write-Host Error updating entitlements</span><span class="w"></span>
-<span class="w">          </span><span class="na">Write-Host $_.Exception|format-list -force</span><span class="w"></span>
-<span class="w">        </span><span class="na">}</span><span class="w"></span>
-<span class="w">      </span><span class="na">}</span><span class="w"></span>
-<span class="w">      </span><span class="na">else {</span><span class="w"></span>
-<span class="w">        </span><span class="na">Write-Host &quot; ** EXPIRED ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span><span class="w"></span>
-<span class="w">        </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="w">      </span><span class="na">}</span><span class="w"></span>
-<span class="w">    </span><span class="na">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># BASIC + TEST</span><span class="w"></span>
-<span class="w">    </span><span class="na">elseif ( $licenseName -eq $basicTest ) {</span><span class="w"></span>
-<span class="w">      </span><span class="na">if ( $actionSet -ne 0 ) {</span><span class="w"></span>
-<span class="w">        </span><span class="na">try {</span><span class="w"></span>
-<span class="w">            </span><span class="na">Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span><span class="w"></span>
-<span class="w">            </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span><span class="w"></span>
-<span class="w">            </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="w">        </span><span class="na">}</span><span class="w"></span>
-<span class="w">        </span><span class="na">catch {</span><span class="w"></span>
-<span class="w">          </span><span class="na">Write-Host Error updating entitlements</span><span class="w"></span>
-<span class="w">          </span><span class="na">Write-Host $_.Exception|format-list -force</span><span class="w"></span>
-<span class="w">        </span><span class="na">}</span><span class="w"></span>
-<span class="w">      </span><span class="na">}</span><span class="w"></span>
-<span class="w">      </span><span class="na">else {</span><span class="w"></span>
-<span class="w">        </span><span class="na">Write-Host &quot; ** EXPIRED ** &quot; &quot; Name: &quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span><span class="w"></span>
-<span class="w">        </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span><span class="w"></span>
-<span class="w">      </span><span class="na">}</span><span class="w"></span>
-<span class="w">    </span><span class="na">}</span><span class="w"></span>
-<span class="w">  </span><span class="na">}</span><span class="w"></span>
-<span class="na">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># NEVER ACTIVATED</span>
+<span class="w">    </span><span class="na">if ( $date.Year -eq 1 )</span>
+<span class="w">    </span><span class="na">{</span>
+<span class="w">      </span><span class="na">if ( $licenseName -ne $stakeholder ) {</span>
+<span class="w">        </span><span class="na">Write-Host &quot; ** IGNORE NEVER ACCESSED - ** &quot; &quot; Name</span><span class="o">:</span><span class="w"> </span><span class="s">&quot; $name &quot; Date Created: &quot; $_.dateCreated &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="w">      </span><span class="na">}</span>
+<span class="w">    </span><span class="na">}</span>
+<span class="w">    </span><span class="c1"># BASIC</span>
+<span class="w">    </span><span class="na">elseif ( $licenseName -eq $basic ) {</span>
+<span class="w">      </span><span class="na">if ( $actionSet -ne 0 ) {</span>
+<span class="w">        </span><span class="na">try {</span>
+<span class="w">            </span><span class="na">Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name</span><span class="o">:</span><span class="w"> </span><span class="s">&quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="w">            </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="w">            </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span>
+<span class="w">        </span><span class="na">}</span>
+<span class="w">        </span><span class="na">catch {</span>
+<span class="w">          </span><span class="na">Write-Host Error updating entitlements</span>
+<span class="w">          </span><span class="na">Write-Host $_.Exception|format-list -force</span>
+<span class="w">        </span><span class="na">}</span>
+<span class="w">      </span><span class="na">}</span>
+<span class="w">      </span><span class="na">else {</span>
+<span class="w">        </span><span class="na">Write-Host &quot; ** EXPIRED ** &quot; &quot; Name</span><span class="o">:</span><span class="w"> </span><span class="s">&quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="w">        </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span>
+<span class="w">      </span><span class="na">}</span>
+<span class="w">    </span><span class="na">}</span>
+<span class="w">    </span><span class="c1"># BASIC + TEST</span>
+<span class="w">    </span><span class="na">elseif ( $licenseName -eq $basicTest ) {</span>
+<span class="w">      </span><span class="na">if ( $actionSet -ne 0 ) {</span>
+<span class="w">        </span><span class="na">try {</span>
+<span class="w">            </span><span class="na">Write-Host &quot; ** RESET TO STAKEHOLDER - ** &quot; &quot; Name</span><span class="o">:</span><span class="w"> </span><span class="s">&quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="w">            </span><span class="na">$response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Invoke-RestMethod -Uri $request -headers $headers -Method Patch -Body $json -ContentType &#39;application/json-patch+json&#39;</span>
+<span class="w">            </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Reset to Stakeholder&quot; | add-content -path $logFile</span>
+<span class="w">        </span><span class="na">}</span>
+<span class="w">        </span><span class="na">catch {</span>
+<span class="w">          </span><span class="na">Write-Host Error updating entitlements</span>
+<span class="w">          </span><span class="na">Write-Host $_.Exception|format-list -force</span>
+<span class="w">        </span><span class="na">}</span>
+<span class="w">      </span><span class="na">}</span>
+<span class="w">      </span><span class="na">else {</span>
+<span class="w">        </span><span class="na">Write-Host &quot; ** EXPIRED ** &quot; &quot; Name</span><span class="o">:</span><span class="w"> </span><span class="s">&quot; $name &quot; Last Access: &quot; $date &quot;License: &quot; $license &quot; - &quot; $licenseName</span>
+<span class="w">        </span><span class="na">&quot;|{0}|{1}|{2}|{3}|{4}|&quot; -f $name, $date, $license, $licenseName, &quot;Expired&quot; | add-content -path $logFile</span>
+<span class="w">      </span><span class="na">}</span>
+<span class="w">    </span><span class="na">}</span>
+<span class="w">  </span><span class="na">}</span>
+<span class="na">}</span>
 </code></pre></div>
 
 <blockquote>
@@ -224,49 +224,49 @@ requirements, you must find ways to:</p>
 <hr>
 <h1>Azure DevOps Pipeline</h1>
 <p>And here is the Azure Pipeline definition, whereby I replace our organization and project with <ORG> and <PROJECT> placeholders:</p>
-<div class="highlight"><pre><span></span><code><span class="nl">schedules</span><span class="p">:</span><span class="w"></span>
-<span class="p">-</span> <span class="nf">cron:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">  </span><span class="nl">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nl">include</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span><span class="w"></span>
-<span class="w">  </span><span class="nl">always</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
-<span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Date</span><span class="o">:</span><span class="n">yyyyMMdd</span><span class="p">)</span><span class="n">$</span><span class="p">(</span><span class="n">Rev</span><span class="o">:</span><span class="p">.</span><span class="n">r</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nl">schedules</span><span class="p">:</span>
+<span class="p">-</span> <span class="nf">cron:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="nl">branches</span><span class="p">:</span>
+<span class="w">    </span><span class="nl">include</span><span class="p">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
+<span class="w">  </span><span class="nl">always</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Date</span><span class="o">:</span><span class="n">yyyyMMdd</span><span class="p">)</span><span class="n">$</span><span class="p">(</span><span class="n">Rev</span><span class="o">:</span><span class="p">.</span><span class="n">r</span><span class="p">)</span>
 
-<span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span><span class="n">Weekly_Audit</span><span class="w"></span>
-<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">Weekly</span><span class="w"> </span><span class="n">Audit</span><span class="w"></span>
-<span class="w">  </span><span class="nl">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">AGENT</span><span class="o">&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nl">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">checkout</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span><span class="w"></span>
-<span class="w">    </span><span class="nl">clean</span><span class="p">:</span><span class="w"> </span><span class="n">False</span><span class="w"></span>
-<span class="w">    </span><span class="nl">persistCredentials</span><span class="p">:</span><span class="w"> </span><span class="n">True</span><span class="w"></span>
+<span class="nl">jobs</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">job</span><span class="o">:</span><span class="w"> </span><span class="n">Weekly_Audit</span>
+<span class="w">  </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">Weekly</span><span class="w"> </span><span class="n">Audit</span>
+<span class="w">  </span><span class="nl">pool</span><span class="p">:</span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">AGENT</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="nl">steps</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">checkout</span><span class="o">:</span><span class="w"> </span><span class="nb">self</span>
+<span class="w">    </span><span class="nl">clean</span><span class="p">:</span><span class="w"> </span><span class="n">False</span>
+<span class="w">    </span><span class="nl">persistCredentials</span><span class="p">:</span><span class="w"> </span><span class="n">True</span>
 
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">AzureKeyVault</span><span class="mi">@1</span><span class="w"></span>
-<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Azure</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Vault</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">RROJECT</span><span class="o">&gt;-</span><span class="n">KV</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nl">ConnectedServiceName</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GUID</span><span class="o">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="nl">KeyVaultName</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;-</span><span class="n">KV</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">AzureKeyVault</span><span class="mi">@1</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Azure</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Vault</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">RROJECT</span><span class="o">&gt;-</span><span class="n">KV</span><span class="err">&#39;</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">ConnectedServiceName</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GUID</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="nl">KeyVaultName</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;-</span><span class="n">KV</span>
 
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
-<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="w"></span>
-<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nl">filePath</span><span class="p">:</span><span class="w"> </span><span class="n">Member</span><span class="w"> </span><span class="n">Entitlement</span><span class="w"> </span><span class="n">Management</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">ps1</span><span class="w"></span>
-<span class="w">      </span><span class="nl">arguments</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">patToken</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">PAT</span><span class="o">-</span><span class="n">MemberEntitlementManagement</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">orgName</span><span class="w"> </span><span class="s">&quot;&lt;ORG&gt;&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">months</span><span class="w"> </span><span class="mi">-3</span><span class="w"> </span><span class="o">-</span><span class="n">actionSet</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">outputFile</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span><span class="w"></span>
-<span class="w">      </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
-<span class="w">      </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">PowerShell</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">filePath</span><span class="p">:</span><span class="w"> </span><span class="n">Member</span><span class="w"> </span><span class="n">Entitlement</span><span class="w"> </span><span class="n">Management</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">ps1</span>
+<span class="w">      </span><span class="nl">arguments</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">patToken</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">PAT</span><span class="o">-</span><span class="n">MemberEntitlementManagement</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">orgName</span><span class="w"> </span><span class="s">&quot;&lt;ORG&gt;&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">months</span><span class="w"> </span><span class="mi">-3</span><span class="w"> </span><span class="o">-</span><span class="n">actionSet</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">outputFile</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span>
+<span class="w">      </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
 
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">WikiUpdaterTask</span><span class="mi">@1</span><span class="w"></span>
-<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Git</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">WIKI</span><span class="w"></span>
-<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nl">repo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ORG</span><span class="o">&gt;</span><span class="p">.</span><span class="n">visualstudio</span><span class="p">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">_git</span><span class="o">/</span><span class="n">Common</span><span class="o">-</span><span class="n">Engineering</span><span class="o">-</span><span class="n">System</span><span class="p">.</span><span class="n">wiki</span><span class="w"></span>
-<span class="w">      </span><span class="nl">filename</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">Knowledgebase</span><span class="o">/</span><span class="n">Logs</span><span class="o">/</span><span class="n">InactiveUsers</span><span class="o">/</span><span class="n">wcbbc</span><span class="o">/</span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">BuildNumber</span><span class="p">)</span><span class="n">_Reset_Idle_User_Licenses</span><span class="p">.</span><span class="n">md</span><span class="w"></span>
-<span class="w">      </span><span class="nl">dataIsFile</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
-<span class="w">      </span><span class="nl">sourceFile</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span><span class="w"></span>
-<span class="w">      </span><span class="nl">message</span><span class="p">:</span><span class="w"> </span><span class="n">Automated</span><span class="w"> </span><span class="n">Idle</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="n">Report</span><span class="w"> </span><span class="n">Job</span><span class="w"></span>
-<span class="w">      </span><span class="nl">gitname</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="nl">gitemail</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="nl">useAgentToken</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">WikiUpdaterTask</span><span class="mi">@1</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Git</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">WIKI</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">repo</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ORG</span><span class="o">&gt;</span><span class="p">.</span><span class="n">visualstudio</span><span class="p">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">_git</span><span class="o">/</span><span class="n">Common</span><span class="o">-</span><span class="n">Engineering</span><span class="o">-</span><span class="n">System</span><span class="p">.</span><span class="n">wiki</span>
+<span class="w">      </span><span class="nl">filename</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PROJECT</span><span class="o">&gt;/</span><span class="n">Knowledgebase</span><span class="o">/</span><span class="n">Logs</span><span class="o">/</span><span class="n">InactiveUsers</span><span class="o">/</span><span class="n">wcbbc</span><span class="o">/</span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">BuildNumber</span><span class="p">)</span><span class="n">_Reset_Idle_User_Licenses</span><span class="p">.</span><span class="n">md</span>
+<span class="w">      </span><span class="nl">dataIsFile</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span><span class="nl">sourceFile</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">ArtifactStagingDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">Reset</span><span class="o">-</span><span class="n">Idle</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">To</span><span class="o">-</span><span class="n">Stakeholders</span><span class="p">.</span><span class="n">md</span>
+<span class="w">      </span><span class="nl">message</span><span class="p">:</span><span class="w"> </span><span class="n">Automated</span><span class="w"> </span><span class="n">Idle</span><span class="w"> </span><span class="n">Users</span><span class="w"> </span><span class="n">Report</span><span class="w"> </span><span class="n">Job</span>
+<span class="w">      </span><span class="nl">gitname</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span>
+<span class="w">      </span><span class="nl">gitemail</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">QueuedBy</span><span class="p">)</span>
+<span class="w">      </span><span class="nl">useAgentToken</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 
 <h1>Positive ending</h1>

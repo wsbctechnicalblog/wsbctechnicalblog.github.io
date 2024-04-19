@@ -63,16 +63,16 @@
 <p>If we have a quick look at the basic <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/commit/eee9e2e895e8869e1f4fc8e7b55b1973b469351f#diff-34a1ea16e45e933dd3f78d78dd2752204483355a45237fb33d7a31b1bb51e383">101 sample variable template</a> you will notice that we have a <strong>FLAT</strong> configuration file.</p>
 <div class="highlight"><pre><span></span><code><span class="c">variables:</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># Blueprint: __101__</span>
 <span class="c">#</span>
 <span class="c"># If you are not going to use all stages</span><span class="nt">,</span><span class="c"> as below</span><span class="nt">,</span><span class="c"> you can suppress them by simply commenting out</span>
-<span class="c"># or removing their entire configuration section</span><span class="nt">.</span><span class="c"></span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># or removing their entire configuration section</span><span class="nt">.</span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># DEVelopment Stage</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> name:  developmentStageName</span>
 <span class="c">  value: &#39;Development&#39; # Do not change stage name value</span>
 <span class="nb">-</span><span class="c"> name:  developmentStageEnvName</span>
@@ -81,9 +81,9 @@
 <span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
 <span class="c"># TODO Add your variables here</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># System Test Stage</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> name:  systemTestStageName</span>
 <span class="c">  value: &#39;SystemTest&#39; # Do not change stage name value</span>
 <span class="nb">-</span><span class="c"> name:  systemTestStageEnvName</span>
@@ -92,15 +92,15 @@
 <span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
 <span class="c"># TODO Add your variables here</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># Security Review Stage</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> name:  securityReviewStageEnvName</span>
 <span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># Staging Stage</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> name:  stagingStageName</span>
 <span class="c">  value: &#39;Staging&#39; # Do not change stage name value</span>
 <span class="nb">-</span><span class="c"> name:  stagingStageEnvName</span>
@@ -109,9 +109,9 @@
 <span class="c">  value: &#39;</span><span class="nv">&lt;</span><span class="c">TBD</span><span class="nv">&gt;</span><span class="c">&#39;</span>
 <span class="c"># TODO Add your variables here</span>
 
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="c"># PRODuction Test Stage</span>
-<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">--------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> name:  productionStageName</span>
 <span class="c">  value: &#39;Production&#39; # Do not change stage name value</span>
 <span class="nb">-</span><span class="c"> name:  productionStageEnvName</span>
@@ -175,19 +175,19 @@
 
 <h3>Changes in our <code>__101__</code> <em>-</em><em>control</em>*.yml template</h3>
 <p>The latest enhancement involves the creation of an array comprising stage configuration objects and supplementary parameters. Specifically, each stage environment now possesses its own dedicated object. To illustrate, I have provided an excerpt from the development stage below:</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">blueprints</span><span class="o">/</span><span class="n">__101__</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">__101__</span><span class="o">-</span><span class="n">cd</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeBlueprints</span><span class="w"></span>
-<span class="w">    </span><span class="n">parameters</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">stage</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">development</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="n">config</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="n">active</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageActive</span><span class="p">}}</span><span class="w"></span>
-<span class="w">            </span><span class="n">nameEnv</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageEnvName</span><span class="p">}}</span><span class="w"></span>
-<span class="w">            </span><span class="n">nameVM</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageVmImage</span><span class="p">}}</span><span class="w"></span>
-<span class="w">            </span><span class="n">testData</span><span class="p">:</span><span class="w">                     </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageTestData</span><span class="p">}}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">]),</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">blueprints</span><span class="o">/</span><span class="n">__101__</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">__101__</span><span class="o">-</span><span class="n">cd</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeBlueprints</span>
+<span class="w">    </span><span class="n">parameters</span><span class="p">:</span>
+<span class="w">      </span><span class="n">stage</span><span class="p">:</span>
+<span class="w">        </span><span class="n">development</span><span class="p">:</span>
+<span class="w">          </span><span class="n">config</span><span class="p">:</span>
+<span class="w">            </span><span class="n">active</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageActive</span><span class="p">}}</span>
+<span class="w">            </span><span class="n">nameEnv</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageEnvName</span><span class="p">}}</span>
+<span class="w">            </span><span class="n">nameVM</span><span class="p">:</span><span class="w">                       </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageVmImage</span><span class="p">}}</span>
+<span class="w">            </span><span class="n">testData</span><span class="p">:</span><span class="w">                     </span><span class="o">$</span><span class="p">{{</span><span class="n">variables</span><span class="o">.</span><span class="n">developmentStageTestData</span><span class="p">}}</span>
 <span class="w">          </span><span class="n">applicationBlueprint</span><span class="p">:</span><span class="w">           </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">applicationBlueprint</span><span class="p">}}</span><span class="w">                         </span>
-<span class="w">          </span><span class="n">modeElite</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span><span class="w"></span>
-<span class="c1"># TODO pass your configuration variables here</span><span class="w"></span>
+<span class="w">          </span><span class="n">modeElite</span><span class="p">:</span><span class="w">                      </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">modeElite</span><span class="p">}}</span>
+<span class="c1"># TODO pass your configuration variables here</span>
 </code></pre></div>
 
 <p>This new approach aims to streamline stage management and configuration. I am eager to explore the finer details in our upcoming discussions.</p>
@@ -195,79 +195,79 @@
 <p>Gone are the days of relying solely on a growing list of parameters and stage names to orchestrate our deployment pipeline. Instead, we have adopted a more dynamic and adaptable strategy by focusing on the <code>*.config.active</code> value. This value serves as the driving force behind the inclusion or exclusion of stages from the pipeline. This approach provides a remarkable level of flexibility, enabling us to make adjustments without the fear of brittleness that stage names might introduce.</p>
 <p>Let us explore this transformation through a tangible example. Below, you will find an excerpt showcasing the new approach in action, specifically in the context of the development and system test stages:</p>
 <div class="highlight"><pre><span></span><code>parameters:
-- name:     stage
-  type:     object
+-<span class="w"> </span>name:<span class="w">     </span>stage
+<span class="w">  </span>type:<span class="w">     </span>object
 
 stages:
 
-# -----------------------------------------------------------------
-# DEVELOPMENT STAGE
-# -----------------------------------------------------------------
+#<span class="w"> </span>-----------------------------------------------------------------
+#<span class="w"> </span>DEVELOPMENT<span class="w"> </span>STAGE
+#<span class="w"> </span>-----------------------------------------------------------------
 
-- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
-  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
-    parameters:
-      name:                         &#39;Development&#39;
-      displayName:                  &#39;Development (DV)&#39;
-      config:                       <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
-      dependsOn:
-      - ContinuousIntegration
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>/blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+<span class="w">    </span>parameters:
+<span class="w">      </span>name:<span class="w">                         </span>&#39;Development&#39;
+<span class="w">      </span>displayName:<span class="w">                  </span>&#39;Development<span class="w"> </span>(DV)&#39;
+<span class="w">      </span>config:<span class="w">                       </span><span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
+<span class="w">      </span>dependsOn:
+<span class="w">      </span>-<span class="w"> </span>ContinuousIntegration
 
-# -----------------------------------------------------------------
-# SYSTEM TEST STAGE
-# ------------------------------------------------------------------
-- <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
-  - template: /blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
-    parameters:
-      name:                         &#39;SystemTest&#39;
-      displayName:                  &#39;System Test (SY)&#39;
-      config:                       <span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
-      dependsOn:
-      - ContinuousIntegration
-      - <span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
-        - Development
+#<span class="w"> </span>-----------------------------------------------------------------
+#<span class="w"> </span>SYSTEM<span class="w"> </span>TEST<span class="w"> </span>STAGE
+#<span class="w"> </span>------------------------------------------------------------------
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>/blueprints/__101__/azure-pipeline-__101__-cd-stage.yml@CeBlueprints
+<span class="w">    </span>parameters:
+<span class="w">      </span>name:<span class="w">                         </span>&#39;SystemTest&#39;
+<span class="w">      </span>displayName:<span class="w">                  </span>&#39;System<span class="w"> </span>Test<span class="w"> </span>(SY)&#39;
+<span class="w">      </span>config:<span class="w">                       </span><span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">systemTest</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>}
+<span class="w">      </span>dependsOn:
+<span class="w">      </span>-<span class="w"> </span>ContinuousIntegration
+<span class="w">      </span>-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">stage</span><span class="o">.</span><span class="n">development</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">        </span>-<span class="w"> </span>Development
 </code></pre></div>
 
 <p>This snippet underscores how the cd template's revamped structure empowers us to effortlessly manage stages, pass configuration data, and adapt to evolving deployment needs.</p>
 <h3>Changes in our <code>__101__</code> <em>-</em><em>cd-stage</em>*.yml template</h3>
 <p>Lastly, the culmination of our efforts leads to the seamless flow of configuration and dependency objects into the <code>*cd-stage**.yml</code> deployment stage template, an evolution that not only facilitates innovation but also encourages extension. This pivotal enhancement brings forth a user experience that is notably simplified and intuitive.</p>
-<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">name</span><span class="w"></span>
-<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">displayName</span><span class="w"></span>
-<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">config</span><span class="w"></span>
-<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span><span class="w"></span>
-<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">dependsOn</span><span class="w"></span>
-<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span><span class="w"></span>
-<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">parameters</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">name</span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">displayName</span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">config</span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w">     </span><span class="n">dependsOn</span>
+<span class="w">  </span><span class="n">type</span><span class="p">:</span><span class="w">     </span><span class="n">object</span>
+<span class="w">  </span><span class="n">default</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span>
 
-<span class="n">stages</span><span class="p">:</span><span class="w"></span>
+<span class="n">stages</span><span class="p">:</span>
 
-<span class="c1"># ------------------------------------------------------------------</span><span class="w"></span>
-<span class="c1"># STAGE</span><span class="w"></span>
-<span class="c1"># ------------------------------------------------------------------</span><span class="w"></span>
+<span class="c1"># ------------------------------------------------------------------</span>
+<span class="c1"># STAGE</span>
+<span class="c1"># ------------------------------------------------------------------</span>
 
-<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
-<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w">   </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">displayName</span><span class="p">}}</span><span class="w"></span>
-<span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">stage</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="w"> </span><span class="p">}}:</span><span class="w"></span>
-<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">stage</span><span class="p">}}</span><span class="w"></span>
-<span class="w">  </span><span class="n">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">currentVersion</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setSemVersion.semVersion&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="n">pool</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">vmImage</span><span class="p">:</span><span class="w">     </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameVM</span><span class="p">}}</span><span class="w"></span>
-<span class="w">  </span><span class="n">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">deployment</span><span class="p">:</span><span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
-<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameEnv</span><span class="p">}}</span><span class="w"></span>
-<span class="w">    </span><span class="n">strategy</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="n">runOnce</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">deploy</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="n">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span><span class="w"></span>
-<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">testData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">testData</span><span class="p">}}</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">stage</span><span class="p">:</span><span class="w">         </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span>
+<span class="w">  </span><span class="n">displayName</span><span class="p">:</span><span class="w">   </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">displayName</span><span class="p">}}</span>
+<span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">    </span><span class="n">dependsOn</span><span class="p">:</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">stage</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">stage</span><span class="p">}}</span>
+<span class="w">  </span><span class="n">variables</span><span class="p">:</span>
+<span class="w">      </span><span class="n">currentVersion</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">[</span><span class="w"> </span><span class="n">stageDependencies</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">ContinuousIntegration</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;setSemVersion.semVersion&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="n">pool</span><span class="p">:</span>
+<span class="w">    </span><span class="n">vmImage</span><span class="p">:</span><span class="w">     </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameVM</span><span class="p">}}</span>
+<span class="w">  </span><span class="n">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">deployment</span><span class="p">:</span><span class="w">  </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span>
+<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">nameEnv</span><span class="p">}}</span>
+<span class="w">    </span><span class="n">strategy</span><span class="p">:</span>
+<span class="w">      </span><span class="n">runOnce</span><span class="p">:</span>
+<span class="w">        </span><span class="n">deploy</span><span class="p">:</span>
+<span class="w">          </span><span class="n">steps</span><span class="p">:</span>
+<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span>
+<span class="w">          </span><span class="o">-</span><span class="w"> </span><span class="n">script</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="n">testData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="n">parameters</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">testData</span><span class="p">}}</span>
 </code></pre></div>
 
 <p>In comparison to managing an expanding list of parameters, working with a comprehensive object empowers us to navigate complexities effortlessly. This shift provides a fertile ground for creativity and expansion, enabling us to embrace new possibilities and adapt to evolving deployment landscapes with remarkable ease.</p>

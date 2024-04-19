@@ -86,12 +86,12 @@
 </blockquote>
 <p>First thought is to queue a investigative pipeline on one of the macOS agents and run the <strong>ipconfig getifaddr en0</strong> command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.</p>
 <p>Try this:</p>
-<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">task:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span><span class="w"></span>
-<span class="w">  </span><span class="nl">inputs</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">curl</span><span class="w"> </span><span class="n">ipecho</span><span class="p">.</span><span class="n">net</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">errorActionPreference</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="k">continue</span><span class="err">&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">task:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span>
+<span class="w">  </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">    </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+<span class="w">    </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">curl</span><span class="w"> </span><span class="n">ipecho</span><span class="p">.</span><span class="n">net</span><span class="err">&#39;</span>
+<span class="w">    </span><span class="nl">errorActionPreference</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="k">continue</span><span class="err">&#39;</span>
+<span class="w">    </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 
 <p>It reveals the public IP address:</p>

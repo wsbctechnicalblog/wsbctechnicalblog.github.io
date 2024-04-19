@@ -62,9 +62,9 @@
 <p>As shown above, the pipeline looks the same as the classic pipeline when the release artifact is created using one of the repository branches that are trusted for the Canary and Production environments.</p>
 <p>If the source branch is untrusted, the pipeline looks different - in fact, everything after the system test environment is missing. </p>
 <p><img alt="Untrusted Branches" src="../images/pipelines-streamlined-approvals-new-world-4.png"></p>
-<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">------------------------------------------------------------------------------------------</span><span class="c"></span>
+<div class="highlight"><pre><span></span><code><span class="c"># </span><span class="nb">------------------------------------------------------------------------------------------</span>
 <span class="c"># SECURITY REVIEW STAGE</span>
-<span class="c"># </span><span class="nb">------------------------------------------------------------------------------------------</span><span class="c"></span>
+<span class="c"># </span><span class="nb">------------------------------------------------------------------------------------------</span>
 <span class="nb">-</span><span class="c"> ${{ if or(eq(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release&#39;)</span><span class="nt">,</span><span class="c"> startsWith(variables</span><span class="k">[</span><span class="c">&#39;Build</span><span class="nt">.</span><span class="c">SourceBranch&#39;</span><span class="k">]</span><span class="nt">,</span><span class="c"> &#39;refs/heads/release/&#39;)) }}:</span>
 <span class="c">  </span><span class="nb">-</span><span class="c"> template: /Templates/DevSecOps/azure</span><span class="nb">-</span><span class="c">pipeline</span><span class="nb">-</span><span class="c">security</span><span class="nb">-</span><span class="c">review</span><span class="nt">.</span><span class="c">yml</span>
 </code></pre></div>
@@ -76,8 +76,8 @@
 <p><img alt="Untrusted Templates" src="../images/pipelines-streamlined-approvals-new-world-6.png"></p>
 <p>As shown above, if one of more of the templates used by Azure DevOps when assembling the run-time pipeline, the environment check blocks the pipeline from trundling down the deployment chain. In this case you cannot override the template check. "You shall not pass" if you are using untrusted pipelines.</p>
 <p>The magic in this case is the <strong>extends</strong> feature, as used in the following code extract:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">extends</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">template</span><span class="o">:</span><span class="w"> </span><span class="sr">/Blueprints/azure-function/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="kd">function</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">CeSTemplates</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">extends</span><span class="o">:</span>
+<span class="w">  </span><span class="n">template</span><span class="o">:</span><span class="w"> </span><span class="sr">/Blueprints/azure-function/</span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="kd">function</span><span class="o">-</span><span class="n">control</span><span class="o">.</span><span class="na">yml</span><span class="err">@</span><span class="n">CeSTemplates</span>
 </code></pre></div>
 
 <p>You configure the required templates in your <strong>Environments</strong>, under <strong>Approvals and Checks</strong>.</p>

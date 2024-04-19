@@ -53,9 +53,9 @@
 <hr>
 <h1>Path Version Variable</h1>
 <p>The change in the git-tools-git-version.yml template is subtle. By adding line <code>83</code> we create and set both the <code>semVersion</code> and the <code>patchVersion</code> variable.</p>
-<div class="highlight"><pre><span></span><code><span class="mf">81</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">powershell</span><span class="p">:</span><span class="w"> </span><span class="err">|</span><span class="w"></span>
-<span class="mf">82</span><span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span><span class="w"></span>
-<span class="mf">83</span><span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">81</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">powershell</span><span class="p">:</span><span class="w"> </span><span class="err">|</span>
+<span class="mf">82</span><span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span>
+<span class="mf">83</span><span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&quot;</span>
 </code></pre></div>
 
 <p>Refer to <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/13">Pull Request 13</a> for details.</p>

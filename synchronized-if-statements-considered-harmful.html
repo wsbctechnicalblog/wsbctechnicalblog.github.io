@@ -65,12 +65,12 @@
 <h2>Go to is only harmful when combined with if statements</h2>
 <p><strong>Go to</strong> statement by itself is no different than other control flow statements. It interrupts the linear flow (i.e. after executing current statement, it steps into the statement on the next line below). But so do other flow control statements that were introduced as part of structured programming with the intent to eliminate <strong>go to</strong> statements.</p>
 <p>So, why is it then that Dijkstra considered <strong>go to</strong> harmful? The reason is that only when <strong>go to</strong> gets combined with <strong>if</strong> statements that we create a fertile breeding ground for bugs. For example, if we say:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">orderTotal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">500.00</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">orderTotal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">500.00</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
 
 <p>that type of control flow has the potential to result in buggy code.</p>
 <p>Without the conditional statement (the <strong>if</strong>) having a simple statement:</p>
-<div class="highlight"><pre><span></span><code><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">10</span>
 </code></pre></div>
 
 <p>is not problematic. Why? Because it is not conditionally controlling the flow of execution. It is simply directing the flow without checking for any specific values.</p>
