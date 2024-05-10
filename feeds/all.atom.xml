@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-05-03T00:00:00-07:00</updated><entry><title>Why Metrics?</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-metrics.html" rel="alternate"></link><published>2024-05-03T00:00:00-07:00</published><updated>2024-05-03T00:00:00-07:00</updated><author><name>Martin Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-05-03:/engineering-practices-metrics.html</id><summary type="html">&lt;p&gt;Why should I be concerned about metrics as long as my code works?&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Set the Stage&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-05-10T00:00:00-07:00</updated><entry><title>Technology Framework Monitor - Open Source Software Sync 20240510</title><link href="https://wsbctechnicalblog.github.io/azure-tfm-oss-sync-202400510.html" rel="alternate"></link><published>2024-05-10T00:00:00-07:00</published><updated>2024-05-10T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-05-10:/azure-tfm-oss-sync-202400510.html</id><summary type="html">&lt;p&gt;Shake Off the Dust: Our TFM Software Spring Cleaning!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The ongoing evolution of our Technology Framework Monitor (TFM) open-source project empowers us to expand our horizons in identifying end-of-life products and detecting engineering practice drift. In this latest update, we have performed tons of spring cleanups. Our next step involves adding support to detect drift from our engineering practices.&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Technology-Framework-Monitor/pull/31"&gt;Click here to peruse associated Pull Request&lt;/a&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Changes as documented by Andreas Mertens encompasses three main changes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Eliminated Dead Weight&lt;/strong&gt;: Purged unused code, resolved null warnings, and adhered to naming conventions. Enhanced project stability by incorporating AssemblyVersion and AssemblyFileVersion attributes into the AssemblyInfo.cs file. Updated NuGet package versions for optimal performance. Implemented a more efficient method, sourced from StackOverflow, to delete repositories after processing. Streamlined code for clarity, eliminating unnecessary warnings and informational messages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Optimization&lt;/strong&gt;: Introduced a new database view - ReportsScan - refining data presentation from the Reports table, excluding select fields and introducing Timestamp for enhanced insights. Transitioned smoothly from EntityFramework to EntityFrameworkCore, necessitating a revamp of the ProjectScannerSaveToSqlServer project. Enhanced the DbCore class to manage disposal and monitor open connections effectively.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fine-Tuning&lt;/strong&gt;: Empowered the main executable with parameters for single scan phases, enhancing flexibility. Addressed scenarios where repositories are disabled or not downloaded, providing clear console comments for troubleshooting. Improved performance by adding an index to the Reports table, optimizing the ReportScan view for faster access."&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;What else can/should/must we consider as part of our TFM product? Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry><entry><title>Why Metrics?</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-metrics.html" rel="alternate"></link><published>2024-05-03T00:00:00-07:00</published><updated>2024-05-03T00:00:00-07:00</updated><author><name>Martin Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-05-03:/engineering-practices-metrics.html</id><summary type="html">&lt;p&gt;Why should I be concerned about metrics as long as my code works?&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Set the Stage&lt;/h1&gt;
 &lt;p&gt;No matter what stage of your career or size of business you are working with – and especially if you have aspirations of starting your own business or being partner in a startup, metrics are your key to success.  Let me explain why.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Teams collaborating driven by metric" src="/images/engineering-practices-why-metrics-1.png"&gt;&lt;/p&gt;
@@ -2190,78 +2209,4 @@ there, use it; if it is not, add it.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;REMEMBER&lt;/strong&gt; this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
 across all development teams.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Azure DevOps Transient Faults</title><link href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="alternate"></link><published>2023-02-15T00:00:00-08:00</published><updated>2023-02-15T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-15:/azure-devops-transient-faults.html</id><summary type="html">&lt;p&gt;Be careful not to annoy Azure DevOps with your automated maintenance jobs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you automate your operational support and maintenance of &lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt;, such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "&lt;em&gt;last time it 100% worked for sure with no issues&lt;/em&gt;" call for help.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Example 1 of an automation meltdown&lt;/p&gt;
-&lt;p&gt;&lt;img alt="failure" src="../images/azure-devops-transient-faults-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Service Unavailable
-Service Unavailable
-HTTP Error 503. The service is unavailable.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Example 2 of an automation meltdown&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Azure DevOps Services Unavailable
-
-    Azure DevOps Services
-
-        Sorry! Our services aren&amp;#39;t available right now.
-        We&amp;#39;re working to restore all services as quickly as
-        possible. Please check back soon.
-        To see the latest status on our services, please 
-        visit our support page.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;In both cases I ended up having to intervene manually and restart the maintenance job. Muda!&lt;/p&gt;
-&lt;h1&gt;Transient fault&lt;/h1&gt;
-&lt;p&gt;You probably triggered a &lt;strong&gt;throttling&lt;/strong&gt; or &lt;strong&gt;circuit breaker&lt;/strong&gt; pattern, which Azure DevOps uses to protect itself against excessive load or potential &lt;code&gt;denial of service&lt;/code&gt; attacks. If you do not deal with the transient fault you will end up with failed automation, wasted time, and &lt;strong&gt;manual&lt;/strong&gt; intervention - more &lt;strong&gt;WASTE&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Dealing with transient fault&lt;/h1&gt;
-&lt;p&gt;Here is a simple &lt;strong&gt;retry pattern&lt;/strong&gt; that allows you to retry the operation after going to sleep for a while. You may have to play with and increase the &lt;code&gt;$retryValue&lt;/code&gt; default value, depending on the REST API you are calling. &lt;/p&gt;
-&lt;p&gt;1.13 has worked for me and my automation scripts to date.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Retry logic&lt;/p&gt;
-&lt;p&gt;&lt;img alt="bandaid" src="../images/azure-devops-transient-faults-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;3&lt;/span&gt;
-&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;13&lt;/span&gt;
-&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCheck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;
-
-&lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-lt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Azure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;DevOps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;REST&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;API&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;$result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Invoke-RestMethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Uri&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$url&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-ContentType&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Headers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$headers&lt;/span&gt;
-
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;processing&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;...&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;catch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;retry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;logic&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-eq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$retryCheck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;pipeline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;shows&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;warning&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;##vso&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;task.complete&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;SucceededWithIssues&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;SUCCEEDED&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;WITH&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;ISSUES&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Logging&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;Sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;retry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;processing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;loop.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot; $failureCount &amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Sleep&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Message&lt;/span&gt;
-
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Start-Sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$retrySleep&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
-&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Simple, yet effective.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Read &lt;a href="https://opensource.com/article/19/9/transient-faults-devops"&gt;3 ways to handle transient faults for DevOps&lt;/a&gt; for more details on transient faults.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category></entry></feed>
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry></feed>
