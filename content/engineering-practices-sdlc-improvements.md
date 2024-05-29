@@ -1,65 +1,34 @@
-Title: Why release on demand?
-Date: 2024-01-19
+Title: Exploring the future Software Development Lifecycle (SDLC) flow
+Date: 2024-06-07
 Category: Posts 
 Tags: azure-devops, engineering, automation
-Slug: why-release-on-demand
+Slug: engineering-practices-sdlc-improvements
 Author: Willy-Peter Schaub
-Summary: Exploring the deployment rings, continuous delivery and deployment, to discuss release on demand. 
+Summary: Looking for Insights and Feedback from other pioneers of continuous SDLC improvements.
 
-Before I get into the main subject of this blog post – why our goal is to release on demand – I want to quickly talk about deployment rings, continuous delivery and deployment, and what they mean. These topics are all connected in the DevOps DNA and backed by Azure DevOps, the foundation of our software development lifecycle (SDLC).
-
----
-
-# Deployment Rings - managing impact!
-
-The concept of ring-based deployment, initially introduced in Jez Humble's "Continuous Delivery" as canary deployments, strategically minimizes the impact on end users by incrementally and systematically rolling out changes in production. Employing deployment rings allows for a thorough assessment of the impact, often referred to as the "blast radius," achieved through meticulous observation, testing, telemetry analysis, and crucially, user feedback. 
-
-> ![Rings](/images/engineering-practices-why-release-on-demand-1.png)
-
-This approach, used to deploy Azure DevOps, enables the gradual deployment of binary bits, facilitating the concurrent operation of multiple production releases. For more detail, peruse [Deploying new releases: Feature flags or rings?](https://opensource.com/article/18/2/feature-flags-ring-deployment-model).
+TBD.
 
 ---
 
-# Continuous Delivery and Deployment - deploying to one or more environments!
+# SDLC / TODAY
 
+> ![<SAMPLE PIC>](../images/engineering-practices-sdlc-improvements-1.png) 
 
-In the distant year of 2016, I sought insights from my ALM Ranger colleague to delineate the distinction between continuous delivery and continuous deployment. 
-
-Here is what [Donovan Brown](https://www.linkedin.com/in/darquewarrior/) had to say: "_Continuous Delivery is the ability to use the output from the CI to build and deploy the new known good build to **one or more environments** automatically. There is a subtle difference between Continuous **Delivery** and Continuous **Deployment**. The latter is to a single environment. A small team might only implement Continuous Deployment because each change goes directly to production. Continuous Delivery is moving code through **several** environments, ultimately ending up in production, which may include automated UI, load and performance tests and approvals along the way._"
-
-PS: Donovan is also the author of the infamous definition of DevOps I am still using to this day - [What is DevOps](https://www.donovanbrown.com/post/what-is-devops). Collectively, we acknowledged the prevailing notion that DevOps transcends being a product; it is not something one can simply purchase or install. Yet, this perception took an interesting turn with the advent of Azure DevOps.
+TBD.
 
 ---
 
-# Deployment versus Release - giving the business and users a choice!
+# SDLC / FUTURE
 
-**Deployment** is the process of moving a build or application from one environment to another. It involves copying files, configuring settings, and setting up the infrastructure necessary for the application to run. In Azure DevOps, deployment usually refers to the tasks involved in taking an artifact and installing it in different environments such as development, testing, and production.  
+> ![<SAMPLE PIC>](../images/engineering-practices-sdlc-improvements-2.png) 
 
-**Release**, on the other hand, is the process of making a version of your application available to users or customers. It is the end result of the development and testing process and signifies that a particular set of features or changes is ready for production use.
+TBD.
 
 ---
 
-# Why Release on Demand?
+# Conclusion
 
-**Release on Demand** is an agile software development method to continuously provide new features, improvements, or fixes and empower business and delighted end-users to decide when the changes are available and visible. It empowers us to adjust to changing requirements and be more responsive.
-
-For example, Microsoft continuously rolls our [Azure DevOps]( https://azure.microsoft.com/en-us/products/devops/) updates. With a flip of a feature flag / toggle they can switch the features on or off. Delighted end-users, such as I, can even decide when to enable and use public preview features, as shown below.
-
-> ![Flags](/images/engineering-practices-why-release-on-demand-2.png)
-
-Peruse [Deploying new releases: Feature flags or rings?](https://opensource.com/article/18/2/feature-flags-ring-deployment-model) and [Release on Demand - Scaled Agile Framework](https://scaledagileframework.com/release-on-demand/) for more details.
-
-Another option for releasing changes, besides feature flags or toggles, is the BLUE|GREEN deployment method – or using it along with feature flags. It lets you deploy and test your changes in other envi­ronments, while keeping a current (blue) version active, and having a new (green) version ready. If the green environment passes all the checks and business wants to launch all the changes, you can switch the BLUE and GREEN environments. GREEN becomes BLUE and goes live. BLUE becomes GREEN and is used for testing new versions. Simple!
-
-See [VSTS - The Road to Continuous Delivery with Visual Studio Team Services](https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services).
-
-But, WHY bother? Here are several advantages that come to mind:
-
-- **Customer**-centric delivery!
-- **Continuous** delivery of features.
-- **Incremental** and **manageable** release of features.
-- **Flexibility** for business and IT.
-- Encourage collaboration, **feedback**, and a **fail-fast** mindset.
+What have you learned in your SDLC transformations and improvements? Let us have a discussion and please share your insights in the comments below. 
 
 ---
 
