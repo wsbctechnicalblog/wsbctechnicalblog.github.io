@@ -12,7 +12,7 @@ I attended a workshop where they used many TLAs (two/three-lettered acronyms) th
 
 # Proof of Concept (POC)
 
-> ![<SAMPLE PIC>](../images/back-to-basics-mmp-mvp-poc-1.png) 
+> ![POC](../images/back-to-basics-mmp-mvp-poc-1.png) 
 
 A Proof-of-Concept (POC) is a preliminary version or a small sample that evaluates the **feasibility** of an idea or concept. Its main goal is to show to its **internal stakeholders**, such as engineers and investors, that a solution of the idea could be created and would work as intended. 
 
@@ -22,7 +22,7 @@ A MVP usually follows one or more POCs - let us continue with the acronym MMP.
 
 # Minimally Viable Product (MVP)
 
-> ![<SAMPLE PIC>](../images/back-to-basics-mmp-mvp-poc-2.png) 
+> ![MVP](../images/back-to-basics-mmp-mvp-poc-2.png) 
 
 A Minimally Viable Product (MVP) is a new product that has only the core features needed to satisfy the demands of **early adopters** and selected users, who can give **feedback** for further improvement. Its purpose is to test the product concept with minimal resources, offering value to users, but missing the features needed for a marketable product and most importantly the need for funding.
 
@@ -32,7 +32,7 @@ A MMP usually follows one or more MVPs - let us wrap up with the acronym MMP.
 
 # Minimally Marketable Product (MMP)
 
-> ![<SAMPLE PIC>](../images/back-to-basics-mmp-mvp-poc-3.png) 
+> ![MMP](../images/back-to-basics-mmp-mvp-poc-3.png) 
 
 A Minimally Marketable Product (MMP) is a product that has enough features to be sold and offers comprehensive user experience. It satisfies the demands of a broader group of **users** beyond early adopters, can be released, and **marketed**. 
 
