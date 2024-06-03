@@ -34,7 +34,7 @@ As illustrated, our current software development lifecycle (SDLC) flow involves 
 
 > ![SDLC of the future](../images/engineering-practices-sdlc-improvements-2.png) 
 
-We want to move as much of our quality and security scans to the left as we can, adopt a mindset of continuous delivery and release on demand, and decrease the number of environments. We want to gradually show features in a new (green) version, while keeping the live production (blue) version. That way we can switch from green to blue and switch back if needed.  
+We want to move as much of our quality and security scans to the left as far as we can, adopt a mindset of continuous delivery and release on demand, and decrease the number of environments. We want to gradually show features in a new (green) version, while keeping the live production (blue) version. That way we can switch from green to blue and switch back if needed.  
 
 Development, testing, integration testing, performance testing, user acceptance testing, and verifications moves to the left and all activities are run continuously. While the new (green) version is not switched to production, [optional] user acceptance testing and bug analysis can be done. The blue/green environments also create a new possibility to use active-active and passive-active disaster recovery.
 
