@@ -14,7 +14,7 @@ We want to "_Unite people, process, and products to empower and enable us to del
 
 > ![Today's SDLC](../images/engineering-practices-sdlc-improvements-1.png) 
 
-As illustrated, our current software development lifecycle (SDLC) flow involves four main environments – sometimes fewer, sometimes more, but this is the usual pattern. Development, unit testing, and verification are performed in the **development** environment, integration testing, performance testing, and user acceptance testing are conducted in the **system test** environment, additional user acceptance testing and ad-hoc bug analysis are carried out in **Staging**, and we are all familiar with what happens in **Production**.  
+As illustrated, our current software development lifecycle (SDLC) flow involves four main environments – sometimes fewer, sometimes more, but this is the usual pattern. Development, unit testing, and verification are performed in the **dev/test** environment, integration testing, performance testing, and user acceptance testing are conducted in the **dev/test** environment, additional user acceptance testing and ad-hoc bug analysis are carried out in **Staging**, and we are all familiar with what happens in **Production**.  
 
 ### Advantages
 
