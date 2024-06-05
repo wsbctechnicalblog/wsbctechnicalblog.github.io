@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Azure Boards Tips - </title>
+        <title>Decoding the Acronyms: MMP vs. MVP vs. POC - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,107 +33,54 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-boards-tips.html" rel="bookmark"
-            title="Permalink to Azure Boards Tips">Azure Boards Tips</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-mmp-mvp-poc.html" rel="bookmark"
+            title="Permalink to Decoding the Acronyms: MMP vs. MVP vs. POC">Decoding the Acronyms: MMP vs. MVP vs. POC</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 02 December 2022</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 03 June 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>A few useful "did you know" tips when using Azure Boards.</p>
+            <p>MMP, MVP, and POC: Understanding Their Differences and Choosing the Right Approach</p>
         </div>
     
         <div class="entry-content">
-            <p>After observing users work with and occasionally struggle with the <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a>, it is time for me to share a few tips.</p>
+            <p>I attended a workshop where they used many TLAs (two/three-lettered acronyms) that were hard to follow, especially after lunch when everyone was tired. Not all the participants knew what the TLAs meant, and they could cause misunderstandings or confusion. For example, SA could mean solution architect, systems architecture, or South-Africa. My team has an agreement to avoid TLAs in spoken communication and to only use them in written communication if there is a table of acronyms or the full form with the acronym in brackets is used first.  But, this is not the main point of this short blog post. In the same workshop we talked about MMP, MVP, and POC and I thought it was a good chance to clarify the acronyms and explain how I see the difference.</p>
 <hr>
-<h1>Select the right card reordering strategy</h1>
+<h1>Proof of Concept (POC)</h1>
 <blockquote>
-<p><img alt="reordering" src="../images/azure-boards-tips-1.png"> </p>
+<p><img alt="POC" src="../images/back-to-basics-mmp-mvp-poc-1.png"> </p>
 </blockquote>
-<p>The board supports two reorder behaviours when you drag and drop your cards. </p>
-<ul>
-<li>Reorder work items when changing columns and update the backlog accordingly. (Default)</li>
-<li>Follow backlog order when changing columns.</li>
-</ul>
-<p>As I <strong>groom</strong> and maintain an <strong>ordered</strong> (prioritised) backlog, I prefer the second behaviour. It drops the card according to the work items order within the backlog. In other words, if it has the highest priority on the backlog it will appear at the top of the column, no matter where you drop it. Once dropped, you can intentionally drag and drop the card within the column, which updates its order (priority)within the column and updates the backlog accordingly.</p>
-<blockquote>
-<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
-<p><strong>GOTO</strong> <code>Configure team settings</code>. </p>
-<p>Select <code>Card reordering</code> and select the expected reorder strategy.</p>
-</blockquote>
+<p>A Proof-of-Concept (POC) is a preliminary version or a small sample that evaluates the <strong>feasibility</strong> of an idea or concept. Its main goal is to show to its <strong>internal stakeholders</strong>, such as engineers and investors, that a solution of the idea could be created and would work as intended. </p>
+<p>A MVP usually follows one or more POCs - let us continue with the acronym MMP.</p>
 <hr>
-<h1>Create visual cues on your board</h1>
+<h1>Minimally Viable Product (MVP)</h1>
 <blockquote>
-<p><img alt="cues" src="../images/azure-boards-tips-2.png"> </p>
+<p><img alt="MVP" src="../images/back-to-basics-mmp-mvp-poc-2.png"> </p>
 </blockquote>
-<p>Maximize your <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a> on your biggest monitor and take two steps back. Can you see visual cues for (1) cards flowing in swim lanes, (2) tags that pop out from the rest to indicate special metadata, such as PRIORITY, and (3) card colours that indicate their states?</p>
-<p>Even though the above board has been blurred, I notice nine (9) cards that are a <code>PRIORITY</code> due to the tag colour, one (1) card that needs to be discussed <code>violet colour</code>, two (2) cards that need to be groomed <code>salmon colour</code>, and two (2) cards that are stale <code>orange colour</code>. Oh, the yellow cards on the right tell me that their <code>iteration path</code> has not yet been set.</p>
-<p>The <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Boards</a> delivers powerful <strong>visual cue</strong> features - use them! </p>
-<p>Please do not use the card colour styles to indicate who they have been assigned to. There are only ten (10) possible styles, and you are better off using the <strong>filter</strong> to focus on your work - see below.</p>
-<blockquote>
-<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
-<p><strong>GOTO</strong> <code>Configure team settings</code>. 
-Select <code>Tag colors</code> and define special colours for special tags.</p>
-<p>Select <code>Styles</code> and define up to ten (10) styles to stand out.</p>
-</blockquote>
-<p>Here is an example of a rule that turns stale cards orange:</p>
-<blockquote>
-<p><img alt="style" src="../images/azure-boards-tips-7.png"> </p>
-</blockquote>
+<p>A Minimally Viable Product (MVP) is a new product that has only the core features needed to satisfy the demands of <strong>early adopters</strong> and selected users, who can give <strong>feedback</strong> for further improvement. Its purpose is to test the product concept with minimal resources, offering value to users, but missing the features needed for a marketable product and most importantly the need for funding.</p>
+<p>A MMP usually follows one or more MVPs - let us wrap up with the acronym MMP.</p>
 <hr>
-<h1>Use the filter!</h1>
+<h1>Minimally Marketable Product (MMP)</h1>
 <blockquote>
-<p><img alt="filter" src="../images/azure-boards-tips-3.png"> </p>
+<p><img alt="MMP" src="../images/back-to-basics-mmp-mvp-poc-3.png"> </p>
 </blockquote>
-<p>The <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Board</a> team implemented a great filter, allowing you to filter you board on <code>work item types</code>, <code>assigned to</code>, <code>Tags</code>, <code>Iterations</code>, <code>Area paths</code>, and <code>Parent Work Items</code> to reduce the noise and allow you to focus on what is important. </p>
-<p>For example, my board is filtered on cards assigned to <code>@Me</code>, <code>Unassigned</code>, and <code>my team's AD group</code> so that I can focus on my work and keep an eye on the unassigned work. </p>
+<p>A Minimally Marketable Product (MMP) is a product that has enough features to be sold and offers comprehensive user experience. It satisfies the demands of a broader group of <strong>users</strong> beyond early adopters, can be released, and <strong>marketed</strong>. </p>
+<p>Usually, a market winning product is preceded by one or more MMPs. </p>
 <hr>
-<h1>My work items are vanishing!?!</h1>
-<blockquote>
-<p><img alt="states" src="../images/azure-boards-tips-6.png"> </p>
-</blockquote>
-<p>Ensure that all work item possible states are mapped to one or more of the <a href="https://azure.microsoft.com/en-ca/products/devops/boards/">Azure Board</a> columns. If a state is not mapped against a column, the card will literally <strong>vanish</strong> from your board when its state changes to the unmapped state - the board is literally doing what <strong>you</strong> have configured it to do.</p>
-<blockquote>
-<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
-<p><strong>GOTO</strong> <code>Configure team settings</code>. </p>
-<p>Select <code>Columns</code> and map the work item states for each column.</p>
-</blockquote>
-<hr>
-<h1>Add high-value fields on the card</h1>
-<blockquote>
-<p><img alt="fields" src="../images/azure-boards-tips-4.png"> </p>
-</blockquote>
-<p>The last thing you want to do is click on a card on your Kanban board - <strong>WASTE</strong>! Ensure you have the relevant fields mapped to your card so that in most cases you can simply look at the card to understand what to do next. </p>
-<blockquote>
-<p><img alt="settings" src="../images/azure-boards-tips-0.png"> </p>
-<p>GOTO <code>Configure team settings</code>. </p>
-<p>Select <code>Fields</code> and map up to 10 fields in the order they need to appear on your card.</p>
-<p>DO NOT check <code>Check if you want to display fields even if they are empty</code> - <strong>WASTE</strong>!</p>
-</blockquote>
-<hr>
-<h1>Do not forget the Delivery Plan!</h1>
-<blockquote>
-<p><img alt="delivery plan" src="../images/azure-boards-tips-5.png"> </p>
-</blockquote>
-<p>Lastly, remember the <a href="https://learn.microsoft.com/en-in/azure/devops/boards/plans/review-team-plans?view=azure-devops">Delivery Plan</a> which allows you to create a delivery board-type plan view combining multiple teams, backlogs, and iteration cadences. The delivery plan configuration of settings and styles is similar to the board, but it also allow you to collapse cards and show dependencies.</p>
-<blockquote>
-<p><strong>IMPORTANT</strong>
-Dependencies are only shown for predecessor/successor links and dependency lines are only drawn if both the predecessor and successor cards are visible on the delivery plan view.</p>
-</blockquote>
-<p>Any other tips to share?</p>
+<p>Thoughts? Do you agree?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
-        | <a href="https://wsbctechnicalblog.github.io/azure-boards-tips.html" rel="bookmark"
-         title="Permalink to Azure Boards Tips">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/101.html">101 </a>
+        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-mmp-mvp-poc.html" rel="bookmark"
+         title="Permalink to Decoding the Acronyms: MMP vs. MVP vs. POC">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
