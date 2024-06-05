@@ -12,7 +12,7 @@ We want to "_Unite people, process, and products to empower and enable us to del
 
 # SDLC / FLOW / TODAY
 
-> ![Today's SDLC](../images/engineering-practices-sdlc-improvements-1.png) 
+> ![SDLC of today](../images/engineering-practices-sdlc-improvements-1.png) 
 
 As illustrated, our current software development lifecycle (SDLC) flow involves four main environments – sometimes fewer, sometimes more, but this is the usual pattern. Development, unit testing, and verification are performed in one or more **dev + test** environment(s), integration testing, performance testing, and user acceptance testing are conducted in tone or more **dev + test** environment(s), additional user acceptance testing and ad-hoc bug analysis are carried out in **pre-Production**, and we are all familiar with what happens in **Production**.  
 
