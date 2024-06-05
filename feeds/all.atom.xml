@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-05-10T00:00:00-07:00</updated><entry><title>Technology Framework Monitor - Open Source Software Sync 20240510</title><link href="https://wsbctechnicalblog.github.io/azure-tfm-oss-sync-202400510.html" rel="alternate"></link><published>2024-05-10T00:00:00-07:00</published><updated>2024-05-10T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-05-10:/azure-tfm-oss-sync-202400510.html</id><summary type="html">&lt;p&gt;Shake Off the Dust: Our TFM Software Spring Cleaning!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The ongoing evolution of our Technology Framework Monitor (TFM) open-source project empowers us to expand our horizons in identifying end-of-life products and detecting engineering practice drift. In this latest update, we have performed tons of spring cleanups. Our next step involves adding support to detect drift from our engineering practices.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-03T00:00:00-07:00</updated><entry><title>Decoding the Acronyms: MMP vs. MVP vs. POC</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-mmp-mvp-poc.html" rel="alternate"></link><published>2024-06-03T00:00:00-07:00</published><updated>2024-06-03T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-03:/back-to-basics-mmp-mvp-poc.html</id><summary type="html">&lt;p&gt;MMP, MVP, and POC: Understanding Their Differences and Choosing the Right Approach&lt;/p&gt;</summary><content type="html">&lt;p&gt;I attended a workshop where they used many TLAs (two/three-lettered acronyms) that were hard to follow, especially after lunch when everyone was tired. Not all the participants knew what the TLAs meant, and they could cause misunderstandings or confusion. For example, SA could mean solution architect, systems architecture, or South-Africa. My team has an agreement to avoid TLAs in spoken communication and to only use them in written communication if there is a table of acronyms or the full form with the acronym in brackets is used first.  But, this is not the main point of this short blog post. In the same workshop we talked about MMP, MVP, and POC and I thought it was a good chance to clarify the acronyms and explain how I see the difference.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Proof of Concept (POC)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="POC" src="../images/back-to-basics-mmp-mvp-poc-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A Proof-of-Concept (POC) is a preliminary version or a small sample that evaluates the &lt;strong&gt;feasibility&lt;/strong&gt; of an idea or concept. Its main goal is to show to its &lt;strong&gt;internal stakeholders&lt;/strong&gt;, such as engineers and investors, that a solution of the idea could be created and would work as intended. &lt;/p&gt;
+&lt;p&gt;A MVP usually follows one or more POCs - let us continue with the acronym MMP.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Minimally Viable Product (MVP)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="MVP" src="../images/back-to-basics-mmp-mvp-poc-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A Minimally Viable Product (MVP) is a new product that has only the core features needed to satisfy the demands of &lt;strong&gt;early adopters&lt;/strong&gt; and selected users, who can give &lt;strong&gt;feedback&lt;/strong&gt; for further improvement. Its purpose is to test the product concept with minimal resources, offering value to users, but missing the features needed for a marketable product and most importantly the need for funding.&lt;/p&gt;
+&lt;p&gt;A MMP usually follows one or more MVPs - let us wrap up with the acronym MMP.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Minimally Marketable Product (MMP)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="MMP" src="../images/back-to-basics-mmp-mvp-poc-3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A Minimally Marketable Product (MMP) is a product that has enough features to be sold and offers comprehensive user experience. It satisfies the demands of a broader group of &lt;strong&gt;users&lt;/strong&gt; beyond early adopters, can be released, and &lt;strong&gt;marketed&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;Usually, a market winning product is preceded by one or more MMPs. &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thoughts? Do you agree?&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="learning"></category><category term="101"></category></entry><entry><title>Technology Framework Monitor - Open Source Software Sync 20240510</title><link href="https://wsbctechnicalblog.github.io/azure-tfm-oss-sync-202400510.html" rel="alternate"></link><published>2024-05-10T00:00:00-07:00</published><updated>2024-05-10T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-05-10:/azure-tfm-oss-sync-202400510.html</id><summary type="html">&lt;p&gt;Shake Off the Dust: Our TFM Software Spring Cleaning!&lt;/p&gt;</summary><content type="html">&lt;p&gt;The ongoing evolution of our Technology Framework Monitor (TFM) open-source project empowers us to expand our horizons in identifying end-of-life products and detecting engineering practice drift. In this latest update, we have performed tons of spring cleanups. Our next step involves adding support to detect drift from our engineering practices.&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Technology-Framework-Monitor/pull/31"&gt;Click here to peruse associated Pull Request&lt;/a&gt;
@@ -2147,66 +2170,4 @@ can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, 
 &lt;p&gt;&lt;img alt="v2.1" src="../images/azure-devops-pipeline-oss-v2-1-flow-2.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;Pull Request 14&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
-&lt;p&gt;How we name and categorize things conveys meaning and intent - what it &lt;em&gt;is&lt;/em&gt; and possibly &lt;em&gt;how&lt;/em&gt; it should be used.  All
-in the aim of improving clarity of purpose and understanding its nature, and how it should be used.&lt;/p&gt;
-&lt;p&gt;When we talk about software, we are specifically addressing naming conventions and standards, patterns that
-can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
-or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
-useful approach to naming &lt;em&gt;things&lt;/em&gt; to the benefit of our software quality and maintainability, and in fact scalability.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why are Naming Conventions Important?&lt;/h1&gt;
-&lt;p&gt;We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its &lt;em&gt;Name&lt;/em&gt;), and indeed
-be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
-across all products, projects, and development teams.  It is more important to define a convention and &lt;em&gt;stick with it&lt;/em&gt;, than it is
-to pick the &lt;em&gt;best&lt;/em&gt; one - it may come down to style preferences and patterns that everyone agrees on.&lt;/p&gt;
-&lt;p&gt;Naming conventions can apply to all &lt;em&gt;things&lt;/em&gt; in your software; for folders, files, variables, classes, methods, and even project files and solutions. Deciding on and following your convention is a cornerstone to creating great software.  When you adopt and follow an 
-organization-wide standard &lt;em&gt;Naming Convention&lt;/em&gt; you will experience the following benefits:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Smooth Operation - When your data is easy to find, it is easy to extract the required knowledge and make decisions based on it. There won’t be any delay in getting information, and this ensures smooth administration in your organization without any bottlenecks.&lt;/li&gt;
-&lt;li&gt;Better Version Control - Information gets constantly updated in an organizational setting. To make sure you are using the most recent version, you need to tag it accordingly in your file name. This helps you avoid errors associated with outdated knowledge.&lt;/li&gt;
-&lt;li&gt;Save Time and Money - When you avoid duplication through proper naming conventions, you can save a lot of time and money. You won’t have to spend time looking for lost files and there will be no need to create new versions of already existing files.&lt;/li&gt;
-&lt;li&gt;Automation - you can anticipate file and folder names, enabling process automation such as build pipelines and code scans&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are other pillars in creating exceptional software as well, and we'll
-explore those is upcoming articles.&lt;/p&gt;
-&lt;p&gt;Let us explore these standards, and the patterns that we use &lt;em&gt;by convention&lt;/em&gt; to improve our software and unlock automation.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Date Convention&lt;/h1&gt;
-&lt;p&gt;Dates are so common, we run into them just about every day :).  &lt;/p&gt;
-&lt;p&gt;We need a standard way to represent a date, since it can be used in filename and 
-data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a decreasing scope pattern.  Additional,
-you might optionally include a time component suffix as well HHMMSSmmmm.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Case Convention&lt;/h1&gt;
-&lt;p&gt;When we create &lt;em&gt;things&lt;/em&gt; that have compound names - names that contain multiple words combined into a single string - we may want to delineate
-where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Camel Case&lt;/strong&gt; (camelCase) - This involves capitalizing all words except the first word and removing the space in between them. For instance, 'product table id' can be written as productTableId.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pascal Case&lt;/strong&gt; (PascalCase) - This involves capitalizing all words in the name, including the first, and removing the space in between them. For instance, 'product table id' can be written as ProductTableId.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Snake Case&lt;/strong&gt; (snake_case) - This type of naming combines words simply by replacing the space with an underscore (_). The same example used above can be written as product_table_id.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Kebab Case&lt;/strong&gt; (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;Special Characters&lt;/h1&gt;
-&lt;p&gt;It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
-have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
-When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
-If you adopt the rule of only using Alpha-numerics, you will be well prepared for such situations.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Standard Terms&lt;/h1&gt;
-&lt;p&gt;You should also consider managing a library of standard terms, with their encoded (Naming Convention applied) &lt;em&gt;name&lt;/em&gt;, definition and usage.&lt;br&gt;
-When defining a name for an object - consult the library of standard terms first to see if words you want to use have been standardized on.  If it is
-there, use it; if it is not, add it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;REMEMBER&lt;/strong&gt; this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
-across all development teams.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry></feed>
+&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry></feed>
