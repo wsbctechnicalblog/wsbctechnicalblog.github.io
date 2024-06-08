@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why extract methods when modifying legacy code? - </title>
+        <title>Exploring the future Software Development Lifecycle (SDLC) flow - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,70 +33,91 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-extract-methods.html" rel="bookmark"
-            title="Permalink to Why extract methods when modifying legacy code?">Why extract methods when modifying legacy code?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practices-sdlc-improvements.html" rel="bookmark"
+            title="Permalink to Exploring the future Software Development Lifecycle (SDLC) flow">Exploring the future Software Development Lifecycle (SDLC) flow</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 16 October 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 07 June 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Legacy code is hard to test, so extract methods by writing micro tests</p>
+            <p>Looking for Insights and Feedback from other pioneers of continuous SDLC improvements.</p>
         </div>
     
         <div class="entry-content">
-            <p>Allow me a bit of introspection. I’ve been in Software Engineering field for 30 years. During those 30 years I modified a lot of legacy software. Here is how I would typically do it:</p>
-<p>Over the years I have formed certain habits when working with legacy code. Because on most projects I get paid to deliver working software that is easy to maintain, I cannot afford the luxury of taking my sweet time trying to fully understand the legacy code I am about to modify. So I tend to skim. Skimming the code helps me quickly identify relevant portions in the repo. It is a race with time, and I don’t have cycles at my disposal to dwell on less relevant minutia. I’m always going for the most relevant area in the code. Once I find it, I slow down and start analyzing it.</p>
-<p>I rely heavily on IDEs (power tools). Doesn’t matter which power tool, these days they’re all pretty much capable of doing the same thing. What’s important to me is the ability to quickly find where functions are called and where variables are used.</p>
-<p>Sooner or later, after I’m done skimming the code and analyzing the code segment I’m intending to change, I identify a place where I want to insert some code. Now that I understand the meaning of the classes, components, objects involved in performing the function, I first write a test.</p>
-<p>Following that, I write code to make the test pass. I type the name of the object I intend to use, and then press the period (dot, or “.”) key. Immediately, IDE responds with giving me a full list of methods defined for that object. All those methods are callable from the location where my cursor is.</p>
-<p>I then pick the method that makes sense to me. I fill in the blanks (i.e. supply values for the expected arguments/parameters), save the change, and run the test. If the test passes, I’m done with that micro change.</p>
-<p>The above activity typically gets repeated many times per hour. Throughout the workday, it is not unusual to see the above activity repeated dozens, even hundreds of times.</p>
-<p>I believe the above description of the way I modify software is not unique to the way I formed my work habits. I believe it describes a typical flow that many (I’d even say most) software engineers adhere to.</p>
-<h2>A few observations</h2>
-<p>The first thing that is apparent after observing the above described way of modifying legacy software is the absence of any work on documentation. Experience has shown that software developers very rarely spend time reaching out for documentation. Time spent preparing the documentation and generating it to produce HTML-style online documents is time wasted.</p>
-<p>Instead, most developers rely solely upon power tools (IDEs). And rightly so (IDEs never lie, as they always offer the real-time picture of the system we are modifying; documentation is more often than not stale).</p>
-<p>Another thing worth noticing is that developers don’t read the source code the way it was written. When writing code from scratch (first pass), many developers tend to write in long functions. Source code tends to bunch up. Bunching code up makes it easier to read and reason about on the first pass, and also makes it easier to debug. But after the first pass is finished, people rarely, if ever, consume the code the way it was written. If we catch ourselves reading a whole function from beginning to end, it is most likely due to the fact that we have exhausted all other options and have no choice but to slow down and read the code in a pedestrian way. However, in my experience, that slow and orderly reading of the code seldom happens.</p>
-<h2>Problems caused by the bunched up code</h2>
-<p>If we were to leave the code as it was written during the first pass (i.e. long functions, a lot of bunched up code to enable easy initial understanding and debugging), it would render IDEs powerless. If we cram all capabilities an object can offer in a single giant function, later on when trying to utilize that object, IDEs will be of no help. IDEs will only show the existence of one method (which will probably contain a large list of parameters providing values that enforce the branching logic inside that method). So we won’t know how to really use that object unless we open its source code and read its processing logic very carefully. And even then, our heads will probably hurt.</p>
-<p>Another problem with hastily cobbled up, ‘bunched up’ code is that its processing logic is not testable. While we can still write an end-to-end test for that code (input values and the expected output values), we have no way of knowing if the bunched up code is doing any other potentially risky processing. Also, we have no way of testing for edge cases, unusual scenarios, difficult-to-reproduce scenarios etc. That renders our code untestable. Which is a very bad thing to live with.</p>
-<h2>Break up bunched up code by extracting methods</h2>
-<p>Long functions/methods are always a sign of muddled thinking. When a block of code contains numerous statements, it usually means that it is doing way too much processing. Cramming a lot of processing in one place typically means we haven’t carefully thought things through.</p>
-<p>One need not look further than into how companies are typically organized. Instead of having hundreds of employees working in a single department, companies tend to break up into numerous smaller departments. That way, it is much clearer where responsibilities lie.</p>
-<p>Software code is no different. An application exists in order to automate a lot of intricate processing. Processing gets broken into a number of smaller steps, so each step must be mapped onto a separate, isolated block of code. We create such separate, isolated and autonomous block of code by extracting methods. We take a long, bulky block of code and break it up by extracting responsibilities into separate blocks of code.</p>
-<h2>Extracted methods enable better naming</h2>
-<p>Software code is written by developers, but in actuality it is much more often consumed (i.e. read) by developers than it is written.</p>
-<p>When consuming software code, it helps if the code is expressive. Expressiveness boils down to proper structure and proper naming. Consider the following statement:</p>
-<p><code>if((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65))</code></p>
-<p>It would be literally impossible to understand the meaning and the intention of the above statement without actually running the code and stepping through it with a debugger. Such activity is what we call GAK (Geek at Keyboard). It is 100% unproductive, and is quite wasteful.</p>
-<p>Here is where extract method and naming come to the rescue. Take the complex statement contained within the if statement, extract it into its own method, and give that method a meaningful name. For example:</p>
-<p><code>public bool IsEligible(bool b, bool x, bool y, int z) {</code></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>return ((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65);</code></p>
-<p><code>}</code></p>
-<p>Now replace the ugly if statement with a more readable statement:</p>
-<p><code>if(IsEligible(b, x, y, z))</code></p>
-<p>Of course, we should also replace dumb one character variable names with more meaningful names to improve readability.</p>
-<h2>Reuse in legacy code</h2>
-<p>Experience shows that any functionality that is not extracted and properly named and moved to the most reasonable class will never be reused. Extract method fosters frequent reuse, which goes a long way toward improving code quality.</p>
-<h2>Testing the legacy code</h2>
-<p>Writing tests for the existing code is hard and feels less rewarding than doing TDD. Even after we identify that there should be several tests that ensure production code works as expected, when we realize that production code has to be changed to enable testing, we often decide to skip writing tests. Our goals to deliver testable code slowly but surely keep diminishing.</p>
-<p>Writing tests for the legacy code is tedious because it often requires to spend a lot of time and code to set up the preconditions. That’s the opposite of how we write tests when doing TDD, where time spent on writing preconditions is minimal.</p>
-<p>Best way to make legacy code testable is to practice the extract method approach. Locating a block of code nested in loops and conditionals and extracting it will enable us to write small precise tests. Such tests on extracted functions improve not only the testability of the code, but also the understandability. If legacy code now becomes more understandable thanks to extracting methods and writing legible tests, chances of introducing any defects are drastically reduced.</p>
-<h2>Conclusion</h2>
-<p>Most of the discussion pertaining to extracting methods would not be necessary when we’re doing TDD. Writing one test first and then making the test pass, then scanning that code for more insights into how the code should be structured and improved, making improvements, and finally making changes part of the code base will guarantee that there will be no need to worry about extracting methods. Since legacy code usually means code that was not crafted following TDD methodology, we are forced to adopt a different approach. In my experience, extract methods gives us the biggest bang for the buck when it comes to modifying legacy code while avoiding risks of breaking the functionality.</p>
-<p><br /><br /></p>
+            <p>We want to "<em>Unite people, process, and products to empower and enable us to deliver continuous value to delighted end-users</em>", following <a href="https://www.donovanbrown.com/post/what-is-devops">Donovan's definition of DevOps</a>, and our aim is to "<em>Create an SDLC with consistent, standardized, secure, simple, and cost-effective processes, practices, and products</em>". We always try to improve our people (80%), processes (15%), and products (5%). In this post I will highlight one topic we are investigating and I hope you will join us and share your views on whether we are on track, or need some adjustment – <strong>SDLC Flow</strong>.</p>
+<hr>
+<h1>SDLC / FLOW / TODAY</h1>
+<blockquote>
+<p><img alt="SDLC of today" src="../images/engineering-practices-sdlc-improvements-1.png"> </p>
+</blockquote>
+<p>As illustrated, our current software development lifecycle (SDLC) flow involves four main environments – sometimes fewer, sometimes more, but this is the usual pattern. Development, unit testing, and verification are performed in one or more <strong>dev + test</strong> environment(s), integration testing, performance testing, and user acceptance testing are conducted in tone or more <strong>dev + test</strong> environment(s), additional user acceptance testing and ad-hoc bug analysis are carried out in <strong>pre-Production</strong>, and we are all familiar with what happens in <strong>Production</strong>.  </p>
+<h3>Advantages</h3>
+<ul>
+<li>Clear separation of duties.</li>
+<li>Capacity to work on and deliver a lot of value (super tankers).</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Multiple environments that need careful operational attention.</li>
+<li>Multiple environments that produce carbon emissions.</li>
+<li>Multiple environments that can diverge from each other in terms of data, setup, 3rd party software, for example .NET, and our solution artifacts.</li>
+<li>Multiple environments that increase <strong>complexity</strong> and <strong>total cost of ownership</strong>.</li>
+</ul>
+<hr>
+<h1>SDLC / FLOW / FUTURE</h1>
+<blockquote>
+<p><img alt="SDLC of the future" src="../images/engineering-practices-sdlc-improvements-2.png"> </p>
+</blockquote>
+<p>We want to move as much of our quality and security scans to the left as far as we can, adopt a mindset of continuous delivery and release on demand, and decrease the number of environments. We want to gradually show features in a new (green) version, while keeping the live production (blue) version. That way we can switch from green to blue and switch back if needed.  </p>
+<p>Development, testing, integration testing, performance testing, user acceptance testing, and verifications moves to the left and all activities are run continuously. While the new (green) version is not switched to production, [optional] user acceptance testing and bug analysis can be done. The blue/green environments also create a new possibility to use active-active and passive-active disaster recovery.</p>
+<p>A minor detail in the visual above, is that we could have multiple development environments, which we would provision on-demand and delete as needed.</p>
+<p>Another topic that is relevant is resolving problems - with this simpler model, we also prefer to fix-forward, not roll-back by default.  </p>
+<h3>Advantages</h3>
+<ul>
+<li>Focus on delivering value continuously (small changes, aka speed boats).</li>
+<li>Giving business the power to choose when their features are launched.</li>
+<li>Fewer environments to maintain and smaller environmental impact.</li>
+<li>Fewer environments enables lower cost of ownership.</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Automation, automation, automation - which I personally see as an advantage, not disadvantage.</li>
+<li>Some hefty prerequisites, as below.</li>
+</ul>
+<h3>Prerequisites</h3>
+<ul>
+<li><strong>Continuous delivery</strong> of value - think nimble speed boats not super tankers - and <strong>release on demand</strong>. Requires a culture (PEOPLE) mindset change. </li>
+<li>Welcome <strong>feature flags</strong>!</li>
+<li><strong>Shift-left</strong> and <strong>QUALITY</strong> mindset. </li>
+<li><strong>Consistency</strong>, <strong>standardization</strong>, and <strong>simplicity</strong> to enable automation.</li>
+<li><strong>Automated</strong> unit, user interface, integration, and regression testing.</li>
+<li><strong>Automated</strong> (self-service) provisioning of architecture, infrastructure, and CI/CD blueprints.</li>
+</ul>
+<hr>
+<h1>Conclusion</h1>
+<p>How has your SDLC changed and improved over time? Are we making the wrong choices or are we on the right path to continuously enhance our SDLC?</p>
+<p>Let us start a conversation and please post your thoughts in the comments below. </p>
+<hr>
+<h1>References</h1>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2016/august/devops-applying-devops-to-a-software-development-project">Applying DevOps to a Software Development Project</a> / August 2016</li>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a> / December 2017</li>
+<li><a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> / February, 2018</li>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2018/may/devops-any-language-any-platform-with-azure-devops-projects">Any Language, Any Platform with Azure DevOps Projects</a> / May 2018</li>
+</ul>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">tdd </a><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing </a>
-        | <a href="https://wsbctechnicalblog.github.io/why-extract-methods.html" rel="bookmark"
-         title="Permalink to Why extract methods when modifying legacy code?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practices-sdlc-improvements.html" rel="bookmark"
+         title="Permalink to Exploring the future Software Development Lifecycle (SDLC) flow">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
