@@ -1,26 +1,34 @@
-Title: X
+Title: Automate Azure DevOps work item state transitions like a Pro
 Date: 2024-06-21
 Category: Posts 
 Tags: agile, azure-devops, learning, 101
 Slug: back-to-basics-azdo-backlog-automation
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: Maintain your backlog by changing the status of work items according to the status of their subitems.
 
-TBD
+When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself if teams are not motivated to tidy up their backlogs to prevent subtle, but significant state inconsistencies. 
 
-New Boards Hubs
-On
-Enables new web platform Boards hubs.
+> ![Anomalies](/images/back-to-basics-azdo-backlog-automation-0.png)
 
-> ![New Board](/images/back-to-basics-azdo-backlog-automation-1.jpg)
+As shown, we often encounter parents in a **new** or **active** state, with all their children in a **closed** state – are we expecting more children or has the parent been overlooked? Alternatively we see parents in a **new** state and children in an **active** state – have we wrongly started work, mistakenly moved the child work item into an active state, or has the parent again been neglected?
 
-TBD
+Maybe the AzDO team snuck in a new and useful feature to the product as part of the **New Boards Hubs** preview feature and the teams do not know yet. I will assume this to be the case and show you 3 easy steps to create magic.  
 
-> ![Settings](/images/back-to-basics-azdo-backlog-automation-2.jpg)
+1. Turn on the New Boards Hubs preview feature.
 
-TBD
+    > ![New Board](/images/back-to-basics-azdo-backlog-automation-1.jpg)
 
-> ![Automation](/images/back-to-basics-azdo-backlog-automation-3.jpg)
+2. Check your Team Settings and look at Automation – Rules.
+
+    > ![Settings](/images/back-to-basics-azdo-backlog-automation-2.jpg)
+
+3. Set up how you want to automate your parent work item states.  
+
+    > ![Automation](/images/back-to-basics-azdo-backlog-automation-3.jpg)
+
+Do steps 2 and 3 for each backlog level that needs this great feature.  
+
+That is all – enjoy the **magic**.
 
 >
 > **IMPORTANT NOTES**:
@@ -33,16 +41,16 @@ TBD
 A special note for **Pam**:
 
 >
-> **IMPACT ON SCORECARD BACKLOG**:
+> **IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS**:
 >
-> #3 affects our scorecard backlog. The automation won't work when linked children from other projects and/or teams are closed, if they are attached to scorecard parents.
+> #3 affects our portfolio and scorecard backlog. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to scorecard parents.
 >
 
 For more information read [Automate work item state transitions](https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/automate-work-item-state-transitions?view=azure-devops).
 
 ---
 
-# Related [AzureDevOps](https://azure.microsoft.com/en-us/products/devops) Board posts
+# Related [AzDO](https://azure.microsoft.com/en-us/products/devops) Board posts
 
 - [Agile Boards Tips](/agile-boards-tips.html)
 - [Azure Boards Tips - Stop messing with our backlog!](/azure-boards-tips-stop-messing-with-our-backlog.html)
@@ -51,5 +59,5 @@ For more information read [Automate work item state transitions](https://learn.m
 
 ---
 
-Have you discovered and used this nifty automation rule?
+Have you discovered and are you enjoying this nifty automation rule?
 
