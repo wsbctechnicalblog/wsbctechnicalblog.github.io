@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-07T00:00:00-07:00</updated><entry><title>Exploring the future Software Development Lifecycle (SDLC) flow</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-sdlc-improvements.html" rel="alternate"></link><published>2024-06-07T00:00:00-07:00</published><updated>2024-06-07T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-07:/engineering-practices-sdlc-improvements.html</id><summary type="html">&lt;p&gt;Looking for Insights and Feedback from other pioneers of continuous SDLC improvements.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We want to "&lt;em&gt;Unite people, process, and products to empower and enable us to deliver continuous value to delighted end-users&lt;/em&gt;", following &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan's definition of DevOps&lt;/a&gt;, and our aim is to "&lt;em&gt;Create an SDLC with consistent, standardized, secure, simple, and cost-effective processes, practices, and products&lt;/em&gt;". We always try to improve our people (80%), processes (15%), and products (5%). In this post I will highlight one topic we are investigating and I hope you will join us and share your views on whether we are on track, or need some adjustment – &lt;strong&gt;SDLC Flow&lt;/strong&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-17T00:00:00-07:00</updated><entry><title>Automate Azure DevOps work item state transitions like a Pro</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html" rel="alternate"></link><published>2024-06-17T00:00:00-07:00</published><updated>2024-06-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-17:/back-to-basics-azdo-backlog-automation.html</id><summary type="html">&lt;p&gt;Maintain your backlog by changing the status of work items according to the status of their subitems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Anomalies" src="/images/back-to-basics-azdo-backlog-automation-0.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As shown, I often encounter parents in a &lt;strong&gt;new&lt;/strong&gt; or &lt;strong&gt;active&lt;/strong&gt; state, with all their children in a &lt;strong&gt;closed&lt;/strong&gt; state – are we expecting more children or has the parent been overlooked? Alternatively we see parents in a &lt;strong&gt;new&lt;/strong&gt; state and children in an &lt;strong&gt;active&lt;/strong&gt; state – have we wrongly started work, mistakenly moved the child work item into an active state, or has the parent again been neglected?&lt;/p&gt;
+&lt;p&gt;Maybe the AzDO team snuck in a new and useful feature to the product as part of the &lt;strong&gt;New Boards Hubs&lt;/strong&gt; preview feature and the teams do not know yet. I will assume this to be the case and show you 3 easy steps to create magic.  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Turn on the New Boards Hubs preview feature.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="New Board" src="/images/back-to-basics-azdo-backlog-automation-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check your Team Settings and look at Automation – Rules.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Settings" src="/images/back-to-basics-azdo-backlog-automation-2.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set up how you want to automate your parent work item states.  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Automation" src="/images/back-to-basics-azdo-backlog-automation-3.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Do steps 2 and 3 for each backlog level that needs this great feature.  &lt;/p&gt;
+&lt;p&gt;That is all – enjoy the &lt;strong&gt;magic&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT NOTES&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Automation is &lt;strong&gt;team&lt;/strong&gt; specific.&lt;/li&gt;
+&lt;li&gt;Automation is &lt;strong&gt;backlog-level&lt;/strong&gt; specific.&lt;/li&gt;
+&lt;li&gt;Automation only triggers for work items that &lt;strong&gt;belong to the same team&lt;/strong&gt;!
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A special note for my colleague &lt;strong&gt;Pam&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS&lt;/strong&gt;:&lt;/p&gt;
+&lt;h1&gt;3 affects our portfolio and scorecard backlog. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to scorecard parents.&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For more information read &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/automate-work-item-state-transitions?view=azure-devops"&gt;Automate work item state transitions&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Related &lt;a href="https://azure.microsoft.com/en-us/products/devops"&gt;AzDO&lt;/a&gt; Board posts&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/agile-boards-tips.html"&gt;Agile Boards Tips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/azure-boards-tips-stop-messing-with-our-backlog.html"&gt;Azure Boards Tips - Stop messing with our backlog!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/azure-boards-tips-operations-team.html"&gt;Azure Boards Tips for Operations Teams&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/azure-boards-tips-retain-hierarchy-with-filter.html"&gt;Azure Boards Tips - Retain hierarchy with filter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Have you discovered and are you enjoying this nifty automation rule?&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="azure-devops"></category><category term="learning"></category><category term="101"></category></entry><entry><title>Exploring the future Software Development Lifecycle (SDLC) flow</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-sdlc-improvements.html" rel="alternate"></link><published>2024-06-07T00:00:00-07:00</published><updated>2024-06-07T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-07:/engineering-practices-sdlc-improvements.html</id><summary type="html">&lt;p&gt;Looking for Insights and Feedback from other pioneers of continuous SDLC improvements.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We want to "&lt;em&gt;Unite people, process, and products to empower and enable us to deliver continuous value to delighted end-users&lt;/em&gt;", following &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan's definition of DevOps&lt;/a&gt;, and our aim is to "&lt;em&gt;Create an SDLC with consistent, standardized, secure, simple, and cost-effective processes, practices, and products&lt;/em&gt;". We always try to improve our people (80%), processes (15%), and products (5%). In this post I will highlight one topic we are investigating and I hope you will join us and share your views on whether we are on track, or need some adjustment – &lt;strong&gt;SDLC Flow&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;SDLC / FLOW / TODAY&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2156,78 +2208,4 @@ there, use it; if it is not, add it.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;REMEMBER&lt;/strong&gt; this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
 across all development teams.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry><entry><title>Azure DevOps Transient Faults</title><link href="https://wsbctechnicalblog.github.io/azure-devops-transient-faults.html" rel="alternate"></link><published>2023-02-15T00:00:00-08:00</published><updated>2023-02-15T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-15:/azure-devops-transient-faults.html</id><summary type="html">&lt;p&gt;Be careful not to annoy Azure DevOps with your automated maintenance jobs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;When you automate your operational support and maintenance of &lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt;, such as updating the pre- and post-approvers of 2500 Azure Pipelines, or creating a detailed report of all Azure Pipelines in your Azure DevOps Organization, you may come across ad-hoc exceptions, "429 Too Many Requests Error", "503 Service Unavailable", or a "&lt;em&gt;last time it 100% worked for sure with no issues&lt;/em&gt;" call for help.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Example 1 of an automation meltdown&lt;/p&gt;
-&lt;p&gt;&lt;img alt="failure" src="../images/azure-devops-transient-faults-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Service Unavailable
-Service Unavailable
-HTTP Error 503. The service is unavailable.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Example 2 of an automation meltdown&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Azure DevOps Services Unavailable
-
-    Azure DevOps Services
-
-        Sorry! Our services aren&amp;#39;t available right now.
-        We&amp;#39;re working to restore all services as quickly as
-        possible. Please check back soon.
-        To see the latest status on our services, please 
-        visit our support page.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;In both cases I ended up having to intervene manually and restart the maintenance job. Muda!&lt;/p&gt;
-&lt;h1&gt;Transient fault&lt;/h1&gt;
-&lt;p&gt;You probably triggered a &lt;strong&gt;throttling&lt;/strong&gt; or &lt;strong&gt;circuit breaker&lt;/strong&gt; pattern, which Azure DevOps uses to protect itself against excessive load or potential &lt;code&gt;denial of service&lt;/code&gt; attacks. If you do not deal with the transient fault you will end up with failed automation, wasted time, and &lt;strong&gt;manual&lt;/strong&gt; intervention - more &lt;strong&gt;WASTE&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Dealing with transient fault&lt;/h1&gt;
-&lt;p&gt;Here is a simple &lt;strong&gt;retry pattern&lt;/strong&gt; that allows you to retry the operation after going to sleep for a while. You may have to play with and increase the &lt;code&gt;$retryValue&lt;/code&gt; default value, depending on the REST API you are calling. &lt;/p&gt;
-&lt;p&gt;1.13 has worked for me and my automation scripts to date.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Retry logic&lt;/p&gt;
-&lt;p&gt;&lt;img alt="bandaid" src="../images/azure-devops-transient-faults-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;3&lt;/span&gt;
-&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;13&lt;/span&gt;
-&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCheck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;
-
-&lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-lt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;retryCount&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;failureCount&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;try&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Azure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;DevOps&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;REST&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;API&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;$result&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Invoke-RestMethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Uri&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$url&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-ContentType&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Headers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$headers&lt;/span&gt;
-
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;processing&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;...&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;catch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;retry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;logic&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-eq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$retryCheck&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;ensure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;pipeline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;shows&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;warning&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;##vso&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;task.complete&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;SucceededWithIssues&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="err"&gt;SUCCEEDED&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;WITH&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;ISSUES&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;Logging&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;Sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;retry&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;processing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;loop.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot; $failureCount &amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Sleep&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;Write-Output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Message&lt;/span&gt;
-
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;retry&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;retrySleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;failureCount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="err"&gt;Start-Sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;-Seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$retrySleep&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
-&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Simple, yet effective.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Read &lt;a href="https://opensource.com/article/19/9/transient-faults-devops"&gt;3 ways to handle transient faults for DevOps&lt;/a&gt; for more details on transient faults.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category></entry></feed>
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry></feed>
