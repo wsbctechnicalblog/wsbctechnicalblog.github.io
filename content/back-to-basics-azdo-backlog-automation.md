@@ -43,7 +43,7 @@ A special note for my colleague **Pam**:
 >
 > **IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS**:
 >
-> Number 3 affects our portfolio and scorecard backlog. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to scorecard parents.
+> Number 3 in above notes affects our portfolio and scorecard backlogs. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to portfolio or scorecard parents.
 >
 
 For more information read [Automate work item state transitions](https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/automate-work-item-state-transitions?view=azure-devops).
