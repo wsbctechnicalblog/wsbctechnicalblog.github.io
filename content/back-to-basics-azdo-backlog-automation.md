@@ -1,16 +1,16 @@
 Title: Automate Azure DevOps work item state transitions like a Pro
-Date: 2024-06-21
+Date: 2024-06-17
 Category: Posts 
 Tags: agile, azure-devops, learning, 101
 Slug: back-to-basics-azdo-backlog-automation
 Author: Willy-Peter Schaub
 Summary: Maintain your backlog by changing the status of work items according to the status of their subitems.
 
-When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself if teams are not motivated to tidy up their backlogs to prevent subtle, but significant state inconsistencies. 
+When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. 
 
 > ![Anomalies](/images/back-to-basics-azdo-backlog-automation-0.png)
 
-As shown, we often encounter parents in a **new** or **active** state, with all their children in a **closed** state – are we expecting more children or has the parent been overlooked? Alternatively we see parents in a **new** state and children in an **active** state – have we wrongly started work, mistakenly moved the child work item into an active state, or has the parent again been neglected?
+As shown, I often encounter parents in a **new** or **active** state, with all their children in a **closed** state – are we expecting more children or has the parent been overlooked? Alternatively we see parents in a **new** state and children in an **active** state – have we wrongly started work, mistakenly moved the child work item into an active state, or has the parent again been neglected?
 
 Maybe the AzDO team snuck in a new and useful feature to the product as part of the **New Boards Hubs** preview feature and the teams do not know yet. I will assume this to be the case and show you 3 easy steps to create magic.  
 
@@ -38,7 +38,7 @@ That is all – enjoy the **magic**.
 > 3. Automation only triggers for work items that **belong to the same team**!
 >
 
-A special note for **Pam**:
+A special note for my colleague **Pam**:
 
 >
 > **IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS**:
