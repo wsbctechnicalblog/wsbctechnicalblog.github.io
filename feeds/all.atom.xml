@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-17T00:00:00-07:00</updated><entry><title>Automate Azure DevOps work item state transitions like a Pro</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html" rel="alternate"></link><published>2024-06-17T00:00:00-07:00</published><updated>2024-06-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-17:/back-to-basics-azdo-backlog-automation.html</id><summary type="html">&lt;p&gt;Maintain your backlog by changing the status of work items according to the status of their subitems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-21T00:00:00-07:00</updated><entry><title>Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-communication.html" rel="alternate"></link><published>2024-06-21T00:00:00-07:00</published><updated>2024-06-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-21:/back-to-basics-communication.html</id><summary type="html">&lt;p&gt;Stop the context-less "hi, hello, ping, pong, ..."&lt;/p&gt;</summary><content type="html">&lt;p&gt;I already discussed the issues of &lt;a href="/stop-the-meeting-hell.html"&gt;Stop the meeting overload!&lt;/a&gt;, &lt;a href="/optimize-and-track-emails.md.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt;, &lt;a href="/optimize-and-avoid-emails.md.html"&gt;How to tame your vacation email traffic&lt;/a&gt;, and &lt;a href="/context-switching-no-more.html"&gt;Stop the context switching, reduce waste, and focus on value&lt;/a&gt; in 2021 and 2022. &lt;/p&gt;
+&lt;p&gt;I continue to deal with unhelpful chat messages, excessive emails, and experience big meetings dominated by a few, leaving many engineers questioning their presence. When multitasking begins, the sudden "what do you think &lt;yourname&gt;?" often attempts to reengage those who have disengaged from the talk – a common pattern in our new world of remote and hybrid (in-person and remote) collaboration.&lt;/p&gt;
+&lt;p&gt;If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what I have learned and recommend for effective email, meetings, and chats.]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Email&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Email" src="../images/back-to-basics-communication-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Some email etiquettes and rules to follow are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use chat&lt;/strong&gt;, like Microsoft teams, or an in-person spit-balling whiteboard session for discussions or ideation, not emails.&lt;/li&gt;
+&lt;li&gt;Only expect recipients on &lt;strong&gt;To&lt;/strong&gt; to respond, not those on Cc (for your information) or Bcc (hidden).&lt;/li&gt;
+&lt;li&gt;Keep an email on one topic and thread, do not &lt;strong&gt;split&lt;/strong&gt; or &lt;strong&gt;mix it up&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Do not change the subject or reuse a finished email thread for a new topic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reply all with caution&lt;/strong&gt; - you could start an email storm.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And a new one we have added to our list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please provide &lt;strong&gt;context&lt;/strong&gt; when you add someone to an email thread, especially a long one, so they do not have to spend time reading the thread backwards. Not everyone has Copilot for Microsoft 365 to get an AI assisted recap. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Meetings&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Meetings" src="../images/back-to-basics-communication-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As per the image above, some meeting etiquettes to improve your work:life balance and productivity:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Give and get &lt;strong&gt;value&lt;/strong&gt; or leave.&lt;/li&gt;
+&lt;li&gt;Stop &lt;strong&gt;T-5 minutes&lt;/strong&gt; before the end.&lt;/li&gt;
+&lt;li&gt;No meetings on &lt;strong&gt;Friday&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;No meeting without &lt;strong&gt;agenda&lt;/strong&gt; or &lt;strong&gt;purpose&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Avoid &lt;strong&gt;acronyms&lt;/strong&gt; or &lt;strong&gt;jargon&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Limit your invite list to &lt;strong&gt;essential participants&lt;/strong&gt; only, rather than inviting a large audience. Less is more!&lt;/li&gt;
+&lt;li&gt;Write down &lt;strong&gt;notes&lt;/strong&gt; and share them with &lt;strong&gt;action items&lt;/strong&gt; - or use Copilot for Microsoft Teams to do it for you. I LOVE that productivity feature, powered by AI!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus&lt;/strong&gt; on the meeting, without laptops, when meeting in-person.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do not make someone who arrives late to an in-person meeting in a huge building do pushups for each minute they are late – they might have run a long way from another meeting that was valuable but finished on time or ran over. This is another reason we need the T-5 minute rule, to allow people to move between back-to-back meeting.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Teams / Slack / Chat&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Chat" src="../images/back-to-basics-communication-3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As in scenario 1, I get stressed when people use chat programs like Microsoft Teams, Slack, or text messages to say "hi", "ping", or "do you have a second" and then make me wait for context.&lt;/p&gt;
+&lt;p&gt;Please do not take it personally - I do not react to these 'ello pings anymore, because it is unproductive. Before, I used to &lt;strong&gt;switch context&lt;/strong&gt;, &lt;strong&gt;wait&lt;/strong&gt; patiently, or politely ask for the missing &lt;strong&gt;context&lt;/strong&gt; - but it is frustrating and distracting, especially when I am trying to focus.&lt;/p&gt;
+&lt;p&gt;Instead, as in scenario 2, please be courteous and say "Hi", but more importantly add the context and/or question. That way the receiver can decide whether to reply right away, or later.&lt;/p&gt;
+&lt;p&gt;Add &lt;a href="https://sbmueller.github.io/nohello/"&gt;NoHello&lt;/a&gt; to your email signature and/or your collaboration tool status message to remind everyone of keeping the collaboration &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;productive&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Anything else that drives you crazy?&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="learning"></category><category term="101"></category></entry><entry><title>Automate Azure DevOps work item state transitions like a Pro</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html" rel="alternate"></link><published>2024-06-17T00:00:00-07:00</published><updated>2024-06-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-17:/back-to-basics-azdo-backlog-automation.html</id><summary type="html">&lt;p&gt;Maintain your backlog by changing the status of work items according to the status of their subitems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Anomalies" src="/images/back-to-basics-azdo-backlog-automation-0.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -39,7 +86,8 @@
 &lt;p&gt;A special note for my colleague &lt;strong&gt;Pam&lt;/strong&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS&lt;/strong&gt;:&lt;/p&gt;
-&lt;h1&gt;3 affects our portfolio and scorecard backlog. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to scorecard parents.&lt;/h1&gt;
+&lt;p&gt;Number 3 in above notes affects our portfolio and scorecard backlogs. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to portfolio or scorecard parents.
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;For more information read &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/automate-work-item-state-transitions?view=azure-devops"&gt;Automate work item state transitions&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -2161,52 +2209,4 @@ can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, 
 &lt;p&gt;And, most importantly, we shared the status of the incident, analysis, root cause, and remediation transparently. &lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;A huge &lt;strong&gt;THANK YOU&lt;/strong&gt; to our vigilant delivery team, security engineers, operations engineers, and my team for keeping cool and focused throughout the turbulent Friday.&lt;/p&gt;
-&lt;p&gt;Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category></entry><entry><title>Communication Guidance Upwards</title><link href="https://wsbctechnicalblog.github.io/communication-guidance-upwards.html" rel="alternate"></link><published>2023-03-03T00:00:00-08:00</published><updated>2023-03-03T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-03:/communication-guidance-upwards.html</id><summary type="html">&lt;p&gt;Before you ask for anything, get clarity on the five WHYs!&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am working on my communication and collaboration skills. Although these posts will not be of a technical nature, they will benefit us all. I learn by doing and sharing and I love getting candid feedback from you, as well as from my manager and mentor.&lt;/p&gt;
-&lt;p&gt;In recent courses I learnt that the impact of communication is made up of 7% words, 38% tone, and 55% cues. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="communication" src="../images/communication-guidance-upwards-0.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;That is for interactive communication! For written communication we lose the cues, making the words and tone even more important.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Communicating upwards to executive domain&lt;/h1&gt;
-&lt;p&gt;Our leaders are typically driven by &lt;strong&gt;goals&lt;/strong&gt;, focused on the &lt;strong&gt;bottom line&lt;/strong&gt;, and push for progress at a &lt;strong&gt;rapid&lt;/strong&gt; pace. If our communication and proposals are too complex, they quickly become overburdened with the complexities, and are more likely to become dismissive.&lt;/p&gt;
-&lt;p&gt;We must paint a picture of success, clearly describe the &lt;strong&gt;WHY&lt;/strong&gt;, and &lt;strong&gt;HOW&lt;/strong&gt; we will affect the goals and bottom line. Communicate your idea/plan/request directly and objectively - no fillers, no waffling, no noise, and no redundant nouns.&lt;/p&gt;
-&lt;p&gt;If you are a &lt;strong&gt;dreamer&lt;/strong&gt; like I am, you must balance your &lt;strong&gt;dream&lt;/strong&gt; with &lt;strong&gt;reality&lt;/strong&gt; or be viewed as overly optimistic and disruptive. &lt;/p&gt;
-&lt;p&gt;I created a basic template to help me document initiatives when I need stakeholder advice, buy-in, and support. I am encouraging my team to use the same template when they have an idea, or if I ask them to create a plan.&lt;/p&gt;
-&lt;p&gt;Hope the template will help you as well.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Proposal Template&lt;/h1&gt;
-&lt;p&gt;Here is the template I created.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Template" src="../images/communication-guidance-upwards-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Slides 1 (cover), 2 (quotes), 9 (references), and 10 (Q&amp;amp;A) are intended for presentations.&lt;/li&gt;
-&lt;li&gt;Slide 3: &lt;strong&gt;PROBLEM TO SOLVE&lt;/strong&gt; - Before you commit your &lt;strong&gt;problem&lt;/strong&gt; to paper, investigate the root cause. The five (5) WHYs technique is an effective way for you to do &lt;strong&gt;root&lt;/strong&gt; cause analysis and to find the root cause of any problem. It is also an effective way for your audience to test your &lt;strong&gt;problem definition&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“&lt;em&gt;The basis of Toyota’s scientific approach is to ask why five times whenever we find a problem … By repeating why five times, the nature of the problem as well as its solution becomes clear.&lt;/em&gt;“ Taiichi Ohno&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Slide 4: &lt;strong&gt;OVERVIEW&lt;/strong&gt; - A crisp overview of the proposal - &lt;strong&gt;WHAT&lt;/strong&gt; is it all about.&lt;/li&gt;
-&lt;li&gt;Slide 5: &lt;strong&gt;BENEFITS&lt;/strong&gt; - Outline the benefits of investing in the proposal - &lt;strong&gt;WHAT&lt;/strong&gt; is the value.&lt;/li&gt;
-&lt;li&gt;Slide 6: &lt;strong&gt;PROBLEM TO SOLVE&lt;/strong&gt; - If proposal is focused on a problem, describe the problem to be resolved.  &lt;/li&gt;
-&lt;li&gt;Slide 7: &lt;strong&gt;INNOVATION&lt;/strong&gt; - If the proposal is focused on an innovation, describe the innovation to invest in.&lt;/li&gt;
-&lt;li&gt;Slide 8: &lt;strong&gt;EXPECTED OUTCOME&lt;/strong&gt; - This is the most important part, which describes the outcome and value proposition in the following format:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;We&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;recommend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;HOW&lt;/span&gt;,&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;There&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;several&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;benefits&lt;/span&gt;:
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;First&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;Also&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;Finally&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;Imagine&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;we&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Remember to keep your communication crisp. The left sample is focused on the salient points and keeping the details (verbiage) in the speaker notes for reference. Avoid the slide on the right - you will lose your audience!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="crisp versus noisy" src="../images/communication-guidance-upwards-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Hope this helps you with your next communication.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Remember, less is more! Know your audience and make every word count!&lt;/p&gt;</content><category term="misc"></category><category term="learning"></category></entry></feed>
+&lt;p&gt;Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category></entry></feed>
