@@ -1,14 +1,16 @@
 Title: Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy
-Date: 2024-06-18
+Date: 2024-06-21
 Category: Posts 
 Tags: agile, learning, 101
 Slug: back-to-basics-communication
 Author: Willy-Peter Schaub
 Summary: Stop the context-less "hi, hello, ping, pong, ..."
 
-I already discussed the issues of [Stop the meeting overload!](/stop-the-meeting-hell.html), [How to track (and optimize) your email traffic](/optimize-and-track-emails.md.html), [How to tame your vacation email traffic](/optimize-and-avoid-emails.md.html), and [Stop the context switching, reduce waste, and focus on value](/context-switching-no-more.html) in 2021 and 2022. Unfortunately, I still receive unproductive chat messages, get annoyed by email overload, and am asked to attend large meetings where 2 users take over the conversation, while 13 other engineers wonder why they were been dragged into the discussion. We all start multi-tasking (context-switching), until someone asks the infamous question “what do you think <yourname>?" to pull everyone who has gone very, very quiet back into the discussion. 
+I already discussed the issues of [Stop the meeting overload!](/stop-the-meeting-hell.html), [How to track (and optimize) your email traffic](/optimize-and-track-emails.md.html), [How to tame your vacation email traffic](/optimize-and-avoid-emails.md.html), and [Stop the context switching, reduce waste, and focus on value](/context-switching-no-more.html) in 2021 and 2022. 
 
-If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what my team learned and recommends for effective email, meetings, and chats.
+I continue to deal with unhelpful chat messages, excessive emails, and experience big meetings dominated by a few, leaving many engineers questioning their presence. When multitasking begins, the sudden "what do you think <yourname>?" often attempts to reengage those who have disengaged from the talk – a common pattern in our new world of remote and hybrid (in-person and remote) collaboration.
+
+If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what I have learned and recommend for effective email, meetings, and chats.]
 
 ---
 
@@ -41,10 +43,11 @@ As per the image above, some meeting etiquettes to improve your work:life balanc
 - No meetings on **Friday**.
 - No meeting without **agenda** or **purpose**.
 - Avoid **acronyms** or **jargon**.
+- Limit your invite list to **essential participants** only, rather than inviting a large audience. Less is more!
 - Write down **notes** and share them with **action items** - or use Copilot for Microsoft Teams to do it for you. I LOVE that productivity feature, powered by AI!
-- **Focus** on the meeting, without laptops, when in meeting person.
+- **Focus** on the meeting, without laptops, when meeting in-person.
 
-Do not make someone who arrives late to an in-person meeting in a huge building do pushups for each minute they missed – they might have run a long way from another meeting that was valuable but was on time or ran over.
+Do not make someone who arrives late to an in-person meeting in a huge building do pushups for each minute they are late – they might have run a long way from another meeting that was valuable but finished on time or ran over. This is another reason we need the T-5 minute rule, to allow people to move between back-to-back meeting.
 
 ---
 
@@ -54,7 +57,7 @@ Do not make someone who arrives late to an in-person meeting in a huge building 
 
 As in scenario 1, I get stressed when people use chat programs like Microsoft Teams, Slack, or text messages to say "hi", "ping", or "do you have a second" and then make me wait for context.
 
-I do not react anymore, because it is unproductive. Before, I used to **switch context**, **wait** patiently, or politely ask for the missing **context** - but it is frustrating and distracting, especially when I am trying to focus.
+Please do not take it personally - I do not react to these 'ello pings anymore, because it is unproductive. Before, I used to **switch context**, **wait** patiently, or politely ask for the missing **context** - but it is frustrating and distracting, especially when I am trying to focus.
 
 Instead, as in scenario 2, please be courteous and say "Hi", but more importantly add the context and/or question. That way the receiver can decide whether to reply right away, or later.
 

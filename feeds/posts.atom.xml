@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-17T00:00:00-07:00</updated><entry><title>Automate Azure DevOps work item state transitions like a Pro</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html" rel="alternate"></link><published>2024-06-17T00:00:00-07:00</published><updated>2024-06-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-17:/back-to-basics-azdo-backlog-automation.html</id><summary type="html">&lt;p&gt;Maintain your backlog by changing the status of work items according to the status of their subitems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-06-21T00:00:00-07:00</updated><entry><title>Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-communication.html" rel="alternate"></link><published>2024-06-21T00:00:00-07:00</published><updated>2024-06-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-21:/back-to-basics-communication.html</id><summary type="html">&lt;p&gt;Stop the context-less "hi, hello, ping, pong, ..."&lt;/p&gt;</summary><content type="html">&lt;p&gt;I already discussed the issues of &lt;a href="/stop-the-meeting-hell.html"&gt;Stop the meeting overload!&lt;/a&gt;, &lt;a href="/optimize-and-track-emails.md.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt;, &lt;a href="/optimize-and-avoid-emails.md.html"&gt;How to tame your vacation email traffic&lt;/a&gt;, and &lt;a href="/context-switching-no-more.html"&gt;Stop the context switching, reduce waste, and focus on value&lt;/a&gt; in 2021 and 2022. &lt;/p&gt;
+&lt;p&gt;I continue to deal with unhelpful chat messages, excessive emails, and experience big meetings dominated by a few, leaving many engineers questioning their presence. When multitasking begins, the sudden "what do you think &lt;yourname&gt;?" often attempts to reengage those who have disengaged from the talk – a common pattern in our new world of remote and hybrid (in-person and remote) collaboration.&lt;/p&gt;
+&lt;p&gt;If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what I have learned and recommend for effective email, meetings, and chats.]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Email&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Email" src="../images/back-to-basics-communication-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Some email etiquettes and rules to follow are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use chat&lt;/strong&gt;, like Microsoft teams, or an in-person spit-balling whiteboard session for discussions or ideation, not emails.&lt;/li&gt;
+&lt;li&gt;Only expect recipients on &lt;strong&gt;To&lt;/strong&gt; to respond, not those on Cc (for your information) or Bcc (hidden).&lt;/li&gt;
+&lt;li&gt;Keep an email on one topic and thread, do not &lt;strong&gt;split&lt;/strong&gt; or &lt;strong&gt;mix it up&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Do not change the subject or reuse a finished email thread for a new topic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reply all with caution&lt;/strong&gt; - you could start an email storm.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And a new one we have added to our list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Please provide &lt;strong&gt;context&lt;/strong&gt; when you add someone to an email thread, especially a long one, so they do not have to spend time reading the thread backwards. Not everyone has Copilot for Microsoft 365 to get an AI assisted recap. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Meetings&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Meetings" src="../images/back-to-basics-communication-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As per the image above, some meeting etiquettes to improve your work:life balance and productivity:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Give and get &lt;strong&gt;value&lt;/strong&gt; or leave.&lt;/li&gt;
+&lt;li&gt;Stop &lt;strong&gt;T-5 minutes&lt;/strong&gt; before the end.&lt;/li&gt;
+&lt;li&gt;No meetings on &lt;strong&gt;Friday&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;No meeting without &lt;strong&gt;agenda&lt;/strong&gt; or &lt;strong&gt;purpose&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Avoid &lt;strong&gt;acronyms&lt;/strong&gt; or &lt;strong&gt;jargon&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Limit your invite list to &lt;strong&gt;essential participants&lt;/strong&gt; only, rather than inviting a large audience. Less is more!&lt;/li&gt;
+&lt;li&gt;Write down &lt;strong&gt;notes&lt;/strong&gt; and share them with &lt;strong&gt;action items&lt;/strong&gt; - or use Copilot for Microsoft Teams to do it for you. I LOVE that productivity feature, powered by AI!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus&lt;/strong&gt; on the meeting, without laptops, when meeting in-person.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do not make someone who arrives late to an in-person meeting in a huge building do pushups for each minute they are late – they might have run a long way from another meeting that was valuable but finished on time or ran over. This is another reason we need the T-5 minute rule, to allow people to move between back-to-back meeting.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Teams / Slack / Chat&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Chat" src="../images/back-to-basics-communication-3.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As in scenario 1, I get stressed when people use chat programs like Microsoft Teams, Slack, or text messages to say "hi", "ping", or "do you have a second" and then make me wait for context.&lt;/p&gt;
+&lt;p&gt;Please do not take it personally - I do not react to these 'ello pings anymore, because it is unproductive. Before, I used to &lt;strong&gt;switch context&lt;/strong&gt;, &lt;strong&gt;wait&lt;/strong&gt; patiently, or politely ask for the missing &lt;strong&gt;context&lt;/strong&gt; - but it is frustrating and distracting, especially when I am trying to focus.&lt;/p&gt;
+&lt;p&gt;Instead, as in scenario 2, please be courteous and say "Hi", but more importantly add the context and/or question. That way the receiver can decide whether to reply right away, or later.&lt;/p&gt;
+&lt;p&gt;Add &lt;a href="https://sbmueller.github.io/nohello/"&gt;NoHello&lt;/a&gt; to your email signature and/or your collaboration tool status message to remind everyone of keeping the collaboration &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;productive&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Anything else that drives you crazy?&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="learning"></category><category term="101"></category></entry><entry><title>Automate Azure DevOps work item state transitions like a Pro</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html" rel="alternate"></link><published>2024-06-17T00:00:00-07:00</published><updated>2024-06-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-17:/back-to-basics-azdo-backlog-automation.html</id><summary type="html">&lt;p&gt;Maintain your backlog by changing the status of work items according to the status of their subitems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I review our Azure DevOps (AzDO) backlogs and team settings, I sometimes ask myself why teams do not tidy up their backlogs to prevent subtle, but significant state inconsistencies. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Anomalies" src="/images/back-to-basics-azdo-backlog-automation-0.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -39,7 +86,8 @@
 &lt;p&gt;A special note for my colleague &lt;strong&gt;Pam&lt;/strong&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;IMPACT ON PORTFOLIO AND SCORECARD BACKLOGS&lt;/strong&gt;:&lt;/p&gt;
-&lt;h1&gt;3 affects our portfolio and scorecard backlog. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to scorecard parents.&lt;/h1&gt;
+&lt;p&gt;Number 3 in above notes affects our portfolio and scorecard backlogs. The automation will not work when linked children from other AzDO projects and/or teams are closed, if they are attached to portfolio or scorecard parents.
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;For more information read &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/automate-work-item-state-transitions?view=azure-devops"&gt;Automate work item state transitions&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -2146,66 +2194,4 @@ can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, 
 &lt;p&gt;&lt;img alt="v2.1" src="../images/azure-devops-pipeline-oss-v2-1-flow-2.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Refer to &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/14"&gt;Pull Request 14&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry><entry><title>Engineering Practice Naming Conventions</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="alternate"></link><published>2023-02-17T00:00:00-08:00</published><updated>2023-02-17T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-02-17:/engineering-practice-naming-conventions.html</id><summary type="html">&lt;p&gt;Naming Convention Nuggets of Knowledge and Best Practices&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What's in a Name?&lt;/h1&gt;
-&lt;p&gt;How we name and categorize things conveys meaning and intent - what it &lt;em&gt;is&lt;/em&gt; and possibly &lt;em&gt;how&lt;/em&gt; it should be used.  All
-in the aim of improving clarity of purpose and understanding its nature, and how it should be used.&lt;/p&gt;
-&lt;p&gt;When we talk about software, we are specifically addressing naming conventions and standards, patterns that
-can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
-or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
-useful approach to naming &lt;em&gt;things&lt;/em&gt; to the benefit of our software quality and maintainability, and in fact scalability.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why are Naming Conventions Important?&lt;/h1&gt;
-&lt;p&gt;We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its &lt;em&gt;Name&lt;/em&gt;), and indeed
-be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
-across all products, projects, and development teams.  It is more important to define a convention and &lt;em&gt;stick with it&lt;/em&gt;, than it is
-to pick the &lt;em&gt;best&lt;/em&gt; one - it may come down to style preferences and patterns that everyone agrees on.&lt;/p&gt;
-&lt;p&gt;Naming conventions can apply to all &lt;em&gt;things&lt;/em&gt; in your software; for folders, files, variables, classes, methods, and even project files and solutions. Deciding on and following your convention is a cornerstone to creating great software.  When you adopt and follow an 
-organization-wide standard &lt;em&gt;Naming Convention&lt;/em&gt; you will experience the following benefits:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Smooth Operation - When your data is easy to find, it is easy to extract the required knowledge and make decisions based on it. There won’t be any delay in getting information, and this ensures smooth administration in your organization without any bottlenecks.&lt;/li&gt;
-&lt;li&gt;Better Version Control - Information gets constantly updated in an organizational setting. To make sure you are using the most recent version, you need to tag it accordingly in your file name. This helps you avoid errors associated with outdated knowledge.&lt;/li&gt;
-&lt;li&gt;Save Time and Money - When you avoid duplication through proper naming conventions, you can save a lot of time and money. You won’t have to spend time looking for lost files and there will be no need to create new versions of already existing files.&lt;/li&gt;
-&lt;li&gt;Automation - you can anticipate file and folder names, enabling process automation such as build pipelines and code scans&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are other pillars in creating exceptional software as well, and we'll
-explore those is upcoming articles.&lt;/p&gt;
-&lt;p&gt;Let us explore these standards, and the patterns that we use &lt;em&gt;by convention&lt;/em&gt; to improve our software and unlock automation.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Date Convention&lt;/h1&gt;
-&lt;p&gt;Dates are so common, we run into them just about every day :).  &lt;/p&gt;
-&lt;p&gt;We need a standard way to represent a date, since it can be used in filename and 
-data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a decreasing scope pattern.  Additional,
-you might optionally include a time component suffix as well HHMMSSmmmm.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Case Convention&lt;/h1&gt;
-&lt;p&gt;When we create &lt;em&gt;things&lt;/em&gt; that have compound names - names that contain multiple words combined into a single string - we may want to delineate
-where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Camel Case&lt;/strong&gt; (camelCase) - This involves capitalizing all words except the first word and removing the space in between them. For instance, 'product table id' can be written as productTableId.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Pascal Case&lt;/strong&gt; (PascalCase) - This involves capitalizing all words in the name, including the first, and removing the space in between them. For instance, 'product table id' can be written as ProductTableId.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Snake Case&lt;/strong&gt; (snake_case) - This type of naming combines words simply by replacing the space with an underscore (_). The same example used above can be written as product_table_id.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Kebab Case&lt;/strong&gt; (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;Special Characters&lt;/h1&gt;
-&lt;p&gt;It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
-have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
-When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
-If you adopt the rule of only using Alpha-numerics, you will be well prepared for such situations.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Standard Terms&lt;/h1&gt;
-&lt;p&gt;You should also consider managing a library of standard terms, with their encoded (Naming Convention applied) &lt;em&gt;name&lt;/em&gt;, definition and usage.&lt;br&gt;
-When defining a name for an object - consult the library of standard terms first to see if words you want to use have been standardized on.  If it is
-there, use it; if it is not, add it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;REMEMBER&lt;/strong&gt; this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
-across all development teams.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry></feed>
+&lt;p&gt;Hope you like the improvements. Next up is a Cloud Native Web Application blueprint.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="oss"></category><category term="pipelines"></category></entry></feed>
