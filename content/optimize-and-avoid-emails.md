@@ -6,7 +6,7 @@ Slug: optimize-and-avoid-emails.md
 Author: Willy-Peter Schaub
 Summary: How to ensure you are not confronted by hundreds of emails when you are back-to-work.
 
-We pick up from the [How to track (and optimize) your email traffic](/optimize-and-track-emails.html) post, where we have discussed the tsunami wave of emails we receive and process every day. I would like to focus on avoiding the **WASTE**ful first day back at work, when we spend hours processing hundreds of emails we received while we were away on a well-deserved vacation.
+We pick up from the [How to track (and optimize) your email traffic](/optimize-and-track-emails.md.html) post, where we have discussed the tsunami wave of emails we receive and process every day. I would like to focus on avoiding the **WASTE**ful first day back at work, when we spend hours processing hundreds of emails we received while we were away on a well-deserved vacation.
 
 ---
 
