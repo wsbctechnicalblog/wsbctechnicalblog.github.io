@@ -72,7 +72,7 @@ For a meetup to be effective, we've realized the importance of these six key com
 - **Orgabization** -  It is crucial to meticulously plan everything from choosing a suitable venue to organizing and handling logistics efficiently. 
 
 >
-> **LEARNING 3** - Post-pandemic findings indicate that in-person gatherings draw larger crowds compared to online events, with about 70% attendance for face-to-face meetings against roughly 50% for virtual ones, compared to RSVPs (Répondez s'il vous plait).
+> **LEARNING 3** - Post-pandemic findings indicate that in-person gatherings draw larger crowds compared to online events, with about 70% attendance for face-to-face meetings against roughly 50% for virtual ones, compared to RSVPs (Répondez s'il vous plait). Additionally, incorporating a live stream into your physical event might lead to a decrease in attendance since potential participants may opt to stay home at the last minute and view it online instead.
 >
 
 - **Promotion** - Effective advertising is key to drawing in attendees, and clear communication keeps all parties informed.
