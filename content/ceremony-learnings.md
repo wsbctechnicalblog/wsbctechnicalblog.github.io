@@ -6,11 +6,15 @@ Slug: ceremony-learnings
 Author: Willy-Peter Schaub
 Summary: Fostering a culture of continuous improvement and innovation through events
 
-We are invested in and stewarding a number of internal events, such as centers of enablement, communities of practice, dojos, working groups, and external events such as the [DevOps Vancouver Meetup](https://www.meetup.com/DevOps-Vancouver-BC-Canada/). 
+We are committed to managing several internal initiatives, including hackathons, town halls, and Centers of Enablement (CoE) that further inspire the formation of Communities of Practice (CoP), dojos, and working committees. Additionally, we orchestrate and enjoy external engagements like workshops, training sessions, seminars, and networking events, such as our [DevOps Vancouver Meetup](https://www.meetup.com/DevOps-Vancouver-BC-Canada/). 
 
 > ![Events](../images/ceremony-learnings-1.png)
 
-You can review [Ceremony Overview](/ceremony-overview.html) for more insight into the latter - in this post I will focus on thee takeaways from hosting public meetups.
+You can review [Ceremony Overview](/ceremony-overview.html) for more insight into the internal ceremonies - in this post I will focus on the takeaways from hosting public **meetups**.
+
+>
+> **A meetup is a casual event** where individuals with shared interests like DevOps come together to mingle, exchange ideas, connect, or participate in related activities. The term "meetup" gained prominence with [Meetup.com](https://www.meetup.com/home), a site that facilitates the organization and discovery of such events. 
+>
 
 # But first, why are these events pivotal?
 
@@ -36,10 +40,10 @@ Events such as technical meetups and communities of practice (CoP) are essential
 Our events contribute to continuous professional development, continuous learning, and collective progress.
 
 # What is the catch?
-  
-> ![Catch](../images/ceremony-learnings-2.png)
 
 Although there are several challenges, typically the advantages of collaboration events surpass issues, such as:
+  
+> ![Catch](../images/ceremony-learnings-2.jpg)
 
 - **Cost** - Event planning can incur high expenses, including venue rental, catering, advertising, and speaker honorariums.
 - **Logistics** - Arranging the event specifics, such as location, date, time, can be intricate and time-consuming.
