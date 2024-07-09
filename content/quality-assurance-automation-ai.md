@@ -1,5 +1,5 @@
 Title: Revolutionizing Quality Assurance: Unleashing the Power of Automation and AI
-Date: 2024-07-10
+Date: 2024-07-08
 Category: Posts 
 Tags: ai, quality
 Slug: quality-assurance-automation-ai
@@ -41,7 +41,7 @@ Automated testing fits seamlessly into Continuous Integration/Continuous Deploym
 
 Artificial Intelligence (AI) is a game changer in QA.  AI offers capabilities that extend beyond what traditional automation can achieve. AI-powered QA tools leverage machine learning algorithms to analyze vast amount of data, identify patterns, and make intelligent decisions. 
 
-- **Test Case Generation**: AI algorithms can analyze code changes and automatically generate test cases to over new functionalities as well as identify missing test cases.
+- **Test Case Generation**: AI algorithms can analyze code changes and automatically generate test cases to cover new functionalities as well as identify missing test cases.
 - **Defect Prevention**: Machine Learning models can analyze historical data to predict where defects are likely to occur and take proactive measures to prevent issues.
 - **Natural Language Processing (NLP) for Testing**: AI-driven tools can interpret natural language requirements and generate test scenarios, improving accuracy and test coverage.
 
