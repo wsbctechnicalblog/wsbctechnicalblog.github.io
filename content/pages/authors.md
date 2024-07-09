@@ -125,7 +125,7 @@ Read Shay's posts [here](../author/shay-vannery.html)
 
 ![Vikas Jawa](../images/Vikas.jpg)
 
-Vikas is a Software/QA Engineer with a proven history of AAdesigning, developing, and maintaining web applications based on Microsoft technologies. Adept at solving complex technical challenges and mentoring junior developers. Committed to keeping pace with the latest industry trends and technological advancements while delivering high-quality solutions that drive business success.
+Vikas is a Software/QA Engineer with a proven history of designing, developing, and maintaining web applications based on Microsoft technologies. Adept at solving complex technical challenges and mentoring junior developers. Committed to keeping pace with the latest industry trends and technological advancements while delivering high-quality solutions that drive business success.
  
 Read Shay's posts [here](../author/vikas-jawa.html)
 

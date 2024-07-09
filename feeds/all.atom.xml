@@ -6,7 +6,47 @@
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Rq-UuLS2yMc"&gt;Presentation recording&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;When will &lt;strong&gt;you join&lt;/strong&gt; us at the &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vandouver Meetup&lt;/a&gt; and how can we improve the meetup? Thoughts?&lt;/p&gt;</content><category term="Events"></category><category term="devops"></category><category term="engineering"></category></entry><entry><title>Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-communication.html" rel="alternate"></link><published>2024-06-21T00:00:00-07:00</published><updated>2024-06-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-21:/back-to-basics-communication.html</id><summary type="html">&lt;p&gt;Stop the context-less "hi, hello, ping, pong, ..."&lt;/p&gt;</summary><content type="html">&lt;p&gt;I already discussed the issues of &lt;a href="/stop-the-meeting-hell.html"&gt;Stop the meeting overload!&lt;/a&gt;, &lt;a href="/optimize-and-track-emails.md.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt;, &lt;a href="/optimize-and-avoid-emails.md.html"&gt;How to tame your vacation email traffic&lt;/a&gt;, and &lt;a href="/context-switching-no-more.html"&gt;Stop the context switching, reduce waste, and focus on value&lt;/a&gt; in 2021 and 2022. &lt;/p&gt;
+&lt;p&gt;When will &lt;strong&gt;you join&lt;/strong&gt; us at the &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vandouver Meetup&lt;/a&gt; and how can we improve the meetup? Thoughts?&lt;/p&gt;</content><category term="Events"></category><category term="devops"></category><category term="engineering"></category></entry><entry><title>Revolutionizing Quality Assurance: Unleashing the Power of Automation and AI</title><link href="https://wsbctechnicalblog.github.io/quality-assurance-automation-ai.html" rel="alternate"></link><published>2024-07-08T00:00:00-07:00</published><updated>2024-07-08T00:00:00-07:00</updated><author><name>Vikas Jawa</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-08:/quality-assurance-automation-ai.html</id><summary type="html">&lt;p&gt;Automation and Artificial Intelligence in Quality Assurance&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quality Assurance (QA) is vital in any organization as it ensures that products meet high standards of quality, reliability, and performance before they reach customers. QA is essential in software development, requiring collaboration among software developers, QA engineers and everyone involved in the process to ensure the success of projects.&lt;/p&gt;
+&lt;p&gt;Insufficient QA practices have been responsible for numerous high-profile project failures, highlighting the critical importance of thorough quality control measures. Effective QA practices not only identify defects early but also ensure that software meets functional requirements, performance expectations, and user needs. &lt;/p&gt;
+&lt;p&gt;By integrating robust QA processes, teams can mitigate risks, enhance reliability, and deliver software products that meet high standards of quality and usability.&lt;/p&gt;
+&lt;p&gt;Here are a few notable instances of project failures attributed to inadequate QA practices/processes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.jpl.nasa.gov/news/mars-climate-orbiter-team-finds-likely-cause-of-loss"&gt;The Mars Climate Orbiter (1999)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.forbes.com/sites/steveschaefer/2012/08/02/knight-capital-trading-disaster-carries-440-million-price-tag/"&gt;Knight Capital Group Trading Loss (2012)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://d3.harvard.edu/platform-rctom/submission/the-failed-launch-of-www-healthcare-gov/"&gt;Healthcare.gov Launch (2013)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://boeing.mediaroom.com/2019-04-04-Boeing-CEO-Dennis-Muilenburg-Addresses-the-Ethiopian-Airlines-Flight-302-Preliminary-Report"&gt;Boeing 737 MAX (2018-2019)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The drive for efficiency, reliability and flexibility has led to the incorporation of automation and artificial intelligence (AI) into quality assurance (QA) processes. The shift towards automation in QA can significantly enhance efficiency, accuracy, and coverage of tests, allowing teams to identify and resolve issues faster and more effectively. Automation empowers QA professionals by reducing repetitive manual tasks, freeing up time to focus on more strategic, creative, and complex aspects of testing that require human insight. By embracing automation, QA teams can not only improve their productivity but also contribute to delivering superior products, fostering a culture of continuous improvement and innovation within the organization.&lt;/p&gt;
+&lt;p&gt;Here are some links describing how big technology companies are implementing their Automation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://itrevolution.com/articles/case-study-automated-testing-google/"&gt;Google: The birth of automated testing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://netflixtechblog.com/nts-real-time-streaming-for-test-automation-7cb000e933a1"&gt;Netflix Test Studio: Real-time streaming for test automation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Automation in QA&lt;/h1&gt;
+&lt;p&gt;Automation has transformed conventional QA methods by swiftly and consistently executing repetitive tasks. This approach releases human testers from mundane, time-consuming activities, enabling them to concentrate on more intricate scenarios and strategic testing activities. 
+Major areas benefiting significantly from automation include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test Execution&lt;/strong&gt;: Automated scripts can execute tests across different environments and configurations, ensuring thorough validation of software functionality.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Regression Testing&lt;/strong&gt;: Automation of regression tests can help teams in identifying potential regression after the code changes without manual intervention, thus maintaining the software stability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance Testing&lt;/strong&gt;: Automating various performance tests can assess how an application performs under various situations, and it can identify bottlenecks and help in optimizing performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Automated testing fits seamlessly into Continuous Integration/Continuous Deployment (CI/CD) pipelines, facilitating rapid feedback loops and faster delivery.&lt;/p&gt;
+&lt;h1&gt;Leveraging AI in QA&lt;/h1&gt;
+&lt;p&gt;Artificial Intelligence (AI) is a game changer in QA.  AI offers capabilities that extend beyond what traditional automation can achieve. AI-powered QA tools leverage machine learning algorithms to analyze vast amount of data, identify patterns, and make intelligent decisions. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test Case Generation&lt;/strong&gt;: AI algorithms can analyze code changes and automatically generate test cases to cover new functionalities as well as identify missing test cases.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Defect Prevention&lt;/strong&gt;: Machine Learning models can analyze historical data to predict where defects are likely to occur and take proactive measures to prevent issues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Natural Language Processing (NLP) for Testing&lt;/strong&gt;: AI-driven tools can interpret natural language requirements and generate test scenarios, improving accuracy and test coverage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AI-powered systems can do many more things to improve the quality of the software including detecting anomalies and detecting potential security threats etc.&lt;/p&gt;
+&lt;h1&gt;Challenges and Considerations&lt;/h1&gt;
+&lt;p&gt;Although there are huge benefits of automation and AI in QA, there are challenges come with this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Setup and Learning&lt;/strong&gt;: Implementing automation and AI requires upfront investment in tools, infrastructure, and expertise.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maintenance&lt;/strong&gt;: Automated tests and AI models need regular updates and maintenance to remain effective as software evolves.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Human Expertise&lt;/strong&gt;: Despite advancements, human QA engineers play a crucial role in designing test strategies, interpreting results, and ultimately ensuring overall quality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As technology continues to evolve, the future of QA in software development will likely see even greater integration of automation and AI. Emerging trends and technologies will further streamline QA processes and ultimately enhance the quality of the software. By harnessing these technologies effectively, organizations can reduce overall costs and deliver superior products. Integration of automation and AI in QA is about embracing the mindset of continuous improvement in software development.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="quality"></category></entry><entry><title>Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-communication.html" rel="alternate"></link><published>2024-06-21T00:00:00-07:00</published><updated>2024-06-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-21:/back-to-basics-communication.html</id><summary type="html">&lt;p&gt;Stop the context-less "hi, hello, ping, pong, ..."&lt;/p&gt;</summary><content type="html">&lt;p&gt;I already discussed the issues of &lt;a href="/stop-the-meeting-hell.html"&gt;Stop the meeting overload!&lt;/a&gt;, &lt;a href="/optimize-and-track-emails.md.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt;, &lt;a href="/optimize-and-avoid-emails.md.html"&gt;How to tame your vacation email traffic&lt;/a&gt;, and &lt;a href="/context-switching-no-more.html"&gt;Stop the context switching, reduce waste, and focus on value&lt;/a&gt; in 2021 and 2022. &lt;/p&gt;
 &lt;p&gt;I continue to deal with unhelpful chat messages, excessive emails, and experience big meetings dominated by a few, leaving many engineers questioning their presence. When multitasking begins, the sudden "what do you think &lt;yourname&gt;?" often attempts to reengage those who have disengaged from the talk – a common pattern in our new world of remote and hybrid (in-person and remote) collaboration.&lt;/p&gt;
 &lt;p&gt;If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what I have learned and recommend for effective email, meetings, and chats.]&lt;/p&gt;
 &lt;hr&gt;
@@ -2094,70 +2134,4 @@ Sustainment, maintenance, and housekeeping is something that should be part of e
 &lt;/blockquote&gt;
 &lt;p&gt;Lastly, why do I refer to rearward communication. Well, something I learnt in my military days was to always lead by example and in the front, which means my team is not only behind me, but also &lt;strong&gt;has my back&lt;/strong&gt;. &lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Remember, less is more! Know your audience and make every word count!&lt;/p&gt;</content><category term="misc"></category><category term="learning"></category></entry><entry><title>Engineering Practice Layering</title><link href="https://wsbctechnicalblog.github.io/engineering-practice-layering.html" rel="alternate"></link><published>2023-03-15T00:00:00-07:00</published><updated>2023-03-15T00:00:00-07:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-15:/engineering-practice-layering.html</id><summary type="html">&lt;p&gt;Application Layering - Separation of Concerns Architecture Principle&lt;/p&gt;</summary><content type="html">&lt;h1&gt;What is layering?&lt;/h1&gt;
-&lt;p&gt;Layering is a common construct for identifying discreet areas of interest within an undertaking, so that work can be done in a focused way in each of 
-those areas as well as to highlight the interconnections between each layer.  Typically, each layer has its own specialists that work on the specific
-technology involved in any given layer and collaborate with other specialists where the layers interface.&lt;/p&gt;
-&lt;p&gt;This is most easily understood when you look at the physical world - lets take construction for example.  To create a building, first an architectural drawing is created that identifies each aspect of construction as a layered endeavor.  Once the design is signed-off, a hole is dug, a frame and rebar are placed within and the concrete is poured into the frame - this is the foundation layer.  Next - layer 2 - the wall frames are built for the first floor, the ceiling, the 2nd floor foundation and its' walls; and so on up one floor in the 
-building at a time.  &lt;/p&gt;
-&lt;p&gt;After each floor has its wall frames in place, layer 3 begins with electrical and plumbing specialists routing their work through the wall frames and up through each level
-of the building.  The 4th layer of work involves completing the walls with drywall and plaster, and installing the windows.  This continues to the final, finishing layer where the 
-fixtures and appliances are installed, switches installed and connected, paint applied, and carpet or hardwood flooring is installed.&lt;/p&gt;
-&lt;p&gt;This is no different in software - except the layers are logical, containing only code that address a particular area of interest.  But because it is code, each layer can be ommitted or subverted by the unwary.  Let's examine this more closely next.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why is Layering Important?&lt;/h1&gt;
-&lt;p&gt;In Software, &lt;em&gt;Layering&lt;/em&gt; is a fundamental design principle enabling us to create lasting code of highest quality - and maintainability &amp;amp; testability.  When we layer our software, we
-are acknowledging the different focal points that we need to be concerned with - and possibly employ different specialists to work on each layer independently. 
-This creates a technology stack and loosely coupled interfaces between the layers that promote consistency at the communication channels between layers (re: public interfaces), and independence of each layer itself.  Each layer
-can also be tested and verified independently when we employ additional architectural principles such as Dependency Inversion and Encapsulation.&lt;/p&gt;
-&lt;p&gt;Like the construction example above, this layering represents technology and purpose boundaries, that, when respected, create a modular and consistent design pattern enabling components to be reused and 
-more easily understood.  Indeed, this understanding leads to abstraction of fundamental behaviours that can organized the code into hierarchies and promote non-duplication of function.&lt;/p&gt;
-&lt;p&gt;When we layer, we are more prepared for evolving the software as independent pieces in an Agile workflow and able to embrace CI/CD and microservice architecture more readily.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Separation of Concerns Principle&lt;/h1&gt;
-&lt;p&gt;Layering is the result of following the &lt;em&gt;Separation of Concerns&lt;/em&gt; design principle, which states that software should be separated based on the kind
-of work it performs.  When viewed from this lens, we can clearly see what should be in the User Interface collection of code - the code that deals
-with artifacts used to collect or format data for display, and what code performs and enforces business rules and procedures, versus the code used to store and
-retrieve data from a database or file system. &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;What are the Layers in Software Architecture&lt;/h1&gt;
-&lt;p&gt;Architecturally, software applications should be logically constructed following the separation of concerns principle which identifies the application layers.  By separating core business 
-rules and validation logic from user-interface and back-end (data service) infrastructure.  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt; - The layer the end-user interacts with, a page or form or visual element such as tables, buttons, charts and graphs, input fields and layout.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Business Logic&lt;/strong&gt; - The layer containing the business rules and logical processes, workflows, and validation rules.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Data Access&lt;/strong&gt; - The layer is concerned with the storage and retrieval of data and other artifacts used by the application to perform its function.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Each of these layers is focused on a separate logical area of concern, uses different tools and has a different purpose.  Each of
-these logical layers should be created in separate physical projects within the application solution, which helps enforce the separation of concerns principle, improves modularity and testability.  &lt;/p&gt;
-&lt;p&gt;Ideally, The Business Rules and Logic should not depend on any other projects in the application.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Different Layering Scenarios&lt;/h1&gt;
-&lt;p&gt;As mentioned above, there are logically 3 layers which can be placed into 3 or more physical Tiers enabled by following this software architecture design pattern.  These layers can then be 
-organized into four distinct scenarios, shown here.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Architecture Scenarios" src="../images/engineering-practice-layering-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Image sourced from&lt;/em&gt; &lt;a href="https://nileshviradiya.blogspot.com/2014/01/what-is-meant-by-n-tier.html"&gt;&lt;em&gt;Programming Stuff: What is meant by “N Tier”?&lt;/em&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Classic&lt;/strong&gt; - All logical layers are combined into one, making direct access to the underlaying data source from within the single code layer.  This was a common implementation years ago and can still be found, but easily leads to &lt;em&gt;Boundary Bleed&lt;/em&gt; and messy spaghetti code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Two-Tier&lt;/strong&gt; - In this scenario, the data access layer is distinctly separated from all other code, which resides in the main project for the application.  This represents an understanding that data access and the object-relation-mapping (ORM) is a distinct aspect of a software application and requires specialized knowledge.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Three-Tier&lt;/strong&gt; - This is a further refinement and maturation of the software architecture, uniquely placing the business rules (requirements) and logic (processes) within a distinct layer free from presentation and data access specialized coding needs.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;N-Tier&lt;/strong&gt; - This is the holy-grail, where workflow is separated from the Presentation layer, and accesses the business services layer which uses the data services layer for storage and retrieval; all layers can be distributed across CPU and machine boundaries to achieve scale and reach.  &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;What is Boundary Bleed&lt;/h1&gt;
-&lt;p&gt;Boundary Bleed occurs when you violate the separate of concerns principle and allow non-built-in types to be exposed through multiple layers.  For example, if you
-create a class in your data service layer, and return it to your business service layer, and that in turn returns that same class to the presentation layer; you've
-passed a class through 2 layers and inadvertently coupled the presentation layer with the data service layer.  This makes your code more brittle and harder to test, where changes
-can have unexpected side-effects.  This is &lt;em&gt;Boundary Bleed&lt;/em&gt;, and it should be avoided and considered as an anti-pattern.&lt;/p&gt;
-&lt;hr&gt;</content><category term="Posts"></category><category term="code"></category><category term="code-quality"></category><category term="engineering"></category><category term="technical-excellence"></category></entry></feed>
+&lt;p&gt;Remember, less is more! Know your audience and make every word count!&lt;/p&gt;</content><category term="misc"></category><category term="learning"></category></entry></feed>
