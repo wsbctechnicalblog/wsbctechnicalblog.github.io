@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Make your pipeline badges more compact and meaningful - </title>
+        <title> Articles by Vikas Jawa - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -23,75 +23,41 @@
             <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
-<div class="hp-header-inner">
-    <div class="page-header">
-        <div class="content-header">
+    <div class="hp-header">
+        <div class="page-header">
+            <div class="content-header">
+                <div id="title-block">
+                <h1><a href="https://wsbctechnicalblog.github.io/"></a></h1>
+                <p class="blurb"></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
     <div class="content">
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pipelines-badges.html" rel="bookmark"
-            title="Permalink to Make your pipeline badges more compact and meaningful">Make your pipeline badges more compact and meaningful</a></h1>
 
-<img src="/theme/img/Logo-blogsize.png"><br />
-<div class="content-article">
-    <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 17 January 2022</div>
+<h2>Articles by Vikas Jawa</h2>
+
+
+<img src="/theme/img/Logo-blogsize.png">
+
+
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Mon 08 July 2024</div>
  
-   </header>
-    <section class='article'>
-        
-        <div class="entry-summary">
-            <p>Tired of cluttering your dashboards with duplicated waste?</p>
-        </div>
+                <h2><a href="https://wsbctechnicalblog.github.io/quality-assurance-automation-ai.html" rel=Bookmark title="Permalink to Revolutionizing Quality Assurance: Unleashing the Power of Automation and AI">Revolutionizing Quality Assurance: Unleashing the Power of Automation and AI</a></h2>
+                <p>
+                <p>Automation and Artificial Intelligence in Quality Assurance</p>            
+                </p>
+                   
+
+            </div>
     
-        <div class="entry-content">
-            <p>We have dashboards with multiple pipeline badges to keep an eye on our Azure DevOps pipelines. I often wondered why we cannot change the "Azure Pipelines" label to reduce the duplication (WASTE) and make our dashboards more compact.</p>
-<p><img alt="Jurassic Park" src="../images/pipeline-badges-1.png"></p>
-<p>Well, if you change ...</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span><span class="w"> </span><span class="n">status</span><span class="p">](</span><span class="n">https</span><span class="o">:</span><span class="c1">//dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)</span>
-</code></pre></div>
+</ul>
 
-<p>... to ...</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span><span class="w"> </span><span class="n">status</span><span class="p">](</span><span class="n">https</span><span class="o">:</span><span class="c1">//dev.azure.com/demo-org/demo-proj/_apis/build/status/Reporting/Azure%20Pipelines%20Totals?branchName=master&amp;label=PIPELINE%20TOTALS)](https://dev.azure.com/demo-org/demo-proj/_build/latest?definitionId=1818)</span>
-</code></pre></div>
-
-<p>... by adding <code>&amp;label=&lt;TEXT&gt;</code>, you can enjoy a more compact version of your dashboard.</p>
-<p><img alt="SpaceX" src="../images/pipeline-badges-2.png"></p>
-<p>I stumbled over this tweak in a recent Azure DevOps community chat and realized that I must read the Azure DevOps REST API documentation a bit more carefully. See <strong>URI Parameters</strong> in <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/build/status/get?view=azure-devops-rest-6.0">Status Get</a> and notice "<em>Replaces the default text on the left side of the badge.</em>"</p>
-        </div>
-
-    </section>
-    <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
-        | <a href="https://wsbctechnicalblog.github.io/pipelines-badges.html" rel="bookmark"
-         title="Permalink to Make your pipeline badges more compact and meaningful">Permalink</a>            
-        </div>
-        <!-- metaldata 
-        -->
-    </footer>
-        <hr>
-        <div id="gisqus_thread"></div>
-        <script src="https://giscus.app/client.js"
-            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
-            data-repo-id="R_kgDOIGjt-Q"
-            data-category="Technical Blog"
-            data-category-id="DIC_kwDOIGjt-c4CU007"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="light"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -179,7 +145,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (182)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (182)</li>
                 </ul>
              
             </div>
