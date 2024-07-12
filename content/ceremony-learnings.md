@@ -1,5 +1,5 @@
 Title: Unleashing the Power of Teamwork: Key Takeaways from Collaboration Ceremonies and Events
-Date: 2024-07-10
+Date: 2024-07-12
 Category: Posts
 Tags: ceremony, devops, posters
 Slug: ceremony-learnings
