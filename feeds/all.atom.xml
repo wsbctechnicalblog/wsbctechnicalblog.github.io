@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-07-08T00:00:00-07:00</updated><entry><title>DevOps Vancouver Meetup - May 28, 2024</title><link href="https://wsbctechnicalblog.github.io/meetup-devops-meetup-2024-05-28.html" rel="alternate"></link><published>2024-07-08T00:00:00-07:00</published><updated>2024-07-08T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-08:/meetup-devops-meetup-2024-05-28.html</id><summary type="html">&lt;p&gt;How I learned to develop software like a bureaucrat?&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently hosted an amazing online &lt;a href="https://www.meetup.com/devops-vancouver-bc-canada/events/301182207/"&gt;DevOps Vancouver Meetup&lt;/a&gt; on May 28, 2024. Our presenter &lt;a href="https://wsbctechnicalblog.github.io/pages/authors.html"&gt;Alex Bundarzic ... see authors for details&lt;/a&gt;, agreed to present a session at short-notice.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-07-12T00:00:00-07:00</updated><entry><title>Unleashing the Power of Teamwork: Key Takeaways from Collaboration Ceremonies and Events</title><link href="https://wsbctechnicalblog.github.io/ceremony-learnings.html" rel="alternate"></link><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-12:/ceremony-learnings.html</id><summary type="html">&lt;p&gt;Fostering a culture of continuous improvement and innovation through events&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are committed to managing several internal initiatives, including hackathons, town halls, and Centers of Enablement (CoE) that further inspire the formation of Communities of Practice (CoP), dojos, and working committees. Additionally, we orchestrate and enjoy external engagements like workshops, training sessions, seminars, and networking events, such as our &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver Meetup&lt;/a&gt;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Events" src="../images/ceremony-learnings-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can review &lt;a href="/ceremony-overview.html"&gt;Ceremony Overview&lt;/a&gt; for more insight into the internal ceremonies - in this post I will focus on the takeaways from hosting public &lt;strong&gt;meetups&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A meetup is a casual event&lt;/strong&gt; where individuals with shared interests like DevOps come together to mingle, exchange ideas, connect, or participate in related activities. The term "meetup" gained prominence with &lt;a href="https://www.meetup.com/home"&gt;Meetup.com&lt;/a&gt;, a site that facilitates the organization and discovery of such events. 
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;But first, why are these events pivotal?&lt;/h1&gt;
+&lt;p&gt;Events such as technical meetups and communities of practice (CoP) are essential for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Best Practices and Standards&lt;/strong&gt; - They aid in setting and spreading industry benchmarks. Our centers of enablement (CoE), for example, Provide guardrails (aka governance).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What is a guardrail?&lt;/strong&gt; 
+A guardrail is likened to the safety barriers on a bridge, serving as a metaphor to guide our engineers in safely and efficiently using our software development lifecycle (SDLC). It represents our commitment to setting standards and governance in a way that empowers rather than dictates. Our team promotes engineering practices and while engineers can disregard these 'guardrails,' doing so often leads to a higher chance of issues, with less support available.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Community Building&lt;/strong&gt; - They cultivate a sense of community and improve job satisfaction.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feedback and Improvement&lt;/strong&gt; - Offers a chance for critique and improvement of work.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Innovation&lt;/strong&gt; - Exposure to diverse thoughts encourages innovative thinking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inspiration and Motivation&lt;/strong&gt; - Witnessing peers' achievements can stimulate personal drive.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Knowledge Sharing&lt;/strong&gt; - They promote ideas, experiences, and industry trends exchange.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Networking Opportunities&lt;/strong&gt; - They help build connections with colleagues and leaders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Problem Solving&lt;/strong&gt; - They offer venues for tackling challenges collaboratively.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skill Development&lt;/strong&gt; - Dojos, workshops and presentations facilitate learning and skill enhancement.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Visibility and Recognition&lt;/strong&gt; - Participation raises profile and might create leadership chances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our events contribute to continuous professional development, continuous learning, and collective progress.&lt;/p&gt;
+&lt;h1&gt;What is the catch?&lt;/h1&gt;
+&lt;p&gt;Although there are several challenges, typically the advantages of collaboration events surpass issues, such as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Catch" src="../images/ceremony-learnings-2.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cost&lt;/strong&gt; - Event planning can incur high expenses, including venue rental, catering, advertising, and speaker honorariums.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logistics&lt;/strong&gt; - Arranging the event specifics, such as location, date, time, can be intricate and time-consuming.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low Attendance&lt;/strong&gt; - A successful event often depends on a high turnout for effective networking, promotion, and value for hosts and speakers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Risk Management&lt;/strong&gt; - It is critical to plan for unexpected issues like cancellations, poor attendance, or emergencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Inevitable One&lt;/strong&gt; - Handling that one attendee who comes just for the free food or to create continuous interruptions is a known challenge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Back to the core topic - our learnings!&lt;/h1&gt;
+&lt;p&gt;For a meetup to be effective, we've realized the importance of these six key components:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Learnings" src="../images/ceremony-learnings-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Purpose&lt;/strong&gt; – It is critical to define the purpose and desired results for your meetup, providing clear answers to "what will I gain from this and why should I spend my valuable time attending?" &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNING 1&lt;/strong&gt; - &lt;strong&gt;Purpose&lt;/strong&gt; is the most important ingredient to cook up a successful event!
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Engaging Content&lt;/strong&gt; - Present exciting and pertinent material to keep participants involved and provide value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNING 2&lt;/strong&gt; - Minimize text and slides for a better presentation; maximize demonstrations and involve the audience more.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Organization&lt;/strong&gt; -  It is crucial to meticulously plan everything from choosing a suitable venue to organizing and handling logistics efficiently. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNING 3&lt;/strong&gt; - Post-pandemic findings indicate that in-person gatherings draw larger crowds compared to online events, with about 70% attendance for face-to-face meetings against roughly 50% for virtual ones, compared to RSVPs (Répondez s'il vous plait). Additionally, incorporating a live stream into your physical event might lead to a decrease in attendance since potential participants may opt to stay home at the last minute and view it online instead.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Promotion&lt;/strong&gt; - Effective advertising is key to drawing in attendees, and clear communication keeps all parties informed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feedback Loop&lt;/strong&gt; - It is crucial to collect and utilize feedback from participants to enhance future events and meet community expectations. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;LEARNING 4&lt;/strong&gt; - We have observed that the response rate to surveys after meetups is quite low, less than 20%. The best method to obtain feedback about the session and meetup seems to be collecting it in &lt;strong&gt;real-time&lt;/strong&gt;. I find it engaging when the speaker incorporates an interactive poll during their talk, like using &lt;a href="https://www.mentimeter.com/"&gt;Mentimeter&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Committed Leadership&lt;/strong&gt; - Having eager and passionate coordinators is essential for addressing unexpected challenges and making sure that the event runs smoothly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What have you learned from your meetups?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry><entry><title>DevOps Vancouver Meetup - May 28, 2024</title><link href="https://wsbctechnicalblog.github.io/meetup-devops-meetup-2024-05-28.html" rel="alternate"></link><published>2024-07-08T00:00:00-07:00</published><updated>2024-07-08T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-08:/meetup-devops-meetup-2024-05-28.html</id><summary type="html">&lt;p&gt;How I learned to develop software like a bureaucrat?&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently hosted an amazing online &lt;a href="https://www.meetup.com/devops-vancouver-bc-canada/events/301182207/"&gt;DevOps Vancouver Meetup&lt;/a&gt; on May 28, 2024. Our presenter &lt;a href="https://wsbctechnicalblog.github.io/pages/authors.html"&gt;Alex Bundarzic ... see authors for details&lt;/a&gt;, agreed to present a session at short-notice.&lt;/p&gt;
 &lt;p&gt;The discussion "How I learned to develop software like a bureaucrat" highlighted the issue of fragile software systems due to interdependencies which cause systems to fail when changes are made. Alex suggests that despite their inefficiency, bureaucratic methods used in large organizations can offer insights into creating more stable and adaptable software systems. This session will present ways to alter the software development process to enhance system robustness and prepare for inevitable changes.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/how-I-learned-to-develop-software-like-a-bureaucrat.pdf"&gt;Presentation slides&lt;/a&gt;&lt;/li&gt;
@@ -2070,68 +2150,4 @@ Sustainment, maintenance, and housekeeping is something that should be part of e
 &lt;p&gt;"&lt;em&gt;What makes humans different? Our ability to adapt to change; the more we do it, the more comfortable we are with this disruption as an opportunity.&lt;/em&gt;" - Martin Lacey
 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Embrace change!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="learning"></category><category term="innovation"></category></entry><entry><title>Communication Guidance Sideways (Part 2)</title><link href="https://wsbctechnicalblog.github.io/communication-guidance-sideways.html" rel="alternate"></link><published>2023-03-17T00:00:00-07:00</published><updated>2023-03-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-17:/communication-guidance-sideways.html</id><summary type="html">&lt;p&gt;"Not to be missed after you depart." - L.David Marquet&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from &lt;a href="/communication-guidance-upwards"&gt;Communication Guidance Upwards&lt;/a&gt;, where we discussed how to communicate upwards to executive domain. In this post I will share my thoughts on communicating &lt;code&gt;sideways&lt;/code&gt;, with my peer managers, and &lt;code&gt;rearwards&lt;/code&gt;, with my team.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The proposed value and outcome format, as proposed in the upwards communication can be re-used for sideways and rearwards communication.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;We&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;recommend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;HOW&lt;/span&gt;,&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;There&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;several&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;benefits&lt;/span&gt;:
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;First&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;Also&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nv"&gt;Finally&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;OTHER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;Imagine&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;WHAT&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;we&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;VALUE&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Before we peek into sideways communication, I must highlight an important epiphany I had. In the illustration, as above, you will notice my team in the center, with me (L4) communicating upwards, as discussed in &lt;a href="/communication-guidance-upwards"&gt;Communication Guidance Upwards&lt;/a&gt;, sideways, and rearwards. The epiphany is that what we are about to discuss as sideways and rearwards communication exists twice - #1 is my team and I, #2 are my peer managers and my leader L1. &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Communicating sideways with peer managers&lt;/h1&gt;
-&lt;p&gt;As the L1, L2, L3, and L4 team we must collaborate, actively listen, co-operate, partner to work to meet common and organizational goals, and most importantly &lt;strong&gt;TRUST&lt;/strong&gt; each other. For example, if I have a problem or am struggling with an unknown or challenging process, I need to be able to rely on my peers, reach out for help, and know that we will confront any challenge and follow-through until we have a solution.  The same can be said for my team of engineers, who themselves are a cluster of collaborative peers.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To improve the sideways communication and collaboration, I recommend that you:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Be respectful&lt;/strong&gt;, caring, and never talk down to them.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Practice Active listening&lt;/strong&gt;, to understand your peers as humanoids and their unique needs. Silence is an effective ally!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Use clear and concise language&lt;/strong&gt;, no TLAs (two/three lettered acronyms), technical jargon, and as my Geography teacher always said no "waffling." Keep it simple, short, concise, and clear. Do not forget to follow up to ensure that your peers are clear on expectations and next steps.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Be pro-active&lt;/strong&gt;, create a communication matrix and regularly reach out to your peers to build a strong and trusting relationship.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Focus on solutions&lt;/strong&gt; over placing blame or critique. As I always tell my team - "we will burn up or succeed as a team."&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Some leadership anti-patterns you may recognize, for future discussion:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Knights in shining armour.&lt;/li&gt;
-&lt;li&gt;Blasphemous dictators.&lt;/li&gt;
-&lt;li&gt;Zero trust, omnipresent, micro-managers.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;Communicating rearwards with my team&lt;/h1&gt;
-&lt;p&gt;For me, the most important part on the illustration is my team and I. It is my responsibility to lead them, protect them, and empower them. As quoted by L. David Marquet in &lt;a href="https://davidmarquet.com/turn-the-ship-around-book/"&gt;Turn the Ship Around&lt;/a&gt;, we "give our team control over WHAT they work on and HOW they work", creating a team of leaders and allowing you "not to be missed after you depart."&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="up-side-rear" src="../images/communication-guidance-sideways-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To improve rearward communication, I recommend that you:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Establish transparency&lt;/strong&gt; empowering everyone to be informed, pro-active and supportive.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Establish open and safe communication&lt;/strong&gt; encouraging everyone to share their ideas, concerns, thoughts, and even feel safe to &lt;strong&gt;vent&lt;/strong&gt; as needed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Be respectful&lt;/strong&gt;, as discussed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Practice Active listening&lt;/strong&gt;, as discussed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Use clear and concise language&lt;/strong&gt;, as discussed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Provide regular and candid feedback&lt;/strong&gt; on goals, performance, and opportunities to continuously improve.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Be approachable&lt;/strong&gt; and available to your team, which brings me to a few more leadership anti-patterns you may recognize:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;"Always behind closed doors office hermit."&lt;/li&gt;
-&lt;li&gt;"Secretive and vanishing Houdini."&lt;/li&gt;
-&lt;li&gt;"Command and control dictator."
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Lastly, why do I refer to rearward communication. Well, something I learnt in my military days was to always lead by example and in the front, which means my team is not only behind me, but also &lt;strong&gt;has my back&lt;/strong&gt;. &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Remember, less is more! Know your audience and make every word count!&lt;/p&gt;</content><category term="misc"></category><category term="learning"></category></entry></feed>
+&lt;p&gt;Embrace change!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="learning"></category><category term="innovation"></category></entry></feed>
