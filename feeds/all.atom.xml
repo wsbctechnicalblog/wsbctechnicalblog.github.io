@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-07-12T00:00:00-07:00</updated><entry><title>Unleashing the Power of Teamwork: Key Takeaways from Collaboration Ceremonies and Events</title><link href="https://wsbctechnicalblog.github.io/ceremony-learnings.html" rel="alternate"></link><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-12:/ceremony-learnings.html</id><summary type="html">&lt;p&gt;Fostering a culture of continuous improvement and innovation through events&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are committed to managing several internal initiatives, including hackathons, town halls, and Centers of Enablement (CoE) that further inspire the formation of Communities of Practice (CoP), dojos, and working committees. Additionally, we orchestrate and enjoy external engagements like workshops, training sessions, seminars, and networking events, such as our &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver Meetup&lt;/a&gt;. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-07-17T00:00:00-07:00</updated><entry><title>Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-fear-of-change.html" rel="alternate"></link><published>2024-07-17T00:00:00-07:00</published><updated>2024-07-17T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-17:/back-to-basics-fear-of-change.html</id><summary type="html">&lt;p&gt;The era of manual testing and coding to a specification is nearly over!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Previously, I described &lt;a href="https://wsbctechnicalblog.github.io/back-to-basics-engineering.html"&gt;effective engineers&lt;/a&gt; as curious, adaptable learners keen on evolving and improving their collaborative and communicative skills. They are detail-oriented, view challenges as a springboard for innovation akin to what Elon Musk advocates and turn failures into lessons. They seek better practices and results with creative thinking, overcome difficulties with logic and optimism, and endorse deep, varied skills to solve problems and foster teamwork.&lt;/p&gt;
+&lt;p&gt;Today, I would like to touch on the significance of automation and artificial intelligence (AI). Before that, I will recount key experiences from my IT career to illustrate the constant evolution in technology and the role AI will play in upcoming groundbreaking advancements.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="timeline" src="/images/back-to-basics-fear-of-change-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My professional journey began with the modular, message-passing, multi-process, and multi-user CTOS operating system by Convergent Technologies. To this day, I consider it to be one of the finest operating systems I have had the opportunity to use – we had diskless workstations, we had multi-tasking, multi-processing, and we wrote programs in segments of 64K. Here is a picture of the B21, the machine I miss the most, and on the right the B25, fondly referred to as the stackable toaster.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="b21" src="/images/back-to-basics-fear-of-change-2.png"&gt; &lt;img alt="b25" src="/images/back-to-basics-fear-of-change-3.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;However, it did not have certain features that OS/2 offered at the time, and it certainly did not include the extensive range of additional functionalities and graphical interface (windows) that Microsoft Windows boasts today. There was also an occasion where I encountered a significant setback while developing a system service meant to integrate a new DES encryption module with the operating system. This setback (failure) led me to travel to San Jose in California, one of the operating system's development hubs, where I collaborated with a highly skilled guru who taught me extensively about operating system debugging and helped resolve the gremlin I had introduced in the service. The whole experience was astonishingly educational and became my initial lesson in how failure can lead to growth and spark innovation.&lt;/p&gt;
+&lt;p&gt;Upon the release of Windows 1.0, I immersed myself in assembler programming and particularly in resolving compatibility issues between CTOS and Windows. In the '90s, I recall the debut of Microsoft Solution Framework (MSF), NT 3.5, the original Visual Studio, and Visual Source Safe, which was developed by One Tree Software from North Carolina. The latter became a product and its creator, Brian Harry, became one of the leaders I admire most, as well as the driving force behind Team Foundation Server and Azure DevOps. This era introduced my second favourite device, the COMPAQ portable computer – although, when I reflect, I question the “portability.”&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="compaq" src="/images/back-to-basics-fear-of-change-4.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The early 2000s marked the inception of the Agile Manifesto, introduced Team Foundation Server 2005 with its extensive setup checklist, and saw the rise of the DevOps approach that would go on to impact my career significantly. This period led me to a new continent and company, where I had the honor to contribute to Agile and DevOps initiatives within the TFS team at Microsoft. My peers often hear me advocate for our transformation efforts; we automated extensively, executed over 70,000 unit tests in merely seven minutes on every pull-request, and embodied &lt;a href="https://www.donovanbrown.com/post/what-is-devops"&gt;Donovan Brown’s definition of DevOps&lt;/a&gt;: "&lt;em&gt;The union of people, process, and products to enable continuous delivery of value to our end users.&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;In the 2010’s we welcomed Azure and I joined WorkSafeBC in 2018 – see &lt;a href="https://wsbctechnicalblog.github.io/can-government-agencies-be-innovative.html"&gt;Can government agencies be innovative?&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;Lastly, we have seen the introduction of Azure OpenAI, GitHub Copilot, ChatGPT, and an overwhelming array of other AI innovations and chances for advancement. We are at the conclusion of the initial phase!&lt;/p&gt;
+&lt;p&gt;Below the timeline, you will find the major programming languages I have used, space programs I have tracked, and five books where I have ve consolidated my insights for others to enjoy. I may have omitted some key points, but remember, the digital realm is always evolving. Having highlighted these to underline the need for continuous learning as the technology landscape evolves, let us circle back to this blog's main topic: the inevitable change in an engineer's life and the critical roles of automation and AI going forward.&lt;/p&gt;
+&lt;p&gt;Here are two of my predictions that I would like to share and hear your views on:&lt;/p&gt;
+&lt;h1&gt;Automation will not take your job, but an engineer using automation will!&lt;/h1&gt;
+&lt;p&gt;Our team is committed to pioneering improvements and striving for engineering mastery by stewarding their insights and establishing guidelines to help safely navigate the realm of information technology. We implement automation to standardize and streamline monotonous tasks, freeing engineers to tackle more engaging and worthwhile projects. Yet, we observe that some engineers opt out of using automated systems, choosing instead to handle tasks manually.&lt;/p&gt;
+&lt;p&gt;Is it a resistance to change or distrust in automation that hinders adaptation? Regardless, adapting is crucial. For instance, QA testers should shift towards QA engineering and harness AI for test automation, integrating it early into the development cycle. Software programmers, too, should transition into software engineers, employing AI for routine tasks and code generation, to stay relevant in an increasingly automated field and rapidly evolving environment. The era of manual testing and coding to a specification (distinct from general development) is near the end!
+Keep in mind, machines excel at repetitive tasks with greater efficiency and reliability compared to humans, who may become distracted and lose concentration as their interest wanders.&lt;/p&gt;
+&lt;h1&gt;Artificial Intelligence (AI) will not take your job, but an engineer using AI will!&lt;/h1&gt;
+&lt;p&gt;Artificial intelligence (AI) has quickly become an integral part of our environment, processing vast amounts of data, automating routine tasks, offering tailored experiences, predicting in milli-seconds what took us days-weeks to analyse, and aiding in making decisions, thus fostering innovation and efficiency. The digital realm is brimming with potential for the optimistic and bold who aim high. I relish the chance to contribute to this crucial phase in the digital domain, with AI enabling me to tackle innovative and more strategic challenges.
+So, why is there such an Angst for AI?&lt;/p&gt;
+&lt;p&gt;It is unthinkable that anyone aspires to be an engineer secluded in a dim and solitary space, fearing change. We are inherently inclined to collaborate, exchange insights, innovate, investigate, and collectively concentrate on creating solutions, not fixating on issues, while consistently providing worth to satisfied users. We wish to engage in compelling and valuable work instead of monotonous and tedious tasks. Therefore, we should embrace automation and, at present, artificial intelligence. And no, we are not welcoming SkyNet or a horde of terminators – not just yet.&lt;/p&gt;
+&lt;p&gt;Looking forward to my team revealing their AI success stories on this technical blog and/or the &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver&lt;/a&gt; meetup in the near future.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Nonetheless, based on my current knowledge, I believe that neither automation nor artificial intelligence will be a substitute for an effective (open-minded) and skilled (continuous learning) engineer.&lt;/p&gt;
+&lt;p&gt;What do you think?&lt;/p&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry><entry><title>Unleashing the Power of Teamwork: Key Takeaways from Collaboration Ceremonies and Events</title><link href="https://wsbctechnicalblog.github.io/ceremony-learnings.html" rel="alternate"></link><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-12:/ceremony-learnings.html</id><summary type="html">&lt;p&gt;Fostering a culture of continuous improvement and innovation through events&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are committed to managing several internal initiatives, including hackathons, town halls, and Centers of Enablement (CoE) that further inspire the formation of Communities of Practice (CoP), dojos, and working committees. Additionally, we orchestrate and enjoy external engagements like workshops, training sessions, seminars, and networking events, such as our &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver Meetup&lt;/a&gt;. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Events" src="../images/ceremony-learnings-1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2100,54 +2130,4 @@ Sustainment, maintenance, and housekeeping is something that should be part of e
 &lt;ul&gt;
 &lt;li&gt;Am I wrong to be upset with the default option selected by Microsoft?&lt;/li&gt;
 &lt;li&gt;What are your thoughts?&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category></entry><entry><title>Fail, Learn, Reset, Transform!</title><link href="https://wsbctechnicalblog.github.io/fail-learn-reset-transform.html" rel="alternate"></link><published>2023-03-31T00:00:00-07:00</published><updated>2023-03-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-03-31:/fail-learn-reset-transform.html</id><summary type="html">&lt;p&gt;“Success is not final, failure is not fatal, it is the courage to continue that counts.” – Winston Churchill&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="/fail-learn-reset.html"&gt;Fail, Learn, Reset&lt;/a&gt; I explored how I encourage everyone in my team and our group to accept failure as an opportunity to learn and how we are trying hard to eradicate the &lt;strong&gt;fear of failure&lt;/strong&gt; that often accompanies the &lt;strong&gt;imposter syndrome&lt;/strong&gt;. In conversations, I realized that the &lt;a href="/fail-learn-reset.html"&gt;Fail, Learn, Reset&lt;/a&gt; post was very engineering focused, but that the concept of learning from failures applies to everything.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;FAILURE&lt;/strong&gt; comes in many shapes and sizes. Here are a few of many definitions from the Merriam-Webster Dictionary:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;lack of success&lt;/li&gt;
-&lt;li&gt;a falling short&lt;/li&gt;
-&lt;li&gt;a fracturing or giving way under stress
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Personally, I prefer to think of &lt;strong&gt;FAILURE&lt;/strong&gt; as an "unexpected outcome" of doing, trying, evolving, or experimenting.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Unexpected Result" src="../images/fail-learn-reset-transform-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Which brings me to "transform" in today's blog post title.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;It is about how (I / we) can transform&lt;/h1&gt;
-&lt;p&gt;When we look at the continuous circle of doing, trying, evolving, experimenting, reflecting, learning, and adjusting, it is important to realize that the LEARN + ADJUST steps are crucial. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="I/We" src="../images/fail-learn-reset-transform-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We need to reflect and transform continuously, otherwise we enter the world of insanity.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;"The definition of insanity is doing the same thing over and over and expecting different results." - Albert Einstein
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Two anti-patterns that drive me crazy:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Paralysis&lt;/strong&gt; - If you have ever had the displeasure of working with a team that turns every retrospective into a complaining, venting, and blame saga, you know what I mean. Instead of reflecting, learning, and deciding how we / I can change (&lt;strong&gt;transform&lt;/strong&gt;) to make the next iteration better, these paralyzed teams drown in misery and hope for change that never comes.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stagnation&lt;/strong&gt; - We have done it this way for decades and it has always worked for us. Sure, the postal office worker stamping envelopes by hand is doing a great job, but not in an efficient way. As a result the worker will always be &lt;strong&gt;too busy&lt;/strong&gt; to embrace new ways of automating and improving the stamping; giving relief and spare time to &lt;strong&gt;experiment&lt;/strong&gt; and &lt;strong&gt;innovate&lt;/strong&gt;. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“Ask not what your country can do for you – ask what you can do for your country." - John F. Kennedy
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Next time you get to the learn and adjust stages, take a step back, &lt;a href="https://examinedexistence.com/the-navy-seal-breathing-technique-to-calm-down/"&gt;breathe&lt;/a&gt;, and then ask yourself:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;What have we / I learned?&lt;/li&gt;
-&lt;li&gt;What can we / I improve before we re-try?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;OMG, not another reorganization!?!&lt;/h1&gt;
-&lt;p&gt;Another great example is when we as a group announce that we are going to reorganize again. The &lt;code&gt;paralyzed&lt;/code&gt; teams will once again spiral into a dark place, while teams with a healthy Agile and DevOps mindset will embrace the opportunity to change.&lt;/p&gt;
-&lt;p&gt;Yes, we &lt;code&gt;tried&lt;/code&gt; and &lt;code&gt;experimented&lt;/code&gt; with a new structure for a year. We realized that we have not managed to evolve to where we wanted to be. We &lt;code&gt;learn&lt;/code&gt; from the experience, we &lt;code&gt;adjust&lt;/code&gt; (reorganize), and we embrace new ways.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;See change as an &lt;code&gt;opportunity&lt;/code&gt;, not as a threat!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;"&lt;em&gt;What makes humans different? Our ability to adapt to change; the more we do it, the more comfortable we are with this disruption as an opportunity.&lt;/em&gt;" - Martin Lacey
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Embrace change!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="learning"></category><category term="innovation"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category></entry></feed>

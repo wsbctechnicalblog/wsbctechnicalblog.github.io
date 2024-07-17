@@ -1,5 +1,5 @@
 Title: Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!
-Date: 2024-06-2807.03
+Date: 2024-07-17
 Category: Posts 
 Tags: devops, agile
 Slug: back-to-basics-fear-of-change
