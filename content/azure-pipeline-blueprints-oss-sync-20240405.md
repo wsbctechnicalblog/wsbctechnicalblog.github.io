@@ -2,7 +2,7 @@ Title: Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240405
 Date: 2024-04-10
 Category: Posts
 Tags: azure-devops, pipelines, engineering
-Slug: azure-pipeline-blueprints-oss-sync-202403405
+Slug: azure-pipeline-blueprints-oss-sync-20240405
 Author: Willy-Peter Schaub
 Summary: Adding a new blueprint - webapp.
 
