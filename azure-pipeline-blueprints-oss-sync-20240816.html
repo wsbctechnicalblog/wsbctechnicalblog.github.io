@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why can I not just create a working group? - </title>
+        <title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240816 - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,75 +33,81 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html" rel="bookmark"
-            title="Permalink to Why can I not just create a working group?">Why can I not just create a working group?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-20240816.html" rel="bookmark"
+            title="Permalink to Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240816">Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240816</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 17 December 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 19 August 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>It all depends on the context - [CoE] Working Group</p>
+            <p>Improving the configuration file user experience.</p>
         </div>
     
         <div class="entry-content">
-            <p>When we launched our <a href="/ceremony-center-of-enablement.html">Center of Enablement</a> (CoE), <a href="/dojo-events.html">Dojo</a>, <a href="/townhall.html">Townhall</a>, <a href="../ceremony-working-group.html">Working Group</a>, and <a href="/ceremony-community-of-practice.html">Community of Practice</a> (CoP) ceremonies, we triggered vibrant collaboration (which is good) and created confusion (which is bad) with working groups. In the <a href="/ceremony-overview.html">An overview of our key collaboration ceremonies</a> we described the difference between the ceremonies, the importance of the terms of reference (why are we here), and the process of creating one or more of the ceremonies.</p>
-<hr>
-<h1>What is the difference between a working group and a CoE Working group?</h1>
-<p>A <strong>working group</strong> is a group of people working together to collaborate and achieve specified goals. The lifespan of a working group can last anywhere between minutes to years, although we strongly recommend <strong>the shorter the better</strong> mindset. </p>
+            <p>We have been silent for a while because we have been busy with operations, technology debt reduction, and self-service automation. We will share more on that later. In this update, we have tackled an issue that has bothered us for months, and more importantly causing some concern among our engineers using the v2 CI/CD blueprints.</p>
+<h1>LOOKING BACK</h1>
+<p>We stored all our configuration templates in a separate repository called <strong>*.Configuration.v2</strong>, protected by branch policies and monitored by our common engineering and security teams. This caused annoying delays when the team needed to change configurations and get reviews that added little value.</p>
+<h1>LOOKING FORWARD</h1>
+<p>We moved the <strong>*-config.yml</strong> from the <strong>*.Configuration.v2</strong> repository to the same one where the team's application code and pipeline are tracked. The <strong>*-control.yml</strong> line referencing the file changed from:</p>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">deploy</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">/</span><span class="n">nuget</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="n">CeConfiguration</span>
+</code></pre></div>
+
+<p>To:</p>
+<div class="highlight"><pre><span></span><code><span class="n">variables</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">deploy</span><span class="o">/$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">.$</span><span class="p">{{</span><span class="w"> </span><span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">)</span><span class="w"> </span><span class="p">}}</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">@</span><span class="bp">self</span>
+</code></pre></div>
+
 <blockquote>
-<p>If you are referring to this generic type of working group, you can spin one up whenever you need to.
+<p>Note the <strong>@self</strong> which highlights that we refer to the repository where the original pipeline was found.
 </p>
 </blockquote>
-<p>A <strong>CoE working group</strong> is sponsored by one or more Centers of Enablement, its terms of reference (vision, goals, hypothesis) a subset of and supporting the CoE terms of reference. In other words, there is a strong dependency between a sponsoring and other collaborating CoEs.</p>
+<p>We also removed the following line from all <strong>*-start.yml</strong> templates:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nx">repository</span><span class="p">:</span><span class="w"> </span><span class="nx">CeConfiguration</span>
+<span class="w">    </span><span class="k">type</span><span class="p">:</span><span class="w">       </span><span class="nx">git</span>
+<span class="w">    </span><span class="nx">name</span><span class="p">:</span><span class="w">       </span><span class="err">&#39;</span><span class="nx">__TODO_INSERT_AZURE_DEVOPS_NAME_HERE__</span><span class="o">/</span><span class="nx">AzureDevOps</span><span class="p">.</span><span class="nx">Automation</span><span class="p">.</span><span class="nx">Pipeline</span><span class="p">.</span><span class="nx">Configuration</span><span class="p">.</span><span class="nx">v2</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<p>The only exception is the NuGet v2 CI/CD blueprint, where the <strong>*-start.yml</strong> template remains unchanged and allows loading the centralized configuration file from <strong>*.Configuration.v2</strong> or from the same repository as the team's code and pipeline.</p>
+<div class="highlight"><pre><span></span><code>-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span> <span class="n">false</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">useDefaultConfig</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>/deploy/default.config/nuget-package-config.yml@CeConfiguration
+
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span> <span class="n">false</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">useDefaultConfig</span><span class="p">,</span> <span class="n">false</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">usePortfolioConfig</span><span class="p">,</span> <span class="n">true</span><span class="p">)</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>/deploy/<span class="cp">${</span><span class="p">{</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span> <span class="cp">}</span>}/nuget-package-config.yml@CeConfiguration
+
+-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">suppressCD</span><span class="p">,</span> <span class="n">false</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">useDefaultConfig</span><span class="p">,</span> <span class="n">false</span><span class="p">),</span> <span class="n">eq</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">usePortfolioConfig</span><span class="p">,</span> <span class="n">false</span><span class="p">)</span> <span class="p">)</span> <span class="cp">}</span>}:
+<span class="w">  </span>-<span class="w"> </span>template:<span class="w"> </span>/deploy/<span class="cp">${</span><span class="p">{</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">)</span> <span class="cp">}</span>}.<span class="cp">${</span><span class="p">{</span> <span class="n">lower</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">)</span> <span class="cp">}</span>}-config.yml@self
+</code></pre></div>
+
+<h1>OUTCOME</h1>
+<p>Now, the pipeline and its configuration templates are version controlled and managed by the same team that owns the code, making the process simpler and more efficient.</p>
+<hr>
 <blockquote>
-<p>If you are referring to the CoE working group, you need a CoE to spin up a short-lived CoE Working Group.
+<p><a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/29">Click here to view the associated Pull Request</a>
 </p>
 </blockquote>
-<p><img alt="F1" src="../images/ceremony-focus-single-source-0.png"> </p>
-<p>Think of the CoE as the Ferrari racing team (long-lived) and the CoE Working Group  as the team that performs one of the pit stops (short-lived). The CoE cannot succeed without the CoE Working Group and relies heavily on their feedback to improve.</p>
-<hr>
-<h1>Let us look at the CoE flow of value</h1>
-<p><img alt="CoE" src="../images/ceremony-focus-single-source-1.png"> </p>
-<p><strong>(1)</strong> - A Centre of Enablement (CoE) is created to assemble people from different disciplines to collaborate and enable our organization to shift across multiple disciplines to create a place where the highest standards are maintained. Every CoE is a coalition for change, made of these pillars: </p>
+<p>Changes:</p>
 <ul>
-<li>Provide thought leadership, vision, and direction.</li>
-<li>Provide good practice and guardrails (aka governance).</li>
-<li>Establish collaboration with key stakeholders and other CoEs to abolish silos.</li>
-<li>Trigger working groups, dojos, and community of practices to implement research, education, and outcomes. </li>
+<li>All <strong>blueprints/wepapp/azure-pipeline-*-control*.yml</strong> templates have been updated.</li>
+<li>All <strong>blueprints/wepapp/azure-pipeline-*-start*.yml</strong> templates have been updated.</li>
 </ul>
-<p><strong>(2)</strong> - All CoE synchronize on a regular basis to exchange learnings, failures, and ensure that as a whole, the CoEs bubble up to a common vision for the organization.</p>
-<p><img alt="Working Group" src="../images/ceremony-focus-single-source-2.png"> </p>
-<p><strong>(3)</strong> and <strong>(4)</strong> - The CoE triggers one or more CoE working groups, each focused on a subset of the CoE goals, their backlogs linked to he CoE backlog, and their vision supporting the CoE's vision. Every CoE working group is:</p>
-<ul>
-<li><strong>Short-lived!</strong> - The working group's lifetime is limited to the CoE's lifetime and a maximum of 2 program increments (10 weeks). See FAQ for more details.</li>
-<li><strong>Laser focused!</strong> - Focus on experiments, (dis)prove hypothesis, make recommendations, and minimal viable products.</li>
-<li><strong>A slice!</strong> - Take baby steps, focus on a vertical slice, and do <strong>not</strong> try to solve the world's problems.</li>
-</ul>
-<p><img alt="Flow" src="../images/ceremony-focus-single-source-3.png"> </p>
-<p><strong>(5)</strong> and <strong>(6)</strong> - Information flows from the CoE Working Group back to the CoE, where it is vetted and consolidated into the CoE knowledgebase.</p>
-<p><strong>(7)</strong> - Each CoE will synchronize and exchange the learnings from the working groups during the Co</p>
 <hr>
-<h1>FAQ</h1>
-<h2>What happens when a CoE is terminated?</h2>
-<p>When we terminate a CoE, all associated CoE Working Groups, CoE Dojos, and CoE Community of Practices are terminated as well. All learnings, failures, etc. are maintained for future reference.</p>
-<h2>What happens when a CoE Working Group's lifetime expires?</h2>
-<p>We terminate the working group, perform a retrospective, and <strong>optionally</strong> spin up a new working group to complete the work, if and only if it still deemed valuable. THe intentionally limit the lifetime of working groups to keep them focused and energized.</p>
-<h2>What happens at a +1 Townhall?</h2>
-<p>We present the overall health of our collaboration, experimentation, and innovation ecosystem, as well as an update and optional demos by each active CoE.</p>
-<p>Any other questions?</p>
+<p>What else can/should/must we consider as part of our blueprints? Thoughts?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a>
-        | <a href="https://wsbctechnicalblog.github.io/ceremony-focus-single-source.html" rel="bookmark"
-         title="Permalink to Why can I not just create a working group?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-20240816.html" rel="bookmark"
+         title="Permalink to Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240816">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
