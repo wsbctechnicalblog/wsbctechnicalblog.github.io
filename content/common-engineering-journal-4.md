@@ -1,4 +1,4 @@
-Title: Why are we a (the) place to work for? 
+Title: Journal 4 - Why are we a (the) place to work for? 
 Date: 2022-04-22
 Category: Posts
 Tags: agile, devops, journal
