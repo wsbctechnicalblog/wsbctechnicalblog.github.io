@@ -4,13 +4,16 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-generative-ai
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: "Generative AI refers to a subset of artificial intelligence that creates new content—such as text, images, audio, or video." - ChatGPT GPT-4o
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![generative-ai](../images/ai-fundamentals-ai900-generative-ai.png) 
 
-TBD
+- X
+- X
 
 ---
 

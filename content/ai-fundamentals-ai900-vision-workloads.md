@@ -4,13 +4,16 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-vision-workloads
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: "Vision workloads in AI refer to tasks that involve processing and analyzing visual data, such as images and videos." - ChatGPT GPT-4o
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![vision-workloads](../images/ai-fundamentals-ai900-vision-workloads.png) 
 
-TBD
+- X
+- X
 
 ---
 

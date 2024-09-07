@@ -4,13 +4,18 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-bots
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: Conversational AI workloads - no longer part of AI-900 certification!
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![bots](../images/ai-fundamentals-ai900-bots.png) 
 
-TBD
+Even though conversational AI is no longer part of the AI-900 certification and has been replaced by generative AI, I will still share my notes for nostalgia.
+
+- X
+- X
 
 ---
 

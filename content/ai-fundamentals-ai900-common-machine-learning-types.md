@@ -4,13 +4,16 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-common-machine-learning-types
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: "AI machine learning (ML) refers to the subset of artificial intelligence focused on developing algorithms and models that enable computers to learn from data and improve their performance over time without being explicitly programmed." - ChatGPT GPT-4o
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![common-machine-learning-types](../images/ai-fundamentals-ai900-common-machine-learning-types.png) 
 
-TBD
+- X
+- X
 
 ---
 

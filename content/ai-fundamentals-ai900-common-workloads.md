@@ -4,13 +4,16 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-common-workloads
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: "Common workloads in AI and machine learning include data processing, model training, inference, natural language processing, computer vision, recommendation systems, time series forecasting, and robotics/automation tasks." - ChatGPT GPT-4o
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![common-workloads](../images/ai-fundamentals-ai900-common-workloads.png) 
 
-TBD
+- X
+- X
 
 ---
 

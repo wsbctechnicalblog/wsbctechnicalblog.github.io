@@ -4,13 +4,16 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-natural-language-processing
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: "Natural Language Processing (NLP) is a branch of AI that enables computers to understand, interpret, and generate human language." - ChatGPT GPT-4o
 
-TBD
+>
+>![alert](../images/alert-tiny.png)
+>These are my **personal** study notes. Use them at your own **risk**!
 
 > ![natural-language-processing](../images/ai-fundamentals-ai900-natural-language-processing.png) 
 
-TBD
+- X
+- X
 
 ---
 
