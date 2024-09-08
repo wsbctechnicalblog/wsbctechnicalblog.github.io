@@ -4,7 +4,7 @@ Category: Posts
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-ai-guiding-principles
 Author: Willy-Peter Schaub
-Summary: "Guiding principles aim to ensure responsible and ethical AI development and deployment.." - ChatGPT GPT-4o
+Summary: "Guiding principles aim to ensure responsible and ethical AI development and deployment." - ChatGPT GPT-4o
 
 >
 >![alert](../images/alert-tiny.png)
