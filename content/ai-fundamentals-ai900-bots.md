@@ -14,8 +14,9 @@ Summary: Conversational AI workloads - no longer part of AI-900 certification!
 
 Even though conversational AI is no longer part of the AI-900 certification and has been replaced by generative AI, I will still share my notes for nostalgia.
 
-- X
-- X
+## Notes
+
+- **QnA Maker** Service can populate a knowledgebase using a question&answer (Q&A) document. Being retired in March 2025.
 
 ---
 

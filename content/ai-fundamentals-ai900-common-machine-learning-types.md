@@ -14,17 +14,17 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 ## Notes
 
-- TBD
+- Training a **Regression** model involves data gathering and transformation: Feature selection --> Cleaning --> Normalization (or feature engineering).
 
 ## Example
 
 >
->You need to examine historical data to forecast price ranges for your product. Label = prediction = price range.
+> You need to examine historical data to forecast price ranges for your product. Label = prediction = price range.
 >
 
 - The **classification** model is ``suitable`` for supervised learning to determine ``is it`` a low, medium, high, or very high price.
 - The **regression** model is ``inappropriate`` because it forecasts numerical values rather than determining whether something belongs to the "is it" class.
-The **clustering** model is ``inappropriate`` because it clusters unlabeled data into similar groups.
+- The **clustering** model is ``inappropriate`` because it clusters unlabeled data into similar groups.
 
 ---
 

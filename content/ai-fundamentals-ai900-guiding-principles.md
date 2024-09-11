@@ -32,6 +32,10 @@ Here are a few examples of solutions that adhere to guiding principles:
 - Microsoft’s [Seeing AI](https://www.microsoft.com/en-us/garage/wall-of-fame/seeing-ai/?msockid=00c538c26eda63c107f52ca16fce622e) solution helps visually impaired people by describing their surroundings, recognizing people, and reading text aloud, promoting inclusivity and access to technology for everyone.
 - Microsoft's [AI for Earth](https://news.microsoft.com/apac/features/ai-for-earth-helping-save-the-planet-with-data-science/?msockid=00c538c26eda63c107f52ca16fce622e) uses AI to address environmental challenges, from climate change to biodiversity loss, ensuring AI contributes positively to the planet’s sustainability.
 
+## FRAUPIT
+
+Not ideal, but I use the FRAUPIT catch phrase to remember: **F**airness, **R**eliability & Safety, **A**ccountability, **U**nintended Consequences, **P**rivacy & Security, **I**nclusivity, and **T**ransparency.
+
 ---
 
 You perused:

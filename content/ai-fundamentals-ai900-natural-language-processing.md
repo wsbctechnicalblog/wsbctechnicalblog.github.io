@@ -12,8 +12,10 @@ Summary: "Natural Language Processing (NLP) is a branch of AI that enables compu
 
 > ![natural-language-processing](../images/ai-fundamentals-ai900-natural-language-processing.png) 
 
-- X
-- X
+**NOTES**
+
+- **Language Understanding Intelligent Service (LUIS)** understands voice or text commands.
+- **Text Analysis** service helps to analyse documents, detect documents' **language**, extract **key phrases**, determine **entities**, and provide **sentiment analysis**.
 
 ---
 

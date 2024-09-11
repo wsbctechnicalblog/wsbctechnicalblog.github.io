@@ -12,8 +12,12 @@ Summary: "Vision workloads in AI refer to tasks that involve processing and anal
 
 > ![vision-workloads](../images/ai-fundamentals-ai900-vision-workloads.png) 
 
-- X
-- X
+## Notes
+
+- **Custom Vision** service has a model you can build and train for classification or object detection.
+- **Form Recognizer** service has a custom model users can train, or a pre-built receipt model trained to work with receipts.
+- **Image Classification** classifies objects based on their content to answer the "what is the image?" question.
+- **Semantic Segmentation** classifies pixels that belong to objects (detects) and highlights the object boundaries.
 
 ---
 
