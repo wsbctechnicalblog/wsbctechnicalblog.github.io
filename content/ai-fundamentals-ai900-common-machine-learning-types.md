@@ -14,7 +14,17 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 ## Notes
 
-- Training a **Regression** model involves data gathering and transformation: Feature selection --> Cleaning --> Normalization (or feature engineering).
+- **Feature engineering** is the method of creating new features, based on existing features.
+- **Feature selection** allows us to narrow down the features that are important for **label** predictions.
+- Training a **Regression** model involves data gathering and transformation: **Feature selection** --> **Cleaning** --> **Normalization** or **Feature engineering**.
+
+## Metrics
+
+>
+> Classification model
+>
+
+- **Area Under Curve (AUC)** is the classification model performance metrics - AUC=**1** is best fitted model and AUC<**0.5** is worse than random. 
 
 ## Example
 
