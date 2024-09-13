@@ -14,8 +14,10 @@ Summary: "Vision workloads in AI refer to tasks that involve processing and anal
 
 ## Notes
 
-- **Custom Vision** service has a model you can build and train for classification or object detection.
+- **Custom Vision** service has a model you can build and train for classification or object detection (class name, probability score, bounding box).
+- **Face Detection** helps detect and recognise people's faces.
 - **Form Recognizer** service has a custom model users can train, or a pre-built receipt model trained to work with receipts.
+- **Image Analysis** helps extract infornation from the images, tag them, and create descriptive image summary.
 - **Image Classification** classifies objects based on their content to answer the "what is the image?" question.
 - **Semantic Segmentation** classifies pixels that belong to objects (detects) and highlights the object boundaries.
 
