@@ -18,10 +18,10 @@ Here are a few examples of solutions that adhere to guiding principles:
 
 - **Accountability** - _Solutions designed to conform to governance frameworks and organizational standards, ensuring compliance with established legal and ethical principles._
 - **Inclusivity** - _Solutions created to support individuals who are visually impaired or blind._
-- **Transparency** - _Share details on a solution's features,possibilities, and constraints._
+- **Transparency** - _Share details on a solution's features, possibilities, and constraints._
 - **Privacy & Security** - _Solutions that safeguard user data while still gathering valuable insights for enhancing services._
 - **Fairness** - _Solutions that yield the same outcomes for individuals residing in both urban and rural areas._
-- **Reliability & Safety** - _Solutions designed to include resistance to hamrful manipulation._
+- **Reliability & Safety** - _Solutions designed to include resistance to harmful manipulation._
 - **Unintended Consequences** - _Solutions designed to identify and reduce the spread of harmful content, such as misinformation, hate speech, and fake news on its platform._
 
 ---
