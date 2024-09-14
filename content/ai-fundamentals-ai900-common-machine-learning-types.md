@@ -26,8 +26,9 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 - **Accuracy** - the ratio of predictions that exactly match the true class labels. Closer to 1 the better. Range: [0, 1].
 - **Area Under Curve (AUC)** reflects the model's performance - AUC=**1** is best fitted model and AUC<**0.5** is worse than random. Range: [0, 1].
+- **Confusion matrix** provides a tabulated view of predicted abd actual values.
 - **Precision** - the ability of a model to avoid labeling negative samples as positive. Closer to 1 the better. Range: [0, 1].
-- **Recall** - the ability of a model to detect all positive samples. Closer to 1 the better. Range: [0, 1]
+- **Recall** - the ability of a model to detect all positive samples. Closer to 1 the better. Range: [0, 1]. TP/(TP+FN), where TP=true prositive, FN=False negatiive.
 - **Weighted accuracy** is accuracy where each sample is weighted by the total number of samples belonging to the same class. Closer to 1 the better. Range: [0, 1].
 
 >

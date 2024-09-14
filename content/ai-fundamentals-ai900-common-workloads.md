@@ -12,8 +12,7 @@ Summary: "Common workloads in AI and machine learning include data processing, m
 
 > ![common-workloads](../images/ai-fundamentals-ai900-common-workloads.png) 
 
-- X
-- X
+- **Anomaly Detection** is one of five key elements of Microsoft AI, which ingests data, automatically selects the best ML model, and alerts user when an anomaly arises.  
 
 ---
 

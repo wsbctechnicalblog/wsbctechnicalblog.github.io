@@ -14,6 +14,10 @@ Summary: "Natural Language Processing (NLP) is a branch of AI that enables compu
 
 **NOTES**
 
+- **Language training** requires us to provide **Entities**, **Utterances**, and **Intents**, using LUIS.
+- Language training: **Entities** - The word "light" in "turn the light on."
+- Language training: **Intents** - "Turn On".
+- Language training: **Utterances** - "Turn on the lights" or "Turn the lights on."
 - **Language Understanding Intelligent Service (LUIS)** understands voice or text commands.
 - **Text Analysis** service helps to analyse documents, detect documents' **language**, extract **key phrases**, determine **entities**, and provide **sentiment analysis** (postive = 1, neutral/undefined = 0.5, negative = 0).
 
