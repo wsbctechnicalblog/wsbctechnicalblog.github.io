@@ -13,6 +13,11 @@ Summary: "Common workloads in AI and machine learning include data processing, m
 > ![common-workloads](../images/ai-fundamentals-ai900-common-workloads.png) 
 
 - **Anomaly Detection** is one of five key elements of Microsoft AI, which ingests data, automatically selects the best ML model, and alerts user when an anomaly arises.  
+- **Computer Vision** - enables machines to interpret and understand visual information from the world.
+- **Conversational AI** - enables machines to understand, process, and respond to human language in a natural and meaningful way. 
+- **Generative AI** - generate new content, such as text, images, music, or even code, based on the data machines have been trained on. 
+- **Machine Learning** - focuses on the development of algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data.
+- **Natural Language Processing** - focuses on the interaction between computers and humans through natural language.
 
 ---
 
