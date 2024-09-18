@@ -24,22 +24,23 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 > Confusion Matrix Terms
 > 
 
-- **True Positive (TP)** - number of positive cases predicted correctly 
-- **True Negative (TN)** - number of negative cases predicted correctly
-- **False Positive (FP)** - number of positive cases predicted incorrectly
-- **False Negative (FN)** - number of negative cases predicted incorrectly
+- **True Positive (TP)** - number of positive cases predicted correctly.
+- **True Negative (TN)** - number of negative cases predicted correctly.
+- **False Positive (FP)** - number of positive cases predicted incorrectly - Type 1 error.
+- **False Negative (FN)** - number of negative cases predicted incorrectly - Type 2 error.
 
 >
 > Classification model
 >
 
-- **Accuracy** - the ratio of predictions that exactly match the true class labels. Closer to 1 the better. Range: [0, 1]. Metric = TP/(TP+FN).
+- **Accuracy** - the ratio of predictions that exactly match the true class labels. Closer to 1 the better. Range: [0, 1]. Metric = (TP+TN)/(TP+FP+TN+FN).
 - **Area Under Curve (AUC)** reflects the model's performance - AUC=**1** is best fitted model and AUC<**0.5** is worse than random. Range: [0, 1].
 - **Confusion matrix** provides a tabulated view of predicted abd actual values.
-- **F1 Score** - machine learning evaluation metric that combines precision and recall scores. Metric = 2TP/(2TP+FP+FN).
+- **F1 Score** - machine learning evaluation metric that combines precision and recall scores. Metric = (2*Precision*Recall)/(Precision+Recall).
 - **Precision** - the ability of a model to avoid labeling negative samples as positive. Closer to 1 the better. Range: [0, 1]. Metric = TP/(TP+FP).
 - **Recall** - the ability of a model to detect all positive samples. Closer to 1 the better. Range: [0, 1]. TP/(TP+FN), where TP=true positive, FN=False negative.
 - **Selectivity** - measures the ability of the model to correctly identify negative samples (i.e., true negatives) out of all the actual negative samples. Metric = TN/(TN+FP).
+- **Specificity** - the ability of a model to correctly identify negative instances. TN/(TN+FP)
 - **Weighted accuracy** is accuracy where each sample is weighted by the total number of samples belonging to the same class. Closer to 1 the better. Range: [0, 1].
 
 >
