@@ -35,6 +35,7 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 - **Accuracy** - the ratio of predictions that exactly match the true class labels. Closer to 1 the better. Range: [0, 1]. Metric = (TP+TN)/(TP+FP+TN+FN).
 - **Area Under Curve (AUC)** reflects the model's performance - AUC=**1** is best fitted model and AUC<**0.5** is worse than random. Range: [0, 1].
+- **AveragePrecision (AP)** is the combined metrics of both Precision and Recall, used in vision model.
 - **Confusion matrix** provides a tabulated view of predicted abd actual values.
 - **F1 Score** - machine learning evaluation metric that combines precision and recall scores. Metric = (2*Precision*Recall)/(Precision+Recall).
 - **Precision** - the ability of a model to avoid labeling negative samples as positive. Closer to 1 the better. Range: [0, 1]. Metric = TP/(TP+FP).
