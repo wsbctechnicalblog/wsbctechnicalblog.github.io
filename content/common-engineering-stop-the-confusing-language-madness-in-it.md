@@ -1,5 +1,5 @@
 Title: Stop the Confusing Language Madness in IT!
-Date: <2023-09-22>
+Date: <2023-09-23>
 Category: Posts 
 Tags: 101, eliminate-waste
 Slug: stop-the-confusing-language-madness-in-it
@@ -11,6 +11,11 @@ We pickup from the [Why I loathe when engineers use TLAs, such as CD vs CD!](./w
 One of our first [Center of Enablement (CoE)](./ceremony-center-of-enablement.html) focused [working groups](./ceremony-working-group.html) was focused on creating a glossary of common three/four-lettered acronyms (TLAs), business, and technical terms to ensure we all know what we are talking about in written and verbal communications. Naturally, its effectiveness relies on people being able to find and use it.
 
 In combinatio with the common language, our suggested wat to communicate is to use the format: ```WHAT``` ASK ```WHY```. For instance, rather than saying "_Delete my repo XYZ_", say "_Delete my Azure DevOps (AzDO) repo XYZ, <URL>, because we are decommissioning our proof of concept._" 
+
+>
+> ![Bulb](../images/azuredevop-automation-stakeholders-3.png)
+> WHAT + **ASK** + WHY = **ACT**IONABLE
+>
 
 The latter question will result in less back-and-forth communication, confusion, and dramatically reduce both frustration and lead times, because the communication:
 
@@ -62,17 +67,27 @@ In this first and simple example, the term **project** is used in conversation. 
 
 ---
 
-# SOLUTION down?
+# SOLUTION, <...> down?
 
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
+In the second example, I will simply provide a few more instances of tricky words when used without context:
 
-<TBD>
+- Blueprint
+- Code
+- Container
+- Goal
+- Process
+- Product
+- **Solution**
+- Template
+- Tool
+
+I trust you have encountered these and others in your ecosystem.
 
 ---
 
-# ```--- ... ---``` My ENVIRONMENT needs rescue!
+# ```... --- ...``` My ENVIRONMENT needs rescue!
 
-Unfortunately, a recent incident involving environments also caused me to lose my temper.
+Unfortunately, a recent incident involving environments not only introduced a new word with gazillion meanings for us, but also caused me to lose my temper. Not productive or healthy.
 
 > ![<Environment](../images/common-engineering-stop-the-confusing-language-madness-in-it-1.png) 
 
