@@ -26,9 +26,39 @@ Let us explore three examples from our operational support bucket to highlight t
 
 # Help, my PROJECT is broken!
 
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
+Let us begin with a simple, yet typical example.
 
-<TBD>
+> ![Project](../images/common-engineering-stop-the-confusing-language-madness-in-it-3.png) 
+
+Imagine being an engineer handling Azure DevOps services and receiving three requests saying, "_My project is broken!_" 
+
+Questions that will pop into your mind include: 
+
+- WHAT project? 
+- WHERE can I find more details about it? 
+- HOW is it broken?
+- WHAT troubleshooting has the user done? Usually a futile question. 
+
+You need to start a discussion with each user to get these answers before you can understand and prioritize the issue.
+
+While waiting, you might investigate who the users are and assume they refer to their **business** application, **Visual Studio** project, or **Test** project based on their profiles. I have tried this approach to be proactive, but it often leads me astray because each project context is unique.
+
+Here is an example by the developer persona for an actionable request:
+
+>
+>"_My Visual Studio XYZ solution is throwing an error ```CODE, DESCRIPTION``` in my ```URL``` continuous integration pipeline. I have researched the error using our Stack Overflow and Google search, finding ```THIS URL``` information. I am working on an urgent hotfix for ```P1 INCIDENT ID```._"
+>
+
+The request provides a clear, well-structured overview of the issue, along with details that enable the recipient to understand, prioritize, and **act**. Key parts of the revised request:
+
+- Clear description of the issue (WHAT).
+- Context and location information (WHERE).
+- Shows effort made by the requestor and references outcome.
+- Urgency and priority (P1).
+
+It becomes **actionable** and minimizes assumptions and back-and-forth communication
+
+In this first and simple example, the term **project** is used in conversation. The individual who begins the dialogue fully grasps what the project entails and the related issue, while the person being addressed has no context and thus cannot act effectively.
 
 ---
 
@@ -41,6 +71,8 @@ Let us explore three examples from our operational support bucket to highlight t
 ---
 
 # ```--- ... ---``` My ENVIRONMENT needs rescue!
+
+Unfortunately, a recent incident involving environments also caused me to lose my temper.
 
 > ![<Environment](../images/common-engineering-stop-the-confusing-language-madness-in-it-1.png) 
 
