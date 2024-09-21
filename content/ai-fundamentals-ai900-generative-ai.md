@@ -8,19 +8,21 @@ Summary: "Generative AI refers to a subset of artificial intelligence that creat
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![generative-ai](../images/ai-fundamentals-ai900-generative-ai.png) 
 
-- X
-- X
+- **Copilots** are generative AI assistants that are integrated into applications often as chat interfaces. development potal. 
+- **Copilot Studio** is designed to work well with low-code development scenarios, whereas **Azure AI Studio** is a PaaS.
+- **Natural language** generation - images and code.
+- **OpenAI** avails **small** and **large** language models.
 
 ---
 
 You perused:
 
 - **this->**[generative-ai](/ai-fundamentals-ai900-generative-ai.html)
-- 
 
 Enjoy other learning notes:
 
