@@ -8,7 +8,8 @@ Summary: "Natural Language Processing (NLP) is a branch of AI that enables compu
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![natural-language-processing](../images/ai-fundamentals-ai900-natural-language-processing.png) 
 

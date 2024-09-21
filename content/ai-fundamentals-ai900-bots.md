@@ -8,7 +8,8 @@ Summary: Conversational AI workloads - no longer part of AI-900 certification!
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![bots](../images/ai-fundamentals-ai900-bots.png) 
 

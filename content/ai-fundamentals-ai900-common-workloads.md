@@ -8,7 +8,8 @@ Summary: "Common workloads in AI and machine learning include data processing, m
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![common-workloads](../images/ai-fundamentals-ai900-common-workloads.png) 
 

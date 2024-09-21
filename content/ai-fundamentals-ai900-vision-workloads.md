@@ -8,7 +8,8 @@ Summary: "Vision workloads in AI refer to tasks that involve processing and anal
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![vision-workloads](../images/ai-fundamentals-ai900-vision-workloads.png) 
 

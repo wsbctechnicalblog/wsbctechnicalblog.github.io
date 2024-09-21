@@ -8,7 +8,8 @@ Summary: "Guiding principles aim to ensure responsible and ethical AI developmen
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![guiding-principles](../images/ai-fundamentals-ai900-guiding-principles.png) 
 

@@ -8,7 +8,8 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 >
 >![alert](../images/alert-tiny.png)
->These are my **personal** study notes. Use them at your own **risk**!
+>These are my living **personal** study notes. Use them at your own **risk**!
+>
 
 > ![common-machine-learning-types](../images/ai-fundamentals-ai900-common-machine-learning-types.png) 
 
