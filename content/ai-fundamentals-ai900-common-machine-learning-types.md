@@ -14,6 +14,8 @@ Summary: "AI machine learning (ML) refers to the subset of artificial intelligen
 
 ## Notes
 
+- **Classification** predicts categories of data, such as sentiment if users on the X platform.
+- **Clustering algorithm** automatically finds the optimal way to split a data set into groups without training.
 - **Feature engineering** is the method of creating new features, based on existing features.
 - **Feature selection** allows us to narrow down the features that are important for **label** predictions.
 - Training a **Regression** model involves data gathering and transformation: **Feature selection** --> **Finding and Cleaning** outliers --> **Impute** missing values --> **Normalization** or **Feature engineering**.

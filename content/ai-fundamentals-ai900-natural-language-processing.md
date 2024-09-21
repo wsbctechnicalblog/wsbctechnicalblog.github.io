@@ -14,12 +14,17 @@ Summary: "Natural Language Processing (NLP) is a branch of AI that enables compu
 
 **NOTES**
 
+- **Azure AI Language Service** provides the **entity linking**, **PII detection**, and Sentiment analysis.
+- **Azure AI Service** provides direct access to bot Az AI Translator and Az AI Speech services.
+- **Azure AI Speech Service** provides **Language identification**, **speaker recognition**, and **voice assistants**.
+- **Entity recognition** returns links to exterbal webstes to disambiguate terms (entities) in a text.
 - **Language training** requires us to provide **Entities**, **Utterances**, and **Intents**, using LUIS.
 - Language training: **Entities** - The word "light" in "turn the light on."
 - Language training: **Intents** - "Turn On".
 - Language training: **Utterances** - "Turn on the lights" or "Turn the lights on."
 - **Language Understanding Intelligent Service (LUIS)** understands voice or text commands.
 - **Text Analysis** service helps to analyse documents, detect documents' **language**, extract **key phrases**, determine **entities**, and provide **sentiment analysis** (postive = 1, neutral/undefined = 0.5, negative = 0).
+- **Vectorization** represents the semantic connections between words by placing them in an n-dimensional space.
 
 ---
 
