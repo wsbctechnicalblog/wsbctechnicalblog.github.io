@@ -10,7 +10,7 @@ We pickup from the [Why I loathe when engineers use TLAs, such as CD vs CD!](./w
 
 One of our first [Center of Enablement (CoE)](./ceremony-center-of-enablement.html) focused [working groups](./ceremony-working-group.html) was focused on creating a glossary of common three/four-lettered acronyms (TLAs), business, and technical terms to ensure we all know what we are talking about in written and verbal communications. Naturally, its effectiveness relies on people being able to find and use it.
 
-In combinatio with the common language, our suggested wat to communicate is to use the format: ```WHAT``` ASK ```WHY```. For instance, rather than saying "_Delete my repo XYZ_", say "_Delete my Azure DevOps (AzDO) repo XYZ, <URL>, because we are decommissioning our proof of concept._" 
+In combination with the common language, our suggested way to communicate is to use the format: ```WHAT``` ASK ```WHY```. For instance, rather than saying "_Delete my repo XYZ_", say "_Delete my Azure DevOps (AzDO) Azure Repo XYZ, <REPO-URL>, because we are decommissioning our proof of concept._" 
 
 >
 > ![Bulb](../images/azuredevop-automation-stakeholders-3.png)
@@ -31,7 +31,7 @@ Let us explore three examples from our operational support bucket to highlight t
 
 # Help, my PROJECT is broken!
 
-Let us begin with a simple, yet typical example.
+We begin with a simple, yet typical example.
 
 > ![Project](../images/common-engineering-stop-the-confusing-language-madness-in-it-3.png) 
 
