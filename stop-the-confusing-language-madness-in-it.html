@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Automation Bad Day - </title>
+        <title>Stop the Confusing Language Madness in IT! - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,87 +33,119 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
-            title="Permalink to Automation Bad Day">Automation Bad Day</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="bookmark"
+            title="Permalink to Stop the Confusing Language Madness in IT!">Stop the Confusing Language Madness in IT!</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 06 March 2023</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Sat 23 September 2023</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Clearly yesterday was a bad day.</p>
+            <p>Using a common language in IT helps avoid misunderstandings, conserves time, and enhances teamwork.</p>
         </div>
     
         <div class="entry-content">
-            <p>"<em>Clearly yesterday was a bad day</em>" is a quote by <a href="https://www.linkedin.com/in/brharry/">Brian Harry</a> in his <a href="https://devblogs.microsoft.com/bharry/bad-day/">Bad Day</a> blog post. I vividly remember that day as I had the honour of working for Brian at the time and learning a ton from him about the value of transparency, not getting discouraged by hindsight, and always being laser focused on our end-users. Our day was nowhere as bad as Brian's, but worth sharing. </p>
-<p>In an operational environment with 2500 classic Azure Pipelines and more than a dozen engineers manually updating the pre- and post-approval gates we began to struggle with snowflakes, guardrail breaches, and failed security audits. We configured the pre-and post-approval gates in CSV files and stored them in version control – our config-as-code (<strong>c-a-c</strong>) era was born. The CSV files and associated automation using the Azure DevOps <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a>, allows us to consistently re-apply the last known good configuration for thousands of classic Azure Pipelines in minutes on a weekly basis.</p>
+            <p>We pickup from the <a href="./why-i-hate-tlas.html">Why I loathe when engineers use TLAs, such as CD vs CD!</a> and switch gears to the need for a common language. Establishing a shared terminology (common language) for technical terms in an IT environment is key to avoiding miscommunication, saving time, and ensuring teams work together effectively on complex projects. One of our first <a href="./ceremony-center-of-enablement.html">Center of Enablement (CoE)</a> <a href="./ceremony-working-group.html">working groups</a> aimed to create a glossary of common TLAs, business terms, and technical terms to clarify our written and verbal communications.</p>
+<p>One of our first <a href="./ceremony-center-of-enablement.html">Center of Enablement (CoE)</a> focused <a href="./ceremony-working-group.html">working groups</a> was focused on creating a glossary of common three/four-lettered acronyms (TLAs), business, and technical terms to ensure we all know what we are talking about in written and verbal communications. Naturally, its effectiveness relies on people being able to find and use it.</p>
+<p>In combination with the common language, our suggested way to communicate is to use the format: <code>WHAT</code> ASK <code>WHY</code>. For instance, rather than saying "<em>Delete my repo XYZ</em>", say "<em>Delete my Azure DevOps (AzDO) Azure Repo XYZ, <REPO-URL>, because we are decommissioning our proof of concept.</em>" </p>
 <blockquote>
-<p><strong>Outcome</strong>: Consistency, standardization, security, and time-savings!</p>
+<p><img alt="Bulb" src="../images/azuredevop-automation-stakeholders-3.png">
+WHAT + <strong>ASK</strong> + WHY = <strong>ACT</strong>IONABLE
+</p>
 </blockquote>
-<p>Let us have a peak at one of our demo <code>c-a-c</code> files to understand the automation process.</p>
-<hr>
-<h1>Our configuration-as-code (c-a-c)</h1>
-<blockquote>
-<p><img alt="c-a-c" src="../images/azure-devops-automation-bad-day-1.png"></p>
-</blockquote>
-<p>At the top is a typical Azure Pipeline, delivering artifacts to a number of stage environments, with four humanoid gates.</p>
-<p>At the bottom is a demo <code>c-a-c</code> CSV file, with one row per stage. Each row defines the pre approver(s), the post-approver(s), and the approval method. When our <code>c-a-c</code> automation runs, it restores the Azure Pipeline pre- and post-approvals to the last known and desired configuration if the Set value is <code>Yes</code>. In other words, if you fiddle with the approvals manually, the automation will overwrite your changes when it runs.</p>
-<p>Although the actual <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1">REST API</a> logic is not trivial, our <code>c-a-c</code> concept is.</p>
-<hr>
-<h1>Meltdown timeline</h1>
-<p>Our bad day actually started on March 2nd at high-noon, when my colleague Daniel ran the latest <code>c-a-c</code> file I fine-tuned for hours. Fortunately, I opted against a big-bang <code>c-a-c</code> reset and only had about 15% of the 2,500 Azure Pipelines and their stages configured with <code>Set=Yes</code>. The automation ran like a dream.</p>
-<p>At around 15:00 our delivery teams reported that their pipelines were failing, unable to connect to an agent. At first, we all suspected our automation, because the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> was showing an <code>Everything is looking good</code> status.</p>
-<blockquote>
-<p><img alt="timeline" src="../images/azure-devops-automation-bad-day-2.png"></p>
-</blockquote>
-<p>Eventually after a barrage of tweets, Teams chats, and raising Microsoft Support tickets the <a href="https://status.dev.azure.com/">Azure DevOps Status</a> switched to an <code>unhealthy</code> status due to the <a href="https://status.dev.azure.com/_event/371776903">Pipeline error: Failure in sending the provision message</a> incident. Little did we know that this incident actually reduced the blast radius of our bad day, as most teams opted for another day by the time the Azure Agents were back to a healthy state. </p>
-<hr>
-<h1>2AM CALL @ high noon</h1>
-<p>Just before high-noon we were getting pulled into <strong>all hands-on deck</strong>, also known as the <strong>infamous 2AM-call</strong> collaboration sessions. One of our Azure Pipelines had deployed all the way to production, skipping our <strong>Staging (ST)</strong> and <strong>Production (PR)</strong> pre-approval gates. Bypassing change control is a severe issue. Luckily our operational support engineers delivered their usual exceptional operational support and reverted the incorrect production deployment within minutes to minimize negative end-user impact. </p>
-<blockquote>
-<p><img alt="2AM Call" src="../images/azure-devops-automation-bad-day-5.png"> </p>
-</blockquote>
-<p>In parallel we started the brainstorming and root-cause analysis of our Azure Pipelines. </p>
-<blockquote>
-<p><img alt="c-a-c meltdown" src="../images/azure-devops-automation-bad-day-3.png"> </p>
-</blockquote>
-<p>We determined that the automation run, from the previous day, had purged, not set, the pre-approver(s) for all processed pipelines. In other words, the only gate between production and the delivery teams was the Security Review <strong>post</strong>-approver.</p>
-<hr>
-<h1>Core Issue</h1>
-<p>As all software glitches, the root cause was a trivial typo. Note the missing <code>s</code> in the <strong>Pre Approver</strong> column header.</p>
-<blockquote>
-<p><img alt="core issue" src="../images/azure-devops-automation-bad-day-4.png"> </p>
-</blockquote>
-<p>As a result, the automation did exactly what my configuration file instructed it to do.</p>
+<p>The latter question will result in less back-and-forth communication, confusion, and dramatically reduce both frustration and lead times, because the communication:</p>
 <ul>
-<li>System Test (SY), Staging (SR), and Production (PR) Stage were updated as <code>Set=Yes</code>.</li>
-<li>Pre-approvers were purged as the value for <code>Pre-Approvers</code> was <code>null</code>.</li>
+<li>Is <strong>clear</strong> and <strong>precise</strong>, minimizing mistakes, confusion, and delays.</li>
+<li>Provides <strong>context</strong> to explain WHY we are undertaking certain actions.</li>
+<li>Enhances <strong>accountability</strong> by clearly documenting the WHAT and WHY.</li>
+<li>Helps with <strong>prioritization</strong> with cues like decommissioning.</li>
+<li>Is <strong>ACTIONABLE</strong>, avoiding unnecessary clarification steps.</li>
 </ul>
-<p>Another quote from Brian's post comes to mind here: "<em>The hard thing about this is that anything can go wrong and it’s only obvious in hindsight what you should have been protecting against</em>".</p>
+<p>Let us explore three examples from our operational support bucket to highlight the issue.</p>
 <hr>
-<h1>Remediate &amp; Learn</h1>
-<p>Our focus was, as expected, to restore the health of our Azure Pipelines. Fortunately, only a small subset of Azure Pipelines was affected, thanks to Microsoft outage and our close collaboration with our DevSecOps team.</p>
+<h1>Help, my PROJECT is broken!</h1>
+<p>We begin with a simple, yet typical example.</p>
+<blockquote>
+<p><img alt="Project" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-3.png"> </p>
+</blockquote>
+<p>Imagine being an engineer handling Azure DevOps services and receiving three requests saying, "<em>My project is broken!</em>" </p>
+<p>Questions that will pop into your mind include: </p>
 <ul>
-<li>Pipelines not triggered by a change to the <code>release</code> branch, were stopped by our artifact filters.</li>
-<li>Pipelines that made it through to the <strong>Security Review</strong> stage, where stopped cold by our security engineers.</li>
+<li>WHAT project? </li>
+<li>WHERE can I find more details about it? </li>
+<li>HOW is it broken?</li>
+<li>WHAT troubleshooting has the user done? Usually a futile question. </li>
 </ul>
-<p>In parallel we fixed the <code>c-a-c</code> header and triggered the automation to undo the damage. We also took the opportunity to add pre-automation validation to reduce the likelihood of a recurrence.</p>
-<p>And, most importantly, we shared the status of the incident, analysis, root cause, and remediation transparently. </p>
+<p>You need to start a discussion with each user to get these answers before you can understand and prioritize the issue.</p>
+<p>While waiting, you might investigate who the users are and assume they refer to their <strong>business</strong> application, <strong>Visual Studio</strong> project, or <strong>Test</strong> project based on their profiles. I have tried this approach to be proactive, but it often leads me astray because each project context is unique.</p>
+<p>Here is an example by the developer persona for an actionable request:</p>
+<blockquote>
+<p>"<em>My Visual Studio XYZ solution is throwing an error <code>CODE, DESCRIPTION</code> in my <code>URL</code> continuous integration pipeline. I have researched the error using our Stack Overflow and Google search, finding <code>THIS URL</code> information. I am working on an urgent hotfix for <code>P1 INCIDENT ID</code>.</em>"
+</p>
+</blockquote>
+<p>The request provides a clear, well-structured overview of the issue, along with details that enable the recipient to understand, prioritize, and <strong>act</strong>. Key parts of the revised request:</p>
+<ul>
+<li>Clear description of the issue (WHAT).</li>
+<li>Context and location information (WHERE).</li>
+<li>Shows effort made by the requestor and references outcome.</li>
+<li>Urgency and priority (P1).</li>
+</ul>
+<p>It becomes <strong>actionable</strong> and minimizes assumptions and back-and-forth communication</p>
+<p>In this first and simple example, the term <strong>project</strong> is used in conversation. The individual who begins the dialogue fully grasps what the project entails and the related issue, while the person being addressed has no context and thus cannot act effectively.</p>
 <hr>
-<p>A huge <strong>THANK YOU</strong> to our vigilant delivery team, security engineers, operations engineers, and my team for keeping cool and focused throughout the turbulent Friday.</p>
-<p>Only one pipeline, the one that triggered the incident, made it through to production. It could have been a lot worse!</p>
+<h1>SOLUTION, &lt;...&gt; down?</h1>
+<p>In the second example, I will simply provide a few more instances of tricky words when used without context:</p>
+<ul>
+<li>Blueprint</li>
+<li>Code</li>
+<li>Container</li>
+<li>Goal</li>
+<li>Process</li>
+<li>Product</li>
+<li><strong>Solution</strong></li>
+<li>Template</li>
+<li>Tool</li>
+</ul>
+<p>I trust you have encountered these and others in your ecosystem.</p>
+<hr>
+<h1><code>... --- ...</code> My ENVIRONMENT needs rescue!</h1>
+<p>Unfortunately, a recent incident involving environments not only introduced a new word with gazillion meanings for us, but also caused me to lose my temper. Not productive or healthy.</p>
+<blockquote>
+<p><img alt="&lt;Environment" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-1.png"> </p>
+</blockquote>
+<p>Azure is integral to our daily operations, and Azure DevOps anchors our software development lifecycle. When considering just these two environments – do not get me started with the name "Azure DevOps" – expecting two environments can mean various things.</p>
+<ul>
+<li><strong>Azure DevOps (AzDO) environment</strong> covers the infrastructure and services which support the entire software development lifecycle (SDLC), including boards, repositories, pipelines, test plans, and artifacts. </li>
+<li><strong>Azure DevOps (AzDO) Pipeline environment</strong> enables you to define and manage resources across various environments (development, staging, production) with enhanced traceability and control over deployments.</li>
+<li><strong>Build and Test Environments</strong>, where Azure DevOps oversees the CI process by constructing the application and executing unit, integration, and automated tests.</li>
+<li><strong>Development Environment</strong>, equipped with resources like virtual machines, containers, and services (e.g., Azure App Service, Azure SQL Database), is set up for developers to create and test their code.</li>
+<li><strong>Infrastructure as Code (IaC) environments</strong>, such as Terraform or ARM templates, facilitate the management of environments through code.</li>
+<li><strong>Lower/Upper Environments</strong> that delineate different stages of readiness.</li>
+<li><strong>Production Environment</strong>, where the application operates and serves its users.</li>
+<li><strong>Sandbox Environment</strong>, a controlled setting for experimentation, learning, and testing without impacting production or other environments.</li>
+<li><strong>Staging Environment</strong>, which replicates the production setup.</li>
+<li><strong>Testing/QA Environment</strong>, used for validating code changes through both automated and manual tests.</li>
+</ul>
+<p>As previously mentioned, had the user requested using our <code>WHAT</code> ASK <code>WHY</code> approach, like "<em>I need two Azure DevOps Pipeline environments for our infrastructure-as-code environments</em>," the engineer would have needed fewer follow-up questions, reducing frustration and shortening lead times. In this scenario, Azure environments play a crucial role in our operations, with Azure DevOps environments central to our software development process. Requesting two environments without clarity can be ambiguous.</p>
+<p>This recent real-world example involved three days of back-and-forth communication, made worse by the fact that two users made similar requests for different <strong>environments</strong>, engaging at least five engineers. This situation clearly demonstrates a significant amount of <strong>WASTE</strong>!</p>
+<blockquote>
+<p>The choice is yours ...</p>
+<p><img alt="Choice" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-2.png"> </p>
+</blockquote>
+<hr>
+<p>Are you facing similar confusion and miscommunication within your IT environment? If so, how are you managing it?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
-        | <a href="https://wsbctechnicalblog.github.io/automation-bad-day.html" rel="bookmark"
-         title="Permalink to Automation Bad Day">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/101.html">101 </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="bookmark"
+         title="Permalink to Stop the Confusing Language Madness in IT!">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
