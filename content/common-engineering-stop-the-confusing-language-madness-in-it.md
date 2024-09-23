@@ -1,5 +1,5 @@
 Title: Stop the Confusing Language Madness in IT!
-Date: 2023-09-23
+Date: 2024-09-23
 Category: Posts 
 Tags: 101, eliminate-waste
 Slug: stop-the-confusing-language-madness-in-it
