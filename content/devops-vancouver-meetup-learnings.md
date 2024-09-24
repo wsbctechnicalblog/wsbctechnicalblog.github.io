@@ -38,12 +38,6 @@ Next, I focus on the benefits, which undeniably surpass the disadvantages, thoug
 
 - **Collaboration is energizing** - One key lesson from my army days is that we can overcome any challenge together, whether it is trekking 50km through the Alps with gear, running 5km, or facing life's hurdles. As a community, we can collaborate, share knowledge, support one another, and avoid common pitfalls and redundant efforts in a tech environment. During meetups, I prefer to observe from the back and explore the hallways during breaks to meet new engineers, each bringing unique challenges, insights, and skills to share with the DevOps Vancouver community.
 
->
-> ![bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
-> 1. X
-> 2. X
->
-
 - **In-person rocks** - While I appreciate remote work, I prefer in-person meetings for certain situations. They help me connect with new community members without distractions from multiple screens and constant chat notifications. During in-person meetups, it is not acceptable to be sidetracked by emails or chats, ensuring everyone stays focused.
 
 >
@@ -58,13 +52,19 @@ Next, I focus on the benefits, which undeniably surpass the disadvantages, thoug
 
 ---
 
-# <HEADING 1>
-
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
-
-<TBD>
+>
+> **Top 7 Tips when (co-)hosting a meetup!**
+>
+> ![bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+> 1. Make sure there is a **break** between sessions to allow attendees to **relax** and **network**. Make sure to have a colleague with you to manage the potential influx of questions from multiple attendees – remember that you will also need occasional breaks.
+> 2. TBD
+> 3. TBD
+> 4. TBD
+> 5. TBD
+> 6. TBD
+> 7. TBD
 
 ---
 
-<CLOSE - SUMMARY >
+What ```meetup``` **learnings** can you share?
 
