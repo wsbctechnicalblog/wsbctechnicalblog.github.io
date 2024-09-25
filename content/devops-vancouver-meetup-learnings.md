@@ -6,7 +6,7 @@ Slug: devops-vancouver-meetup-learnings
 Author: Willy-Peter Schaub
 Summary: Insights gained from hosting six community meetups this year: the positives, negatives, and challenges.
 
-We have been running the DevOps Vancouver meetup for years, enduring fantastic and tough sessions as well as the Covid pandemic. This year, we emerged from the pandemic and shifted from virtual-only meetings to a mix of virtual, hybrid, and in-person events. In this brief post, I will share insights from a busy first half of 2024, a summer break, and upcoming events.
+I need to share my learnings from community events with my peers, and summarising them here seemed a great idea. Hopefully, it benefits both my peers and you (the community). We have been running the DevOps Vancouver meetup for years, enduring fantastic and tough sessions as well as the Covid pandemic. This year, we emerged from the pandemic and shifted from virtual-only meetings to a mix of virtual, hybrid, and in-person events. In this brief post, I will share insights from a busy first half of 2024, a summer break, and upcoming events.
 
 One major realization I have made this year is that DevOps has matured, and the engineering community now embraces the mindset. We have progressed from basic DevOps to sharing innovations in the synergy of people, process, and products - there remains little interest in the fundamentals of DevOps. Additionally, Artificial Intelligence (AI)'s impact on DevOps is significant, and we are beginning to struggle with maintaining focus as AI overlaps with other areas, leading to conflicts with other meetups and duplication of events/focus.
 
@@ -34,21 +34,19 @@ Thank you for reading this far. Let us context switch to the positives.
 
 > ![positives](../images/devops-vancouver-meetup-learnings-2.png) 
 
-Next, I focus on the benefits, which undeniably surpass the disadvantages, though we might feel differently during hectic periods.
+Next, I focus on the positives, which undeniably surpass the disadvantages, though we might feel differently during hectic periods.
 
 - **Collaboration is energizing** - One key lesson from my army days is that we can overcome any challenge together, whether it is trekking 50km through the Alps with gear, running 5km, or facing life's hurdles. As a community, we can collaborate, share knowledge, support one another, and avoid common pitfalls and redundant efforts in a tech environment. During meetups, I prefer to observe from the back and explore the hallways during breaks to meet new engineers, each bringing unique challenges, insights, and skills to share with the DevOps Vancouver community.
 
 - **In-person rocks** - While I appreciate remote work, I prefer in-person meetings for certain situations. They help me connect with new community members without distractions from multiple screens and constant chat notifications. During in-person meetups, it is not acceptable to be sidetracked by emails or chats, ensuring everyone stays focused.
 
->
-> ![bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
-> 1. X
-> 2. X
->
+- **Avoid combining in-person and virtual meetups** - Hybrid events can be extremely challenging. Instead, opt for either a virtual or an in-person event, record it, and release the recording a month later. Why wait that long? If participants know they will not have immediate access to the recording, they are more likely to stay engaged during the session and less inclined to cancel their RSVP or fail to attend on short notice. 
 
-!!! Demos help!
-!!! Short, related sessions work best.
-!!! Mentimeter works well.
+- **Demos are effective** - creating a session that pleases everyone is challenging, but combining an information session with practical, real-world demos is a hit. Meetup participants enjoy demos, and pairing them with live exercises in collaborative, in-person events result in a win-win situation. Think back to your school days – did you like the history teacher who listed events and dates, or the science teacher who mixed theory with exciting, live demonstrations?
+
+- **Opt for shorter, related sessions over marathon ones** - If you have seen the [Horizon: An American Saga]( Horizon: An American Saga - Wikipedia) movie featuring Kevin Costner in a theater, you might relate to this point. Rather than having a single 1, 2, or 3-hour session with one presenter, divide the session into several short segments separated by brief collaboration breaks and presented by various subject matter experts to create variation of content, tone, and flow. Personally, I enjoyed the movie, but I watched it at home in three segments across a weekend – I cannot remain focused for 3-hours.
+
+- **[Mentimeter is effective](https://www.mentimeter.com/)** - Polls and surveys usually struggle with response rates as attendees prefer to leave rather than complete them. I saw a meetup use Mentimeter polls during the session by linking it on slide footers, referring to it in each session, and reviewing results in subsequent topics. This method kept attendees engaged, provided instant feedback, and allowed them to see how their responses compared to others. It was a great way to engage the audience and collect actionable feedback without the need to plead and grovel.
 
 ---
 
@@ -56,13 +54,13 @@ Next, I focus on the benefits, which undeniably surpass the disadvantages, thoug
 > **Top 7 Tips when (co-)hosting a meetup!**
 >
 > ![bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
-> 1. Make sure there is a **break** between sessions to allow attendees to **relax** and **network**. Make sure to have a colleague with you to manage the potential influx of questions from multiple attendees – remember that you will also need occasional breaks.
-> 2. TBD
-> 3. TBD
-> 4. TBD
-> 5. TBD
-> 6. TBD
-> 7. TBD
+> 1. **Arrange your meetups in advance** to avoid last-minute plans. It is crucial for attendees to be able to schedule, especially since most meetups happen after work hours and can clash with family responsibilities.
+> 2. Ensure there is a **break** between sessions so that attendees can **relax** and **network**. Have a colleague with you to handle the potential influx of questions from multiple attendees, as you will also need breaks occasionally.
+> 3. Release a meetup **agenda** (context) and align the sessions to avoid any surprises. One of the worst experiences is being trapped in a 2-hour session and realizing it's not what you expected.
+> 4. **Promote** your meetup through various channels like LinkedIn, meetup, and X before the event and on the day it occurs. Keep reminding your community repeatedly.
+> 5. Prefer multiple **short** sessions with **breaks** in between rather than one long continuous session. Emphasize **real-world learning** with **demos** over theoretical content.
+> 6 **Integrate your poll**(s) into the sessions and engage the audience to collect feedback during the meetup.
+> 7. **Be YOU and enjoy yourself!** - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions. **
 
 ---
 
