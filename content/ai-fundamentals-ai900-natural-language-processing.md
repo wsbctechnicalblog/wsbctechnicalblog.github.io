@@ -39,8 +39,9 @@ Enjoy other learning notes:
 - [common-machine-learning-types](/ai-fundamentals-ai900-common-machine-learning-types.html)
 - [common-workloads](/ai-fundamentals-ai900-common-workloads.html)
 - [generative-ai](/ai-fundamentals-ai900-generative-ai.html)
-- [guiding-principles](/ai-fundamentals-ai900-guiding-principles.html)
+- [guiding-principles](/ai-fundamentals-ai900-ai-guiding-principles.html)
 - [natural-language-processing](/ai-fundamentals-ai900-natural-language-processing.html)
+
 - [vision-workloads](/ai-fundamentals-ai900-vision-workloads.html)
 
 Coming soon:

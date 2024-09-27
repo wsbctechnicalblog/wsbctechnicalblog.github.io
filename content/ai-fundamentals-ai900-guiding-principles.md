@@ -41,7 +41,7 @@ Not ideal, but I use the FRAUPIT catch phrase to remember: **F**airness, **R**el
 
 You perused:
 
-- **this->**[guiding-principles](/ai-fundamentals-ai900-guiding-principles.html)
+- **this->**[guiding-principles](/ai-fundamentals-ai900-ai-guiding-principles.html)
 
 Enjoy other learning notes:
 
