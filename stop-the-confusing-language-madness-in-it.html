@@ -1,0 +1,266 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Stop the Confusing Language Madness in IT! - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="bookmark"
+            title="Permalink to Stop the Confusing Language Madness in IT!">Stop the Confusing Language Madness in IT!</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 23 September 2024</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Using a common language in IT helps avoid misunderstandings, conserves time, and enhances teamwork.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We pickup from the <a href="./why-i-hate-tlas.html">Why I loathe when engineers use TLAs, such as CD vs CD!</a> and switch gears to the need for a common language. Establishing a shared terminology (common language) for technical terms in an IT environment is key to avoiding miscommunication, saving time, and ensuring teams work together effectively on complex projects. One of our first <a href="./ceremony-center-of-enablement.html">Center of Enablement (CoE)</a> <a href="./ceremony-working-group.html">working groups</a> aimed to create a glossary of common TLAs, business terms, and technical terms to clarify our written and verbal communications.</p>
+<p>One of our first <a href="./ceremony-center-of-enablement.html">Center of Enablement (CoE)</a> focused <a href="./ceremony-working-group.html">working groups</a> was focused on creating a glossary of common three/four-lettered acronyms (TLAs), business, and technical terms to ensure we all know what we are talking about in written and verbal communications. Naturally, its effectiveness relies on people being able to find and use it.</p>
+<p>In combination with the common language, our suggested way to communicate is to use the format: <code>WHAT</code> ASK <code>WHY</code>. For instance, rather than saying "<em>Delete my repo XYZ</em>", say "<em>Delete my Azure DevOps (AzDO) Azure Repo XYZ, <REPO-URL>, because we are decommissioning our proof of concept.</em>" </p>
+<blockquote>
+<p><img alt="Bulb" src="../images/azuredevop-automation-stakeholders-3.png">
+WHAT + <strong>ASK</strong> + WHY = <strong>ACT</strong>IONABLE
+</p>
+</blockquote>
+<p>The latter question will result in less back-and-forth communication, confusion, and dramatically reduce both frustration and lead times, because the communication:</p>
+<ul>
+<li>Is <strong>clear</strong> and <strong>precise</strong>, minimizing mistakes, confusion, and delays.</li>
+<li>Provides <strong>context</strong> to explain WHY we are undertaking certain actions.</li>
+<li>Enhances <strong>accountability</strong> by clearly documenting the WHAT and WHY.</li>
+<li>Helps with <strong>prioritization</strong> with cues like decommissioning.</li>
+<li>Is <strong>ACTIONABLE</strong>, avoiding unnecessary clarification steps.</li>
+</ul>
+<p>Let us explore three examples from our operational support bucket to highlight the issue.</p>
+<hr>
+<h1>Help, my PROJECT is broken!</h1>
+<p>We begin with a simple, yet typical example.</p>
+<blockquote>
+<p><img alt="Project" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-3.png"> </p>
+</blockquote>
+<p>Imagine being an engineer handling Azure DevOps services and receiving three requests saying, "<em>My project is broken!</em>" </p>
+<p>Questions that will pop into your mind include: </p>
+<ul>
+<li>WHAT project? </li>
+<li>WHERE can I find more details about it? </li>
+<li>HOW is it broken?</li>
+<li>WHAT troubleshooting has the user done? Usually a futile question. </li>
+</ul>
+<p>You need to start a discussion with each user to get these answers before you can understand and prioritize the issue.</p>
+<p>While waiting, you might investigate who the users are and assume they refer to their <strong>business</strong> application, <strong>Visual Studio</strong> project, or <strong>Test</strong> project based on their profiles. I have tried this approach to be proactive, but it often leads me astray because each project context is unique.</p>
+<p>Here is an example by the developer persona for an actionable request:</p>
+<blockquote>
+<p>"<em>My Visual Studio XYZ solution is throwing an error <code>CODE, DESCRIPTION</code> in my <code>URL</code> continuous integration pipeline. I have researched the error using our Stack Overflow and Google search, finding <code>THIS URL</code> information. I am working on an urgent hotfix for <code>P1 INCIDENT ID</code>.</em>"
+</p>
+</blockquote>
+<p>The request provides a clear, well-structured overview of the issue, along with details that enable the recipient to understand, prioritize, and <strong>act</strong>. Key parts of the revised request:</p>
+<ul>
+<li>Clear description of the issue (WHAT).</li>
+<li>Context and location information (WHERE).</li>
+<li>Shows effort made by the requestor and references outcome.</li>
+<li>Urgency and priority (P1).</li>
+</ul>
+<p>It becomes <strong>actionable</strong> and minimizes assumptions and back-and-forth communication</p>
+<p>In this first and simple example, the term <strong>project</strong> is used in conversation. The individual who begins the dialogue fully grasps what the project entails and the related issue, while the person being addressed has no context and thus cannot act effectively.</p>
+<hr>
+<h1>SOLUTION, &lt;...&gt; down?</h1>
+<p>In the second example, I will simply provide a few more instances of tricky words when used without context:</p>
+<ul>
+<li>Blueprint</li>
+<li>Code</li>
+<li>Container</li>
+<li>Goal</li>
+<li>Process</li>
+<li>Product</li>
+<li><strong>Solution</strong></li>
+<li>Template</li>
+<li>Tool</li>
+</ul>
+<p>I trust you have encountered these and others in your ecosystem.</p>
+<hr>
+<h1><code>... --- ...</code> My ENVIRONMENT needs rescue!</h1>
+<p>Unfortunately, a recent incident involving environments not only introduced a new word with gazillion meanings for us, but also caused me to lose my temper. Not productive or healthy.</p>
+<blockquote>
+<p><img alt="&lt;Environment" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-1.png"> </p>
+</blockquote>
+<p>Azure is integral to our daily operations, and Azure DevOps anchors our software development lifecycle. When considering just these two environments – do not get me started with the name "Azure DevOps" – expecting two environments can mean various things.</p>
+<ul>
+<li><strong>Azure DevOps (AzDO) environment</strong> covers the infrastructure and services which support the entire software development lifecycle (SDLC), including boards, repositories, pipelines, test plans, and artifacts. </li>
+<li><strong>Azure DevOps (AzDO) Pipeline environment</strong> enables you to define and manage resources across various environments (development, staging, production) with enhanced traceability and control over deployments.</li>
+<li><strong>Build and Test Environments</strong>, where Azure DevOps oversees the CI process by constructing the application and executing unit, integration, and automated tests.</li>
+<li><strong>Development Environment</strong>, equipped with resources like virtual machines, containers, and services (e.g., Azure App Service, Azure SQL Database), is set up for developers to create and test their code.</li>
+<li><strong>Infrastructure as Code (IaC) environments</strong>, such as Terraform or ARM templates, facilitate the management of environments through code.</li>
+<li><strong>Lower/Upper Environments</strong> that delineate different stages of readiness.</li>
+<li><strong>Production Environment</strong>, where the application operates and serves its users.</li>
+<li><strong>Sandbox Environment</strong>, a controlled setting for experimentation, learning, and testing without impacting production or other environments.</li>
+<li><strong>Staging Environment</strong>, which replicates the production setup.</li>
+<li><strong>Testing/QA Environment</strong>, used for validating code changes through both automated and manual tests.</li>
+</ul>
+<p>As previously mentioned, had the user requested using our <code>WHAT</code> ASK <code>WHY</code> approach, like "<em>I need two Azure DevOps Pipeline environments for our infrastructure-as-code environments</em>," the engineer would have needed fewer follow-up questions, reducing frustration and shortening lead times. In this scenario, Azure environments play a crucial role in our operations, with Azure DevOps environments central to our software development process. Requesting two environments without clarity can be ambiguous.</p>
+<p>This recent real-world example involved three days of back-and-forth communication, made worse by the fact that two users made similar requests for different <strong>environments</strong>, engaging at least five engineers. This situation clearly demonstrates a significant amount of <strong>WASTE</strong>!</p>
+<blockquote>
+<p>The choice is yours ...</p>
+<p><img alt="Choice" src="../images/common-engineering-stop-the-confusing-language-madness-in-it-2.png"> </p>
+</blockquote>
+<hr>
+<p>Are you facing similar confusion and miscommunication within your IT environment? If so, how are you managing it?</p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/101.html">101 </a><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste </a>
+        | <a href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="bookmark"
+         title="Permalink to Stop the Confusing Language Madness in IT!">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(47)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(34)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(51)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(73)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(52)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(43)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(18)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(13)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(25)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(17)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (194)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
