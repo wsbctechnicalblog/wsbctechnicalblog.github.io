@@ -1,5 +1,5 @@
 Title: Artificial Intelligence - AI-900 - Quick Reference Poster
-Date: 2024-09-25
+Date: 2024-09-30
 Category: Posts 
 Tags: ai, learning
 Slug: ai-fundamentals-ai900-poster
