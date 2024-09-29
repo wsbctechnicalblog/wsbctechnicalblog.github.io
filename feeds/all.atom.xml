@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-09-27T00:00:00-07:00</updated><entry><title>Artificial Intelligence - AI-900 - Guiding Principles</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-ai-guiding-principles.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-ai-guiding-principles.html</id><summary type="html">&lt;p&gt;"Guiding principles aim to ensure responsible and ethical AI development and deployment." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-09-30T00:00:00-07:00</updated><entry><title>Artificial Intelligence - AI-900 - Quick Reference Poster</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-poster.html" rel="alternate"></link><published>2024-09-30T00:00:00-07:00</published><updated>2024-09-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-30:/ai-fundamentals-ai900-poster.html</id><summary type="html">&lt;p&gt;A consolidated poster / cheat sheet of my AI-900 study notes.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
+These are my &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here is an aggregated view of my personal &lt;a href="/ai-fundamentals-ai900-bots.html"&gt;bots&lt;/a&gt;, &lt;a href="/ai-fundamentals-ai900-common-machine-learning-types.html"&gt;common-machine-learning-types&lt;/a&gt;, &lt;a href="/ai-fundamentals-ai900-common-workloads.html"&gt;common-workloads&lt;/a&gt;, &lt;a href="/ai-fundamentals-ai900-generative-ai.html"&gt;generative-ai&lt;/a&gt;, &lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html.html"&gt;guiding-principles&lt;/a&gt;, &lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;, and &lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt; study notes, with report images from the Microsoft Learning site.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="poster" src="../images/ai-fundamentals-cheatsheet.png"&gt; &lt;/p&gt;
+&lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/ai-fundamentals-cheatsheet.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Guiding Principles</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-ai-guiding-principles.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-ai-guiding-principles.html</id><summary type="html">&lt;p&gt;"Guiding principles aim to ensure responsible and ethical AI development and deployment." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -39,10 +49,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Bots</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-bots.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-bots.html</id><summary type="html">&lt;p&gt;Conversational AI workloads - no longer part of AI-900 certification!&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Bots</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-bots.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-bots.html</id><summary type="html">&lt;p&gt;Conversational AI workloads - no longer part of AI-900 certification!&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -63,14 +73,14 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-machine-learning-types.html"&gt;common-machine-learning-types&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-workloads.html"&gt;common-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-generative-ai.html"&gt;generative-ai&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.htmll"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Common Machine Learning Types</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-common-machine-learning-types.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-common-machine-learning-types.html</id><summary type="html">&lt;p&gt;"AI machine learning (ML) refers to the subset of artificial intelligence focused on developing algorithms and models that enable computers to learn from data and improve their performance over time without being explicitly programmed." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Common Machine Learning Types</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-common-machine-learning-types.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-common-machine-learning-types.html</id><summary type="html">&lt;p&gt;"AI machine learning (ML) refers to the subset of artificial intelligence focused on developing algorithms and models that enable computers to learn from data and improve their performance over time without being explicitly programmed." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -157,10 +167,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Common Workloads</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-common-workloads.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-common-workloads.html</id><summary type="html">&lt;p&gt;"Common workloads in AI and machine learning include data processing, model training, inference, natural language processing, computer vision, recommendation systems, time series forecasting, and robotics/automation tasks." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Common Workloads</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-common-workloads.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-common-workloads.html</id><summary type="html">&lt;p&gt;"Common workloads in AI and machine learning include data processing, model training, inference, natural language processing, computer vision, recommendation systems, time series forecasting, and robotics/automation tasks." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -188,10 +198,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Generative AI</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-generative-ai.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-generative-ai.html</id><summary type="html">&lt;p&gt;"Generative AI refers to a subset of artificial intelligence that creates new content—such as text, images, audio, or video." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Generative AI</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-generative-ai.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-generative-ai.html</id><summary type="html">&lt;p&gt;"Generative AI refers to a subset of artificial intelligence that creates new content—such as text, images, audio, or video." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -217,10 +227,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Natural Language Processing</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-natural-language-processing.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-natural-language-processing.html</id><summary type="html">&lt;p&gt;"Natural Language Processing (NLP) is a branch of AI that enables computers to understand, interpret, and generate human language." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Natural Language Processing</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-natural-language-processing.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-natural-language-processing.html</id><summary type="html">&lt;p&gt;"Natural Language Processing (NLP) is a branch of AI that enables computers to understand, interpret, and generate human language." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -259,10 +269,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;p&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Vision Workloads</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-vision-workloads.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-vision-workloads.html</id><summary type="html">&lt;p&gt;"Vision workloads in AI refer to tasks that involve processing and analyzing visual data, such as images and videos." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Vision Workloads</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-vision-workloads.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-vision-workloads.html</id><summary type="html">&lt;p&gt;"Vision workloads in AI refer to tasks that involve processing and analyzing visual data, such as images and videos." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
 &lt;/p&gt;
@@ -292,10 +302,10 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming soon:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="ai-900 poster" src="../images/ai-fundamentals-ai900-poster.html"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Stop the Confusing Language Madness in IT!</title><link href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="alternate"></link><published>2024-09-23T00:00:00-07:00</published><updated>2024-09-23T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-23:/stop-the-confusing-language-madness-in-it.html</id><summary type="html">&lt;p&gt;Using a common language in IT helps avoid misunderstandings, conserves time, and enhances teamwork.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from the &lt;a href="./why-i-hate-tlas.html"&gt;Why I loathe when engineers use TLAs, such as CD vs CD!&lt;/a&gt; and switch gears to the need for a common language. Establishing a shared terminology (common language) for technical terms in an IT environment is key to avoiding miscommunication, saving time, and ensuring teams work together effectively on complex projects. One of our first &lt;a href="./ceremony-center-of-enablement.html"&gt;Center of Enablement (CoE)&lt;/a&gt; &lt;a href="./ceremony-working-group.html"&gt;working groups&lt;/a&gt; aimed to create a glossary of common TLAs, business terms, and technical terms to clarify our written and verbal communications.&lt;/p&gt;
+&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Stop the Confusing Language Madness in IT!</title><link href="https://wsbctechnicalblog.github.io/stop-the-confusing-language-madness-in-it.html" rel="alternate"></link><published>2024-09-23T00:00:00-07:00</published><updated>2024-09-23T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-23:/stop-the-confusing-language-madness-in-it.html</id><summary type="html">&lt;p&gt;Using a common language in IT helps avoid misunderstandings, conserves time, and enhances teamwork.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We pickup from the &lt;a href="./why-i-hate-tlas.html"&gt;Why I loathe when engineers use TLAs, such as CD vs CD!&lt;/a&gt; and switch gears to the need for a common language. Establishing a shared terminology (common language) for technical terms in an IT environment is key to avoiding miscommunication, saving time, and ensuring teams work together effectively on complex projects. One of our first &lt;a href="./ceremony-center-of-enablement.html"&gt;Center of Enablement (CoE)&lt;/a&gt; &lt;a href="./ceremony-working-group.html"&gt;working groups&lt;/a&gt; aimed to create a glossary of common TLAs, business terms, and technical terms to clarify our written and verbal communications.&lt;/p&gt;
 &lt;p&gt;One of our first &lt;a href="./ceremony-center-of-enablement.html"&gt;Center of Enablement (CoE)&lt;/a&gt; focused &lt;a href="./ceremony-working-group.html"&gt;working groups&lt;/a&gt; was focused on creating a glossary of common three/four-lettered acronyms (TLAs), business, and technical terms to ensure we all know what we are talking about in written and verbal communications. Naturally, its effectiveness relies on people being able to find and use it.&lt;/p&gt;
 &lt;p&gt;In combination with the common language, our suggested way to communicate is to use the format: &lt;code&gt;WHAT&lt;/code&gt; ASK &lt;code&gt;WHY&lt;/code&gt;. For instance, rather than saying "&lt;em&gt;Delete my repo XYZ&lt;/em&gt;", say "&lt;em&gt;Delete my Azure DevOps (AzDO) Azure Repo XYZ, &lt;REPO-URL&gt;, because we are decommissioning our proof of concept.&lt;/em&gt;" &lt;/p&gt;
 &lt;blockquote&gt;
@@ -2259,19 +2269,4 @@ WorkSafeBC Common Engineering&lt;/a&gt; project. &lt;/p&gt;
 &lt;p&gt;This strategic move is set to bring greater efficiency and effectiveness to our processes, ultimately advancing our development and delivery capabilities.&lt;/p&gt;
 &lt;p&gt;Watch this space for updates.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Thoughts and feedback from your IaC experience?&lt;/p&gt;</content><category term="Posts"></category><category term="azure"></category><category term="azure-devops"></category><category term="pipelines"></category></entry><entry><title>Innovation podcast with WorkSafeBC and Microsoft</title><link href="https://wsbctechnicalblog.github.io/innovation-podcast-wsbc-msft.html" rel="alternate"></link><published>2023-07-31T00:00:00-07:00</published><updated>2023-07-31T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-07-31:/innovation-podcast-wsbc-msft.html</id><summary type="html">&lt;p&gt;An informal conversation around innovation with Bill, Omar, Sebastian, Sarav, and Todd&lt;/p&gt;</summary><content type="html">&lt;p&gt;Introducing the captivating "TechTalks: Exploring the Future" podcast by WorkSafeBC(WSBC) – where innovation meets leadership, technology, and human insight! Join our esteemed panel of seasoned technologists and visionary business leaders as they delve into the fascinating intersection of technology, work, and people: &lt;a href="https://www.linkedin.com/in/bbaldasti/"&gt;Bill Baldasi&lt;/a&gt; - National Leader, Azure Digital and Application Innovation (Microsoft), &lt;a href="https://www.linkedin.com/in/omar-naser-50bb9b266/"&gt;Omar Naser&lt;/a&gt; - Product Lead, Innovation Services (WSBC), Sarav Shan - Product Owner, Innovation Services, &lt;a href="https://www.linkedin.com/in/slecalvez/"&gt;Sebastian Le Calvez&lt;/a&gt; - National Director,  App Innovation, Customer Success Leader (Microsoft), and &lt;a href="https://www.linkedin.com/in/todd-yule-4679646/"&gt;Todd Yule&lt;/a&gt; - Head of Innovation Services and CDO (WSBC).&lt;/p&gt;
-&lt;p&gt;As a passionate enthusiast in leadership, business, and technology, you will find this podcast a treasure trove of knowledge and inspiration. &lt;/p&gt;
-&lt;p&gt;In this episode, we team up with industry giants Microsoft to embark on an exciting journey through the annals of tech history and explore cutting-edge innovations that shape our future. Brace yourself for a deep dive into captivating topics from the ever-evolving tech world, sprinkled with insightful discussions and thought-provoking insights from the brightest minds in the field.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href="https://youtu.be/e_OwVcZNRcg"&gt;&lt;img alt="Podcast" src="../images/innovation-podcast-wsbc-msft-1.png"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Why all Developers should be using co-pilot&lt;/li&gt;
-&lt;li&gt;How to build Artificial Intelligence (AI) co-pilots for your own apps&lt;/li&gt;
-&lt;li&gt;Learn about responsible AI&lt;/li&gt;
-&lt;li&gt;Recommended Microsoft certifications for AI&lt;/li&gt;
-&lt;li&gt;What are the skills required for AI&lt;/li&gt;
-&lt;li&gt;Concerns about privacy, security as it relates to AI&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Click &lt;a href="https://youtu.be/e_OwVcZNRcg"&gt;here&lt;/a&gt; to listen to the conversation.&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="ai"></category></entry></feed>
+&lt;p&gt;Thoughts and feedback from your IaC experience?&lt;/p&gt;</content><category term="Posts"></category><category term="azure"></category><category term="azure-devops"></category><category term="pipelines"></category></entry></feed>

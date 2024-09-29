@@ -38,7 +38,7 @@ Enjoy other learning notes:
 - [guiding-principles](/ai-fundamentals-ai900-ai-guiding-principles.html)
 - [natural-language-processing](/ai-fundamentals-ai900-natural-language-processing.html)
 
-Coming soon:
+AI-900 Quick reference Poster:
 
-> ![ai-900 poster](../images/ai-fundamentals-ai900-poster.html)
+- [ai-900 poster](/ai-fundamentals-ai900-poster.html)
 
