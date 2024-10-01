@@ -1,5 +1,5 @@
 Title: DevOps Vancouver Meetup Learnings
-Date: 2024-10-04
+Date: 2024-10-02
 Category: Posts 
 Tags: event, learning
 Slug: devops-vancouver-meetup-learnings
