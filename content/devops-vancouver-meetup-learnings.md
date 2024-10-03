@@ -61,7 +61,7 @@ Next, I focus on the positives, which undeniably surpass the disadvantages, thou
 > 4. **Promote** your meetup through various channels like LinkedIn, meetup, and X before the event and on the day it occurs. Keep reminding your community repeatedly.
 > 5. Prefer multiple **short** sessions with **breaks** in between rather than one long continuous session. Emphasize **real-world learning** with **demos** over theoretical content.
 > 6. **Integrate your poll**(s) into the sessions and engage the audience to collect feedback during the meetup.
-> 7. **Be YOU and enjoy yourself!** - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions. **
+> 7. **Be YOU and enjoy yourself!** - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions.
 >
 
 ---
