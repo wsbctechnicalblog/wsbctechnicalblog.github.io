@@ -54,13 +54,15 @@ Next, I focus on the positives, which undeniably surpass the disadvantages, thou
 > **Top 7 Tips when (co-)hosting a meetup!**
 >
 > ![bulb](../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png)
+>
 > 1. **Arrange your meetups in advance** to avoid last-minute plans. It is crucial for attendees to be able to schedule, especially since most meetups happen after work hours and can clash with family responsibilities.
 > 2. Ensure there is a **break** between sessions so that attendees can **relax** and **network**. Have a colleague with you to handle the potential influx of questions from multiple attendees, as you will also need breaks occasionally.
 > 3. Release a meetup **agenda** (context) and align the sessions to avoid any surprises. One of the worst experiences is being trapped in a 2-hour session and realizing it's not what you expected.
 > 4. **Promote** your meetup through various channels like LinkedIn, meetup, and X before the event and on the day it occurs. Keep reminding your community repeatedly.
 > 5. Prefer multiple **short** sessions with **breaks** in between rather than one long continuous session. Emphasize **real-world learning** with **demos** over theoretical content.
-> 6 **Integrate your poll**(s) into the sessions and engage the audience to collect feedback during the meetup.
+> 6. **Integrate your poll**(s) into the sessions and engage the audience to collect feedback during the meetup.
 > 7. **Be YOU and enjoy yourself!** - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions. **
+>
 
 ---
 
