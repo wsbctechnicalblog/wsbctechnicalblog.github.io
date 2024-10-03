@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-09-30T00:00:00-07:00</updated><entry><title>Artificial Intelligence - AI-900 - Quick Reference Poster</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-poster.html" rel="alternate"></link><published>2024-09-30T00:00:00-07:00</published><updated>2024-09-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-30:/ai-fundamentals-ai900-poster.html</id><summary type="html">&lt;p&gt;A consolidated poster / cheat sheet of my AI-900 study notes.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-10-02T00:00:00-07:00</updated><entry><title>DevOps Vancouver Meetup Learnings</title><link href="https://wsbctechnicalblog.github.io/devops-vancouver-meetup-learnings.html" rel="alternate"></link><published>2024-10-02T00:00:00-07:00</published><updated>2024-10-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-10-02:/devops-vancouver-meetup-learnings.html</id><summary type="html">&lt;p&gt;Insights gained from hosting six community meetups this year: the positives, negatives, and challenges.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I need to share my learnings from community events with my peers, and summarising them here seemed a great idea. Hopefully, it benefits both my peers and you (the community). We have been running the DevOps Vancouver meetup for years, enduring fantastic and tough sessions as well as the Covid pandemic. This year, we emerged from the pandemic and shifted from virtual-only meetings to a mix of virtual, hybrid, and in-person events. In this brief post, I will share insights from a busy first half of 2024, a summer break, and upcoming events.&lt;/p&gt;
+&lt;p&gt;One major realization I have made this year is that DevOps has matured, and the engineering community now embraces the mindset. We have progressed from basic DevOps to sharing innovations in the synergy of people, process, and products - there remains little interest in the fundamentals of DevOps. Additionally, Artificial Intelligence (AI)'s impact on DevOps is significant, and we are beginning to struggle with maintaining focus as AI overlaps with other areas, leading to conflicts with other meetups and duplication of events/focus.&lt;/p&gt;
+&lt;h1&gt;Negatives and Challenges&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="negatives" src="../images/devops-vancouver-meetup-learnings-1.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I will start by discussing the challenges of hosting meetups that meet both community needs and sponsor expectations. These are just my personal candid observations! Please be patient; we will get to the positives, because meetups are certainly valuable!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Meetups have hidden costs&lt;/strong&gt; - While free, meetups demand significant personal and business time (cost), venues, refreshments, equipment, and promotion (cost), and above all, effort to provide engaging content for diverse attendees (cost). Without these investments, the content might become niche or irrelevant, leading to decreased interest.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keeping momentum is tough&lt;/strong&gt; - When content loses relevance, community interest drops. To maintain engagement, we need to frequently remind the community of the meetup’s purpose and host regular meetups. For instance, out of 2882 meetup members, only 3.5% attend.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;25-50% of RSVPs are unreliable&lt;/strong&gt; - Comparing actual meetup attendance with RSVPs (Répondez s'il vous plaît") shows many people do not show up due to other plans or commitments like family dinners. This makes planning venues and catering difficult and risky.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;20% Poll Response Rate&lt;/strong&gt; - Achieving an adequate response rate for online surveys is always challenging. Given that we are engaging with a part-time community, the typical 20-30% response rate decreases to 5-10% of active participants, on a good day. This limited feedback complicates efforts to enhance meetups or determine which topics to schedule.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Hybrid meetups are a nightmare&lt;/strong&gt; - during the pandemic, we switched from in-person to virtual. This year, we tried hybrid meetups with both in-person and virtual attendance but concluded we will either host fully virtual or in-person events going forward. Firstly, in-person events see less drop-off as attendees who travel are more engaged. Secondly, online attendees often get distracted by multiple monitors. Thirdly, time is wasted due to communication issues or unprepared users online. Therefore, our preference now is for recorded in-person meetups, sharing recordings a month later. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank you for reading this far. Let us context switch to the positives.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Positives&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="positives" src="../images/devops-vancouver-meetup-learnings-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Next, I focus on the positives, which undeniably surpass the disadvantages, though we might feel differently during hectic periods.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collaboration is energizing&lt;/strong&gt; - One key lesson from my army days is that we can overcome any challenge together, whether it is trekking 50km through the Alps with gear, running 5km, or facing life's hurdles. As a community, we can collaborate, share knowledge, support one another, and avoid common pitfalls and redundant efforts in a tech environment. During meetups, I prefer to observe from the back and explore the hallways during breaks to meet new engineers, each bringing unique challenges, insights, and skills to share with the DevOps Vancouver community.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In-person rocks&lt;/strong&gt; - While I appreciate remote work, I prefer in-person meetings for certain situations. They help me connect with new community members without distractions from multiple screens and constant chat notifications. During in-person meetups, it is not acceptable to be sidetracked by emails or chats, ensuring everyone stays focused.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Avoid combining in-person and virtual meetups&lt;/strong&gt; - Hybrid events can be extremely challenging. Instead, opt for either a virtual or an in-person event, record it, and release the recording a month later. Why wait that long? If participants know they will not have immediate access to the recording, they are more likely to stay engaged during the session and less inclined to cancel their RSVP or fail to attend on short notice. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Demos are effective&lt;/strong&gt; - creating a session that pleases everyone is challenging, but combining an information session with practical, real-world demos is a hit. Meetup participants enjoy demos, and pairing them with live exercises in collaborative, in-person events result in a win-win situation. Think back to your school days – did you like the history teacher who listed events and dates, or the science teacher who mixed theory with exciting, live demonstrations?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Opt for shorter, related sessions over marathon ones&lt;/strong&gt; - If you have seen the &lt;a href="Horizon: An American Saga - Wikipedia"&gt;Horizon: An American Saga&lt;/a&gt; movie featuring Kevin Costner in a theater, you might relate to this point. Rather than having a single 1, 2, or 3-hour session with one presenter, divide the session into several short segments separated by brief collaboration breaks and presented by various subject matter experts to create variation of content, tone, and flow. Personally, I enjoyed the movie, but I watched it at home in three segments across a weekend – I cannot remain focused for 3-hours.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.mentimeter.com/"&gt;Mentimeter is effective&lt;/a&gt;&lt;/strong&gt; - Polls and surveys usually struggle with response rates as attendees prefer to leave rather than complete them. I saw a meetup use Mentimeter polls during the session by linking it on slide footers, referring to it in each session, and reviewing results in subsequent topics. This method kept attendees engaged, provided instant feedback, and allowed them to see how their responses compared to others. It was a great way to engage the audience and collect actionable feedback without the need to plead and grovel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Top 7 Tips when (co-)hosting a meetup!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bulb" src="../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"&gt;
+1. &lt;strong&gt;Arrange your meetups in advance&lt;/strong&gt; to avoid last-minute plans. It is crucial for attendees to be able to schedule, especially since most meetups happen after work hours and can clash with family responsibilities.
+2. Ensure there is a &lt;strong&gt;break&lt;/strong&gt; between sessions so that attendees can &lt;strong&gt;relax&lt;/strong&gt; and &lt;strong&gt;network&lt;/strong&gt;. Have a colleague with you to handle the potential influx of questions from multiple attendees, as you will also need breaks occasionally.
+3. Release a meetup &lt;strong&gt;agenda&lt;/strong&gt; (context) and align the sessions to avoid any surprises. One of the worst experiences is being trapped in a 2-hour session and realizing it's not what you expected.
+4. &lt;strong&gt;Promote&lt;/strong&gt; your meetup through various channels like LinkedIn, meetup, and X before the event and on the day it occurs. Keep reminding your community repeatedly.
+5. Prefer multiple &lt;strong&gt;short&lt;/strong&gt; sessions with &lt;strong&gt;breaks&lt;/strong&gt; in between rather than one long continuous session. Emphasize &lt;strong&gt;real-world learning&lt;/strong&gt; with &lt;strong&gt;demos&lt;/strong&gt; over theoretical content.
+6 &lt;strong&gt;Integrate your poll&lt;/strong&gt;(s) into the sessions and engage the audience to collect feedback during the meetup.
+7. &lt;strong&gt;Be YOU and enjoy yourself!&lt;/strong&gt; - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions. **&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;What &lt;code&gt;meetup&lt;/code&gt; &lt;strong&gt;learnings&lt;/strong&gt; can you share?&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Quick Reference Poster</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-poster.html" rel="alternate"></link><published>2024-09-30T00:00:00-07:00</published><updated>2024-09-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-30:/ai-fundamentals-ai900-poster.html</id><summary type="html">&lt;p&gt;A consolidated poster / cheat sheet of my AI-900 study notes.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2253,15 +2317,4 @@ WorkSafeBC Common Engineering&lt;/a&gt; project. &lt;/p&gt;
 &lt;li&gt;What are the skills required for AI&lt;/li&gt;
 &lt;li&gt;Concerns about privacy, security as it relates to AI&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Click &lt;a href="https://youtu.be/e_OwVcZNRcg"&gt;here&lt;/a&gt; to listen to the conversation.&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="ai"></category></entry><entry><title>Water Cooler Talk - Why Azure Devops is not a silver bullet</title><link href="https://wsbctechnicalblog.github.io/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet.html" rel="alternate"></link><published>2023-07-23T00:00:00-07:00</published><updated>2023-07-23T00:00:00-07:00</updated><author><name>&lt;Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-07-23:/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet.html</id><summary type="html">&lt;p&gt;Yes, I LOVE Azure DevOps, but it is not the answer to the universe.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="AzdO the silver bullet" src="../images/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet-1.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://azure.microsoft.com/en-us/products/devops/"&gt;Azure DevOps&lt;/a&gt; is a software as a service (SaaS) product that &lt;strong&gt;empowers&lt;/strong&gt; you to plan smarter, collaborate better, and ship faster. Integrated with &lt;a href="https://learn.microsoft.com/en-us/azure/?product=popular"&gt;Azure&lt;/a&gt; services, Azure DevOps is geared for software development.&lt;/p&gt;
-&lt;p&gt;The latter, &lt;strong&gt;geared for software developnment&lt;/strong&gt;, is key. Recently when I received a request to create a new Azure DevOps project, with special requests for GANTT extensions and serious push back on the &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/plans/track-dependencies?view=azure-devops"&gt;Delivery Plan&lt;/a&gt; and &lt;a href="https://learn.microsoft.com/en-us/azure/devops/boards/boards/kanban-quickstart?view=azure-devops"&gt;Kanban Boared&lt;/a&gt; features.&lt;/p&gt;
-&lt;p&gt;I wanted to know more ... a lot more. It quickly became apparent that the team were only interested in the Azure Boards service, the CMMI process, and were only going to use Azure DevOps to track a waterfall project.&lt;/p&gt;
-&lt;p&gt;After considering the &lt;strong&gt;license&lt;/strong&gt; cost, required &lt;strong&gt;training&lt;/strong&gt;, and especially the &lt;strong&gt;support of extensions&lt;/strong&gt; not used by the rest of the organization, I recommended the user to consider &lt;a href="https://www.microsoft.com/en-ca/microsoft-365/project/compare-microsoft-project-management-software"&gt;Microsoft Project&lt;/a&gt; instead.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;It is important to use the right tool for the right job!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Sledgehammer" src="../images/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet-2.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="Posts"></category><category term="water-cooler"></category><category term="azure-devops"></category></entry></feed>
+&lt;p&gt;Click &lt;a href="https://youtu.be/e_OwVcZNRcg"&gt;here&lt;/a&gt; to listen to the conversation.&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="ai"></category></entry></feed>

@@ -1,5 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-09-30T00:00:00-07:00</updated><entry><title>Artificial Intelligence - AI-900 - Quick Reference Poster</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-poster.html" rel="alternate"></link><published>2024-09-30T00:00:00-07:00</published><updated>2024-09-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-30:/ai-fundamentals-ai900-poster.html</id><summary type="html">&lt;p&gt;A consolidated poster / cheat sheet of my AI-900 study notes.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-10-02T00:00:00-07:00</updated><entry><title>DevOps Vancouver Meetup Learnings</title><link href="https://wsbctechnicalblog.github.io/devops-vancouver-meetup-learnings.html" rel="alternate"></link><published>2024-10-02T00:00:00-07:00</published><updated>2024-10-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-10-02:/devops-vancouver-meetup-learnings.html</id><summary type="html">&lt;p&gt;Insights gained from hosting six community meetups this year: the positives, negatives, and challenges.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I need to share my learnings from community events with my peers, and summarising them here seemed a great idea. Hopefully, it benefits both my peers and you (the community). We have been running the DevOps Vancouver meetup for years, enduring fantastic and tough sessions as well as the Covid pandemic. This year, we emerged from the pandemic and shifted from virtual-only meetings to a mix of virtual, hybrid, and in-person events. In this brief post, I will share insights from a busy first half of 2024, a summer break, and upcoming events.&lt;/p&gt;
+&lt;p&gt;One major realization I have made this year is that DevOps has matured, and the engineering community now embraces the mindset. We have progressed from basic DevOps to sharing innovations in the synergy of people, process, and products - there remains little interest in the fundamentals of DevOps. Additionally, Artificial Intelligence (AI)'s impact on DevOps is significant, and we are beginning to struggle with maintaining focus as AI overlaps with other areas, leading to conflicts with other meetups and duplication of events/focus.&lt;/p&gt;
+&lt;h1&gt;Negatives and Challenges&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="negatives" src="../images/devops-vancouver-meetup-learnings-1.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I will start by discussing the challenges of hosting meetups that meet both community needs and sponsor expectations. These are just my personal candid observations! Please be patient; we will get to the positives, because meetups are certainly valuable!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Meetups have hidden costs&lt;/strong&gt; - While free, meetups demand significant personal and business time (cost), venues, refreshments, equipment, and promotion (cost), and above all, effort to provide engaging content for diverse attendees (cost). Without these investments, the content might become niche or irrelevant, leading to decreased interest.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keeping momentum is tough&lt;/strong&gt; - When content loses relevance, community interest drops. To maintain engagement, we need to frequently remind the community of the meetup’s purpose and host regular meetups. For instance, out of 2882 meetup members, only 3.5% attend.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;25-50% of RSVPs are unreliable&lt;/strong&gt; - Comparing actual meetup attendance with RSVPs (Répondez s'il vous plaît") shows many people do not show up due to other plans or commitments like family dinners. This makes planning venues and catering difficult and risky.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&amp;lt;20% Poll Response Rate&lt;/strong&gt; - Achieving an adequate response rate for online surveys is always challenging. Given that we are engaging with a part-time community, the typical 20-30% response rate decreases to 5-10% of active participants, on a good day. This limited feedback complicates efforts to enhance meetups or determine which topics to schedule.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Hybrid meetups are a nightmare&lt;/strong&gt; - during the pandemic, we switched from in-person to virtual. This year, we tried hybrid meetups with both in-person and virtual attendance but concluded we will either host fully virtual or in-person events going forward. Firstly, in-person events see less drop-off as attendees who travel are more engaged. Secondly, online attendees often get distracted by multiple monitors. Thirdly, time is wasted due to communication issues or unprepared users online. Therefore, our preference now is for recorded in-person meetups, sharing recordings a month later. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank you for reading this far. Let us context switch to the positives.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Positives&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="positives" src="../images/devops-vancouver-meetup-learnings-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Next, I focus on the positives, which undeniably surpass the disadvantages, though we might feel differently during hectic periods.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Collaboration is energizing&lt;/strong&gt; - One key lesson from my army days is that we can overcome any challenge together, whether it is trekking 50km through the Alps with gear, running 5km, or facing life's hurdles. As a community, we can collaborate, share knowledge, support one another, and avoid common pitfalls and redundant efforts in a tech environment. During meetups, I prefer to observe from the back and explore the hallways during breaks to meet new engineers, each bringing unique challenges, insights, and skills to share with the DevOps Vancouver community.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In-person rocks&lt;/strong&gt; - While I appreciate remote work, I prefer in-person meetings for certain situations. They help me connect with new community members without distractions from multiple screens and constant chat notifications. During in-person meetups, it is not acceptable to be sidetracked by emails or chats, ensuring everyone stays focused.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Avoid combining in-person and virtual meetups&lt;/strong&gt; - Hybrid events can be extremely challenging. Instead, opt for either a virtual or an in-person event, record it, and release the recording a month later. Why wait that long? If participants know they will not have immediate access to the recording, they are more likely to stay engaged during the session and less inclined to cancel their RSVP or fail to attend on short notice. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Demos are effective&lt;/strong&gt; - creating a session that pleases everyone is challenging, but combining an information session with practical, real-world demos is a hit. Meetup participants enjoy demos, and pairing them with live exercises in collaborative, in-person events result in a win-win situation. Think back to your school days – did you like the history teacher who listed events and dates, or the science teacher who mixed theory with exciting, live demonstrations?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Opt for shorter, related sessions over marathon ones&lt;/strong&gt; - If you have seen the &lt;a href="Horizon: An American Saga - Wikipedia"&gt;Horizon: An American Saga&lt;/a&gt; movie featuring Kevin Costner in a theater, you might relate to this point. Rather than having a single 1, 2, or 3-hour session with one presenter, divide the session into several short segments separated by brief collaboration breaks and presented by various subject matter experts to create variation of content, tone, and flow. Personally, I enjoyed the movie, but I watched it at home in three segments across a weekend – I cannot remain focused for 3-hours.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.mentimeter.com/"&gt;Mentimeter is effective&lt;/a&gt;&lt;/strong&gt; - Polls and surveys usually struggle with response rates as attendees prefer to leave rather than complete them. I saw a meetup use Mentimeter polls during the session by linking it on slide footers, referring to it in each session, and reviewing results in subsequent topics. This method kept attendees engaged, provided instant feedback, and allowed them to see how their responses compared to others. It was a great way to engage the audience and collect actionable feedback without the need to plead and grovel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Top 7 Tips when (co-)hosting a meetup!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bulb" src="../images/moving-hundreds-of-pipeline-snowflakes-part8-7.png"&gt;
+1. &lt;strong&gt;Arrange your meetups in advance&lt;/strong&gt; to avoid last-minute plans. It is crucial for attendees to be able to schedule, especially since most meetups happen after work hours and can clash with family responsibilities.
+2. Ensure there is a &lt;strong&gt;break&lt;/strong&gt; between sessions so that attendees can &lt;strong&gt;relax&lt;/strong&gt; and &lt;strong&gt;network&lt;/strong&gt;. Have a colleague with you to handle the potential influx of questions from multiple attendees, as you will also need breaks occasionally.
+3. Release a meetup &lt;strong&gt;agenda&lt;/strong&gt; (context) and align the sessions to avoid any surprises. One of the worst experiences is being trapped in a 2-hour session and realizing it's not what you expected.
+4. &lt;strong&gt;Promote&lt;/strong&gt; your meetup through various channels like LinkedIn, meetup, and X before the event and on the day it occurs. Keep reminding your community repeatedly.
+5. Prefer multiple &lt;strong&gt;short&lt;/strong&gt; sessions with &lt;strong&gt;breaks&lt;/strong&gt; in between rather than one long continuous session. Emphasize &lt;strong&gt;real-world learning&lt;/strong&gt; with &lt;strong&gt;demos&lt;/strong&gt; over theoretical content.
+6 &lt;strong&gt;Integrate your poll&lt;/strong&gt;(s) into the sessions and engage the audience to collect feedback during the meetup.
+7. &lt;strong&gt;Be YOU and enjoy yourself!&lt;/strong&gt; - meetups are generally community-driven events without the constraints of corporate sponsorship, branding, and messaging. They foster collaborative environments where you can be authentic and appreciate informal interactions. **&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;What &lt;code&gt;meetup&lt;/code&gt; &lt;strong&gt;learnings&lt;/strong&gt; can you share?&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Quick Reference Poster</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-poster.html" rel="alternate"></link><published>2024-09-30T00:00:00-07:00</published><updated>2024-09-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-30:/ai-fundamentals-ai900-poster.html</id><summary type="html">&lt;p&gt;A consolidated poster / cheat sheet of my AI-900 study notes.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
 These are my &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2240,33 +2304,4 @@ WorkSafeBC Common Engineering&lt;/a&gt; project. &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;As we embrace this enhanced approach, we look forward to a future where deployment processes are not only efficient but also versatile, setting the stage for continuous innovation with our continuous integration, delivery, and provisioning pipelines.&lt;/p&gt;
-&lt;p&gt;Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry><entry><title>Why do we care about infrastructure-as-code (IaC)?</title><link href="https://wsbctechnicalblog.github.io/why-we-care-about-iac.html" rel="alternate"></link><published>2023-08-02T00:00:00-07:00</published><updated>2023-08-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-08-02:/why-we-care-about-iac.html</id><summary type="html">&lt;p&gt;Our vision is *aC, but to avoid boiling the ocean, we will focus on an overview on IaC today.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Microsoft Azure has a great definition of &lt;a href="https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code"&gt;infrastructure as code (IaC)&lt;/a&gt; - "&lt;em&gt;Infrastructure as code (IaC) uses DevOps methodology and versioning with a descriptive model to define and deploy infrastructure, such as networks, virtual machines, load balancers, and connection topologies. Just as the same source code always generates the same binary, an IaC model generates the same environment every time it deploys.&lt;/em&gt;"&lt;/p&gt;
-&lt;p&gt;As highlighted in the above definition, one of the main goals of IaC is to bring the benefits of software development practices, such as version control, code reuse, and automation, to the infrastructure provisioning and management process. It makes it &lt;strong&gt;easier&lt;/strong&gt; to maintain, collaborate, and &lt;strong&gt;scale&lt;/strong&gt; infrastructure resources &lt;strong&gt;efficiently&lt;/strong&gt; and &lt;strong&gt;consistently&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Have you ever found yourself in a situation where you needed to manually provision infrastructure identical to what was set up 6 months ago by an engineer? Perhaps, in an emergency scenario like disaster recovery? &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Wishing for IaC" src="../images/why-we-care-about-iac-1.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If you have, then you are likely familiar with the frustrating experience of encountering &lt;strong&gt;inconsistent&lt;/strong&gt; results and the significant &lt;strong&gt;time wasted&lt;/strong&gt; on searching for documentation, consulting subject matter experts, and tediously executing repetitive tasks. &lt;/p&gt;
-&lt;p&gt;To streamline the process and avoid such challenges, embracing IaC can be a game-changer. Our digital friends can swiftly recreate infrastructure consistently, quickly, and repetitvely, especially during critical situations like disaster recovery or disruptive context switching.&lt;/p&gt;
-&lt;p&gt;As I look back, I fondly remember hosting a presentation at the &lt;a href="https:/www.devconf.co.za"&gt;devconf&lt;/a&gt; conference in South Africa back in 2018. The topic of the talk was &lt;a href="https://www.slideshare.net/VSTSCommunityMicroso/moving-75000-microsofties-to-devops-with-visual-studio-team-services"&gt;Moving 75,000 Microsofties to DevOps with Visual Studio Team Services&lt;/a&gt;, and it was an incredible opportunity to share the valuable insights and lessons we had learned.&lt;/p&gt;
-&lt;p&gt;During the presentation, there was one particular slide that stood out, capturing the essence of IaC.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Flash of the past" src="../images/why-we-care-about-iac-2.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Fast forwarding to 2023, it becomes evident that Infrastructure as Code (IaC) is far from a novel concept!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Why is IaC important to us?&lt;/h1&gt;
-&lt;p&gt;Why is our Enterprise DevOps (EDO) group exploring Infrastructure as Code (IaC)? The answer is clear - we aim to streamline the provisioning and maintenance of our infrastructure, enhancing factors like consistency, standardization, maintainability, and security. By embracing IaC, we seek to make these processes significantly easier and more efficient for our team.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;My personal vision&lt;/strong&gt;: "&lt;em&gt;Streamline our software development lifecycle and make it so simple for engineers to start a new project the right way, that they no longer worry about reinventing the hammer.&lt;/em&gt;"&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1&gt;How are we planning to integrate IaC into our Pipeline-as-code (PaC)?&lt;/h1&gt;
-&lt;p&gt;We are on a journey to innovate our &lt;a href="/yaml-pipelines-part1.html"&gt;Pipeline Journey&lt;/a&gt; by actively exploring fresh ideas. Our primary focus is to consistently enhance our continuous integration (CI) and continuous delivery (CD) pipelines, integrating Infrastructure as Code (IaC) into the CD pipeline, as illustrated below. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="v2.1 CI/CD/IaC" src="../images/why-we-care-about-iac-3.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This strategic move is set to bring greater efficiency and effectiveness to our processes, ultimately advancing our development and delivery capabilities.&lt;/p&gt;
-&lt;p&gt;Watch this space for updates.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Thoughts and feedback from your IaC experience?&lt;/p&gt;</content><category term="Posts"></category><category term="azure"></category><category term="azure-devops"></category><category term="pipelines"></category></entry></feed>
+&lt;p&gt;Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry></feed>
