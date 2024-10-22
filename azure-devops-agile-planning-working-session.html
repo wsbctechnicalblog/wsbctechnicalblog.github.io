@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title> Articles by Shay Vannery - </title>
+        <title>Agile Planning with Azure DevOps - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -23,65 +23,140 @@
             <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
-    <div class="hp-header">
-        <div class="page-header">
-            <div class="content-header">
-                <div id="title-block">
-                <h1><a href="https://wsbctechnicalblog.github.io/"></a></h1>
-                <p class="blurb"></p>
-                </div>
-            </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
         </div>
     </div>
+</div>
     <div class="content">
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-agile-planning-working-session.html" rel="bookmark"
+            title="Permalink to Agile Planning with Azure DevOps">Agile Planning with Azure DevOps</a></h1>
 
-<h2>Articles by Shay Vannery</h2>
-
-
-<img src="/theme/img/Logo-blogsize.png">
-
-
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Wed 12 October 2022</div>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 23 October 2024</div>
  
-                <h2><a href="https://wsbctechnicalblog.github.io/test-environment-management-in-a-hybrid-world.html" rel=Bookmark title="Permalink to Test Environment Management in a hybrid world">Test Environment Management in a hybrid world</a></h2>
-                <p>
-                <p>Test Environments are a critical component of any software development lifecycle.</p>            
-                </p>
-                   
-
-            </div>
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Recalling the recent agile planning session hosted by common engineering during the +1 innovation and planning iteration.</p>
+        </div>
     
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Fri 29 April 2022</div>
- 
-                <h2><a href="https://wsbctechnicalblog.github.io/improving-dora-metrics.html" rel=Bookmark title="Permalink to Improving DORA metrics">Improving DORA metrics</a></h2>
-                <p>
-                <p>We would like to plan how to track and empower engineering to increase deployment frequency, and reduce lead time for change, MTTR, and change failure rates.</p>            
-                </p>
-                   
-
-            </div>
-    
-            <!-- prima pagina -->
-            <div class="main-article">
-                <div class="read-more">Fri 04 March 2022</div>
- 
-                <h2><a href="https://wsbctechnicalblog.github.io/continuous-delivery-in-the-enterprise.html" rel=Bookmark title="Permalink to Continuous Delivery in the enterprise">Continuous Delivery in the enterprise</a></h2>
-                <p>
-                <p>Continuous Delivery is no silver bullet and requires persistence, discipline and effort.</p>            
-                </p>
-                   
-
-            </div>
-    
+        <div class="entry-content">
+            <p>Our team developed an interactive session to highlight the benefits of Azure DevOps Boards for Agile Planning, focusing solely on out-of-the-box features many, many moons ago. Recently, we handed over this session to our Agile Coaches for future improvements and hosting. </p>
+<p>This blog post summarizes our shared insights, exercise outcomes, and provides references for other Azure Boards posts to conclude the fun working session.</p>
+<hr>
+<h1>Infamous slides</h1>
+<p>Here are the few slides we covered during the introduction:</p>
+<blockquote>
+<p><img alt="Slides A" src="../images/azure-devops-agile-planning-working-session-1.png"> 
+<img alt="Slides B" src="../images/azure-devops-agile-planning-working-session-2.png"> </p>
+</blockquote>
+<hr>
+<h1>Fun Exercises</h1>
+<p>To emphasize the importance of creating SMART (Specific, Measurable, Achievable, Relevant, Time-bound) and actionable work items, we requested users to draw a sketch based on the following prompt: "<em>Willy would like you to build a home.</em>"
+Below are several examples of their responses.</p>
+<blockquote>
+<p><img alt="Exercise 1" src="../images/azure-devops-agile-planning-working-session-3.png"> </p>
+</blockquote>
+<p>We then changed the ask to: "<em>Willy would like you to build a home using an emergent design so that you build his isolated and rugged dream log cabin in the middle of a lake</em>" and got these:</p>
+<blockquote>
+<p><img alt="Exercise 2" src="../images/azure-devops-agile-planning-working-session-4.png"> </p>
+</blockquote>
+<p>It shows how simply describing a work item can significantly alter assumptions about user requests.</p>
+<hr>
+<h1>Core topics we covered while exploring Azure Boards</h1>
+<p>At a recent Azure Developer Influencer Microsoft Innovation Hub Event, I observed a subject matter expert conducting an unscripted demonstration, engaging spontaneously with the audience throughout the process. This interactive and improvisational approach resulted in one of the most effective presentations I have ever witnessed. By participating in the problem-solving journey and collaboratively addressing challenges as they arose, I not only enjoyed the experience but also gained substantial knowledge.
+Inspired by this approach, I decided to adopt a similar strategy for my working session. Dispensing with the prepared script, I addressed the following topics using a straightforward example: crafting the work items necessary to build a launch pad, and constructing a two-stage rocket, featuring both a sea-level engine and a vacuum engine.</p>
+<p><strong>Product Backlog</strong> </p>
+<ul>
+<li>Organization \ project \ service bread crumb</li>
+<li>Preview Features</li>
+<li>Profile</li>
+<li>Backlog Levels</li>
+<li>Backlog Filters</li>
+<li>Backlog options – new “keep hierarchy with filters” feature</li>
+<li>Create Features (Pad, Rocket)</li>
+<li>Create Stories (A-Engine, V-Engine, 1st and 2nd Stage, Stack) and Tags (SpaceX)</li>
+<li>Create Relationships (Mapping)</li>
+<li>Create Relationships (Predecessor/Successor)</li>
+<li>New auto-complete automation</li>
 </ul>
+<p><strong>Product Board</strong></p>
+<ul>
+<li>Columns</li>
+<li>Swimlanes</li>
+<li>Styles</li>
+<li>Ordering</li>
+<li>Tasks</li>
+</ul>
+<p><strong>Delivery Plan</strong></p>
+<ul>
+<li>Demo PI Planning</li>
+<li>Demo Roadmap</li>
+</ul>
+<p><strong>Dashboards, Queries</strong></p>
+<ul>
+<li>Demo Tech Debt dashboard</li>
+<li>Demo Common Engineering dashboard</li>
+<li>Demo writing a query - all items updated today</li>
+<li>Demo writing a query - all SpaceX tagged work items</li>
+</ul>
+<p>I hope everyone found the session informative, learned some new tricks, and had as much fun as I did. I am looking forward to seeing how our Agile Coaches Sangeeta and Anita will improve the workshop and deliver the 2.5-hour session.</p>
+<p>Below are some related blog posts for more details.</p>
+<hr>
+<h1>Related content</h1>
+<p>Here are more blog posts talking about Azure Boards:</p>
+<ul>
+<li><a href="https://wsbctechnicalblog.github.io/back-to-basics-azdo-backlog-automation.html">Automate Azure DevOps work item state transitions like a Pro</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-retain-hierarchy-with-filter.html">Azure Boards Tips - Retain hierarchy with filter</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-stop-messing-with-our-backlog.html">Azure Boards Tips - Stop messing with our backlog!</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-operations-team.html">Azure Boards Tips for Operations Teams</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/azure-boards-tips.html">Azure Boards Tips</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/back-to-basics-kanban.html">Back to Basics: Kanban</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/back-to-basics-wip-limit.html">Back to Basics: WIP Limit</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/area-paths-and-nodes.html">Searching for common nodes across area paths</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/shared-area-paths.html">The clash of Azure DevOps Kanban fields and Shared Area Paths</a></li>
+<li><a href="https://wsbctechnicalblog.github.io/azure-devops-dependencies.html">Visualizing work item dependencies in Azure Boards</a></li>
+</ul>
+<hr>
+<p>Farewell Azure DevOps Agile Planning working session, and best of luck to our Agile Coaches in guiding this content forward!</p>
+        </div>
 
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/event.html">event </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-devops-agile-planning-working-session.html" rel="bookmark"
+         title="Permalink to Agile Planning with Azure DevOps">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -169,7 +244,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (198)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (198)</li>
                 </ul>
              
             </div>
