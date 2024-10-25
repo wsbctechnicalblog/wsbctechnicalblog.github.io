@@ -1,5 +1,5 @@
 Title: Agile Planning with Azure DevOps
-Date: 2024-10-18
+Date: 2024-10-23
 Category: Posts 
 Tags: azure-devops, learning, event
 Slug: azure-devops-agile-planning-working-session
