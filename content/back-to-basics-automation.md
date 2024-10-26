@@ -1,5 +1,5 @@
 Title: Why Automation Needs People to Truly Thrive
-Date: 2024-10-07
+Date: 2024-10-26
 Category: Posts 
 Tags: automation, engineering
 Slug: back-to-basics-automation
@@ -49,7 +49,7 @@ Although automation has become a vital part of engineering environments, it also
 
 - Automation lacks **creativity** and **intuition** for solving complex problems.
 - Each organization needs **customized** and **optimized automation** - a challenge evident from our shared [v2 CI/CD blueprints](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2).
-- **Human oversight** is essential to prevent errors. Have you ever considered living next to an automated nuclear plant or flying in a cockpit-less aircraft.
+- **Human oversight** is essential to prevent errors. Have you ever considered living next to an autonomous nuclear plant or flying in a cockpit-less aircraft?
 - Automation lacks **empathy** and **emotional intelligence** for complex customer support.
 - Automation requires **consistent**, **standardized**, and **stable** environments.
 - AI and data processing automation raise **ethical** concerns.
