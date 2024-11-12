@@ -38,7 +38,7 @@ The team has achieved notable advancements and enhancements in this area by intr
 
 The **process** involves creating a feature branch in each Azure Repo to identify end-of-life (EOF) .NET code, running the upgrade assistant on this branch, generating a pull request, and creating a technical debt work item to consolidate all actions. While automation significantly reduces the upgrade time from days to seconds, it requires **people** to embrace the automation, action the pull requests, and conduct **automated** testing to validate changes both before and after merging. Our initial focus was overly centered on automation, leading us to realize through experience that **people** involvement is crucial for successful adoption.
 
-Other notable automation processes include **configuration-as-code** validations, such as ensuring that Azure Pipelines are configured according to the last known configuration, and automatically reversing unknown manual changes. 
+Other notable automation processes include **configuration-as-code** validations, such as ensuring that Azure Pipelines are configured according to the last known configuration, and automatically revert unknown manual changes. 
 
 **Self-service** automation aims to enable engineers to provision infrastructure, repositories, pipelines, and introduce sample code based on reference architectures as required, with the click of a button. Watch the space, this **process** will receive a ton of attention next year.
 
