@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Artificial Intelligence - AI-900 - Vision Workloads - </title>
+        <title>Journal 6 - Empowerment through automation and artificial intelligence - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,64 +33,77 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-vision-workloads.html" rel="bookmark"
-            title="Permalink to Artificial Intelligence - AI-900 - Vision Workloads">Artificial Intelligence - AI-900 - Vision Workloads</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/common-engineering-journal-6.html" rel="bookmark"
+            title="Permalink to Journal 6 - Empowerment through automation and artificial intelligence">Journal 6 - Empowerment through automation and artificial intelligence</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 27 September 2024</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 13 November 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>"Vision workloads in AI refer to tasks that involve processing and analyzing visual data, such as images and videos." - ChatGPT GPT-4o</p>
+            <p>Reshaping the way we work, creating new opportunities to empower engineers by reducing repetitive tasks, enhancing productivity, and enabling focus on high-value activities.</p>
         </div>
     
         <div class="entry-content">
             <blockquote>
-<p><img alt="alert" src="../images/alert-tiny.png">
-These are my living <strong>personal</strong> study notes. Use them at your own <strong>risk</strong>!
-</p>
-<p><img alt="vision-workloads" src="../images/ai-fundamentals-ai900-vision-workloads.png"> </p>
+<p>Optimus Prime, journal entry dated November 11, 2024, written on Remembrance Day.</p>
 </blockquote>
-<h2>Notes</h2>
-<ul>
-<li><strong>Custom Vision</strong> service has a model you can build and train for classification or object detection (class name, probability score, bounding box).</li>
-<li><strong>Computer Vision</strong> detects faces, <strong>Face Service</strong> finds and recognizes similar faces.</li>
-<li><strong>Face Detection</strong> helps detect and recognize people's faces.</li>
-<li><strong>Form Recognizer</strong> service has a custom model users can train, or a pre-built receipt model trained to work with receipts.</li>
-<li><strong>Image Analysis</strong> helps extract information from the images, tag them, and create descriptive image summary.</li>
-<li><strong>Image Classification</strong> classifies objects based on their content to answer the "what is the image?" question.</li>
-<li><strong>Semantic Segmentation</strong> classifies pixels that belong to objects (detects) and highlights the object boundaries.</li>
-</ul>
+<p>During 2024, our common engineering team has made significant progress despite facing various challenges, including legacy processes and products, as well as addressing issues related to government agency innovation - <a href="/can-government-agencies-be-innovative.html">can-government-agencies-be-innovative</a>. By integrating automation and artificial intelligence into our engineering tools, we are not only improving operations but also promoting a culture of innovation, skill development, and deeper engagement. These technologies equip our engineers, enabling them to effectively address the needs of a dynamic technology industry within the constraints of the insurance sector. In this update we will cover the three DevOps Ps - People, Process, and Products.</p>
+<h1>Team Health</h1>
+<p>We have been utilizing the <a href="https://marketplace.visualstudio.com/items?itemName=ms-devlabs.team-retrospectives">Retrospective</a> extension, by Microsoft devLabs, to effectively manage our iteration retrospectives and monitor our team's health through its team assessment feature. This tool provides a straightforward, quick, and efficient method for these tasks. </p>
+<blockquote>
+<p>Team Assessment - <em>legend for series entries intentionally omitted!</em></p>
+<p><img alt="Team Assessment" src="../images/common-engineering-journal-6-1.png">
+</p>
+</blockquote>
+<p>The visual chart and trendline reveal that <strong>reorganizations</strong>, as indicated by points 1, 2, and 3, along with <strong>leadership changes</strong> shown by point 4, are causing dips in metrics such as clarity, energy, psychological safety, and work-life balance. Conversely, it is evident that the engineering team is becoming increasingly resilient to change. In my opinion, this resilience can be attributed to each team member being empowered to lead within their specific area of expertise and experience.</p>
+<p>We encourage you to try the <a href="https://marketplace.visualstudio.com/items?itemName=ms-devlabs.team-retrospectives">Retrospective</a> extension. In our next discussion, we will explore automation and artificial intelligence, revisiting aspects related to people as we shift our focus towards processes and products.</p>
 <hr>
-<p>You perused:</p>
+<h1>Automation</h1>
+<p>The team has achieved notable advancements and enhancements in this area by introducing automation for a variety of tasks. These include maintaining and supporting Azure DevOps operations, as well as upgrading applications to the latest version of .NET 8 using the <a href="https://devblogs.microsoft.com/dotnet/upgrade-assistant-general-availability/">.NET Upgrade Assistant</a>.</p>
+<blockquote>
+<p>.NET Upgrade Automation</p>
+<p><img alt="Automation Flow" src="../images/common-engineering-journal-6-2.png">
+</p>
+</blockquote>
+<p>The <strong>process</strong> involves creating a feature branch in each Azure Repo to identify end-of-life (EOF) .NET code, running the upgrade assistant on this branch, generating a pull request, and creating a technical debt work item to consolidate all actions. While automation significantly reduces the upgrade time from days to seconds, it requires <strong>people</strong> to embrace the automation, action the pull requests, and conduct <strong>automated</strong> testing to validate changes both before and after merging. Our initial focus was overly centered on automation, leading us to realize through experience that <strong>people</strong> involvement is crucial for successful adoption.</p>
+<p>Other notable automation processes include <strong>configuration-as-code</strong> validations, such as ensuring that Azure Pipelines are configured according to the last known configuration, and automatically revert unknown manual changes. </p>
+<p><strong>Self-service</strong> automation aims to enable engineers to provision infrastructure, repositories, pipelines, and introduce sample code based on reference architectures as required, with the click of a button. Watch the space, this <strong>process</strong> will receive a ton of attention next year.</p>
+<hr>
+<h1>Artificial Intelligence</h1>
+<p>In <a href="https://wsbctechnicalblog.github.io/common-engineering-journal-5.html">Journal 5</a>, we evaluated GitHub Copilot, which has since become an essential tool in our engineering toolkit. Given that we operate on Azure DevOps rather than GitHub Enterprise, many of the latest innovations are currently irrelevant to us. This has prompted us to explore alternative products and innovative ideas to develop our own copilot system and integrate it into a powerful suite of tools – watch the space for exciting updates. Additionally, we have implemented an instance of Stack Overflow to manage our internal queries, articles, and collaboration.</p>
+<p>As with any initiative, ensuring user adoption is crucial for the success of these products and the processes they affect. Here are some considerations as you embark on your own custom automation and artificial intelligence projects:</p>
 <ul>
-<li><strong>this-&gt;</strong><a href="/ai-fundamentals-ai900-vision-workloads.html">vision-workloads</a></li>
+<li>Ensure each improvement has a clear <strong>objective</strong> and that users understand the <strong>WHY</strong> (rationale) behind every innovation.</li>
+<li>Design each improvement to act as an "<strong>engineer’s wingman</strong>," not a replacement, to empower users and foster a productive, engaging experience.</li>
+<li>Ensure each innovation understands the user’s <strong>context</strong>.</li>
+<li>Most importantly, engage with users and provide comprehensive onboarding experience and access to support resources, and <strong>learn and improve</strong> from user feedback</li>
+<li>Improvements must follow regulatory and organizational guidelines and help users do the same.</li>
 </ul>
-<p>Enjoy other learning notes:</p>
-<ul>
-<li><a href="/ai-fundamentals-ai900-bots.html">bots</a></li>
-<li><a href="/ai-fundamentals-ai900-common-machine-learning-types.html">common-machine-learning-types</a></li>
-<li><a href="/ai-fundamentals-ai900-common-workloads.html">common-workloads</a></li>
-<li><a href="/ai-fundamentals-ai900-generative-ai.html">generative-ai</a></li>
-<li><a href="/ai-fundamentals-ai900-ai-guiding-principles.html">guiding-principles</a></li>
-<li><a href="/ai-fundamentals-ai900-natural-language-processing.html">natural-language-processing</a></li>
-</ul>
-<p>AI-900 Quick reference Poster:</p>
-<ul>
-<li><a href="/ai-fundamentals-ai900-poster.html">ai-900 poster</a></li>
-</ul>
+<p>My team has been encouraged to complete the <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification">Microsoft Certified: Azure AI Fundamentals</a> self-paced training, resulting in collaboration and creating artifacts like the <a href="/ai-fundamentals-ai900-poster.html">AI-900 cheat sheet</a>.</p>
+<hr>
+<p>Our objectives for product is identical to process innovations:
+- <strong>Consistency</strong>
+- <strong>Standardization</strong>
+- <strong>Simplicity</strong>
+- <strong>Security</strong>
+- <strong>Empowerment</strong></p>
+<p>For more information on our Copilot evaluation or future innovations, contact us below to start a discussion.</p>
+<hr>
+<p>So, to summarize, I am very proud of what the team has achieved in 2024 and excited about what is coming in 2025. </p>
+<p>What do you think and what is cooking in your engineering kitchen?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
-        | <a href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-vision-workloads.html" rel="bookmark"
-         title="Permalink to Artificial Intelligence - AI-900 - Vision Workloads">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a>
+        | <a href="https://wsbctechnicalblog.github.io/common-engineering-journal-6.html" rel="bookmark"
+         title="Permalink to Journal 6 - Empowerment through automation and artificial intelligence">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
