@@ -1,7 +1,7 @@
 Title: Journal 6 - Empowerment through automation and artificial intelligence
-Date: 2024-11-22
+Date: 2024-11-13
 Category: Posts
-Tags: agile, ai, devops, journal
+Tags: agile, ai, devops, journal, azure-devops
 Slug: common-engineering-journal-6
 Author: Willy-Peter Schaub
 Summary: Reshaping the way we work, creating new opportunities to empower engineers by reducing repetitive tasks, enhancing productivity, and enabling focus on high-value activities.
