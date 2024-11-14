@@ -61,6 +61,7 @@ My team has been encouraged to complete the [Microsoft Certified: Azure AI Funda
 ---
 
 Our objectives for product is identical to process innovations:
+
 - **Consistency**
 - **Standardization**
 - **Simplicity**
