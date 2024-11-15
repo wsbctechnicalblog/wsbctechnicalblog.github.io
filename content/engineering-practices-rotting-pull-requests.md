@@ -56,11 +56,11 @@ In the age of Artificial Intelligence (AI), our existing paradigms are shifting 
 
 ## The Path Forward: Embracing Automation and Addressing Backlogs
 
-This paradigm shift requires us to start viewing our automation as a **technical advantage**—an enabler to grow beyond our current struggles. But first, we **must** address our backlog of technical debt. Awareness is the first step before meaningful change can occur.
+This paradigm shift requires us to start viewing our automation as a **technical advantage**—an enabler to grow beyond our current struggles. But first we **must** address our backlog of our <*> debt, which include technical, technology, code, test, and other classification of Software Engineering related obligations deferred or incurred through time and revisions. Awareness is the first step before meaningful change can occur.
 
 ### The Challenges of Automation in Pull Requests
 
-One drawback of automation in creating pull requests for tech upgrades and security fixes is the unnoticed accumulation of PRs due to heavy workloads. Intended to simplify processes and empower engineers, these PRs often get lost among the many others. 
+One drawback of automation in creating pull requests for tech upgrades and security fixes is the unnoticed accumulation of PRs due to heavy workloads. Intended to simplify processes and empower engineers, these PRs often get lost among the many others. As mentioned in previous blog posts, our automation also creates a detailed work item to help engineers track their technical debt and its remediation.
 
 The key question remains: **How can we encourage engineers to engage with automated PRs and truly empower them by automating tedious tech debt tasks?**
 
@@ -68,5 +68,10 @@ The key question remains: **How can we encourage engineers to engage with automa
 
 **Watch-This-Space**: We are working on this issue, and our expert on the matter will blog about it in upcoming posts.
 
+# References
+- [Software Engineering Standardization](https://wsbctechnicalblog.github.io/software-engineering-standardization.html)] November 2024
+- [Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!](https://wsbctechnicalblog.github.io/back-to-basics-fear-of-change.html) / July 2024
+- [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) Dec 2023
+- [VSTS - The Road to Continuous Delivery with Visual Studio Team Services](https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services) / December 2017
 
 
