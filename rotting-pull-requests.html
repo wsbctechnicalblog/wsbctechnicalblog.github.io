@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Feature-flag Driven Development (FFDD) - </title>
+        <title>Rotting Pull Requests - Detection And Actioning - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,51 +33,75 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/feature-flag-driven-development.html" rel="bookmark"
-            title="Permalink to Feature-flag Driven Development (FFDD)">Feature-flag Driven Development (FFDD)</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="bookmark"
+            title="Permalink to Rotting Pull Requests - Detection And Actioning">Rotting Pull Requests - Detection And Actioning</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 04 September 2020</div>
+        <div class="read-more">Posted by Martin M. Lacey on Fri 15 November 2024</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Replace physical modularity with logical modularity</p>
+            <p>Explore the root cause of un-actioned pull-requests, how to detect and remedy (Part 1).</p>
         </div>
     
         <div class="entry-content">
-            <p>Experts say that repo branching workflow is poor man’s modularization (by experts I mostly refer to Martin Fowler and his team of deep thinkers). What do we mean by branching being poor man’s modularization?</p>
-<h2>Well modularized repo</h2>
-<p>Let’s examine how change management propagates in a repo that has been properly modularized from the get go:</p>
-<p>A new feature needs to be added to the product, which necessitates change to the codebase. Because the code is fully modularized, it is closed to any changes related to the new feature, but is at the same time open for any changes that would extend its feature set (the Open/Closed Principle, part of the SOLID package).</p>
-<p>The new feature will thus be coded by adding brand new modules. Barely any line of existing code will have to be modified, since the new feature would be a plugin.</p>
-<h2>Poorly modularized repo</h2>
-<p>A code that is poorly modularized will have to be modified (sometimes heavily) in order to introduce a new feature into the product.</p>
-<p>Any time two or more people are working on the same block of code, they introduce a moving target. Changes made to the same codebase may result in a conflict. That conflict potentially arises at the time when we are trying to retrofit new code into the existing codebase. Those are the dreaded merge conflicts.</p>
-<h2>Why do we branch in the first place?</h2>
-<p>The main reason we copy the existing code base and turn it into a feature branch is to protect the healthy master branch from getting corrupted. Teamwork often necessitates that two or more feature branches get created during sprint, and that means that there is an ongoing work that is happening in parallel. When the time comes to bring the new changes to the healthy branch, some of those new changes may mutually collide.</p>
-<p>So the caution we exercise by branching is introducing unwanted risks of creating merge conflicts.</p>
-<h2>How to avoid merge conflicts?</h2>
-<p>During the workflow described above, it is not really possible to avoid potential merge conflicts. But we can certainly minimize potential conflicts.</p>
-<p>It all boils down to timing. When we take a copy of the healthy branch and go away and begin making changes to the code, the clock starts ticking. The longer we wait to bring our changes to the healthy branch, the greater that chances that someone else had already made changes to it that may collide with our changes.</p>
-<p>That is one of the main reasons why best practices advocate short-lived branches. The shorter the lifespan of a branch, the smaller the risk of having merge conflicts. And lesser merge conflicts mean quicker value delivery and lesser churn.</p>
-<p>And of course, merge conflicts are of much lower possibility in well modularized codebases, as we have already discussed above.</p>
-<h2>Feature flags</h2>
-<p>Much as Martin Fowler et al claim that branching is poor man’s modularization, it is also possible to say that branching is poor man’s feature flags. So what are feature flags?</p>
-<p>Feature flags could be viewed as logical branching. While physical branches, as they are practiced in modern engineering mostly using git, require making a physical copy of the repo and giving it a unique name, feature flags could be used without necessarily having to make a physical copy. When using Feature-Flag Driven Development (FFDD), we simply leave the existing code intact and write new modules that get conditionally called. The conditional logic is binary, and is governed by the feature flag (which could be either in on or in off state). If the flag is in the on state, the new code will get executed. Otherwise, execution continues as usual (old code runs).</p>
-<p>FFDD enables us to add potentially risky changes to the healthy codebase, without going through the song and dance of trying to merge the changes and risking merge conflicts. This technique then enables us to quickly ship new features in stealth mode. Our regular customer population will not get affected, since they will still be using the old, tested codebase. But our QA can then safely assess and evaluate the risks and potential merits of the new code. That activity would be the equivalent of the Pull Request in the branch-driven development discipline. If the PR of the code under the feature flag passes the muster, the old code gets decommissioned and the new code becomes the healthy version of the codebase.</p>
-<p><br /><br /></p>
+            <h1>Rotting Pull Requests: Detection and Actioning</h1>
+<p>We have a problem, Houston, and we need to address it to ensure our ship can execute its mission. We have too many changes <em>in-flight</em>, waiting to be merged into our codebase to improve our systems and mission outcomes. Yet, we keep adding more features without dealing with the backlog of changes we’ve already developed!</p>
+<p>Are you approaching this nightmare scenario? We are.</p>
+<blockquote>
+<p><img alt="Visualizing a growing backlog in the form of an overloaded task board" src="/images/engineering-practices-rotting-pull-requests-1.png"></p>
+</blockquote>
+<p>The exasperation of too many pull requests in-flight clogs the workflow. The chaotic backlog and continuous arrival of new features highlight the urgency and delays in merging changes to improve system outcomes.</p>
+<p>It’s not a good place to be. We need to get our processes back on track to deliver what the business needs and expects—at a high level of verified quality and functionality, without introducing vulnerabilities.</p>
+<hr>
+<h2>The Hot Seat: Addressing 900+ Rotting Pull Requests</h2>
+<p>My manager came to me today, asking: <strong>How can we promote good practices and get the 900+ rotting pull requests actioned to reduce the backlog?</strong></p>
+<p>This is the subject of today’s post—and the hot seat we share.</p>
+<h3>Where Did All These Pull Requests Come From?</h3>
+<p>The first questions should be: </p>
+<ul>
+<li>Where did all these pull requests come from? </li>
+<li>Why are they not being actioned? </li>
+</ul>
+<p>Are teams too busy adding features to perform necessary code reviews and foster team collaboration?</p>
+<h3>Quality and the Feature Farming Trap</h3>
+<p>What happens to quality when teams act like <em>feature farmers</em>, focusing only on the next big functionality without seeing the big picture? Yes, Houston, we have a problem.</p>
+<p>We have a massive codebase—over 300 applications and growing. Many of these applications are aging and of questionable utility, requiring upgrades to avoid obsolescence and unsupported components.</p>
+<p>To address this, we’ve created automation that generates the needed upgrade changes and creates pull requests for engineers to review before committing changes to the repository. It’s an odd place to be, having code enhanced automatically and then reviewed by a human to ensure quality.</p>
+<hr>
+<h2>Automation and the Paradigm Shift</h2>
+<p>Typically, we write tests to verify that changes meet functional (and non-functional) requirements. However, this is different. We’re now reviewing and approving code changes generated by a program for another program—it just feels weird. It’s a mind-shift.</p>
+<p>In the age of Artificial Intelligence (AI), our existing paradigms are shifting and evolving. We must ensure our processes are solid yet malleable, with even higher levels of quality and functionality. To achieve this, we need to step back from the <em>feature factory</em> we’ve become and reevaluate how we operate.</p>
+<blockquote>
+<p><img alt="Engineers moving from old paradigm to a Software Factory using AI to get to the next level" src="/images/engineering-practices-rotting-pull-requests-1.png"></p>
+</blockquote>
+<hr>
+<h2>The Path Forward: Embracing Automation and Addressing Backlogs</h2>
+<p>This paradigm shift requires us to start viewing our automation as a <strong>technical advantage</strong>—an enabler to grow beyond our current struggles. But first we <strong>must</strong> address our backlog of our &lt;*&gt; debt, which include technical, technology, code, test, and other classification of Software Engineering related obligations deferred or incurred through time and revisions. Awareness is the first step before meaningful change can occur.</p>
+<h3>The Challenges of Automation in Pull Requests</h3>
+<p>One drawback of automation in creating pull requests for tech upgrades and security fixes is the unnoticed accumulation of PRs due to heavy workloads. Intended to simplify processes and empower engineers, these PRs often get lost among the many others. As mentioned in previous blog posts, our automation also creates a detailed work item to help engineers track their technical debt and its remediation.</p>
+<p>The key question remains: <strong>How can we encourage engineers to engage with automated PRs and truly empower them by automating tedious tech debt tasks?</strong></p>
+<hr>
+<p><strong>Watch-This-Space</strong>: We are working on this issue, and our expert on the matter will blog about it in upcoming posts.</p>
+<h1>References</h1>
+<ul>
+<li><a href="https://wsbctechnicalblog.github.io/software-engineering-standardization.html">Software Engineering Standardization</a> / November 2024</li>
+<li><a href="https://wsbctechnicalblog.github.io/back-to-basics-fear-of-change.html">Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!</a> / July 2024</li>
+<li><a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html">Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow</a> / Dec 2023</li>
+<li><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services">VSTS - The Road to Continuous Delivery with Visual Studio Team Services</a> / December 2017</li>
+</ul>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags </a>
-        | <a href="https://wsbctechnicalblog.github.io/feature-flag-driven-development.html" rel="bookmark"
-         title="Permalink to Feature-flag Driven Development (FFDD)">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="bookmark"
+         title="Permalink to Rotting Pull Requests - Detection And Actioning">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

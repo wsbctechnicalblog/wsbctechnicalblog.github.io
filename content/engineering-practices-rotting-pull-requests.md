@@ -1,5 +1,5 @@
 Title: Rotting Pull Requests - Detection And Actioning
-Date: 2024-01-19
+Date: 2024-11-15
 Category: Posts 
 Tags: azure-devops, engineering, automation
 Slug: rotting-pull-requests
@@ -30,6 +30,7 @@ This is the subject of today’s post—and the hot seat we share.
 ### Where Did All These Pull Requests Come From?
 
 The first questions should be: 
+
 - Where did all these pull requests come from? 
 - Why are they not being actioned? 
 
@@ -69,9 +70,9 @@ The key question remains: **How can we encourage engineers to engage with automa
 **Watch-This-Space**: We are working on this issue, and our expert on the matter will blog about it in upcoming posts.
 
 # References
-- [Software Engineering Standardization](https://wsbctechnicalblog.github.io/software-engineering-standardization.html)] November 2024
-- [Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!](https://wsbctechnicalblog.github.io/back-to-basics-fear-of-change.html) / July 2024
-- [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) Dec 2023
-- [VSTS - The Road to Continuous Delivery with Visual Studio Team Services](https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services) / December 2017
 
+- [Software Engineering Standardization](https://wsbctechnicalblog.github.io/software-engineering-standardization.html) / November 2024
+- [Embrace the Future - Use Automation and AI to Elevate Your Engineering Career!](https://wsbctechnicalblog.github.io/back-to-basics-fear-of-change.html) / July 2024
+- [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023
+- [VSTS - The Road to Continuous Delivery with Visual Studio Team Services](https://learn.microsoft.com/en-us/archive/msdn-magazine/2017/connect/vsts-the-road-to-continuous-delivery-with-visual-studio-team-services) / December 2017
 
