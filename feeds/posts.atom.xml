@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-11-15T00:00:00-08:00</updated><entry><title>Rotting Pull Requests - Detection And Actioning</title><link href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="alternate"></link><published>2024-11-15T00:00:00-08:00</published><updated>2024-11-15T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-15:/rotting-pull-requests.html</id><summary type="html">&lt;p&gt;Explore the root cause of un-actioned pull-requests, how to detect and remedy (Part 1).&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Rotting Pull Requests: Detection and Actioning&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-11-20T00:00:00-08:00</updated><entry><title>Why is the Closed Date field empty in my work items?</title><link href="https://wsbctechnicalblog.github.io/azure-devops-empty-closed-date-field.html" rel="alternate"></link><published>2024-11-20T00:00:00-08:00</published><updated>2024-11-20T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-20:/azure-devops-empty-closed-date-field.html</id><summary type="html">&lt;p&gt;More importantly, what is the issue and how do we resolve it?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you notice that the Closed Date field is empty in some closed Azure DevOps work items or want to ensure your Azure DevOps backlog is accurate, run this query in your Azure DevOps organization to get a complete picture: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Closed data anomaly query .&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="query" src="../images/azure-devops-empty-closed-date-field-1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;&lt;/p&gt;
+&lt;p&gt;Select the &lt;code&gt;Query across projects&lt;/code&gt; option to do a complete sweep of your Azure DevOps organization. If your query returns over 20K work items, divide it and run it project by project in Azure DevOps.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We encountered challenges in troubleshooting some of our tracking reports and determined that while the reports were accurate, the source data from Azure DevOps work items was problematic. Upon running the query in our environment, we identified a stunning 5199 work items lacking crucial data.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Closed data anomaly query showing empty closed date fields.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="query result" src="../images/azure-devops-empty-closed-date-field-2.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Recognizing this as a product issue, we submitted an Azure Support Ticket (#2410160040016196). Microsoft acknowledged a bug in Azure DevOps that failed to add the Closed Date to the work item template for custom work item types by default years ago. &lt;/p&gt;
+&lt;p&gt;The solution involves adding the Closed Date field and subsequently hiding it from the work item layout. However, work items closed prior to applying this fix lack a Closed Date value.&lt;/p&gt;
+&lt;p&gt;Regrettably, Microsoft did not provide a public script to address this issue. Therefore, if you require a custom script to update previously closed work items, please await the second part of this work item, which is currently being developed by my colleague, Daniel Broderick.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category></entry><entry><title>Rotting Pull Requests - Detection And Actioning</title><link href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="alternate"></link><published>2024-11-15T00:00:00-08:00</published><updated>2024-11-15T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-15:/rotting-pull-requests.html</id><summary type="html">&lt;p&gt;Explore the root cause of un-actioned pull-requests, how to detect and remedy (Part 1).&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Rotting Pull Requests: Detection and Actioning&lt;/h1&gt;
 &lt;p&gt;We have a problem, Houston, and we need to address it to ensure our ship can execute its mission. We have too many changes &lt;em&gt;in-flight&lt;/em&gt;, waiting to be merged into our codebase to improve our systems and mission outcomes. Yet, we keep adding more features without dealing with the backlog of changes we’ve already developed!&lt;/p&gt;
 &lt;p&gt;Are you approaching this nightmare scenario? We are.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2152,63 +2167,4 @@ An actionable &lt;strong&gt;ACCEPTANCE CRITERIA&lt;/strong&gt; is Key! Acceptanc
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;Have fun chatting with your AI Pair Engineer Copilot and watch this space for follow-up posts by my colleagues evaluating their Copilot. &lt;/p&gt;
-&lt;p&gt;Also checkout our &lt;a href="/github-copilot-for-business-faq.html"&gt;GitHub Copilot for Business FAQ&lt;/a&gt; blog post😊.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="github"></category></entry><entry><title>Embedding a Quality-Driven Engineering Mindset in Our DNA</title><link href="https://wsbctechnicalblog.github.io/embedding-a-quality-driven-engineering-mindset-in-our-dna.html" rel="alternate"></link><published>2023-10-02T00:00:00-07:00</published><updated>2023-10-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-10-02:/embedding-a-quality-driven-engineering-mindset-in-our-dna.html</id><summary type="html">&lt;p&gt;An engineering mindset that prioritizes quality is crucial for producing robust and reliable solutions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Having a &lt;strong&gt;quality-first&lt;/strong&gt; and &lt;strong&gt;quality-driven engineering&lt;/strong&gt; mindset ensures that &lt;strong&gt;QUALITY&lt;/strong&gt; is not treated as an afterthought, but rather ingrained in the design, development, and operational processes from the outset. It encourages proactive measures such as thorough testing, code reviews, experimentation, and an appetite for guiding guardrails, ultimately leading to a higher standard of work. It promotes a culture of excellence and continuous improvement within the engineering team - and most importantly, delighted &lt;strong&gt;end-users&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Choosing the alternative means embracing a lifestyle of constant &lt;strong&gt;context-switching&lt;/strong&gt;, 2 AM incident calls, and a perpetually &lt;strong&gt;reactive&lt;/strong&gt; approach. This path leads to frustration, burnout, and increased operational costs. Engineers will find themselves caught in the continuous hamster wheel, struggling to balance firefighting with delivering value. The result? Unhappy end-users, potentially tarnishing your reputation in the long run.&lt;/p&gt;
-&lt;p&gt;Fortunately we all have a choice.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Here are several recommended strategies that you should consider exploring if you choose to adopt a QUALITY mindset.&lt;/p&gt;
-&lt;h1&gt;Technical Debt rusts Quality!&lt;/h1&gt;
-&lt;p&gt;The accrual of technical debt can significantly degrade the overall quality of a system over time. It is essential to proactively manage and address technical debt to maintain a high level of quality in software development. In other words, pro-actively avoid the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Inconsistent or overly complicated code&lt;/strong&gt; - code should be recognisable and readable by all engineers.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Design shortcuts&lt;/strong&gt; - align with your architecture, operations, and development patterns and guardrails. &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Skipped or insufficient testing&lt;/strong&gt; - if you are strapped into your seat, atop a Falcon Heavy rocket using your software, you should feel comfortable to click the launch button.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Outdated or end-of-life products&lt;/strong&gt; - proactively monitor and deprecate outdated dependencies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Incomplete or no documentation&lt;/strong&gt; - code should be self-explanatory, complemented by documentation that makes it easy to get the context,  overview, and flow. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Stop supporting the notion of "quick experiment", "proof-of-concept", or "throw-away" code. I have watched too many instances of this code ending up in production solutions and becoming the weakest link. Use common guidelines, guardrails, and peer-review workflows (such as pull request with policies) to avoid your solution starting to rust and its quality to deteriorate over time.&lt;/p&gt;
-&lt;h1&gt;Think team!&lt;/h1&gt;
-&lt;p&gt;We are accountable for QUALITY as a team and as a group of teams - in other words, we "are one" when it comes to quality and taking responsibility for how we design, build, test, and maintain the solutions we build. As &lt;strong&gt;software development engineer&lt;/strong&gt; our specialty is "developing code" and as &lt;strong&gt;quality assurance engineer&lt;/strong&gt; our specialty is "testing code”. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/embedding-a-quality-driven-engineering-mindset-in-our-dna-1.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;However, this does not imply that developers are only tasked with writing code. They also shoulder responsibilities such as creating unit tests, executing test automation, performing code vulnerability scans, and in some cases, conducting manual tests to enhance the overall quality of our work. As engineers, we hold a stewardship role in our domain of expertise, enforcing associated guardrails, and mentoring others within our team, group, organization, or community. But, when it comes to quality, it is a collective team responsibility!&lt;/p&gt;
-&lt;p&gt;Gone are the days of simply tossing tasks over the wall to different roles like content editors, developers, testers, admins, and so forth. The only boundary we acknowledge are the faintly dotted lines that delineate teams and groups of teams within our organization. Beyond that, we operate and own QUALITY as one unified entity.&lt;/p&gt;
-&lt;h1&gt;Think product team!&lt;/h1&gt;
-&lt;p&gt;When you operate with a healthy &lt;a href="https://www.donovanbrown.com/post/what-is-devopss"&gt;DevOps&lt;/a&gt; mindset, you will also be familiar with the "product mindset", which implies that we, as a team, are accountable for our solution from ideation to deprecation. Until we switch off the solution lights, we own the accountability for QUALITY!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Love a comment from my colleague: "&lt;em&gt;Pride, feeling like you've created and contributed to something you are proud of - that is the inner spirit we need to kindle.&lt;/em&gt;"
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Switch to &lt;a href="/shift-from-project-to-product-thinking.html"&gt;Shift from project to product thinking&lt;/a&gt; for more insight into the product mindset.&lt;/p&gt;
-&lt;p&gt;Alternatively as per GPT: "&lt;em&gt;Thinking like a product team encourages a mindset that prioritizes the value delivered to end-users. This perspective helps ensure that the software being developed is aligned with the needs and expectations of the users, leading to more successful and impactful products. It also fosters a sense of ownership and &lt;strong&gt;accountability for the quality&lt;/strong&gt; and functionality of the software, which ultimately leads to higher-quality solutions. Thinking like a product team also encourages collaboration, innovation, and a focus on continuous improvement, which are all essential elements for building successful software products.&lt;/em&gt;"&lt;/p&gt;
-&lt;h1&gt;Embrace guardrails for a safer journey&lt;/h1&gt;
-&lt;p&gt;Guardrails are important to keep us within a safe zone to cross a bridge or in software engineering to create a safety net to promote consistency, standardization, and security. They allow us to thrive, create, and innovate in a structured and secure environment, while mitigating risks and ensuring long-term quality.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/embedding-a-quality-driven-engineering-mindset-in-our-dna-2.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Outcomes of guardrails, all of which support &lt;strong&gt;quality&lt;/strong&gt; include things such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Risk Mitigation&lt;/strong&gt;, such as security vulnerabilities, system failures, and end-of life issues.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Consistency and Standardization&lt;/strong&gt; making solutions easier to maintain and troubleshoot.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt;, such as industry standards and organizational policies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Collaboration&lt;/strong&gt; fostered when everyone has an understanding of what and how we are building our solution.
-Scalability: Guardrails facilitate scaling efforts by ensuring that new code and practices align with established standards. This makes it easier to onboard new team members and integrate new features or services.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Confidence&lt;/strong&gt; created when everyone follows set of guidelines to follow, enciuraging creative problem-solving and innovation.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cost-Efficiency&lt;/strong&gt; by avoiding previous mistakes, saving time, and money.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Forward-thinking&lt;/strong&gt; promoted by promoting practices that are known, proven, and sustainable. This benefits the maintenance and evolution of solutions over time.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Avoid rigid and monolithic architectures&lt;/strong&gt; which impede the system's adaptability and evolution, especially in today's rapidly changing technological landscape. &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Work smarter and more efficiently&lt;/strong&gt; to optimise and capitalise on down time.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are many more examples, but I need to touch on my 80:20 rule and then stop venting.&lt;/p&gt;
-&lt;h1&gt;80:20 planning rule&lt;/h1&gt;
-&lt;p&gt;Lastly, it is important to discuss how we plan and allocate our time. If we aim to fill every minute of our schedule, we are setting ourselves up to work beyond our capacity. This leaves us scrambling to address unexpected issues, bugs, and the lingering technical debt that tends to resurface repeatedly. I know it, you know it - it is time to smarter and more efficiently. We must move away from burnout and start embracing a healthier work:life balance.  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/embedding-a-quality-driven-engineering-mindset-in-our-dna-3.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I encourage my team to allocate 80% of our capacity for delivering business value and addressing bug fixes. &lt;/p&gt;
-&lt;p&gt;The remaining 20% is set aside for adapting to architecture changes, handling unexpected events, supporting disruptions, attending meetings, fostering innovation, engaging in continuous learning, and, most importantly, consistently reducing our technical debt. This approach empowers us to maintain the highest standard of quality in our work and a healthy work:life balance.&lt;/p&gt;
-&lt;p&gt;If all else fails, learn to say "&lt;strong&gt;NO&lt;/strong&gt;".&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;In my opinion, being an "engineer" entails embodying traits like forward-thinking, accountability, a commitment to quality, and an unwavering passion for technology. These qualities should be embedded in the DNA of my engineering identity.&lt;/p&gt;
-&lt;p&gt;How are you fostering an Engineering Mindset for Quality?&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="eliminate-waste"></category><category term="quality"></category></entry></feed>
+&lt;p&gt;Also checkout our &lt;a href="/github-copilot-for-business-faq.html"&gt;GitHub Copilot for Business FAQ&lt;/a&gt; blog post😊.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="github"></category></entry></feed>

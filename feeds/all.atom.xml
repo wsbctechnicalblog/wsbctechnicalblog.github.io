@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-11-15T00:00:00-08:00</updated><entry><title>Rotting Pull Requests - Detection And Actioning</title><link href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="alternate"></link><published>2024-11-15T00:00:00-08:00</published><updated>2024-11-15T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-15:/rotting-pull-requests.html</id><summary type="html">&lt;p&gt;Explore the root cause of un-actioned pull-requests, how to detect and remedy (Part 1).&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Rotting Pull Requests: Detection and Actioning&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-11-20T00:00:00-08:00</updated><entry><title>Why is the Closed Date field empty in my work items?</title><link href="https://wsbctechnicalblog.github.io/azure-devops-empty-closed-date-field.html" rel="alternate"></link><published>2024-11-20T00:00:00-08:00</published><updated>2024-11-20T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-20:/azure-devops-empty-closed-date-field.html</id><summary type="html">&lt;p&gt;More importantly, what is the issue and how do we resolve it?&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you notice that the Closed Date field is empty in some closed Azure DevOps work items or want to ensure your Azure DevOps backlog is accurate, run this query in your Azure DevOps organization to get a complete picture: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Closed data anomaly query .&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="query" src="../images/azure-devops-empty-closed-date-field-1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;&lt;/p&gt;
+&lt;p&gt;Select the &lt;code&gt;Query across projects&lt;/code&gt; option to do a complete sweep of your Azure DevOps organization. If your query returns over 20K work items, divide it and run it project by project in Azure DevOps.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We encountered challenges in troubleshooting some of our tracking reports and determined that while the reports were accurate, the source data from Azure DevOps work items was problematic. Upon running the query in our environment, we identified a stunning 5199 work items lacking crucial data.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Closed data anomaly query showing empty closed date fields.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="query result" src="../images/azure-devops-empty-closed-date-field-2.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Recognizing this as a product issue, we submitted an Azure Support Ticket (#2410160040016196). Microsoft acknowledged a bug in Azure DevOps that failed to add the Closed Date to the work item template for custom work item types by default years ago. &lt;/p&gt;
+&lt;p&gt;The solution involves adding the Closed Date field and subsequently hiding it from the work item layout. However, work items closed prior to applying this fix lack a Closed Date value.&lt;/p&gt;
+&lt;p&gt;Regrettably, Microsoft did not provide a public script to address this issue. Therefore, if you require a custom script to update previously closed work items, please await the second part of this work item, which is currently being developed by my colleague, Daniel Broderick.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category></entry><entry><title>Rotting Pull Requests - Detection And Actioning</title><link href="https://wsbctechnicalblog.github.io/rotting-pull-requests.html" rel="alternate"></link><published>2024-11-15T00:00:00-08:00</published><updated>2024-11-15T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-11-15:/rotting-pull-requests.html</id><summary type="html">&lt;p&gt;Explore the root cause of un-actioned pull-requests, how to detect and remedy (Part 1).&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Rotting Pull Requests: Detection and Actioning&lt;/h1&gt;
 &lt;p&gt;We have a problem, Houston, and we need to address it to ensure our ship can execute its mission. We have too many changes &lt;em&gt;in-flight&lt;/em&gt;, waiting to be merged into our codebase to improve our systems and mission outcomes. Yet, we keep adding more features without dealing with the backlog of changes we’ve already developed!&lt;/p&gt;
 &lt;p&gt;Are you approaching this nightmare scenario? We are.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1999,29 +2014,4 @@ An actionable &lt;strong&gt;ACCEPTANCE CRITERIA&lt;/strong&gt; is Key! Acceptanc
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=yOl487Qt8eM"&gt;&lt;img alt="Podcast" src="../images/innovation-podcast-is-agile-dead-1.png"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Click &lt;a href="https://www.youtube.com/watch?v=yOl487Qt8eM"&gt;here&lt;/a&gt; to listen to the conversation.&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="agile"></category></entry><entry><title>GitHub Copilot for Business FAQ</title><link href="https://wsbctechnicalblog.github.io/github-copilot-for-business-faq.html" rel="alternate"></link><published>2023-11-12T00:00:00-08:00</published><updated>2023-11-12T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-11-12:/github-copilot-for-business-faq.html</id><summary type="html">&lt;p&gt;Frequently Asked Questions (FAQ) that have been mushrooming during our evaluation phase. Part 2 - FAQ.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to our GitHub Copilot experimentation and usage FAQ Page! This page provide you with comprehensive answers to common questions raised by our engineers about &lt;a href="https://resources.github.com/copilot-for-business"&gt;GitHub Copilot for Business&lt;/a&gt;, an innovative tool that revolutionizes code development through intelligent suggestions and auto-completion. Whether you are a seasoned engineer or just starting out, this FAQ page aims to enhance your experience with GitHub Copilot and address any inquiries you may have. If you do not find the information you are looking for, feel free to reach out through the provided discussion channel, and we will be happy to assist you.&lt;/p&gt;
-&lt;h1&gt;Frequently asked questions (FAQ)&lt;/h1&gt;
-&lt;p&gt;Checkout our &lt;a href="/github-copilot-for-business-setup.html"&gt;GitHub Copilot for Business Setup&lt;/a&gt; blog post😊 if you have &lt;strong&gt;setup&lt;/strong&gt; questions.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4&gt;1. Can I be logged onto GitHub with my &lt;code&gt;corporate&lt;/code&gt; and &lt;code&gt;personal&lt;/code&gt; GitHub account at the same time?&lt;/h4&gt;
-&lt;p&gt;Currently, simultaneous support for two accounts is not available. However, you can switch between accounts by logging out of the current account and logging into the other one.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4&gt;2. What is the difference between Copilot for &lt;code&gt;Business&lt;/code&gt; and Copilot for &lt;code&gt;Individuals&lt;/code&gt;?&lt;/h4&gt;
-&lt;p&gt;See &lt;a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/overview-of-github-copilot/about-github-copilot-for-business#understanding-the-differences-between-copilot-for-business-and-copilot-for-individuals"&gt;Understanding the differences between Copilot for Business and Copilot for Individuals&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4&gt;3. Why am I seeing this error in my Copilot log?&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;[INFO] [auth] [2023-11-02T14:57:44.993Z] Invalid copilot token: missing token: 403&lt;/code&gt;
-&lt;code&gt;[ERROR] [default] [2023-11-02T14:57:45.005Z] Extension activation failed: "User not authorized"&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Your GitHub Copilot for Business license is not currently valid. If you are using an active directory (AD) group for license management, it is possible that you have been removed from the AD group or were never added in the first place.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4&gt;4. Can I use two different browsers that are connected to each of my two different GitHub accounts?&lt;/h4&gt;
-&lt;p&gt;According to &lt;a href="https://twitter.com/colindembovsky"&gt;Cσʅιɳ DҽɱႦσʋʂƙყ&lt;/a&gt; you can do one better - "&lt;em&gt;In the browser you can now natively switch accounts: &lt;a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/switching-between-accounts#about-switching-between-your-accounts"&gt;Switching between accounts&lt;/a&gt;. For logging in to Copilot, you have to switch accounts if you want to bounce between work and personal accounts.&lt;/em&gt;"&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4&gt;5. Any useful troubleshooting links?&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/visualstudio/ide/work-with-github-accounts?view=vs-2022#troubleshooting-sign-in-issues"&gt;Troubleshooting sign in issues&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;I trust that this FAQ list is enhancing the value of your GitHub Copilot evaluation. If you have additional frequently asked questions and answers to contribute to this post/list, feel free to leave a comment below.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="github"></category></entry></feed>
+&lt;p&gt;Click &lt;a href="https://www.youtube.com/watch?v=yOl487Qt8eM"&gt;here&lt;/a&gt; to listen to the conversation.&lt;/p&gt;</content><category term="Posts"></category><category term="event"></category><category term="agile"></category></entry></feed>
