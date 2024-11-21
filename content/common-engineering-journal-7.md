@@ -44,25 +44,42 @@ What stands out, as illustrated in the workflow, is that the building and deploy
 
 Why has build and deployment automation become standard, while manual QA testing persists? This paradox warrants reconsideration for greater efficiency and innovation.
 
+We must minimize **repetitive tasks** and **shorten feedback** loops. **Quick feedback** on changes, whether automated or manual, is essential. Delayed feedback makes it harder and costlier to fix issues as the solution drifts from our goals.
+
 ---
 
 # Embracing new ways!
 
 > ![Future Way](../images/common-engineering-journal-7-2.png) 
 
-<TBD>
+The image above depicts a contemporary work environment where individuals collaborate, extensively utilize automation, and visualize feedback on automation processes, changes, quality, and progress. The atmosphere is one of active engagement, as well as continuous and transparent activity - just like in my dream.
+
+Before detailing our vision, it's crucial to understand that this journey will be challenging and time-consuming. Success requires everyone's commitment. Without unified support, we risk an unsuccessful and costly transformation.
+
+We foresee a major mindset shift in the roles of QA Engineers and Software Engineers. Any engineer, contributor, or automation tool can make code changes. The v2 CI/CD blueprint will automatically trigger continuous integration within pull requests as part of build validation checks.
 
 > ![Future Way Flow](../images/common-engineering-journal-7-5.png) 
 
-<TBD>
+This process initiates automated security and quality validations along with automated tests. The potential for enhancement relies on advancements in service virtualization, on-demand environment provisioning, and synthetic test data creation using artificial intelligence—a concept from one of our latest InnoFest/Hackathon teams.
+
+Overall, the lead time to validate code changes is reduced, enabling faster and more efficient responses to issues or new features.
+
+In this envisioned future, automated technology debt remediation systems would autonomously verify test results and determine whether human validation is required or if the changes can be directly committed to the main/master branch.
+
+
+![WHY](../images/common-engineering-journal-7-0.png) 
+
+- Engineers delegate repetitive tasks like upgrades to automation, freeing them to develop new features, explore ideas, learn skills, or take a break.
+- Consistency and standardization contribute to secure, high-quality, and reliable solutions. 
+- Additionally, this approach can lead to cost savings, time efficiency, reduced capacity stress, and an improved work environment.
 
 ---
 
-# Our 2025 Plan!
+This is our chance to redefine work, innovate, and excel as engineers. By adopting this vision, we improve processes and empower ourselves to focus on creating impactful solutions, exploring new ideas, and building features that delight users. Automation, supported by Artificial Intelligence, will relieve us of tedious tasks, letting us concentrate on meaningful, challenging work.
 
-<TBD>
+Instead of setting goals to merely ```empower engineers to reduce technical debt,``` we should strive for the more ambitious objective of ```eliminating technical debt entirely```, thus relieving engineers from the concern of it altogether.
 
 ---
 
-<CLOSE - SUMMARY >
+Thoughts?
 
