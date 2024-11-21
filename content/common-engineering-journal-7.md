@@ -32,11 +32,17 @@ I would like to respectfully disagree and reference a slide, as above, I present
 
 > ![Hard Way](../images/common-engineering-journal-7-1.png) 
 
-<TBD>
+In the traditional approach to software development, developers focus on writing new feature code. At a certain point, the team builds the code, deploys the release to one or more pre-installed environments, and hands it over to quality assurance (QA) testers. These testers then validate the software using a structured test plan comprised of test suites and cases.
+
+Most of this testing was manual because QA testers possessed the specialized business knowledge and understanding of intricate dependencies necessary to validate the system. Consequently, they executed the same test plan repeatedly, cycle after cycle.
 
 > ![Hard Way Flow](../images/common-engineering-journal-7-4.png) 
 
-<TBD>
+What stands out, as illustrated in the workflow, is that the building and deployment processes have been automated for years—decades, in fact. After all, are you still manually compiling, linking, and copying files using a command prompt? Probably not.
+
+![WHY](../images/common-engineering-journal-7-0.png) 
+
+Why has build and deployment automation become standard, while manual QA testing persists? This paradox warrants reconsideration for greater efficiency and innovation.
 
 ---
 
