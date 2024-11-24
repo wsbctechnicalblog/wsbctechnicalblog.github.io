@@ -29,3 +29,9 @@ The solution involves adding the Closed Date field and subsequently hiding it fr
 
 Regrettably, Microsoft did not provide a public script to address this issue. Therefore, if you require a custom script to update previously closed work items, please await the second part of this work item, which is currently being developed by my colleague, Daniel Broderick.
 
+---
+
+## Reference information
+
+Based on research the issue happened a long time ago and may have been slumbering in your backlogs unnoticed. Read [VSTS: "Closed Date" and "Closed By" are empty for Work Item Types "Change Request","Service Request","System Alert" in result grid of Queries](https://developercommunity.visualstudio.com/t/vsts-closed-date-and-closed-by-are-empty-for-work/236045) for more details.
+
