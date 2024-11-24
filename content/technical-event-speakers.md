@@ -24,7 +24,8 @@ For the DevOps Meetup Vancouver, prepare a 30–45-minute presentation followed 
 - **Challenges of DevOps Implementations** - Explore common obstacles in adopting DevOps practices and ways to overcome them. Topics include cultural resistance, siloed teams, toolchain complexity, scaling automation, security in CI/CD pipelines, and balancing speed with quality. Through discussions, case studies, and shared experiences, attendees gain practical strategies and insights to address these challenges and foster collaboration and continuous improvement.
 - **Technical Insights** - Brings together professionals, enthusiasts, and learners to share knowledge and collaborate on technical topics. These sessions include presentations, demonstrations, or discussions on new trends, tools, frameworks, or best practices. They provide a community-driven environment for networking, idea exchange, and gaining practical insights, suitable for both experts and newcomers. Technology meetups aim to build connections, spark curiosity, and drive innovation within a dynamic community.
 
-> DevOps Vancouver Meetup 
+> DevOps Vancouver Meetup
+>
 > ![devops meetup](../images/technical-event-speakers-2.png) 
 
 To ensure a seamless event, confirm all session details by the first of the meetup month. This includes providing the date, location, session abstract, speaker details, and finalized slides in PDF format. Adhering to these guidelines ensures well-prepared sessions that deliver value to both attendees and organizers.
@@ -35,6 +36,8 @@ To ensure a seamless event, confirm all session details by the first of the meet
 
 Preparation, content delivery, and audience engagement are key to a successful technical presentation. Tailor your content to your audience’s expertise and set clear objectives for a focused message. Practice and use visuals and storytelling to simplify complex topics. Test equipment and have backups for demos. Start with a hook, use real-world examples, and keep a clear structure. Engage your audience, adapt to feedback, and be authentic to create a memorable experience. This approach enhances learning and builds your credibility and confidence.
 
+> Technical Speaker Tips
+>
 > ![speaker tips](../images/technical-event-speakers-3.png) 
 
 As summarised on the working agreement cheat sheet, we recommend that you:
