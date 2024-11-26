@@ -44,7 +44,7 @@ As summarised on the working agreement cheat sheet, we recommend that you:
 
 ## Preparation
 
-- **Know your aAudience** - Tailor content to their expertise. Research backgrounds if possible.
+- **Know your audience** - Tailor content to their expertise. Research backgrounds if possible.
 - **Clear objectives** - Clarify what you want them to learn or take away.
 - **Practice** - Rehearse timing and delivery, but adapt based on audience feedback and reactions.
 - **Keep it simple** - Use analogies, visuals, and storytelling for technical concepts.
