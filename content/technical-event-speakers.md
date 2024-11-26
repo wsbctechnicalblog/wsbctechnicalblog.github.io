@@ -66,7 +66,7 @@ As summarised on the working agreement cheat sheet, we recommend that you:
 
 ## Engagement
 
-- **Encourage interaction** - Engage the audience with questions, polls, or activities.
+- **Encourage interaction** - Engage the audience with questions, polls, or activities. Using an interactive [mentimeter](https://www.mentimeter.com) poll, sharing its link on your slides, and using it to review audience feedback or vote on the next topic can effectively engage the audience.
 - **Adapt to feedback** - Adjust your delivery based on audience feedback.
 - **Be approachable** - Be genuine and relatable; use humor when appropriate.
 
