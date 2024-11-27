@@ -4,7 +4,7 @@ Category: Posts
 Tags: event, learning, posters
 Slug: technical-event-speakers
 Author: Willy-Peter Schaub
-Summary: Tips and ticks for preparing as a technical event speaker, from preparing your message to engaging your audience effectively.
+Summary: Tips and tricks for preparing as a technical event speaker, from preparing your message to engaging your audience effectively.
 
 Preparing for a technical community event, such as the [DevOps Vancouver meetup](https://www.meetup.com/DevOps-Vancouver-BC-Canada), is essential to deliver an impactful message. A well-prepared speaker builds credibility and trust, ensuring the presentation is relevant and engaging. This preparation boosts confidence, allows for smoother delivery, and respects the audience's time.
 
