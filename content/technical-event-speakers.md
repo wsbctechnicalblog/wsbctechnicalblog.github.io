@@ -1,5 +1,5 @@
 Title: Working Agreement for Technical Event Speakers
-Date: 2024-11-25
+Date: 2024-11-27
 Category: Posts 
 Tags: event, learning, posters
 Slug: technical-event-speakers
