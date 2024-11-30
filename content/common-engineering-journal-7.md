@@ -13,7 +13,7 @@ Summary: Exploring innovative automation strategies to empower engineers with th
 We aim to blend technical excellence with human-centric goals:
 
 - **Automation** to increase efficiency and free engineers for creative tasks.
-- **Holistic Outcomes** that move us beyond speed and cost to user satisfaction and adaptability.
+- **Holistic Outcomes** that move us beyond speed and cost, to user satisfaction and solution adaptability.
 - **Continuous Innovation** to evolve with industry, policies, and user expectations.
 - **Balance Personal and Business Impacts** to ensure well-being and operational success.
 - **Adaptability and Resilience** by staying agile with continuous delivery.
