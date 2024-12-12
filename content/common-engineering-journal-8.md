@@ -1,4 +1,4 @@
-Title: Journal 8 - EWhat is the value?
+Title: Journal 8 - What is the value?
 Date: 2024-12-16
 Category: Posts 
 Tags: azure-devops, automation, engineering, learning
