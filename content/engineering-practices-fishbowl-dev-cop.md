@@ -12,7 +12,7 @@ In this week's podcast, we're diving into a fresh approach for our Developer Com
 
 Communities of Practice (CoPs) are groups of professionals united by a shared interest in a technical or business domain. They collaborate to exchange knowledge, refine their skills, and push the boundaries of their field. This concept, outlined by Etienne Wenger in Communities of Practice: Learning, Meaning, and Identity, emphasizes learning through collaboration and shared experiences.
 
-For more, see: Communities of Practice - Scaled Agile Framework.
+For more, see: Communities of Practice - Scaled Agile Framework and https://wsbctechnicalblog.github.io/ceremony-community-of-practice.html.
 
 # What is a Fishbowl?
 
