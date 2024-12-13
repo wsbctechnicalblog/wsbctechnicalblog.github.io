@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title></title>
+        <title>Journal 8 - What is the value? - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -26,8 +26,6 @@
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
-            <div id="title-block">
-            </div>
         </div>
     </div>
 </div>
@@ -35,24 +33,88 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-<h2>Articles tagged with system-programming </h2>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/common-engineering-journal-8.html" rel="bookmark"
+            title="Permalink to Journal 8 - What is the value?">Journal 8 - What is the value?</a></h1>
 
-
-
-
-
-<blocks cols="2">
-        <div class="sec-article">
-            <div class="read-more">Thu 04 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/automate-tests.html" rel=Bookmark title="Permalink to Do not automate anything unless you automate the tests">Do not automate anything unless you automate the tests</a></h3>
-            <p>
-            <p>Automating critical systems operations without having automated tests is risky practice</p>            
-            </p>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 13 December 2024</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The real question is not about the tech-cool factor or simplicity; it is all about uncovering the true value.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>Our engineering team has undergone numerous shifts in mindset, embracing continuous learning, valuing work-life harmony, and championing simplicity. As we look ahead to 2025, we are spicing things up by adding "one thing at a time" and constantly asking ourselves, "what is the value?" to our toolkit.</p>
+<h2>One thing at a time</h2>
+<p>To truly excel, we must tackle one task at a time, avoiding the chaos of constant context switching. Though life rarely allows us to focus on just one thing, we need to zero in on our most significant goal (big rock) amidst the hustle and bustle of our engineering routines. If we finish countless small tasks but neglect our main objective (big rock), the day cannot be deemed a success.</p>
+<h2>What is the value?</h2>
+<p>Picture this: A colleague suggests renaming your Azure DevOps (AzDO) Iteration Paths from <code>&lt;AzDO Project&gt;/PI &lt;n&gt;/Iteration &lt;n&gt;</code> to <code>&lt;AzDO Project&gt;/PI &lt;n&gt;/&lt;n&gt;</code>, reasoning that the word “iteration” is redundant. <strong>Brilliant idea!</strong> </p>
+<p>The iteration path field already has <code>iteration</code> in its label, so seeing <code>my-demo-project/PI 13/13</code> keeps things sleek and just as clear as <code>my-demo-project/PI 13/Iteration 13</code>. Plus, it spares you from the eyesore of <code>my-demo-project/PI 13/...</code> when Azure DevOps truncates names in some fields and dropdown lists.</p>
+<p>In other words, it is a <strong>cool</strong> tweak, adding <strong>meaningfulness,</strong> and technically, it is a breeze to pull off. But what is the true value? Beyond better readability for users, think <code>user productivity boost</code> minus the <code>cost of implementing the change</code> and deducting the <code>cost of any unforeseen consequences</code>.</p>
+<p>Implementing the change involves investing time in revamping our automation to produce future iterations in the fresh format, crafting new automation to rename current iterations for consistency, and executing these automated processes. Ultimately, we would end up with <strong>delighted users</strong> and a rewarding value.</p>
+<p><img alt="Idea" src="../images/common-engineering-journal-8-1.png"> </p>
+<p>But alas, we have overlooked our party-poopers! The unforeseen ripple effects on processes, products, and documentation - like software development lifecycle automation scans still clinging to the old naming conventions, PowerBI reports weaving analytics from Azure DevOps work items, and countless documents persisting in the old format, baffling readers. Suddenly, we are caught in a whirlwind of unexpected costs (negative value) swirling around us that we never saw coming. </p>
+<p>At this point we usually wonder where all the initiative's supporters have vanished to? Apologies to operations and common engineering, it is time to straighten out this mess.</p>
+<p><img alt="Smoke" src="../images/common-engineering-journal-8-2.png"> </p>
+<p>Therefore, going forward, we will assess the value of everything we consider cool, are asked to do, and add to our 2025 MUST and SHOULD deliverables. Ask yourself:</p>
+<ul>
+<li>Would I do this if I had to pay for or invest in it?</li>
+<li>Can I track the cost and define the value?</li>
+</ul>
+<blockquote>
+<p>If the answer is <strong>no</strong>, run if you can, or add it to your backlog of future ideas (referred to as scrapyard on our backlog).</p>
+</blockquote>
+<p>In other words, we are taking a no-nonsense route by urging our engineers to <strong>THINK</strong>, <strong>ANALYZE</strong>, and then decide whether to <strong>ACT</strong> or toss the idea into the <strong>SCRAPYARD</strong>. This approach helps us dodge surprises, cut costs, and keep our software development cycle humming smoothly.</p>
+<p><img alt="Value flow" src="../images/common-engineering-journal-8-3.png"> </p>
+<ol>
+<li><strong>THINK</strong> - First, ponder the business value and user experience benefits. How will this idea affect our current and future solutions? Collaborate with your team, challenge assumptions, and prototype where possible to see the potential unfold.</li>
+<li><strong>ANALYZE</strong> - Next, weigh the potential value, factoring in user experience, business outcomes, and cost savings. Consider the implementation costs, possible impact mitigation, and long-term viability. Then ask yourself: Is the value worth the cost?</li>
+<li><strong>ACT</strong> - If the answer is yes, ACT on the idea, implementing it while keeping an eye on its evolving value and cost. If not, add it to the backlog for another da, or nudge it to the legendary SCRAPYARD if it is truly unworkable.</li>
+</ol>
+<p>Simple, no?</p>
+<blockquote>
+<p>We are even creating a temporary tattoo to remind us in future.</p>
+<p><img alt="Value" src="../images/THINK-VALUE.png">
+</p>
+</blockquote>
+<hr>
+<p><img alt="Team" src="../images/common-engineering-journal-8-4.png"> </p>
+<p>As this may be my final post for some time, I would like to take this opportunity to extend my best wishes for a joyous festive season and a prosperous New Year. Please stay safe, cherish time with your family, and enjoy the cookies in moderation. I look forward to reconnecting with you all in 2025.  </p>
         </div>
 
-</blocks>
-
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
+        | <a href="https://wsbctechnicalblog.github.io/common-engineering-journal-8.html" rel="bookmark"
+         title="Permalink to Journal 8 - What is the value?">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -127,7 +189,7 @@
                     <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
@@ -140,7 +202,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (205)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (205)</li>
                 </ul>
              
             </div>
