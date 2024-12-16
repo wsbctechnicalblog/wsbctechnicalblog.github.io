@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-12-13T00:00:00-08:00</updated><entry><title>Journal 8 - What is the value?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-8.html" rel="alternate"></link><published>2024-12-13T00:00:00-08:00</published><updated>2024-12-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-12-13:/common-engineering-journal-8.html</id><summary type="html">&lt;p&gt;The real question is not about the tech-cool factor or simplicity; it is all about uncovering the true value.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Our engineering team has undergone numerous shifts in mindset, embracing continuous learning, valuing work-life harmony, and championing simplicity. As we look ahead to 2025, we are spicing things up by adding "one thing at a time" and constantly asking ourselves, "what is the value?" to our toolkit.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2024-12-16T00:00:00-08:00</updated><entry><title>Fishbowl Dev CoP</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-fishbowl-dev-cop.html" rel="alternate"></link><published>2024-12-16T00:00:00-08:00</published><updated>2024-12-16T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-12-16:/engineering-practices-fishbowl-dev-cop.html</id><summary type="html">&lt;p&gt;Experimenting with a New Developer CoP Format: Fishbowl Discussions&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this week's podcast, we're diving into a fresh approach for our Developer Community of Practice (Dev CoP). Over the years, we’ve leaned on standard presentations and open dialogue formats, but this time, we’re shaking things up with a fishbowl discussion. As part of our Scalable Agile Framework for the Enterprise (SAFe) practices at WorkSafeBC, this experiment aligns with our commitment to fostering innovation and engagement in our CoP ceremonies.&lt;/p&gt;
+&lt;h1&gt;What Are Communities of Practice?&lt;/h1&gt;
+&lt;p&gt;Communities of Practice (CoPs) are groups of professionals united by a shared interest in a technical or business domain. They collaborate to exchange knowledge, refine their skills, and push the boundaries of their field. This concept, outlined by Etienne Wenger in Communities of Practice: Learning, Meaning, and Identity, emphasizes learning through collaboration and shared experiences.&lt;/p&gt;
+&lt;p&gt;For more, see: &lt;a href="https://scaledagileframework.com/communities-of-practice/"&gt;Communities of Practice - Scaled Agile Framework&lt;/a&gt; and &lt;a href="https://wsbctechnicalblog.github.io/ceremony-community-of-practice.html"&gt;Our Technical Blog&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;What is a Fishbowl?&lt;/h1&gt;
+&lt;p&gt;In a fishbowl discussion, the “bowl” is formed by a group of guest speakers seated in a circle, engaging in a moderated discussion. Surrounding them, the audience observes in concentric rings. For open fishbowls, one chair in the inner circle remains empty, inviting audience members to step in and contribute. It’s an engaging, participatory format that encourages dynamic conversations and fresh perspectives.&lt;/p&gt;
+&lt;h1&gt;Adapting Fishbowl for Hybrid Teams&lt;/h1&gt;
+&lt;p&gt;Post-pandemic realities mean our teams are split between remote and in-office work, posing unique challenges for interactive formats like the fishbowl. To bridge this gap, we’re piloting a hybrid model. Picture this: the core participants—our “bowl”—will be on-site, surrounded by a physical audience. Simultaneously, virtual participants will join in via Microsoft Teams, forming a “virtual outer ring.” This hybrid setup allows everyone to engage, regardless of location.&lt;/p&gt;
+&lt;p&gt;Our inaugural Dev CoP Fishbowl is scheduled for a day when many engineering teams, including mine, are in the office. Limited in-person seating will make attendance a coveted experience, promoting active participation. For those online, a large monitor will provide a closer view of the live interactions, ensuring inclusivity and collaboration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Fishbowl Format" src="../images/engineering-practices-fishbowl-dev-cop-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;Figure – Envisioned Developer Community of Practice using Fishbowl format
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;What’s the Topic?&lt;/h1&gt;
+&lt;p&gt;For our first fishbowl, Willy, our team manager, will guide us through using Azure DevOps (AzDO) to craft and manage Azure Boards and Dashboards. Here’s the twist: I’ll be diving into this with zero prep time or prior experience, making this a truly unscripted and dynamic session. Expect a candid, off-the-cuff exploration that’s as entertaining as it is educational.&lt;/p&gt;
+&lt;h1&gt;What’s Next?&lt;/h1&gt;
+&lt;p&gt;This experimental format promises to be engaging, informative, and maybe even a bit chaotic—but that’s where the fun lies. The goal is to create a memorable learning experience that encourages deeper exploration of the tools and practices discussed.&lt;/p&gt;
+&lt;p&gt;Stay tuned for my next blog, where I’ll share insights from our post-mortem on the fishbowl format. Will it be a success, a learning experience, or a bit of both? Let’s find out together!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="event"></category></entry><entry><title>Journal 8 - What is the value?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-8.html" rel="alternate"></link><published>2024-12-13T00:00:00-08:00</published><updated>2024-12-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-12-13:/common-engineering-journal-8.html</id><summary type="html">&lt;p&gt;The real question is not about the tech-cool factor or simplicity; it is all about uncovering the true value.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Our engineering team has undergone numerous shifts in mindset, embracing continuous learning, valuing work-life harmony, and championing simplicity. As we look ahead to 2025, we are spicing things up by adding "one thing at a time" and constantly asking ourselves, "what is the value?" to our toolkit.&lt;/p&gt;
 &lt;h2&gt;One thing at a time&lt;/h2&gt;
 &lt;p&gt;To truly excel, we must tackle one task at a time, avoiding the chaos of constant context switching. Though life rarely allows us to focus on just one thing, we need to zero in on our most significant goal (big rock) amidst the hustle and bustle of our engineering routines. If we finish countless small tasks but neglect our main objective (big rock), the day cannot be deemed a success.&lt;/p&gt;
 &lt;h2&gt;What is the value?&lt;/h2&gt;
@@ -2054,49 +2072,4 @@ An actionable &lt;strong&gt;ACCEPTANCE CRITERIA&lt;/strong&gt; is Key! Acceptanc
 &lt;p&gt;&lt;strong&gt;6. Early Detection of Bugs:&lt;/strong&gt; - I've noticed that compiler messages can serve as an early indicator of potential bugs or logical errors. Addressing these warnings in the initial stages of development helps in preventing more complex issues downstream.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;7. Integration with CI/CD Pipelines:&lt;/strong&gt; -  In my work involving technologies like C#, Azure, and Azure DevOps, integrating compile step warnings into continuous integration and continuous deployment (CI/CD) pipelines for analysis has become standard practice. This ensures that issues are caught early in the development process, reducing the likelihood of deploying faulty code.&lt;/p&gt;
 &lt;p&gt;My personal experience as a software engineer has underscored the critical importance of diligently addressing warnings and information messages generated during the compile step. These practices contribute not only to the immediate success of software projects but also to their long-term viability. &lt;/p&gt;
-&lt;p&gt;By prioritizing code quality, performance optimization, security, maintainability, and early bug detection, we can ensure that the software aligns with the highest standards and is well-prepared for future challenges. Moreover, integrating these practices into CI/CD pipelines reflects a commitment to a robust and efficient development workflow. As technology continues to evolve, embracing a proactive approach to compiler warnings remains an integral part of a robust development methodology, ensuring the creation of resilient and reliable software solutions.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category><category term="engineering"></category><category term="code-quality"></category><category term="automation"></category></entry><entry><title>DevOps Vancouver Meetup - Engineering Empowerment Session Preparations</title><link href="https://wsbctechnicalblog.github.io/devOps-vancouver-meetup-engineering-empowerment-session-preparations.html" rel="alternate"></link><published>2023-12-20T00:00:00-08:00</published><updated>2023-12-20T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2023-12-20:/devOps-vancouver-meetup-engineering-empowerment-session-preparations.html</id><summary type="html">&lt;p&gt;Help us prepare our meetup session to ensure we cover what is interesting for YOU!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Join us at the &lt;a href="https://www.meetup.com/devops-vancouver-bc-canada/events/297957063/"&gt;DevOps Vancouver Meetup - January 23, 2024&lt;/a&gt; on a deep dive into our journey to understand our current position and what is brewing for 2024 - a landscape defined by excellence and innovation, inspired by Elon Musk's philosophy:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;“Every person in your company is a vector. Your progress is determined by the sum of all vectors.”&lt;/em&gt; - Elon Musk
-&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Dojo" src="../images/devOps-vancouver-meetup-engineering-empowerment-session-preparations-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;OK, here is our session title and outline. What do you think?&lt;/p&gt;
-&lt;h1&gt;Engineering Empowerment: Unleashing the Future with AI, Innovative Technologies, and Automation for a Future of Self-Service Innovation&lt;/h1&gt;
-&lt;p&gt;Embark on a swift exploration of our dynamic software engineering ecosystem, delving into recent triumphs and future endeavors that aim to empower each WorkSafeBC engineer in delivering perpetual value to our satisfied end-users. In an era where the information landscape evolves rapidly, we prioritize fostering a culture of continuous experimentation and learning. Join us as we discuss the strategic handling of numerous classic build and release pipelines, the seamless integration of self-service automation, the transformative role of OpenAI, and a diverse array of Copilots contributing to our innovative journey. Discover how we navigate this ever-changing landscape to stay ahead and lead the way in engineering excellence.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Duration: 20min (followed by a panel question&amp;amp;answer discussion)&lt;/li&gt;
-&lt;li&gt;Presenters: &lt;a href="https://twitter.com/604kev"&gt;Kevin Schwantje&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/martinmlacey"&gt;Martin Lacey&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/wpschaub"&gt;Willy-Peter Schaub&lt;/a&gt;/&lt;a href="https://twitter.com/wpschaub"&gt;X&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;In-depth Insights&lt;/h1&gt;
-&lt;h4&gt;Core Pillars&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Prioritize automation over manual processes.&lt;/li&gt;
-&lt;li&gt;Embrace quality over complex solutions.&lt;/li&gt;
-&lt;li&gt;Empower Dev and Ops through innovation.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Recent Milestones&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Successful implementation of GitOps and c-a-c Automation.&lt;/li&gt;
-&lt;li&gt;Evaluation of GitHub Copilot for Business.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;2024's Ambitious Plans&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Proactive incident analysis via advanced monitoring and analytics.&lt;/li&gt;
-&lt;li&gt;Open-sourcing and implementing CI/CD/IaC blueprints.&lt;/li&gt;
-&lt;li&gt;Continuous automated Testing for efficiency and quality elevation.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Security Nexus using v2 Blueprints&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Enhancing DevOps Metrics: deployment frequency, lead time for changes.&lt;/li&gt;
-&lt;li&gt;Upholding security without compromising speed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Knowledge Enhancement&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Leveraging OpenAI and Stackoverflow for productivity.&lt;/li&gt;
-&lt;li&gt;AI-driven knowledge for improved efficiency and faster engineer onboarding.&lt;/li&gt;
-&lt;li&gt;SDLC Toolbox Catalog Visualization&lt;/li&gt;
-&lt;li&gt;Visual representation of the software development lifecycle toolbox.&lt;/li&gt;
-&lt;li&gt;Creation of an engaging and informative catalog.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Reflection&lt;/h1&gt;
-&lt;p&gt;We are covering a lot in 20 minutes! Prioritizing the most impactful points and ensuring a cohesive narrative might be the key to delivering a compelling session. Excited for your feedback!&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="devops"></category><category term="azure devops"></category><category term="event"></category></entry></feed>
+&lt;p&gt;By prioritizing code quality, performance optimization, security, maintainability, and early bug detection, we can ensure that the software aligns with the highest standards and is well-prepared for future challenges. Moreover, integrating these practices into CI/CD pipelines reflects a commitment to a robust and efficient development workflow. As technology continues to evolve, embracing a proactive approach to compiler warnings remains an integral part of a robust development methodology, ensuring the creation of resilient and reliable software solutions.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category><category term="engineering"></category><category term="code-quality"></category><category term="automation"></category></entry></feed>

@@ -1,7 +1,7 @@
 Title: Fishbowl Dev CoP
-Date: 2023-12-14
+Date: 2024-12-16
 Category: Posts 
-Tags: engineering, technical-excellence, dev-cop, fishbowl
+Tags: engineering, technical-excellence, event
 Slug: engineering-practices-fishbowl-dev-cop
 Author: Martin M. Lacey
 Summary: Experimenting with a New Developer CoP Format: Fishbowl Discussions
