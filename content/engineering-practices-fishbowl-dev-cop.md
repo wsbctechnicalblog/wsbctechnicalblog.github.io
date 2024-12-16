@@ -6,7 +6,7 @@ Slug: engineering-practices-fishbowl-dev-cop
 Author: Martin M. Lacey
 Summary: Experimenting with a New Developer CoP Format: Fishbowl Discussions
 
-In this week's podcast, we're diving into a fresh approach for our Developer Community of Practice (Dev CoP). Over the years, we’ve leaned on standard presentations and open dialogue formats, but this time, we’re shaking things up with a fishbowl discussion. As part of our Scalable Agile Framework for the Enterprise (SAFe) practices at WorkSafeBC, this experiment aligns with our commitment to fostering innovation and engagement in our CoP ceremonies.
+In this week's blog, we are diving into a fresh approach for our Developer Community of Practice (Dev CoP). Over the years, we’ve leaned on standard presentations and open dialogue formats, but this time, we’re shaking things up with a fishbowl discussion. As part of our Scalable Agile Framework for the Enterprise (SAFe) practices at WorkSafeBC, this experiment aligns with our commitment to fostering innovation and engagement in our CoP ceremonies.
 
 # What Are Communities of Practice?
 
