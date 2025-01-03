@@ -1,14 +1,14 @@
 Title: Engineering Practice Engineering Interviews
 Date: 2025-01-03
 Category: Posts 
-Tags: engineering, technical-excellence
+Tags: engineering, technical-excellence, ai
 Slug: engineering-practice-engineering-interviews
 Author: Martin M. Lacey
 Summary: Engineering Interviews – Breaking Barriers with Generative AI
 
 # Engineering Interviews – Breaking Barriers with Generative AI
 
-## What’s Working Well and What’s Not for EDO Engineers
+## What’s Working Well and What’s Not for Our Engineers
 
 In today’s post, I want to take you on a journey through a new initiative we’ve embarked on to break barriers and foster better connections within our engineering team. I’ll cover why we did this, how we approached it, the results we achieved, and the technical process behind it. This experiment combined the deeply human aspect of authentic conversations with the power of Generative Artificial Intelligence (Gen AI). It’s a unique blend of the personal and the technological, and I’m excited to share how it all came together.
 
@@ -19,7 +19,7 @@ In today’s post, I want to take you on a journey through a new initiative we�
 > ![Engineers working Remotely](../images/engineering-practice-engineering-interviews-2.png)
 >
 
-Our EDO engineering team at wsbc is vast: over 330 engineers working across disciplines to ideate, design, develop, test, secure, deploy, and maintain more than 220 business applications. These applications serve both internal and external stakeholders, and we follow Agile (SAFe) principles to ensure smooth delivery of value. 
+Our engineerings teams at WorkSafeBC are vast: over 330 engineers working across disciplines to ideate, design, develop, test, secure, deploy, and maintain more than 220 business applications. These applications serve both internal and external stakeholders, and we follow Scaled Agile Framework [(SAFe)](https://scaledagileframework.com/) principles to ensure smooth delivery of value. 
 
 However, at this scale—especially in the aftermath of the pandemic—our engineers often work in silos, gradually losing connection with one another. To counteract this drift, we launched a bold initiative: reconnecting and re-establishing awareness of not just what we do but who we are as individuals.
 
