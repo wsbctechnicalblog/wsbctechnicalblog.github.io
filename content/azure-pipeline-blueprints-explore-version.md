@@ -6,7 +6,7 @@ Slug: azure-pipeline-blueprints-explore-version
 Author: Willy-Peter Schaub
 Summary: Drilling Deeper: A Closer Look at the Blueprint git-tools-git-version.yml Template.
 
-We continue our deep dive into the details of our [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) open source blueprint templates. Today we are going to explore a template that is used by our continuous integration (CI) pipeline phase to calculate the semantic version of our codebase using the [gitversion.net](https://gitversion.net) open source project and generate a unique name for each pipeline instance based on this version.
+We continue our deep dive into the details of our [AzureDevOps.Automation.Pipeline.Templates.v2](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) open source blueprint repo. Today we are going to explore the [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) template that is used by our continuous integration (CI) pipeline phase to calculate the semantic version of our codebase using the [gitversion.net](https://gitversion.net) open source project and generate a unique name for each pipeline instance based on this version.
 
 > ![drilling](../images/azure-pipeline-blueprints-explore-version-1.png)
 
