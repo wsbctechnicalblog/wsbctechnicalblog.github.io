@@ -61,7 +61,7 @@ We are frequently asked to assist with a pipeline based on the generic-jobs temp
 
 ### Hoping to be wiser
 
-This experience taught us a vital lesson: **Not every “cool idea” is worth pursuing**. The key is to balance **innovation with simplicity** and to avoid creating **vapourware—ideas** that sound impressive but ultimately add more complexity than value.
+This experience taught us a vital lesson: **Not every “cool idea” is worth pursuing**. The key is to balance **innovation with simplicity** and to avoid creating **vapourware—ideas** that sound impressive but ultimately add more complexity than value. As a result we have removed the generic-jobs template option from our self-service and will gradually retire the template.
 
 ---
 
