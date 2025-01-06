@@ -24,7 +24,7 @@ Also refer to:
 
 # Today's topic - git-tools-git-version.yml.yml
 
-The [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) template has its roots in our v1 generic template era, which dates back three years. It leverages ABC to calculate the semantic version—a powerful open-source project that has proven invaluable in our workflows. We highly recommend taking a closer look at ABC, as it offers essential features that streamline versioning processes. We are deeply grateful to its authors for providing such a valuable component.
+The [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) template has its roots in our v1 generic template era, which dates back three years. It leverages ABC to calculate the semantic version—a powerful open-source project that has proven invaluable in our workflows. We highly recommend taking a closer look at ABC, as it offers essential features that streamline versioning processes. We are deeply grateful to its authors for providing such a valuable tool.
 
 ```
 # --------------------------------------------------------------------------
@@ -127,7 +127,13 @@ steps:
 
 # Drill-down
 
-TBD
+The first two steps of the template **setup** the [gitversion.net](https://gitversion.net) tool and then **run** the tool to generate the Semantic Versioning (SemVer). 
+
+**Semantic versioning** is a widely used versioning system that follows the format MAJOR.MINOR.PATCH, where:
+
+- **MAJOR**: Incremented for incompatible changes.
+- **MINOR**: Incremented for backward-compatible new features.
+- **PATCH**: Incremented for backward-compatible bug fixes.
 
 ```
   - task: gitversion/setup@3 
@@ -146,7 +152,7 @@ TBD
       additionalArguments:          ${{parameters.additionalArguments}}
 ```
 
-TBD
+The third step is a ```PowerShell``` command sets two variables in an Azure DevOps pipeline to make them available for subsequent tasks.
 
 ```
 powershell: |
@@ -157,7 +163,12 @@ powershell: |
     failOnStderr: true
 ```
 
-TBD
+- ```##vso[task.setvariable variable=semVersion;isOutput=true]``` is an Azure DevOps-specific logging command to set a variable that can be accessed by other tasks in the pipeline. 
+- ```variable=semVersion``` and ```variable=patchVersion``` are the names of the variables being set, the former containing the MAJOR.MINOR and the latter the PATCH pert of the SemVer.
+- ```isOutput=true``` makes the variable available as an output variable for other pipeline jobs.
+- ```$(GitVersion.MajorMinorPatch)``` is a reference to a variable output from the GitVersion tool, which contains the calculated semantic version numbers.
+
+The last step is conditional, if and only if both the portfolio and product names are blank. It is another ```PowerShell``` command that formats and sets the ```$BuildNumber```, which is a predefined Azure Pipeline variable that represents the build number assigned to your pipeline run.
 
 ```
   - ${{ if and(ne(parameters.portfolioName, ''), ne(parameters.productName, '')) }}: # TODO: to be removed once portfolioName and productName parameters are not optional
@@ -174,11 +185,11 @@ TBD
 
 ### For my team
 
-- Q1: TBD
+- Q1: We refer to portfolios and applications, not portfolios and products in our naming guidelines. Should we not align our v2 CI/CD blueprint templates accordingly?
 
 ### For you
 
-- Q2: TBD
+- Q2: Are your using the [gitversion.net](https://gitversion.net) tool? If yes, which version and with which CI/CD Server?
 
 ---
 
