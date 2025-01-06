@@ -10,6 +10,8 @@ I have decided to dive into our Azure Pipeline blueprints, explore the nitty gri
 
 > ![drilling](../images/azure-pipeline-blueprints-explore-start-1.png)
 
+Also refer to our [Pipelines - Why bother and what are our nightmares and options?](/why-pipelines-part1.html) blog series for more details.
+
 ---
 
 # Today's topic - *-start.yml
