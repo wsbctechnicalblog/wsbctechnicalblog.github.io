@@ -24,7 +24,7 @@ Also refer to:
 
 # Today's topic - git-tools-git-version.yml
 
-The [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) template has its roots in our v1 generic template era, which dates back three years. It leverages ABC to calculate the semantic version—a powerful open-source project that has proven invaluable in our workflows. We highly recommend taking a closer look at ABC, as it offers essential features that streamline versioning processes. We are deeply grateful to its authors for providing such a valuable tool.
+The [templates/utilities/git-tools-git-version.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml) template has its roots in our v1 generic template era, which dates back three years. It leverages [gitversion.net](https://gitversion.net) to calculate the semantic version—a powerful open-source project that has proven invaluable in our workflows. We highly recommend taking a closer look at ABC, as it offers essential features that streamline versioning processes. We are deeply grateful to its authors for providing such a valuable tool.
 
 ```
 # --------------------------------------------------------------------------
