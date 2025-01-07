@@ -125,7 +125,7 @@ For example:
 >
 > ![alert](../images/alert-tiny.png)
 >
-> Refer to [Gotchas when sharing variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html) is you are planning to share the variables amongst jobs and stages.
+> Refer to [Gotchas when sharing variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html) if you are planning to share the variables amongst jobs and stages.
 >
 
 While these variables work seamlessly for reuse within YAML-based pipelines or across different jobs, we encountered an issue with our classic Azure Pipelines, which consist of a YAML-based continuous integration (CI) pipeline and an older, classic release pipeline for continuous delivery. The variables did not flow between the new and legacy environments, and modifying thousands of legacy release pipelines was simply not feasible.
