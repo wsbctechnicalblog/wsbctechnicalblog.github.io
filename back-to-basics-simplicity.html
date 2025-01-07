@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Wandering down memory lane - feature flags - </title>
+        <title>Why Automation Needs People to Truly Thrive - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,92 +33,73 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/memory-lane-feature-flags.html" rel="bookmark"
-            title="Permalink to Wandering down memory lane - feature flags">Wandering down memory lane - feature flags</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-simplicity.html" rel="bookmark"
+            title="Permalink to Why Automation Needs People to Truly Thrive">Why Automation Needs People to Truly Thrive</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 12 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 08 January 2025</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Use feature flags to fine-tune each release in production.</p>
+            <p>Cutting Through the Chaos: Why Simplicity is the Ultimate Software Superpower!</p>
         </div>
     
         <div class="entry-content">
-            <p>More memory lane content pulled from my personal blog, before it is deprecated in favour of this technical blog.</p>
-<hr>
-<h1>DevOps vancouver Meetup January 2019</h1>
-<p>We had a really great turnout and a vibrant meetup hosted by <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/members/44231812/">Andre Kaminski</a>, featuring three topics in January 2019:</p>
+            <p><strong>Simplicity</strong> in software engineering is a core principle! It is crucial for productivity, scalability, sustainability, and maintainability. Its super powers include (sorted alphabetically and not a comprehensive list):</p>
 <ul>
-<li>Entropy in DevOps Teams: Andrew Rose</li>
-<li>The Virtues of Being T-shaped: Kyle Young</li>
-<li>Progressive Exposure Using Feature Flags: <a href="https://wsbctechnicalblog.github.io/pages/authors.html">Willy-Peter Schaub</a></li>
+<li>Allows engineers to focus on solving problems and delivering value, rather than managing complex solutions.</li>
+<li>Empowers engineers to work more efficiently and concentrate on important tasks, rather than spending time on repetitive activities.</li>
+<li>Keeps guardrails and governance, such as pull-request guardrails and quality governance, effective without constant churn and required tweaks.</li>
+<li>Reduces the technology and technical debt footprint of your solutions.</li>
+<li>Simpler solutions make it easier to gather feedback and iterate on innovations.</li>
+<li>Reduces complexity, ensuring that our codebase stays clean and easy to maintain.</li>
 </ul>
+<p>Simplicity in software engineering involves removing unnecessary complexity to enable <strong>faster delivery</strong>, <strong>better quality</strong>, and more <strong>satisfied engineers</strong>. It supports continuous delivery, <strong><em>*empowers</em>* engineers, and makes systems </strong>resilient** to future changes.</p>
 <blockquote>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-3.png"></p>
-</blockquote>
-<p>You can find a copy of my feature flags presentation <a href="https://1drv.ms/b/s!AoTKFn7kQntwmop6lYMUH2ki07YkpA">HERE</a>. Ping me if the link is blocked by your firewall.</p>
-<hr>
-<h1>Top 6 FAQs from my talk</h1>
-<h2>What's DevOps and what's the link to the session?</h2>
-<blockquote>
-<p>DevOps, by <a href="https://www.donovanbrown.com/post/what-is-devops">Donovan Brown</a></p>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-5.png"></p>
-</blockquote>
-<p>Link to the <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/events/257318843/">January 2019</a> session and <a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/photos/29645676/">photos</a>.</p>
-<h2>When should I use rings versus feature flags?</h2>
-<p>I think of a <strong>package</strong> when using the ring-based deployment model to deploy a release and a small <strong>screwdriver</strong> to "tweak" feature flags to fine-tune the release. See <a href="https://opensource.com/article/18/2/feature-flags-ring-deployment-model">Deploying new releases: Feature flags or rings?</a> for more details.</p>
-<h2>How do I manage the technical debt introduced by feature flags?</h2>
-<p><strong>KEEP IT SIMPLE!</strong> Define technical governance to clearly define who owns the feature flags, when and how to remove feature flags and the associated technical debt,  and scenarios that are suitable for feature flags. See <a href="https://opensource.com/article/18/7/does-progressive-exposure-really-come-cost">What's the cost of feature flags?</a> for more details.</p>
-<h2>Who owns feature flags?</h2>
-<blockquote>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-2.png"></p>
-</blockquote>
-<p>Most feature flags are scoped to a business feature, backed by a business case, and delivering value, which places the ownership of the feature flag switch with the business. Some feature flags are scoped to an operational feature, which places the ownership with operations (Ops).</p>
-<h2>What do we mean with "Do not hide non-production ready code behind feature flags"?</h2>
-<p>Production ready implies hat we have met an agreed quality bar and are confident to release the feature to production. It does not mean feature ready, as we may expose a production ready minimally viable product to perform experiments and A|B testing. Risk of hiding non-production ready code behind feature flags is high - it's easy to flip a switch and expose incomplete,unstable, of security breaches by mistake.</p>
-<h2>Why the product we introduced at the meetup?</h2>
-<p>You need to investigate and create your own opinion, but here are a few highlights from our evaluation:</p>
-<ul>
-<li>It's a Software as a Service (<strong>SaaS</strong>)</li>
-<li><strong>Simple</strong> administration</li>
-<li>Support for <strong>experimentation</strong></li>
-<li>Feature flag <strong>dependency management</strong></li>
-<li>Identify <strong>stale flags</strong></li>
-<li><strong>Rules</strong> to manage exposure and blast radius</li>
-<li>... and much more!</li>
-</ul>
-<h2>Can you tell me more about circuit breakers?</h2>
-<blockquote>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-4.png"></p>
-</blockquote>
-<p><a href="https://github.com/Netflix/Hystrix/wiki">Hystrix</a> evolved out of resilience engineering work that the Netflix API team began in 2011. See <a href="https://aka.ms/bh-ff-sos">A Rough Path</a>, by Brian Harry for an example, where circuit breakers could have protected us from an Operational meltdown, caused by simply "flipping a flag".</p>
-<hr>
-<h1>Two epiphanies</h1>
-<blockquote>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-6b.png"></p>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-7b.png"></p>
+<p>Bookmark <a href="https://www.geeksforgeeks.org/cyclomatic-complexity/">Cyclomatic Complexity</a> which is a software metric used to measure the complexity of a program's control flow. It was introduced by Thomas J. McCabe in 1976 and is a key metric in code quality analysis, particularly for assessing the maintainability and testability of code - which we will get back to in future posts.
+</p>
 </blockquote>
 <hr>
-<h1>Last, but not least, our feature flag manifesto</h1>
-<p>On our common engineering site, we have a collection of verbal declaration of intentions, motives, or views of the issuer, for processes and products.</p>
-<p>Here is a copy of our feature flag manifesto.</p>
+<h1>VAPOUR-WARE</h1>
+<p>When an idea emerges, it is assessed with a critical question: <strong>What is the value, and is it needed today?</strong> </p>
+<p>If there is <strong>no clear value</strong>, the idea is saved without incurring sunk costs. If there is <strong>future potential but no immediate need</strong>, the idea is added to the Azure DevOps backlog under the <code>Ideas</code> area path. Those <strong>without clear value</strong> are added to the <code>Scrapyared</code> area path for future consideration.</p>
+<p>Cool ideas can quickly become unused, costly features that complicate maintenance. This clutter hinders governance and delays meaningful improvements for engineers and business stakeholders.</p>
+<p>Our goal is to deliver value by focusing on essential engineering processes and products. We prioritize current engineer needs, stakeholder investments, and avoid adding unnecessary complexity.</p>
+<p>We focus on <strong>what matters</strong>, not vaporware.</p>
+<hr>
+<h1>EXAMPLE - v2 Generic Multi-Job Template</h1>
+<h3>From brilliant idea to blunder:a lesson in over-engineering</h3>
+<p>Let me share a humbling example of one of my early ideas for our YAML-based pipelines which seemed great but ended up being a major mistake, hindering innovation and wasting resources.</p>
 <blockquote>
-<p><img alt="Pipeline" src="/images/memory-lane-feature-flags-1.png"></p>
+<p><img alt="Excitement" src="../images/back-to-basics-simplicity-1.png"> </p>
 </blockquote>
-<p>The worlds of our <a href="/why-pipelines-part1.html">pipelines</a> and feature flags are likely to collide when we innovate our ability to <strong>release on demand</strong>. See you there!</p>
+<p>In the early days of our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">AzureDevOps.Automation.Pipeline.Templates.v2</a> open-source project, we were excited about creating reusable templates. We compared single-job to multi-job templates, aiming for flexibility and efficiency, as discussed in <a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a>. These have now evolved into generic-steps and generic-jobs in our open-source project.</p>
+<p>It all seemed brilliant—until reality set in.</p>
+<p>What we had created was <strong>far more complex than necessary</strong>, introducing <strong>hidden maintenance costs</strong> and <strong>slowing down engineers</strong> who just needed a simple, reliable way to run pipelines. The initial excitement gave way to frustration as our generic templates became a <strong>monolith of unnecessary abstraction</strong>, requiring <strong>constant upkeep</strong> without delivering the expected value.</p>
+<h3>The allure of parallel jobs: a costly temptation</h3>
+<p>Our engineers often chose the <strong>generic-jobs template</strong> over the simpler option. The allure of running <strong>parallel jobs</strong> in Azure Pipelines, similar to <strong>multi-threading</strong>, was too strong. More parallel jobs should mean we can complete more tasks, faster.</p>
+<p>Well … <strong>yes, in theory</strong>. But at what cost?</p>
+<blockquote>
+<p><img alt="Excitement" src="../images/back-to-basics-simplicity-2.png"> </p>
+</blockquote>
+<p>The result was complex pipelines, starved Azure Agent Pools, and an increasing need for additional hosted parallel jobs—which come at a <strong>cost</strong>. What began as an effort to optimize workflows turned into a significant use of resources, both in terms of engineering capacity and budget.</p>
+<p>We are frequently asked to assist with a pipeline based on the generic-jobs template. We often find the complexity challenging and return it to the engineers, deciding that the time investment is substantial. <strong>Switch to generic-steps and enjoy your favorite brew</strong> while you wait a bit longer for your pipeline to complete more economically. It is a matter of minutes, not hours, and the minutes you lose, you gain in hours of troubleshooting and maintenance you never have to worry about.</p>
+<h3>Hoping to be wiser</h3>
+<p>This experience taught us a vital lesson: <strong>Not every “cool idea” is worth pursuing</strong>. The key is to balance <strong>innovation with simplicity</strong> and to avoid creating <strong>vapourware—ideas</strong> that sound impressive but ultimately add more complexity than value. As a result we have removed the generic-jobs template option from our self-service and will gradually retire the template.</p>
+<hr>
+<p>Do you agree?</p>
         </div>
 
     </section>
     <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
-        | <a href="https://wsbctechnicalblog.github.io/memory-lane-feature-flags.html" rel="bookmark"
-         title="Permalink to Wandering down memory lane - feature flags">Permalink</a>            
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-simplicity.html" rel="bookmark"
+         title="Permalink to Why Automation Needs People to Truly Thrive">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
@@ -226,9 +207,9 @@
             <div class="large-3 category-column column">
                 <h3>Categories</h3>
                 <ul>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (209)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (209)</li>
                 </ul>
              
             </div>
