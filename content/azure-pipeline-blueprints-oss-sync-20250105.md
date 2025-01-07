@@ -1,5 +1,5 @@
 Title: Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250105
-Date: 2025-01-10
+Date: 2025-01-07
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-oss-sync-2025-01-05
