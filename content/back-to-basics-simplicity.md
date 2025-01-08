@@ -1,5 +1,5 @@
 Title: Why Automation Needs People to Truly Thrive
-Date: 2025-01-13
+Date: 2025-01-08
 Category: Posts 
 Tags: automation, engineering
 Slug: back-to-basics-simplicity
@@ -12,10 +12,14 @@ Summary: Cutting Through the Chaos: Why Simplicity is the Ultimate Software Supe
 - Empowers engineers to work more efficiently and concentrate on important tasks, rather than spending time on repetitive activities.
 - Keeps guardrails and governance, such as pull-request guardrails and quality governance, effective without constant churn and required tweaks.
 - Reduces the technology and technical debt footprint of your solutions.
-- Simpler solutions make it easier to gather feedback and iterate ion innovations.
+- Simpler solutions make it easier to gather feedback and iterate on innovations.
 - Reduces complexity, ensuring that our codebase stays clean and easy to maintain.
 
 Simplicity in software engineering involves removing unnecessary complexity to enable **faster delivery**, **better quality**, and more **satisfied engineers**. It supports continuous delivery, ****empowers** engineers, and makes systems **resilient** to future changes.
+
+>
+> Bookmark [Cyclomatic Complexity](https://www.geeksforgeeks.org/cyclomatic-complexity/) which is a software metric used to measure the complexity of a program's control flow. It was introduced by Thomas J. McCabe in 1976 and is a key metric in code quality analysis, particularly for assessing the maintainability and testability of code - which we will get back to in future posts.
+>
 
 ---
 
@@ -23,7 +27,7 @@ Simplicity in software engineering involves removing unnecessary complexity to e
 
 When an idea emerges, it is assessed with a critical question: **What is the value, and is it needed today?** 
 
-If there is **no clear value**, the idea is discarded without incurring sunk costs. If there is **future potential but no immediate need**, the idea is added to the Azure DevOps backlog under the "Ideas" or "Scrapyard" area paths for future consideration.
+If there is **no clear value**, the idea is saved without incurring sunk costs. If there is **future potential but no immediate need**, the idea is added to the Azure DevOps backlog under the ```Ideas``` area path. Those **without clear value** are added to the ```Scrapyared``` area path for future consideration.
 
 Cool ideas can quickly become unused, costly features that complicate maintenance. This clutter hinders governance and delays meaningful improvements for engineers and business stakeholders.
 
