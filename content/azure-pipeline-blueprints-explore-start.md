@@ -101,7 +101,7 @@ We use required templates to:
 
 - Q2: Interested to review a pipeline cookbook?
 
-We are working on a cookbook as an essential guide to Continuous Integration and Continuous Delivery (CI/CD) demystifies Azure Pipelines with actionable insights and our [AzureDevOps.Automation.Pipeline.Templates.v2](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) blueprints. From foundational principles to advanced engineering practices, it equips teams to transform their workflows with automation, Infrastructure as Code (IaC), and self-service tools. It has been written with gratitude to contributors and collaborators, this book offers the knowledge you need to master CI/CD and redefine how software is built and delivered.
+We are working on a cookbook as an essential guide to Continuous Integration and Continuous Delivery (CI/CD) demystifies Azure Pipelines with actionable insights and our [AzureDevOps.Automation.Pipeline.Templates.v2](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) blueprints. From foundational principles to advanced engineering practices, it equips teams to transform their workflows with automation, Infrastructure as Code (IaC), and self-service tools. It has been written with gratitude to contributors and collaborators, this cookbook offers the knowledge you need to master CI/CD and redefine how software is built and delivered.
 
 > ![book-front](../images/azure-pipeline-blueprints-explore-start-2.png) ![book-back](../images/azure-pipeline-blueprints-explore-start-3.png)
 
