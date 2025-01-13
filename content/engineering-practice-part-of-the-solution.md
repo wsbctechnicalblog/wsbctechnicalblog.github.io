@@ -6,7 +6,7 @@ Slug: engineering-practice-part-of-the-solution
 Author: Martin M. Lacey
 Summary: Software Engineering Behavior
 
-# Blog: Are You Part of the Solution or Part of the Problem?
+# Are You Part of the Solution or Part of the Problem?
 
 > ![Are you part of the Solution or part of the Problem](../images/engineering-practice-part-of-the-solution-1.png)
 This is a harsh reality.
