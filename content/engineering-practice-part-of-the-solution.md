@@ -1,5 +1,5 @@
 Title: Are you part of The Solution or part of the Problem
-Date: 2023-06-14
+Date: 2025-01-15
 Category: Posts 
 Tags: code, code-quality, engineering, technical-excellence
 Slug: engineering-practice-part-of-the-solution
