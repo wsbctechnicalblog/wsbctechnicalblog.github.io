@@ -9,6 +9,7 @@ Summary: Software Engineering Behavior
 # Are You Part of the Solution or Part of the Problem?
 
 > ![Are you part of the Solution or part of the Problem](../images/engineering-practice-part-of-the-solution-1.png)
+
 This is a harsh reality.
 
 My father, an electrical engineer by education and regional sales manager by practice at the end of his career (for Hewlett Packard), used to ask me this very question from childhood. It always gave me pause.
