@@ -1,5 +1,5 @@
 Title: Azure DevOps Pipeline Blueprints - Exploring the start template
-Date: 2025-01-15
+Date: 2025-01-10
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-explore-start
