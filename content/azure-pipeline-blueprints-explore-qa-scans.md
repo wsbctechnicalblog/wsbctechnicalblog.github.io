@@ -1,5 +1,5 @@
 Title: Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)
-Date: 2025-01-10
+Date: 2025-01-XX
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-explore-qa-scans
