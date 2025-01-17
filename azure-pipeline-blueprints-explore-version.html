@@ -1,0 +1,348 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-version.html" rel="bookmark"
+            title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template">Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 17 January 2025</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Drilling Deeper: A Closer Look at the Blueprint git-tools-git-version.yml Template.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We continue our deep dive into the details of our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">AzureDevOps.Automation.Pipeline.Templates.v2</a> open source blueprint repo. Today we are going to explore the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml">templates/utilities/git-tools-git-version.yml</a> template that is used by our continuous integration (CI) pipeline phase to calculate the semantic version of our codebase using the <a href="https://gitversion.net">gitversion.net</a> open source project and generate a unique name for each pipeline instance based on this version.</p>
+<blockquote>
+<p><img alt="drilling" src="../images/azure-pipeline-blueprints-explore-version-1.png"></p>
+<p>"<strong>From git log to SemVer in no time.</strong>" - <a href="https://gitversion.net">gitversion.net</a>.
+GitVersion is a tool that generates a Semantic Version number based on your Git history. It can be used for various purposes, such as stamping a version number on artifacts produced during build1. GitVersion is flexible, configurable, and can be used in Continuous Server pipelines.
+</p>
+</blockquote>
+<p>Also refer to:</p>
+<ul>
+<li><a href="/azure-pipeline-blueprints-explore-start.html">Azure DevOps Pipeline Blueprints - Exploring the start template</a>.</li>
+<li><a href="/why-pipelines-part1.html">Pipelines - Why bother and what are our nightmares and options?</a> blog series.</li>
+</ul>
+<hr>
+<h1>Today's topic - git-tools-git-version.yml</h1>
+<p>The <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/git-tools-git-version.yml">templates/utilities/git-tools-git-version.yml</a> template has its roots in our v1 generic template era, which dates back three years. It leverages <a href="https://gitversion.net">gitversion.net</a> to calculate the semantic version—a powerful open-source project that has proven invaluable in our workflows. We highly recommend taking a closer look at <a href="https://gitversion.net">gitversion.net</a>, as it offers essential features that streamline versioning processes. We are deeply grateful to its authors for providing such a valuable tool.</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># --------------------------------------------------------------------------</span>
+<span class="cp"># GitTools GitVersion Template</span>
+<span class="cp"># --------------------------------------------------------------------------</span>
+<span class="cp"># See https:</span><span class="c1">//aka.ms/yaml for Azure DevOps Pipeline documentation</span>
+<span class="cp"># </span>
+<span class="cp"># Special template to enable YAML pipeline users to switch to WhiteSource</span>
+<span class="cp"># until they switch to the new blueprint-based templates</span>
+<span class="cp"># --------------------------------------------------------------------------</span>
+<span class="cp"># IMPORTANT !!! The GitVersion tasks must be the first to run in pipeline.</span>
+<span class="cp"># --------------------------------------------------------------------------</span>
+<span class="cp"># EXAMPLE USAGE:</span>
+<span class="cp"># </span>
+<span class="cp"># resources:</span>
+<span class="cp">#   repositories:</span>
+<span class="cp">#   - repository: UtilityTemplates</span>
+<span class="cp">#     type: git</span>
+<span class="cp">#     name: &#39;Common-Engineering-System/AzureDevOps.Automation.Pipeline.Templates&#39;</span>
+<span class="cp">#       ref: refs/heads/master</span>
+<span class="cp">#</span>
+<span class="cp"># stages:</span>
+<span class="cp"># - stage: ContinuousIntegration</span>
+<span class="cp">#   displayName: Continuous Integration</span>
+<span class="cp">#   jobs:</span>
+<span class="cp">#   - job: ContinuousIntegration</span>
+<span class="cp">#     steps:</span>
+<span class="cp">#     - template: Templates/Utility/git-tools-git-version.yml@UtilityTemplates</span>
+<span class="cp">#       parameters:</span>
+<span class="cp">#         versionSpec:                &#39;5.x&#39;</span>
+<span class="cp">#         useConfigFile:              true</span>
+<span class="cp">#         configFilePath:             &#39;$(Build.SourcesDirectory)\Src\GitVersion.yml&#39;</span>
+<span class="cp">#         updateAssemblyInfo:         true</span>
+<span class="cp">#         targetPath:                 $(Build.SourcesDirectory)/$(Build.Repository.Name)</span>
+<span class="cp">#</span>
+<span class="cp"># --------------------------------------------------------------------------</span>
+
+<span class="nl">parameters</span><span class="p">:</span>
+<span class="p">-</span> <span class="nf">name:</span><span class="w">     </span><span class="n">portfolioName</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">TODO</span><span class="o">:</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="n">once</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">optional</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">productName</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">TODO</span><span class="o">:</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="n">once</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">optional</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">versionSpec</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;</span><span class="mf">5.11</span><span class="p">.</span><span class="n">x</span><span class="err">&#39;</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mf">5.6.3</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mf">5.11</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="k">default</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">useConfigFile</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">boolean</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="nb">false</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">targetPath</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">SourcesDirectory</span><span class="p">)</span><span class="o">/</span><span class="n">$</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">Repository</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">configFilePath</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">updateAssemblyInfo</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">boolean</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="nb">false</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">updateAssemblyInfoFilename</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span>
+<span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w">     </span><span class="n">additionalArguments</span>
+<span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w">     </span><span class="n">string</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w">  </span><span class="err">&#39;&#39;</span>
+
+<span class="nl">steps</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@3</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">GitVersion</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">versionSpec</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">versionSpec</span><span class="p">}}</span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@3</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">GitVersion</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">targetPath</span><span class="p">:</span><span class="w">                   </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">targetPath</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">useConfigFile</span><span class="p">:</span><span class="w">                </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">useConfigFile</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">configFilePath</span><span class="p">:</span><span class="w">               </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">configFilePath</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">updateAssemblyInfo</span><span class="p">:</span><span class="w">           </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfo</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">updateAssemblyInfoFilename</span><span class="p">:</span><span class="w">   </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfoFilename</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">additionalArguments</span><span class="p">:</span><span class="w">          </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">additionalArguments</span><span class="p">}}</span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">powershell</span><span class="o">:</span><span class="w"> </span><span class="o">|</span>
+<span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span>
+<span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&quot;</span>
+<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w">         </span><span class="n">setSemVersion</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">Semantic</span><span class="w"> </span><span class="n">Version</span>
+<span class="w">    </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">portfolioName</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">productName</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">}}</span><span class="o">:</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">TODO</span><span class="o">:</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="n">once</span><span class="w"> </span><span class="n">portfolioName</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">productName</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">optional</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">powershell</span><span class="o">:</span><span class="w"> </span><span class="o">|</span>
+<span class="w">        </span><span class="n">$BuildNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.portfolioName}}_${{parameters.productName}}_$(GitVersion.MajorMinorPatch)_$(Get-Date -format yyyyMMdd).$(Get-Date -format HHmmss).$(Build.SourceBranchName)&quot;</span>
+<span class="w">        </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[build.updatebuildnumber]$BuildNumber&quot;</span>
+<span class="w">      </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Update</span><span class="w"> </span><span class="n">Build</span><span class="w"> </span><span class="n">Number</span>
+<span class="w">      </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+
+<hr>
+<h1>Drill-down</h1>
+<p>The first two steps of the template <strong>setup</strong> the <a href="https://gitversion.net">gitversion.net</a> tool and then <strong>run</strong> the tool to generate the Semantic Versioning (SemVer). </p>
+<p><strong>Semantic versioning</strong> is a widely used versioning system that follows the format MAJOR.MINOR.PATCH, where:</p>
+<ul>
+<li><strong>MAJOR</strong>: Incremented for incompatible changes.</li>
+<li><strong>MINOR</strong>: Incremented for backward-compatible new features.</li>
+<li><strong>PATCH</strong>: Incremented for backward-compatible bug fixes.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">setup</span><span class="mi">@3</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">GitVersion</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">versionSpec</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">versionSpec</span><span class="p">}}</span>
+
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">gitversion</span><span class="o">/</span><span class="n">execute</span><span class="mi">@3</span>
+<span class="w">    </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">GitVersion</span>
+<span class="w">    </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nl">targetPath</span><span class="p">:</span><span class="w">                   </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">targetPath</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">useConfigFile</span><span class="p">:</span><span class="w">                </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">useConfigFile</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">configFilePath</span><span class="p">:</span><span class="w">               </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">configFilePath</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">updateAssemblyInfo</span><span class="p">:</span><span class="w">           </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfo</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">updateAssemblyInfoFilename</span><span class="p">:</span><span class="w">   </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">updateAssemblyInfoFilename</span><span class="p">}}</span>
+<span class="w">      </span><span class="nl">additionalArguments</span><span class="p">:</span><span class="w">          </span><span class="n">$</span><span class="p">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">additionalArguments</span><span class="p">}}</span>
+</code></pre></div>
+
+<p>The third step is a <code>PowerShell</code> command sets two variables in an Azure DevOps pipeline to make them available for subsequent tasks.</p>
+<div class="highlight"><pre><span></span><code><span class="n">powershell</span><span class="p">:</span><span class="w"> </span><span class="o">|</span>
+<span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=semVersion;isOutput=true]$(GitVersion.MajorMinorPatch)&quot;</span>
+<span class="w">      </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s2">&quot;##vso[task.setvariable variable=patchVersion;isOutput=true]$(GitVersion.Patch)&quot;</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w">         </span><span class="n">setSemVersion</span>
+<span class="w">    </span><span class="n">displayName</span><span class="p">:</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">Semantic</span><span class="w"> </span><span class="n">Version</span>
+<span class="w">    </span><span class="n">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span>
+</code></pre></div>
+
+<ul>
+<li><code>##vso[task.setvariable variable=semVersion;isOutput=true]</code> is an Azure DevOps-specific logging command to set a variable that can be accessed by other tasks in the pipeline. </li>
+<li><code>variable=semVersion</code> and <code>variable=patchVersion</code> are the names of the variables being set, the former containing the MAJOR.MINOR and the latter the PATCH pert of the SemVer.</li>
+<li><code>isOutput=true</code> makes the variable available as an output variable for other pipeline jobs.</li>
+<li><code>$(GitVersion.MajorMinorPatch)</code> is a reference to a variable output from the GitVersion tool, which contains the calculated semantic version numbers.</li>
+</ul>
+<p>The last step is conditional, if and only if both the portfolio and product names are blank. It is another <code>PowerShell</code> command that formats and sets the <code>$BuildNumber</code>, which is a predefined Azure Pipeline variable that represents the build number assigned to your pipeline run.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="k">if</span> <span class="ow">and</span><span class="p">(</span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="cp">}</span>}:<span class="w"> </span>#<span class="w"> </span>TODO:<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span>once<span class="w"> </span>portfolioName<span class="w"> </span>and<span class="w"> </span>productName<span class="w"> </span>parameters<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>optional
+<span class="w">    </span>-<span class="w"> </span>powershell:<span class="w"> </span>|
+<span class="w">        </span><span class="nv">$BuildNumber</span><span class="w"> </span>=<span class="w"> </span>&quot;<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">portfolioName</span><span class="cp">}</span>}_<span class="cp">${</span><span class="p">{</span><span class="n">parameters</span><span class="o">.</span><span class="n">productName</span><span class="cp">}</span>}_$(GitVersion.MajorMinorPatch)_$(Get-Date<span class="w"> </span>-format<span class="w"> </span>yyyyMMdd).$(Get-Date<span class="w"> </span>-format<span class="w"> </span>HHmmss).$(Build.SourceBranchName)&quot;
+<span class="w">        </span>Write-Host<span class="w"> </span>&quot;##vso[build.updatebuildnumber]<span class="nv">$BuildNumber</span>&quot;
+<span class="w">      </span>displayName:<span class="w"> </span>Update<span class="w"> </span>Build<span class="w"> </span>Number
+<span class="w">      </span>failOnStderr:<span class="w"> </span>true
+</code></pre></div>
+
+<hr>
+<h1>Questions</h1>
+<h3>For my team</h3>
+<ul>
+<li>Q1: We refer to portfolios and applications, not portfolios and products in our naming guidelines. Should we not align our v2 CI/CD blueprint templates accordingly?</li>
+</ul>
+<h3>For you</h3>
+<ul>
+<li>Q2: Are your using the <a href="https://gitversion.net">gitversion.net</a> tool? If yes, which version and with which CI/CD Server?</li>
+</ul>
+<hr>
+<p>Any questions or suggested improvements?</p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-version.html" rel="bookmark"
+         title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(83)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(56)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(55)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(26)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(14)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(20)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(23)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(18)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(52)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(35)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(52)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (212)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
