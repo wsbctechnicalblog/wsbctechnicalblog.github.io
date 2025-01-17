@@ -139,11 +139,64 @@ steps:
 
 # Drill-down
 
-TBD
+### azure-pipeline-qa-scans.yml nuggets
+
+This template is triggered by our *cd-yml template, ensures the necessary dependencies are in place, and then hands off control to the qa-scans.yml template.
+
+> Gem 1
 
 ```
-TBD
+  dependsOn:
+  - ${{ each stage in parameters.dependsOn }}:
+    - ${{stage}}
 ```
+
+The YAML snippet defines dependencies for a stage in a pipeline dynamically. It allows for flexible, parameter-driven pipeline configuration, enabling reuse of templates for multiple scenarios without hardcoding dependencies.
+
+**dependsOn** keyword
+
+- Specifies which stages in the pipeline must be completed successfully before this stage can run, ensuring the pipeline respects the execution order and dependency hierarchy.
+
+**Dynamic Dependencies**
+
+- ```${{ each stage in parameters.dependsOn }}``` iterates over the values in the parameters.dependsOn array.
+- ```${{ stage }}``` resolves each value in the array to dynamically populate the dependsOn list.
+
+**Example**
+
+If the parameters.dependsOn contains ['Build', 'Test'], the snippet will resolve to:
+
+```
+dependsOn:
+  - Build
+  - Test
+```
+
+This means the current stage will only execute after both the Build and Test stages are completed. 
+
+> Gem 2
+
+```
+    # List all environment variables within this agent
+    - bash: 'env | sort'
+      displayName: Bootstrap Dump env variables
+```
+
+This gem runs a Bash script to print, sort, and display all environment variables in pipeline logs. It is useful for debugging or validating environment setup in CI/CD pipelines.
+
+- **bash**: Specifies a Bash script task in the pipeline.
+- **env | sort**: Lists and sorts all current environment variables alphabetically.
+- **displayName**: Adds a label in the pipeline UI to describe what this step does.
+
+### qa-scans.yml
+
+For this template, we focus on a single conditional statement from the many available options.
+
+```
+- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/release'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')) }}:
+```
+
+This gem is a conditional expression that checks whether the current build branch matches specific conditions - whether we are dealing with a **release** branch. In the template we have a section where users can run app-type specific tasks if we are dealing with a **release** branch, or any **other** branch, or both.
 
 That is it for today!
 
@@ -157,7 +210,7 @@ That is it for today!
 
 ### For you
 
-- Q2: TBD
+- Q2: How do you abstract your user interface, user experience, and other testing in the continuous delivery pipelien flow (shift right), after the continuous integration pipeline flow (shift left)is complete? 
 
 ---
 
