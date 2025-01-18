@@ -6,7 +6,7 @@ Slug: azure-pipeline-blueprints-explore-start
 Author: Willy-Peter Schaub
 Summary: Drilling Deeper: A Closer Look at the Blueprint Start Template.
 
-I have decided to dive into our Azure Pipeline blueprints, explore the nitty gritty, and highlight a few nuggets for discussion. Today, we will start with the Start Template, focusing on the [blueprints/__101__/azure-pipeline-__101__-start.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/__101__/azure-pipeline-__101__-start.yml) file in our open-source [AzureDevOps.Automation.Pipeline.Templates.v2](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) repo. I will also pose a few questions for my team to consider as we review and refine our approach.
+I have decided to dive into our Azure Pipeline blueprints, explore the nitty gritty, and highlight a few nuggets for discussion. Today, we will start with the Start Template, focusing on the [blueprints/__101__/azure-pipeline-__101__-start.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/__101__/azure-pipeline-__101__-start.yml) file in our open-source [AzureDevOps.Automation.Pipeline.Templates.v2](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2) repo. As the name implies, it is the **start** of our continuous integration (CI) and continuous delivery (CD) blueprint based pipelines.
 
 > ![drilling](../images/azure-pipeline-blueprints-explore-start-1.png)
 
