@@ -6,7 +6,7 @@ Slug: azure-boards-tips-retain-hierarchy-with-filter
 Author: Willy-Peter Schaub
 Summary: Why does the hierarchy view [not] vanish when selecting a filter? 
 
-We continue the journey of feature discovery with the [AzureDevOps](https://azure.microsoft.com/en-us/products/devops) Board, which we started with [Azure Boards Tips](/azure-boards-tips.html), [Azure Boards Tips for Operations Teams](/azure-boards-tips-stop-messing-with-our-backlog.html), and [Azure Boards Tips for Operations Teams](azure-boards-tips-operations-teams).
+We continue the journey of feature discovery with the [AzureDevOps](https://azure.microsoft.com/en-us/products/devops) Board, which we started with [Azure Boards Tips](/azure-boards-tips.html), and [Azure Boards Tips for Operations Teams](/azure-boards-tips-stop-messing-with-our-backlog.html).
 
 ---
 
