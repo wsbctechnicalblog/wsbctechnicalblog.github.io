@@ -1,5 +1,5 @@
 Title: Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template
-Date: 2025-01-22
+Date: 2025-01-24
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-explore-version
@@ -132,7 +132,7 @@ While these variables work seamlessly for reuse within YAML-based pipelines or a
 
 This brings us to the second half of the template, which creates a json file with the variables and their values, and publishes them to the Azure Pipeline artifacts. The Powershell task runs an ```inline``` script that creates a PowerShell custom object ```$variablesData``` with properties that are populated using template parameters.
 
-The scripts last four steps performs the following steps:
+The scripts last four steps performs the following:
 
 - Converts the ```$variablesData``` object to **JSON** format.
 - Defines the file path for the JSON file in the agent's temporary directory.
