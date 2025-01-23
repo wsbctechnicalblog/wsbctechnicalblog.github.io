@@ -1,8 +1,8 @@
-Title: Azure DevOps Pipeline Blueprints - Exploring the git-tools-git-version.yml template
+Title: Azure DevOps Pipeline Blueprints - Exploring the info-version.yml template
 Date: 2025-01-24
 Category: Posts
 Tags: azure-devops, pipelines, engineering
-Slug: azure-pipeline-blueprints-explore-version
+Slug: azure-pipeline-blueprints-explore-info
 Author: Willy-Peter Schaub
 Summary: Drilling Deeper: A Closer Look at the Blueprint info-version.yml Template.
 
