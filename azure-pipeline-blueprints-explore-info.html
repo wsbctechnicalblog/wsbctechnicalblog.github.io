@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250105 - </title>
+        <title>Azure DevOps Pipeline Blueprints - Exploring the info-version.yml template - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,90 +33,35 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-01-05.html" rel="bookmark"
-            title="Permalink to Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250105">Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250105</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-info.html" rel="bookmark"
+            title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the info-version.yml template">Azure DevOps Pipeline Blueprints - Exploring the info-version.yml template</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Tue 07 January 2025</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 24 January 2025</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Refresh the toolbox and templates with 2024 enhancements.</p>
+            <p>Drilling Deeper: A Closer Look at the Blueprint info-version.yml Template.</p>
         </div>
     
         <div class="entry-content">
-            <p>We have focused on improving our open-source <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD app blueprints</a> and the associated <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Toolbox.v2">v2 toolbox</a>.</p>
-<h1>TOOLBOX</h1>
-<p>The toolbox has been cleaned up, and new scripts have been added to simplify installing quality assurance tools and querying Azure Pipelines for tests. </p>
-<p>Here is a snippet of one of the new scripts the toolbox which checks whether any tests have been detected:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="err">#</span>
-<span class="w">    </span><span class="p">.</span><span class="n">DESCRIPTION</span>
-<span class="w">        </span><span class="n">Script</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="nf">count</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">variable</span>
-<span class="w">        </span><span class="k">ref</span><span class="err">:</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">learn</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">rest</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">azure</span><span class="o">/</span><span class="n">devops</span><span class="o">/</span><span class="n">testresults</span><span class="o">/</span><span class="n">resultdetailsbybuild</span><span class="o">/</span><span class="k">get</span><span class="vm">?</span><span class="k">view</span><span class="o">=</span><span class="n">azure</span><span class="o">-</span><span class="n">devops</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="mf">7.2</span>
-<span class="w">    </span><span class="p">.</span><span class="k">PARAMETER</span><span class="w"> </span><span class="n">PAT</span>
-<span class="w">        </span><span class="n">Personal</span><span class="w"> </span><span class="n">Access</span><span class="w"> </span><span class="n">Token</span><span class="w"> </span><span class="p">(</span><span class="n">PAT</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Azure</span><span class="w"> </span><span class="n">DevOps</span><span class="w"> </span><span class="n">account</span>
-<span class="err">#</span><span class="o">&gt;</span>
-
-<span class="o">[</span><span class="n">CmdletBinding()</span><span class="o">]</span>
-<span class="n">param</span><span class="p">(</span>
-<span class="w">    </span><span class="o">[</span><span class="n">Parameter(Mandatory = $true)</span><span class="o">]</span>
-<span class="w">    </span><span class="o">[</span><span class="n">string</span><span class="o">]</span><span class="err">$</span><span class="n">PAT</span>
-<span class="p">)</span>
-
-<span class="err">$</span><span class="n">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="nl">env</span><span class="p">:</span><span class="n">SYSTEM_TEAMPROJECT</span>
-<span class="err">$</span><span class="n">buildId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="nl">env</span><span class="p">:</span><span class="n">BUILD_BUILDID</span>
-<span class="err">$</span><span class="n">organization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;__TODO_INSERT_AZDO_ORG_NAME__&quot;</span>
-<span class="err">$</span><span class="n">apiVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;7.2-preview.1&quot;</span>
-
-<span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;Project: $project BuildId: $buildId Token Length: $($PAT.Length)&quot;</span>
-
-<span class="k">try</span><span class="w"> </span><span class="err">{</span>
-
-<span class="w">    </span><span class="err">$</span><span class="n">BasicAuthEncode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">System.Convert</span><span class="o">]::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="o">[</span><span class="n">System.Text.Encoding</span><span class="o">]::</span><span class="nf">ASCII</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="ss">&quot;:$($PAT)&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="err">$</span><span class="n">AuthHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@{</span><span class="w"> </span><span class="ss">&quot;Authorization&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Basic $BasicAuthEncode&quot;</span><span class="w"> </span><span class="err">}</span>
-<span class="w">    </span><span class="err">$</span><span class="n">buildPipelineTestResultsUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;https://vstmr.dev.azure.com/$organization/$project/_apis/testresults/resultsbybuild?buildId=$buildId&amp;api-version=$apiVersion&quot;</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="err">$</span><span class="n">buildPipelineTestResultsUrl</span>
-<span class="w">    </span><span class="err">$</span><span class="n">buildPipelineTestResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Invoke</span><span class="o">-</span><span class="n">RestMethod</span><span class="w"> </span><span class="o">-</span><span class="n">Uri</span><span class="w"> </span><span class="err">$</span><span class="n">buildPipelineTestResultsUrl</span><span class="w"> </span><span class="err">`</span>
-<span class="w">                                    </span><span class="o">-</span><span class="n">Headers</span><span class="w"> </span><span class="err">$</span><span class="n">AuthHeader</span><span class="w"> </span><span class="err">`</span>
-<span class="w">                                    </span><span class="o">-</span><span class="k">Method</span><span class="w"> </span><span class="s1">&#39;Get&#39;</span><span class="w">  </span><span class="err">`</span>
-<span class="w">                                    </span><span class="o">-</span><span class="n">ContentType</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span>
-
-<span class="w">    </span><span class="err">$</span><span class="n">buildPipelineTestCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">$</span><span class="n">buildPipelineTestResults</span><span class="p">.</span><span class="nf">count</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;##vso[task.setvariable variable=unitTestCount;isOutput=true]$buildPipelineTestCount&quot;</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;Total Tests: $($buildPipelineTestResults.count)&quot;</span>
-<span class="err">}</span>
-<span class="k">catch</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="err">$</span><span class="n">apiCallError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;##vso[task.complete result=SucceededWithIssues;]Task completed with issues&quot;</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;##vso[task.setvariable variable=unitTestCount;isOutput=true]$apiCallError&quot;</span>
-<span class="w">    </span><span class="k">Write</span><span class="o">-</span><span class="k">Host</span><span class="w"> </span><span class="ss">&quot;Error: $($_.Exception.Message)&quot;</span>
-<span class="err">}</span>
-</code></pre></div>
-
-<h1>WHY?</h1>
-<p>We are currently ensuring that tests run. Next, we will focus on enforcing successful and comprehensive test execution. Stay tuned for updates!</p>
-<p>Changes:</p>
+            <p>We continue our deep dive into the details of our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">AzureDevOps.Automation.Pipeline.Templates.v2</a> open source blueprint repo. Today we are going to explore the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/info-version.yml">templates/utilities/info-version.yml</a> template, designed to capture and present detailed information about the pipeline instance, facilitating security reviews and enabling future analysis.</p>
 <blockquote>
-<p><img alt="Toolbox" src="../images/azure-pipeline-blueprints-oss-sync-2025-01-05-01.png"></p>
-<p><img alt="Alert" src="../images/alert-tiny.png"></p>
-<p>As part of this sync, I noticed that the Robot files do not adhere to our lower-case-kebab naming guidelines. We will publish a bug-fix update shortly.
-</p>
+<p><img alt="drilling" src="../images/azure-pipeline-blueprints-explore-info-1.png"></p>
 </blockquote>
-<hr>
-<h1>TEMPLATES</h1>
-<p>The templates have undergone significant cleanup and enhancements, addressing a broad list of improvements:</p>
+<p>Also refer to:</p>
 <ul>
-<li><strong>Removed Application Insights logging</strong> - While a cool concept, it remained unused and incurred unnecessary costs.</li>
-<li><strong>Enabled modeElite</strong> - We have switched from false to true — signaling our commitment to higher quality standards.</li>
-<li><strong>Added unit test enforcement</strong> - The pipeline now checks for unit tests and will fail if none are detected, reinforcing our focus on test coverage.</li>
-<li><strong>Enhanced version-info template</strong> - Version details are now stored as a pipeline artifact for future reference, improving traceability.</li>
-<li><strong>Updated deprecated Azure Pipeline tasks</strong> - We have replaced tasks marked for retirement to ensure long-term maintainability.</li>
+<li><a href="/azure-pipeline-blueprints-explore-start.html">Azure DevOps Pipeline Blueprints - Exploring the start template</a>.</li>
+<li><a href="/azure-pipeline-blueprints-explore-version.html">Azure DevOps Pipeline Blueprints - Exploring the version template</a>.</li>
+<li><a href="/why-pipelines-part1.html">Pipelines - Why bother and what are our nightmares and options?</a> blog series.</li>
 </ul>
-<p>Here is a snippet of the updated info-version template:</p>
+<hr>
+<h1>Today's topic - info-version.yml</h1>
+<p>Today we peek into the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/utilities/info-version.yml">templates/utilities/info-version.yml</a> template which has one purpose - capture information about the pipeline instance for future reference.</p>
 <div class="highlight"><pre><span></span><code><span class="cp"># --------------------------------------------------------------------------</span>
 <span class="cp"># info-version Template</span>
 <span class="cp"># --------------------------------------------------------------------------</span>
@@ -188,22 +133,95 @@
 <span class="w">        </span><span class="nl">ArtifactName</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">pipe</span><span class="o">-</span><span class="n">info</span><span class="err">&#39;</span>
 </code></pre></div>
 
-<h1>WHY?</h1>
-<p>As mentioned earlier, we are fully committed to quality, driven by our common engineering processes and Azure Pipeline templates. We continue to embrace innovative approaches to improve and empower our engineering teams. In a future update, we plan to transition from using Azure Pipeline tasks to YAML commands, simplifying version tracking and management.</p>
-<p>Changes:</p>
-<blockquote>
-<p><img alt="Templates" src="../images/azure-pipeline-blueprints-oss-sync-2025-01-05-02.png"></p>
-</blockquote>
 <hr>
-<p>What else can/should/must we consider as part of our blueprints? Thoughts?</p>
+<h1>Drill-down</h1>
+<p>The second step is a <code>PowerShell</code> command sets five variables in an Azure DevOps pipeline to make them available for subsequent tasks.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span>
+<span class="w">      </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">        </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="o">|</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=bootStrapModeElite;isOutput=true]${{parameters.modeElite}}&quot;</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=bootStrapBlueprint;isOutput=true]${{parameters.applicationBlueprint}}&quot;</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=bootStrapType;isOutput=true]${{parameters.applicationType}}&quot;</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=bootStrapGuid;isOutput=true]${{parameters.vGuid}}&quot;</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;##vso[task.setvariable variable=bootStrapVersion;isOutput=true]${{parameters.vVersion}}&quot;</span>
+<span class="w">        </span><span class="nl">failOnStderr</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">        </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">      </span><span class="nl">name</span><span class="p">:</span><span class="w">         </span><span class="n">BootstrapVars</span>
+<span class="w">      </span><span class="nl">displayName</span><span class="p">:</span><span class="w">  </span><span class="n">Bootstrap</span><span class="w"> </span><span class="n">Vars</span>
+</code></pre></div>
+
+<p>For example:</p>
+<ul>
+<li><code>##vso[task.setvariable variable=bootStrapModeElite;isOutput=true]</code> is an Azure DevOps-specific logging command to set a variable that can be accessed by other tasks in the pipeline. </li>
+<li><code>bootStrapModeElite</code> is the name of the variable being set. In this case it is the variable that defines whether we are serious about quality (true) or noe (false).</li>
+<li><code>isOutput=true</code> makes the variable available as an output variable for other pipeline jobs.</li>
+<li><code>parameters.modeElite</code> is a reference to a parameter that is passed around the templates.</li>
+</ul>
+<blockquote>
+<p><img alt="alert" src="../images/alert-tiny.png"></p>
+<p>Refer to <a href="/sharing-variables-with-stages-and-jobs.html">Gotchas when sharing variables with Azure DevOps stages and jobs</a> if you are planning to share the variables amongst jobs and stages.
+</p>
+</blockquote>
+<p>While these variables work seamlessly for reuse within YAML-based pipelines or across different jobs, we encountered an issue with our classic Azure Pipelines, which consist of a YAML-based continuous integration (CI) pipeline and an older, classic release pipeline for continuous delivery. The variables did not flow between the new and legacy environments, and modifying thousands of legacy release pipelines was simply not feasible.</p>
+<p>This brings us to the second half of the template, which creates a json file with the variables and their values, and publishes them to the Azure Pipeline artifacts. The Powershell task runs an <code>inline</code> script that creates a PowerShell custom object <code>$variablesData</code> with properties that are populated using template parameters.</p>
+<p>The scripts last four steps performs the following:</p>
+<ul>
+<li>Converts the <code>$variablesData</code> object to <strong>JSON</strong> format.</li>
+<li>Defines the file path for the JSON file in the agent's temporary directory.</li>
+<li>Writes the JSON content to the specified file.</li>
+<li>Outputs a message indicating the file path where the JSON file was saved.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span>
+<span class="w">      </span><span class="nl">displayName</span><span class="p">:</span><span class="w">  </span><span class="n">Bootstrap</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="n">info</span>
+<span class="w">      </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">        </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">        </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="o">|</span>
+<span class="w">          </span><span class="n">$variablesData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">PSCustomObject</span><span class="p">]</span><span class="l">@{</span>
+<span class="w">              </span><span class="n">bootStrapModeElite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.modeElite}}&quot;</span>
+<span class="w">              </span><span class="n">bootStrapBlueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.applicationBlueprint}}&quot;</span>
+<span class="w">              </span><span class="n">bootStrapType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.applicationType}}&quot;</span>
+<span class="w">              </span><span class="n">bootStrapGuid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.vGuid}}&quot;</span>
+<span class="w">              </span><span class="n">bootStrapVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;${{parameters.vVersion}}&quot;</span>
+<span class="w">          </span><span class="l">}</span>
+
+<span class="w">          </span><span class="n">$json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$variablesData</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ConvertTo</span><span class="o">-</span><span class="n">Json</span>
+<span class="w">          </span><span class="n">$jsonFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;$(Agent.TempDirectory)/pipe-info.json&quot;</span>
+<span class="w">          </span><span class="n">$json</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Out</span><span class="o">-</span><span class="n">File</span><span class="w"> </span><span class="o">-</span><span class="n">FilePath</span><span class="w"> </span><span class="n">$jsonFilePath</span>
+<span class="w">          </span><span class="n">Write</span><span class="o">-</span><span class="n">Host</span><span class="w"> </span><span class="s">&quot;JSON file saved to $jsonFilePath&quot;</span>
+</code></pre></div>
+
+<p>Lastly, the template publishes the <code>pipe-info.json</code> file located in the agent's temporary directory as a build artifact named <code>pipe-info</code>. Going forward, our quality and security automation, as well as the 2AM incident root cause analysis, can find the pipeline information such as how serious we were about quality, the application-type blueprints used, the suggested application type, and the blueprint template version.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="cp"># Publish pipeline info</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">task</span><span class="o">:</span><span class="w"> </span><span class="n">PublishBuildArtifacts</span><span class="mi">@1</span>
+<span class="w">      </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="n">Bootstrap</span><span class="w"> </span><span class="n">publish</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="n">info</span>
+<span class="w">      </span><span class="nl">inputs</span><span class="p">:</span>
+<span class="w">        </span><span class="nl">PathtoPublish</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;$(Agent.TempDirectory)/pipe-info.json&quot;</span>
+<span class="w">        </span><span class="nl">ArtifactName</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">pipe</span><span class="o">-</span><span class="n">info</span><span class="err">&#39;</span>
+</code></pre></div>
+
+<p>That is it for today!</p>
+<hr>
+<h1>Questions</h1>
+<h3>For my team</h3>
+<ul>
+<li>Q1: What other information should we save in the <code>pipe-info</code> artifact?</li>
+</ul>
+<h3>For you</h3>
+<ul>
+<li>Q2: What other information is important for your CI/CD pipelines to track quality and governance?</li>
+</ul>
+<hr>
+<p>Any questions or suggested improvements?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
         | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
-        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-01-05.html" rel="bookmark"
-         title="Permalink to Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250105">Permalink</a>            
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-info.html" rel="bookmark"
+         title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the info-version.yml template">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
