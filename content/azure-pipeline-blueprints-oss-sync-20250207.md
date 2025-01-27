@@ -83,11 +83,34 @@ variables:
   - template: /deploy/${{ lower(parameters.portfolioName) }}-${{ lower(parameters.productName) }}-config.yml@self
 ```
 
-TBD -subtle need for conditional is that we fixed our naming kebab conventions
+I would not blame you for staring at the code, wondering why there is no apparent difference between versions 2.0.0 and 2.1.0. The distinction is subtle: it is the dash ```-``` instead of the dot ```.``` between the portfolio and product parameters 😉.
 
 ```
-TBD blueprintVersion
+extends:
+  template: blueprints/__101__/azure-pipeline-__101__-control.yml@CeBlueprints
+  parameters:
+    blueprintVersion:  '2.1.0'
+    portfolioName:   '__TODO_PORTFOLIO__'
+    productName:     '__TODO_PRODUCT__'
+    publishFolder:   '__TODO_FOLDERNAME__'
+    suppressCD:      true # Allow engineering to do an immediate CI/build while CD is being configured
 ```
+
+We also had to update all the generic templates and the ```*-start.yml``` templates to pass the ```blueprintVersion``` to the ```boot-strap.yml``` and the ```*-control.yml``` templates respectively.
+
+I did ask our AI wingman how to improve the code and got the following ... and I quote:
+
+Your YAML snippet is concise and functional, but here are a few improvements to enhance clarity, maintainability, and readability:
+
+Suggested Enhancements:
+
+- **Add Contextual Comments**: Clearly explain each parameter's purpose to improve readability for someone unfamiliar with the template.
+- **Provide Examples**: Where placeholders like __TODO__ are used, offer examples to make it clear how they should be replaced.
+- **Align Indentation and Formatting**: Ensure consistent spacing for cleaner visuals.
+
+... end quote.
+
+I will share these suggestions with our engineers, but we are unlikely to incorporate these informational updates. Why? Our focus is on automating repetitive tasks — like creating repositories, pipelines, and replacing placeholder tokens — through self-service tools. Because of this, the stakeholders will rarely review this code and we prioritize conciseness and functionality over detailed readability.
 
 Changes:
 
