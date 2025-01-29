@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-01-29T00:00:00-08:00</updated><entry><title>Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-qa-scans.html" rel="alternate"></link><published>2025-01-29T00:00:00-08:00</published><updated>2025-01-29T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-01-29:/azure-pipeline-blueprints-explore-qa-scans.html</id><summary type="html">&lt;p&gt;Drilling Deeper: A Closer Look at the Blueprint Quality Assurance (QA) Scan Templates.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We continue our deep dive into the details of our &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2"&gt;AzureDevOps.Automation.Pipeline.Templates.v2&lt;/a&gt; open source blueprint repo. Today we are going to explore the &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml"&gt;templates/qa/azure-pipeline-qa-scans.yml&lt;/a&gt; and &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml"&gt;templates/qa/qa-scans-cd.yml&lt;/a&gt; templates, designed to run the quality assurance validations.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-01-29T00:00:00-08:00</updated><entry><title>Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-qa-scans.html" rel="alternate"></link><published>2025-01-29T00:00:00-08:00</published><updated>2025-01-29T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-01-29:/azure-pipeline-blueprints-explore-qa-scans.html</id><summary type="html">&lt;p&gt;Drilling Deeper: A Closer Look at the Blueprint Quality Assurance (QA) Scan Templates.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We continue our deep dive into the details of our &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2"&gt;AzureDevOps.Automation.Pipeline.Templates.v2&lt;/a&gt; open source blueprint repo. Today we are going to explore the &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml"&gt;templates/qa/azure-pipeline-qa-scans.yml&lt;/a&gt; and &lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml"&gt;templates/qa/qa-scans-cd.yml&lt;/a&gt; templates, designed to run the quality assurance validations.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="drilling" src="../images/azure-pipeline-blueprints-explore-qa-scans-1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -131,7 +131,7 @@
 &lt;h3&gt;azure-pipeline-qa-scans.yml nuggets&lt;/h3&gt;
 &lt;p&gt;This template is triggered by our *cd-yml template, ensures the necessary dependencies are in place, and then hands off control to the qa-scans.yml template.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Gem 1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gem 1&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;  &lt;/span&gt;dependsOn:
 &lt;span class="w"&gt;  &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dependsOn&lt;/span&gt; &lt;span class="cp"&gt;}&lt;/span&gt;}:
@@ -157,7 +157,7 @@
 
 &lt;p&gt;This means the current stage will only execute after both the Build and Test stages are completed. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Gem 2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gem 2&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# List all environment variables within this agent&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;env | sort&amp;#39;&lt;/span&gt;
@@ -181,7 +181,7 @@
 &lt;h1&gt;Questions&lt;/h1&gt;
 &lt;h3&gt;For my team&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Q1: Should we consider removing the conditional logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.&lt;/li&gt;
+&lt;li&gt;Q1: Should we consider removing the conditional app-type logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;For you&lt;/h3&gt;
 &lt;ul&gt;

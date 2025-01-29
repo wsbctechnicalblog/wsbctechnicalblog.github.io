@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s) - </title>
+        <title>Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -34,7 +34,7 @@
         <div class="row">
            <div class="large-10 content-column column">
     <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-qa-scans.html" rel="bookmark"
-            title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)">Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)</a></h1>
+            title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates">Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
@@ -181,7 +181,7 @@
 <h3>azure-pipeline-qa-scans.yml nuggets</h3>
 <p>This template is triggered by our *cd-yml template, ensures the necessary dependencies are in place, and then hands off control to the qa-scans.yml template.</p>
 <blockquote>
-<p>Gem 1</p>
+<p><strong>Gem 1</strong></p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="w">  </span>dependsOn:
 <span class="w">  </span>-<span class="w"> </span><span class="cp">${</span><span class="p">{</span> <span class="n">each</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">parameters</span><span class="o">.</span><span class="n">dependsOn</span> <span class="cp">}</span>}:
@@ -207,7 +207,7 @@
 
 <p>This means the current stage will only execute after both the Build and Test stages are completed. </p>
 <blockquote>
-<p>Gem 2</p>
+<p><strong>Gem 2</strong></p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># List all environment variables within this agent</span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">bash</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;env | sort&#39;</span>
@@ -231,7 +231,7 @@
 <h1>Questions</h1>
 <h3>For my team</h3>
 <ul>
-<li>Q1: Should we consider removing the conditional logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.</li>
+<li>Q1: Should we consider removing the conditional app-type logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.</li>
 </ul>
 <h3>For you</h3>
 <ul>
@@ -246,7 +246,7 @@
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
         | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
         | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-explore-qa-scans.html" rel="bookmark"
-         title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)">Permalink</a>            
+         title="Permalink to Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

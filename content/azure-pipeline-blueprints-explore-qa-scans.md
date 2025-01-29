@@ -1,4 +1,4 @@
-Title: Azure DevOps Pipeline Blueprints - Exploring the QA Scan template9s)
+Title: Azure DevOps Pipeline Blueprints - Exploring the QA Scan templates
 Date: 2025-01-29
 Category: Posts
 Tags: azure-devops, pipelines, engineering
@@ -143,7 +143,7 @@ steps:
 
 This template is triggered by our *cd-yml template, ensures the necessary dependencies are in place, and then hands off control to the qa-scans.yml template.
 
-> Gem 1
+> **Gem 1**
 
 ```
   dependsOn:
@@ -174,7 +174,7 @@ dependsOn:
 
 This means the current stage will only execute after both the Build and Test stages are completed. 
 
-> Gem 2
+> **Gem 2**
 
 ```
     # List all environment variables within this agent
@@ -206,7 +206,7 @@ That is it for today - but an ear on the ground - we have an interesting v2.1 up
 
 ### For my team
 
-- Q1: Should we consider removing the conditional logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.
+- Q1: Should we consider removing the conditional app-type logic examples and instead adding them only when needed for specific app-type blueprints? This could help reduce noise and improve clarity.
 
 ### For you
 
