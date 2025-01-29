@@ -21,7 +21,7 @@ Also refer to:
 
 # Today's topics - azure-pipeline-qa-scans.yml and qa-scans-cd.yml
 
-Today we peek into the [templates/qa/azure-pipeline-qa-scans.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml) template which is triggered be the continuous delivery (cd) template and has one purpose, to trigger the [templates/qa/qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) and in fiture, other QA templates.
+Today we peek into the [templates/qa/azure-pipeline-qa-scans.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml) template which is triggered by the continuous delivery (cd) template and has one purpose, to trigger the [templates/qa/qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) and in fiture, other QA templates.
 
 > azure-pipeline-qa-scans.yml
 
@@ -198,7 +198,7 @@ For this template, we focus on a single conditional statement from the many avai
 
 This gem is a conditional expression that checks whether the current build branch matches specific conditions - whether we are dealing with a **release** branch. In the template we have a section where users can run app-type specific tasks if we are dealing with a **release** branch, or any **other** branch, or both.
 
-That is it for today!
+That is it for today - but an ear on the ground - we have an interesting v2.1 update coming.
 
 ---
 
