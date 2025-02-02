@@ -239,10 +239,7 @@ stages:
 
 ### azure-pipeline-universal-artifact-cd.yml nuggets
 
-X
-
-- [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html).
-- [Gotchas when sharing variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html).
+Let us take a look at the ```azure-pipeline-universal-artifact-cd.yml``` blueprint template, which defines the deployment and validation stages, specifying when they are triggered and in what sequence. The first YAML snippet is part of an Azure DevOps pipeline configuration, specifically handling conditional deployment for the Production stage in a universal artifact deployment pipeline.
 
 > **Gem 1**
 
@@ -267,14 +264,15 @@ X
       - PreProdAutomation
 ```
 
-X
+Let us break it down.
+
+- The YAML snippet runs only if ```parameters.stage.production.config.active``` is **true** (enabled in the *-config.yml file and if the build source branch is ```refs/heads/release``` or any sub-branch under ```refs/heads/release/```, for example refs/heads/release/v1.2.3.
+- Uses the ```azure-pipeline-universal-artifact-cd-stage.yml``` template and passes parameters like name, displayName, and the config object.
+- Establishes dependencies on multiple preceding stages to dictate the execution sequence and inherit variables from earlier stages, as outlined in [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html) and [Gotchas when sharing variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html).
 
 ### azure-pipeline-universal-artifact-cd-stage.yml nuggets
 
-X
-
-- [How to share variables amongst Azure Pipeline agents](/sharing-variables-amongst-agents.html).
-- [Gotchas when sharing variables with Azure DevOps stages and jobs](/sharing-variables-with-stages-and-jobs.html).
+Next, let us peek into the template used by the ```*-cd.yml``` template.
 
 > **Gem 1**
 
@@ -287,7 +285,10 @@ X
   default:  []
 ```
 
-X
+This YAML snippet defines two parameters:
+
+- The ```config``` parameter is by default an empty, but in our case stores pipeline configuration settings.
+- The ```dependsOn``` parameter, also by default and empty array, specifies dependencies between stages/jobs, determining execution order.
 
 > **Gem 2**
 
@@ -296,7 +297,12 @@ X
       currentVersion: $[ stageDependencies.ContinuousIntegration.ContinuousIntegration.outputs['setSemVersion.semVersion'] ]
 ```
 
-X
+This line defines a pipeline variable named currentVersion, which retrieves its value from the calculated version as we discussed in [Azure DevOps Pipeline Blueprints - Exploring the version template](/azure-pipeline-blueprints-explore-version.html).
+
+- The first ```ContinuousIntegration``` refers to the stage name.
+- The second ```ContinuousIntegration``` refers to the job name within that stage.
+- ```setSemVersion``` refers a step within the job.
+- ```semVersion``` is the output variable from that task.
 
 > ***Gem 3**
 
@@ -314,7 +320,12 @@ X
       versionPublish:         $(currentVersion)
 ```
 
-X
+This YAML snippet defines a conditional step publishes a Universal Package to an internal feed when triggered from a release branch, using:
+
+- The ```UniversalPackages``` task to publish artifacts.
+- Upload the package from ```$(Agent.BuildDirectory)/drop```.
+- The feed and package details aprovided via ```parameters.config```.
+- Using ```$(currentVersion)```, as set in the ContinuousIntegration stage, to set the custom version.
 
 That is a wrap for today.
 
