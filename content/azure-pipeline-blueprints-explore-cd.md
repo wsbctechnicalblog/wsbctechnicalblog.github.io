@@ -274,7 +274,7 @@ Let us break it down.
 
 Next, let us peek into the template used by the ```*-cd.yml``` template.
 
-> **Gem 1**
+> **Gem 2**
 
 ```
 - name:     config
@@ -287,8 +287,8 @@ Next, let us peek into the template used by the ```*-cd.yml``` template.
 
 This YAML snippet defines two parameters:
 
-- The ```config``` parameter is by default an empty, but in our case stores pipeline configuration settings.
-- The ```dependsOn``` parameter, also by default and empty array, specifies dependencies between stages/jobs, determining execution order.
+- The ```config``` parameter is by default an empty array, but in our case stores pipeline configuration settings.
+- The ```dependsOn``` parameter, also by default an empty array, specifies dependencies between stages/jobs, determining execution order.
 
 > **Gem 2**
 
