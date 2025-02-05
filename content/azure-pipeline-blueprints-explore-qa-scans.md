@@ -21,7 +21,7 @@ Also refer to:
 
 # Today's topics - azure-pipeline-qa-scans.yml and qa-scans-cd.yml
 
-Today we peek into the [templates/qa/azure-pipeline-qa-scans.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml) template which is triggered by the continuous delivery (cd) template and has one purpose, to trigger the [templates/qa/qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) and in fiture, other QA templates.
+Today we peek into the [templates/qa/azure-pipeline-qa-scans.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/azure-pipeline-qa-scans.yml) template which is triggered by the continuous delivery (cd) template and has one purpose, to trigger the [templates/qa/qa-scans-cd.yml](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/templates/qa/qa-scans-cd.yml) and in future, other QA templates.
 
 > azure-pipeline-qa-scans.yml
 
