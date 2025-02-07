@@ -116,6 +116,10 @@ Changes:
 
 > ![Templates](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-04.png)
 
+>
+> [Click here to view the associated Pull Request](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/33)
+>
+
 ---
 
 What else can/should/must we consider as part of our blueprints? Thoughts?
