@@ -10,7 +10,7 @@ We have focused on improving our self-service, which required us to finally intr
 
 # SELF-SERVICE
 
-Our self-service process for paved roads, starting with a new Azure Repos (Git) simplifies setup by automatically adding a ```Hello World``` sample, an app-type-specific v2 CI/CD blueprint file, the configuration file, and triggering the Azure Pipeline to validate the setup.  We found a limitation with the configuration file being ```<portfolio>-<application>-config.yml```, restricting each repository to one domain and component type. This meant building a web app and its API required two repositories. 
+Our self-service process for paved roads, starting with a new Azure Repo (Git) simplifies setup by automatically adding a ```Hello World``` sample, an app-type-specific v2 CI/CD blueprint file, the configuration file, and triggering the Azure Pipeline to validate the setup.  We found a limitation with the configuration file being ```<portfolio>-<application>-config.yml```, restricting each repository to one domain and component type. This meant building a web app and its API required two repositories. 
 
 The self-service automation logic could have implemented this update without altering the blueprints. However, we have also ensured that self-service creates kebab-style file names in accordance with our governance. The change involves switching from a dot to a dash. To maintain consistency and standardization, both old existing config files using dots and new config files using dashes will be supported. 
 
