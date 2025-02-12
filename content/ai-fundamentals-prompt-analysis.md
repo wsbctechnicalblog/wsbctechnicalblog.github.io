@@ -6,7 +6,7 @@ Slug: ai-fundamentals-prompt-analysis
 Author: Willy-Peter Schaub
 Summary: By structuring an effective prompt, we can transformed this raw blog into a meaningful and inspiring summary. 
 
-This blog post discusses how artificial intelligence (AI) can be being used to **augment** capabilities, allowing for quick handling of tedious, time-consuming tasks. AI is applied in various areas such as analyzing complex documents, processing raw survey feedback, and extracting insights from blog posts that have taken years to develop. This **empowering** technology is changing the way work is conducted and information is interpreted - as our technical blog is public, I will use [chatgpt](https://chatgpt.com/) today, but could also use the Microsoft 365 Copilot.
+This blog post discusses how artificial intelligence (AI) can be used to **augment** capabilities, allowing for quick handling of tedious, time-consuming tasks. AI is applied in various areas such as analyzing complex documents, processing raw survey feedback, and extracting insights from blog posts that have taken years to develop. This **empowering** technology is changing the way work is conducted and information is interpreted - as our technical blog is public, I will use [chatgpt](https://chatgpt.com/) today, but could also use the Microsoft 365 Copilot.
 
 ---
 
