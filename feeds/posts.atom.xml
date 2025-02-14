@@ -5,7 +5,7 @@
 &lt;p&gt;The self-service automation logic could have implemented this update without altering the blueprints. However, we have also ensured that self-service creates kebab-style file names in accordance with our governance. The change involves switching from a dot to a dash. To maintain consistency and standardization, both old existing config files using dots and new config files using dashes will be supported. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;v2.1.0 self-service flow&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Self-Service" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01a.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Self-Service" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;To solve this, we added versioning to the v2 templates, allowing all components in one repository, as discussed below.&lt;/p&gt;
 &lt;h1&gt;BUT WAIT, What are Paved Roads?&lt;/h1&gt;
@@ -21,7 +21,7 @@
 &lt;li&gt;&lt;strong&gt;Jungle&lt;/strong&gt; - Create disposable proof-of-concepts with unrestricted freedom, operating outside traditional constraints.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Jungle" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-03.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Jungle" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-03b.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This approach enables engineers to balance innovation and structure according to their specific needs.&lt;/p&gt;
 &lt;h1&gt;TEMPLATES&lt;/h1&gt;

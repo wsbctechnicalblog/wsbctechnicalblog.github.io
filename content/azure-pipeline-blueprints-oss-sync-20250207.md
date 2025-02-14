@@ -17,7 +17,7 @@ The self-service automation logic could have implemented this update without alt
 >
 > v2.1.0 self-service flow
 >
-> ![Self-Service](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01a.png)
+> ![Self-Service](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01.png)
 
 To solve this, we added versioning to the v2 templates, allowing all components in one repository, as discussed below.
 
@@ -35,7 +35,7 @@ Our engineers have the option to choose from three distinct paths:
 - **Logging Roads** - Define new blueprints with an element of experimentation and innovation, while still adhering to some guidelines and flexibility.
 - **Jungle** - Create disposable proof-of-concepts with unrestricted freedom, operating outside traditional constraints.
 
-> ![Jungle](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-03.png)
+> ![Jungle](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-03b.png)
 
 This approach enables engineers to balance innovation and structure according to their specific needs.
 
