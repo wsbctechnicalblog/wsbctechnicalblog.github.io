@@ -17,7 +17,7 @@ The self-service automation logic could have implemented this update without alt
 >
 > v2.1.0 self-service flow
 >
-> ![Self-Service](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01.png)
+> ![Self-Service](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01a.png)
 
 To solve this, we added versioning to the v2 templates, allowing all components in one repository, as discussed below.
 
@@ -27,7 +27,7 @@ To solve this, we added versioning to the v2 templates, allowing all components 
 
 Just as paved roads provide a reliable and efficient transportation infrastructure for vehicles, paved roads in software development offer a structured path for engineers to follow. They include ```Architecture Blueprints```, ```Infrastructure Blueprints```, ```Security Blueprints```, and our v2 ```CI/CD Blueprints```.
 
-> ![Paved Roads](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-02.png)
+> ![Paved Roads](../images/azure-pipeline-blueprints-oss-sync-2025-02-07-02a.png)
 
 Our engineers have the option to choose from three distinct paths:
 

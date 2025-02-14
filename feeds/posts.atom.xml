@@ -5,14 +5,14 @@
 &lt;p&gt;The self-service automation logic could have implemented this update without altering the blueprints. However, we have also ensured that self-service creates kebab-style file names in accordance with our governance. The change involves switching from a dot to a dash. To maintain consistency and standardization, both old existing config files using dots and new config files using dashes will be supported. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;v2.1.0 self-service flow&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Self-Service" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Self-Service" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-01a.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;To solve this, we added versioning to the v2 templates, allowing all components in one repository, as discussed below.&lt;/p&gt;
 &lt;h1&gt;BUT WAIT, What are Paved Roads?&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;Paved Roads&lt;/code&gt; is a term we use to describe standardized and well-defined architectures, infrastructures, and CI/CD pipelines that act as foundational templates or blueprints for creating and deploying software solutions. These paved roads capture best practices, design patterns, and automation techniques that simplify the development process, reduce complexity, and ensure consistency across projects.&lt;/p&gt;
 &lt;p&gt;Just as paved roads provide a reliable and efficient transportation infrastructure for vehicles, paved roads in software development offer a structured path for engineers to follow. They include &lt;code&gt;Architecture Blueprints&lt;/code&gt;, &lt;code&gt;Infrastructure Blueprints&lt;/code&gt;, &lt;code&gt;Security Blueprints&lt;/code&gt;, and our v2 &lt;code&gt;CI/CD Blueprints&lt;/code&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Paved Roads" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-02.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Paved Roads" src="../images/azure-pipeline-blueprints-oss-sync-2025-02-07-02a.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Our engineers have the option to choose from three distinct paths:&lt;/p&gt;
 &lt;ul&gt;
