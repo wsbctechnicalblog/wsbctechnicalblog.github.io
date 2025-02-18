@@ -2,7 +2,7 @@ Title: Engineering Practice Feature Flags
 Date: 2023-03-15
 Category: Posts 
 Tags: code, code-quality, engineering, technical-excellence
-Slug: engineering-practice-layering
+Slug: engineering-practice-feature-flags
 Author: Martin M. Lacey
 Summary: Feature Flags Part 1 - How To Keep Trunk-Based Branching Reliable
 
