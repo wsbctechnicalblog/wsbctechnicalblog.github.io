@@ -11,7 +11,7 @@ Summary: Feature Flags Part 1 - How To Keep Trunk-Based Branching Reliable
 
 > ![software bug-bear - feature flag misunderstandings](/images/engineering-practices-feature-flags-3.jpg)
 
-Well, we've discussed this in several historical issues of our technical blog, but it continues to be a bug-bear! It is therefore important to revisit and see where we are with out thinking. See the reference section at the end of this blog for our prior thoughts on this subject; the balance of this blog is a further evolution and analysis, with options on how to address implementation details.  In a subsequent post, I will get into concreate examples demonstrating patterns discussed here. 
+Well, we've discussed this in several historical issues of our technical blog, but it continues to be a bug-bear! It is therefore important to revisit and see where we are with our thinking. See the reference section at the end of this blog for our prior thoughts on this subject; the balance of this blog is a further evolution and analysis, with options on how to address implementation details.  In a subsequent post, I will get into concreate examples demonstrating patterns discussed here. 
 
 Feature flags are a powerful technique in software engineering for managing the exposure of partially implemented or experimental functionality while maintaining a stable production environment. 
 As we have discussed in prior blogs, we recommend trunk-based branch management - see [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023
