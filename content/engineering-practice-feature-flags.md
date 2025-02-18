@@ -9,16 +9,16 @@ Summary: Feature Flags Part 1 - How To Keep Trunk-Based Branching Reliable
 # What are Feature Flags?
 
 
-> ![software bug-bear - feature flag misunderstandings](/images/engineering-practices-feature-flags-3.jpg)
+> ![software bug-bear - feature flag misunderstandings](/images/engineering-practice-feature-flags-3.jpg)
 
 Well, we've discussed this in several historical issues of our technical blog, but it continues to be a bug-bear! It is therefore important to revisit and see where we are with our thinking. See the reference section at the end of this blog for our prior thoughts on this subject; the balance of this blog is a further evolution and analysis, with options on how to address implementation details.  In a subsequent post, I will get into concreate examples demonstrating patterns discussed here. 
 
 Feature flags are a powerful technique in software engineering for managing the exposure of partially implemented or experimental functionality while maintaining a stable production environment. 
 As we have discussed in prior blogs, we recommend trunk-based branch management - see [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023
 .  As a refresher, here is the repository management pattern we suggest and follow:
-> ![Visualizing the branching strategy](/images/engineering-practices-feature-flags-1.png)
+> ![Visualizing the branching strategy](/images/engineering-practice-feature-flags-1.png)
 
- [Caution](/images/engineering-practices-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
+ [Caution](/images/engineering-practice-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
 Below, I outline best practices for using feature flags effectively, managing older code that lacks SOLID principles, ensuring good design in new applications, and structuring story slicing to avoid long-lived feature branches.
 
 ---
