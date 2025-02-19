@@ -18,7 +18,7 @@ As we have discussed in prior blogs, we recommend trunk-based branch management 
 .  As a refresher, here is the repository management pattern we suggest and follow:
 > ![Visualizing the branching strategy](/images/engineering-practice-feature-flags-1.png)
 
- [Caution](/images/engineering-practice-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
+ ![Caution](/images/engineering-practice-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
 Below, I outline best practices for using feature flags effectively, managing older code that lacks SOLID principles, ensuring good design in new applications, and structuring story slicing to avoid long-lived feature branches.
 
 ---
