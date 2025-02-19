@@ -1,0 +1,280 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Engineering Practice Feature Flags - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-feature-flags.html" rel="bookmark"
+            title="Permalink to Engineering Practice Feature Flags">Engineering Practice Feature Flags</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Martin M. Lacey on Wed 19 February 2025</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Feature Flags Part 1 - How To Keep Trunk-Based Branching Reliable</p>
+        </div>
+    
+        <div class="entry-content">
+            <h1>What are Feature Flags?</h1>
+<blockquote>
+<p><img alt="software bug-bear - feature flag misunderstandings" src="/images/engineering-practice-feature-flags-3.jpg"></p>
+</blockquote>
+<p>Well, we've discussed this in several historical issues of our technical blog, but it continues to be a bug-bear! It is therefore important to revisit and see where we are with our thinking. See the reference section at the end of this blog for our prior thoughts on this subject; the balance of this blog is a further evolution and analysis, with options on how to address implementation details.  In a subsequent post, I will get into concreate examples demonstrating patterns discussed here. </p>
+<p>Feature flags are a powerful technique in software engineering for managing the exposure of partially implemented or experimental functionality while maintaining a stable production environment. 
+As we have discussed in prior blogs, we recommend trunk-based branch management - see <a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html">Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow</a> / Dec 2023.</p>
+<p>As a refresher, here is the repository management pattern we suggest and follow:</p>
+<blockquote>
+<p><img alt="Visualizing the branching strategy" src="/images/engineering-practice-feature-flags-1.png"></p>
+</blockquote>
+<p><img alt="Caution" src="/images/engineering-practice-feature-flags-2.png"> The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
+Below, I outline best practices for using feature flags effectively, managing older code that lacks SOLID principles, ensuring good design in new applications, and structuring story slicing to avoid long-lived feature branches.</p>
+<hr>
+<h1>1. Best Practices for Using Feature Flags</h1>
+<p>Feature flags (also called feature toggles) enable dynamic control over feature availability in different environments without deploying new code. Effective use of feature flags helps teams continuously integrate changes while mitigating risks.</p>
+<h2>Types of Feature Flags</h2>
+<ul>
+<li><strong>Release Toggles</strong> - Temporarily control unfinished features, allowing incremental development.</li>
+<li><strong>Experiment Toggles</strong> - Enable A/B testing to compare feature performance and behavior with a subset of users.</li>
+<li><strong>Ops Toggles</strong> - Used for operational controls, such as enabling circuit breakers or graceful degradation, such as logging levels or feature activation.</li>
+<li><strong>Permission Toggles</strong> - Control access to features based on user roles or permissions.</li>
+<li><strong>Kill Switches</strong> - Disable features in production to prevent issues or security vulnerabilities.</li>
+<li><strong>Configuration Toggles</strong> - Modify feature behavior without code changes, such as changing thresholds or timeouts.</li>
+<li><strong>Time-Based Toggles</strong> - Enable features based on time, such as seasonal promotions or holiday themes.</li>
+</ul>
+<h2>Best Practices</h2>
+<ul>
+<li><strong>Default to Off</strong> - Features should be disabled by default to prevent accidental exposure of unfinished or experimental features.</li>
+<li><strong>Keep Flags Short-Lived</strong> - Remove flags once features are stable and released to avoid technical debt.</li>
+<li><strong>Use a Flag Management System</strong> - Centralize flag management to improve visibility and governance, ensure consistency and avoid conflicts.</li>
+<li><strong>Monitor and Audit</strong> - Track flag usage and performance to identify issues and optimize feature delivery.</li>
+<li><strong>Enable Gradual Rollouts</strong> - Use percentage-based rollouts to limit the impact of issues and gather feedback from a subset of users.</li>
+<li><strong>Ensure Flags are Configurable at Runtime</strong> - Allow flags to be toggled without code changes or restarting services to respond quickly to issues or changes.</li>
+<li><strong>Automate Testing</strong> - Include flag testing in automated test suites to ensure consistent behavior across environments.</li>
+</ul>
+<hr>
+<h1>2. Managing Older Code Without SOLID Design</h1>
+<p>Older codebases often lack SOLID principles (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). This makes integrating feature flags and refactoring difficult.</p>
+<h2>Challenges</h2>
+<ul>
+<li><strong>Monolithic Architecture</strong> - Large, tightly coupled codebases make it challenging to isolate and test features.</li>
+<li><strong>Spaghetti Code</strong> - Complex, interdependent code with unclear responsibilities and dependencies.</li>
+<li><strong>Lack of Dependency Injection</strong> - Hard-coded dependencies and global state make it difficult to introduce new functionality and toggle features dynamically. </li>
+<li><strong>Lack of Tests</strong> - Inadequate test coverage makes it difficult to validate changes and ensure backward compatibility.</li>
+<li><strong>Legacy Dependencies</strong> - Outdated libraries, frameworks, or third-party services that limit modernization efforts.</li>
+</ul>
+<h2>Strategies for Managing Older Code</h2>
+<ul>
+<li><strong>Introduce Facades &amp; Wrappers</strong> - Create an abstraction layer around legacy code to introduce feature toggles without deep modifications.</li>
+<li><strong>Apply the Strangler Pattern</strong> - Incrementally refactor and replace legacy components with modern, feature-flag-enabled code. </li>
+<li><strong>Use Adapter Patterns</strong> - Introduce adapters to bridge between legacy and modern code, enabling feature flag integration.</li>
+<li><strong>Refactor Opportunistically</strong> - Break down monolithic components into smaller, testable units to introduce SOLID principles and feature flags.  Whenever modifying old code for a new feature, apply SOLID principles gradually. </li>
+<li><strong>Use Inversion of Control (IoC) for Flags</strong> - Inject feature toggles through configuration rather than scattering conditionals across the codebase; introduce dependency injection and IoC containers to manage feature flags and dependencies dynamically.</li>
+</ul>
+<hr>
+<h1>3. Importance of Good Design in New Applications</h1>
+<p>A well-architected system makes feature flags easier to implement and reduces long-term complexity.</p>
+<h2>Key Design Considerations</h2>
+<ul>
+<li><strong>Modular Architecture</strong> - Use microservices, plugins, or clean architecture to isolate features.</li>
+<li><strong>Separation of Concerns</strong> - Divide functionality into distinct layers (presentation, business logic, data access) to improve maintainability and testability.</li>
+<li><strong>Dependency Injection (DI)</strong> - Use IoC containers to manage dependencies and enable feature toggles without code rewrites.</li>
+<li><strong>Test-Driven Development (TDD)</strong> - Write tests before implementing features to ensure code quality and enable continuous integration.</li>
+<li><strong>Event-Driven Design</strong> - Use events and messaging to decouple components and enable asynchronous processing, allowing features to be toggled dynamically without affecting core workflows.</li>
+<li><strong>Clear API Boundaries</strong> - Define clear interfaces and contracts between components to enable feature flagging at the API level; avoid tightly coupled dependencies that complicate feature flag implementations.</li>
+<li><strong>Well-Defined Domain Model</strong> - Use domain-driven design to model business logic and entities, enabling feature flags to be applied at the domain level and reducing cross-cutting concerns; helps in slicing stories (discussed below) for smaller, incremental changes.</li>
+</ul>
+<hr>
+<h1>4. Effective Story Slicing to Avoid Long-Lived Feature Branches</h1>
+<p>One of the biggest risks in feature flagging is accumulating long-lived feature branches, leading to merge conflicts and integration issues.</p>
+<h2>Why Avoid Long-Lived Feature Branches?</h2>
+<ul>
+<li><strong>Integration Hell</strong> - Merging long-lived branches can be complex and error-prone, leading to conflicts and regressions.  The longer a branch exists, the harder it is to merge.</li>
+<li><strong>Delayed Feedback</strong> - Long-lived branches delay feedback from stakeholders and users, increasing the risk of misalignment, hidden defects, and wasted effort.</li>
+<li><strong>Reduced Velocity</strong> - Long-lived branches slow down development velocity, making it harder to deliver value quickly and respond to changing requirements.</li>
+<li><strong>Reduced Collaboration</strong> - Long-lived branches isolate developers and teams, reducing collaboration and knowledge sharing, which can unknowingly introduce conflicts.</li>
+<li><strong>Increased Technical Debt</strong> - Long-lived branches accumulate technical debt, making it harder to maintain and evolve the codebase.</li>
+<li><strong>Risk of Abandonment</strong> - Long-lived branches increase the risk of features being abandoned or postponed indefinitely due to integration challenges.</li>
+<li><strong>Complex Dependencies</strong> - Long-lived branches introduce complex dependencies and make it harder to isolate and test features independently.</li>
+<li><strong>Inconsistent Code Quality</strong> - Long-lived branches can lead to inconsistent code quality and practices, making it harder to maintain and scale the codebase.</li>
+<li><strong>Increased Rework</strong> - Long-lived branches increase the likelihood of rework and refactoring, as requirements change and conflicts arise.</li>
+</ul>
+<h2>Best Practices for Story Slicing</h2>
+<ul>
+<li><strong>Slice Stories Vertically</strong> - Break down features into small, vertical slices that deliver end-to-end functionality, enabling incremental development and feedback.</li>
+<li><strong>Use Feature Flags</strong> - Use feature flags as early as possible to hide incomplete functionality and enable continuous integration and deployment.</li>
+<li><strong>Deliver Value in Small Increments</strong> - Instead of developing an entire feature in one go, break it into deployable slices.</li>
+<li><strong>Use UI Stubs &amp; Mocks</strong> - If backend functionality isn't ready, implement UI components with placeholders.</li>
+<li><strong>Adopt Trunk-Based Development</strong> - Encourage frequent integration to main branches, reducing the reliance on long-lived feature branches.</li>
+</ul>
+<hr>
+<h1>Conclusion</h1>
+<p>Feature flags are essential for modern software engineering but require disciplined management. When dealing with legacy code, introduce feature flags with minimal refactoring - progressively improving the design. New applications should follow SOLID principles and a modular architecture to facilitate easy feature toggling. 
+Finally, effective story slicing ensures that teams can continuously integrate work, avoiding long-lived branches and maintaining high development velocity.</p>
+<h1>References</h1>
+<ul>
+<li><a href="https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html">Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow</a> / Dec 2023</li>
+<li><a href="https://wsbctechnicalblog.github.io/engineering-practices-feature-flags.html">Mastering Software Development: A Deep Dive into Feature Flags</a> / Dec 2023</li>
+<li><a href="https://martinfowler.com/articles/feature-toggles.html">Feature Toggles (aka Feature Flags)</a> by Martin Fowler</li>
+<li><a href="https://www.optimizely.com/feature-management/feature-flags/">Feature Flags Best Practices</a> by Optimizely</li>
+</ul>
+<hr>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
+        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-feature-flags.html" rel="bookmark"
+         title="Permalink to Engineering Practice Feature Flags">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(27)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(60)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(87)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(60)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(53)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(23)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(35)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(52)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (218)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
