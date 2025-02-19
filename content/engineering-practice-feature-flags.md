@@ -14,11 +14,15 @@ Summary: Feature Flags Part 1 - How To Keep Trunk-Based Branching Reliable
 Well, we've discussed this in several historical issues of our technical blog, but it continues to be a bug-bear! It is therefore important to revisit and see where we are with our thinking. See the reference section at the end of this blog for our prior thoughts on this subject; the balance of this blog is a further evolution and analysis, with options on how to address implementation details.  In a subsequent post, I will get into concreate examples demonstrating patterns discussed here. 
 
 Feature flags are a powerful technique in software engineering for managing the exposure of partially implemented or experimental functionality while maintaining a stable production environment. 
-As we have discussed in prior blogs, we recommend trunk-based branch management - see [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023
-.  As a refresher, here is the repository management pattern we suggest and follow:
+As we have discussed in prior blogs, we recommend trunk-based branch management - see [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023.
+
+
+As a refresher, here is the repository management pattern we suggest and follow:
+
 > ![Visualizing the branching strategy](/images/engineering-practice-feature-flags-1.png)
 
- ![Caution](/images/engineering-practice-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
+
+![Caution](/images/engineering-practice-feature-flags-2.png) The trunk, typically master branch, is not only our source of truth, but must also be deployable to production via a release branch at any time. Features merged to master that are not ready for release, must be tagged, hidden by feature flags, and deployable to any environment. This is crucial when multiple teams share an application and its repository.
 Below, I outline best practices for using feature flags effectively, managing older code that lacks SOLID principles, ensuring good design in new applications, and structuring story slicing to avoid long-lived feature branches.
 
 ---
@@ -28,6 +32,7 @@ Below, I outline best practices for using feature flags effectively, managing ol
 Feature flags (also called feature toggles) enable dynamic control over feature availability in different environments without deploying new code. Effective use of feature flags helps teams continuously integrate changes while mitigating risks.
 
 ## Types of Feature Flags
+
 - **Release Toggles** - Temporarily control unfinished features, allowing incremental development.
 - **Experiment Toggles** - Enable A/B testing to compare feature performance and behavior with a subset of users.
 - **Ops Toggles** - Used for operational controls, such as enabling circuit breakers or graceful degradation, such as logging levels or feature activation.
@@ -37,6 +42,7 @@ Feature flags (also called feature toggles) enable dynamic control over feature 
 - **Time-Based Toggles** - Enable features based on time, such as seasonal promotions or holiday themes.
 
 ## Best Practices
+
 - **Default to Off** - Features should be disabled by default to prevent accidental exposure of unfinished or experimental features.
 - **Keep Flags Short-Lived** - Remove flags once features are stable and released to avoid technical debt.
 - **Use a Flag Management System** - Centralize flag management to improve visibility and governance, ensure consistency and avoid conflicts.
@@ -65,6 +71,7 @@ Older codebases often lack SOLID principles (Single Responsibility, Open-Closed,
 - **Use Adapter Patterns** - Introduce adapters to bridge between legacy and modern code, enabling feature flag integration.
 - **Refactor Opportunistically** - Break down monolithic components into smaller, testable units to introduce SOLID principles and feature flags.  Whenever modifying old code for a new feature, apply SOLID principles gradually. 
 - **Use Inversion of Control (IoC) for Flags** - Inject feature toggles through configuration rather than scattering conditionals across the codebase; introduce dependency injection and IoC containers to manage feature flags and dependencies dynamically.
+
 ---
 
 # 3. Importance of Good Design in New Applications
@@ -72,6 +79,7 @@ Older codebases often lack SOLID principles (Single Responsibility, Open-Closed,
 A well-architected system makes feature flags easier to implement and reduces long-term complexity.
 
 ## Key Design Considerations
+
 - **Modular Architecture** - Use microservices, plugins, or clean architecture to isolate features.
 - **Separation of Concerns** - Divide functionality into distinct layers (presentation, business logic, data access) to improve maintainability and testability.
 - **Dependency Injection (DI)** - Use IoC containers to manage dependencies and enable feature toggles without code rewrites.
@@ -87,6 +95,7 @@ A well-architected system makes feature flags easier to implement and reduces lo
 One of the biggest risks in feature flagging is accumulating long-lived feature branches, leading to merge conflicts and integration issues.
 
 ## Why Avoid Long-Lived Feature Branches?
+
 - **Integration Hell** - Merging long-lived branches can be complex and error-prone, leading to conflicts and regressions.  The longer a branch exists, the harder it is to merge.
 - **Delayed Feedback** - Long-lived branches delay feedback from stakeholders and users, increasing the risk of misalignment, hidden defects, and wasted effort.
 - **Reduced Velocity** - Long-lived branches slow down development velocity, making it harder to deliver value quickly and respond to changing requirements.
@@ -99,11 +108,13 @@ One of the biggest risks in feature flagging is accumulating long-lived feature 
 
 
 ## Best Practices for Story Slicing
+
 - **Slice Stories Vertically** - Break down features into small, vertical slices that deliver end-to-end functionality, enabling incremental development and feedback.
 - **Use Feature Flags** - Use feature flags as early as possible to hide incomplete functionality and enable continuous integration and deployment.
 - **Deliver Value in Small Increments** - Instead of developing an entire feature in one go, break it into deployable slices.
 - **Use UI Stubs & Mocks** - If backend functionality isn't ready, implement UI components with placeholders.
 - **Adopt Trunk-Based Development** - Encourage frequent integration to main branches, reducing the reliance on long-lived feature branches.
+
 ---
 
 # Conclusion 
@@ -112,8 +123,10 @@ Feature flags are essential for modern software engineering but require discipli
 Finally, effective story slicing ensures that teams can continuously integrate work, avoiding long-lived branches and maintaining high development velocity.
 
 # References
+
 - [Mastering Software Development: A Deep Dive into Trunk-Based Pull Request Workflow](https://wsbctechnicalblog.github.io/engineering-practices-pull-request-v2.html) / Dec 2023
 - [Mastering Software Development: A Deep Dive into Feature Flags](https://wsbctechnicalblog.github.io/engineering-practices-feature-flags.html) / Dec 2023
 - [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html) by Martin Fowler
 - [Feature Flags Best Practices](https://www.optimizely.com/feature-management/feature-flags/) by Optimizely
+
 ---
