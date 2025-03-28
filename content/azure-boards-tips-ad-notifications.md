@@ -1,5 +1,5 @@
 Title: Azure DevOps Notifications and email-enabled AD Groups
-Date: 2025-03-30
+Date: 2025-03-28
 Category: Posts 
 Tags: azure-devops, tips
 Slug: azure-boards-tips-ad-notifications
