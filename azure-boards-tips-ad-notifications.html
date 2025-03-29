@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title></title>
+        <title>Azure DevOps Notifications and email-enabled AD Groups - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -26,8 +26,6 @@
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
-            <div id="title-block">
-            </div>
         </div>
     </div>
 </div>
@@ -35,33 +33,71 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-<h2>Articles tagged with value </h2>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-boards-tips-ad-notifications.html" rel="bookmark"
+            title="Permalink to Azure DevOps Notifications and email-enabled AD Groups">Azure DevOps Notifications and email-enabled AD Groups</a></h1>
 
-
-
-
-
-<blocks cols="2">
-        <div class="sec-article">
-            <div class="read-more">Tue 23 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/plate-emptying.html" rel=Bookmark title="Permalink to Plate-emptying is not the same as Done">Plate-emptying is not the same as Done</a></h3>
-            <p>
-            <p>Maximizing the utilization of the time spent on creating software is a surefire way to drive the team into a brickwall</p>            
-            </p>
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 28 March 2025</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Understanding email-enabled Active Directory (AD) groups and Azure DevOps (AzDO) notifications.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>We have relied on an Active Directory (AD) group-based security model with Azure DevOps for many years. This setup includes email-enabled AD groups for pull request reviewers, as well as Azure Pipeline and environment approvers. It worked seamlessly—until it did not- plunging us into a frustrating cycle of misinformation and troubleshooting. To help you avoid the same headaches, here is our checklist for enabling email notifications from Azure DevOps for Active Directory (AD) groups.</p>
+<h1>Checklist</h1>
+<ul>
+<li>Azure DevOps (AzDO) iterates through the members of an AzDO group when triggering a notification and sends an email to each user individually.</li>
+<li>However, AzDO does <code>not</code> iterate through the members of an AD group when triggering a notification — instead, it sends the notification to the AD group’s mailbox.</li>
+<li>AzDO does <code>not</code> send notifications to users or email-enabled AD groups unless they have at least read-only permissions in the associated AzDO project. To ensure notifications are received, we add the email-enabled AD groups used in the Azure DevOps project to the Readers group.</li>
+<li>Lastly, your AD group’s mailbox must <strong>allow external emails</strong> from <code>azuredevops@microsoft.com</code> — make sure to check the infamous checkbox to prevent this restriction, which turned out to be our root cause.</li>
+</ul>
+<blockquote>
+<p><img alt="checkbox" src="../images/azure-boards-tips-ad-notifications-0.png"> </p>
+</blockquote>
+<p>If you are struggling with notifications, refer to these references and then work through the checklist above.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/devops/organizations/notifications/about-notifications?view=azure-devops">About notifications</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/devops/organizations/notifications/concepts-email-recipients?view=azure-devops">Determine recipients of notification emails</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/devops/organizations/notifications/troubleshoot-not-getting-email?view=azure-devops">Not getting emails from subscriptions or notifications</a></li>
+</ul>
+<hr>
+<p>That is all folks.</p>
         </div>
 
-        <div class="sec-article">
-            <div class="read-more">Wed 17 November 2021</div>
-
-            <h3><a href="https://wsbctechnicalblog.github.io/what-is-value.html" rel=Bookmark title="Permalink to How do we know what our customers value?">How do we know what our customers value?</a></h3>
-            <p>
-            <p>We cannot know what customers actually value unless we expose them to our products and services. Here is how to do it in the most elegant way.</p>            
-            </p>
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-boards-tips-ad-notifications.html" rel="bookmark"
+         title="Permalink to Azure DevOps Notifications and email-enabled AD Groups">Permalink</a>            
         </div>
-
-</blocks>
-
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -128,7 +164,7 @@
                     <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
@@ -149,7 +185,7 @@
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (219)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (219)</li>
                 </ul>
              
             </div>
