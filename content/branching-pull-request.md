@@ -31,7 +31,7 @@ I am NOT saying that is the best strategy but based on experimentation it fits o
 
 See [trunk-based release from branch](https://trunkbaseddevelopment.com/branch-for-release/) for the variant that we are using, based on learning from the [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) team. It is a strategy that works well for the 1-2 pizza sized teams, as well as product teams with hundreds to thousands of engineers.
 
-> MYTH 1 - Trunk-based branching strategy is suited only for small and experienced teams!
+> MYTH 2 - Trunk-based branching strategy is suited only for small and experienced teams!
 >
 > _The [Microsoft Azure DevOps](https://medius.studios.ms/Embed/Video/THR2017?sid=THR2017) and [Microsoft Office](https://devblogs.microsoft.com/devops/improving-azure-devops-cherry-picking/) are two very large teams that demonstrate the trunk-based branching strategy scales from small and rapid experimentation and innovation teams, to large product-based teams._
 
