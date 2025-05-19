@@ -8,7 +8,8 @@ Summary: We are pleased to announce the self-publication of our cookbook.
 
 This comprehensive guide delves into CI/CD pipelines, with a focus on Azure DevOps, and provides invaluable practices to enhance your software engineering processes.
 
-Developed in support of our `WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2` open-source project, this cookbook is dedicated to software engineers and their communities who continuously pursue innovation, improvement, and engineering excellence. It offers practical, hands-on guidance for effectively utilizing CI/CD processes to streamline the software delivery lifecycle.
+Rooted in a commitment to innovation and continuous improvement, our open-source project 
+'WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2` and this cookbook are dedicated to software engineers and their communities who consistently strive for progress, creativity, and engineering excellence. It offers practical, hands-on guidance for effectively utilizing CI/CD processes to streamline the software delivery lifecycle.
 
 # Contents of the Cookbook
 
