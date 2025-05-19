@@ -6,7 +6,9 @@ Slug: announcement-ci-cd-cookbook
 Author: Willy-Peter Schaub
 Summary: We are pleased to announce the self-publication of our cookbook.
 
-This comprehensive guide delves into CI/CD pipelines, with a focus on Azure DevOps, and provides invaluable practices to enhance your software engineering processes. Developed in support of our WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2 open-source project, this cookbook is dedicated to software engineers and their communities who continuously pursue innovation, improvement, and engineering excellence. It offers practical, hands-on guidance for effectively utilizing CI/CD processes to streamline the software delivery lifecycle.
+This comprehensive guide delves into CI/CD pipelines, with a focus on Azure DevOps, and provides invaluable practices to enhance your software engineering processes.
+
+Developed in support of our `WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2` open-source project, this cookbook is dedicated to software engineers and their communities who continuously pursue innovation, improvement, and engineering excellence. It offers practical, hands-on guidance for effectively utilizing CI/CD processes to streamline the software delivery lifecycle.
 
 # Contents of the Cookbook
 
@@ -31,7 +33,7 @@ All proceeds from the sales of this cookbook will be donated to our [OWL Rehab �
 
 Discover more and obtain your copy here in [Canada](https://www.amazon.ca/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/), [USA](https://www.amazon.com/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/), or other regions.
 
-Both the softcover and hardcover editions are printed in full colour. The hardcover version also features high-quality paper for a premium feel. Unfortunately, we are unable to reduce the price of the hardcover due to KDP’s minimum pricing policy. I recommend choosing the softcover for a more budget-friendly option!
+Both the softcover and hardcover editions are printed in full colour. The hardcover version also features high-quality paper for a premium feel. Unfortunately, we are unable to reduce the price of the hardcover due to KDP’s minimum pricing policy. I recommend choosing the softcover for a more budget-friendly option - plus, the proceeds will support a noble cause as mentioned above.
 
 Kindle eBook will be released soon.
 
