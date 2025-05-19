@@ -12,7 +12,7 @@ Developed in support of our `WorkSafeBC-Common-Engineering/AzureDevOps.Automatio
 
 # Contents of the Cookbook
 
-![Cover](/Images/announcement-ci-cd-cookbook-1.png)
+![Cover](/images/announcement-ci-cd-cookbook-1.png)
 
 This guide covers a wide range of topics essential for mastering CI/CD pipelines:
 
