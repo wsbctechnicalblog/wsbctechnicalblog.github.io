@@ -17,14 +17,14 @@ Rooted in a commitment to innovation and continuous improvement, our open-source
 
 This guide covers a wide range of topics essential for mastering CI/CD pipelines:
 
- - Azure Pipelines: Fundamentals, CI vs. CD, and everything-as-code
- - Autonomy within Guardrails: Importance of autonomy, benefits of guardrails, and fostering consistency
- - CI/CD Pipeline Blueprints: Evolution of pipeline blueprints from v1 to v2
- - Sound Engineering Practices: Best practices for systems delivery, enabling CI/CD automation
- - Infrastructure-as-Code (IaC): Incorporating IaC provisioning as reusable YAML templates
- - Injecting Magic at Queue Time: Leveraging Azure Pipelines' power for conditional pipeline flow
- - Automation and Self-Service: Creating value through automation and self-service
- - Gotchas and Learnings: Insights and troubleshooting tips from our experiences
+ - **Azure Pipelines**: Fundamentals, CI vs. CD, and everything-as-code
+ - **Autonomy within Guardrails**: Importance of autonomy, benefits of guardrails, and fostering consistency
+ - **CI/CD Pipeline Blueprints**: Evolution of pipeline blueprints from v1 to v2
+ - **Sound Engineering Practices**: Best practices for systems delivery, enabling CI/CD automation
+ - **Infrastructure-as-Code (IaC)**: Incorporating IaC provisioning as reusable YAML templates
+ - **Injecting Magic at Queue Time**: Leveraging Azure Pipelines' power for conditional pipeline flow
+ - **Automation and Self-Service**: Creating value through automation and self-service
+ - **Gotchas and Learnings**: Insights and troubleshooting tips from our experiences
 
 # Supporting a Noble Cause
 
