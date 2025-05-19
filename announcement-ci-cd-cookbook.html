@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Cheat sheet to migrate generic v1 templates to v2 - </title>
+        <title>Continuous Integration and Delivery Pipelines Cookbook - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,71 +33,57 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/cheat-sheet-to-migrate-generic-v1-templates-to-v2.html" rel="bookmark"
-            title="Permalink to Cheat sheet to migrate generic v1 templates to v2">Cheat sheet to migrate generic v1 templates to v2</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html" rel="bookmark"
+            title="Permalink to Continuous Integration and Delivery Pipelines Cookbook">Continuous Integration and Delivery Pipelines Cookbook</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 01 March 2024</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Sun 18 May 2025</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Questioning the recommended approach to upgrades and the use of generic templates.</p>
+            <p>We are pleased to announce the self-publication of our cookbook.</p>
         </div>
     
         <div class="entry-content">
-            <p>We shared our <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a> for <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops">Azure Pipelines</a> as open source, which include our generic templates that we created as a temporary solution to replace the classic Azure Build Pipelines for continuous integration (CI). They are helpful to begin with YAML-based build pipelines and link them with classic Azure Release Pipelines, but not our preferred approach. We will explain more about that later.</p>
-<hr>
-<h1>v1 versus v2 generic template</h1>
-<p>First, let us answer our engineer's question of how to migrate from our v1 generic templates to the v2 versions. The image below compares v1 with v2, as at 2024-02-22. The only differences (all highlighted in yellow) are minor cleanups and:</p>
+            <p>This comprehensive guide delves into CI/CD pipelines, with a focus on Azure DevOps, and provides invaluable practices to enhance your software engineering processes. Developed in support of our WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2 open-source project, this cookbook is dedicated to software engineers and their communities who continuously pursue innovation, improvement, and engineering excellence. It offers practical, hands-on guidance for effectively utilizing CI/CD processes to streamline the software delivery lifecycle.</p>
+<h1>Contents of the Cookbook</h1>
+<p><img alt="Cover" src="/Images/announcement-ci-cd-cookbook-1.png"></p>
+<p>This guide covers a wide range of topics essential for mastering CI/CD pipelines:</p>
 <ul>
-<li>Repository reference name (<strong>@CeBlueprints</strong>) and repository name (<strong>*.v2</strong>) reference the repository with the v2 templates and blueprints, aka <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a>.</li>
-<li>The v2 template uses the <strong>checkout: self</strong>, before calling the git-tools-git-version.yml template. Checkout <a href="https://wsbctechnicalblog.github.io/share-your-toolbox-with-pipelines.html">Two ways to share your toolbox with your pipelines</a> and <a href="https://wsbctechnicalblog.github.io/checkout-at-the-right-time.html">Checkout your git repos at the right time!</a> for an explanation of why we moved to using <strong>checkout</strong>. </li>
+<li>Azure Pipelines: Fundamentals, CI vs. CD, and everything-as-code</li>
+<li>Autonomy within Guardrails: Importance of autonomy, benefits of guardrails, and fostering consistency</li>
+<li>CI/CD Pipeline Blueprints: Evolution of pipeline blueprints from v1 to v2</li>
+<li>Sound Engineering Practices: Best practices for systems delivery, enabling CI/CD automation</li>
+<li>Infrastructure-as-Code (IaC): Incorporating IaC provisioning as reusable YAML templates</li>
+<li>Injecting Magic at Queue Time: Leveraging Azure Pipelines' power for conditional pipeline flow</li>
+<li>Automation and Self-Service: Creating value through automation and self-service</li>
+<li>Gotchas and Learnings: Insights and troubleshooting tips from our experiences</li>
 </ul>
-<blockquote>
-<p><img alt="v1 --&gt; v2" src="../images/cheat-sheet-to-migrate-generic-v1-templates-to-v2-1.png"></p>
-</blockquote>
-<hr>
-<h1>Make the right choice!</h1>
-<p>Before you proceed with the migration, you need to determine <strong>WHY</strong> you should be using the generic template. Here is a simple checklist to help you with the decision:</p>
-<ol>
-<li><strong>Is there a v2 CI/CD blueprint for your application type?</strong> If yes, use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprint</a>. We are phasing out the <strong>classic</strong> Azure Pipelines and so should you.</li>
-<li>Else, <strong>Do you have to use a Classic Azure Release Pipeline?</strong> If yes, use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a> for your CI/Build pipeline.</li>
-<li><strong>Do you need the multi-job v2 generic template?</strong> <strong>NO</strong>, we strongly recommend keeping it simple and only using the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a>. You should only use the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-multiple-jobs/azure-pipeline-generic-multiple-jobs-start.yml">multi-job template</a> in rare situations and try to avoid it as it makes things more complicated and can put pressure on your Azure DevOps agents. See <a href="https://wsbctechnicalblog.github.io/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a> for an explanation of the two types of generic templates.</li>
-</ol>
-<hr>
-<h1>OK back to: How to migrate from v1 to v2 generic build-only template?</h1>
-<h3>Migrate v1 --&gt; v2, option 1 – move your pipeline to v2 (recommended)</h3>
-<ol>
-<li>Create a new pipeline, using the <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/blob/master/blueprints/generic-single-job/azure-pipeline-generic-single-job-start.yml">single-job v2 generic template</a>.</li>
-<li>Look for <strong>TODO</strong> placeholders and migrate (copy-paste) the code from your v1 to your new v2-based Azure Pipeline.</li>
-<li>Reconnect your classic Azure Release Pipeline to the new v2-based Azure Pipeline.</li>
-<li>Validate the new pipeline.</li>
-<li>Deprecate (delete) your old v1-based pipeline.</li>
-</ol>
-<p>Simple!</p>
-<h3>Migrate v1 --&gt; v2, option 2 – upgrade your v1 pipeline</h3>
-<p>Using the comparison between v1 and v2 as per image above, update your v1 pipeline and upgrade it to the v2 pipeline format, following these basic steps:</p>
-<ol>
-<li>Update template repo name from CeSTemplates to <strong>CeBlueprints</strong>.</li>
-<li>Update template repo name, by appending <strong>.v2</strong>.</li>
-<li>Remove variables section and add checkout logic under at the beginning of the stage definition.</li>
-<li>Rename /Templates/ to <strong>templates/</strong>.</li>
-<li>Use either <strong>dotnet</strong> or <strong>other</strong> for applicationType.</li>
-<li>Validate the updated pipeline.</li>
-</ol>
-<p>Hope our internal "how to" discussions are interesting and add value to the open source <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2">v2 CI/CD blueprints</a>.</p>
+<h1>Supporting a Noble Cause</h1>
+<p>All proceeds from the sales of this cookbook will be donated to our <a href="https://www.owlrehab.org/">OWL Rehab – Rescue. Rehabilitate. Release.</a> in Delta.</p>
+<h1>Get Your Copy</h1>
+<p>Discover more and obtain your copy here in <a href="https://www.amazon.ca/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/">Canada</a>, <a href="https://www.amazon.com/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/">USA</a>, or other regions.</p>
+<p>Both the softcover and hardcover editions are printed in full colour. The hardcover version also features high-quality paper for a premium feel. Unfortunately, we are unable to reduce the price of the hardcover due to KDP’s minimum pricing policy. I recommend choosing the softcover for a more budget-friendly option!</p>
+<p>Kindle eBook will be released soon.</p>
+<h1>Authors</h1>
+<ul>
+<li><a href="https://bsky.app/profile/604kev.online">Kevin Schwantje | Bluesky</a></li>
+<li><a href="https://www.linkedin.com/in/martinmlacey/">Martin Lacey | LinkedIn</a></li>
+<li><a href="https://www.linkedin.com/in/wpschaub/">Willy-Peter Schaub | LinkedIn</a></li>
+</ul>
+<p>Join us on this journey and contribute to a noble cause.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
-        | <a href="https://wsbctechnicalblog.github.io/cheat-sheet-to-migrate-generic-v1-templates-to-v2.html" rel="bookmark"
-         title="Permalink to Cheat sheet to migrate generic v1 templates to v2">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
+        | <a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html" rel="bookmark"
+         title="Permalink to Continuous Integration and Delivery Pipelines Cookbook">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
