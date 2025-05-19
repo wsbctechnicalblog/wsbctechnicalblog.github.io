@@ -29,7 +29,11 @@ All proceeds from the sales of this cookbook will be donated to our [OWL Rehab â
 
 # Get Your Copy
 
-Discover more and obtain your copy [**here**]().
+Discover more and obtain your copy here in [Canada](https://www.amazon.ca/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/), [USA](https://www.amazon.com/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/), or other regions.
+
+Both the softcover and hardcover editions are printed in full colour. The hardcover version also features high-quality paper for a premium feel. Unfortunately, we are unable to reduce the price of the hardcover due to KDPâ€™s minimum pricing policy. I recommend choosing the softcover for a more budget-friendly option!
+
+Kindle eBook will be released soon.
 
 # Authors
 
