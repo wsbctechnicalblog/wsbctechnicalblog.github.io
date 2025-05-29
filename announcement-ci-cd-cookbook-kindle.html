@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>The clash of Azure DevOps Kanban fields and Shared Area Paths - </title>
+        <title>Continuous Integration and Delivery Pipelines Cookbook - Kindle Friendly - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,72 +33,41 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/shared-area-paths.html" rel="bookmark"
-            title="Permalink to The clash of Azure DevOps Kanban fields and Shared Area Paths">The clash of Azure DevOps Kanban fields and Shared Area Paths</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook-kindle.html" rel="bookmark"
+            title="Permalink to Continuous Integration and Delivery Pipelines Cookbook - Kindle Friendly">Continuous Integration and Delivery Pipelines Cookbook - Kindle Friendly</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Thu 22 October 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Fri 30 May 2025</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Shared area paths can introduce inconsistency and confusion.</p>
+            <p>Our cookbook is now also available as a Kindle eBook, expanding our self-publishing journey.</p>
         </div>
     
         <div class="entry-content">
-            <p>Azure Boards Kanban fields are powerful and valuable. Used in the land of shared Area Paths they can, however, introduce inconsistency and confusion that are hard to isolate and explain.</p>
-<h1>Let us explore a simple example</h1>
-<p>We define a few area paths for a hypothetical project, named <strong>Boards Chaos</strong>. The Board Chaos area and its sub-paths are allocated to the default Boards Chaos team. Area A1, with sub-paths, and area A2, with sub-paths, are assigned to team A and B respectively. </p>
-<p><img alt="Board Chaos" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-1.png"></p>
-<blockquote>
-<p><strong>NOTE</strong> that the Boards Chaos team shares area A1 and its sub-paths with team A, and area A2 and its sub-paths with team B. Assigning area Board Chaos and sub-paths to the default team is a subtle configuration, but allows us to demonstrate the challenge of shared area paths.</p>
-</blockquote>
-<p><strong>Team A</strong> creates three stories and pulls A.1 and A.2 into the <strong>Active</strong> column.</p>
-<p><img alt="Team A Board" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-2.png"></p>
-<p><strong>Team B</strong> creates three stories, and pulls B.1, B.2, and B.3 into the <strong>Active</strong>, <strong>Resolved</strong>, and <strong>Closed columns</strong>.</p>
-<p><img alt="Team B Board" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-3.png"></p>
-<p>When we switch to team <strong>Board Chaos</strong>, we notice that the team has customized their board, renaming the Active column to In-flight, and adding the Area 51 and Answer 42 columns. All of these three columns map to the Active work item state.</p>
-<p>So far so good - if you ignore the <strong>Board C...</strong> <strong>Active</strong> field on the card.</p>
-<p><img alt="Team Chaos Board" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-4.png"></p>
-<p>Board Chaos team drags cards A.1 from In-flight to <strong>Area 51</strong>, and A.2 to <strong>Answer 42</strong>.</p>
-<p><img alt="Area 51" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-5.png"></p>
-<p>The team's board looks as expected, again as long as you ignore the field <strong>Board C...</strong> <strong>Active</strong> field on the cards.</p>
-<p><img alt="Board Chaos" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-6.png"></p>
-<h1>Oh, Oh, we have a problem</h1>
-<p>When the team looks at their product backlog, the anomaly becomes evident. Why are the Board Column values for B.1, A.1, and A.2 Active and not <strong>In-flight</strong>, <strong>Area 51</strong>, or <strong>Answer 42</strong>?!? </p>
-<p><img alt="Incorrect Board Column Values" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-7.png"></p>
-<p>Here is a view of Team A and the default team next to each other. Now look at the <strong>Board C</strong> ... field on the cards, all of which point to Team A's <strong>Active</strong> column.</p>
-<p><img alt="Team A and Chaos side by side" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-8.png"></p>
-<p>What is going on?!?</p>
-<h1>Works as designed</h1>
-<p>By design, the team with the longest area path wins the clash and dictates the values for the Kanban Board Column, Done, and Lane fields. In our setup, teams A and B have the longer area paths and win. <strong>Board Chaos/A1</strong> from team A, for example, is longer than Board Chaos/ from the default team.</p>
-<p>If we have a scenario of shared area paths of equal depth, we will have non-deterministic results. Not in scope for this simple walk-through.</p>
-<p>As a result the cards show the Kanban field value Active for Team A on Board Chaos' board, not values <strong>In-flight</strong>, <strong>Area 51</strong>, <strong>Answer 42</strong> as expected. </p>
-<p>So, how can we avoid this unexpected feature?</p>
-<h1>Tips to avoid the "oh, oh" moments</h1>
-<p><img alt="Oh Oh Moment" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-9.png"></p>
-<h2>Avoid shared areas</h2>
-<p>Stay away away from overlapping area path ownership. As this behavior is "as expected" and "works as designed", we do not expect future features to work seamlessly. </p>
-<blockquote>
-<p>See https://msdn.microsoft.com/Library/vs/alm/Work/scale/scaled-agile-framework on guidance to setup enterprise projects.</p>
-</blockquote>
-<h2>Share read-only areas</h2>
-<p>Keep teams in their own contained, for example (1) Team A in Area A1 and (2) Team B in Area A2. If you need a shared area path, for example, (3) to raise awareness of and triage bugs use it as a read-only area and (4) reassign bugs to their respective area paths.</p>
-<p><img alt="Shared Area Paths" src="/images/clash-of-azdo-kanban-fields-and-shared-area-paths-10.png"></p>
-<h2>Focus on your context</h2>
-<p>Focus on the work item types that are relevant to you and your team. If you are doing portfolio planning you should restrict your views of shared areas to <strong>Initiatives</strong>, <strong>Epics</strong>, and <strong>Features</strong>. If you are part of the development, you should focus on Stories or Backlog Items.</p>
-<p>In other words <strong>keep it simple</strong>*!</p>
+            <p>We are excited to share that the Kindle eBook format has now been added to the softcover and hardcover editions of our cookbook, as introduced in the <a href="/announcement-ci-cd-cookbook.html">Continuous Integration and Delivery Pipelines Cookbook</a> post. This gives you the flexibility to enjoy the book in the format that suits you best.</p>
+<p><img alt="Cover" src="/images/announcement-ci-cd-cookbook-2.png"></p>
+<p>To learn more about the cookbook, the meaningful cause it supports, and how to get your copy, visit the full announcement <a href="/announcement-ci-cd-cookbook.html">here</a>.</p>
+<p>Get your copy here:</p>
+<ul>
+<li><a href="https://www.amazon.ca/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/">Canada</a></li>
+<li><a href="https://www.amazon.com/Continuous-Integration-Delivery-Pipelines-Cookbook/dp/B0F92XYZ24/">USA</a></li>
+<li>or other (your) regions.</li>
+</ul>
+<p><img alt="Cover" src="/images/announcement-ci-cd-cookbook-1.png"></p>
+<p>Happy reading—and happy pipelining!</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
-        | <a href="https://wsbctechnicalblog.github.io/shared-area-paths.html" rel="bookmark"
-         title="Permalink to The clash of Azure DevOps Kanban fields and Shared Area Paths">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a>
+        | <a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook-kindle.html" rel="bookmark"
+         title="Permalink to Continuous Integration and Delivery Pipelines Cookbook - Kindle Friendly">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
