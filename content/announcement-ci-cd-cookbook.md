@@ -36,8 +36,6 @@ Discover more and obtain your copy here in [Canada](https://www.amazon.ca/Contin
 
 Both the softcover and hardcover editions are printed in full colour. The hardcover version also features high-quality paper for a premium feel. Unfortunately, we are unable to reduce the price of the hardcover due to KDP’s minimum pricing policy. I recommend choosing the softcover for a more budget-friendly option - plus, the proceeds will support a noble cause as mentioned above.
 
-Kindle eBook will be released soon.
-
 # Authors
 
 - [Kevin Schwantje | Bluesky](https://bsky.app/profile/604kev.online)
