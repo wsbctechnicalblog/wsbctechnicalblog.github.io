@@ -1,5 +1,5 @@
 Title: How Work-Life Balance Sparks Innovation
-Date: 2026-06-25
+Date: 2025-06-25
 Category: Posts 
 Tags: devops, agile
 Slug: back-to-basics-mental-health
