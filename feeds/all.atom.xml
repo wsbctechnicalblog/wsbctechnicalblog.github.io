@@ -1,5 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-06-13T00:00:00-07:00</updated><entry><title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250613</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-05-13.html" rel="alternate"></link><published>2025-06-13T00:00:00-07:00</published><updated>2025-06-13T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-06-13:/azure-pipeline-blueprints-oss-sync-2025-05-13.html</id><summary type="html">&lt;p&gt;Latest version and with small portfolio update.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have confirmed there are no internal updates currently suitable for sharing with this community—rest assured, we are keeping a close watch. Behind the scenes, our focus has been on developing new app-type blueprints to expand coverage across our internal software development lifecycle. While these efforts are tailored for internal use and not directly applicable to the open-source project, they are driving meaningful progress.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-06-25T00:00:00-07:00</updated><entry><title>How Work-Life Balance Sparks Innovation</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-mental-health.html" rel="alternate"></link><published>2026-06-25T00:00:00-07:00</published><updated>2026-06-25T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-06-25:/back-to-basics-mental-health.html</id><summary type="html">&lt;p&gt;Work-life balance fuels sustainable innovation by empowering teams with psychological safety, ownership, and the confidence to thrive, even in a leader’s absence.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The team assessment feature in Azure DevOps retrospectives helps teams regularly reflect on their well-being, collaboration, and work-life balance, crucial for sustained performance and innovation.&lt;/p&gt;
+&lt;p&gt;The team assessment tool's feedback reveals patterns, not just sentiment snapshots. For example, dips in clarity, energy, and psychological safety mentioned in the blog &lt;a href="/common-engineering-journal-6.html"&gt;Empowerment through automation and artificial intelligence&lt;/a&gt; were linked to organizational changes. Over time, the team's resilience grew due to a culture of empowerment and safe retrospectives to address concerns early.&lt;/p&gt;
+&lt;p&gt;Tracking work-life balance has been invaluable. When scores dropped due to workload spikes and staffing transitions, we provided targeted support, restoring balance.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Happy Androids" src="/images/back-to-basics-mental-health-1.jpg"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Microsoft research shows that teams using retrospectives improve productivity by up to 25%. Yet, fewer than 15% of software teams and less than 5% of non-software teams do them regularly. The Azure DevOps Retrospectives extension, used by over 57,000 organizations, simplifies feedback collection, trend visualization, and actionable work item creation within the same platform.&lt;/p&gt;
+&lt;p&gt;For details on the research, see:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://devblogs.microsoft.com/devops/retrospectives-the-hidden-gem-enabling-teams-to-thrive-part-1/"&gt;Retrospectives: The Hidden Gem Enabling Teams to Thrive - Part 1 - Azure DevOps Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.microsoft.com/en-us/garage/profiles/team-retrospectives/"&gt;Team Retrospectives | Microsoft Garage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Work-life balance is not merely a wellness metric; it is essential for sustainable performance&lt;/strong&gt;. In DevOps, where people are our most valuable asset, the team assessment feature within Azure DevOps retrospectives is crucial. It facilitates continuous improvement, promotes psychological safety, and emphasizes human-centered leadership. Regularly assessing the team's well-being allows for honest reflection, early intervention, and shared accountability.&lt;/p&gt;
+&lt;p&gt;This practice aids in maintaining morale during periods of high demand, fosters experimentation, and empowers engineers to take ownership of their respective areas. It is instrumental in developing resilient teams that do more than just deliver results - they have &lt;strong&gt;fun&lt;/strong&gt; and they &lt;strong&gt;thrive&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Digital De-Tox" src="/images/back-to-basics-mental-health-2.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As I prepare to take an extended leave for a digital detox, I am fully confident in my team's strength and momentum. I look forward to returning and witnessing the innovations and improvements that will undoubtedly emerge in my absence.&lt;/p&gt;
+&lt;h1&gt;Call to action!&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Start tracking your team’s health.&lt;/li&gt;
+&lt;li&gt;Identify and address concerns early.&lt;/li&gt;
+&lt;li&gt;Have fun!&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry><entry><title>Fixing empty Closed Date fields in work items (Part 2)</title><link href="https://wsbctechnicalblog.github.io/azure-devops-empty-closed-date-field-fix.html" rel="alternate"></link><published>2025-06-25T00:00:00-07:00</published><updated>2025-06-25T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-06-25:/azure-devops-empty-closed-date-field-fix.html</id><summary type="html">&lt;p&gt;Now that we know what the issue is, how do we resolve it?&lt;/p&gt;</summary><content type="html">&lt;p&gt;As outlined in &lt;a href="/azure-devops-empty-closed-date-field.html"&gt;Why is the Closed Date field empty in my work items?&lt;/a&gt;, you may have encountered closed work items missing a &lt;code&gt;Closed Date&lt;/code&gt;. Microsoft acknowledged this long-standing Azure DevOps bug, where custom work item types were not configured to populate the Closed Date field by default, but has never issued a fix.&lt;/p&gt;
+&lt;p&gt;Fortunately, our own Azure DevOps and PowerShell expert, Daniel Broderick, developed a script that allowed us to efficiently correct hundreds of affected work items. This proactive solution saved us from hours of tedious manual remediation and ensured data integrity across our boards.&lt;/p&gt;
+&lt;p&gt;We share it here for you to review and potentially help you &lt;code&gt;automate the mundane&lt;/code&gt; and cleanup your work items.&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Script update-workitem-closing-date.ps1
+Developed by Daniel Broderick
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DESCRIPTION&lt;/span&gt;
+        &lt;span class="n"&gt;Update&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;workitem&lt;/span&gt; &lt;span class="n"&gt;closing&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;microsoft&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt; &lt;span class="n"&gt;its&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+        &lt;span class="n"&gt;Finds&lt;/span&gt; &lt;span class="n"&gt;work&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="n"&gt;Technical&lt;/span&gt; &lt;span class="n"&gt;Debt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="c1"&gt;#&amp;gt;&lt;/span&gt;
+
+&lt;span class="c1"&gt;#region params&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;CmdletBinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;span class="n"&gt;param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Mandatory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;false&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Organisation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;YOUR-ORG&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Mandatory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;false&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PAT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;pat&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#endregion params&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;#region import variables&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FileName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bootstrap.ps1&amp;#39;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FoundFlag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;false&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Parent&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;MyInvocation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MyCommand&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Definition&lt;/span&gt;
+
+&lt;span class="n"&gt;do&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Path\$FileName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FoundFlag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;true&lt;/span&gt;
+      &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bootstrapping&amp;quot;&lt;/span&gt;
+      &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Output&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bootstrap found importing modules&amp;quot;&lt;/span&gt;
+      &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Path\$FileName&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Parent&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt;
+      &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Path $Path\$FileName Not found&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt; 
+    &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bootstrap Not found exiting&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Output&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FileName Not found bootstrap cannot load modules - exiting&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;exit&lt;/span&gt; &lt;span class="c1"&gt;# variables not found  &lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;Until&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FoundFlag&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#endregion import variables&lt;/span&gt;
+
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;ProjectName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;zDEPRECATE - Cloud-WLT&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;DevOpsScriptVariables&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;DevOpsOrganisation&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Organisation&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;DevOpsProject&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$ProjectName&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;PAT&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PAT&lt;/span&gt;
+
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;TicketsUpdatedArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;UpdatedArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FailedArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;TimeStamp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Get&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Date&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Format&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;yyyy-MM-dd HHmm&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;#region work item dates&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;#region query&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;JSONQuery&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;query&amp;quot;: &amp;quot;select * from &lt;/span&gt;
+                                &lt;span class="n"&gt;WorkItems&lt;/span&gt;
+                                &lt;span class="n"&gt;where&lt;/span&gt; 
+                                &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TeamProject&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zDEPRECATE&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Cloud&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;WLT&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+                                &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Microsoft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VSTS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Common&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ClosedDate&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;                                and [System.WorkItemType] = &amp;#39;&amp;#39;Technical Debt&amp;#39;&amp;#39; &lt;/span&gt;
+&lt;span class="s1"&gt;                                and [System.State] = &amp;#39;&amp;#39;Closed&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="s1"&gt;                                ORDER BY [id]&lt;/span&gt;
+&lt;span class="s1"&gt;                                &amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;                    }&amp;#39;&lt;/span&gt;
+
+&lt;span class="s1"&gt;$QueryID = &amp;#39;484dc53f-813b-43ca-a567-8474dc8aa470&amp;#39; # get results by Saved Query ID&lt;/span&gt;
+&lt;span class="s1"&gt;#endregion query&lt;/span&gt;
+
+&lt;span class="s1"&gt;#region get workitems from query&lt;/span&gt;
+&lt;span class="s1"&gt;#$Result = Get-DevOpsWorkItemByWIQLQuery -JSONQuery $JSONQuery -Organisation $Organisation -ProjectName $ProjectName&lt;/span&gt;
+
+&lt;span class="s1"&gt;$Result = Get-DevOpsWorkItemByWIQLQuery -QueryID $QueryID -Organisation $Organisation -ProjectName $ProjectName&lt;/span&gt;
+
+&lt;span class="s1"&gt;#endregion get workitems from query&lt;/span&gt;
+
+&lt;span class="s1"&gt;#region iterate and update&lt;/span&gt;
+&lt;span class="s1"&gt;Write-Host &amp;quot; Found $(($Result.workItems).count) tickets with no closed date and are in a closed state&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;foreach ($Ticket In $Result.workItems.id) {&lt;/span&gt;
+&lt;span class="s1"&gt;  $TicketObject = Get-DevOpsWorkItemByID -Organisation $Organisation -ProjectName $ProjectName -WorkItemID $Ticket&lt;/span&gt;
+
+
+&lt;span class="s1"&gt;  #region get work item updates to find the actual closed date&lt;/span&gt;
+&lt;span class="s1"&gt;  $WorkItemUpdates = Get-DevOpsWorkItemUpdatesByID -Organisation $Organisation -ProjectName $ProjectName -WorkItemID $Ticket&lt;/span&gt;
+
+&lt;span class="s1"&gt;  $WorkItemUpdateWithClosedDate = $WorkItemUpdates.fields | sort-object id  | Where-Object {$_.&amp;quot;System.Reason&amp;quot;.newValue -eq &amp;#39;Moved to state Closed&amp;#39; }&lt;/span&gt;
+&lt;span class="s1"&gt;  $DateToClose = $WorkItemUpdateWithClosedDate.&amp;quot;System.ChangedDate&amp;quot;.newValue&lt;/span&gt;
+&lt;span class="s1"&gt;  #endregion get work item updates to find the actual closed date&lt;/span&gt;
+
+&lt;span class="s1"&gt;  $TicketsUpdatedArray += $TicketObject&lt;/span&gt;
+&lt;span class="s1"&gt;  $TicketObject.fields&lt;/span&gt;
+
+&lt;span class="s1"&gt;  $FieldsToUpdate = @(&lt;/span&gt;
+&lt;span class="s1"&gt;    @{&lt;/span&gt;
+&lt;span class="s1"&gt;      path  = &amp;quot;/fields/Microsoft.VSTS.Common.ClosedDate&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;      value = &amp;quot;$DateToClose&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;    }&lt;/span&gt;
+&lt;span class="s1"&gt;  )&lt;/span&gt;
+&lt;span class="s1"&gt;  Write-Host &amp;quot;Update ticket $Ticket closed date to with date $DateToClose&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;  $FieldsToUpdate&lt;/span&gt;
+&lt;span class="s1"&gt;  start-sleep -Milliseconds 300&lt;/span&gt;
+&lt;span class="s1"&gt;  try {&lt;/span&gt;
+&lt;span class="s1"&gt;    $UpdatedResult = Update-DevOpsWorkItem -Organisation $Organisation  -WorkItemId $Ticket -FieldsToUpdate $FieldsToUpdate&lt;/span&gt;
+&lt;span class="s1"&gt;    Write-Host &amp;quot; Updated ticket&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;    $UpdatedResult.fields&lt;/span&gt;
+&lt;span class="s1"&gt;    $UpdatedArray += $UpdatedResult&lt;/span&gt;
+&lt;span class="s1"&gt;  }&lt;/span&gt;
+&lt;span class="s1"&gt;  catch {&lt;/span&gt;
+&lt;span class="s1"&gt;    $FailedArray += $TicketObject&lt;/span&gt;
+&lt;span class="s1"&gt;  }&lt;/span&gt;
+
+&lt;span class="s1"&gt;}&lt;/span&gt;
+&lt;span class="s1"&gt;#endregion iterate and update&lt;/span&gt;
+
+&lt;span class="s1"&gt;#endregion work item dates&lt;/span&gt;
+
+&lt;span class="s1"&gt;#region save files&lt;/span&gt;
+&lt;span class="s1"&gt;$UpdatedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &amp;quot;$Home\Downloads\UpdatedWorkItems$($TimeStamp).json&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;$TicketsUpdatedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &amp;quot;$Home\Downloads\TicketsOriginalData$($TimeStamp).json&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;$UpdatedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &amp;quot;$Home\Downloads\UpdatedWorkItems$($TimeStamp).csv&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;$TicketsUpdatedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &amp;quot;$Home\Downloads\TicketsOriginalData$($TimeStamp).csv&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;# output failed array - usually fields missing&lt;/span&gt;
+&lt;span class="s1"&gt;$FailedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &amp;quot;$Home\Downloads\FailedWorkItemsUpdate$($TimeStamp).csv&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;$FailedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &amp;quot;$Home\Downloads\FailedWorkItemsUpdate$($TimeStamp).json&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;#endregion save files&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Script bootstrap.ps1
+Developed by Daniel Broderick
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="c1"&gt;#  &lt;/span&gt;
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DESCRIPTION&lt;/span&gt;
+        &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;powershell&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;bootstrap&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+        &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;dyncamically&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;any&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;libary&lt;/span&gt;\&lt;span class="n"&gt;powershell&lt;/span&gt; &lt;span class="n"&gt;folders&lt;/span&gt;
+
+        &lt;span class="n"&gt;Other&lt;/span&gt; &lt;span class="n"&gt;paths&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;added&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;required&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; 
+
+        &lt;span class="n"&gt;Any&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;simply&lt;/span&gt; &lt;span class="n"&gt;added&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;bootstrap&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;dyncamically&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;them&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+        &lt;span class="n"&gt;Use&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ps1&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;scripts&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;dyncamically&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;bootstrap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="c1"&gt;#&amp;gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$($MyInvocation.MyCommand): Bootstrapping all variables&amp;quot;&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="k"&gt;global&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;RootScriptPath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Parent&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;MyInvocation&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MyCommand&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Definition&lt;/span&gt; &lt;span class="c1"&gt;# Dymanically get Path of script -  # decleared a global for the GUI application &lt;/span&gt;
+
+    &lt;span class="c1"&gt;# add environment variable, this will only be present during script run&lt;/span&gt;
+    &lt;span class="c1"&gt;# creating an env variable will make it available in jobs - makes the scope more universal&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;RootScriptPath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;RootScriptPath&lt;/span&gt; 
+
+
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;FileTimeStamp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Format&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ddMMyyyy-HHmm&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# used in many scripts for time stamping saved files&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#region Paths&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;LibraryPath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$RootScriptPath\Library&amp;quot;&lt;/span&gt;  
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;ModulePath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$LibraryPath\Modules&amp;quot;&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PowershellModules&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$ModulePath\Powershell&amp;quot;&lt;/span&gt;
+    &lt;span class="c1"&gt;#endregion Paths&lt;/span&gt;
+
+
+    &lt;span class="c1"&gt;#region regex for naming conventions&lt;/span&gt;
+    &lt;span class="c1"&gt;# https://wcbbc.sharepoint.com/:w:/s/AzureDevOpsIAWorkgroups/ETGFzaWXGKVEgBPG0lgUJYgBepMwBwOhmNpETORxO4sQdw?e=6OuW7B&lt;/span&gt;
+    &lt;span class="c1"&gt;# To use example $Hotfix -match $BranchNamingConventionRegex&lt;/span&gt;
+
+
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;RepoNamingConventionRegex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;([a-z]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})&amp;#39;&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;BranchNamingConventionRegex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;([a-z]+)(\/)([0-9])([\.0-9])([0-9a-z-]+)&amp;#39;&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;ClassicReleaseNamingConventionRegex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;([a-z]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})&amp;#39;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#endregion regex for naming conventions&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#region set variable preferences&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;SetDebugPreference&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Global&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;DebugPreference&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;SetDebugPreference&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;SetVerbosePreference&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;Global&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;VerbosePreference&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;SetVerbosePreference&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#endregion set variable preferences&lt;/span&gt;
+
+    &lt;span class="c1"&gt;#region import modules and ps1 functions&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;PSModulePath&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;like&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;*$PowershellModules*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$($MyInvocation.MyCommand): Setting module Path environment variable - adding $PowershellModules&amp;quot;&lt;/span&gt;
+        &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;PSModulePath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;PSModulePath&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PowershellModules&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="n"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PowershellModuleFile&lt;/span&gt;  &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Get&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ChildItem&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Recurse&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PowershellModules&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Include&lt;/span&gt; &lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;psm1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;psd1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FullName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$($MyInvocation.MyCommand): Importing module $PowershellModuleFile&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;Import&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Module&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PowershellModuleFile&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Force&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;NoClobber&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ErrorAction&lt;/span&gt; &lt;span class="n"&gt;SilentlyContinue&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;   
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;catch&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Error&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$($MyInvocation.MyCommand): Error bootstrapping variables - $($_.Exception)&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category></entry><entry><title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250613</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-05-13.html" rel="alternate"></link><published>2025-06-13T00:00:00-07:00</published><updated>2025-06-13T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-06-13:/azure-pipeline-blueprints-oss-sync-2025-05-13.html</id><summary type="html">&lt;p&gt;Latest version and with small portfolio update.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have confirmed there are no internal updates currently suitable for sharing with this community—rest assured, we are keeping a close watch. Behind the scenes, our focus has been on developing new app-type blueprints to expand coverage across our internal software development lifecycle. While these efforts are tailored for internal use and not directly applicable to the open-source project, they are driving meaningful progress.&lt;/p&gt;
 &lt;p&gt;One exciting enhancement: our bootstrap flow now validates the portfolio used by pipelines, A critical step forward for our self-service capabilities, as highlighted in our recent &lt;a href="/announcement-ci-cd-cookbook.html"&gt;Continuous Integration and Delivery Pipelines Cookbook&lt;/a&gt;. This improvement strengthens the foundation for scalable, autonomous development.&lt;/p&gt;
 &lt;p&gt;Changes:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2951,39 +3198,4 @@ At WorkSafe BC, I am thrilled to see Metrics as a key factor in everything, ever
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Organization driven by metric" src="/images/engineering-practices-why-metrics-3.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I hope you embrace and share the value of metrics, use them to demonstrate your ability to execute on all levels of delivery - collaborating and working to improve them with each team member and group you work with.  Rember to track the value returned on your metrics too; all metrics are not created or perform equally.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category><category term="engineering"></category><category term="code-quality"></category><category term="automation"></category></entry><entry><title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20240405</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-20240405.html" rel="alternate"></link><published>2024-04-10T00:00:00-07:00</published><updated>2024-04-10T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-04-10:/azure-pipeline-blueprints-oss-sync-20240405.html</id><summary type="html">&lt;p&gt;Adding a new blueprint - webapp.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This open-source update adds the new &lt;strong&gt;webapp&lt;/strong&gt; blueprint to our collection of templates and blueprints. It can be used to build and deploy any web-based .Net application to be deployed as an Azure App Service.&lt;/p&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/28"&gt;Click here to view the associated Pull Request&lt;/a&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Changes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;New web-app blueprint, which we use for web &lt;strong&gt;apps&lt;/strong&gt;, web &lt;strong&gt;apis&lt;/strong&gt;, with &lt;strong&gt;Razor&lt;/strong&gt; or &lt;strong&gt;Blazor&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/wepapp/azure-pipeline-webapp-cd-stage.yml&lt;/strong&gt; - new&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/webapp/azure-pipeline-webapp-cd.yml&lt;/strong&gt; - new.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/webapp/azure-pipeline-webapp-ci.yml&lt;/strong&gt; - new.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/webapp/azure-pipeline-webapp-config.yml&lt;/strong&gt; - new.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/webapp/azure-pipeline-webapp-control.yml&lt;/strong&gt; - new. &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;blueprints/webapp/azure-pipeline-webapp-start.yml&lt;/strong&gt; - new.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;What else can/should/must we consider as part of our blueprints? Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry><entry><title>Technology Framework Monitor - Open Source Software Sync 20240322</title><link href="https://wsbctechnicalblog.github.io/azure-tfm-oss-sync-20240322.html" rel="alternate"></link><published>2024-04-02T00:00:00-07:00</published><updated>2024-04-02T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-04-02:/azure-tfm-oss-sync-20240322.html</id><summary type="html">&lt;p&gt;The broader our scanning efforts, the more technical debt we uncover, enabling proactive resolution.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The ongoing evolution of our Technology Framework Monitor (TFM) open-source project empowers us to expand our horizons in identifying end-of-life products and detecting engineering practice drift. In this latest update, we have integrated &lt;a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops"&gt;Azure Pipeline&lt;/a&gt; referencing and exploration logic. Our next step involves adding support for NODE scans and automating Azure DevOps work item generation for identified issues.&lt;/p&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Technology-Framework-Monitor/pull/27"&gt;Click here to peruse associated Pull Request&lt;/a&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Changes as documented by Andreas Mertens encompasses four main changes:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Addition of YAML and Classic Build pipeline scans.&lt;/li&gt;
-&lt;li&gt;Incorporation of Classic Release pipeline scans.&lt;/li&gt;
-&lt;li&gt;Resolution of a bug causing duplicate File records. Previously, the FileID for a file was mistakenly considered a hash code, leading to duplication. This has been rectified by using the Path to uniquely identify files in the repository.&lt;/li&gt;
-&lt;li&gt;Identification and resolution of a database connection leak. The base (DBCore) of all connections has been made IDisposable, ensuring proper disposal once the connection's work is completed.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: A known issue with Classic Release pipelines, particularly regarding Artifacts, has been addressed in the code update. The auto-generated code from JSON contained a reference to internal information as a field, which has been removed for clarity and security.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;What else can/should/must we consider as part of our TFM product? Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry></feed>
+&lt;p&gt;I hope you embrace and share the value of metrics, use them to demonstrate your ability to execute on all levels of delivery - collaborating and working to improve them with each team member and group you work with.  Rember to track the value returned on your metrics too; all metrics are not created or perform equally.&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category><category term="engineering"></category><category term="code-quality"></category><category term="automation"></category></entry></feed>

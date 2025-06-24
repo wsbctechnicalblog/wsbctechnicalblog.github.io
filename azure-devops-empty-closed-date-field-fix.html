@@ -1,0 +1,402 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Fixing empty Closed Date fields in work items (Part 2) - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-empty-closed-date-field-fix.html" rel="bookmark"
+            title="Permalink to Fixing empty Closed Date fields in work items (Part 2)">Fixing empty Closed Date fields in work items (Part 2)</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Wed 25 June 2025</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>Now that we know what the issue is, how do we resolve it?</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>As outlined in <a href="/azure-devops-empty-closed-date-field.html">Why is the Closed Date field empty in my work items?</a>, you may have encountered closed work items missing a <code>Closed Date</code>. Microsoft acknowledged this long-standing Azure DevOps bug, where custom work item types were not configured to populate the Closed Date field by default, but has never issued a fix.</p>
+<p>Fortunately, our own Azure DevOps and PowerShell expert, Daniel Broderick, developed a script that allowed us to efficiently correct hundreds of affected work items. This proactive solution saved us from hours of tedious manual remediation and ensured data integrity across our boards.</p>
+<p>We share it here for you to review and potentially help you <code>automate the mundane</code> and cleanup your work items.</p>
+<hr>
+<blockquote>
+<p>Script update-workitem-closing-date.ps1
+Developed by Daniel Broderick
+</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="c1">#</span>
+    <span class="o">.</span><span class="n">DESCRIPTION</span>
+        <span class="n">Update</span> <span class="n">the</span> <span class="n">workitem</span> <span class="n">closing</span> <span class="n">date</span> <span class="k">for</span> <span class="n">the</span> <span class="n">microsoft</span> <span class="n">but</span> <span class="n">where</span> <span class="n">its</span> <span class="n">closed</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">show</span><span class="o">.</span>
+        <span class="n">Finds</span> <span class="n">work</span> <span class="n">items</span> <span class="k">with</span> <span class="n">no</span> <span class="n">closed</span> <span class="n">date</span> <span class="n">but</span> <span class="n">are</span> <span class="n">closed</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">Technical</span> <span class="n">Debt</span><span class="o">.</span>
+
+<span class="c1">#&gt;</span>
+
+<span class="c1">#region params</span>
+<span class="p">[</span><span class="n">CmdletBinding</span><span class="p">()]</span>
+<span class="n">param</span> <span class="p">(</span>
+  <span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span> <span class="o">=</span> <span class="err">$</span><span class="n">false</span><span class="p">)]</span>
+  <span class="p">[</span><span class="n">String</span><span class="p">]</span>
+  <span class="err">$</span><span class="n">Organisation</span> <span class="o">=</span> <span class="s2">&quot;&lt;YOUR-ORG&gt;&quot;</span><span class="p">,</span>
+  <span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span> <span class="o">=</span> <span class="err">$</span><span class="n">false</span><span class="p">)]</span>
+  <span class="p">[</span><span class="n">String</span><span class="p">]</span>
+  <span class="err">$</span><span class="n">PAT</span> <span class="o">=</span> <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">pat</span>
+<span class="p">)</span>
+<span class="c1">#endregion params</span>
+
+
+<span class="c1">#region import variables</span>
+<span class="err">$</span><span class="n">FileName</span> <span class="o">=</span> <span class="s1">&#39;bootstrap.ps1&#39;</span>
+<span class="err">$</span><span class="n">FoundFlag</span> <span class="o">=</span> <span class="err">$</span><span class="n">false</span>
+<span class="err">$</span><span class="n">Path</span> <span class="o">=</span> <span class="n">Split</span><span class="o">-</span><span class="n">Path</span> <span class="o">-</span><span class="n">Parent</span> <span class="o">-</span><span class="n">Path</span> <span class="err">$</span><span class="n">MyInvocation</span><span class="o">.</span><span class="n">MyCommand</span><span class="o">.</span><span class="n">Definition</span>
+
+<span class="n">do</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Test</span><span class="o">-</span><span class="n">Path</span> <span class="o">-</span><span class="n">path</span> <span class="s2">&quot;$Path\$FileName&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="err">$</span><span class="n">FoundFlag</span> <span class="o">=</span> <span class="err">$</span><span class="n">true</span>
+      <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;Bootstrapping&quot;</span>
+      <span class="n">Write</span><span class="o">-</span><span class="n">Output</span> <span class="s2">&quot;Bootstrap found importing modules&quot;</span>
+      <span class="o">.</span> <span class="s2">&quot;$Path\$FileName&quot;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="err">$</span><span class="n">Path</span> <span class="o">=</span> <span class="n">Split</span><span class="o">-</span><span class="n">Path</span> <span class="o">-</span><span class="n">Parent</span> <span class="o">-</span><span class="n">Path</span> <span class="err">$</span><span class="n">Path</span>
+      <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;Path $Path\$FileName Not found&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">catch</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">_</span> 
+    <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;Bootstrap Not found exiting&quot;</span>
+    <span class="n">Write</span><span class="o">-</span><span class="n">Output</span> <span class="s2">&quot;$FileName Not found bootstrap cannot load modules - exiting&quot;</span>
+    <span class="n">exit</span> <span class="c1"># variables not found  </span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">Until</span> <span class="p">(</span><span class="err">$</span><span class="n">FoundFlag</span> <span class="o">-</span><span class="n">eq</span> <span class="err">$</span><span class="n">true</span><span class="p">)</span>
+<span class="c1">#endregion import variables</span>
+
+<span class="err">$</span><span class="n">ProjectName</span> <span class="o">=</span> <span class="s1">&#39;zDEPRECATE - Cloud-WLT&#39;</span>
+<span class="n">Set</span><span class="o">-</span><span class="n">DevOpsScriptVariables</span> <span class="o">-</span><span class="n">DevOpsOrganisation</span> <span class="err">$</span><span class="n">Organisation</span> <span class="o">-</span><span class="n">DevOpsProject</span> <span class="s2">&quot;$ProjectName&quot;</span> <span class="o">-</span><span class="n">PAT</span> <span class="err">$</span><span class="n">PAT</span>
+
+<span class="err">$</span><span class="n">TicketsUpdatedArray</span> <span class="o">=</span> <span class="o">@</span><span class="p">()</span>
+<span class="err">$</span><span class="n">UpdatedArray</span> <span class="o">=</span> <span class="o">@</span><span class="p">()</span>
+<span class="err">$</span><span class="n">FailedArray</span> <span class="o">=</span> <span class="o">@</span><span class="p">()</span>
+<span class="err">$</span><span class="n">TimeStamp</span> <span class="o">=</span> <span class="n">Get</span><span class="o">-</span><span class="n">Date</span> <span class="o">-</span><span class="n">Format</span> <span class="s2">&quot;yyyy-MM-dd HHmm&quot;</span>
+<span class="c1">#region work item dates</span>
+
+
+<span class="c1">#region query</span>
+<span class="err">$</span><span class="n">JSONQuery</span> <span class="o">=</span> <span class="s1">&#39;{&quot;query&quot;: &quot;select * from </span>
+                                <span class="n">WorkItems</span>
+                                <span class="n">where</span> 
+                                <span class="p">[</span><span class="n">System</span><span class="o">.</span><span class="n">TeamProject</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="n">zDEPRECATE</span> <span class="o">-</span> <span class="n">Cloud</span><span class="o">-</span><span class="n">WLT</span><span class="s1">&#39;&#39;</span>
+                                <span class="ow">and</span> <span class="p">[</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">VSTS</span><span class="o">.</span><span class="n">Common</span><span class="o">.</span><span class="n">ClosedDate</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&#39;</span>
+<span class="s1">                                and [System.WorkItemType] = &#39;&#39;Technical Debt&#39;&#39; </span>
+<span class="s1">                                and [System.State] = &#39;&#39;Closed&#39;&#39;</span>
+<span class="s1">                                ORDER BY [id]</span>
+<span class="s1">                                &quot;</span>
+<span class="s1">                    }&#39;</span>
+
+<span class="s1">$QueryID = &#39;484dc53f-813b-43ca-a567-8474dc8aa470&#39; # get results by Saved Query ID</span>
+<span class="s1">#endregion query</span>
+
+<span class="s1">#region get workitems from query</span>
+<span class="s1">#$Result = Get-DevOpsWorkItemByWIQLQuery -JSONQuery $JSONQuery -Organisation $Organisation -ProjectName $ProjectName</span>
+
+<span class="s1">$Result = Get-DevOpsWorkItemByWIQLQuery -QueryID $QueryID -Organisation $Organisation -ProjectName $ProjectName</span>
+
+<span class="s1">#endregion get workitems from query</span>
+
+<span class="s1">#region iterate and update</span>
+<span class="s1">Write-Host &quot; Found $(($Result.workItems).count) tickets with no closed date and are in a closed state&quot;</span>
+<span class="s1">foreach ($Ticket In $Result.workItems.id) {</span>
+<span class="s1">  $TicketObject = Get-DevOpsWorkItemByID -Organisation $Organisation -ProjectName $ProjectName -WorkItemID $Ticket</span>
+
+
+<span class="s1">  #region get work item updates to find the actual closed date</span>
+<span class="s1">  $WorkItemUpdates = Get-DevOpsWorkItemUpdatesByID -Organisation $Organisation -ProjectName $ProjectName -WorkItemID $Ticket</span>
+
+<span class="s1">  $WorkItemUpdateWithClosedDate = $WorkItemUpdates.fields | sort-object id  | Where-Object {$_.&quot;System.Reason&quot;.newValue -eq &#39;Moved to state Closed&#39; }</span>
+<span class="s1">  $DateToClose = $WorkItemUpdateWithClosedDate.&quot;System.ChangedDate&quot;.newValue</span>
+<span class="s1">  #endregion get work item updates to find the actual closed date</span>
+
+<span class="s1">  $TicketsUpdatedArray += $TicketObject</span>
+<span class="s1">  $TicketObject.fields</span>
+
+<span class="s1">  $FieldsToUpdate = @(</span>
+<span class="s1">    @{</span>
+<span class="s1">      path  = &quot;/fields/Microsoft.VSTS.Common.ClosedDate&quot;</span>
+<span class="s1">      value = &quot;$DateToClose&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">  )</span>
+<span class="s1">  Write-Host &quot;Update ticket $Ticket closed date to with date $DateToClose&quot;</span>
+<span class="s1">  $FieldsToUpdate</span>
+<span class="s1">  start-sleep -Milliseconds 300</span>
+<span class="s1">  try {</span>
+<span class="s1">    $UpdatedResult = Update-DevOpsWorkItem -Organisation $Organisation  -WorkItemId $Ticket -FieldsToUpdate $FieldsToUpdate</span>
+<span class="s1">    Write-Host &quot; Updated ticket&quot;</span>
+<span class="s1">    $UpdatedResult.fields</span>
+<span class="s1">    $UpdatedArray += $UpdatedResult</span>
+<span class="s1">  }</span>
+<span class="s1">  catch {</span>
+<span class="s1">    $FailedArray += $TicketObject</span>
+<span class="s1">  }</span>
+
+<span class="s1">}</span>
+<span class="s1">#endregion iterate and update</span>
+
+<span class="s1">#endregion work item dates</span>
+
+<span class="s1">#region save files</span>
+<span class="s1">$UpdatedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &quot;$Home\Downloads\UpdatedWorkItems$($TimeStamp).json&quot;</span>
+<span class="s1">$TicketsUpdatedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &quot;$Home\Downloads\TicketsOriginalData$($TimeStamp).json&quot;</span>
+<span class="s1">$UpdatedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &quot;$Home\Downloads\UpdatedWorkItems$($TimeStamp).csv&quot;</span>
+<span class="s1">$TicketsUpdatedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &quot;$Home\Downloads\TicketsOriginalData$($TimeStamp).csv&quot;</span>
+<span class="s1"># output failed array - usually fields missing</span>
+<span class="s1">$FailedArray | ConvertTo-CSV -noTypeInformation -UseQuotes Always | Out-File -FilePath &quot;$Home\Downloads\FailedWorkItemsUpdate$($TimeStamp).csv&quot;</span>
+<span class="s1">$FailedArray | ConvertTo-Json -Depth 100 | Out-File -FilePath &quot;$Home\Downloads\FailedWorkItemsUpdate$($TimeStamp).json&quot;</span>
+<span class="s1">#endregion save files</span>
+</code></pre></div>
+
+<hr>
+<blockquote>
+<p>Script bootstrap.ps1
+Developed by Daniel Broderick
+</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="c1">#  </span>
+    <span class="o">.</span><span class="n">DESCRIPTION</span>
+        <span class="n">A</span> <span class="n">powershell</span> <span class="n">script</span> <span class="n">to</span> <span class="n">bootstrap</span> <span class="n">variables</span> <span class="ow">and</span> <span class="n">modules</span><span class="o">.</span>
+
+        <span class="n">This</span> <span class="n">script</span> <span class="n">will</span> <span class="n">dyncamically</span> <span class="kn">import</span> <span class="nn">any</span> <span class="n">modules</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">libary</span>\<span class="n">powershell</span> <span class="n">folders</span>
+
+        <span class="n">Other</span> <span class="n">paths</span> <span class="n">can</span> <span class="n">be</span> <span class="n">added</span> <span class="k">if</span> <span class="n">required</span><span class="o">.</span> 
+
+        <span class="n">Any</span> <span class="n">new</span> <span class="n">modules</span> <span class="n">can</span> <span class="n">be</span> <span class="n">simply</span> <span class="n">added</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">bootstrap</span> <span class="n">will</span> <span class="n">dyncamically</span> <span class="n">load</span> <span class="n">them</span><span class="o">.</span>
+
+        <span class="n">Use</span> <span class="n">the</span> <span class="n">import</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">ps1</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">scripts</span> <span class="n">to</span> <span class="n">dyncamically</span> <span class="n">call</span> <span class="n">this</span> <span class="n">bootstrap</span><span class="o">.</span>
+<span class="c1">#&gt;</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;$($MyInvocation.MyCommand): Bootstrapping all variables&quot;</span>
+    <span class="err">$</span><span class="k">global</span><span class="p">:</span><span class="n">RootScriptPath</span> <span class="o">=</span> <span class="n">Split</span><span class="o">-</span><span class="n">Path</span> <span class="o">-</span><span class="n">Parent</span> <span class="o">-</span><span class="n">Path</span> <span class="err">$</span><span class="n">MyInvocation</span><span class="o">.</span><span class="n">MyCommand</span><span class="o">.</span><span class="n">Definition</span> <span class="c1"># Dymanically get Path of script -  # decleared a global for the GUI application </span>
+
+    <span class="c1"># add environment variable, this will only be present during script run</span>
+    <span class="c1"># creating an env variable will make it available in jobs - makes the scope more universal</span>
+    <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">RootScriptPath</span> <span class="o">=</span> <span class="err">$</span><span class="n">RootScriptPath</span> 
+
+
+    <span class="err">$</span><span class="n">FileTimeStamp</span> <span class="o">=</span> <span class="n">get</span><span class="o">-</span><span class="n">date</span> <span class="o">-</span><span class="n">Format</span> <span class="s2">&quot;ddMMyyyy-HHmm&quot;</span> <span class="c1"># used in many scripts for time stamping saved files</span>
+
+    <span class="c1">#region Paths</span>
+    <span class="err">$</span><span class="n">LibraryPath</span> <span class="o">=</span> <span class="s2">&quot;$RootScriptPath\Library&quot;</span>  
+    <span class="err">$</span><span class="n">ModulePath</span> <span class="o">=</span> <span class="s2">&quot;$LibraryPath\Modules&quot;</span>
+    <span class="err">$</span><span class="n">PowershellModules</span> <span class="o">=</span> <span class="s2">&quot;$ModulePath\Powershell&quot;</span>
+    <span class="c1">#endregion Paths</span>
+
+
+    <span class="c1">#region regex for naming conventions</span>
+    <span class="c1"># https://wcbbc.sharepoint.com/:w:/s/AzureDevOpsIAWorkgroups/ETGFzaWXGKVEgBPG0lgUJYgBepMwBwOhmNpETORxO4sQdw?e=6OuW7B</span>
+    <span class="c1"># To use example $Hotfix -match $BranchNamingConventionRegex</span>
+
+
+    <span class="err">$</span><span class="n">RepoNamingConventionRegex</span> <span class="o">=</span> <span class="s1">&#39;([a-z]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})&#39;</span>
+    <span class="err">$</span><span class="n">BranchNamingConventionRegex</span> <span class="o">=</span> <span class="s1">&#39;([a-z]+)(\/)([0-9])([\.0-9])([0-9a-z-]+)&#39;</span>
+    <span class="err">$</span><span class="n">ClassicReleaseNamingConventionRegex</span> <span class="o">=</span> <span class="s1">&#39;([a-z]{1,50})\.([a-z0-9-]{1,50})\.([a-z0-9-]{1,50})&#39;</span>
+
+    <span class="c1">#endregion regex for naming conventions</span>
+
+    <span class="c1">#region set variable preferences</span>
+    <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">SetDebugPreference</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="err">$</span><span class="n">Global</span><span class="p">:</span><span class="n">DebugPreference</span> <span class="o">=</span> <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">SetDebugPreference</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">SetVerbosePreference</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="err">$</span><span class="n">Global</span><span class="p">:</span><span class="n">VerbosePreference</span> <span class="o">=</span> <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">SetVerbosePreference</span>
+    <span class="p">}</span>
+
+    <span class="c1">#endregion set variable preferences</span>
+
+    <span class="c1">#region import modules and ps1 functions</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="ow">not</span> <span class="p">(</span><span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">PSModulePath</span> <span class="o">-</span><span class="n">like</span> <span class="s2">&quot;*$PowershellModules*&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;$($MyInvocation.MyCommand): Setting module Path environment variable - adding $PowershellModules&quot;</span>
+        <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">PSModulePath</span> <span class="o">=</span> <span class="err">$</span><span class="n">env</span><span class="p">:</span><span class="n">PSModulePath</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="err">$</span><span class="n">PowershellModules</span>
+    <span class="p">}</span>
+
+    <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">PowershellModuleFile</span>  <span class="ow">in</span> <span class="p">(</span><span class="n">Get</span><span class="o">-</span><span class="n">ChildItem</span> <span class="o">-</span><span class="n">Recurse</span> <span class="o">-</span><span class="n">Path</span> <span class="err">$</span><span class="n">PowershellModules</span> <span class="o">-</span><span class="n">Include</span> <span class="o">*.</span><span class="n">psm1</span><span class="p">,</span> <span class="o">*.</span><span class="n">psd1</span><span class="p">)</span><span class="o">.</span><span class="n">FullName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Write</span><span class="o">-</span><span class="n">Debug</span> <span class="s2">&quot;$($MyInvocation.MyCommand): Importing module $PowershellModuleFile&quot;</span>
+        <span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="err">$</span><span class="n">PowershellModuleFile</span> <span class="o">-</span><span class="n">Force</span> <span class="o">-</span><span class="n">NoClobber</span> <span class="o">-</span><span class="n">ErrorAction</span> <span class="n">SilentlyContinue</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
+<span class="n">catch</span>
+<span class="p">{</span>
+
+    <span class="n">Write</span><span class="o">-</span><span class="n">Error</span> <span class="s2">&quot;$($MyInvocation.MyCommand): Error bootstrapping variables - $($_.Exception)&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr>
+<p>Enjoy!</p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-devops-empty-closed-date-field-fix.html" rel="bookmark"
+         title="Permalink to Fixing empty Closed Date fields in work items (Part 2)">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(55)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(36)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(92)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(63)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(61)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(29)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(27)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(53)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(23)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (224)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
