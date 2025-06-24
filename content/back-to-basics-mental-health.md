@@ -1,4 +1,4 @@
-Title: <TRY KEEP TITLE SIMILAR TO SLUG WITHOUT - AND SENTENCE CASING>
+Title: How Work-Life Balance Sparks Innovation
 Date: 2026-06-25
 Category: Posts 
 Tags: devops, agile
