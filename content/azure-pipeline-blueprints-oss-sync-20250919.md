@@ -34,6 +34,16 @@ Looking ahead, I envision these three production stages evolving into a Prod-Blu
 
 ---
 
+# Goodbye Complexity — Hello Clarity!
+
+We are taking a decisive step forward by decommissioning the generic-multi-jobs template. It has now been moved to the zParked folder, so you can still access it if needed.
+
+Over time, the misuse of this template, favoring multiple jobs over the simpler and more effective single-job generic template, has led to significant technical debt and unnecessary complexity. While the multi-job approach was a great idea in its time, it has unfortunately been overused in ways that did not align with its original purpose.
+
+This change marks a shift toward simplicity, maintainability, and smarter template usage. Let us build from a position of strength and leave behind what no longer serves us.
+
+---
+
 # Hard-Earned Insights
 
 **Conditional statements cannot be used in parameter lists**
@@ -122,6 +132,12 @@ Changes:
 >
 > [Click here to view the associated Pull Request](**TBD**)
 >
+
+---
+
+For more insight and an in-depth journal of our open-source v2 blueprint adventure, see [Continuous Integration and Delivery Pipelines Cookbook](https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html).
+
+![Cover](/images/announcement-ci-cd-cookbook-1-small.png)
 
 ---
 
