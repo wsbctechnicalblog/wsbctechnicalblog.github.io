@@ -127,10 +127,10 @@ One of our future aspirations is to standardize the ```cd.yml``` template. This 
 
 Changes:
 
-> ![Templates](../images/azure-pipeline-blueprints-oss-sync-2025-09-19.jpg) **TBD**
+> ![Templates](../images/azure-pipeline-blueprints-oss-sync-2025-09-19.jpg)
 
 >
-> [Click here to view the associated Pull Request](**TBD**)
+> [Click here to view the associated Pull Request](https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io/pull/685)
 >
 
 ---
