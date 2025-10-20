@@ -6,8 +6,6 @@ Slug: azure-pipelines-magic-v2-pipelines
 Author: Willy-Peter Schaub
 Summary: Kickstarting our awareness series with a deep dive into v2 pipelines and their automation magic.
 
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
-
 This post is the first of a few in a little series where we cherry-pick specific topics straight from our [CI/CD cookbook](/announcement-ci-cd-cookbook.html), all in the name of boosting focused engineer awareness and getting hands dirty with enablement. Today’s spotlight is shining bright on **v2 pipelines**, and we are diving into the world of self-service automation that makes life a whole lot easier for everyone involved.
 
 The idea here is simple! We want to embrace what is already working like a charm, making our delivery even smoother by turning those pipelines into something more robust, flexible, and accessible for everyone on the team. With the introduction of **v2 pipelines**, engineers can now enjoy a whole new level of autonomy and efficiency. That means less hassle, fewer holdups, and a much faster turnaround when it comes to building and shipping stuff. The aim is to cut down on the friction, pave the way for smoother collaboration, and truly step up the pace of our development cycles.
