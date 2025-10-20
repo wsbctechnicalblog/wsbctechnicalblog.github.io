@@ -12,6 +12,8 @@ This post is the first of a few in a little series where we cherry-pick specific
 
 The idea here is simple! We want to embrace what is already working like a charm, making our delivery even smoother by turning those pipelines into something more robust, flexible, and accessible for everyone on the team. With the introduction of **v2 pipelines**, engineers can now enjoy a whole new level of autonomy and efficiency. That means less hassle, fewer holdups, and a much faster turnaround when it comes to building and shipping stuff. The aim is to cut down on the friction, pave the way for smoother collaboration, and truly step up the pace of our development cycles.
 
+By standardizing all security processes and ensuring their consistent execution, this approach establishes a secure baseline for your build and release pipeline. It eliminates the need for costly, reactive security scans or tests post-deployment, enabling proactive risk mitigation and accelerating time-to-market. This positions your team to improve from a place of strength—where security is embedded, not bolted on.
+
 # v2 Pipelines
 
 Let us chat about the two distinct flavours of **v2 pipelines**, each one tailor-made for different team vibes and where your crew sits on the DevOps maturity spectrum. This is all about finding the right fit and letting teams roll with what works best for them, no matter if you are cruising with the tried-and-trusted or testing the waters with something brand new.
@@ -100,7 +102,7 @@ Keep your eyes peeled for more posts in this series, each one crafted to help te
 If you are after more details or need to dig a bit deeper, do yourself a favour and check out the [CI/CD cookbook](/announcement-ci-cd-cookbook.html). It is full of handy tips, tricks, and samples to make your day that much easier.
 
 >
-> **PS**: For the WorkSafeBC engineers, the eBook is available in our Awareness and Continuous Learning Djo (orange belt) and our governance and guardrails library.
+> **PS**: For the WorkSafeBC engineers, the eBook is available in our Awareness and Continuous Learning Dojo (orange belt) and our governance and guardrails library.
 >
 
 **Series breadcrumb**, which will be updates as we add more posts in this series:
