@@ -1,5 +1,5 @@
 Title: v2 Pipelines and the Rise of Automation
-Date: 2025-10-20
+Date: 2025-10-24
 Category: Posts 
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipelines-magic-v2-pipelines
