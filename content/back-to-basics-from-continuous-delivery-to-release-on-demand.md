@@ -1,5 +1,5 @@
 Title: From Continuous Delivery to Release on Demand
-Date: 2025-12-12
+Date: 2025-12-10
 Category: Posts 
 Tags: engineering, feature-flags
 Slug: back-to-basics-from-continuous-delivery-to-release-on-demand
