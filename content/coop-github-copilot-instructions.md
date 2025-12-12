@@ -1,10 +1,10 @@
-Title: <TRY KEEP TITLE SIMILAR TO SLUG WITHOUT - AND SENTENCE CASING>
+Title: Coding Standards Made Simple: Harness GitHub Copilot
 Date: <YYYY-MM-DD>
 Category: Posts 
-Tags: <COMMA SEPARATED LIST OF TAGS. See blog-post-101.md for allowed tags.>
-Slug: <SAME AS FILENAME - lowercase kebab style>
-Author: <FIRSTNAME> <SURNAME>
-Summary: <CRISP SUMMARY>
+Tags: ai, coop, engineering
+Slug: coop-github-copilot-instructions
+Author: Nicholas Januar
+Summary: Empower your team to code consistently by guiding Copilot with your standards.
 
 <OVERVIEW - WHY ARE WE HERE?>
 
