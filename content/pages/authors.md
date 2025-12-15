@@ -103,7 +103,7 @@ Read Martin's posts [here](../author/martin-m-lacey.html)
 
 Nicholas Januar is a Computer Science student at the University of British Columbia, graduating in May 2026. He has experience in quality assurance, bioinformatics, and full-stack development, and is now exploring DevOps—containers, infrastructure, pipelines, and cloud systems. Outside of work, Nicholas enjoys badminton, volleyball, playing pool, and electric guitar.
 
-Read Nichola's posts [here](../author/nicholas-januar.html)
+Read Nicholas' posts [here](../author/nicholas-januar.html)
 
 ---
 
@@ -137,7 +137,7 @@ Read Shay's posts [here](../author/shay-vannery.html)
 
 Vikas is a Software/QA Engineer with a proven history of designing, developing, and maintaining web applications based on Microsoft technologies. Adept at solving complex technical challenges and mentoring junior developers. Committed to keeping pace with the latest industry trends and technological advancements while delivering high-quality solutions that drive business success.
  
-Read Shay's posts [here](../author/vikas-jawa.html)
+Read Vikas' posts [here](../author/vikas-jawa.html)
 
 ---
 
