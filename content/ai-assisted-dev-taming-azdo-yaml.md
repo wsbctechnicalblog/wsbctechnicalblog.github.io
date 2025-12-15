@@ -1,5 +1,5 @@
 Title: AI Assisted Development – Taming Azure Pipeline YAML
-Date: 2025-12-19
+Date: 2025-12-17
 Category: Posts 
 Tags: ai, engineering
 Slug: ai-assisted-dev-taming-azdo-yaml
