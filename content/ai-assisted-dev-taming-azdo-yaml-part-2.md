@@ -264,3 +264,13 @@ This is a perfect example of how you can unlock immediate value with GitHub Copi
 
 Step by step, and suddenly you are working smarter, not harder.
 
+# My two cents
+
+Does GitHub Copilot really boost my productivity? Honestly, the jury is still out for me—but here’s what I can say: I am getting things done faster and cleaner, and the quality is noticeably better, as long as I take the time to sanity-check what my digital sidekick spits out and make sure the logic holds up.
+
+The real game-changer? I just upgraded a YAML template without the usual stress, endless troubleshooting, or those ridiculous spacing nightmares. Compare that to the hallucination circus I have had with ChatGPT—night and day. What is hitting me now is how my focus has shifted. Instead of wrestling with code for hours, I’m crafting prompts—feeding AI the best context so it can nail the right answer.
+
+So, back to productivity: yes, I am more productive. No question. But here’s the catch—I worry about getting bogged down by process and teammates who have not built the same trust in AI yet. That is a hurdle, but it is temporary. The short answer? My productivity has skyrocketed. I am just one puzzle piece, sure—but this piece is sharper, faster, and way more effective than before.
+
+That said, huge *THANK YOU* to WorkSafeBC for pushing us to the edge with processes and products. It has been a ride! Having the chance to dive deep with M365 and GitHub Copilot has been nothing short of inspiring. This journey has not just been encouraging; it has been eye-opening. We are not just ticking boxes, we are learning, adapting, and proving that technology can actually make life easier when you embrace it. Honestly, seeing how these tools transform the way we work has me fired up for what is next. Here is to pushing boundaries and making the most of every opportunity!
+
