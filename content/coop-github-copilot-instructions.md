@@ -1,5 +1,5 @@
 Title: Coding Standards Made Simple: Harness GitHub Copilot
-Date: 2025-12-08
+Date: 2025-12-15
 Category: Posts 
 Tags: ai, coop, engineering
 Slug: coop-github-copilot-instructions
