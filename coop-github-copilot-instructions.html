@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Coding Standards Made Simple: Harness GitHub Copilot - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/coop-github-copilot-instructions.html" rel="bookmark"
+            title="Permalink to Coding Standards Made Simple: Harness GitHub Copilot">Coding Standards Made Simple: Harness GitHub Copilot</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Nicholas Januar on Mon 15 December 2025</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>The Challenges with Copilot Out of the Box</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>AI tools like GitHub Copilot and ChatGPT appear very smart at generating code, but they don’t know your team’s coding standards out of the box. Think of Copilot as a smart coworker, it’s powerful but it doesn’t know your team’s rules until you teach them.</p>
+<blockquote>
+<p><img alt="Android receiving instructions" src="../images/coop-github-copilot-instructions-1.png"></p>
+</blockquote>
+<p>Most teams have unique coding standards, for example, naming conventions, documentation structure and format, folder structure, architectural patterns, etc. Copilot, by default, does not know these preferences; it generates code based on general patterns they’ve learned from their data sources. This can lead to inconsistencies when your team has a preferred or standard code conventions.</p>
+<p>For example:</p>
+<ul>
+<li>Angular Component Generation: Many teams use CLI commands for consistency in folder structure and configurations. Copilot might not use CLI and generate the components manually, leading to inconsistencies.</li>
+<li>NgRx State Management: Teams often scaffold the NgRx boilerplate code using CLI. Copilot might write inline state logic or manually create the store files, leading to inconsistencies in structure or code standards.</li>
+</ul>
+<h1>So how do we solve this?</h1>
+<p>You could teach Copilot your standards on every prompt, but that isn’t practical. Instead, define your standards inside Custom Instruction Files.</p>
+<p>GitHub Copilot has a feature called Custom Instructions, which lets you “give Copilot additional context on how to understand your project and how to build, test and validate its changes." (Adding repository custom instructions for GitHub Copilot - GitHub Docs). In other words, these instruction files are where you can define your team’s coding conventions, architectural patterns, and project details that Copilot should know.</p>
+<h1>So how do Custom Instructions work?</h1>
+<p>The first step is to create a <code>.github</code> folder at the root of your project.</p>
+<p>Then, there are two ways to apply custom instructions:</p>
+<ol>
+<li><code>.github/copilot-instructions.md</code> – This file will be automatically applied to all files in your project</li>
+<li><code>.github/instructions/*.instructions.md</code> – This file will be applied to specific files using the applyTo glob pattern in frontmatter (e.g., <code>applyTo: "**/*"</code> for all files, or <code>applyTo: "**/*.tsx"</code> or <code>applyTo: "**/*.yaml"</code> for specific file types)</li>
+</ol>
+<p>To address the two challenges we stated above, in the instruction files we direct copilot to run the CLI command instead of manual generation. Below is the actual instruction we’ve put in the file:</p>
+<div class="highlight"><pre><span></span><code><span class="o">**</span><span class="n">Generate</span><span class="w"> </span><span class="n">Angular</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">NgRx</span><span class="w"> </span><span class="n">store</span><span class="o">**</span><span class="err">:</span><span class="w"> </span><span class="k">When</span><span class="w"> </span><span class="n">creating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">needs</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="n">management</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">MUST</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="ow">ALL</span><span class="w"> </span><span class="n">THREE</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">sequence</span><span class="w"> </span><span class="p">(</span><span class="nf">replace</span><span class="w"> </span><span class="err">`</span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="err">`</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">**</span><span class="n">Step</span><span class="w"> </span><span class="mi">1</span><span class="o">**</span><span class="err">:</span><span class="w"> </span><span class="err">`</span><span class="n">npx</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="err">`</span><span class="w"> </span><span class="p">(</span><span class="n">creates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">component</span><span class="p">)</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">**</span><span class="n">Step</span><span class="w"> </span><span class="mi">2</span><span class="o">**</span><span class="err">:</span><span class="w"> </span><span class="err">`</span><span class="n">npx</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="o">-</span><span class="n">store</span><span class="w"> </span><span class="o">--</span><span class="n">flat</span><span class="err">`</span><span class="w"> </span><span class="p">(</span><span class="n">creates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">store</span><span class="w"> </span><span class="k">module</span><span class="p">)</span>
+<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">**</span><span class="n">Step</span><span class="w"> </span><span class="mi">3</span><span class="o">**</span><span class="err">:</span><span class="w"> </span><span class="err">`</span><span class="n">npx</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="nv">@ngrx</span><span class="o">/</span><span class="nl">schematics</span><span class="p">:</span><span class="n">feature</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">counter</span><span class="o">-</span><span class="n">store</span><span class="w"> </span><span class="c1">--interactive false` (creates the store feature)</span>
+</code></pre></div>
+
+<h1>Our Setup Example</h1>
+<p>When we set up the instruction files, we focused on three main goals:</p>
+<ul>
+<li>Easy to read</li>
+<li>Easy to maintain</li>
+<li>Scalable for future improvements</li>
+</ul>
+<p>Here’s the structure we used for Angular projects:</p>
+<div class="highlight"><pre><span></span><code><span class="na">.github</span><span class="err">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="nf">copilot-instructions.md</span><span class="w">          </span><span class="c1"># Main entry point &amp; overview</span>
+<span class="err">└──</span><span class="w"> </span><span class="nf">instructions</span><span class="err">/</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-general.instructions.md</span><span class="w">   </span><span class="c1"># Core Angular &amp; UI patterns</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-button.instructions.md</span><span class="w">    </span><span class="c1"># Button styling standards</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-checkbox.instructions.md</span><span class="w">  </span><span class="c1"># Checkbox component patterns</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-text-input.instructions.md</span><span class="w"> </span><span class="c1"># Text input standards</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-table.instructions.md</span><span class="w">     </span><span class="c1"># Table component patterns</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-modal-window.instructions.md</span><span class="w"> </span><span class="c1"># Modal dialog patterns</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-pagination.instructions.md</span><span class="w"> </span><span class="c1"># Pagination component</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-ngrx.instructions.md</span><span class="w">      </span><span class="c1"># NgRx store patterns</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-ngrx-form.instructions.md</span><span class="w"> </span><span class="c1"># NgRx forms integration</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="nf">UI-ngrx-ajax.instructions.md</span><span class="w"> </span><span class="c1"># Ajax/API call patterns</span>
+<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="nf">UI-ngrx-modal-window.instructions.md</span><span class="w"> </span><span class="c1"># Modal + NgRx</span>
+</code></pre></div>
+
+<p>Each instruction file focuses on a specific area, such as general UI patterns, button styles, or NgRx store patterns.</p>
+<p>We found that breaking up instructions into smaller files makes them easier to read, maintain, and get updated.</p>
+<h1>Summary</h1>
+<p>To summarize, GitHub Copilot is powerful, but without guidance, it will generate code based on general best practices. Use Custom Instruction files to teach Copilot about your team’s coding standards.</p>
+<h1>Additional Resources</h1>
+<ul>
+<li><a href="https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions?tool=vscode">Adding repository custom instructions for GitHub Copilot - GitHub Docs</a></li>
+<li><a href="https://developer.microsoft.com/blog/introducing-awesome-github-copilot-customizations-repo">Introducing the Awesome GitHub Copilot Customizations repo - Microsoft for Developers</a></li>
+</ul>
+<p>Real example on how developers behind Visual Studio Code set up their instruction files: <a href="https://github.com/microsoft/vscode/tree/main/.github">vscode/.github at main · microsoft/vscode</a></p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/coop.html">coop </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/coop-github-copilot-instructions.html" rel="bookmark"
+         title="Permalink to Coding Standards Made Simple: Harness GitHub Copilot">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(20)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/coop.html">coop</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(65)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops</a>(94)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(65)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(55)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(36)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(29)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(27)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(53)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(23)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (228)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
