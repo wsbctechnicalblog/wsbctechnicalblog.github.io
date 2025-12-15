@@ -40,6 +40,7 @@ Here is a list of tags we use when creating new content:
 | code            |  | Software coding.
 | code-quality    |  | Objectively measurable characteristics of the code structure. |
 | continuous-delivery |  | Uninterrupted flow of delivery of changes from development to production |
+| coop            |  | WorkSafeBC Co-ops: Where classroom theory meets real‑world impact—earn, learn, and launch your tech career with us! |
 | delivery-on-demand |  | Ability to deliver/release changes to the system any time business demands those changes be put in front of customers. |
 | design          |  | Structuring the system and the code in the most optimal fashion. |
 | devops          |  | The union of people, process, and products to enable continuous delivery of value to our end users. - [Donovan Brian](https://www.donovanbrown.com/post/what-is-devops) |

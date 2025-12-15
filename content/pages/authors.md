@@ -97,6 +97,16 @@ Read Martin's posts [here](../author/martin-m-lacey.html)
 
 ---
 
+## Nicholas Januar
+
+![Nicholas Januar](../images/Nicholas-Januar.png)
+
+Nicholas Januar is a Computer Science student at the University of British Columbia, graduating in May 2026. He has experience in quality assurance, bioinformatics, and full-stack development, and is now exploring DevOps—containers, infrastructure, pipelines, and cloud systems. Outside of work, Nicholas enjoys badminton, volleyball, playing pool, and electric guitar.
+
+Read Nichola's posts [here](../author/nicholas-januar.html)
+
+---
+
 ## Said Akram
 
 ![Said Akram](../images/Said-mug.jpeg)
