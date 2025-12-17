@@ -1,5 +1,5 @@
 Title: AI Assisted Development – Taming Azure Pipeline YAML
-Date: 2025-12-19
+Date: 2025-12-17
 Category: Posts 
 Tags: ai, engineering
 Slug: ai-assisted-dev-taming-azdo-yaml
@@ -14,7 +14,7 @@ Our organization and teams are enthusiastically engaging with developments in Co
 - **Vibe Coding**: A prompt first, intent driven development workflow. Using prompts, patterns, and AI suggestions, rather than manually hand crafting every line, we can speed up the generation of code and reduce the development cycle time. But … we often forget that coding is just one piece of the software lifecycle and often get bogged down in governance and operational processes.
 
 >
-> Adopt new technologies where they are beneficial, ensuring your engineers, governance, processes, and products are ready and able to keep up. Aso, I recommend that you always keep an eye on where the technologies are on the technology maturity curve - I, for one, have been burnt many times getting excited about stuff that is in the `emerging` and `crawl` phase of the curve.
+> Adopt new technologies where they are beneficial, ensuring your engineers, governance, processes, and products are ready and able to keep up. Also, I recommend that you always keep an eye on where the technologies are on the technology maturity curve - I, for one, have been burnt many times getting excited about stuff that is in the `emerging` and `crawl` phase of the curve.
 >
 
 # Back to Azure Pipeline YAML
