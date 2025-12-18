@@ -23,6 +23,11 @@ A PR description explains ***why it changed and why it looks the way it does.***
 
 That distinction matters, I’ll explain.
 
+## The importance of **Why**
+It is not just a matter of describing what the code does – and in fact an AI Agent can analyze your code change(s) and easily summarize what it encompasses in well-structured prose.  Furthermore, an AI Agent may be able to deduce the ***Why*** from the story behind the Work Item necessitating the change.  However, getting AI to do it right and in a deterministic manner is a blog post on its’ own – and requires a solid understanding of Prompt Engineering.
+
+Imagine a scenario where the code changes, then changes back to its original state, then changes again subtly or in significant functionality.  Why?  Was it wrong, or did the business objective change – or was the algorithm flawed?  Not knowing the why can lead to unnecessary churn, redoing work already deemed wrong, and potentially additional maintenance effort and cycles.
+
 ___
 # What PR descriptions actually do
 > ![Digging Through Old PRs](../images/engineering-practices-pull-request-description-2.jpg) 
