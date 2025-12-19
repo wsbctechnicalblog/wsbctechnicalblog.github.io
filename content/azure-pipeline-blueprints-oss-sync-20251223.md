@@ -83,7 +83,7 @@ Changes:
 > ![Templates](../images/azure-pipeline-blueprints-oss-sync-2025-12-23.jpg)
 
 >
-> [Click here to view the associated Pull Request](https://github.com/wsbctechnicalblog/wsbctechnicalblog.github.io/pull/TBD)
+> [Click here to view the associated Pull Request](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/36)
 >
 
 ---
