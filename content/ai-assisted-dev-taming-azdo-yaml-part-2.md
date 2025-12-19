@@ -29,7 +29,7 @@ Thank you.
 
 And here is what Copilot came back with:
 
-> ![github copilot](../images/> ![bots](../images/ai-assisted-dev-taming-azdo-yaml-part-2-1.png) 
+> ![github copilot](../images/ai-assisted-dev-taming-azdo-yaml-part-2-1.png) 
 
 And here is more of the copilot's journal:
 
@@ -65,7 +65,9 @@ Validation of __101__ (post your patches)
 Applied changes to universal-artifact
 
 - Updated CI pipeline to match __101__ conditional pool pattern:
+
 - File: azure-pipeline-universal-artifact-ci.yml
+
 - Changes:
   - Replaced hardcoded pool with:
      - ${{ if ne(parameters.vmImage, '') }} → pool: 
@@ -75,7 +77,8 @@ Applied changes to universal-artifact
 
 - Updated CD stage template to include pool name and conditional vmImage:
   - File: azure-pipeline-universal-artifact-cd-stage.yml
-Changes:
+
+- Changes:
   - Replaced pool: vmImage: ${{parameters.config.nameVM}} with conditional 
     block:
     - If nameVM not empty: set both namePool and nameVM.
