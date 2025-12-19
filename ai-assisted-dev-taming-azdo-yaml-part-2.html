@@ -66,7 +66,7 @@ Thank you.
 
 <p>And here is what Copilot came back with:</p>
 <blockquote>
-<p>![github copilot](../images/&gt; <img alt="bots" src="../images/ai-assisted-dev-taming-azdo-yaml-part-2-1.png"> </p>
+<p><img alt="github copilot" src="../images/ai-assisted-dev-taming-azdo-yaml-part-2-1.png"> </p>
 </blockquote>
 <p>And here is more of the copilot's journal:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Git</span><span class="w"> </span><span class="k">history</span><span class="w"> </span><span class="n">review</span>
@@ -100,7 +100,9 @@ Thank you.
 <span class="n">Applied</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">universal</span><span class="o">-</span><span class="n">artifact</span>
 
 <span class="o">-</span><span class="w"> </span><span class="n">Updated</span><span class="w"> </span><span class="n">CI</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">__101__</span><span class="w"> </span><span class="n">conditional</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="n">pattern</span><span class="o">:</span>
+
 <span class="o">-</span><span class="w"> </span><span class="k">File</span><span class="o">:</span><span class="w"> </span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">universal</span><span class="o">-</span><span class="n">artifact</span><span class="o">-</span><span class="n">ci</span><span class="p">.</span><span class="n">yml</span>
+
 <span class="o">-</span><span class="w"> </span><span class="n">Changes</span><span class="o">:</span>
 <span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Replaced</span><span class="w"> </span><span class="n">hardcoded</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="k">with</span><span class="o">:</span>
 <span class="w">     </span><span class="o">-</span><span class="w"> </span><span class="n">$</span><span class="err">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">ne</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="n">vmImage</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="err">}}</span><span class="w"> </span><span class="n">→</span><span class="w"> </span><span class="n">pool</span><span class="o">:</span><span class="w"> </span>
@@ -110,7 +112,8 @@ Thank you.
 
 <span class="o">-</span><span class="w"> </span><span class="n">Updated</span><span class="w"> </span><span class="n">CD</span><span class="w"> </span><span class="n">stage</span><span class="w"> </span><span class="n">template</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">include</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">conditional</span><span class="w"> </span><span class="n">vmImage</span><span class="o">:</span>
 <span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="k">File</span><span class="o">:</span><span class="w"> </span><span class="n">azure</span><span class="o">-</span><span class="n">pipeline</span><span class="o">-</span><span class="n">universal</span><span class="o">-</span><span class="n">artifact</span><span class="o">-</span><span class="n">cd</span><span class="o">-</span><span class="n">stage</span><span class="p">.</span><span class="n">yml</span>
-<span class="n">Changes</span><span class="o">:</span>
+
+<span class="o">-</span><span class="w"> </span><span class="n">Changes</span><span class="o">:</span>
 <span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Replaced</span><span class="w"> </span><span class="n">pool</span><span class="o">:</span><span class="w"> </span><span class="n">vmImage</span><span class="o">:</span><span class="w"> </span><span class="n">$</span><span class="err">{{</span><span class="n">parameters</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">nameVM</span><span class="err">}}</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">conditional</span><span class="w"> </span>
 <span class="w">    </span><span class="k">block</span><span class="o">:</span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">nameVM</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">empty</span><span class="o">:</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">both</span><span class="w"> </span><span class="n">namePool</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">nameVM</span><span class="p">.</span>
