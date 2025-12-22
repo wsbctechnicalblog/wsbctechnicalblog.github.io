@@ -9,11 +9,13 @@ Summary: v2.2.0 and a few Gems from our latest updates
 We are excited to share more innovations and improvements from our latest release, v2.2.0. These updates reflect our continued commitment to **excellence**, **resilience**, and thoughtful **innovation**.
 
 - **Consistency Enhancements**: A consistent way of configuring and calling agent pools and their virtual machines.
-- **AI Insights**: Insight sinto using GitHub Copilot to help us with the innovations and alignment of all v2 blueprints.
+- **AI Insights**: Insight into using GitHub Copilot to help us with the innovations and alignment of all v2 blueprints.
 
 ---
 
-# Config Template Update Example
+# Config Template Update Example Snippet
+
+We are now configuring the stage of an Azure Pipeline to run on a specific agent pool and image, in this case the `Azure Pipelines` agent pool using the `ubuntu-latest` image.
 
 ```
 - name:  developmentStagePool
@@ -24,7 +26,9 @@ We are excited to share more innovations and improvements from our latest releas
 
 ---
 
-# Control Template Updates Example
+# Control Template Updates Example Snippet
+
+In the `*-control.yml' template, we define the stage configurations reading values from variables and falling back to sane defaults.
 
 ```
 development:
@@ -37,7 +41,12 @@ development:
 
 ---
 
-# CD-Deploy Template Updates Example
+# CD-Deploy Template Updates Example Snippet
+
+In the `*-cd-deply.yml' template, we Conditionally configure the agent pool for a pipeline stage based on provided parameters:
+
+- If `parameters.config.nameVM` is not empty, set the pool name and vmImage from `parameters.config.namePool` and `parameters.config.nameVM`.
+- Otherwise, set only the pool name from `parameters.config.namePool`.
 
 ```
 variables:
@@ -52,7 +61,13 @@ variables:
 
 ---
 
-# Stage Template Updates Example
+# Stage Template Updates Example Snippet
+
+In the supporting stages, such as `security review`, `pre-production`, and `qa automation`, we set dependencies from `parameters.dependsOn`, and configure the agent pool:
+
+- If `parameters.config.nameVM` is provided, we use poolName (default Azure Pipelines) and set vmImage to the specified VM.
+- Otherwise, set the pool name from `parameters.config.namePool`.
+- Note the `coalesce` which ensures we do not break existing blueprint-based templates that are unaware of the agent pool and/or the image.
 
 ```
 - stage:         ${{parameters.name}}
