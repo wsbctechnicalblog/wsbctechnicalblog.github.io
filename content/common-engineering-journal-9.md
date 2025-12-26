@@ -6,7 +6,9 @@ Slug: common-engineering-journal-9
 Author: Willy-Peter Schaub
 Summary: A bold look at how our next chapter blends pipeline‑as‑code and IaC into a single, powerful experience.
 
-Looking back over the last five years, it is a bit like standing atop Table Mountain in Cape Town, gazing down at the winding paths we have travelled. Some routes were smooth, others rocky, and some made us wonder how we even made it through. Every step nudged us closer to a cleaner, faster, and more reliable world.
+Looking back over the last five years, it is a bit like standing atop Table Mountain in Cape Town, gazing down at the winding paths we have travelled together. Some routes were smooth, others rocky, and some made us wonder how we even made it through. Every step nudged us closer to a cleaner, faster, and more reliable world.
+
+![2025](../images/common-engineering-journal-9-1.png) 
 
 The big theme? We stopped mopping up yesterday’s mess. We started building the right things, at the right time, every time.
 
@@ -67,46 +69,46 @@ Classic pipelines, expensive, prone to drift, were tough to maintain. The v2 blu
 
 Our [CI/CD Cookbook](https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html) became our guide, and the v2 blueprints paved our roads. We left brittle legacy pipelines behind, making maintenance simple and innovation routine.
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# Infrastructure-as-Code with Terraform
 
-Infrastructure-as-Code with Terraform, powered by Andrii’s Vision
-Application pipelines are only half of the story. Terraform brought the discipline and structure we needed.
-•	IaC aligned with our pipeline ecosystem.
-•	Environments became predictable and repeatable.
-•	Security and consistency were built into provisioning.
-•	Manual steps disappeared.
-•	Product teams can now spin up a full environment confidently, with no fuss.
+Application pipelines are only half of the story. OPowered by Cloud Platform and Andrii's visiion, terraform brought the discipline and structure we needed.
+
+- IaC aligned with our pipeline ecosystem.
+- Environments became predictable and repeatable.
+- Security and consistency were built into provisioning.
+- Manual steps disappeared.
+- Product teams can now spin up a full environment confidently, with no fuss.
+
 This is the backbone for our future Paved Roads work.
-From Chaos to Consistency
-We don’t live in the jungle anymore. We built paved roads. We stopped reacting to yesterday’s problems—and we did it together.
-2025: A Year of Growth, Leadership, and Grit
-This past year, 2025, marked a turning point. We took Paved Roads and Bricks to the next level. Engineers felt more empowered than ever. Even when two medical emergencies rocked our leadership group, the team stood strong. That’s resilience in action.
-Our Behaviours in Real Life
-Forward-Thinking
-We modernised with purpose.
-Responsive
-We listened.
-Collaborative
-We brought people together.
-Accountable
-We tackled our technical debt head-on.
-Respectful
-We communicated clearly and openly.
-Fair
-Every voice was heard.
-These behaviours aren’t just posters—they’re how we work, each day.
-2026: The Year We Bring It All Together
-Now we stand on the brink of an exciting year. In 2026, we’ll bring everything together and pick up speed.
-We’re building a self-service engineering kiosk, pulling together:
-•	The v2 pipeline-as-code ecosystem
-•	Paved Roads
-•	Bricks
-•	Terraform-based IaC
-•	Standardised reference architectures
-•	Governance built into templates
-•	Automation from idea to production
-Picture this: an engineer chooses the app type, picks the architecture and environment model, then hits one button. The result? A working pipeline, from idea to reality.
-This is the future we’re creating.
-Final Thoughts
-We’re proud of how far we’ve come—but we’re not done yet. In 2026, we’ll move from “better” to “brilliant.” And we’re ready for it.
- 
+
+# From Snowflakes to Consistency
+
+We do not live in the bits and bytes jungle anymore. We built paved roads. We stopped reacting to yesterday’s problems, and we did it together.
+
+This past year, 2025, a year of growth, leadership, and grt, marked a turning point. We took Paved Roads and Bricks to the next level. 
+
+Common Engineering engineers felt more empowered than ever. Even when two medical emergencies rocked us, the team stood strong. That is resilience in action.
+
+We modernised with purpose, listened, brought people together, tackled our technical debt head-on, communicated clearly and openly, and ensured that every voice was heard. No, this is not a marketing poster, this is how we work, each day.
+
+# 2026: The Year We Bring It All Together
+
+Now we stand on the brink of an exciting year. In 2026, we will bring everything together and pick up speed.
+
+We are building a self-service engineering kiosk, pulling together:
+
+- The v2 pipeline-as-code ecosystem
+- Paved Roads and Bricks
+- Terraform-based IaC
+- Standardised reference architectures
+- Governance built into templates
+- Automation from idea to production
+
+Picture this ... an engineer chooses the application type, picks the architecture and environment model, then hits one button. The result? A working environment, from repositories, pipelines, and infrastructure, to reality.
+
+We are proud of how far we have come, but we are not done yet. In 2026, we will move from `better` to `brilliant.` 
+
+![2026](../images/common-engineering-journal-9-2.png) 
+
+I want to wish each of you a safe and uplifting leap into 2026. May the new year bring you strong health, meaningful success, and the courage to chase what inspires you. Let us continue building, supporting, and celebrating one another as we step boldly into the year ahead. Here is to a vibrant, fulfilling, and successful 2026!
+
