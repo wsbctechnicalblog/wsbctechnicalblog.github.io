@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Pull Request is your friend not foe! - </title>
+        <title>WHY we need pull request descriptions, and HOW to craft them - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,94 +33,125 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-requests-friend.html" rel="bookmark"
-            title="Permalink to Pull Request is your friend not foe!">Pull Request is your friend not foe!</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pull-request-descriptions-empowered-by-engineering-practices.html" rel="bookmark"
+            title="Permalink to WHY we need pull request descriptions, and HOW to craft them">WHY we need pull request descriptions, and HOW to craft them</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 19 October 2020</div>
+        <div class="read-more">Posted by Martin M. Lacey on Mon 29 December 2025</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>There is a debate around the value of pull requests (PR), fueled by unfortunate misunderstandings.</p>
+            <p>Pull Requests (PR) descriptions enable us improve built-in quality and engineering practices, through understand the context of Why the code has changed.</p>
         </div>
     
         <div class="entry-content">
-            <p><em>"The primary reason we use PRs is to encourage quality in the commits that are made to our code repositories"</em> - <a href="https://gist.github.com/mikepea/863f63d6e37281e329f8">GitHub Pull request Etiguette</a></p>
-<h1>Start simple</h1>
-<p>Let us start with a simple branching strategy, with one "always" deployable target branch (master/main/trunk), and a short-lived feature branch, as shown below.</p>
-<p><img alt="Feature Branch" src="/images/Pull-Request-is-your-friend-not-foe-1.jpg"></p>
-<ol>
-<li>Create a short-lived feature branch.</li>
-<li>Work on new work or a bug fix.</li>
-<li>Merge (commit) changes to the target branch.</li>
-<li>Continuous Integration (CI) build is triggered.</li>
-</ol>
-<p><img alt="Caution" src="/images/Pull-Request-is-your-friend-not-foe-2.png"></p>
-<p>Simple, but potentially dangerous. As the CI build is triggered after changes have been committed to the target branch, we could have a broken build and an undeployable branch. To make matters worse, anyone creating a new feature branch from an undeployable branch has just inherited a lot of unproductive pain!</p>
-<h1>Embrace the four-eyes principle</h1>
-<p><img alt="Four-Eyes Principle" src="/images/Pull-Request-is-your-friend-not-foe-3.jpg"></p>
-<p>The four-eyes principle requires that at least four eyes, in other words, validate any change by at least two people. With <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-is-azure-devops?view=azure-devops">Azure DevOps</a> we can define <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/branch-policies-overview?view=azure-devops">Branch Policies</a> to protect target branches, such as requiring:</p>
+            <h1>Why Pull-Request Descriptions Matter</h1>
+<p>After 40+ years of writing software, one thing is consistent:
+<strong>code outlives context</strong>.</p>
+<blockquote>
+<p><img alt="What vs. Why" src="../images/engineering-practices-pull-request-description-1.jpg"> </p>
+</blockquote>
+<p>The code may be clean, well-factored, and tested—but without a pull-request (PR) description, the reason it exists disappears almost immediately. PR descriptions aren’t ceremony; they’re how we transfer understanding from one point in time to the next.</p>
+<p>A diff shows <strong><em>what changed</em></strong>.</p>
+<p>A PR description explains <strong><em>why it changed and why it looks the way it does.</em></strong></p>
+<p>That distinction matters, I’ll explain.</p>
+<h2>The importance of <strong>Why</strong></h2>
+<p>It is not just a matter of describing what the code does – and in fact an AI Agent can analyze your code change(s) and easily summarize what it encompasses in well-structured prose.  Furthermore, an AI Agent may be able to deduce the <strong><em>Why</em></strong> from the story behind the Work Item necessitating the change.  However, getting AI to do it right and in a deterministic manner is a blog post on its’ own – and requires a solid understanding of Prompt Engineering.</p>
+<p>Imagine a scenario where the code changes, then changes back to its original state, then changes again subtly or in significant functionality.  Why?  Was it wrong, or did the business objective change – or was the algorithm flawed?  Not knowing the why can lead to unnecessary churn, redoing work already deemed wrong, and potentially additional maintenance effort and cycles.</p>
+<h1>What PR descriptions actually do</h1>
+<blockquote>
+<p><img alt="Digging Through Old PRs" src="../images/engineering-practices-pull-request-description-2.jpg"> </p>
+</blockquote>
+<h2>📌 They preserve intent</h2>
+<p>When someone encounters a piece of code six months—or six years—later, they don’t need to reverse-engineer the thinking behind it. </p>
+<p>The PR description captures:</p>
 <ul>
-<li>Minimum number of reviewers (required and optional)</li>
-<li>Linked work items (adds the context and traceability)</li>
-<li>Resolved comments (all discussions and recommendations actioned)</li>
-<li>Limited merge types</li>
-<li>Successful build (which includes security scans, tests, etc.)</li>
-<li>Thumbs up from other services</li>
+<li>
+<p>the problem being solved</p>
+</li>
+<li>
+<p>the constraints in play</p>
+</li>
+<li>
+<p>the decisions that shaped the solution</p>
+</li>
 </ul>
+<p>This is how knowledge survives beyond the original author, thus preserving context.</p>
+<h2>💡 They enable real code reviews</h2>
+<p>A good review isn’t about syntax or style—it’s about <strong>correctness, risk, and design fit.</strong></p>
+<p>A PR description:</p>
+<ul>
+<li>tells reviewers what to focus on</li>
+<li>avoids rehashing decisions that were already considered</li>
+<li>keeps reviews efficient and meaningful</li>
+</ul>
+<p>Without it, reviewers are forced to guess, and guessing leads to either missed issues or unnecessary churn.</p>
+<h2>🔥 They reduce future rework</h2>
+<p>Most “mysterious” code isn’t bad code—it’s undocumented intent.</p>
+<p>PR descriptions answer questions like:</p>
+<ul>
+<li>Why didn’t we just do the obvious thing?</li>
+<li>Why is this check here?</li>
+<li>Why does this only partially solve the problem?</li>
+</ul>
+<p>That context prevents well-intentioned developers from “fixing” something that was deliberate.</p>
+<h2>🚀 They support safe change at scale</h2>
+<p>As systems grow and teams rotate:</p>
+<ul>
+<li>not everyone was in the original discussion</li>
+<li>not everyone reviews every change</li>
+</ul>
+<p>PR descriptions become a lightweight design record—especially important for security-sensitive, high-risk, or operationally critical changes.</p>
+<h1>How to craft a well written PR Description</h1>
 <blockquote>
-<p>We can require some or all of the above policies.</p>
+<p><img alt="Context is Key" src="../images/engineering-practices-pull-request-description-3.jpg"> </p>
 </blockquote>
-<h1>Welcome Pull Request</h1>
+<p>A good PR description is concise, structured, and honest. It doesn’t narrate the diff—it explains the reasoning.</p>
+<h2>1. Start with the problem</h2>
+<p>Clearly state what’s broken, missing, or limiting.  Why was this change made, for example:</p>
+<ul>
+<li>This change addresses a race condition in token refresh that could invalidate active sessions under load.</li>
+</ul>
+<p>If you can’t explain the problem clearly, the solution probably isn’t clear either.</p>
+<h2>2. Explain the solution at a high level</h2>
+<p>Describe the approach, not the mechanics.
+The fix centralizes token issuance and introduces a per-user refresh lock to prevent concurrent refresh attempts.
+The code already shows how—this explains what and why.</p>
+<h2>3. Call out important decisions and tradeoffs</h2>
+<p>This is the most valuable part.
+An in-memory lock was chosen over a distributed lock because refresh operations are node-affined and short-lived.
+This prevents future engineers from re-debating solved problems.</p>
+<h2>4. Be explicit about impact and risk</h2>
+<p>If a change is risky, say so.
+This touches authentication and session handling. Deployment should ensure caches are cleared.
+Experienced engineers don’t hide risk—they surface it.</p>
+<h2>5. Say how it was tested</h2>
+<p>“Tested locally” is not information.
+Added unit tests for concurrent refresh scenarios and manually validated login/logout flows.
+This builds confidence and accountability.</p>
+<h2>6. Acknowledge limits or follow-ups</h2>
+<p>Good engineering is iterative.
+This does not address cross-device token revocation; that will be handled separately.
+Honesty beats false completeness.</p>
+<h1>📢 Final thought</h1>
+<p>Pull-request descriptions are how we write <strong>software that can be understood by people who weren’t there</strong>—including our future selves.</p>
+<p>Good code is important.</p>
+<p><strong><em>Transferable understanding is what makes it last.</em></strong></p>
 <blockquote>
-<p>Pull Request is a change validation workflow, not a feature of the version control service.</p>
+<p><img alt="Knowledge is power, share it!" src="../images/engineering-practices-pull-request-description-4.jpg"> </p>
 </blockquote>
-<p><img alt="Welcome" src="/images/Pull-Request-is-your-friend-not-foe-4.png"></p>
-<p>When we define one or more branch policies, we enforce them on <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, making it impossible for anyone to commit changes to our target branch without passing pre-defined validations.</p>
-<blockquote>
-<p>By excluding minimum number of reviewers and setting our pull request to auto-complete, we could commit our changes without any human intervention if and only if we pass all other validations. However, that is a topic for another day.</p>
-</blockquote>
-<p>Let us walk through the same branching strategy, as above, and observe how the Pull Request enables (optional) collaboration and required validations.</p>
-<p><img alt="Pull Request Workflow" src="/images/Pull-Request-is-your-friend-not-foe-5.jpg"></p>
-<ol>
-<li>Create a short-lived feature branch.</li>
-<li>Work on new work or a bug fix.</li>
-<li>Create a <strong>DRAFT</strong> pull request, which enables collaboration, work item linking, and manual build validation policies.</li>
-<li>When we are ready to have our pull request reviewed and completed, we can <strong>PUBLISH</strong> our draft pull request.</li>
-<li>Pre-defined optional and required reviewers are assigned and notified, policies are evaluated, and voting is enabled. The validation builds are triggered and perform a pre-merge validation - if the build(s) fail, the Pull Request cannot be completed.</li>
-<li>When all policies are met, the Pull Request can be completed.</li>
-<li>Associated changes are merged to the target branch.</li>
-<li>Which, as before, triggers the continuous integration (CI) build.</li>
-</ol>
-<p>We do not have to create a DRAFT Pull Request. Instead, we can combine steps 3 and 4 above.</p>
-<blockquote>
-<p>Recommendation 1 - Create one build definition and re-use it for both the validation and the CI build. Consistent and simple!</p>
-<p>Recommendation 2 - Run security scans, such as SonarQube and WhiteSource, Tests, and other quality validations in either the validation or CI build. We chose to run all validations when the common build is triggered as a validation build, as we need the results to review the changes effectively. See YAML sample below.</p>
-</blockquote>
-<p>The advantages of Pull Requests are evident:
-- Collaboration is enabled fostering sharing of experience, learning, and recording of discussions.
-- Guardrail are validated and enforced
-- Automation of validations, which could (or not) include humanoid involvement</p>
-<h1>YAML Sample</h1>
-<p>Last, but not least, here is the above-mentioned extract from one of our YAML pipelines. The conditional code ensures that custom validations are injected into our build only if it was triggered as a validation build in a Pull Request.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># VALIDATIONS</span>
-<span class="o">-</span><span class="w"> </span><span class="o">$</span><span class="p">{{</span><span class="w"> </span><span class="k">if</span><span class="w">  </span><span class="n">eq</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;Build.SourceBranchName&#39;</span><span class="p">],</span><span class="w"> </span><span class="s1">&#39;merge&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">}}:</span><span class="w">    </span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">template</span><span class="p">:</span><span class="w"> </span><span class="n">DSO</span><span class="o">/</span><span class="n">InjectValidations</span><span class="o">.</span><span class="n">yml</span>
-</code></pre></div>
-
-<p>Thoughts?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control </a>
-        | <a href="https://wsbctechnicalblog.github.io/pull-requests-friend.html" rel="bookmark"
-         title="Permalink to Pull Request is your friend not foe!">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a>
+        | <a href="https://wsbctechnicalblog.github.io/pull-request-descriptions-empowered-by-engineering-practices.html" rel="bookmark"
+         title="Permalink to WHY we need pull request descriptions, and HOW to craft them">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
