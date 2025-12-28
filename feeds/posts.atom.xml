@@ -1,5 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-12-18T00:00:00-08:00</updated><entry><title>AI Assisted Development – Taming Azure Pipeline YAML (Part2)</title><link href="https://wsbctechnicalblog.github.io/ai-assisted-dev-taming-azdo-yaml-part-2.html" rel="alternate"></link><published>2025-12-18T00:00:00-08:00</published><updated>2025-12-18T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-18:/ai-assisted-dev-taming-azdo-yaml-part-2.html</id><summary type="html">&lt;p&gt;Artificial Intelligence post the thunderous impact of an asteroid colliding with our moon …&lt;/p&gt;</summary><content type="html">&lt;p&gt;OK, in &lt;a href="/ai-assisted-dev-taming-azdo-yaml.html"&gt;AI Assisted Development – Taming Azure Pipeline YAML&lt;/a&gt; I was flabbergasted by the supporting role that GitHub Copilot could plan. If you have not read that post, do so now - I will wait.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-12-29T00:00:00-08:00</updated><entry><title>WHY we need pull request descriptions, and HOW to craft them</title><link href="https://wsbctechnicalblog.github.io/pull-request-descriptions-empowered-by-engineering-practices.html" rel="alternate"></link><published>2025-12-29T00:00:00-08:00</published><updated>2025-12-29T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-29:/pull-request-descriptions-empowered-by-engineering-practices.html</id><summary type="html">&lt;p&gt;Pull Requests (PR) descriptions enable us improve built-in quality and engineering practices, through understand the context of Why the code has changed.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Why Pull-Request Descriptions Matter&lt;/h1&gt;
+&lt;p&gt;After 40+ years of writing software, one thing is consistent:
+&lt;strong&gt;code outlives context&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="What vs. Why" src="../images/engineering-practices-pull-request-description-1.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The code may be clean, well-factored, and tested—but without a pull-request (PR) description, the reason it exists disappears almost immediately. PR descriptions aren’t ceremony; they’re how we transfer understanding from one point in time to the next.&lt;/p&gt;
+&lt;p&gt;A diff shows &lt;strong&gt;&lt;em&gt;what changed&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A PR description explains &lt;strong&gt;&lt;em&gt;why it changed and why it looks the way it does.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That distinction matters, I’ll explain.&lt;/p&gt;
+&lt;h2&gt;The importance of &lt;strong&gt;Why&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;It is not just a matter of describing what the code does – and in fact an AI Agent can analyze your code change(s) and easily summarize what it encompasses in well-structured prose.  Furthermore, an AI Agent may be able to deduce the &lt;strong&gt;&lt;em&gt;Why&lt;/em&gt;&lt;/strong&gt; from the story behind the Work Item necessitating the change.  However, getting AI to do it right and in a deterministic manner is a blog post on its’ own – and requires a solid understanding of Prompt Engineering.&lt;/p&gt;
+&lt;p&gt;Imagine a scenario where the code changes, then changes back to its original state, then changes again subtly or in significant functionality.  Why?  Was it wrong, or did the business objective change – or was the algorithm flawed?  Not knowing the why can lead to unnecessary churn, redoing work already deemed wrong, and potentially additional maintenance effort and cycles.&lt;/p&gt;
+&lt;h1&gt;What PR descriptions actually do&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Digging Through Old PRs" src="../images/engineering-practices-pull-request-description-2.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;📌 They preserve intent&lt;/h2&gt;
+&lt;p&gt;When someone encounters a piece of code six months—or six years—later, they don’t need to reverse-engineer the thinking behind it. &lt;/p&gt;
+&lt;p&gt;The PR description captures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the problem being solved&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the constraints in play&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the decisions that shaped the solution&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is how knowledge survives beyond the original author, thus preserving context.&lt;/p&gt;
+&lt;h2&gt;💡 They enable real code reviews&lt;/h2&gt;
+&lt;p&gt;A good review isn’t about syntax or style—it’s about &lt;strong&gt;correctness, risk, and design fit.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A PR description:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tells reviewers what to focus on&lt;/li&gt;
+&lt;li&gt;avoids rehashing decisions that were already considered&lt;/li&gt;
+&lt;li&gt;keeps reviews efficient and meaningful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Without it, reviewers are forced to guess, and guessing leads to either missed issues or unnecessary churn.&lt;/p&gt;
+&lt;h2&gt;🔥 They reduce future rework&lt;/h2&gt;
+&lt;p&gt;Most “mysterious” code isn’t bad code—it’s undocumented intent.&lt;/p&gt;
+&lt;p&gt;PR descriptions answer questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why didn’t we just do the obvious thing?&lt;/li&gt;
+&lt;li&gt;Why is this check here?&lt;/li&gt;
+&lt;li&gt;Why does this only partially solve the problem?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That context prevents well-intentioned developers from “fixing” something that was deliberate.&lt;/p&gt;
+&lt;h2&gt;🚀 They support safe change at scale&lt;/h2&gt;
+&lt;p&gt;As systems grow and teams rotate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;not everyone was in the original discussion&lt;/li&gt;
+&lt;li&gt;not everyone reviews every change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PR descriptions become a lightweight design record—especially important for security-sensitive, high-risk, or operationally critical changes.&lt;/p&gt;
+&lt;h1&gt;How to craft a well written PR Description&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Context is Key" src="../images/engineering-practices-pull-request-description-3.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A good PR description is concise, structured, and honest. It doesn’t narrate the diff—it explains the reasoning.&lt;/p&gt;
+&lt;h2&gt;1. Start with the problem&lt;/h2&gt;
+&lt;p&gt;Clearly state what’s broken, missing, or limiting.  Why was this change made, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This change addresses a race condition in token refresh that could invalidate active sessions under load.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you can’t explain the problem clearly, the solution probably isn’t clear either.&lt;/p&gt;
+&lt;h2&gt;2. Explain the solution at a high level&lt;/h2&gt;
+&lt;p&gt;Describe the approach, not the mechanics.
+The fix centralizes token issuance and introduces a per-user refresh lock to prevent concurrent refresh attempts.
+The code already shows how—this explains what and why.&lt;/p&gt;
+&lt;h2&gt;3. Call out important decisions and tradeoffs&lt;/h2&gt;
+&lt;p&gt;This is the most valuable part.
+An in-memory lock was chosen over a distributed lock because refresh operations are node-affined and short-lived.
+This prevents future engineers from re-debating solved problems.&lt;/p&gt;
+&lt;h2&gt;4. Be explicit about impact and risk&lt;/h2&gt;
+&lt;p&gt;If a change is risky, say so.
+This touches authentication and session handling. Deployment should ensure caches are cleared.
+Experienced engineers don’t hide risk—they surface it.&lt;/p&gt;
+&lt;h2&gt;5. Say how it was tested&lt;/h2&gt;
+&lt;p&gt;“Tested locally” is not information.
+Added unit tests for concurrent refresh scenarios and manually validated login/logout flows.
+This builds confidence and accountability.&lt;/p&gt;
+&lt;h2&gt;6. Acknowledge limits or follow-ups&lt;/h2&gt;
+&lt;p&gt;Good engineering is iterative.
+This does not address cross-device token revocation; that will be handled separately.
+Honesty beats false completeness.&lt;/p&gt;
+&lt;h1&gt;📢 Final thought&lt;/h1&gt;
+&lt;p&gt;Pull-request descriptions are how we write &lt;strong&gt;software that can be understood by people who weren’t there&lt;/strong&gt;—including our future selves.&lt;/p&gt;
+&lt;p&gt;Good code is important.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Transferable understanding is what makes it last.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Knowledge is power, share it!" src="../images/engineering-practices-pull-request-description-4.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="tips"></category><category term="engineering"></category><category term="code-quality"></category><category term="automation"></category></entry><entry><title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20251223</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-12-23.html" rel="alternate"></link><published>2025-12-23T00:00:00-08:00</published><updated>2025-12-23T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-23:/azure-pipeline-blueprints-oss-sync-2025-12-23.html</id><summary type="html">&lt;p&gt;v2.2.0 and a few Gems from our latest updates&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are excited to share more innovations and improvements from our latest release, v2.2.0. These updates reflect our continued commitment to &lt;strong&gt;excellence&lt;/strong&gt;, &lt;strong&gt;resilience&lt;/strong&gt;, and thoughtful &lt;strong&gt;innovation&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Consistency Enhancements&lt;/strong&gt;: A consistent way of configuring and calling agent pools and their virtual machines.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Insights&lt;/strong&gt;: Insight into using GitHub Copilot to help us with the innovations and alignment of all v2 blueprints.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Config Template Update Example Snippet&lt;/h1&gt;
+&lt;p&gt;We are now configuring the stage of an Azure Pipeline to run on a specific agent pool and image, in this case the &lt;code&gt;Azure Pipelines&lt;/code&gt; agent pool using the &lt;code&gt;ubuntu-latest&lt;/code&gt; image.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;- name:  developmentStagePool
+  value: &amp;#39;Azure Pipelines&amp;#39;
+- name:  developmentStageVmImage
+  value: &amp;#39;ubuntu-latest&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1&gt;Control Template Updates Example Snippet&lt;/h1&gt;
+&lt;p&gt;In the `*-control.yml' template, we define the stage configurations reading values from variables and falling back to sane defaults.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;development&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;active&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;developmentStageActive&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;envName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;developmentStageEnvName&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;namePool&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;                     &lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;coalesce&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;developmentStagePool&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Azure Pipelines&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)}}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;nameVM&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;coalesce&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;developmentStageVmImage&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ubuntu-latest&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1&gt;CD-Deploy Template Updates Example Snippet&lt;/h1&gt;
+&lt;p&gt;In the `*-cd-deply.yml' template, we Conditionally configure the agent pool for a pipeline stage based on provided parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If &lt;code&gt;parameters.config.nameVM&lt;/code&gt; is not empty, set the pool name and vmImage from &lt;code&gt;parameters.config.namePool&lt;/code&gt; and &lt;code&gt;parameters.config.nameVM&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Otherwise, set only the pool name from &lt;code&gt;parameters.config.namePool&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ne&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nameVM&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}}:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;namePool&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;vmImage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nameVM&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}}:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;namePool&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1&gt;Stage Template Updates Example Snippet&lt;/h1&gt;
+&lt;p&gt;In the supporting stages, such as &lt;code&gt;security review&lt;/code&gt;, &lt;code&gt;pre-production&lt;/code&gt;, and &lt;code&gt;qa automation&lt;/code&gt;, we set dependencies from &lt;code&gt;parameters.dependsOn&lt;/code&gt;, and configure the agent pool:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If &lt;code&gt;parameters.config.nameVM&lt;/code&gt; is provided, we use poolName (default Azure Pipelines) and set vmImage to the specified VM.&lt;/li&gt;
+&lt;li&gt;Otherwise, set the pool name from &lt;code&gt;parameters.config.namePool&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Note the &lt;code&gt;coalesce&lt;/code&gt; which ensures we do not break existing blueprint-based templates that are unaware of the agent pool and/or the image.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-&lt;span class="w"&gt; &lt;/span&gt;stage:&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;span class="w"&gt;  &lt;/span&gt;displayName:&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;displayName&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;span class="w"&gt;  &lt;/span&gt;dependsOn:
+&lt;span class="w"&gt;  &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dependsOn&lt;/span&gt; &lt;span class="cp"&gt;}&lt;/span&gt;}:
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ne&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;coalesce&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nameVM&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;}&lt;/span&gt;}:
+&lt;span class="w"&gt;    &lt;/span&gt;pool:
+&lt;span class="w"&gt;      &lt;/span&gt;name:&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;coalesce&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;poolName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Azure Pipelines&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;span class="w"&gt;      &lt;/span&gt;vmImage:&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nameVM&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;}&lt;/span&gt;}:
+&lt;span class="w"&gt;    &lt;/span&gt;pool:
+&lt;span class="w"&gt;      &lt;/span&gt;name:&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;parameters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;namePool&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Goodbye Mundane — Hello AI!&lt;/h1&gt;
+&lt;p&gt;We used GitHub Copilot to help us with the v2.2 update, validation, and alignment with other blueprints. Checkout these two blog posts for more insight:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/ai-assisted-dev-taming-azdo-yaml.html"&gt;AI Assisted Development – Taming Azure Pipeline YAML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wsbctechnicalblog.github.io/ai-assisted-dev-taming-azdo-yaml-part-2.html"&gt;AI Assisted Development – Taming Azure Pipeline YAML (Part2)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Changes:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Templates" src="../images/azure-pipeline-blueprints-oss-sync-2025-12-23.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/36"&gt;Click here to view the associated Pull Request&lt;/a&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;For more insight and an in-depth journal of our open-source v2 blueprint adventure, see &lt;a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html"&gt;Continuous Integration and Delivery Pipelines Cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Cover" src="/images/announcement-ci-cd-cookbook-1-small.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;What else can/should/must we consider as part of our blueprints? Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry><entry><title>AI Assisted Development – Taming Azure Pipeline YAML (Part2)</title><link href="https://wsbctechnicalblog.github.io/ai-assisted-dev-taming-azdo-yaml-part-2.html" rel="alternate"></link><published>2025-12-18T00:00:00-08:00</published><updated>2025-12-18T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-18:/ai-assisted-dev-taming-azdo-yaml-part-2.html</id><summary type="html">&lt;p&gt;Artificial Intelligence post the thunderous impact of an asteroid colliding with our moon …&lt;/p&gt;</summary><content type="html">&lt;p&gt;OK, in &lt;a href="/ai-assisted-dev-taming-azdo-yaml.html"&gt;AI Assisted Development – Taming Azure Pipeline YAML&lt;/a&gt; I was flabbergasted by the supporting role that GitHub Copilot could plan. If you have not read that post, do so now - I will wait.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Part 2 - Where the real fun starts&lt;/h1&gt;
 &lt;p&gt;In the past, I had to manually copy and paste every single innovation from one blueprint—specifically the &lt;strong&gt;101&lt;/strong&gt; blueprint—into all the others. It was a tedious, mind-numbing process that felt like a guaranteed way to introduce errors. Honestly, it was the kind of work that makes you question your life choices.&lt;/p&gt;
@@ -3524,91 +3699,4 @@ A guardrail is likened to the safety barriers on a bridge, serving as a metaphor
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Committed Leadership&lt;/strong&gt; - Having eager and passionate coordinators is essential for addressing unexpected challenges and making sure that the event runs smoothly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;What have you learned from your meetups?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry><entry><title>Revolutionizing Quality Assurance: Unleashing the Power of Automation and AI</title><link href="https://wsbctechnicalblog.github.io/quality-assurance-automation-ai.html" rel="alternate"></link><published>2024-07-08T00:00:00-07:00</published><updated>2024-07-08T00:00:00-07:00</updated><author><name>Vikas Jawa</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-08:/quality-assurance-automation-ai.html</id><summary type="html">&lt;p&gt;Automation and Artificial Intelligence in Quality Assurance&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quality Assurance (QA) is vital in any organization as it ensures that products meet high standards of quality, reliability, and performance before they reach customers. QA is essential in software development, requiring collaboration among software developers, QA engineers and everyone involved in the process to ensure the success of projects.&lt;/p&gt;
-&lt;p&gt;Insufficient QA practices have been responsible for numerous high-profile project failures, highlighting the critical importance of thorough quality control measures. Effective QA practices not only identify defects early but also ensure that software meets functional requirements, performance expectations, and user needs. &lt;/p&gt;
-&lt;p&gt;By integrating robust QA processes, teams can mitigate risks, enhance reliability, and deliver software products that meet high standards of quality and usability.&lt;/p&gt;
-&lt;p&gt;Here are a few notable instances of project failures attributed to inadequate QA practices/processes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.jpl.nasa.gov/news/mars-climate-orbiter-team-finds-likely-cause-of-loss"&gt;The Mars Climate Orbiter (1999)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.forbes.com/sites/steveschaefer/2012/08/02/knight-capital-trading-disaster-carries-440-million-price-tag/"&gt;Knight Capital Group Trading Loss (2012)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://d3.harvard.edu/platform-rctom/submission/the-failed-launch-of-www-healthcare-gov/"&gt;Healthcare.gov Launch (2013)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://boeing.mediaroom.com/2019-04-04-Boeing-CEO-Dennis-Muilenburg-Addresses-the-Ethiopian-Airlines-Flight-302-Preliminary-Report"&gt;Boeing 737 MAX (2018-2019)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The drive for efficiency, reliability and flexibility has led to the incorporation of automation and artificial intelligence (AI) into quality assurance (QA) processes. The shift towards automation in QA can significantly enhance efficiency, accuracy, and coverage of tests, allowing teams to identify and resolve issues faster and more effectively. Automation empowers QA professionals by reducing repetitive manual tasks, freeing up time to focus on more strategic, creative, and complex aspects of testing that require human insight. By embracing automation, QA teams can not only improve their productivity but also contribute to delivering superior products, fostering a culture of continuous improvement and innovation within the organization.&lt;/p&gt;
-&lt;p&gt;Here are some links describing how big technology companies are implementing their Automation:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://itrevolution.com/articles/case-study-automated-testing-google/"&gt;Google: The birth of automated testing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://netflixtechblog.com/nts-real-time-streaming-for-test-automation-7cb000e933a1"&gt;Netflix Test Studio: Real-time streaming for test automation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Automation in QA&lt;/h1&gt;
-&lt;p&gt;Automation has transformed conventional QA methods by swiftly and consistently executing repetitive tasks. This approach releases human testers from mundane, time-consuming activities, enabling them to concentrate on more intricate scenarios and strategic testing activities. 
-Major areas benefiting significantly from automation include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Test Execution&lt;/strong&gt;: Automated scripts can execute tests across different environments and configurations, ensuring thorough validation of software functionality.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Regression Testing&lt;/strong&gt;: Automation of regression tests can help teams in identifying potential regression after the code changes without manual intervention, thus maintaining the software stability.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Performance Testing&lt;/strong&gt;: Automating various performance tests can assess how an application performs under various situations, and it can identify bottlenecks and help in optimizing performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Automated testing fits seamlessly into Continuous Integration/Continuous Deployment (CI/CD) pipelines, facilitating rapid feedback loops and faster delivery.&lt;/p&gt;
-&lt;h1&gt;Leveraging AI in QA&lt;/h1&gt;
-&lt;p&gt;Artificial Intelligence (AI) is a game changer in QA.  AI offers capabilities that extend beyond what traditional automation can achieve. AI-powered QA tools leverage machine learning algorithms to analyze vast amount of data, identify patterns, and make intelligent decisions. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Test Case Generation&lt;/strong&gt;: AI algorithms can analyze code changes and automatically generate test cases to cover new functionalities as well as identify missing test cases.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Defect Prevention&lt;/strong&gt;: Machine Learning models can analyze historical data to predict where defects are likely to occur and take proactive measures to prevent issues.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Natural Language Processing (NLP) for Testing&lt;/strong&gt;: AI-driven tools can interpret natural language requirements and generate test scenarios, improving accuracy and test coverage.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;AI-powered systems can do many more things to improve the quality of the software including detecting anomalies and detecting potential security threats etc.&lt;/p&gt;
-&lt;h1&gt;Challenges and Considerations&lt;/h1&gt;
-&lt;p&gt;Although there are huge benefits of automation and AI in QA, there are challenges come with this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Setup and Learning&lt;/strong&gt;: Implementing automation and AI requires upfront investment in tools, infrastructure, and expertise.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Maintenance&lt;/strong&gt;: Automated tests and AI models need regular updates and maintenance to remain effective as software evolves.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Human Expertise&lt;/strong&gt;: Despite advancements, human QA engineers play a crucial role in designing test strategies, interpreting results, and ultimately ensuring overall quality.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As technology continues to evolve, the future of QA in software development will likely see even greater integration of automation and AI. Emerging trends and technologies will further streamline QA processes and ultimately enhance the quality of the software. By harnessing these technologies effectively, organizations can reduce overall costs and deliver superior products. Integration of automation and AI in QA is about embracing the mindset of continuous improvement in software development.&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="quality"></category></entry><entry><title>Unproductive Communication - The Silent Productivity Killer That Drives Me Crazy</title><link href="https://wsbctechnicalblog.github.io/back-to-basics-communication.html" rel="alternate"></link><published>2024-06-21T00:00:00-07:00</published><updated>2024-06-21T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-06-21:/back-to-basics-communication.html</id><summary type="html">&lt;p&gt;Stop the context-less "hi, hello, ping, pong, ..."&lt;/p&gt;</summary><content type="html">&lt;p&gt;I already discussed the issues of &lt;a href="/stop-the-meeting-hell.html"&gt;Stop the meeting overload!&lt;/a&gt;, &lt;a href="/optimize-and-track-emails.md.html"&gt;How to track (and optimize) your email traffic&lt;/a&gt;, &lt;a href="/optimize-and-avoid-emails.md.html"&gt;How to tame your vacation email traffic&lt;/a&gt;, and &lt;a href="/context-switching-no-more.html"&gt;Stop the context switching, reduce waste, and focus on value&lt;/a&gt; in 2021 and 2022. &lt;/p&gt;
-&lt;p&gt;I continue to deal with unhelpful chat messages, excessive emails, and experience big meetings dominated by a few, leaving many engineers questioning their presence. When multitasking begins, the sudden "what do you think &lt;yourname&gt;?" often attempts to reengage those who have disengaged from the talk – a common pattern in our new world of remote and hybrid (in-person and remote) collaboration.&lt;/p&gt;
-&lt;p&gt;If you have read this far, I assume you are in a similar boat. Let me go back to basics and see what I have learned and recommend for effective email, meetings, and chats.]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Email&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Email" src="../images/back-to-basics-communication-1.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Some email etiquettes and rules to follow are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Use chat&lt;/strong&gt;, like Microsoft teams, or an in-person spit-balling whiteboard session for discussions or ideation, not emails.&lt;/li&gt;
-&lt;li&gt;Only expect recipients on &lt;strong&gt;To&lt;/strong&gt; to respond, not those on Cc (for your information) or Bcc (hidden).&lt;/li&gt;
-&lt;li&gt;Keep an email on one topic and thread, do not &lt;strong&gt;split&lt;/strong&gt; or &lt;strong&gt;mix it up&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Do not change the subject or reuse a finished email thread for a new topic.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reply all with caution&lt;/strong&gt; - you could start an email storm.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And a new one we have added to our list:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Please provide &lt;strong&gt;context&lt;/strong&gt; when you add someone to an email thread, especially a long one, so they do not have to spend time reading the thread backwards. Not everyone has Copilot for Microsoft 365 to get an AI assisted recap. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1&gt;Meetings&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Meetings" src="../images/back-to-basics-communication-2.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As per the image above, some meeting etiquettes to improve your work:life balance and productivity:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Give and get &lt;strong&gt;value&lt;/strong&gt; or leave.&lt;/li&gt;
-&lt;li&gt;Stop &lt;strong&gt;T-5 minutes&lt;/strong&gt; before the end.&lt;/li&gt;
-&lt;li&gt;No meetings on &lt;strong&gt;Friday&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;No meeting without &lt;strong&gt;agenda&lt;/strong&gt; or &lt;strong&gt;purpose&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Avoid &lt;strong&gt;acronyms&lt;/strong&gt; or &lt;strong&gt;jargon&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Limit your invite list to &lt;strong&gt;essential participants&lt;/strong&gt; only, rather than inviting a large audience. Less is more!&lt;/li&gt;
-&lt;li&gt;Write down &lt;strong&gt;notes&lt;/strong&gt; and share them with &lt;strong&gt;action items&lt;/strong&gt; - or use Copilot for Microsoft Teams to do it for you. I LOVE that productivity feature, powered by AI!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Focus&lt;/strong&gt; on the meeting, without laptops, when meeting in-person.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Do not make someone who arrives late to an in-person meeting in a huge building do pushups for each minute they are late – they might have run a long way from another meeting that was valuable but finished on time or ran over. This is another reason we need the T-5 minute rule, to allow people to move between back-to-back meeting.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1&gt;Teams / Slack / Chat&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Chat" src="../images/back-to-basics-communication-3.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As in scenario 1, I get stressed when people use chat programs like Microsoft Teams, Slack, or text messages to say "hi", "ping", or "do you have a second" and then make me wait for context.&lt;/p&gt;
-&lt;p&gt;Please do not take it personally - I do not react to these 'ello pings anymore, because it is unproductive. Before, I used to &lt;strong&gt;switch context&lt;/strong&gt;, &lt;strong&gt;wait&lt;/strong&gt; patiently, or politely ask for the missing &lt;strong&gt;context&lt;/strong&gt; - but it is frustrating and distracting, especially when I am trying to focus.&lt;/p&gt;
-&lt;p&gt;Instead, as in scenario 2, please be courteous and say "Hi", but more importantly add the context and/or question. That way the receiver can decide whether to reply right away, or later.&lt;/p&gt;
-&lt;p&gt;Add &lt;a href="https://sbmueller.github.io/nohello/"&gt;NoHello&lt;/a&gt; to your email signature and/or your collaboration tool status message to remind everyone of keeping the collaboration &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;productive&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Anything else that drives you crazy?&lt;/p&gt;</content><category term="Posts"></category><category term="agile"></category><category term="learning"></category><category term="101"></category></entry></feed>
+&lt;p&gt;What have you learned from your meetups?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry></feed>
