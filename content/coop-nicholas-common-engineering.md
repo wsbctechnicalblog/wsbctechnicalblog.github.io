@@ -1,9 +1,9 @@
 Title: Nicholas' coop adventure with Common Engineering
-Date: <YYYY-MM-DD>
+Date: 2025-12-31
 Category: Posts 
 Tags: coop
 Slug: coop-nicholas-common-engineering
-Author: <FIRSTNAME> <SURNAME>
+Author: Nicholas Januar
 Summary: <CRISP SUMMARY>
 
 <OVERVIEW - WHY ARE WE HERE?>
