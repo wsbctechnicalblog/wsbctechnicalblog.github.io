@@ -17,7 +17,7 @@ The big theme? We stopped mopping up yesterday’s mess. We started building the
 Manual processes eventually felt off, like using a hand drill when you have got a power tool. Whenever a task cropped up more than once, we automated it.
 
 - Human error vanished from risky steps.
-- Engineers got free from tedious, repetitive work.
+- Engineers got freed from tedious, repetitive work.
 - Consistency now scales across teams, portfolios, and products.
 - Delivery sped up without sacrificing quality.
 
@@ -35,7 +35,7 @@ Support once felt like battling bush fires, but we moved away from that scramble
 
 # Configuration-as-Code
 
-Configuration was once tucked away in the minds of a handful of engineers, or hidden in obscure screens. We put it where it belongs. VErsion controlled in a Git repository, and out in the open.
+Configuration was once tucked away in the minds of a handful of engineers, or hidden in obscure screens. We put it where it belongs. Version controlled in a Git repository, and out in the open.
 
 - Change became democratic—anyone could contribute.
 - No more reliance on privileged access.
@@ -71,7 +71,7 @@ Our [CI/CD Cookbook](https://wsbctechnicalblog.github.io/announcement-ci-cd-cook
 
 # Infrastructure-as-Code with Terraform
 
-Application pipelines are only half of the story. OPowered by Cloud Platform and Andrii's visiion, terraform brought the discipline and structure we needed.
+Application pipelines are only half of the story. Powered by Cloud Platform and Andrii's vision, terraform brought the discipline and structure we needed.
 
 - IaC aligned with our pipeline ecosystem.
 - Environments became predictable and repeatable.
@@ -85,17 +85,21 @@ This is the backbone for our future Paved Roads work.
 
 We do not live in the bits and bytes jungle anymore. We built paved roads. We stopped reacting to yesterday’s problems, and we did it together.
 
-This past year, 2025, a year of growth, leadership, and grt, marked a turning point. We took Paved Roads and Bricks to the next level. 
+This past year, 2025, a year of growth, leadership, and grit, marked a turning point. We took Paved Roads and Bricks to the next level. 
 
 Common Engineering engineers felt more empowered than ever. Even when two medical emergencies rocked us, the team stood strong. That is resilience in action.
 
 We modernised with purpose, listened, brought people together, tackled our technical debt head-on, communicated clearly and openly, and ensured that every voice was heard. No, this is not a marketing poster, this is how we work, each day.
 
+>
+> **Crossing the Most Difficult Part of `Almost Done`**
+>
+> Although the foundational building blocks are firmly in place, we still need that final, but very tricky, ten percent of consistent adoption and disciplined application to truly bring everything together in 2026.
+>
+
 # 2026: The Year We Bring It All Together
 
-Now we stand on the brink of an exciting year. In 2026, we will bring everything together and pick up speed.
-
-We are building a self-service engineering kiosk, pulling together:
+Now we stand on the brink of an exciting year. In 2026, we will bring assemble the final puzzle pieces and build a self-service engineering kiosk, pulling together:
 
 - The v2 pipeline-as-code ecosystem
 - Paved Roads and Bricks
