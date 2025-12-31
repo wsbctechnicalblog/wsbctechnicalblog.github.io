@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-12-29T00:00:00-08:00</updated><entry><title>WHY we need pull request descriptions, and HOW to craft them</title><link href="https://wsbctechnicalblog.github.io/pull-request-descriptions-empowered-by-engineering-practices.html" rel="alternate"></link><published>2025-12-29T00:00:00-08:00</published><updated>2025-12-29T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-29:/pull-request-descriptions-empowered-by-engineering-practices.html</id><summary type="html">&lt;p&gt;Pull Requests (PR) descriptions enable us improve built-in quality and engineering practices, through understand the context of Why the code has changed.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Why Pull-Request Descriptions Matter&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2025-12-31T00:00:00-08:00</updated><entry><title>Nicholas' coop adventure with Common Engineering</title><link href="https://wsbctechnicalblog.github.io/coop-nicholas-common-engineering.html" rel="alternate"></link><published>2025-12-31T00:00:00-08:00</published><updated>2025-12-31T00:00:00-08:00</updated><author><name>Nicholas Januar</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-31:/coop-nicholas-common-engineering.html</id><summary type="html">&lt;p&gt;Learning hard, leading with heart, and elevating every project into a story of growth and excellence.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Hi! I’m Nicholas Januar, a Computer Science student at the University of British Columbia, graduating in May 2026. I have co-op experience in quality assurance, bioinformatics, and full-stack development, and am now exploring DevOps—containers, infrastructure, pipelines, and cloud systems. Outside of work, I enjoy playing sports and video games.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Duck Whisperer&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Espresso" src="../images/coop-nicholas-common-engineering-1.jpg"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Why WorkSafeBC&lt;/h1&gt;
+&lt;p&gt;I previously did a 4-month co-op at WorkSafeBC as a QA in a different team, and I had a great impression of WorkSafeBC. That was my first time working in an office and it was interesting to see how nice everyone was with most people greeting or smiling at you in the hallway. The office building itself was great too with the cafeteria serving delicious food and a gym that offered sports like badminton and volleyball, along with gym weightlifting equipment. The team I had was awesome, especially my supervisor. I wanted to extend it for another 4 months, but it was not possible at the time.&lt;/p&gt;
+&lt;p&gt;Around 6-7 months after I finished, I was reached out by WorkSafeBC’s HR to see if I’m interested in a Software Developer Co-op position. During the interview, I learned that the team I’d be joining is a service team, working with blueprints and pipelines, which is aligned to my current interest in DevOps. I applied, got accepted, and started another 4-month journey at WorkSafeBC.&lt;/p&gt;
+&lt;h1&gt;Role &amp;amp; Projects&lt;/h1&gt;
+&lt;p&gt;During my 4-month co-op, I worked as a Software Developer in the Common Engineering team. Before jumping into projects, I had to undergo onboarding training such as completing Dojo belts, which are self-paced training modules. I remember during the first few weeks, I was learning a lot of theory, but I was itching for hands-on work as I feel like that’s when I learn the fastest. I eventually spoke up to my team and manager asking for work. Looking back, I realized I should have been more proactive and communicating sooner.&lt;/p&gt;
+&lt;p&gt;My main co-op project was to investigate dependency tracking problem. In large organizations like WorkSafeBC, applications often depend on each other, and when one gets updated or decommissioned, it can be hard to know what else is affected. My role was to research and analyze potential solutions to make these dependencies easier to track and manage.&lt;/p&gt;
+&lt;p&gt;Another major part of my co-op role involved researching AI tools to help developers work more efficiently, such as setting up GitHub Copilot Custom Instructions files to help enforce code standards in our development teams. I also worked on updating YAML files and blueprint templates.&lt;/p&gt;
+&lt;p&gt;One of my favorite projects is experimenting and setting up custom Copilot instruction files for Angular development. One of the challenges being faced by our developers is that the code generated by GitHub Copilot does not follow the code standards and conventions that the team has. To solve this, I created custom instruction files that guide Copilot to generate code aligned with our code standards. I had a chance to demo this solution to our stakeholders and developers in our monthly Engineering Espresso meet up, and helped integrate the instruction files into our Angular project template.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Espresso" src="../images/coop-nicholas-common-engineering-2.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;New Experiences&lt;/h1&gt;
+&lt;p&gt;What made this co-op the most memorable for me is that I had a lot of fun new experiences. I got to experience working in the office with everyone else back, as well as presenting in-person in a room full of stakeholders and developers from outside my team. I also attended my first ever tech meetup, Vancouver DevOps Meetup organized by WorkSafeBC professionals, where I got to meet new people from the industry. Another cool experience was writing my first ever blog post, which was something I did not expect out of this co-op term.&lt;/p&gt;
+&lt;h1&gt;Ending Statement&lt;/h1&gt;
+&lt;p&gt;Overall, this experience was one of the most fun and memorable co-ops I’ve done. From working on interesting projects, working with the amazing Common Engineering team, and having new experiences. I got to meet a lot of new friends as well, with many memorable moments from going out for lunch, morning coffee, exploring the office building, and hanging out outside the office. Additionally, as someone who loves badminton and volleyball, the sport sessions were really fun, and I got to meet so many new people coming from different departments. This co-op was the perfect balance between learning and connections.&lt;/p&gt;</content><category term="Posts"></category><category term="coop"></category></entry><entry><title>WHY we need pull request descriptions, and HOW to craft them</title><link href="https://wsbctechnicalblog.github.io/pull-request-descriptions-empowered-by-engineering-practices.html" rel="alternate"></link><published>2025-12-29T00:00:00-08:00</published><updated>2025-12-29T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2025-12-29:/pull-request-descriptions-empowered-by-engineering-practices.html</id><summary type="html">&lt;p&gt;Pull Requests (PR) descriptions enable us improve built-in quality and engineering practices, through understand the context of Why the code has changed.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Why Pull-Request Descriptions Matter&lt;/h1&gt;
 &lt;p&gt;After 40+ years of writing software, one thing is consistent:
 &lt;strong&gt;code outlives context&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -3619,84 +3639,4 @@ So, why is there such an Angst for AI?&lt;/p&gt;
 &lt;p&gt;Looking forward to my team revealing their AI success stories on this technical blog and/or the &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver&lt;/a&gt; meetup in the near future.&lt;/p&gt;
 &lt;h1&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Nonetheless, based on my current knowledge, I believe that neither automation nor artificial intelligence will be a substitute for an effective (open-minded) and skilled (continuous learning) engineer.&lt;/p&gt;
-&lt;p&gt;What do you think?&lt;/p&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry><entry><title>Unleashing the Power of Teamwork: Key Takeaways from Collaboration Ceremonies and Events</title><link href="https://wsbctechnicalblog.github.io/ceremony-learnings.html" rel="alternate"></link><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-07-12:/ceremony-learnings.html</id><summary type="html">&lt;p&gt;Fostering a culture of continuous improvement and innovation through events&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are committed to managing several internal initiatives, including hackathons, town halls, and Centers of Enablement (CoE) that further inspire the formation of Communities of Practice (CoP), dojos, and working committees. Additionally, we orchestrate and enjoy external engagements like workshops, training sessions, seminars, and networking events, such as our &lt;a href="https://www.meetup.com/DevOps-Vancouver-BC-Canada/"&gt;DevOps Vancouver Meetup&lt;/a&gt;. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Events" src="../images/ceremony-learnings-1.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You can review &lt;a href="/ceremony-overview.html"&gt;Ceremony Overview&lt;/a&gt; for more insight into the internal ceremonies - in this post I will focus on the takeaways from hosting public &lt;strong&gt;meetups&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;A meetup is a casual event&lt;/strong&gt; where individuals with shared interests like DevOps come together to mingle, exchange ideas, connect, or participate in related activities. The term "meetup" gained prominence with &lt;a href="https://www.meetup.com/home"&gt;Meetup.com&lt;/a&gt;, a site that facilitates the organization and discovery of such events. 
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;But first, why are these events pivotal?&lt;/h1&gt;
-&lt;p&gt;Events such as technical meetups and communities of practice (CoP) are essential for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Best Practices and Standards&lt;/strong&gt; - They aid in setting and spreading industry benchmarks. Our centers of enablement (CoE), for example, Provide guardrails (aka governance).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;What is a guardrail?&lt;/strong&gt; 
-A guardrail is likened to the safety barriers on a bridge, serving as a metaphor to guide our engineers in safely and efficiently using our software development lifecycle (SDLC). It represents our commitment to setting standards and governance in a way that empowers rather than dictates. Our team promotes engineering practices and while engineers can disregard these 'guardrails,' doing so often leads to a higher chance of issues, with less support available.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Community Building&lt;/strong&gt; - They cultivate a sense of community and improve job satisfaction.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Feedback and Improvement&lt;/strong&gt; - Offers a chance for critique and improvement of work.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Innovation&lt;/strong&gt; - Exposure to diverse thoughts encourages innovative thinking.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Inspiration and Motivation&lt;/strong&gt; - Witnessing peers' achievements can stimulate personal drive.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Knowledge Sharing&lt;/strong&gt; - They promote ideas, experiences, and industry trends exchange.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Networking Opportunities&lt;/strong&gt; - They help build connections with colleagues and leaders.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Problem Solving&lt;/strong&gt; - They offer venues for tackling challenges collaboratively.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Skill Development&lt;/strong&gt; - Dojos, workshops and presentations facilitate learning and skill enhancement.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Visibility and Recognition&lt;/strong&gt; - Participation raises profile and might create leadership chances.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Our events contribute to continuous professional development, continuous learning, and collective progress.&lt;/p&gt;
-&lt;h1&gt;What is the catch?&lt;/h1&gt;
-&lt;p&gt;Although there are several challenges, typically the advantages of collaboration events surpass issues, such as:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Catch" src="../images/ceremony-learnings-2.jpg"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cost&lt;/strong&gt; - Event planning can incur high expenses, including venue rental, catering, advertising, and speaker honorariums.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Logistics&lt;/strong&gt; - Arranging the event specifics, such as location, date, time, can be intricate and time-consuming.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Low Attendance&lt;/strong&gt; - A successful event often depends on a high turnout for effective networking, promotion, and value for hosts and speakers.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Risk Management&lt;/strong&gt; - It is critical to plan for unexpected issues like cancellations, poor attendance, or emergencies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;The Inevitable One&lt;/strong&gt; - Handling that one attendee who comes just for the free food or to create continuous interruptions is a known challenge.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Back to the core topic - our learnings!&lt;/h1&gt;
-&lt;p&gt;For a meetup to be effective, we've realized the importance of these six key components:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Learnings" src="../images/ceremony-learnings-3.png"&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Purpose&lt;/strong&gt; – It is critical to define the purpose and desired results for your meetup, providing clear answers to "what will I gain from this and why should I spend my valuable time attending?" &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNING 1&lt;/strong&gt; - &lt;strong&gt;Purpose&lt;/strong&gt; is the most important ingredient to cook up a successful event!
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Engaging Content&lt;/strong&gt; - Present exciting and pertinent material to keep participants involved and provide value.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNING 2&lt;/strong&gt; - Minimize text and slides for a better presentation; maximize demonstrations and involve the audience more.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Organization&lt;/strong&gt; -  It is crucial to meticulously plan everything from choosing a suitable venue to organizing and handling logistics efficiently. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNING 3&lt;/strong&gt; - Post-pandemic findings indicate that in-person gatherings draw larger crowds compared to online events, with about 70% attendance for face-to-face meetings against roughly 50% for virtual ones, compared to RSVPs (Répondez s'il vous plait). Additionally, incorporating a live stream into your physical event might lead to a decrease in attendance since potential participants may opt to stay home at the last minute and view it online instead.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Promotion&lt;/strong&gt; - Effective advertising is key to drawing in attendees, and clear communication keeps all parties informed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Feedback Loop&lt;/strong&gt; - It is crucial to collect and utilize feedback from participants to enhance future events and meet community expectations. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;LEARNING 4&lt;/strong&gt; - We have observed that the response rate to surveys after meetups is quite low, less than 20%. The best method to obtain feedback about the session and meetup seems to be collecting it in &lt;strong&gt;real-time&lt;/strong&gt;. I find it engaging when the speaker incorporates an interactive poll during their talk, like using &lt;a href="https://www.mentimeter.com/"&gt;Mentimeter&lt;/a&gt;.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Committed Leadership&lt;/strong&gt; - Having eager and passionate coordinators is essential for addressing unexpected challenges and making sure that the event runs smoothly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;What have you learned from your meetups?&lt;/p&gt;</content><category term="Posts"></category><category term="ceremony"></category><category term="devops"></category><category term="posters"></category></entry></feed>
+&lt;p&gt;What do you think?&lt;/p&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry></feed>
