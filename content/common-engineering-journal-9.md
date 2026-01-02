@@ -1,5 +1,5 @@
 Title: 2026, Here We Come: Self‑Service, Paved Roads, and Engineering Without the Drama
-Date: 2026-01-02
+Date: 2026-01-01
 Category: Posts 
 Tags: azure-devops, automation, engineering, learning
 Slug: common-engineering-journal-9
@@ -95,6 +95,9 @@ We modernised with purpose, listened, brought people together, tackled our techn
 > **Crossing the Most Difficult Part of `Almost Done`**
 >
 > Although the foundational building blocks are firmly in place, we still need that final, but very tricky, ten percent of consistent adoption and disciplined application to truly bring everything together in 2026.
+>
+>
+>![Final 10%](../images/common-engineering-journal-9-3.png) 
 >
 
 # 2026: The Year We Bring It All Together
