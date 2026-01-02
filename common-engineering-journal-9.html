@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Pipeline-as-code wrapped with Pull Requests - </title>
+        <title>2026, Here We Come: Self‑Service, Paved Roads, and Engineering Without the Drama - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,90 +33,115 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="bookmark"
-            title="Permalink to Pipeline-as-code wrapped with Pull Requests">Pipeline-as-code wrapped with Pull Requests</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/common-engineering-journal-9.html" rel="bookmark"
+            title="Permalink to 2026, Here We Come: Self‑Service, Paved Roads, and Engineering Without the Drama">2026, Here We Come: Self‑Service, Paved Roads, and Engineering Without the Drama</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Sat 13 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Thu 01 January 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.</p>
+            <p>A bold look at how our next chapter blends pipeline‑as‑code and IaC into a single, powerful experience.</p>
         </div>
     
         <div class="entry-content">
-            <p>For the past three program increments, which amounts to a staggering 30 iterations, or 300 days, we have been working on our quest to convert our legacy classic pipelines to YAML-based pipelines, as outlined in our <a href="/why-pipelines-part1.html">Pipelines - Why bother and what are our nightmares and options</a> series. More importantly, we have been working in parallel to elaborate on the value to our stakeholders. </p>
-<p>A tough challenge, because there is no visual value in continuous integration and deployment pipelines to business, our delighted end-users, or our engineers who want full control of our common engineering system. </p>
-<p>A recent awareness and prioritisation push by our <a href="https://www.scaledagileframework.com/release-train-engineer-and-solution-train-engineer/">Release Train Engineers</a> have raised a few interesting questions. This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.</p>
-<h1>Pipelines as code ... what?</h1>
-<p>Let us start with <strong>infrastructure as code</strong> (IaC), which manages and provisions computer data centers through machine- and human-readable configuration files. Instead of humanoids manually clicking and tweaking knobs and dials in a graphical user interface, machines read and process the code. There is no apocalyptic vision of <a href="https://en.wikipedia.org/wiki/Skynet_(Terminator)">Skynet</a>, only the option of <strong>automation</strong> and <strong>consistent</strong> deployment of our infrastructure.</p>
-<p>If you view continuous integration and deployment pipelines as infrastructure, we could stop here. However, <a href="https://www.jenkins.io/">Jenkins</a> introduced the term "<strong>pipelines as code</strong>", which is more fitting.</p>
-<p>It is a technique that treats the configuration of our continuous integration and deployment pipelines as code, placed under version control, packaged in reusable components, and automated deployment and testing ... like IaC.</p>
-<p>The YAML-based pipelines in Azure Pipelines, opened the <strong>golden fleece</strong>, not pandoras box, for our pipelines as code adventure. </p>
-<hr>
-<h1>Benefit #1 - Transparency</h1>
-<p>Software engineering is complex and involves stakeholders from all walks of life. <strong>Transparency</strong> is considered one of the core ingredients to Agile and Lean development, as well as a healthy DevOps mindset.</p>
-<p>Transparency avoids assumptions, secrets, and conspiracies - instead, it fosters trust.</p>
-<p>With <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Pipelines</a> all pipeline artifacts are placed in source control repositories that can be viewed by all our engineers - there are no secrets! </p>
-<blockquote>
-<p>We enable our engineers to explore what is abstracted under the covers, continuously learn, give candid feedback, and <strong>trust</strong> our common engineering system.</p>
-</blockquote>
-<hr>
-<h1>Benefit #2 - Everyone can contribute</h1>
-<p>The <a href="https://azure.microsoft.com/en-us/services/devops/repos/">Azure Repos</a>, which we used to store our pipeline code, allow us to set a wide range of branch policies to protect our master (trunk) branch that always reflects a production-ready state. One of the policies enforces the use of <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, which allows our common engineering team to review and give actionable and constructive feedback to all proposed pipeline code changes.</p>
-<blockquote>
-<p>More importantly, we enable our engineers to <strong>contribute</strong> to our common engineering system by submitting pipeline changes and innovations through the pull request workflow. All without the need for elevated privileges or specialized roles, such as Super Users, which complicate the administration of our classic pipeline infrastructure and security.</p>
-</blockquote>
-<hr>
-<h1>Benefit #3 - Automation</h1>
-<p>When you do something twice, trice, or more times, you should invest in <strong>automation</strong>. Machines are much better with repetitive operations than we are and empower us to focus on other, more valuable, services.</p>
-<p>The explosive growth of software and our goals for <strong>consistency</strong>, <strong>security</strong>, <strong>simplicity</strong>, and <strong>enablement</strong> have given rise to continuous delivery pipelines that build and deploy solutions in a standard way.</p>
-<p>Our common engineering system is using YAML templates to abstract away implementation details and support our engineering practices. They inject underlying tasks to run security scans, validate our building code, and keep an eye on any binary construct moving beyond our <strong>guardrails</strong> (more appealing term for governance).</p>
-<blockquote>
-<p>We enable our engineers by injecting re-usable templates when they queue their Azure Pipelines and sprinkling the concept of <strong>shift-left</strong> automatically and consistently.</p>
-</blockquote>
-<p>As a (intentional) side-effect the pipelines as code also enables our long-term vision for self-service automation. Like a self-service kiosk, we will be able to direct our engineers to a self-service portal that displays a menu of services and facilitates actions to deploy the services in an automated, consistent, and rapid manner.</p>
-<blockquote>
-<p>We will enable our engineers to deploy pipelines and associated infrastructure on their <strong>own terms</strong>.</p>
-</blockquote>
-<hr>
-<h1>Benefit #4 - Focus engineering on business code</h1>
-<p>Lastly, the most controversial and debated benefit. As software engineers we have an inquisitive mind and an urge to tinker with everything under the bonnet. It feeds purpose, mastery, and autonomy as discussed by <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc">Daniel Pink</a>, <strong>but</strong> it also distracts our razor focus to continuously deliver value to our delighted end-users.</p>
-<p>I am also a software engineer at heart and have often found myself spinning off into underlying and unrelated code bases. It is like doing a search on the internet, looking for a specific piece of information, and eventually stepping back from dozens of browser tabs ... "what was I looking for?!?" Interesting, educational, but minimal value to getting the job done and an unfortunate waste of productive time.</p>
-<p>Instead, let me try using <a href="https://www.informationisbeautiful.net/visualizations/million-lines-of-code/">this clean visualization</a> by <a href="https://informationisbeautiful.net/">Information Is Beautiful</a>, and the latest number of our production pipelines to make my point.</p>
-<blockquote>
-<p>Extract from our weekly Azure Pipelines report: 927 production CI/Build pipelines</p>
-<p><img alt="WASTE" src="/images/pipelines-as-code-wrapped-with-prs-1.png"></p>
-</blockquote>
-<p>To define a pipeline to build, test, and scan an Azure Function requires roughly 300 lines of pipeline code. The 927 production pipelines are a mix of simpler, but also more complex pipelines, adding up to an astounding 927 * 300 = <strong>278,100</strong> lines of pipeline code.</p>
+            <p>Looking back over the last five years, it is a bit like standing atop Table Mountain in Cape Town, gazing down at the winding paths we have travelled together. Some routes were smooth, others rocky, and some made us wonder how we even made it through. Every step nudged us closer to a cleaner, faster, and more reliable world.</p>
+<p><img alt="2025" src="../images/common-engineering-journal-9-1.png"> </p>
+<p>The big theme? We stopped mopping up yesterday’s mess. We started building the right things, at the right time, every time.</p>
+<h1>Automate Everything Automatable</h1>
+<p>Manual processes eventually felt off, like using a hand drill when you have got a power tool. Whenever a task cropped up more than once, we automated it.</p>
 <ul>
-<li>If engineers embrace our first-generation generic blueprints, as discussed in <a href="/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a> and <a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a>, the lines of pipeline code are reduced to 122 for an Azure Function pipeline. 927 * 122 = <strong>113,094</strong> lines of pipeline code. A lot less, but still a lot of code.</li>
-<li>If engineers embrace our second-generation app-type blueprints, which <a href="https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc">Said</a>] will discuss in the upcoming <strong>Part 7</strong> shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.</li>
+<li>Human error vanished from risky steps.</li>
+<li>Engineers got freed from tedious, repetitive work.</li>
+<li>Consistency now scales across teams, portfolios, and products.</li>
+<li>Delivery sped up without sacrificing quality.</li>
 </ul>
+<p>That foundation set the stage for everything that followed.</p>
+<h1>Azure DevOps Operational Support as Code</h1>
+<p>Support once felt like battling bush fires, but we moved away from that scramble.</p>
+<ul>
+<li>Audits, checks, and validations now run automatically.</li>
+<li>Gates, approvals, and policies are updated with precision.</li>
+<li>Guardrails stretch across thousands of pipelines.</li>
+<li>Our environments are stable and predictable.</li>
+<li>Support transformed into a proactive discipline, no longer reactive chaos.</li>
+</ul>
+<h1>Configuration-as-Code</h1>
+<p>Configuration was once tucked away in the minds of a handful of engineers, or hidden in obscure screens. We put it where it belongs. Version controlled in a Git repository, and out in the open.</p>
+<ul>
+<li>Change became democratic—anyone could contribute.</li>
+<li>No more reliance on privileged access.</li>
+<li>Every modification tracked by pull requests, with full clarity.</li>
+<li>We move forward confidently, not afraid of rollback.</li>
+<li>Hidden risks and tribal knowledge became a thing of the past.</li>
+</ul>
+<p>Our engineering ecosystem became transparent, and healthier for it.</p>
+<h1>Pipeline-as-Code</h1>
+<p>The day we adopted YAML fully, our pipelines surged ahead.
+- Reuse took over from reinvention.
+- Templates replaced one-off, fragile solutions.
+- Logic adapts at runtime.
+- Predictability at scale.
+- Security checks and quality gates are built-in, not tacked on.</p>
+<p>This approach brought discipline to CI and CD, far beyond what classic pipelines could deliver.</p>
+<h1>Migration from Classic Azure Pipelines to the v2 Blueprint Ecosystem</h1>
+<p>Classic pipelines, expensive, prone to drift, were tough to maintain. The v2 blueprint architecture changed all that.</p>
+<ul>
+<li>Consistent pipeline engine, no matter the product.</li>
+<li>Standardised stages and naming conventions.</li>
+<li>Support and governance are now easy.</li>
+<li>Fast onboarding through self-service.</li>
+<li>A library of reusable building blocks.</li>
+<li>One template change benefits every team.</li>
+</ul>
+<p>Our <a href="https://wsbctechnicalblog.github.io/announcement-ci-cd-cookbook.html">CI/CD Cookbook</a> became our guide, and the v2 blueprints paved our roads. We left brittle legacy pipelines behind, making maintenance simple and innovation routine.</p>
+<h1>Infrastructure-as-Code with Terraform</h1>
+<p>Application pipelines are only half of the story. Powered by Cloud Platform and Andrii's vision, terraform brought the discipline and structure we needed.</p>
+<ul>
+<li>IaC aligned with our pipeline ecosystem.</li>
+<li>Environments became predictable and repeatable.</li>
+<li>Security and consistency were built into provisioning.</li>
+<li>Manual steps disappeared.</li>
+<li>Product teams can now spin up a full environment confidently, with no fuss.</li>
+</ul>
+<p>This is the backbone for our future Paved Roads work.</p>
+<h1>From Snowflakes to Consistency</h1>
+<p>We do not live in the bits and bytes jungle anymore. We built paved roads. We stopped reacting to yesterday’s problems, and we did it together.</p>
+<p>This past year, 2025, a year of growth, leadership, and grit, marked a turning point. We took Paved Roads and Bricks to the next level. </p>
+<p>Common Engineering engineers felt more empowered than ever. Even when two medical emergencies rocked us, the team stood strong. That is resilience in action.</p>
+<p>We modernised with purpose, listened, brought people together, tackled our technical debt head-on, communicated clearly and openly, and ensured that every voice was heard. No, this is not a marketing poster, this is how we work, each day.</p>
 <blockquote>
-<p>Extract from Infographic: How Many Lines Of Code Is Your Favorite App?</p>
-<p><img alt="Information is Beautiful" src="/images/pipelines-as-code-wrapped-with-prs-2.png"></p>
+<p><strong>Crossing the Most Difficult Part of <code>Almost Done</code></strong></p>
+<p>Although the foundational building blocks are firmly in place, we still need that final, but very tricky, ten percent of consistent adoption and disciplined application to truly bring everything together in 2026.</p>
+<p><img alt="Final 10%" src="../images/common-engineering-journal-9-3.png"> 
+</p>
 </blockquote>
-<p>The difference is an astounding 927 * 272 = 252,144 lines of pipeline code, which could be invested in delivering user-value or solutions such as Photoshop v1.0. We have barely scratched the surface of our continuous deployment (CD) pipelines, which is a topic for another day and a few posts; one of my goals is to increase the 28 lines of pipeline code owner by the engineering team by no more than a handful to add CD to our app-type blueprint-based pipelines.</p>
-<blockquote>
-<p>We enable our engineers to be razor-focused on their solution and avoid investing their precious time in <strong>wasteful</strong> pipeline code.</p>
-</blockquote>
-<hr>
-<h1>Wrap-up</h1>
-<p>You can continue to build your own pipelines, tinker with knobs, dials, configurations, and products, and remember to innovate all pipelines continuously - do-it-yourself (DIY). </p>
-<p>Alternatively, you can focus on your business code and let the pipeline engineers focus on your pipelines - pipelines-as-a-service. The choice is <strong>yours</strong>. </p>
+<h1>2026: The Year We Bring It All Together</h1>
+<p>Now we stand on the brink of an exciting year. In 2026, we will bring assemble the final puzzle pieces and build a self-service engineering kiosk, pulling together:</p>
+<ul>
+<li>The v2 pipeline-as-code ecosystem</li>
+<li>Paved Roads and Bricks</li>
+<li>Terraform-based IaC</li>
+<li>Standardised reference architectures</li>
+<li>Governance built into templates</li>
+<li>Automation from idea to production</li>
+</ul>
+<p>Picture this ... an engineer chooses the application type, picks the architecture and environment model, then hits one button. The result? A working environment, from repositories, pipelines, and infrastructure, to reality.</p>
+<p>We are proud of how far we have come, but we are not done yet. In 2026, we will move from <code>better</code> to <code>brilliant.</code> </p>
+<p><img alt="2026" src="../images/common-engineering-journal-9-2.png"> </p>
+<p>I want to wish each of you a safe and uplifting leap into 2026. May the new year bring you strong health, meaningful success, and the courage to chase what inspires you. Let us continue building, supporting, and celebrating one another as we step boldly into the year ahead. Here is to a vibrant, fulfilling, and successful 2026!</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code </a>
-        | <a href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="bookmark"
-         title="Permalink to Pipeline-as-code wrapped with Pull Requests">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
+        | <a href="https://wsbctechnicalblog.github.io/common-engineering-journal-9.html" rel="bookmark"
+         title="Permalink to 2026, Here We Come: Self‑Service, Paved Roads, and Engineering Without the Drama">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
