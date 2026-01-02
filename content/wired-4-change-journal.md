@@ -4,7 +4,7 @@ Category: Posts
 Tags: books, engineering, journal
 Slug: wired-4-change-journal
 Author: Willy-Peter Schaub
-Summary: <CRISP SUMMARY>
+Summary: A journey of engineering discipline, human connection, and resilient leadership through decades of change.
 
 Reflections on a four-decade+ IT Adventure
 
