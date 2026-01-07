@@ -32,7 +32,7 @@ This journal covers a 40 years journey:
 
 # Supporting a Noble Cause
 
-All proceeds from the sales of this journal will be donated to our [OWL Rehab – Rescue. Rehabilitate. Release.](https://www.owlrehab.org/) in Delta, same as for our [Continuous Integration and Delivery Pipelines Cookbook](/announcement-ci-cd-cookbook.html).
+All proceeds from the sales of this journal will be donated to our [OWL Rehab – Rescue. Rehabilitate. Release.](https://www.owlrehab.org/) in Delta, same as for our [Continuous Integration and Delivery Pipelines Cookbook](/announcement-ci-cd-cookbook.html). Thank you for supporting our raptors!
 
 # Get Your Copy
 
