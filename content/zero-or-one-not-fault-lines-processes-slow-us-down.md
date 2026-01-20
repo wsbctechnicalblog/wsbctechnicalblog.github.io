@@ -29,7 +29,11 @@ This is precisely why our self‑service capabilities encourage alignment with o
 
 Let me emphasise this again: **It is not the processes that slow us down**. It is our bad engineering practices, our Band‑Aid solutions, and our accumulated technical debt. These are the true culprits. They introduce uncertainty, rework, fragility, and operational noise. Processes simply reveal this reality; they do not create it.
 
-With the rapid advancement of artificial intelligence, our policies, governance, and guardrails are becoming even more essential. They are already being embedded directly into instruction files and agent behaviour. Why would we trust an artificial agent more than a human? Why would we apply different expectations or hold different standards? The answer is that we cannot and we must not.
+>
+> **With the rapid advancement of artificial intelligence, our policies, governance, and guardrails are becoming even more essential.**
+>
+
+They are already being embedded directly into instruction files and agent behaviour. Why would we trust an artificial agent more than a human? Why would we apply different expectations or hold different standards? The answer is that we cannot and we must not.
 
 Once we establish trust—across teams, in our practices, and in our automation—we can abstract and hide most of our processes behind engineering excellence. But we cannot remove them entirely. Due diligence is not optional when we serve the public. It is part of our social and organisational contract.
 
@@ -38,6 +42,7 @@ In the end, **disciplined engineering accelerates us**. Processes illuminate our
 >
 > **Processes do not slow us down. Poor engineering does.**
 >
+> ![Processes do not slow us down. Poor engineering does.](../images/zero-or-one-not-fault-lines-processes-slow-us-down-1.png) 
 
 Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.
 
