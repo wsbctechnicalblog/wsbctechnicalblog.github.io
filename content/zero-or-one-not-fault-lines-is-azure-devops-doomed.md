@@ -65,7 +65,7 @@ As we evaluate GitHub Enterprise, we are taking a measured, strategic approach. 
 >
 > **This is not about choosing sides. It is about choosing outcomes.**
 >
-> ![This is not about choosing sides. It is about choosing outcomes.](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-1.png) 
+> ![This is not about choosing sides. It is about choosing outcomes.](../images/zero-or-one-not-fault-lines-is-azure-devops-doomed-1.png) 
 >
 
 # Final Thoughts: The Cost of Forced Migrations
