@@ -4,7 +4,7 @@ Category: Posts
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-processes-slow-us-down
 Author: Willy-Peter Schaub
-Summary: TBD
+Summary: Processes Do Not Slow Us Down. Poor Engineering Does.
 
 > ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
 
