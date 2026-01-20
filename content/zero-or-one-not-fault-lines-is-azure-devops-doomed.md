@@ -60,9 +60,13 @@ This is disciplined engineering, not blind adoption.
 > **Adoption Must Be Case by Case**
 >
 
-As we evaluate GitHub Enterprise, we are taking a measured, strategic approach. Our decisions must be grounded in value. Some projects will justify adoption. Others will not. And many will thrive in a hybrid model.
+As we evaluate GitHub Enterprise, we are taking a measured, strategic approach. Our decisions must be grounded in value. Some projects will justify adoption. Others will not. And many will thrive in a **hybrid** model.
 
-This is not about choosing sides. It is about choosing outcomes.'
+>
+> **This is not about choosing sides. It is about choosing outcomes.**
+>
+> ![This is not about choosing sides. It is about choosing outcomes.](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-1.png) 
+>
 
 # Final Thoughts: The Cost of Forced Migrations
 
