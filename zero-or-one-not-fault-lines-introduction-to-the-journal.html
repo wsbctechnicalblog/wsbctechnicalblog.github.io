@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Back to Basics: WIP Limit - </title>
+        <title>Zero or One, not Fault Lines - Introduction to the Journal - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,86 +33,43 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/back-to-basics-wip-limit.html" rel="bookmark"
-            title="Permalink to Back to Basics: WIP Limit">Back to Basics: WIP Limit</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-introduction-to-the-journal.html" rel="bookmark"
+            title="Permalink to Zero or One, not Fault Lines - Introduction to the Journal">Zero or One, not Fault Lines - Introduction to the Journal</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Mon 05 February 2024</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 19 January 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Dealing with a Kanban Board meltdown, by controlling the work in progress.</p>
+            <p>A candid exploration of engineering myths, misplaced certainties, and the binary truths that shape how we build, decide, and lead.</p>
         </div>
     
         <div class="entry-content">
-            <p>We pickup from where we left off in  <a href="/back-to-basics-batch-size.html">Back to Basics: Batch Size</a> and the following warning:</p>
+            <blockquote>
+<p><img alt="Zero or One, not Fault Lines JOurnal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"> </p>
+</blockquote>
+<p>Six months ago, while recovering from an open‑heart surgery, I found myself spending an insane amount of time copy‑editing the journal I had written during that chapter of turbulence. It was gruelling and strangely grounding. If you or a loved one is navigating a similar storm, please feel free to reach out to me. I will gladly exchange learnings, reflections, and the practical truths that only surface when life forces you to slow down and look inward. And yes, in February I will be releasing my journal, <strong>Wired 4 Change</strong>, a collection of insights gathered across more than forty years in Software Engineering.</p>
+<p>That experience changed me. My outlook on life has shifted. My view of work:life balance has stabilised. And my tolerance for bad ideas, ambiguity, incidents, and unnecessary costs and risk has dropped to near zero. When your heart is rewired, your priorities follow.</p>
 <blockquote>
-<p><img alt="Build a rocket" src="/images/back-to-basics-batch-size-alert.png"></p>
-<p><strong>CAUTION</strong> - I am intentionally skipping a very important and related topic, which will be covered in the follow-up blog post - <strong>Work in-Progress</strong> (WIP). Without it, leaning towards smaller batch sizes would lead to a nuclear type reaction (a process in which two particles collide, to produce one or more particles), followed by a similar meltdown.
+<p>This new journal is a product of that clarity.
 </p>
 </blockquote>
-<p>I will waste no time on covering the Azure DevOps Board - refer to <a href="/azure-boards-tips.html">Azure Boards Tips</a>, <a href="/azure-boards-tips-operations-team.html">Azure Boards Tips for Operations Teams</a>, <a href="/azure-boards-tips-stop-messing-with-our-backlog.html">Azure Boards Tips - Stop messing with our backlog!</a>, and <a href="/azure-boards-tips-retain-hierarchy-with-filter.html">Azure Boards Tips - Retain hierarchy with filter</a> for a quick introduction.</p>
-<hr>
-<h1>The rocket factory wakes up</h1>
-<p>We embark on our exploration equipped with two rocket orders and three additional spare engines, anticipating the possibility of engine failure during hot staging. We start by placing the associated cards onto our visual <a href="https://azure.microsoft.com/en-us/products/devops/boards/">Azure DevOps Board</a>.</p>
-<blockquote>
-<p><img alt="Board with 2 rockets ordered" src="../images/back-to-basics-wip-limit-1.png"> </p>
-</blockquote>
-<p>Our team promptly initiates the assembly process for all engines, including the first and second stages. We depend on vendors to provide critical and secretive parts of the payloads, and to streamline this process, we will temporarily place these cards in the ORIENT column while we clarify the specific requirements.</p>
-<blockquote>
-<p><img alt="Board with 2 rockets ordered" src="../images/back-to-basics-wip-limit-2.png"> </p>
-</blockquote>
-<hr>
-<h1>The rocket factory melts down</h1>
-<p>Let us assume that to assemble a low atmosphere engine we need 1x unit of work, for the vacuum engines we need 2x units of work, for the stages we need 3x units of work, and for the payload, due to its complexity 4-5 units of work.</p>
-<p>A probable sequence of events would produce lots of low atmosphere and vacuum engines, which would produce a bottleneck in the integration stage, and to a lesser degree in the quality control stage. The hot staging teams would be sitting around, playing poker and reading the latest news about agility, which raises their frustration and does not allow the assembly factory to deliver value consistently.</p>
-<blockquote>
-<p><img alt="Board with meltdown" src="../images/back-to-basics-wip-limit-3.png"></p>
-</blockquote>
-<p>We must control the progression of work to guarantee a seamless and uninterrupted delivery of value across every stage, steering clear of any abrupt surges or bottlenecks at particular points in the process.</p>
-<hr>
-<h1>Work-In-Progress (WIP) limit to the rescue</h1>
-<p>Welcome WIP limit, aka Work In Progress limit.</p>
-<p>WIP, or Work In Progress, serves as a constraint within the realms of agile and lean methodologies. It signifies the upper limit of concurrently active units of work within a designated stage of the rocket assembly value stream. Enforcing WIP limits allows us to:</p>
-<ul>
-<li><strong>Optimize Workflow</strong> - ensure that tasks progress through each stage smoothly and efficiently.</li>
-<li><strong>Prevent Overloading Teams and Processes</strong> - contribute to sustained team effectiveness and prevent bottlenecks.</li>
-<li><strong>Prioritize Task Completion</strong> - encourage teams to focus on completing existing tasks before initiating new ones, reducing multitasking.</li>
-<li><strong>Enhance Overall Productivity</strong> - emphasis on completing tasks and controlling flow improves productivity.</li>
-</ul>
-<p>In essence, enforcing WIP limits is a strategic practice aimed at creating a balance between task initiation and completion, fostering efficiency, and contributing to the smooth flow of work through the entire value stream.</p>
-<h1>Rocket Assembly with WIP limits</h1>
-<p>WIP limits are determined based on factors such as team <strong>capacity</strong>, resource <strong>availability</strong>, and the overall *<em>goals</em> of the project. Adjusting WIP limits help us fine-tune our process, change circumstances, and improve our ability to deliver value consistently.</p>
-<p>Let us set the following WIP limits on the assembly stages:</p>
-<ul>
-<li><strong>Assembly Engines = 3</strong> - limit the number of engines being assembled concurrently to three.</li>
-<li><strong>Assembly Other = 2</strong> - limit the number of other concurrent assemblies to two.</li>
-<li><strong>Quality Control = 3</strong> - limit the number of quality concurrent quality assurance to three.</li>
-<li><strong>Integration = 5</strong> - limit the number of concurrent integration to five.</li>
-</ul>
-<p>If we were to replay the operations in our factory, we could seamlessly integrate and roll out the first and second stages for rocket A for a hot stage test. Subsequently, we would repeat this process for rocket B, preparing it for its hot staging phase. The synchronicity of these efforts would result in both rockets being completed, poised and waiting for their payload. It sets the stage for an eagerly anticipated countdown and a spectacular launch once the final components are in place. In parallel we also complete the spare engines, which allow us to fail-fast in hot staging and replace faulty engines, before the payloads are delivered.</p>
-<blockquote>
-<p><img alt="Board with 2 rockets ordered" src="../images/back-to-basics-wip-limit-4.png"></p>
-</blockquote>
-<hr>
-<h1>Closing note</h1>
-<p>Let us conclude by exploring two Kanban posters from our comprehensive quick reference collection. These visual aids will help illustrate key ingredients for effectively embracing the fundamentals:</p>
-<blockquote>
-<p><img alt="Kanban Board" src="../images/back-to-basics-wip-limit-5.png"></p>
-<p><img alt="Kanban Basics" src="../images/back-to-basics-wip-limit-6.png"></p>
-</blockquote>
+<p>In a (hopefully) fortnightly cadence, I will map the cracks between assumptions and reality. I will examine engineering bloopers with a blend of humour and precision. I will debunk the myths that continue to mislead teams and leaders. And I will provide binary clarity for both makers and executives, reducing ambiguity, eliminating unnecessary incidents, and avoiding wasted spend.</p>
+<p>In short, I will be your devil’s advocate across a range of uncomfortable, overdue conversations. We will tackle questions such as “Is Azure DevOps dead?”, “Is GitHub the answer?”, and “Are we asking the right AI question?”. These topics deserve more than whispers, hand‑waving, or zealot thinking. They deserve honesty, analysis, and a bias towards action.</p>
+<p>I encourage you to engage. Add your comments. Challenge the ideas. Start discussions. Together, we can collaborate on healthier ways to maintain our work:life balance while improving stakeholder experience and reducing risk and cost across our ecosystem.</p>
+<p>Welcome to the journey. Let us build something better, one myth at a time.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile </a><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/101.html">101 </a>
-        | <a href="https://wsbctechnicalblog.github.io/back-to-basics-wip-limit.html" rel="bookmark"
-         title="Permalink to Back to Basics: WIP Limit">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a>
+        | <a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-introduction-to-the-journal.html" rel="bookmark"
+         title="Permalink to Zero or One, not Fault Lines - Introduction to the Journal">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
