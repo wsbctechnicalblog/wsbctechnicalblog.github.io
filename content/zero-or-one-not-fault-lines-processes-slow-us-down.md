@@ -17,7 +17,7 @@ There is a persistent and rather frustrating myth in our industry, that processe
 Let me be clear. **Policies** and **governance** are non‑negotiable for a reason. They exist to prevent us from repeating past mistakes, to ensure that we deliver secure, stable, and compliant solutions, and to uphold the trust placed in us by our organisation and the public we serve. 
 **Guardrails** often get an unfair reputation. Yet they are precisely what their name implies: guidance to cross the bridge safely, not a barrier preventing forward motion. If someone chooses to leap over the railing and plummet into the abyss, that is not the fault of the guardrail. It is a deliberate choice to ignore sound engineering discipline.
 
-Many of these policies, governance practices, and guardrails were created reactively, a direct response to quality issues, production incidents, technology debt, and unsustainable engineering workarounds. Had we remained firmly grounded in SOLID engineering, we would likely have required far fewer controls. This is an uncomfortable truth, but it is ours to own.
+Many of these policies, governance practices, and guardrails were created reactively, a direct response to quality issues, production incidents, technology debt, and unsustainable engineering workarounds. Had we remained firmly grounded in [SOLID](https://en.wikipedia.org/wiki/SOLID) engineering, we would likely have required far fewer controls. This is an uncomfortable truth, but it is ours to own.
 
 >
 > **Processes are not the enemy.** 
@@ -35,7 +35,7 @@ Let me emphasise this again: **It is not the processes that slow us down**. It i
 
 They are already being embedded directly into instruction files and agent behaviour. Why would we trust an artificial agent more than a human? Why would we apply different expectations or hold different standards? The answer is that we cannot and we must not.
 
-Once we establish trust—across teams, in our practices, and in our automation—we can abstract and hide most of our processes behind engineering excellence. But we cannot remove them entirely. Due diligence is not optional when we serve the public. It is part of our social and organisational contract.
+Once we establish trust, across teams, in our practices, and in our automation, we can abstract and hide most of our processes behind engineering excellence. But we cannot remove them entirely. Due diligence is not optional when we serve the public. It is part of our social and organisational contract.
 
 In the end, **disciplined engineering accelerates us**. Processes illuminate our path, maintain safety, and ensure that we deliver value without compromising on security or quality. They safeguard stakeholder experience, reduce risk, and avoid the hidden costs that arise when we rush and cut corners.
 
