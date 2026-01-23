@@ -40,7 +40,7 @@ Our success will depend less on how efficiently we type and more on how precisel
 
 # Quality Prompts Over Code
 
-Prompt engineering is not `cheating` or `shortcutting`. It is **engineering**!
+Prompt engineering is not `cheating` or `short-cutting`. It is **engineering**!
 
 Clear intent, structured constraints, context awareness, and explicit boundaries are becoming critical skill sets. Just as poor functional requirements produce poor systems, poor prompts produce poor outputs.
 The AI does not eliminate the need for clarity, but demands more of it.
