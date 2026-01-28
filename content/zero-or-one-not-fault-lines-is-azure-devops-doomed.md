@@ -9,13 +9,13 @@ Summary: Azure DevOps, GitHub, and the Myth of “One must replace the other”
 > ![Zero or One, not Fault Lines JOurnal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
 
 
-Every few months the same chorus surfaces: “Azure DevOps is dead,” others declare, while many teams continue to use it with enormous success. Then there are the pragmatic hybrid adopters who quietly get on with delivering value.
+Every few months the same chorus surfaces: “Azure DevOps (AzDO) is going away,” others declare, while many teams continue to use it with enormous success. Then there are the pragmatic hybrid adopters who quietly get on with delivering value.
 
  I am firmly in the pragmatic camp. We must consistently pursue what is right for the organisation and our stakeholders, rather than what merely appears right for engineering or reflects the latest vendor trends. With that in mind, I see absolutely no stakeholder value, risk reduction, or cost avoidance in migrating thousands of repositories and pipelines from one platform to another simply because of market hype. While I admire the innovation GitHub is driving with Artificial Intelligence, I am cautious not to lock our engineering ecosystem into a single vendor. We have the skills and the vision to build our own agentic AI engineering capabilities that serve a hybrid mindset across GitHub, Azure DevOps, and any other service that makes sense.
 
 # The Myth of Azure DevOps Sustainment
 
-Some argue that Azure DevOps is in `sustainment mode`. If that is true, then why is GitHub itself using Azure Boards? The answer is simple. Real value comes from integration and interoperability, not from an ideological commitment to one platform or another.
+Some argue that Azure DevOps is in `sustainment mode`. If that is true, then why is GitHub integrating seamlessly with [Azure Boards](https://learn.microsoft.com/en-us/azure/devops/boards/github/?view=azure-devops) and other AzDO services? The answer is simple. Real value comes from integration and interoperability, not from an ideological commitment to one platform or another.
 
 **Azure DevOps is mature.** It does not need a flood of new features to remain relevant. When combined with agentic Artificial Intelligence, it becomes a stable foundation for an engineering platform that is future‑proof, vendor‑agnostic, and designed to enable teams rather than box them in. I appreciate GitHub Copilot, but I do not want our engineers forced into a single technology stack. Choice is power. Let us explore what our investigations have revealed.
 
