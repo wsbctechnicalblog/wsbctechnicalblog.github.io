@@ -4,7 +4,7 @@ Category: Posts
 Tags: engineering, automation, ai
 Slug: engineering-practices-legacy-and-eol-solutions
 Author: Willy-Peter Schaub
-Summary: Why the Future of Engineering Isn’t Only Greenfield, and How Artificial Intelligence Is Transforming Our Upgrade Strategy
+Summary: Why the Future of Engineering Is not Only Greenfield, and How Artificial Intelligence Is Transforming Our Upgrade Strategy
 
 The rain was absolutely relentless on Saturday morning. I found myself staring across the Fraser River, hiding from the downpour, and letting my thoughts drift toward our modernisation and re‑engineering of a large collection of legacy and end‑of‑life solutions. It is easy to romanticise the world of greenfield development. New frameworks. Clean architectures. Untouched code. However, the systems that intrigue me most are those quietly lingering in sustainment mode, faithfully running our ecosystems, often overlooked in favour of newer and shinier pursuits.
 
