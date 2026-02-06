@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - Processes slow us down!
-Date: 2026-02-02
+Date: 2026-02-09
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-processes-slow-us-down
