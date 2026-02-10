@@ -1,12 +1,14 @@
 Title: Wired 4 Change
-Date: <YYYY-MM-DD>
+Date: 2026-02-13
 Category: Posts 
 Tags: books, engineering, journal
 Slug: wired-4-change-journal
 Author: Willy-Peter Schaub
 Summary: A journey of engineering discipline, human connection, and resilient leadership through decades of change.
 
-Reflections on a four-decade+ IT Adventure
+>
+> Reflections on a four-decade+ IT adventure q;-)
+>
 
 From the early era of punch cards and computer operations in Switzerland and South Africa to advancements in cloud computing, DevOps, and artificial intelligence in Canada, **Wired 4 Change** offers an insightful and authentic account of a life dedicated to IT transformation. Assembled during a period of recovery beside the Fraser River, this journal extends beyond technical reflection. It underscores resilience, intellectual curiosity, and adaptability.
 
@@ -34,9 +36,9 @@ This journal covers a 40 years journey:
 
 All proceeds from the sales of this journal will be donated to our [OWL Rehab – Rescue. Rehabilitate. Release.](https://www.owlrehab.org/) in Delta, same as for our [Continuous Integration and Delivery Pipelines Cookbook](/announcement-ci-cd-cookbook.html). Thank you for supporting our raptors!
 
-# Get Your Copy
+# Get Your Copy!
 
-Discover more and obtain your copy here in [Canada](TBD), [USA](TBD), or other regions.
+Your copy here in [Paperback](https://www.amazon.ca/dp/B0GM1GMH79) or [Kindle Edition](https://www.amazon.ca/dp/B0GLX282ZD).
 
 # Authors
 
