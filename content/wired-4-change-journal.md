@@ -46,3 +46,5 @@ Your copy here in [Paperback](https://www.amazon.ca/dp/B0GM1GMH79) or [Kindle Ed
 
 In closing, I want to express my heartfelt gratitude to my family, friends, colleagues, and to those who challenged me and pushed for engineering excellence. This journey would not have been possible without each and every one of you!
 
+**Fly high, fly safe, and fly proud!**
+
