@@ -1,5 +1,5 @@
 Title: Wired 4 Change
-Date: 2026-02-13
+Date: 2026-02-11
 Category: Posts 
 Tags: books, engineering, journal
 Slug: wired-4-change-journal
@@ -43,4 +43,6 @@ Your copy here in [Paperback](https://www.amazon.ca/dp/B0GM1GMH79) or [Kindle Ed
 # Authors
 
 - [Willy-Peter Schaub | LinkedIn](https://www.linkedin.com/in/wpschaub/)
+
+In closing, I want to express my heartfelt gratitude to my family, friends, colleagues, and to those who challenged me and pushed for engineering excellence. This journey would not have been possible without each and every one of you!
 
