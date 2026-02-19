@@ -33,7 +33,7 @@ Read Andre's posts [here](/author/andre-kaminski.html)
 
 Andreas Mertens, known to colleagues by his well‑earned nickname “Bob The Builder,” is a hands‑on .NET and C# developer.He is actively involved in technical reviews, build reliability, and reference application work, contributing practical engineering judgement that strengthens application health, reduces delivery risk, and avoids unnecessary rework and cost. Trusted for his ability to turn complex requirements into solid, working solutions, Andreas consistently helps teams move from intent to execution with confidence.
 
-Read Andrea's posts [here](/author/andreas-mertens.html)
+Read Andreas' posts [here](/author/andreas-mertens.html)
 
 ---
 
