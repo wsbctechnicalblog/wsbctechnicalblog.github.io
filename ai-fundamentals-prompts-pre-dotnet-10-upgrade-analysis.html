@@ -55,14 +55,14 @@
 <p><img alt="Analysis Image" src="../images/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis-1.png"> </p>
 </blockquote>
 <h1>Getting Started</h1>
-<ol>
+<ul>
 <li>Open the solution in Visual Studio.</li>
 <li>In Copilot Chat, select Claude Sonnet 4.5, and make sure you are starting a new chat session.</li>
 <li>Copy the contents of the Pre-DotNet10 Upgrade Analysis.md, see below, file into the chat session and execute it.</li>
-</ol>
+</ul>
 <p>Copilot should now generate an analysis markdown file, detailing changes that should be performed prior to the .Net 10 upgrade.</p>
 <p>It isn't necessary to clean up everything, but I would recommend fixing any of the reported Critical and High severity issues that are reported:</p>
-<ol>
+<ul>
 <li>Ask Copilot to fix the Critical issues that were listed in the analysis</li>
 <li>If Copilot asks any questions, answer as appropriate.</li>
 <li>Once the issues are addressed by Copilot, always make sure to review the changes, make sure they make sense.</li>
@@ -70,93 +70,80 @@
 <li>If the changes are generating a lot of warnings, you can also ask Copilot to correct these as well.</li>
 <li>Finally, you may find that Copilot has skipped some of the issues, usually due to the time / effort required to correct. You may ask Copilot to address these anyways, one at a time. For any that you wish to defer, ask Copilot if not fixing these issues might have an impact on the .Net 10 Upgrade. If it does, you may still need to deal with this manually or with Copilot assistance.</li>
 <li>Repeat steps 1-6 for the High severity issues.</li>
-</ol>
+</ul>
 <blockquote>
 <p>Remember to always commit after a set of changes, in case you need to roll back any changes that are not working.
 </p>
 </blockquote>
 <p>Once you have reached this point, you can perform the .Net 10 Upgrade:</p>
-<ol>
+<ul>
 <li>Right-click the solution in the Solution Explorer of Visual Studio, select Modernize</li>
 <li>In the Copilot chat window, select Upgrade .Net Framework</li>
 <li>Confirm that you want to upgrade to .Net 10. Copilot will also be able to create a new branch for the upgrade changes, but you can instruct it to stay with your current branch if you prefer.</li>
 <li>Copilot will do three stages:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>    - Analysis
-    - Create Tasks plan
-    - Execute the plan
-</code></pre></div>
-
-<ol>
+<li>Analysis</li>
+<li>Create Tasks plan</li>
+<li>Execute the plan</li>
 <li>Tell Copilot to proceed with the Analysis, which will generate an analysis.md document. Once it has completed the analysis, review the document. You can ask Copilot to make changes if necessary. Commit the changes when you are ready to proceed.</li>
 <li>Tell Copilot to proceed with creating the tasks/plan document. As with the analysis, review the document, ask Copilot to change as necessary and commit the changes.</li>
 <li>Tell Copilot to execute the plan. At this point Copilot will work through the list of tasks in the plan document. It will periodically run scripts or builds, in which case it will ask for permission to proceed. You can decide whether to grant it permission just once, per the chat session, or always. The upgrade will take some time to process, but eventually Copilot will announce when it is done.</li>
 <li>Be sure to review the changes and perform any validation on the application. You may also find that the changes have created more warnings - if so, you can ask Copilot to correct this or work them on your own if desired.</li>
-</ol>
+</ul>
 <p>As always, ensure that you commit all changes.</p>
 <h1>Pre-DotNet10 Upgrade Analysis.md</h1>
-<div class="highlight"><pre><span></span><code><span class="o">**</span><span class="nx">IMPORTANT</span><span class="p">:</span><span class="w"> </span><span class="nx">Do</span><span class="w"> </span><span class="o">*</span><span class="k">not</span><span class="o">*</span><span class="w"> </span><span class="nx">perform</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">upgrade</span><span class="p">,</span><span class="w"> </span><span class="nx">target</span><span class="err">‑</span><span class="nx">framework</span><span class="w"> </span><span class="nx">change</span><span class="p">,</span><span class="w"> </span><span class="nx">migration</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">modernization</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">modifies</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="p">.</span><span class="nx">NET</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">other</span><span class="w"> </span><span class="nx">TFM</span><span class="p">.</span><span class="w">  </span>
-
-<span class="nx">Do</span><span class="w"> </span><span class="o">*</span><span class="k">not</span><span class="o">*</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">plan</span><span class="p">.</span><span class="w">  </span>
-<span class="nx">Do</span><span class="w"> </span><span class="o">*</span><span class="k">not</span><span class="o">*</span><span class="w"> </span><span class="nx">apply</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">Upgrade</span><span class="w"> </span><span class="nx">Assistant</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">.</span><span class="w">  </span>
-
-<span class="nx">This</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">strictly</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="nx">pre</span><span class="err">‑</span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">assessment</span><span class="w"> </span><span class="nx">only</span><span class="o">*</span><span class="p">.</span><span class="o">**</span>
-
-<span class="nx">I</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">operate</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">**</span><span class="nx">analysis</span><span class="err">‑</span><span class="nx">only</span><span class="w"> </span><span class="nx">mode</span><span class="o">**</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">perform</span><span class="w"> </span><span class="o">**</span><span class="nx">pre</span><span class="err">‑</span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">.</span><span class="nx">NET</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="p">.</span><span class="nx">NET</span><span class="w"> </span><span class="mi">10</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="nx">without</span><span class="w"> </span><span class="nx">performing</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">itself</span><span class="p">.</span>
-
-<span class="o">**</span><span class="nx">Your</span><span class="w"> </span><span class="nx">tasks</span><span class="p">:</span><span class="o">**</span>
-
-<span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="o">**</span><span class="nx">Analyze</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">entire</span><span class="w"> </span><span class="nx">solution</span><span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="nx">projects</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">Dockerfiles</span><span class="p">,</span><span class="w"> </span><span class="nx">dependencies</span><span class="p">).</span>
-<span class="mi">2</span><span class="p">.</span><span class="w"> </span><span class="o">**</span><span class="nx">Identify</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="nx">ONLY</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="p">:</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Removal</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">deprecated</span><span class="w"> </span><span class="nx">patterns</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Replacement</span><span class="w"> </span><span class="nx">suggestions</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">obsolete</span><span class="w"> </span><span class="nx">APIs</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Outdated</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">problematic</span><span class="w"> </span><span class="nx">packages</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Unsafe</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="nx">patterns</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">.</span><span class="nx">NET</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Breaking</span><span class="err">‑</span><span class="nx">change</span><span class="w"> </span><span class="nx">hotspots</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">need</span><span class="w"> </span><span class="nx">remediation</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Project</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">hygiene</span><span class="w"> </span><span class="p">(</span><span class="nx">Nullable</span><span class="p">,</span><span class="w"> </span><span class="nx">ImplicitUsings</span><span class="p">,</span><span class="w"> </span><span class="nx">no</span><span class="w"> </span><span class="nx">preview</span><span class="w"> </span><span class="nx">features</span><span class="p">,</span><span class="w"> </span><span class="nx">redundant</span><span class="w"> </span><span class="nx">properties</span><span class="p">)</span>
-<span class="mi">3</span><span class="p">.</span><span class="w"> </span><span class="o">**</span><span class="nx">Do</span><span class="w"> </span><span class="nx">NOT</span><span class="w"> </span><span class="nx">change</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">TargetFramework</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="nx">SDK</span><span class="w"> </span><span class="nx">version</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">apply</span><span class="w"> </span><span class="nx">migration</span><span class="w"> </span><span class="nx">steps</span><span class="p">.</span>
-<span class="mi">4</span><span class="p">.</span><span class="w"> </span><span class="o">**</span><span class="nx">Do</span><span class="w"> </span><span class="nx">NOT</span><span class="w"> </span><span class="nx">suggest</span><span class="w"> </span><span class="nx">preview</span><span class="w"> </span><span class="nx">SDKs</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">preview</span><span class="w"> </span><span class="nx">versions</span><span class="o">**</span><span class="p">.</span>
-<span class="mi">5</span><span class="p">.</span><span class="w"> </span><span class="o">**</span><span class="nx">Do</span><span class="w"> </span><span class="nx">NOT</span><span class="w"> </span><span class="nx">generate</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">apply</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">plan</span><span class="p">.</span><span class="o">**</span>
-
-<span class="o">**</span><span class="nx">Output</span><span class="w"> </span><span class="nx">Requirements</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nx">Produce</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">Markdown</span><span class="w"> </span><span class="nx">report</span><span class="p">:</span><span class="o">**</span>
-
-<span class="nx">Generate</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">single</span><span class="w"> </span><span class="nx">Markdown</span><span class="w"> </span><span class="nx">document</span><span class="w"> </span><span class="nx">with</span><span class="p">:</span>
-
-<span class="o">**</span><span class="nx">A</span><span class="p">)</span><span class="w"> </span><span class="nx">Ranked</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">grouped</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="nx">items</span><span class="o">**</span>
-
-<span class="o">-</span><span class="w"> </span><span class="nx">Group</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="o">**</span><span class="nx">Severity</span><span class="o">**</span><span class="p">:</span><span class="w"> </span><span class="nx">Critical</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">Medium</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">Low</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Group</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="o">**</span><span class="nx">Category</span><span class="o">**</span><span class="p">:</span><span class="w"> </span><span class="nx">Dependencies</span><span class="p">,</span><span class="w"> </span><span class="nx">APIs</span><span class="p">,</span><span class="w"> </span><span class="nx">Auth</span><span class="p">,</span><span class="w"> </span><span class="nx">Containers</span><span class="p">,</span><span class="w"> </span><span class="nx">Build</span><span class="o">/</span><span class="nx">Config</span><span class="p">,</span><span class="w"> </span><span class="nx">Code</span><span class="w"> </span><span class="nx">Quality</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">For</span><span class="w"> </span><span class="nx">each</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="nx">include</span><span class="p">:</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Description</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">issue</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Why</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">matters</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">.</span><span class="nx">NET</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Suggested</span><span class="w"> </span><span class="nx">fix</span><span class="w"> </span><span class="p">(</span><span class="nx">with</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="nx">examples</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">applicable</span><span class="p">)</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Rough</span><span class="w"> </span><span class="o">**</span><span class="nx">time</span><span class="w"> </span><span class="nx">estimate</span><span class="o">**</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">developer</span><span class="err">‑</span><span class="nx">hours</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">Severity</span><span class="w"> </span><span class="nx">ranking</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nx">File</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">line</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="nx">applicable</span>
-
-<span class="o">**</span><span class="nx">B</span><span class="p">)</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="err">“</span><span class="nx">changes</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">made</span><span class="err">”</span><span class="w"> </span><span class="nx">section</span><span class="o">**</span>
-
-<span class="nx">Use</span><span class="w"> </span><span class="nx">diff</span><span class="err">‑</span><span class="nx">style</span><span class="w"> </span><span class="nx">blocks</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">bullet</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="nx">describing</span><span class="w"> </span><span class="nx">exactly</span><span class="w"> </span><span class="nx">what</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">changed</span><span class="p">,</span><span class="w"> </span><span class="nx">but</span><span class="w"> </span><span class="o">**</span><span class="nx">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">apply</span><span class="w"> </span><span class="nx">them</span><span class="w"> </span><span class="nx">yourself</span><span class="o">**</span><span class="p">.</span>
-
-<span class="o">**</span><span class="nx">C</span><span class="p">)</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="err">“</span><span class="nx">recommended</span><span class="w"> </span><span class="nx">pre</span><span class="err">‑</span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">plan</span><span class="err">”</span><span class="w"> </span><span class="nx">section</span><span class="o">**</span>
-
-<span class="nx">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="o">*</span><span class="k">not</span><span class="o">*</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">plan</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nx">instead</span><span class="w"> </span><span class="nx">describe</span><span class="p">:</span>
-
-<span class="o">-</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">performed</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Any</span><span class="w"> </span><span class="nx">blockers</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">must</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">removed</span><span class="w"> </span><span class="nx">before</span><span class="w"> </span><span class="nx">upgrade</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Validation</span><span class="w"> </span><span class="nx">steps</span><span class="w"> </span><span class="p">(</span><span class="nx">tests</span><span class="p">,</span><span class="w"> </span><span class="nx">build</span><span class="p">,</span><span class="w"> </span><span class="nx">etc</span><span class="p">.)</span>
-
-<span class="o">**</span><span class="nx">Restrictions</span><span class="p">:</span><span class="o">**</span>
-
-<span class="o">-</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="o">**</span><span class="nx">strictly</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">pre</span><span class="err">‑</span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="nx">assessment</span><span class="o">**</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Do</span><span class="w"> </span><span class="o">**</span><span class="k">not</span><span class="o">**</span><span class="w"> </span><span class="nx">perform</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">trigger</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">upgrade</span><span class="w"> </span><span class="nx">itself</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Do</span><span class="w"> </span><span class="o">**</span><span class="k">not</span><span class="o">**</span><span class="w"> </span><span class="nx">rewrite</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">files</span><span class="w"> </span><span class="nx">except</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">describe</span><span class="w"> </span><span class="nx">what</span><span class="w"> </span><span class="nx">needs</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">changed</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Do</span><span class="w"> </span><span class="o">**</span><span class="k">not</span><span class="o">**</span><span class="w"> </span><span class="nx">modify</span><span class="w"> </span><span class="nx">csproj</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">versions</span><span class="w"> </span><span class="nx">automatically</span><span class="p">.</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">Do</span><span class="w"> </span><span class="o">**</span><span class="k">not</span><span class="o">**</span><span class="w"> </span><span class="nx">propose</span><span class="w"> </span><span class="nx">TFM</span><span class="w"> </span><span class="nx">changes</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="nx">cleanup</span><span class="w"> </span><span class="nx">tasks</span><span class="p">.</span>
-
-<span class="nx">When</span><span class="w"> </span><span class="nx">complete</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">full</span><span class="w"> </span><span class="nx">Markdown</span><span class="w"> </span><span class="nx">file</span><span class="p">.</span>
-</code></pre></div>
-
+<p>IMPORTANT: Do <em>not</em> perform any upgrade, target‑framework change, migration, or modernization step that modifies the project to .NET 10 or any other TFM.  </p>
+<p>Do <em>not</em> create an upgrade plan.<br>
+Do <em>not</em> apply the Upgrade Assistant pipeline.  </p>
+<p>This session is strictly for a <em>pre‑upgrade cleanup and assessment only</em>.**</p>
+<p>I want you to operate in <strong>analysis‑only mode</strong> and perform <strong>pre‑upgrade cleanup for .NET 8 → .NET 10</strong>, without performing the upgrade itself.</p>
+<p><strong>Your tasks:</strong></p>
+<ul>
+<li><strong>Analyze the entire solution</strong> (projects, code, config, Dockerfiles, dependencies).</li>
+<li><strong>Identify cleanup tasks ONLY</strong>, such as:<ul>
+<li>Removal of deprecated patterns</li>
+<li>Replacement suggestions for obsolete APIs</li>
+<li>Outdated or problematic packages</li>
+<li>Unsafe code patterns for .NET 10</li>
+<li>Breaking‑change hotspots that need remediation</li>
+<li>Project file hygiene (Nullable, ImplicitUsings, no preview features, redundant properties)</li>
+</ul>
+</li>
+<li><strong>Do NOT change the TargetFramework</strong>, SDK version, or apply migration steps.</li>
+<li><strong>Do NOT suggest preview SDKs or preview versions</strong>.</li>
+<li><strong>Do NOT generate or apply an upgrade plan.</strong></li>
+</ul>
+<p><strong>Output Requirements — Produce a Markdown report:</strong></p>
+<p>Generate a single Markdown document with:</p>
+<p><strong>A) Ranked and grouped list of cleanup items</strong></p>
+<ul>
+<li>Group by <strong>Severity</strong>: Critical / High / Medium / Low</li>
+<li>Group by <strong>Category</strong>: Dependencies, APIs, Auth, Containers, Build/Config, Code Quality</li>
+<li>For each item include:</li>
+<li>Description of the issue</li>
+<li>Why it matters for .NET 10</li>
+<li>Suggested fix (with code examples if applicable)</li>
+<li>Rough <strong>time estimate</strong> in developer‑hours</li>
+<li>Severity ranking</li>
+<li>File(s) and line(s) where applicable</li>
+</ul>
+<p><strong>B) A “changes to be made” section</strong></p>
+<p>Use diff‑style blocks or bullet points describing exactly what should be changed, but <strong>do not apply them yourself</strong>.</p>
+<p><strong>C) A “recommended pre‑upgrade plan” section</strong></p>
+<p>This is <em>not</em> an upgrade plan — instead describe:</p>
+<ul>
+<li>The order in which cleanup should be performed</li>
+<li>Any blockers that must be removed before upgrade</li>
+<li>Validation steps (tests, build, etc.)</li>
+</ul>
+<p><strong>Restrictions:</strong></p>
+<ul>
+<li>This is <strong>strictly a pre‑upgrade cleanup assessment</strong>.</li>
+<li>Do <strong>not</strong> perform or trigger the upgrade itself.</li>
+<li>Do <strong>not</strong> rewrite project files except to describe what needs to be changed.</li>
+<li>Do <strong>not</strong> modify csproj or package versions automatically.</li>
+<li>Do <strong>not</strong> propose TFM changes — only cleanup tasks.</li>
+</ul>
+<p>When complete, output the full Markdown file.</p>
 <h1>Final Thought</h1>
 <p>In the end, GitHub Copilot proves its value not as an autopilot, but as a productivity wingman that sharpens thinking, accelerates insight, and keeps quality firmly in focus. It helps teams move faster without cutting corners, turning complex codebases into navigable terrain and early signals into informed decisions. Like a trusted astromech in the hangar, it supports health checks, highlights risk before it becomes impact, and enables confident preparation for what comes next. Used well, GitHub Copilot becomes a stargate to quality solutions: <strong>reducing risk</strong>, <strong>avoiding unnecessary cost</strong>, and <strong>improving the stakeholder</strong> experience by ensuring that speed and discipline advance together, not in opposition.</p>
         </div>
