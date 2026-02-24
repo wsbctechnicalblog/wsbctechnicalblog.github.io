@@ -1,5 +1,5 @@
 Title: Mastering the Art of Prompting: Pre-.NET10 Upgrade Analysis
-Date: 2026-02-19
+Date: 2026-02-24
 Category: Posts 
 Tags: ai, learning
 Slug: ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis
@@ -10,7 +10,7 @@ Upgrading a core technology stack is never just a technical exercise. It is a st
 
 In this post, I will offer a practical peek into how we analyse application health using GitHub Copilot as an assistive capability, not a shortcut. We focus on understanding code quality, dependency risk, architectural debt, and upgrade readiness across our portfolio. GitHub Copilot helps us accelerate discovery, highlight patterns, and surface potential issues earlier, allowing our teams to spend more time on judgement, decision‑making, and remediation.
 
-> ![TBD](../images/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis-1.png) 
+> ![Analysis Image](../images/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis-1.png) 
 
 # Getting Started
 
@@ -41,9 +41,11 @@ Once you have reached this point, you can perform the .Net 10 Upgrade:
 3. Confirm that you want to upgrade to .Net 10. Copilot will also be able to create a new branch for the upgrade changes, but you can instruct it to stay with your current branch if you prefer.
 4. Copilot will do three stages:
 
+```
     - Analysis
     - Create Tasks plan
     - Execute the plan
+```
 
 5. Tell Copilot to proceed with the Analysis, which will generate an analysis.md document. Once it has completed the analysis, review the document. You can ask Copilot to make changes if necessary. Commit the changes when you are ready to proceed.
 6. Tell Copilot to proceed with creating the tasks/plan document. As with the analysis, review the document, ask Copilot to change as necessary and commit the changes.
