@@ -5,7 +5,7 @@ Slug: authors
 Author: WorkSafeBC
 Summary: WorkSafeBC Contributors
 
-## Aditya Chourasiyac
+## Aditya Chourasiya
 
 ![Aditya Chourasiya](../images/Adi-mug.png)
 
