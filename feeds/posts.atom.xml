@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-02-24T00:00:00-08:00</updated><entry><title>Mastering the Art of Prompting: Pre-.NET10 Upgrade Analysis</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis.html" rel="alternate"></link><published>2026-02-24T00:00:00-08:00</published><updated>2026-02-24T00:00:00-08:00</updated><author><name>Andreas Mertens</name></author><id>tag:wsbctechnicalblog.github.io,2026-02-24:/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis.html</id><summary type="html">&lt;p&gt;How We Use GitHub Copilot to Validate Application Health Ahead of a .NET Upgrade&lt;/p&gt;</summary><content type="html">&lt;p&gt;Upgrading a core technology stack is never just a technical exercise. It is a stakeholder experience challenge, a risk management exercise, and a cost avoidance opportunity. Before committing to a .NET upgrade, we need a clear, evidence‑based view of the health of our applications and the effort required to move forward with confidence.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-02-25T00:00:00-08:00</updated><entry><title>Renaming Git Branches in Azure DevOps: A Simple Task, Eight Easy Steps, and Mild Despair</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-branch-rename.html" rel="alternate"></link><published>2026-02-25T00:00:00-08:00</published><updated>2026-02-25T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-02-25:/engineering-practices-branch-rename.html</id><summary type="html">&lt;p&gt;How a One-Character Change Turned into a Full-Contact Git Exercise&lt;/p&gt;</summary><content type="html">&lt;p&gt;Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Release/&amp;lt;branch-name&amp;gt;&lt;/code&gt;
+to
+&lt;code&gt;release/&amp;lt;branch-name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Lowercase. Consistent. Civilised.
+What could possibly go wrong?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="&amp;lt;SAMPLE PIC&amp;gt;" src="../images/engineering-practices-branch-rename-1.png"&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Challenge 1: Case Sensitivity, or “Git Knows Better Than You”&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The first obstacle is that we often believe that &lt;code&gt;Release/1.0&lt;/code&gt; and &lt;code&gt;release/1.0&lt;/code&gt; are two entirely different branches. As far as your local file system is concerned, they may very well be the same thing, or not. 
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Git, in turn, is case-sensitive. This leads to confusion, errors, and a general sense that you have personally offended your version control system.&lt;/p&gt;
+&lt;p&gt;Microsoft documents this behaviour clearly, including why Azure Repos enforces it and why case-only changes are problematic:
+&lt;a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/case-sensitivity?view=azure-devops"&gt;Git case sebsitivity&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The short version: Git is right, the file system is awkward, and you are caught in the middle.&lt;/p&gt;
+&lt;h1&gt;Challenge 2: There Are No Branch Folders&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Despite what the slash in &lt;code&gt;Release/1.0&lt;/code&gt; suggests, Git does not have branch folders.
+There is no Release directory. There is no tree. There is no hierarchy.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;code&gt;&amp;lt;folder&amp;gt;&lt;/code&gt; portion of a branch name is merely a naming convention. It is a label. A polite fiction. A comforting illusion we all agree to maintain so that we can pretend our repositories are tidy.&lt;/p&gt;
+&lt;p&gt;Internally, Git stores branches as references. The slash just happens to look like a folder, much like a cardboard box looks like furniture.&lt;/p&gt;
+&lt;h1&gt;Challenge 3: There Is No Rename Feature&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is no &lt;code&gt;rename branch&lt;/code&gt; button.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Not in Git. Not in Azure DevOps. Not anywhere sensible.&lt;/p&gt;
+&lt;p&gt;This is presumably because renaming a branch would be too easy, too humane, and would deprive future engineers of valuable character-building experiences.
+So instead, we simulate a rename by creating new branches and deleting old ones. Carefully. Repeatedly. With feeling.&lt;/p&gt;
+&lt;h1&gt;The Only Way Forward&lt;/h1&gt;
+&lt;p&gt;Because Git refuses to acknowledge that &lt;code&gt;Release&lt;/code&gt; and &lt;code&gt;release&lt;/code&gt; are “basically the same thing”, on Azure DevOps with case-sensitivity disabled, we need an intermediate step. A neutral ground. A diplomatic buffer.
+Let us call it &lt;code&gt;Temp&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Step 1: Clone the Repository&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://dev.azure.com/your-org/your-project/_git/your-repocd your-repo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 2: Rename Release/&lt;em&gt; to Temp/&lt;/em&gt; Locally&lt;/h3&gt;
+&lt;p&gt;Fetch all branches first:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git fetch --all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Rename the branch you are currently on:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Release/1.0 Temp/1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Repeat this for all branches under &lt;code&gt;Release/*&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Release/1.1 Temp/1.1
+git branch -m Release/2.0 Temp/2.0
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 3: Push the &lt;code&gt;Temp/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 4: Delete the Release/* Branches from Azure DevOps&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin --delete Release/1.0
+git push origin --delete Release/2.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point, the repository no longer contains Release/*. Everyone takes a deep breath.&lt;/p&gt;
+&lt;h3&gt;Step 5: Re-clone the Repository&lt;/h3&gt;
+&lt;p&gt;Yes, really. This avoids local case-confusion and reference residue.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd ..
+rm -rf your-repo
+git clone https://dev.azure.com/your-org/your-project/_git/your-repo
+cd your-repo
+git fetch --all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 6: Rename Temp/&lt;em&gt; to release/&lt;/em&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Temp/1.0 release/1.0
+git branch -m Temp/2.0 release/2.0
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 7: Push the &lt;code&gt;release/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin release/1.0
+git push origin release/2.0
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 8: Delete the Temp/* Branches from Azure DevOps&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin --delete Temp/1.0
+git push origin --delete Temp/2.0
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Final Thoughts&lt;/h1&gt;
+&lt;p&gt;What began as a simple case change turned into a multi-stage choreography involving temporary branches, multiple pushes, deletions, and a ceremonial re-clone.&lt;/p&gt;
+&lt;p&gt;Git is powerful. Azure DevOps is correct. The process is logical.&lt;/p&gt;
+&lt;p&gt;It is also impressively unintuitive.&lt;/p&gt;
+&lt;p&gt;I sincerely hope that someone out there has a better idea.&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="azure-devops"></category><category term="version-control"></category></entry><entry><title>Mastering the Art of Prompting: Pre-.NET10 Upgrade Analysis</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis.html" rel="alternate"></link><published>2026-02-24T00:00:00-08:00</published><updated>2026-02-24T00:00:00-08:00</updated><author><name>Andreas Mertens</name></author><id>tag:wsbctechnicalblog.github.io,2026-02-24:/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis.html</id><summary type="html">&lt;p&gt;How We Use GitHub Copilot to Validate Application Health Ahead of a .NET Upgrade&lt;/p&gt;</summary><content type="html">&lt;p&gt;Upgrading a core technology stack is never just a technical exercise. It is a stakeholder experience challenge, a risk management exercise, and a cost avoidance opportunity. Before committing to a .NET upgrade, we need a clear, evidence‑based view of the health of our applications and the effort required to move forward with confidence.&lt;/p&gt;
 &lt;p&gt;In this post, I will offer a practical peek into how we analyse application health using GitHub Copilot as an assistive capability, not a shortcut. We focus on understanding code quality, dependency risk, architectural debt, and upgrade readiness across our portfolio. GitHub Copilot helps us accelerate discovery, highlight patterns, and surface potential issues earlier, allowing our teams to spend more time on judgement, decision‑making, and remediation.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Analysis Image" src="../images/ai-fundamentals-prompts-pre-dotnet-10-upgrade-analysis-1.png"&gt; &lt;/p&gt;
@@ -3613,96 +3710,6 @@ These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them 
 &lt;p&gt;Enjoy other learning notes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-machine-learning-types.html"&gt;common-machine-learning-types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-workloads.html"&gt;common-workloads&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-generative-ai.html"&gt;generative-ai&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Common Machine Learning Types</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-common-machine-learning-types.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-common-machine-learning-types.html</id><summary type="html">&lt;p&gt;"AI machine learning (ML) refers to the subset of artificial intelligence focused on developing algorithms and models that enable computers to learn from data and improve their performance over time without being explicitly programmed." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
-These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
-&lt;/p&gt;
-&lt;p&gt;&lt;img alt="common-machine-learning-types" src="../images/ai-fundamentals-ai900-common-machine-learning-types.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Classification&lt;/strong&gt; predicts categories of data, such as sentiment if users on the X platform.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Clustering algorithm&lt;/strong&gt; automatically finds the optimal way to split a data set into groups without training.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Feature engineering&lt;/strong&gt; is the method of creating new features, based on existing features.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Feature selection&lt;/strong&gt; allows us to narrow down the features that are important for &lt;strong&gt;label&lt;/strong&gt; predictions.&lt;/li&gt;
-&lt;li&gt;Training a &lt;strong&gt;Regression&lt;/strong&gt; model involves data gathering and transformation: &lt;strong&gt;Feature selection&lt;/strong&gt; --&amp;gt; &lt;strong&gt;Finding and Cleaning&lt;/strong&gt; outliers --&amp;gt; &lt;strong&gt;Impute&lt;/strong&gt; missing values --&amp;gt; &lt;strong&gt;Normalization&lt;/strong&gt; or &lt;strong&gt;Feature engineering&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Metrics&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Confusion Matrix Terms
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;True Positive (TP)&lt;/strong&gt; - number of positive cases predicted correctly.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;True Negative (TN)&lt;/strong&gt; - number of negative cases predicted correctly.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;False Positive (FP)&lt;/strong&gt; - number of positive cases predicted incorrectly - Type 1 error.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;False Negative (FN)&lt;/strong&gt; - number of negative cases predicted incorrectly - Type 2 error.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Classification model
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Accuracy&lt;/strong&gt; - the ratio of predictions that exactly match the true class labels. Closer to 1 the better. Range: [0, 1]. Metric = (TP+TN)/(TP+FP+TN+FN).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Area Under Curve (AUC)&lt;/strong&gt; reflects the model's performance - AUC=&lt;strong&gt;1&lt;/strong&gt; is best fitted model and AUC&amp;lt;&lt;strong&gt;0.5&lt;/strong&gt; is worse than random. Range: [0, 1].&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AveragePrecision (AP)&lt;/strong&gt; is the combined metrics of both Precision and Recall, used in vision model.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Confusion matrix&lt;/strong&gt; provides a tabulated view of predicted abd actual values.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;F1 Score&lt;/strong&gt; - machine learning evaluation metric that combines precision and recall scores. Metric = (2&lt;em&gt;Precision&lt;/em&gt;Recall)/(Precision+Recall).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Precision&lt;/strong&gt; - the ability of a model to avoid labeling negative samples as positive. Closer to 1 the better. Range: [0, 1]. Metric = TP/(TP+FP).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Recall&lt;/strong&gt; - the ability of a model to detect all positive samples. Closer to 1 the better. Range: [0, 1]. TP/(TP+FN), where TP=true positive, FN=False negative.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Selectivity&lt;/strong&gt; - measures the ability of the model to correctly identify negative samples (i.e., true negatives) out of all the actual negative samples. Metric = TN/(TN+FP).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Specificity&lt;/strong&gt; - the ability of a model to correctly identify negative instances. TN/(TN+FP)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Weighted accuracy&lt;/strong&gt; is accuracy where each sample is weighted by the total number of samples belonging to the same class. Closer to 1 the better. Range: [0, 1].&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Regression Model
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Coefficient of determination&lt;/strong&gt;, often referred to as R2, represents the predictive power of the model. Closer to 1 the better. Range: [0, 1].&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mean absolute error (MAE)&lt;/strong&gt; measures how close the predictions are to the actual outcomes. A lower score is better.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Root mean squared error (RMSE)&lt;/strong&gt; creates a single value that summarizes the error in the model. By squaring the difference, the metric disregards the difference between over-prediction and under-prediction.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Relative absolute error (RAE)&lt;/strong&gt; is the relative absolute difference between expected and actual values. The mean difference is divided by the arithmetic mean.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Relative squared error (RSE)&lt;/strong&gt; similarly normalizes the total squared error of the predicted values by dividing by the total squared error of the actual values.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Clustering Model
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Average Distance to Other Center&lt;/strong&gt; represent how close, on average, each point in the cluster is to the centroids of all other clusters.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Average Distance to Cluster Center&lt;/strong&gt; represent the closeness of all points in a cluster to the centroid of that cluster.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Combined Evaluation&lt;/strong&gt; score at the bottom of each section of results lists the averaged scores for the clusters created in that particular model.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Maximal Distance to Cluster Center&lt;/strong&gt; represent the max of the distances between each point and the centroid of that point's cluster. High = dispersed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Number of Points&lt;/strong&gt; shows how many data points were assigned to each cluster, along with the total overall number of data points in any cluster.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You need to examine historical data to forecast price ranges for your product. Label = prediction = price range.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;The &lt;strong&gt;classification&lt;/strong&gt; model is &lt;code&gt;suitable&lt;/code&gt; for supervised learning to determine &lt;code&gt;is it&lt;/code&gt; a low, medium, high, or very high price.&lt;/li&gt;
-&lt;li&gt;The &lt;strong&gt;regression&lt;/strong&gt; model is &lt;code&gt;inappropriate&lt;/code&gt; because it forecasts numerical values rather than determining whether something belongs to the "is it" class.&lt;/li&gt;
-&lt;li&gt;The &lt;strong&gt;clustering&lt;/strong&gt; model is &lt;code&gt;inappropriate&lt;/code&gt; because it clusters unlabeled data into similar groups.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;You perused:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;this-&amp;gt;&lt;/strong&gt;&lt;a href="/ai-fundamentals-ai900-common-machine-learning-types.html"&gt;common-machine-learning-types&lt;/a&gt; &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Enjoy other learning notes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-bots.html"&gt;bots&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-workloads.html"&gt;common-workloads&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-generative-ai.html"&gt;generative-ai&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
