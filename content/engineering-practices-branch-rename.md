@@ -88,7 +88,7 @@ Repeat Step 3 and Step 4 for all branches under `Release/*`:
 ### Step 5: Push the `Temp/*` Branches to Azure DevOps
 
 ```
-git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
+git push origin Temp/1.0
 ```
 
 ### Step 6: Delete the Release/* Branches from Azure DevOps
