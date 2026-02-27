@@ -90,32 +90,31 @@ Let us call it <code>Temp</code>.</p>
 <div class="highlight"><pre><span></span><code>git clone https://dev.azure.com/your-org/your-project/_git/your-repocd your-repo
 </code></pre></div>
 
-<h3>Step 2: Rename Release/<em> to Temp/</em> Locally</h3>
-<p>Fetch all branches first:</p>
+<h3>Step 2: fetch Branches</h3>
+<p>Fetch all branches first, which by the way, does not setup local tracking - that would be too easy</p>
 <div class="highlight"><pre><span></span><code>git fetch --all
 </code></pre></div>
 
-<p>Rename the branch you are currently on:</p>
+<h3>Step 3: Checkout your branch explicitly to enable tracking</h3>
+<div class="highlight"><pre><span></span><code>git checkout -b Release/1.0 origin/Release/1.0
+</code></pre></div>
+
+<h3>Step 4: Rename the branch you are currently on</h3>
 <div class="highlight"><pre><span></span><code>git branch -m Release/1.0 Temp/1.0
 </code></pre></div>
 
-<p>Repeat this for all branches under <code>Release/*</code>:</p>
-<div class="highlight"><pre><span></span><code>git branch -m Release/1.1 Temp/1.1
-git branch -m Release/2.0 Temp/2.0
-...
-</code></pre></div>
-
-<h3>Step 3: Push the <code>Temp/*</code> Branches to Azure DevOps</h3>
+<p>Repeat Step 3 and Step 4 for all branches under <code>Release/*</code>:</p>
+<h3>Step 5: Push the <code>Temp/*</code> Branches to Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
 </code></pre></div>
 
-<h3>Step 4: Delete the Release/* Branches from Azure DevOps</h3>
+<h3>Step 6: Delete the Release/* Branches from Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin --delete Release/1.0
-git push origin --delete Release/2.0
+...
 </code></pre></div>
 
 <p>At this point, the repository no longer contains Release/*. Everyone takes a deep breath.</p>
-<h3>Step 5: Re-clone the Repository</h3>
+<h3>Step 7: Re-clone the Repository</h3>
 <p>Yes, really. This avoids local case-confusion and reference residue.</p>
 <div class="highlight"><pre><span></span><code>cd ..
 rm -rf your-repo
@@ -124,21 +123,21 @@ cd your-repo
 git fetch --all
 </code></pre></div>
 
-<h3>Step 6: Rename Temp/<em> to release/</em></h3>
+<h3>Step 8: Checkout your branch explicitly to enable tracking</h3>
+<div class="highlight"><pre><span></span><code>git checkout -b Temp/1.0 origin/Temp/1.0
+</code></pre></div>
+
+<h3>Step 9: Rename the branch you are currently on:</h3>
 <div class="highlight"><pre><span></span><code>git branch -m Temp/1.0 release/1.0
-git branch -m Temp/2.0 release/2.0
-...
 </code></pre></div>
 
-<h3>Step 7: Push the <code>release/*</code> Branches to Azure DevOps</h3>
+<p>Repeat Step 8 and Step 9 for all branches under <code>Release/*</code>.</p>
+<h3>Step 10: Push the <code>release/*</code> Branches to Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin release/1.0
-git push origin release/2.0
-...
 </code></pre></div>
 
-<h3>Step 8: Delete the Temp/* Branches from Azure DevOps</h3>
+<h3>Step 11: Delete the Temp/* Branches from Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin --delete Temp/1.0
-git push origin --delete Temp/2.0
 ...
 </code></pre></div>
 
