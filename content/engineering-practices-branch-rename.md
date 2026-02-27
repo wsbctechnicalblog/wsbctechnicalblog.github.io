@@ -7,7 +7,7 @@ Author: Willy-Peter Schaub
 Summary: How a One-Character Change Turned into a Full-Contact Git Exercise
 
 >
-> Updated on 2026-02-25 to reflect the latest Azure DevOps interface changes and Git behaviour. The core challenges remain the same, but the steps have been refined for clarity and accuracy.
+> Updated on 2026-02-25 to reflect the latest learning of Git behaviour. The core challenges remain the same, but the steps have been refined for clarity and accuracy.
 >
 
 Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from
