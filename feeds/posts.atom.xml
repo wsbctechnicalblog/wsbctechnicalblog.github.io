@@ -55,7 +55,7 @@ Let us call it &lt;code&gt;Temp&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Repeat Step 3 and Step 4 for all branches under &lt;code&gt;Release/*&lt;/code&gt;:&lt;/p&gt;
 &lt;h3&gt;Step 5: Push the &lt;code&gt;Temp/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin Temp/1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 6: Delete the Release/* Branches from Azure DevOps&lt;/h3&gt;
