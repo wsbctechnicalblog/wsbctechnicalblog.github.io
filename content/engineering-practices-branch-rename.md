@@ -63,48 +63,48 @@ Let us call it `Temp`.
 git clone https://dev.azure.com/your-org/your-project/_git/your-repocd your-repo
 ```
 
-### Step 2: Rename Release/* to Temp/* Locally
+### Step 2: fetch Branches
 
-Fetch all branches first:
+Fetch all branches first, which by the way, does not setup local tracking - that would be too easy
 
 ```
 git fetch --all
 ```
-Rename the branch you are currently on:
+
+### Step 3: Checkout your branch explicitly to enable tracking
+
+```
+git checkout -b Release/1.0 origin/Release/1.0
+```
+
+### Step 4: Rename the branch you are currently on
 
 ```
 git branch -m Release/1.0 Temp/1.0
 ```
 
-Repeat this for all branches under `Release/*`:
+Repeat Step 3 and Step 4 for all branches under `Release/*`:
 
-```
-git branch -m Release/1.1 Temp/1.1
-git branch -m Release/2.0 Temp/2.0
-...
-```
-
-### Step 3: Push the `Temp/*` Branches to Azure DevOps
+### Step 5: Push the `Temp/*` Branches to Azure DevOps
 
 ```
 git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
 ```
 
-### Step 4: Delete the Release/* Branches from Azure DevOps
+### Step 6: Delete the Release/* Branches from Azure DevOps
 
 ```
 git push origin --delete Release/1.0
-git push origin --delete Release/2.0
+...
 ```
 
 At this point, the repository no longer contains Release/*. Everyone takes a deep breath.
 
-### Step 5: Re-clone the Repository
+### Step 7: Re-clone the Repository
 
 Yes, really. This avoids local case-confusion and reference residue.
 
 ```
-
 cd ..
 rm -rf your-repo
 git clone https://dev.azure.com/your-org/your-project/_git/your-repo
@@ -112,27 +112,30 @@ cd your-repo
 git fetch --all
 ```
 
-### Step 6: Rename Temp/* to release/*
+### Step 8: Checkout your branch explicitly to enable tracking
+
+```
+git checkout -b Temp/1.0 origin/Temp/1.0
+```
+
+### Step 9: Rename the branch you are currently on:
 
 ```
 git branch -m Temp/1.0 release/1.0
-git branch -m Temp/2.0 release/2.0
-...
 ```
 
-### Step 7: Push the `release/*` Branches to Azure DevOps
+Repeat Step 8 and Step 9 for all branches under `Release/*`.
+
+### Step 10: Push the `release/*` Branches to Azure DevOps
 
 ```
 git push origin release/1.0
-git push origin release/2.0
-...
 ```
 
-### Step 8: Delete the Temp/* Branches from Azure DevOps
+### Step 11: Delete the Temp/* Branches from Azure DevOps
 
 ```
 git push origin --delete Temp/1.0
-git push origin --delete Temp/2.0
 ...
 ```
 

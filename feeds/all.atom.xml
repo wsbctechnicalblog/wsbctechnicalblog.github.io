@@ -40,32 +40,31 @@ Let us call it &lt;code&gt;Temp&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://dev.azure.com/your-org/your-project/_git/your-repocd your-repo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Step 2: Rename Release/&lt;em&gt; to Temp/&lt;/em&gt; Locally&lt;/h3&gt;
-&lt;p&gt;Fetch all branches first:&lt;/p&gt;
+&lt;h3&gt;Step 2: fetch Branches&lt;/h3&gt;
+&lt;p&gt;Fetch all branches first, which by the way, does not setup local tracking - that would be too easy&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git fetch --all
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Rename the branch you are currently on:&lt;/p&gt;
+&lt;h3&gt;Step 3: Checkout your branch explicitly to enable tracking&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout -b Release/1.0 origin/Release/1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 4: Rename the branch you are currently on&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Release/1.0 Temp/1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Repeat this for all branches under &lt;code&gt;Release/*&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Release/1.1 Temp/1.1
-git branch -m Release/2.0 Temp/2.0
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3&gt;Step 3: Push the &lt;code&gt;Temp/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
+&lt;p&gt;Repeat Step 3 and Step 4 for all branches under &lt;code&gt;Release/*&lt;/code&gt;:&lt;/p&gt;
+&lt;h3&gt;Step 5: Push the &lt;code&gt;Temp/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin Temp/1.0git push origin Temp/1.1git push origin Temp/2.0Show more lines
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Step 4: Delete the Release/* Branches from Azure DevOps&lt;/h3&gt;
+&lt;h3&gt;Step 6: Delete the Release/* Branches from Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin --delete Release/1.0
-git push origin --delete Release/2.0
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At this point, the repository no longer contains Release/*. Everyone takes a deep breath.&lt;/p&gt;
-&lt;h3&gt;Step 5: Re-clone the Repository&lt;/h3&gt;
+&lt;h3&gt;Step 7: Re-clone the Repository&lt;/h3&gt;
 &lt;p&gt;Yes, really. This avoids local case-confusion and reference residue.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd ..
 rm -rf your-repo
@@ -74,21 +73,21 @@ cd your-repo
 git fetch --all
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Step 6: Rename Temp/&lt;em&gt; to release/&lt;/em&gt;&lt;/h3&gt;
+&lt;h3&gt;Step 8: Checkout your branch explicitly to enable tracking&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout -b Temp/1.0 origin/Temp/1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Step 9: Rename the branch you are currently on:&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch -m Temp/1.0 release/1.0
-git branch -m Temp/2.0 release/2.0
-...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Step 7: Push the &lt;code&gt;release/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
+&lt;p&gt;Repeat Step 8 and Step 9 for all branches under &lt;code&gt;Release/*&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Step 10: Push the &lt;code&gt;release/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin release/1.0
-git push origin release/2.0
-...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Step 8: Delete the Temp/* Branches from Azure DevOps&lt;/h3&gt;
+&lt;h3&gt;Step 11: Delete the Temp/* Branches from Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin --delete Temp/1.0
-git push origin --delete Temp/2.0
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
