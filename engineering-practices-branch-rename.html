@@ -49,7 +49,11 @@
         </div>
     
         <div class="entry-content">
-            <p>Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from</p>
+            <blockquote>
+<p>Updated on 2026-02-25 to reflect the latest learning of Git behaviour. The core challenges remain the same, but the steps have been refined for clarity and accuracy.
+</p>
+</blockquote>
+<p>Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from</p>
 <p><code>Release/&lt;branch-name&gt;</code>
 to
 <code>release/&lt;branch-name&gt;</code></p>
@@ -106,6 +110,7 @@ Let us call it <code>Temp</code>.</p>
 <p>Repeat Step 3 and Step 4 for all branches under <code>Release/*</code>:</p>
 <h3>Step 5: Push the <code>Temp/*</code> Branches to Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin Temp/1.0
+...
 </code></pre></div>
 
 <h3>Step 6: Delete the Release/* Branches from Azure DevOps</h3>
@@ -134,6 +139,7 @@ git fetch --all
 <p>Repeat Step 8 and Step 9 for all branches under <code>Release/*</code>.</p>
 <h3>Step 10: Push the <code>release/*</code> Branches to Azure DevOps</h3>
 <div class="highlight"><pre><span></span><code>git push origin release/1.0
+...
 </code></pre></div>
 
 <h3>Step 11: Delete the Temp/* Branches from Azure DevOps</h3>

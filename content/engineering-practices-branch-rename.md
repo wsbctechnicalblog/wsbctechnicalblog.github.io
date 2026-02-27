@@ -6,6 +6,10 @@ Slug: engineering-practices-branch-rename
 Author: Willy-Peter Schaub
 Summary: How a One-Character Change Turned into a Full-Contact Git Exercise
 
+>
+> Updated on 2026-02-25 to reflect the latest learning of Git behaviour. The core challenges remain the same, but the steps have been refined for clarity and accuracy.
+>
+
 Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from
 
 `Release/<branch-name>`
@@ -89,6 +93,7 @@ Repeat Step 3 and Step 4 for all branches under `Release/*`:
 
 ```
 git push origin Temp/1.0
+...
 ```
 
 ### Step 6: Delete the Release/* Branches from Azure DevOps
@@ -130,6 +135,7 @@ Repeat Step 8 and Step 9 for all branches under `Release/*`.
 
 ```
 git push origin release/1.0
+...
 ```
 
 ### Step 11: Delete the Temp/* Branches from Azure DevOps
