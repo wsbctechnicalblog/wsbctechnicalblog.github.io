@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-02-25T00:00:00-08:00</updated><entry><title>Renaming Git Branches in Azure DevOps: A Simple Task, Eight Easy Steps, and Mild Despair</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-branch-rename.html" rel="alternate"></link><published>2026-02-25T00:00:00-08:00</published><updated>2026-02-25T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-02-25:/engineering-practices-branch-rename.html</id><summary type="html">&lt;p&gt;How a One-Character Change Turned into a Full-Contact Git Exercise&lt;/p&gt;</summary><content type="html">&lt;p&gt;Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-02-25T00:00:00-08:00</updated><entry><title>Renaming Git Branches in Azure DevOps: A Simple Task, Eight Easy Steps, and Mild Despair</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-branch-rename.html" rel="alternate"></link><published>2026-02-25T00:00:00-08:00</published><updated>2026-02-25T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-02-25:/engineering-practices-branch-rename.html</id><summary type="html">&lt;p&gt;How a One-Character Change Turned into a Full-Contact Git Exercise&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Updated on 2026-02-25 to reflect the latest Azure DevOps interface changes and Git behaviour. The core challenges remain the same, but the steps have been refined for clarity and accuracy.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Every so often, we decide to “clean things up”. In this particular episode of organisational optimism, the goal was innocent enough: rename all branches from&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Release/&amp;lt;branch-name&amp;gt;&lt;/code&gt;
 to
 &lt;code&gt;release/&amp;lt;branch-name&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -56,6 +60,7 @@ Let us call it &lt;code&gt;Temp&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Repeat Step 3 and Step 4 for all branches under &lt;code&gt;Release/*&lt;/code&gt;:&lt;/p&gt;
 &lt;h3&gt;Step 5: Push the &lt;code&gt;Temp/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin Temp/1.0
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 6: Delete the Release/* Branches from Azure DevOps&lt;/h3&gt;
@@ -84,6 +89,7 @@ git fetch --all
 &lt;p&gt;Repeat Step 8 and Step 9 for all branches under &lt;code&gt;Release/*&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Step 10: Push the &lt;code&gt;release/*&lt;/code&gt; Branches to Azure DevOps&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push origin release/1.0
+...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 11: Delete the Temp/* Branches from Azure DevOps&lt;/h3&gt;
