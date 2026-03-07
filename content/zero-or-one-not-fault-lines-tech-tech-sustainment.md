@@ -8,7 +8,7 @@ Summary: Stop Funding the Wrong Work: The Sustainment vs EOL Upgrade Headache
 
 Over the last few weeks, I have been analysing the effort to upgrade solutions are coming through as excessive. This is not a finger-pointing exercise. It is a clarity exercise. If we cannot trust the data, we cannot defend the strategy, protect the funding, or credibly report progress.
 
-> ![Zero or One, not Fault Lines JOurnal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
+> ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
 
 Here is the problem in plain language: we keep blending three different types of work into one bucket, and then we wonder why the EOL programmes look “expensive” and “slow”. In practice, that confusion creates real harm, because it hides where the effort is truly going, it drains End-Of-Life) funding, and it gives leadership a distorted view of whether we are reducing risk or simply paying interest on backlog.
 
