@@ -11,7 +11,7 @@ In a recent conversation, I was asked a deceptively simple question: **“Where 
 It is the kind of question leaders are expected to answer with confidence. A clean arc. A crisp destination. A reassuring narrative that suggests we know exactly where the road is taking us.
 My response was different.
 
-> ![Zero or One, not Fault Lines JOurnal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
+> ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
 
 I said that when I look three years out, I see science fiction, and I am unable to compute a meaningful answer. Not because we lack ambition, and not because we lack vision, but because the pace and nature of technology transformation we are experiencing, particularly with artificial intelligence, makes traditional three‑year forecasting feel increasingly disconnected from reality.
 
@@ -33,7 +33,11 @@ X
 
 ## Our 2029 Ubuntu Vision
 
-I encourage myself and my colleagues to think from 2029 backwards, questioning our people, processes, and products, so that we create real value today while deliberately preparing our engineering ecosystem for the future. A future we envision as follows:
+I encourage myself and my colleagues to think from 2029 backwards, questioning our people, processes, and products, so that we create real value today while deliberately preparing our engineering ecosystem for the future. 
+
+> ![2029 Ubuntu Vision](../images/zero-or-one-not-fault-lines-2029-ubuntu-vision-1.png) 
+
+A future I envision as follows:
 
 >
 > By 2029, each engineer will be a team unto themselves, responsibly managing automation, AI agents, and platforms, while maintaining strong accountability to one another. Engineers will work within a horizontal value stream matrix, prioritising organisational goals rather than local optimisation. Ubuntu shapes this future: ‘I am because we are.’”
