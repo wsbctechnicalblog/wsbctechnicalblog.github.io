@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - What is our ATDR mindset?
-Date: 2026-XX-XX
+Date: 2026-03-09
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-what-is-our-atdr-mindset
@@ -9,7 +9,7 @@ Summary: No Lone Wolves. No Over‑Engineering. Only Excellence.
 There are times when a name defines a movement, and times when a movement outgrows its name. ATDR is both.
 **ATDR** began as our `Automated Technology Debt Remediation` project in 2025. It was meant to be a toolset. It evolved into a mindset. It became a service that our teams depend on, a structure with political backing, and a trusted engineering companion. We deliberated intensely about renaming it, because the acronym is admittedly cryptic. Yet its value, recognition, and influence have become too significant to discard. Therefore, the **ATDR** Mindset remains.
 
-> ![Zero or One, not Fault Lines JOurnal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
+> ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
 
 This is not about branding. This is about building a disciplined engineering culture that strengthens stakeholder experience, reduces risk, and avoids unnecessary cost.
 
@@ -46,6 +46,10 @@ It is a reliable support structure designed to empower engineering teams to make
 - Elevate stakeholder trust
 
 Isolation may produce impressive engineering artefacts, but it seldom produces sustainable engineering.
+
+>
+> ATDR does not tell engineers what to do. It does not inspect or enforce. **It collaborates and supports!**
+>
 
 # An isolation example from personal experience
 
@@ -115,6 +119,12 @@ Engineering is binary at its core. Either we do it right, or we do not. Either w
 **ATDR** is our commitment to disciplined engineering.
 
 It is our stand against unnecessary complexity. It is our promise to each other that we will build strong, simple, secure, maintainable solutions. And above all, it is our reminder that we engineer better together than we ever will in isolation.
+
+Marius, if you are reading this, I have a few alternatives for **ATDR** which may be more user friendly:
+
+- Accelerated Trusted Delivery Results
+- Assured Transformation Delivery Rhythm
+- Aligned Technology Delivery Readiness
 
 Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.
 
