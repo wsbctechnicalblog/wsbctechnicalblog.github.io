@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-03-09T00:00:00-07:00</updated><entry><title>Zero or One, not Fault Lines - What is our ATDR mindset?</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-what-is-our-atdr-mindset.html" rel="alternate"></link><published>2026-03-09T00:00:00-07:00</published><updated>2026-03-09T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-03-09:/zero-or-one-not-fault-lines-what-is-our-atdr-mindset.html</id><summary type="html">&lt;p&gt;No Lone Wolves. No Over‑Engineering. Only Excellence.&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are times when a name defines a movement, and times when a movement outgrows its name. ATDR is both.
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-03-23T00:00:00-07:00</updated><entry><title>Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-tech-tech-sustainment.html" rel="alternate"></link><published>2026-03-23T00:00:00-07:00</published><updated>2026-03-23T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-03-23:/zero-or-one-not-fault-lines-tech-tech-sustainment.html</id><summary type="html">&lt;p&gt;Stop Funding the Wrong Work: The Sustainment vs EOL Upgrade Headache&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the last few weeks, I have been analysing the effort estimated to upgrade solutions as being excessive. This is not a finger-pointing exercise. It is a clarity exercise. If we cannot trust the data, we cannot defend the strategy, protect the funding, or credibly report progress.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here is the problem in plain language: we keep blending three different types of work into one bucket, and then we wonder why the EOL programmes look “expensive” and “slow”. In practice, that confusion creates real harm, because it hides where the effort is truly going, it drains End-Of-Life) funding, and it gives leadership a distorted view of whether we are reducing risk or simply paying interest on backlog.&lt;/p&gt;
+&lt;p&gt;The core distinction (the one rule that matters)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If the work makes the solution upgrade-ready, it is &lt;strong&gt;sustainment&lt;/strong&gt;.
+If the work performs the upgrade, it is &lt;strong&gt;EOL remediation&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That boundary is already reflected in how we talk about readiness, guardrails, and “doing the right thing, at the right time, all the time”. Our pre-flight mindset is explicit: paved roads and standards, supported frameworks, vulnerability baselines, measurable quality outcomes, and automation that prevents surprises. Those are readiness activities. They are not the upgrade itself.&lt;/p&gt;
+&lt;h2&gt;Sustainment (including technical debt remediation)&lt;/h2&gt;
+&lt;p&gt;Sustainment is the work that keeps a solution operable, supportable, and ready for change. It is stabilisation and incremental improvement. It is where you pay down the friction that makes upgrades painful.&lt;/p&gt;
+&lt;p&gt;Typical sustainment activities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Refactoring brittle or over-complex code&lt;/li&gt;
+&lt;li&gt;Improving unit and regression coverage, including automation&lt;/li&gt;
+&lt;li&gt;Removing deprecated libraries&lt;/li&gt;
+&lt;li&gt;Architecture clean-up&lt;/li&gt;
+&lt;li&gt;Preparing a solution so that an upgrade can be executed safely&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This aligns with our baseline expectation: quality gates, vulnerability reduction, and test discipline before we do anything high-impact.&lt;/p&gt;
+&lt;h2&gt;Technical debt (what it is, not how you fund it)&lt;/h2&gt;
+&lt;p&gt;Technical debt is not a project. It is the nature of the work: internal code, architecture, automation, and quality gaps that increase risk, slow delivery, and raise long-term cost. Technical debt exists regardless of whether a vendor EOL date is approaching.&lt;/p&gt;
+&lt;p&gt;In other words: “technical debt” is often what sustainment is addressing. It is not automatically “EOL work” simply because an EOL programme exists. This is exactly why we emphasise test coverage, quality baselines, and guardrails. Building safety and repeatability so that upgrades become predictable, not heroic. [Discussion...on Session | Meeting]&lt;/p&gt;
+&lt;h2&gt;Technology debt / EOL remediation (execution only)&lt;/h2&gt;
+&lt;p&gt;EOL remediation is the act of moving from an unsupported or soon-to-be unsupported platform to a supported one.&lt;/p&gt;
+&lt;p&gt;Typical EOL execution activities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Executing the framework upgrade (for example, a .NET version upgrade)&lt;/li&gt;
+&lt;li&gt;Resolving compatibility issues directly caused by the version change&lt;/li&gt;
+&lt;li&gt;Validating the upgraded solution in supported environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Caution! When the solution is not upgrade-ready, the work to make it ready is &lt;strong&gt;sustainment&lt;/strong&gt;. Treating readiness work as EOL execution inflates EOL cost, hides sustainment demand, and undermines our ability to demonstrate risk reduction through disciplined delivery.&lt;/p&gt;
+&lt;p&gt;A simple geek picture (because we need fewer debates and more consistency)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;┌──────────────────────────┐
+│        Sustainment       │
+│  (Readiness and quality) │
+│                          │
+│ • Refactoring            │
+│ • Test automation        │
+│ • Architecture cleanup   │
+│ • Upgrade preparation    │
+└──────────────┬───────────┘
+               │ Upgrade-ready solution
+               ▼
+┌──────────────────────────┐
+│  Technology EOL Upgrade  │
+│  (Execution only)        │
+│                          │
+│ • Version upgrade        │
+│ • Compatibility fixes    │
+│ • Supported runtime      │
+└──────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is not academic. It is how we protect funding, measure progress, and avoid repeating the “late discovery, late scramble, high cost” pattern we have all experienced.&lt;/p&gt;
+&lt;p&gt;Why I am stressing about this (and why you should care)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cost transparency&lt;/strong&gt; - When sustainment is logged as EOL execution, we create the illusion that EOL work is inefficient. In reality, we are often doing two jobs at once: first making the solution safe to touch, then upgrading it. The cost is real, but the classification is wrong, and wrong classification leads to wrong decisions. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Funding protection&lt;/strong&gt; - EOL programmes exist to remove exposure from unsupported platforms. If we use that funding to bankroll general readiness work, we will eventually run out of runway before we reduce the risk we promised to reduce. That is how programmes get labelled as “failing”, when the true failure was categorisation discipline.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Engineering behaviour&lt;/strong&gt; - We get what we measure. If timesheets reward “charging it somewhere that has budget”, we will train the organisation to do exactly that. If we reinforce the correct distinction, we create better behaviours: earlier testing, stronger guardrails, fewer surprises, and faster execution when it is time to upgrade. That is stakeholder experience and risk reduction in action.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Share the rule widely:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If it makes the upgrade possible, it is &lt;strong&gt;sustainment&lt;/strong&gt;. If it performs the upgrade, it is EOL &lt;strong&gt;technology debt&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Over to the you: &lt;strong&gt;do you have the same headache?&lt;/strong&gt;
+I want to hear from you, because I suspect this is not unique to us.&lt;/p&gt;
+&lt;p&gt;If you have solved this well, please share your approach with the community. If you are still wrestling with it, share the pain points. Either way, we will all benefit from consistent practices that improve cost transparency, protect EOL funding, and accurately report progress, while strengthening stakeholder experience through predictable delivery. &lt;/p&gt;
+&lt;p&gt;A closing thought (because it is worth repeating)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Discipline is not bureaucracy. Discipline is how we buy speed and confidence.
+When we classify work correctly, we get better decisions, better funding outcomes, and better engineering behaviour.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="journal"></category></entry><entry><title>Zero or One, not Fault Lines - What is our ATDR mindset?</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-what-is-our-atdr-mindset.html" rel="alternate"></link><published>2026-03-09T00:00:00-07:00</published><updated>2026-03-09T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-03-09:/zero-or-one-not-fault-lines-what-is-our-atdr-mindset.html</id><summary type="html">&lt;p&gt;No Lone Wolves. No Over‑Engineering. Only Excellence.&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are times when a name defines a movement, and times when a movement outgrows its name. ATDR is both.
 &lt;strong&gt;ATDR&lt;/strong&gt; began as our &lt;code&gt;Automated Technology Debt Remediation&lt;/code&gt; project in 2025. It was meant to be a toolset. It evolved into a mindset. It became a service that our teams depend on, a structure with political backing, and a trusted engineering companion. We deliberated intensely about renaming it, because the acronym is admittedly cryptic. Yet its value, recognition, and influence have become too significant to discard. Therefore, the &lt;strong&gt;ATDR&lt;/strong&gt; Mindset remains.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
@@ -3751,47 +3829,4 @@ These are my &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your
 &lt;p&gt;DOWNLOAD &amp;gt;&amp;gt; &lt;a href="/documents/ai-fundamentals-cheatsheet.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry><entry><title>Artificial Intelligence - AI-900 - Guiding Principles</title><link href="https://wsbctechnicalblog.github.io/ai-fundamentals-ai900-ai-guiding-principles.html" rel="alternate"></link><published>2024-09-27T00:00:00-07:00</published><updated>2024-09-27T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-09-27:/ai-fundamentals-ai900-ai-guiding-principles.html</id><summary type="html">&lt;p&gt;"Guiding principles aim to ensure responsible and ethical AI development and deployment." - ChatGPT GPT-4o&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="alert" src="../images/alert-tiny.png"&gt;
-These are my living &lt;strong&gt;personal&lt;/strong&gt; study notes. Use them at your own &lt;strong&gt;risk&lt;/strong&gt;!
-&lt;/p&gt;
-&lt;p&gt;&lt;img alt="guiding-principles" src="../images/ai-fundamentals-ai900-guiding-principles.png"&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Examples&lt;/h2&gt;
-&lt;p&gt;Here are a few examples of solutions that adhere to guiding principles:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Accountability&lt;/strong&gt; - &lt;em&gt;Solutions designed to conform to governance frameworks and organizational standards, ensuring compliance with established legal and ethical principles.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Inclusivity&lt;/strong&gt; - &lt;em&gt;Solutions created to support individuals who are visually impaired or blind.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Transparency&lt;/strong&gt; - &lt;em&gt;Share details on a solution's features, possibilities, and constraints. People understand how to use the AI solution.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy &amp;amp; Security&lt;/strong&gt; - &lt;em&gt;Solutions that safeguard user data while still gathering valuable insights for enhancing services.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fairness&lt;/strong&gt; - &lt;em&gt;Solutions that yield the same outcomes for individuals residing in both urban and rural areas, gender, race, or other bias.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reliability &amp;amp; Safety&lt;/strong&gt; - &lt;em&gt;Solutions designed to include resistance to harmful manipulation.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Unintended Consequences&lt;/strong&gt; - &lt;em&gt;Solutions designed to identify and reduce the spread of harmful content, such as misinformation, hate speech, and fake news on its platform.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2&gt;Help around the corner&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Microsoft's &lt;a href="https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/?msockid=00c538c26eda63c107f52ca16fce622e"&gt;AI Fairness Checklist&lt;/a&gt; encourages engineers to evaluate bias risks throughout every phase of the model lifecycle.&lt;/li&gt;
-&lt;li&gt;Microsoft’s &lt;a href="https://www.microsoft.com/en-us/garage/wall-of-fame/seeing-ai/?msockid=00c538c26eda63c107f52ca16fce622e"&gt;Seeing AI&lt;/a&gt; solution helps visually impaired people by describing their surroundings, recognizing people, and reading text aloud, promoting inclusivity and access to technology for everyone.&lt;/li&gt;
-&lt;li&gt;Microsoft's &lt;a href="https://news.microsoft.com/apac/features/ai-for-earth-helping-save-the-planet-with-data-science/?msockid=00c538c26eda63c107f52ca16fce622e"&gt;AI for Earth&lt;/a&gt; uses AI to address environmental challenges, from climate change to biodiversity loss, ensuring AI contributes positively to the planet’s sustainability.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;FRAUPIT&lt;/h2&gt;
-&lt;p&gt;Not ideal, but I use the FRAUPIT catch phrase to remember: &lt;strong&gt;F&lt;/strong&gt;airness, &lt;strong&gt;R&lt;/strong&gt;eliability &amp;amp; Safety, &lt;strong&gt;A&lt;/strong&gt;ccountability, &lt;strong&gt;U&lt;/strong&gt;nintended Consequences, &lt;strong&gt;P&lt;/strong&gt;rivacy &amp;amp; Security, &lt;strong&gt;I&lt;/strong&gt;nclusivity, and &lt;strong&gt;T&lt;/strong&gt;ransparency.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;You perused:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;this-&amp;gt;&lt;/strong&gt;&lt;a href="/ai-fundamentals-ai900-ai-guiding-principles.html"&gt;guiding-principles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Enjoy other learning notes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-bots.html"&gt;bots&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-machine-learning-types.html"&gt;common-machine-learning-types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-common-workloads.html"&gt;common-workloads&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-generative-ai.html"&gt;generative-ai&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-natural-language-processing.html"&gt;natural-language-processing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-vision-workloads.html"&gt;vision-workloads&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;AI-900 Quick reference Poster:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/ai-fundamentals-ai900-poster.html"&gt;ai-900 poster&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry></feed>
+&lt;p&gt;Enjoy!&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="learning"></category></entry></feed>
