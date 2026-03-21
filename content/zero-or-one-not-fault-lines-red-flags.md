@@ -203,5 +203,7 @@ When you hear these red flags, do not ask “Who is at fault?”. Instead, ask:
 
 Strong engineering cultures are not built by avoiding these conversations. They are built by recognising the signals early and acting deliberately. Because the best systems do not rely on memory, courage, or luck. They rely on clarity, evidence, and care for the next person who has to change them.
 
+That is it for today!
+
 Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.
 
