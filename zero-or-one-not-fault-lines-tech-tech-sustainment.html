@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Why extract methods when modifying legacy code? - </title>
+        <title>Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,70 +33,109 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/why-extract-methods.html" rel="bookmark"
-            title="Permalink to Why extract methods when modifying legacy code?">Why extract methods when modifying legacy code?</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-tech-tech-sustainment.html" rel="bookmark"
+            title="Permalink to Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle">Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Alex Bunardzic on Fri 16 October 2020</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 23 March 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Legacy code is hard to test, so extract methods by writing micro tests</p>
+            <p>Stop Funding the Wrong Work: The Sustainment vs EOL Upgrade Headache</p>
         </div>
     
         <div class="entry-content">
-            <p>Allow me a bit of introspection. I’ve been in Software Engineering field for 30 years. During those 30 years I modified a lot of legacy software. Here is how I would typically do it:</p>
-<p>Over the years I have formed certain habits when working with legacy code. Because on most projects I get paid to deliver working software that is easy to maintain, I cannot afford the luxury of taking my sweet time trying to fully understand the legacy code I am about to modify. So I tend to skim. Skimming the code helps me quickly identify relevant portions in the repo. It is a race with time, and I don’t have cycles at my disposal to dwell on less relevant minutia. I’m always going for the most relevant area in the code. Once I find it, I slow down and start analyzing it.</p>
-<p>I rely heavily on IDEs (power tools). Doesn’t matter which power tool, these days they’re all pretty much capable of doing the same thing. What’s important to me is the ability to quickly find where functions are called and where variables are used.</p>
-<p>Sooner or later, after I’m done skimming the code and analyzing the code segment I’m intending to change, I identify a place where I want to insert some code. Now that I understand the meaning of the classes, components, objects involved in performing the function, I first write a test.</p>
-<p>Following that, I write code to make the test pass. I type the name of the object I intend to use, and then press the period (dot, or “.”) key. Immediately, IDE responds with giving me a full list of methods defined for that object. All those methods are callable from the location where my cursor is.</p>
-<p>I then pick the method that makes sense to me. I fill in the blanks (i.e. supply values for the expected arguments/parameters), save the change, and run the test. If the test passes, I’m done with that micro change.</p>
-<p>The above activity typically gets repeated many times per hour. Throughout the workday, it is not unusual to see the above activity repeated dozens, even hundreds of times.</p>
-<p>I believe the above description of the way I modify software is not unique to the way I formed my work habits. I believe it describes a typical flow that many (I’d even say most) software engineers adhere to.</p>
-<h2>A few observations</h2>
-<p>The first thing that is apparent after observing the above described way of modifying legacy software is the absence of any work on documentation. Experience has shown that software developers very rarely spend time reaching out for documentation. Time spent preparing the documentation and generating it to produce HTML-style online documents is time wasted.</p>
-<p>Instead, most developers rely solely upon power tools (IDEs). And rightly so (IDEs never lie, as they always offer the real-time picture of the system we are modifying; documentation is more often than not stale).</p>
-<p>Another thing worth noticing is that developers don’t read the source code the way it was written. When writing code from scratch (first pass), many developers tend to write in long functions. Source code tends to bunch up. Bunching code up makes it easier to read and reason about on the first pass, and also makes it easier to debug. But after the first pass is finished, people rarely, if ever, consume the code the way it was written. If we catch ourselves reading a whole function from beginning to end, it is most likely due to the fact that we have exhausted all other options and have no choice but to slow down and read the code in a pedestrian way. However, in my experience, that slow and orderly reading of the code seldom happens.</p>
-<h2>Problems caused by the bunched up code</h2>
-<p>If we were to leave the code as it was written during the first pass (i.e. long functions, a lot of bunched up code to enable easy initial understanding and debugging), it would render IDEs powerless. If we cram all capabilities an object can offer in a single giant function, later on when trying to utilize that object, IDEs will be of no help. IDEs will only show the existence of one method (which will probably contain a large list of parameters providing values that enforce the branching logic inside that method). So we won’t know how to really use that object unless we open its source code and read its processing logic very carefully. And even then, our heads will probably hurt.</p>
-<p>Another problem with hastily cobbled up, ‘bunched up’ code is that its processing logic is not testable. While we can still write an end-to-end test for that code (input values and the expected output values), we have no way of knowing if the bunched up code is doing any other potentially risky processing. Also, we have no way of testing for edge cases, unusual scenarios, difficult-to-reproduce scenarios etc. That renders our code untestable. Which is a very bad thing to live with.</p>
-<h2>Break up bunched up code by extracting methods</h2>
-<p>Long functions/methods are always a sign of muddled thinking. When a block of code contains numerous statements, it usually means that it is doing way too much processing. Cramming a lot of processing in one place typically means we haven’t carefully thought things through.</p>
-<p>One need not look further than into how companies are typically organized. Instead of having hundreds of employees working in a single department, companies tend to break up into numerous smaller departments. That way, it is much clearer where responsibilities lie.</p>
-<p>Software code is no different. An application exists in order to automate a lot of intricate processing. Processing gets broken into a number of smaller steps, so each step must be mapped onto a separate, isolated block of code. We create such separate, isolated and autonomous block of code by extracting methods. We take a long, bulky block of code and break it up by extracting responsibilities into separate blocks of code.</p>
-<h2>Extracted methods enable better naming</h2>
-<p>Software code is written by developers, but in actuality it is much more often consumed (i.e. read) by developers than it is written.</p>
-<p>When consuming software code, it helps if the code is expressive. Expressiveness boils down to proper structure and proper naming. Consider the following statement:</p>
-<p><code>if((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65))</code></p>
-<p>It would be literally impossible to understand the meaning and the intention of the above statement without actually running the code and stepping through it with a debugger. Such activity is what we call GAK (Geek at Keyboard). It is 100% unproductive, and is quite wasteful.</p>
-<p>Here is where extract method and naming come to the rescue. Take the complex statement contained within the if statement, extract it into its own method, and give that method a meaningful name. For example:</p>
-<p><code>public bool IsEligible(bool b, bool x, bool y, int z) {</code></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>return ((x &amp;&amp; !y) &amp;&amp; !b) || (b &amp;&amp; y) &amp;&amp; !(z &gt;= 65);</code></p>
-<p><code>}</code></p>
-<p>Now replace the ugly if statement with a more readable statement:</p>
-<p><code>if(IsEligible(b, x, y, z))</code></p>
-<p>Of course, we should also replace dumb one character variable names with more meaningful names to improve readability.</p>
-<h2>Reuse in legacy code</h2>
-<p>Experience shows that any functionality that is not extracted and properly named and moved to the most reasonable class will never be reused. Extract method fosters frequent reuse, which goes a long way toward improving code quality.</p>
-<h2>Testing the legacy code</h2>
-<p>Writing tests for the existing code is hard and feels less rewarding than doing TDD. Even after we identify that there should be several tests that ensure production code works as expected, when we realize that production code has to be changed to enable testing, we often decide to skip writing tests. Our goals to deliver testable code slowly but surely keep diminishing.</p>
-<p>Writing tests for the legacy code is tedious because it often requires to spend a lot of time and code to set up the preconditions. That’s the opposite of how we write tests when doing TDD, where time spent on writing preconditions is minimal.</p>
-<p>Best way to make legacy code testable is to practice the extract method approach. Locating a block of code nested in loops and conditionals and extracting it will enable us to write small precise tests. Such tests on extracted functions improve not only the testability of the code, but also the understandability. If legacy code now becomes more understandable thanks to extracting methods and writing legible tests, chances of introducing any defects are drastically reduced.</p>
-<h2>Conclusion</h2>
-<p>Most of the discussion pertaining to extracting methods would not be necessary when we’re doing TDD. Writing one test first and then making the test pass, then scanning that code for more insights into how the code should be structured and improved, making improvements, and finally making changes part of the code base will guarantee that there will be no need to worry about extracting methods. Since legacy code usually means code that was not crafted following TDD methodology, we are forced to adopt a different approach. In my experience, extract methods gives us the biggest bang for the buck when it comes to modifying legacy code while avoiding risks of breaking the functionality.</p>
-<p><br /><br /></p>
+            <p>Over the last few weeks, I have been analysing the effort estimated to upgrade solutions as being excessive. This is not a finger-pointing exercise. It is a clarity exercise. If we cannot trust the data, we cannot defend the strategy, protect the funding, or credibly report progress.</p>
+<blockquote>
+<p><img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"> </p>
+</blockquote>
+<p>Here is the problem in plain language: we keep blending three different types of work into one bucket, and then we wonder why the EOL programmes look “expensive” and “slow”. In practice, that confusion creates real harm, because it hides where the effort is truly going, it drains End-Of-Life) funding, and it gives leadership a distorted view of whether we are reducing risk or simply paying interest on backlog.</p>
+<p>The core distinction (the one rule that matters)</p>
+<blockquote>
+<p>If the work makes the solution upgrade-ready, it is <strong>sustainment</strong>.
+If the work performs the upgrade, it is <strong>EOL remediation</strong>.
+</p>
+</blockquote>
+<p>That boundary is already reflected in how we talk about readiness, guardrails, and “doing the right thing, at the right time, all the time”. Our pre-flight mindset is explicit: paved roads and standards, supported frameworks, vulnerability baselines, measurable quality outcomes, and automation that prevents surprises. Those are readiness activities. They are not the upgrade itself.</p>
+<h2>Sustainment (including technical debt remediation)</h2>
+<p>Sustainment is the work that keeps a solution operable, supportable, and ready for change. It is stabilisation and incremental improvement. It is where you pay down the friction that makes upgrades painful.</p>
+<p>Typical sustainment activities:</p>
+<ul>
+<li>Refactoring brittle or over-complex code</li>
+<li>Improving unit and regression coverage, including automation</li>
+<li>Removing deprecated libraries</li>
+<li>Architecture clean-up</li>
+<li>Preparing a solution so that an upgrade can be executed safely</li>
+</ul>
+<p>This aligns with our baseline expectation: quality gates, vulnerability reduction, and test discipline before we do anything high-impact.</p>
+<h2>Technical debt (what it is, not how you fund it)</h2>
+<p>Technical debt is not a project. It is the nature of the work: internal code, architecture, automation, and quality gaps that increase risk, slow delivery, and raise long-term cost. Technical debt exists regardless of whether a vendor EOL date is approaching.</p>
+<p>In other words: “technical debt” is often what sustainment is addressing. It is not automatically “EOL work” simply because an EOL programme exists. This is exactly why we emphasise test coverage, quality baselines, and guardrails. Building safety and repeatability so that upgrades become predictable, not heroic. [Discussion...on Session | Meeting]</p>
+<h2>Technology debt / EOL remediation (execution only)</h2>
+<p>EOL remediation is the act of moving from an unsupported or soon-to-be unsupported platform to a supported one.</p>
+<p>Typical EOL execution activities:</p>
+<ul>
+<li>Executing the framework upgrade (for example, a .NET version upgrade)</li>
+<li>Resolving compatibility issues directly caused by the version change</li>
+<li>Validating the upgraded solution in supported environments</li>
+</ul>
+<p>Caution! When the solution is not upgrade-ready, the work to make it ready is <strong>sustainment</strong>. Treating readiness work as EOL execution inflates EOL cost, hides sustainment demand, and undermines our ability to demonstrate risk reduction through disciplined delivery.</p>
+<p>A simple geek picture (because we need fewer debates and more consistency)</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────┐
+│        Sustainment       │
+│  (Readiness and quality) │
+│                          │
+│ • Refactoring            │
+│ • Test automation        │
+│ • Architecture cleanup   │
+│ • Upgrade preparation    │
+└──────────────┬───────────┘
+               │ Upgrade-ready solution
+               ▼
+┌──────────────────────────┐
+│  Technology EOL Upgrade  │
+│  (Execution only)        │
+│                          │
+│ • Version upgrade        │
+│ • Compatibility fixes    │
+│ • Supported runtime      │
+└──────────────────────────┘
+</code></pre></div>
+
+<p>This is not academic. It is how we protect funding, measure progress, and avoid repeating the “late discovery, late scramble, high cost” pattern we have all experienced.</p>
+<p>Why I am stressing about this (and why you should care)</p>
+<ul>
+<li><strong>Cost transparency</strong> - When sustainment is logged as EOL execution, we create the illusion that EOL work is inefficient. In reality, we are often doing two jobs at once: first making the solution safe to touch, then upgrading it. The cost is real, but the classification is wrong, and wrong classification leads to wrong decisions. </li>
+<li><strong>Funding protection</strong> - EOL programmes exist to remove exposure from unsupported platforms. If we use that funding to bankroll general readiness work, we will eventually run out of runway before we reduce the risk we promised to reduce. That is how programmes get labelled as “failing”, when the true failure was categorisation discipline.</li>
+<li><strong>Engineering behaviour</strong> - We get what we measure. If timesheets reward “charging it somewhere that has budget”, we will train the organisation to do exactly that. If we reinforce the correct distinction, we create better behaviours: earlier testing, stronger guardrails, fewer surprises, and faster execution when it is time to upgrade. That is stakeholder experience and risk reduction in action.</li>
+</ul>
+<p>Share the rule widely:</p>
+<blockquote>
+<p>If it makes the upgrade possible, it is <strong>sustainment</strong>. If it performs the upgrade, it is EOL <strong>technology debt</strong>.
+</p>
+</blockquote>
+<p>Over to the you: <strong>do you have the same headache?</strong>
+I want to hear from you, because I suspect this is not unique to us.</p>
+<p>If you have solved this well, please share your approach with the community. If you are still wrestling with it, share the pain points. Either way, we will all benefit from consistent practices that improve cost transparency, protect EOL funding, and accurately report progress, while strengthening stakeholder experience through predictable delivery. </p>
+<p>A closing thought (because it is worth repeating)</p>
+<blockquote>
+<p>Discipline is not bureaucracy. Discipline is how we buy speed and confidence.
+When we classify work correctly, we get better decisions, better funding outcomes, and better engineering behaviour.
+</p>
+</blockquote>
+<p>Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality </a><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">tdd </a><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing </a>
-        | <a href="https://wsbctechnicalblog.github.io/why-extract-methods.html" rel="bookmark"
-         title="Permalink to Why extract methods when modifying legacy code?">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a>
+        | <a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-tech-tech-sustainment.html" rel="bookmark"
+         title="Permalink to Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
