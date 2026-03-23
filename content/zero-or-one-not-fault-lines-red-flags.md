@@ -163,7 +163,7 @@ Anti-dote:
 
 - Standardise environments using infrastructure as code and containerisation. Ensure that the path from development to production is as similar as possible, reducing the “it works on my machine” gap.
 
-##🚩 “We will document it later.”
+## 🚩 “We will document it later.”
 
 > ![Later](../images/zero-or-one-not-fault-lines-red-flags-7.png) 
 
