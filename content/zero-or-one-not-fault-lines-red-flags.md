@@ -54,6 +54,8 @@ Hidden impact:
 Anti-dote:
 
 - Invest in documentation as a first-class deliverable, not an afterthought.
+- Create a culture where sharing knowledge is valued and rewarded, and where documentation is seen as a tool for empowerment, not a chore.
+- **Use your copilot!**
 
 
 ## 🚩 “We had to test it manually, as there is no automation.”
@@ -79,6 +81,7 @@ Hidden impact:
 Anti-dote:
 
 - Prioritise test automation as part of the definition of done, not a future improvement.
+- **Use your copilot!**
 
 ## 🚩 “There is no time to do it right now, we will come back after go‑live.”
 
@@ -103,6 +106,7 @@ Hidden impact:
 Anti-dote:
 
 - Recognise that “no time” is a red flag for technical debt. Make it visible, and create a clear plan to address it before it becomes unmanageable.
+- **Use your copilot!**
 
 ## 🚩 “I have no idea how the solution works.”
 
@@ -126,6 +130,7 @@ Hidden impact:
 
 Anti-dote:
 - Build systems that are observable, explainable, and teachable. Encourage a culture of learning and curiosity, where engineers feel empowered to understand and improve the systems they work on.
+- **Use your copilot!**
 
 ## 🚩 “Do not touch it, it is fragile.”
 
@@ -144,6 +149,7 @@ What it usually means:
 Anti-dote:
 
 - Invest in refactoring, test coverage, and clear interfaces. Create a culture where change is expected, and systems are designed to be resilient to it.
+- **Use your copilot!**
 
 ## 🚩 “It works on my machine.”
 
@@ -180,6 +186,7 @@ What it usually means:
 Anti-dote:
 
 - Make documentation a non-negotiable part of the development process. Treat it as a deliverable that adds value, not a chore that can be deferred indefinitely.
+- **Use your copilot!**
 
 # Why These Red Flags Matter
 
