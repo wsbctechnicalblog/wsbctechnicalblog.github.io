@@ -1,10 +1,12 @@
 Title: Zero or One, not Fault Lines - Red Flags!
-Date: 2026-04-??
+Date: 2026-03-30
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-red flags
 Author: Willy-Peter Schaub
 Summary: A field guide to decoding well‑intentioned explanations that quietly increase risk, cost, and sleepless nights.
+
+I had to add a part two addendum to my previous post, [Zero or One, not Fault Lines - Technology, Technical, versus Sustainment Battle](/zero-or-one-not-fault-lines-tech-tech-sustainment.html) because I have been hearing the same red flags for some time, and I want to start a discussion around what they really mean. 
 
 >
 > **Every engineer means well.**
@@ -55,7 +57,7 @@ Anti-dote:
 
 - Invest in documentation as a first-class deliverable, not an afterthought.
 - Create a culture where sharing knowledge is valued and rewarded, and where documentation is seen as a tool for empowerment, not a chore.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 
 ## 🚩 “We had to test it manually, as there is no automation.”
@@ -81,7 +83,7 @@ Hidden impact:
 Anti-dote:
 
 - Prioritise test automation as part of the definition of done, not a future improvement.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 ## 🚩 “There is no time to do it right now, we will come back after go‑live.”
 
@@ -106,7 +108,7 @@ Hidden impact:
 Anti-dote:
 
 - Recognise that “no time” is a red flag for technical debt. Make it visible, and create a clear plan to address it before it becomes unmanageable.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 ## 🚩 “I have no idea how the solution works.”
 
@@ -130,7 +132,7 @@ Hidden impact:
 
 Anti-dote:
 - Build systems that are observable, explainable, and teachable. Encourage a culture of learning and curiosity, where engineers feel empowered to understand and improve the systems they work on.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 ## 🚩 “Do not touch it, it is fragile.”
 
@@ -149,7 +151,7 @@ What it usually means:
 Anti-dote:
 
 - Invest in refactoring, test coverage, and clear interfaces. Create a culture where change is expected, and systems are designed to be resilient to it.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 ## 🚩 “It works on my machine.”
 
@@ -168,6 +170,7 @@ What it usually means:
 Anti-dote:
 
 - Standardise environments using infrastructure as code and containerisation. Ensure that the path from development to production is as similar as possible, reducing the “it works on my machine” gap.
+- **Use your AI copilot to help you with the heavy lifting!**
 
 ## 🚩 “We will document it later.”
 
@@ -186,7 +189,7 @@ What it usually means:
 Anti-dote:
 
 - Make documentation a non-negotiable part of the development process. Treat it as a deliverable that adds value, not a chore that can be deferred indefinitely.
-- **Use your copilot!**
+- **Use your AI copilot to help you with the heavy lifting!**
 
 # Why These Red Flags Matter
 
@@ -209,6 +212,8 @@ When you hear these red flags, do not ask “Who is at fault?”. Instead, ask:
 - Where can we make quality repeatable rather than heroic?
 
 Strong engineering cultures are not built by avoiding these conversations. They are built by recognising the signals early and acting deliberately. Because the best systems do not rely on memory, courage, or luck. They rely on clarity, evidence, and care for the next person who has to change them.
+
+Next week I will elaborate on the `Use your AI copilot to help you with the heavy lifting!` references. 
 
 That is it for today!
 
