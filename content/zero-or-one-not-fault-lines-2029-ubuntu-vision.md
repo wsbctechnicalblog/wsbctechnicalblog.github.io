@@ -67,11 +67,11 @@ A future I envision as follows:
 
 The meteor is not coming. It is already here. The choice is simple: evolve into a future-fit engineer who leads a swarm of capable digital helpers, or become an artefact labelled “Extinct Dinosaur worked well in 2024.”
 
-To remind us of the urgency, I have ordered this 1.5m cut out of our digital companion, nicknamed ubuntu. 
+To remind us of the urgency, I have ordered this 1.5m cut out of our digital companion, nicknamed `agent ubuntu`. 
 
 > ![2029 Ubuntu Vision Android](../images/zero-or-one-not-fault-lines-2029-ubuntu-vision-2.png)
 
-It will be a constant visual reminder of the future we are building towards, and the need to adapt quickly to the changing landscape of technology and engineering, where `Ce`=Common Engineering, `Au`=**Au**tomation, `Co`=**Co**llaboration, `Se`=Improve **S**takeholder Experienc**e**, `-Ri`=**Ri**sk reduction, and `$`=Cost reduction.
+It will be a constant visual reminder of the future we are building towards, and the need to adapt quickly to the changing landscape of technology and engineering, where `[Ce]`=Common Engineering, `[Au]`=**Au**tomation, `[Co]`=**Co**llaboration, `[Se]` improves **S**takeholder Experienc**e**, `[-Ri]`=**Ri**sk reduction, and `[$]`=Cost reduction.
 
 # The 2029 Ubuntu Vision Recipe
 
