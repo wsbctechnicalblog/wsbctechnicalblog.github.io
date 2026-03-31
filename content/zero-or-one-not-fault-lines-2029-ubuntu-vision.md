@@ -71,7 +71,7 @@ To remind us of the urgency, I have ordered this 1.5m cut out of our digital com
 
 > ![2029 Ubuntu Vision Android](../images/zero-or-one-not-fault-lines-2029-ubuntu-vision-2.png)
 
-It will be a constant visual reminder of the future we are building towards, and the need to adapt quickly to the changing landscape of technology and engineering, where `[Ce]`=**C**ommon Engin**e**ering, `[Au]`=**Au**tomation, `[Co]`=**Co**llaboration, improves `[Se]` **S**takeholder Experienc**e**, `[-Ri]`=**Ri**sk reduction, and `[$]`=Cost reduction.
+It will be a constant visual reminder of the future we are building towards, and the need to adapt quickly to the changing landscape of technology and engineering, where `[Ce]` **C**ommon Engin**e**ering, `[Au]` **Au**tomation, `[Co]` **Co**llaboration, improves `[Se]` **S**takeholder Experienc**e**, `[-Ri]` **Ri**sk reduction, and `[$]` Cost reduction.
 
 # The 2029 Ubuntu Vision Recipe
 
