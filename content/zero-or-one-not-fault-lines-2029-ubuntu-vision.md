@@ -1,4 +1,4 @@
-Title: Zero or One, not Fault Lines - WWhere Will We Be in Three Years?
+Title: Zero or One, not Fault Lines - Where Will We Be in Three Years?
 Date: 2026-04-06
 Category: Posts 
 Tags: engineering, journal
