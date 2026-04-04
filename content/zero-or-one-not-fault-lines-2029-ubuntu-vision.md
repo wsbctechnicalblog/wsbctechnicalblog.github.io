@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - WWhere Will We Be in Three Years?
-Date: 2026-XX-XX
+Date: 2026-04-06
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-2029-ubuntu-vision
