@@ -8,29 +8,27 @@ Summary: Starting a new journey with our engineering team and helping scale self
 
 If you care about reducing delivery friction without sacrificing security or consistency, this post is for you: it follows Vis’s first weeks in Common Engineering and uses that journey to unpack how our Self‑Service Automation (SSA) “bricks” accelerate teams on Azure DevOps today—plus what we are aiming for next with Self‑Service Kiosk v2 across ServiceNow, Terraform, and Ansible.
 
-> ![<SAMPLE PIC>](../images/<SLUG>-<1>.png) 
+> ![Welcome](../images/welcome-common-engineering-vis-1.png) 
 
 # Interview and Selection
-
-WorkSafeBC’s ITAP (Innovation, Technology, Analytics, and Property) department represents a significant portion of the organization’s technical workforce, comprising a mix of full time employees, contractors, and consultants. Within ITAP are several divisions, most notably the Enterprise Development and Operations (EDO) group, which includes teams such as Common Engineering.
 
 The Common Engineering team brings together experienced professionals across software development and operations. One of their flagship initiatives is a Self Service Automation (SSA) solution that leverages * as code patterns to rapidly provision standardized Azure DevOps repositories. These templates support common solution types—such as .NET based Azure Functions and Web APIs—and automatically scaffold build and release pipelines, enabling developers to move from idea to implementation in minutes rather than days.
 
 I was fortunate to join this team following an engaging and collaborative interview process. As part of the interview, I was asked to design an SSA solution, walk through its architecture and flow, and discuss it interactively with the hiring manager, Willy, and team members Andreas and Derek. That experience made it clear this was not merely an “automation” role. Instead, the position offered opportunities to evolve an existing solution, contribute to the standardization of software delivery practices, and introduce thoughtful disruption where it could add value.
 
-After being selected, I began my journey by deepening my understanding of * as code automation, supported by structured learning through Coursera. One course was instrumental:
-
-# Deployment and DevOps | Coursera
+After being selected, I began my journey by deepening my understanding of * as code automation, supported by structured learning through Coursera. One course was instrumental: [Deployment and DevOps | Coursera](https://www.coursera.org/learn/deployment-and-devops?specialization=microsoft-back-end-developer). This course provided a comprehensive overview of DevOps principles and practices, with a particular focus on Microsoft technologies. It covered key topics such as continuous integration and continuous deployment (CI/CD), infrastructure as code, monitoring and logging, and the use of Microsoft Copilot to enhance development workflows. The practical exercises and real-world examples helped me quickly build relevant skills that I could apply in my new role.
 
 This course is part of the eight course Microsoft Back End Developer Professional Certificate and covers system monitoring, continuous integration and deployment, debugging techniques, and practical use of Microsoft Copilot within the development workflow. I would recommend it to anyone looking to quickly build relevant DevOps expertise, whether at WorkSafeBC or elsewhere.
-Onboarding
+
+# Onboarding
 
 The SSA solution did not emerge overnight. It is the result of years of research, experimentation, iteration, and feedback, vetted extensively with stakeholders across development, operations, and security. The outcome is a set of well defined blueprints—the “bricks”—associated with the various application types typically deployed within the organization.
+
 To help me get up to speed during my first few weeks, Willy, who leads the Common Engineering (Ce) team, provided a thoughtful onboarding guide. By following this roadmap closely, I was able to meaningfully participate in technical discussions, attend cross team meetings, and quickly identify areas where I could start contributing.
 
 A key part of the onboarding process involved completing a series of targeted training modules known as “Dojos,” modeled loosely on martial arts belt systems. For my role, earning the yellow and orange belts was sufficient to ensure that I could both walk the walk and talk the talk before engaging stakeholders on the next phase of the SSA solution.  This included recommended branch policies, naming guidelines to principles around SDLC, their Azure Pipeline Blueprints, and Ce team’s application of Paved Roads and Bricks within the SSA workflow.
 
-In parallel, I had the opportunity to participate in an internal showcase highlighting the services and capabilities offered by teams across the ITAP department. Representing Common Engineering, we presented our focus areas and engaged with Cloud Systems Engineers (CSEs), operations staff within EDO, and developers from multiple product teams.
+In parallel, I had the opportunity to participate in an internal showcase highlighting the services and capabilities offered by teams across our department. Representing Common Engineering, we presented our focus areas and engaged with Cloud Systems Engineers (CSEs), operations staff within EDO, and developers from multiple product teams.
 
 These conversations revealed a recurring theme: “we don’t have time” or “the business isn’t asking for this.” While understandable, this mindset often undermines the long term value that solutions like SSA are designed to deliver. In practice, it can lead to higher defect rates, slower feature delivery, inconsistent architecture, support challenges, and mounting technical debt.
 
