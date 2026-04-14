@@ -141,6 +141,16 @@ Read Vikas' posts [here](../author/vikas-jawa.html)
 
 ---
 
+## Vis Naidu
+
+![Vis Naidu](../images/VisN.jpg)
+
+Vis Naidu is a seasoned technology specialist with expertise in analyzing, designing, developing, and implementing cutting-edge solutions across diverse platforms. Recognized for transforming clients' businesses through top-tier enterprise-scale solutions, excelling in usability, business process enhancement, enterprise integration, and scalability. Passionate about driving innovation and delivering impactful results that elevate operational efficiency and performance.
+ 
+Read Vikas' posts [here](../author/vis-naidu.html)
+
+---
+
 ## Willy-Peter Schaub
 
 ![Willy-Peter Schaub](../images/willy-schaub.png)
