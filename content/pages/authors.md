@@ -137,7 +137,7 @@ Read Shay's posts [here](../author/shay-vannery.html)
 
 Vikas is a Software/QA Engineer with a proven history of designing, developing, and maintaining web applications based on Microsoft technologies. Adept at solving complex technical challenges and mentoring junior developers. Committed to keeping pace with the latest industry trends and technological advancements while delivering high-quality solutions that drive business success.
  
-Read Vis' posts [here](../author/vikas-jawa.html)
+Read Vikas' posts [here](../author/vikas-jawa.html)
 
 ---
 
@@ -147,7 +147,7 @@ Read Vis' posts [here](../author/vikas-jawa.html)
 
 Vis Naidu is a seasoned technology specialist with expertise in analyzing, designing, developing, and implementing cutting-edge solutions across diverse platforms. Recognized for transforming clients' businesses through top-tier enterprise-scale solutions, excelling in usability, business process enhancement, enterprise integration, and scalability. Passionate about driving innovation and delivering impactful results that elevate operational efficiency and performance.
  
-Read Vikas' posts [here](../author/vis-naidu.html)
+Read Vis' posts [here](../author/vis-naidu.html)
 
 ---
 
