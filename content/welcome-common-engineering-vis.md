@@ -6,13 +6,13 @@ Slug: welcome-common-engineering-vis
 Author: Vis Naidu
 Summary: Starting a new journey with our engineering team and helping scale self‑service automation.
 
-If you care about reducing delivery friction without sacrificing security or consistency, this post is for you: it follows Vis's first weeks in Common Engineering and uses that journey to unpack how our Self‑Service Automation (SSA) "bricks" accelerate teams on Azure DevOps today—plus what we are aiming for next with Self‑Service Kiosk v2 across ServiceNow, Terraform, and Ansible.
+If you care about reducing delivery friction without sacrificing security or consistency, this post is for you: it follows Vis' first weeks in Common Engineering and uses that journey to unpack how our Self‑Service Automation (SSA) "bricks" accelerate teams on Azure DevOps today—plus what we are aiming for next with Self‑Service Kiosk v2 across ServiceNow, Terraform, and Ansible.
 
 > ![Welcome](../images/welcome-common-engineering-vis-1.png) 
 
 # Interview and Selection
 
-The Common Engineering team brings together experienced professionals across software development and operations. One of their flagship initiatives is a Self-Service Automation (SSA) solution that leverages *-as-code (eg. pipelines-as-code) patterns to rapidly provision standardized Azure DevOps repositories. These templates support common solution types such as .NET based Azure Functions and Web APIs and automatically scaffold build and release pipelines, enabling developers to move from idea to implementation in minutes rather than days.
+The Common Engineering team brings together experienced professionals across software development and operations. One of their flagship initiatives is a Self-Service Automation (SSA) solution that leverages `*-as-code` (eg. pipelines-as-code) patterns to rapidly provision standardized Azure DevOps repositories. These templates support common solution types such as .NET based Azure Functions and Web APIs and automatically scaffold build and release pipelines, enabling developers to move from idea to implementation in minutes rather than days.
 
 I was fortunate to join this team following an engaging and collaborative interview process. As part of the interview, I was asked to design an SSA solution, walk through its architecture and flow, and discuss it interactively with the hiring manager, Willy, and team members Andreas and Derek. That experience made it clear this was not merely an "automation" role. Instead, the position offered opportunities to evolve an existing solution, contribute to the standardization of software delivery practices, and introduce thoughtful disruption where it could add value.
 
