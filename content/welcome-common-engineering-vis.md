@@ -8,6 +8,8 @@ Summary: Starting a new journey with our engineering team and helping scale self
 
 If you care about reducing delivery friction without sacrificing security or consistency, this post is for you: it follows Vis' first weeks in Common Engineering and uses that journey to unpack how our Self‑Service Automation (SSA) "bricks" accelerate teams on Azure DevOps today—plus what we are aiming for next with Self‑Service Kiosk v2 across ServiceNow, Terraform, and Ansible.
 
+> Vis with our [Agent ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html)
+>
 > ![Welcome](../images/welcome-common-engineering-vis-1.png) 
 
 # Interview and Selection
