@@ -28,7 +28,7 @@ The real story is the tension between AI Agent Ubuntu and AI First.
 > **PS:** I now share the same topics and questions with my AI copilot as I do with colleagues. Getting AI's perspective is important, and some highlights are in this blog post.
 >
 
-# AI Ubuntu Agent: Delegation Without Denial
+# AI Agent Ubuntu: Delegation Without Denial
 
 > 
 > ![agent ubuntu mini](../images/agent-ubuntu-mini.png)
