@@ -13,8 +13,22 @@
 &lt;p&gt;The epiphany: &lt;strong&gt;I checked in the wrong artefact!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The script is not the asset.&lt;/p&gt;
 &lt;p&gt;The instruction is the asset.&lt;/p&gt;
-&lt;p&gt;The source code is a by-product: interesting to review, sometimes worth keeping, but frequently not worth preserving as a first-class artefact. What matters most is the intent — the prompt that captures:
+&lt;p&gt;The source code is a by-product: interesting to review, sometimes worth keeping, but frequently not worth preserving as a first-class artefact. What matters most is the intent, namely the prompt that captures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;what to do&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;why to do it&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the guardrails (security and safety boundaries)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;how to validate success
 &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The instruction can be reused, improved, and re-applied across similar situations, even when the implementation changes (PowerShell today, Azure DevOps CLI tomorrow, a pipeline task next month). This aligns strongly with what we are learning across our AI adoption journey: &lt;strong&gt;Prompt precision and human validation are where the durable value sits.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Take it one step further and ask the agent to check in the prompt&lt;/p&gt;
