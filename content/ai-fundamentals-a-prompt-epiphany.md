@@ -29,7 +29,15 @@ And then… the epiphany landed.
 >
 > The instruction is the asset.
 >
-> The source code is a by-product: interesting to review, sometimes worth keeping, but frequently not worth preserving as a first-class artefact. What matters most is the intent — the prompt that captures:
+> The source code is a by-product: interesting to review, sometimes worth keeping, but frequently not worth preserving as a first-class artefact. What matters most is the intent, namely the prompt that captures:
+>
+> - what to do
+>
+> - why to do it
+>
+> - the guardrails (security and safety boundaries)
+>
+> - how to validate success
 >
 
 The instruction can be reused, improved, and re-applied across similar situations, even when the implementation changes (PowerShell today, Azure DevOps CLI tomorrow, a pipeline task next month). This aligns strongly with what we are learning across our AI adoption journey: **Prompt precision and human validation are where the durable value sits.**
