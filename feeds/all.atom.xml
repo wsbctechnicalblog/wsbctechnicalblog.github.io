@@ -1,12 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-04-20T00:00:00-07:00</updated><entry><title>Zero or One, not Fault Lines - TBD</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-TBD.html" rel="alternate"></link><published>2026-04-20T00:00:00-07:00</published><updated>2026-04-20T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-04-20:/zero-or-one-not-fault-lines-TBD.html</id><summary type="html">&lt;p&gt;TBD&lt;/p&gt;</summary><content type="html">&lt;p&gt;TBD&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-04-24T00:00:00-07:00</updated><entry><title>A Friday AI Prompt Epiphany</title><link href="https://wsbctechnicalblog.github.io/ai-fundemantels-a-prompt-epiphany.html" rel="alternate"></link><published>2026-04-24T00:00:00-07:00</published><updated>2026-04-24T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-04-24:/ai-fundemantels-a-prompt-epiphany.html</id><summary type="html">&lt;p&gt;The Night I Stopped Checking In Code and Started Checking In Intent.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last night I had a small epiphany that I want to take to our next team huddle: I solved the right problem… in the wrong way.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="EPIHANY" src="../images/ai-fundemantels-a-prompt-epiphany-1.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;TBD&lt;/p&gt;
-&lt;h2&gt;TBD&lt;/h2&gt;
-&lt;p&gt;TBD&lt;/p&gt;
-&lt;p&gt;That is it for today. Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="journal"></category></entry><entry><title>Zero or One, not Fault Lines - Traditional Delivery Meets Agentic AI</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-crossroads.html" rel="alternate"></link><published>2026-04-20T00:00:00-07:00</published><updated>2026-04-20T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-04-20:/zero-or-one-not-fault-lines-crossroads.html</id><summary type="html">&lt;p&gt;A pragmatic operating model for legacy ecosystems and AI-native ambition&lt;/p&gt;</summary><content type="html">&lt;p&gt;The AI Train Has Left the Station and the Platform Still Matters - I am mulling over a dilemma at the traditional software development and Artificial Intelligence crossroads, creating friction instead of excitement and empowerment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It started with a simple Azure DevOps query result&lt;/strong&gt;. 202 work items, and only one was linked to a parent. The backlog was real, the gap in traceability was real, and the cost of leaving it as-is was evident too. Weaker portfolio visibility, messier reporting, and more time burned later when someone inevitably asked, “Which feature does this belong to?”&lt;/p&gt;
+&lt;h2&gt;The obvious “engineering” move&lt;/h2&gt;
+&lt;p&gt;I did what most of us do when we see toil and feel urgency ... I automated.&lt;/p&gt;
+&lt;p&gt;The challenge had a twist. Within the same Azure DevOps project, parenting work items is easy. Across projects, the intentional isolation between Azure DevOps projects adds a spice of complexity. So I asked our digital companion, &lt;a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html"&gt;Agent Ubuntu&lt;/a&gt; (powered by GitHub Copilot), to write a PowerShell script.&lt;/p&gt;
+&lt;p&gt;It delivered. I ran it. In under three minutes, every work item returned by the query was parented to the right portfolio item. Job done. I even checked the script into our scripts repository for future reuse.&lt;/p&gt;
+&lt;p&gt;And then… the epiphany landed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The epiphany: &lt;strong&gt;I checked in the wrong artefact!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The script is not the asset.&lt;/p&gt;
+&lt;p&gt;The instruction is the asset.&lt;/p&gt;
+&lt;p&gt;The source code is a by-product: interesting to review, sometimes worth keeping, but frequently not worth preserving as a first-class artefact. What matters most is the intent — the prompt that captures:
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The instruction can be reused, improved, and re-applied across similar situations, even when the implementation changes (PowerShell today, Azure DevOps CLI tomorrow, a pipeline task next month). This aligns strongly with what we are learning across our AI adoption journey: &lt;strong&gt;Prompt precision and human validation are where the durable value sits.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Take it one step further and ask the agent to check in the prompt&lt;/p&gt;
+&lt;p&gt;After the epiphany, I restarted my laptop, opened GitHub Copilot chat, and gave it a crisp and simple instruction:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Find the most efficient way to securely parent all work items returned by query &lt;URL&gt;, re-parent as needed, and validate.&lt;/em&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;And then it hit me.&lt;/strong&gt; I could have gone one step further and asked Agent Ubuntu to improve and check in the instruction once the task completed successfully. That is how we reduce repeated effort, reduce risk, and avoid cost over time: we keep the recipe, not only the dish.&lt;/p&gt;
+&lt;p&gt;This is consistent with how we already talk about reusable instructions and prompts as shareable organisational assets (not tribal memory)!&lt;/p&gt;
+&lt;p&gt;You can find the script referenced in this post and an improved instruction from &lt;a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html"&gt;Agent Ubuntu&lt;/a&gt; for your reference. Remember, the real asset is the instruction itself. The script is just one implementation of that instruction, and it may not even be the best one. The instruction can be adapted and improved over time, while the script may become obsolete as tools and APIs evolve.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Reference script:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;# Configuration&lt;/span&gt;
+&lt;span class="nv"&gt;$organization&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;ORG&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$project&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;AzDO PROJECT&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$queryId&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;QUERY ID&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$parentWorkItemId&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;PARENT WORK ITEM ID&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$baseUrl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://dev.azure.com/$organization/$project&amp;quot;&lt;/span&gt;
+
+&lt;span class="c"&gt;# Get PAT from environment or prompt&lt;/span&gt;
+&lt;span class="nv"&gt;$pat&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$env:AZURE_DEVOPS_PAT&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-not&lt;/span&gt; &lt;span class="nv"&gt;$pat&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nv"&gt;$pat&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Read-Host&lt;/span&gt; &lt;span class="n"&gt;-Prompt&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Enter your Azure DevOps PAT&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;-AsSecureString&lt;/span&gt;
+    &lt;span class="nv"&gt;$pat&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[Runtime.InteropServices.Marshal]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;PtrToStringAuto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="no"&gt;[Runtime.InteropServices.Marshal]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;SecureStringToBSTR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$pat&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nv"&gt;$base64Auth&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[Convert]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;ToBase64String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;[Text.Encoding]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;ASCII&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetBytes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;:$pat&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="nv"&gt;$headers&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;@{&lt;/span&gt;
+    &lt;span class="n"&gt;Authorization&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Basic $base64Auth&amp;quot;&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c"&gt;# Execute the query to get work item IDs&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Fetching work items from query...&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$queryUrl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://dev.azure.com/$organization/$project/_apis/wit/wiql/$queryId`?api-version=7.1&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$queryResult&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Invoke-RestMethod&lt;/span&gt; &lt;span class="n"&gt;-Uri&lt;/span&gt; &lt;span class="nv"&gt;$queryUrl&lt;/span&gt; &lt;span class="n"&gt;-Headers&lt;/span&gt; &lt;span class="nv"&gt;$headers&lt;/span&gt; &lt;span class="n"&gt;-Method&lt;/span&gt; &lt;span class="n"&gt;Get&lt;/span&gt;
+
+&lt;span class="nv"&gt;$workItemIds&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$queryResult&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;workItems&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Select-Object&lt;/span&gt; &lt;span class="n"&gt;-ExpandProperty&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-not&lt;/span&gt; &lt;span class="nv"&gt;$workItemIds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;No work items found in query.&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;exit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Found &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$workItemIds&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; work item(s): &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$workItemIds&lt;/span&gt; &lt;span class="n"&gt;-join&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;, &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+&lt;span class="c"&gt;# Get the URL of the parent work item&lt;/span&gt;
+&lt;span class="nv"&gt;$parentUrl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://dev.azure.com/$organization/_apis/wit/workItems/$parentWorkItemId&amp;quot;&lt;/span&gt;
+
+&lt;span class="c"&gt;# Add parent link to each work item&lt;/span&gt;
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$id&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$workItemIds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Processing work item $id...&amp;quot;&lt;/span&gt;
+
+    &lt;span class="c"&gt;# Check existing relations to avoid duplicate parent&lt;/span&gt;
+    &lt;span class="nv"&gt;$wiUrl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://dev.azure.com/$organization/$project/_apis/wit/workItems/$id`?&lt;/span&gt;&lt;span class="se"&gt;`$&lt;/span&gt;&lt;span class="s2"&gt;expand=relations&amp;amp;api-version=7.1&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;$wi&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Invoke-RestMethod&lt;/span&gt; &lt;span class="n"&gt;-Uri&lt;/span&gt; &lt;span class="nv"&gt;$wiUrl&lt;/span&gt; &lt;span class="n"&gt;-Headers&lt;/span&gt; &lt;span class="nv"&gt;$headers&lt;/span&gt; &lt;span class="n"&gt;-Method&lt;/span&gt; &lt;span class="n"&gt;Get&lt;/span&gt;
+
+    &lt;span class="nv"&gt;$existingParent&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$wi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relations&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Where-Object&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rel&lt;/span&gt; &lt;span class="o"&gt;-eq&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;System.LinkTypes.Hierarchy-Reverse&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$existingParent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;  Work item $id already has a parent. Skipping.&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nv"&gt;$patchUrl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://dev.azure.com/$organization/$project/_apis/wit/workItems/$id`?api-version=7.1&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;$patchHeaders&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$headers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Clone&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="nv"&gt;$patchHeaders&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;application/json-patch+json&amp;quot;&lt;/span&gt;
+
+    &lt;span class="nv"&gt;$body&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;ConvertTo-Json&lt;/span&gt; &lt;span class="n"&gt;-InputObject&lt;/span&gt; &lt;span class="p"&gt;@(&lt;/span&gt;
+        &lt;span class="p"&gt;@{&lt;/span&gt;
+            &lt;span class="n"&gt;op&lt;/span&gt;    &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;
+            &lt;span class="n"&gt;path&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/relations/-&amp;quot;&lt;/span&gt;
+            &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;@{&lt;/span&gt;
+                &lt;span class="n"&gt;rel&lt;/span&gt;        &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;System.LinkTypes.Hierarchy-Reverse&amp;quot;&lt;/span&gt;
+                &lt;span class="n"&gt;url&lt;/span&gt;        &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$parentUrl&lt;/span&gt;
+                &lt;span class="n"&gt;attributes&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;@{&lt;/span&gt; &lt;span class="n"&gt;comment&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Parent set by automation script&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;-Depth&lt;/span&gt; &lt;span class="n"&gt;5&lt;/span&gt;
+
+    &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;Invoke-RestMethod&lt;/span&gt; &lt;span class="n"&gt;-Uri&lt;/span&gt; &lt;span class="nv"&gt;$patchUrl&lt;/span&gt; &lt;span class="n"&gt;-Headers&lt;/span&gt; &lt;span class="nv"&gt;$patchHeaders&lt;/span&gt; &lt;span class="n"&gt;-Method&lt;/span&gt; &lt;span class="n"&gt;Patch&lt;/span&gt; &lt;span class="n"&gt;-Body&lt;/span&gt; &lt;span class="nv"&gt;$body&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Out-Null&lt;/span&gt;
+        &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;  Successfully set parent for work item $id.&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;Write-Warning&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;  Failed to update work item $id`: $_&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Done.&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h3&gt;Reference Instruction&lt;/h3&gt;
+&lt;p&gt;Here is an example prompt template you can check in as a markdown file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;# Prompt: Securely parent work items from an Azure DevOps query&lt;/span&gt;
+
+&lt;span class="gu"&gt;## Goal&lt;/span&gt;
+Parent all work items returned by Azure DevOps query &amp;lt;URL&amp;gt; to portfolio parent work item &amp;lt;PARENT_ID&amp;gt;.
+
+&lt;span class="gu"&gt;## Guardrails (non-negotiable)&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Do not expose secrets. Use a Personal Access Token (PAT) from a secure source (environment variable or secret store), never hard-code it.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use least privilege: token must have only the Work Items permissions required.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Do not modify unrelated work items.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;If a work item already has a parent, do not overwrite unless explicitly instructed.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Log actions and produce a summary of changes.
+
+&lt;span class="gu"&gt;## Steps&lt;/span&gt;
+&lt;span class="k"&gt;1.&lt;/span&gt; Retrieve work item IDs from the query.
+&lt;span class="k"&gt;2.&lt;/span&gt; For each work item:
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Fetch existing relations.
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;If a parent exists, skip (or re-parent only if instructed).
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Add the parent relation to &amp;lt;PARENT_ID&amp;gt;.
+&lt;span class="k"&gt;3.&lt;/span&gt; Validate:
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Re-fetch each updated work item and confirm the parent relation exists.
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Produce a report: updated, skipped (already parented), failed (with reason).
+
+&lt;span class="gu"&gt;## Output&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Implementation approach recommendation (best option and why).
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;A safe script or command sequence (PowerShell or Azure DevOps CLI).
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;A validation report format (markdown table or JSON).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That all for today folks. I am going to enjoy my day off. If you have any questions or want to chat about AI, prompts, or anything else, feel free to reach out. See you soon!&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="engineering"></category><category term="prompts"></category></entry><entry><title>Zero or One, not Fault Lines - Traditional Delivery Meets Agentic AI</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-crossroads.html" rel="alternate"></link><published>2026-04-20T00:00:00-07:00</published><updated>2026-04-20T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-04-20:/zero-or-one-not-fault-lines-crossroads.html</id><summary type="html">&lt;p&gt;A pragmatic operating model for legacy ecosystems and AI-native ambition&lt;/p&gt;</summary><content type="html">&lt;p&gt;The AI Train Has Left the Station and the Platform Still Matters - I am mulling over a dilemma at the traditional software development and Artificial Intelligence crossroads, creating friction instead of excitement and empowerment.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
