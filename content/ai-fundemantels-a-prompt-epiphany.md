@@ -3,8 +3,8 @@ Date: <2026-04-27>
 Category: Posts
 Tags: ai, engineering, prompts
 Slug: ai-fundemantels-a-prompt-epiphany
-Author: <FIRSTNAME> <SURNAME>
-Summary: <CRISP SUMMARY>
+Author: Willy-Peter Schaub
+Summary: The Night I Stopped Checking In Code and Started Checking In Intent.
 
 Last night I had a small epiphany that I want to take to our next team huddle: I solved the right problem… in the wrong way.
 
