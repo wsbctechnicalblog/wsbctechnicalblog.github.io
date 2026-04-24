@@ -1,8 +1,8 @@
 Title: A Friday AI Prompt Epiphany
-Date: <2026-04-27>
+Date: 2026-04-24
 Category: Posts
 Tags: ai, engineering, prompts
-Slug: ai-fundemantels-a-prompt-epiphany
+Slug: ai-fundamentals-a-prompt-epiphany
 Author: Willy-Peter Schaub
 Summary: The Night I Stopped Checking In Code and Started Checking In Intent.
 
@@ -46,7 +46,7 @@ After the epiphany, I restarted my laptop, opened GitHub Copilot chat, and gave 
 
 This is consistent with how we already talk about reusable instructions and prompts as shareable organisational assets (not tribal memory)!
 
-You can find the script referenced in this post and an imprived instrcution from [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) for your reference. Remember, the real asset is the instruction itself. The script is just one implementation of that instruction, and it may not even be the best one. The instruction can be adapted and improved over time, while the script may become obsolete as tools and APIs evolve.
+You can find the script referenced in this post and an improved instruction from [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) for your reference. Remember, the real asset is the instruction itself. The script is just one implementation of that instruction, and it may not even be the best one. The instruction can be adapted and improved over time, while the script may become obsolete as tools and APIs evolve.
 
 ---
 
