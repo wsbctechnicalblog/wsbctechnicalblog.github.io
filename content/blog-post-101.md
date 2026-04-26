@@ -58,6 +58,7 @@ Here is a list of tags we use when creating new content:
 | oss             |  | Open source software initiatives and discussions. |
 | pipelines       |  | Continuous integration, deployment, delivery, YAML, and other interesting topics to build, test, and deploy our software solutions. |
 | posters         |  | Quick reference posters and cheat sheets. |
+| prompts         |  | Prompts to get the best out of AI tools. |
 | quality         |  | Technical excellence and quality of engineering solutions to add value, not complexity. |
 | release         |  | Release management practices and learning. |
 | security        |  | "Trust, but verify " to avoid and function under malicious attacks. |
