@@ -1,7 +1,7 @@
 Title: Zero or One, not Fault Lines - Traditional Delivery Meets Agentic AI
 Date: 2026-04-20
 Category: Posts 
-Tags: engineering, journal
+Tags: ai, engineering, journal
 Slug: zero-or-one-not-fault-lines-crossroads
 Author: Willy-Peter Schaub
 Summary: A pragmatic operating model for legacy ecosystems and AI-native ambition

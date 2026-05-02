@@ -73,6 +73,10 @@ To remind us of the urgency, I have ordered this 1.5m cut out of our digital com
 
 It will be a constant visual reminder of the future we are building towards, and the need to adapt quickly to the changing landscape of technology and engineering, where `[Ce]` **C**ommon Engin**e**ering, `[Au]` **Au**tomation, `[Co]` **Co**llaboration, improves `[Se]` **S**takeholder Experienc**e**, `[-Ri]` **Ri**sk reduction, and `[$]` Cost reduction.
 
+# Our AI Posts
+
+Take some time to peruse our [AI-focused posts](https://wsbctechnicalblog.github.io/tag/ai.html) for some of the cool adventures we have and will enjoy with GitHub Copilot (aka `agent ubuntu`). We have a lot of fun with it, and we are learning a lot too. We will continue to share our learnings, including the good, the bad, and the ugly, as we navigate this exciting transformation together.
+
 # The 2029 Ubuntu Vision Recipe
 
 **Ingredients**

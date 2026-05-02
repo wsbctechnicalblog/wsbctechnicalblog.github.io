@@ -1,7 +1,7 @@
 Title: Zero or One, not Fault Lines - Are we asking the right AI question?
 Date: 2026-02-16
 Category: Posts 
-Tags: engineering, journal
+Tags: ai, engineering, journal
 Slug: zero-or-one-not-fault-lines-asking-the-right-ai-question
 Author: Willy-Peter Schaub
 Summary: Building Trustworthy AI Through Engineering Discipline
