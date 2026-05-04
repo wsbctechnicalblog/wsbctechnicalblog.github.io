@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - How I Think and Write.
-Date: 2026-04-??
+Date: 2026-05-04
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-how-I-think-and-write
