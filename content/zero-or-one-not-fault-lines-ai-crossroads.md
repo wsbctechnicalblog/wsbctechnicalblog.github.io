@@ -237,3 +237,10 @@ Now over to you:
 
 That is it for today. Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.
 
+---
+
+>
+> ![Agent Ubuntu](../images/agent-ubuntu-mini.png)
+>
+> Thank you [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) for the copy editing and the inspiration. The future is not written. We write it together.
+>
