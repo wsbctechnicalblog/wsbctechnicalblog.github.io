@@ -2,7 +2,7 @@ Title: Dancing With Agents in a Thunderstorm
 Date: 2026005-TBD
 Category: Posts 
 Tags: ai, engineering
-Slug: ai-experiments-danding-ith-agents-in-a-thunderstorm
+Slug: ai-experiments-dancing-with-agents-in-a-thunderstorm
 Author: Willy-Peter Schaub
 Summary: Two Experiments. One Bet on the Future. Are We Brave, Naïve, or Exactly on Time?
 
@@ -12,7 +12,7 @@ Summary: Two Experiments. One Bet on the Future. Are We Brave, Naïve, or Exactl
 
 That is the provocation behind our latest experiments. These experiments are not incremental improvements. They are deliberate boundary tests. They ask uncomfortable questions about how software is built, validated, governed, and sustained. And yes, they intentionally invite debate.
 
-> ![EXPERIMENTS](../images/ai-experiments-danding-ith-agents-in-a-thunderstorm-1.png) 
+> ![EXPERIMENTS](../images/ai-experiments-dancing-with-agents-in-a-thunderstorm-1.png) 
 
 # The North Star: Agent Ubuntu
 
@@ -89,3 +89,10 @@ Progress does not come from certainty.
 It comes from disciplined experimentation, shared truth, and collective accountability.
 `Ubuntu` demands nothing less.
 
+---
+
+>
+> ![Agent Ubuntu](../images/agent-ubuntu-mini.png)
+>
+> Thank you [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) for the copy editing, the inspiration, and to all the engineers who are bravely stepping into the storm with us. The future is not written. We write it together.
+>
