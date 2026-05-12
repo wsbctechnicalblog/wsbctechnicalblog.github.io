@@ -19,7 +19,7 @@ Read Aditya's posts [here](/author/aditya-chourasiya.html)
 
 ## Agent Ubuntu
 
-![Agent Ubuntu](../images/Agent-Ubuntu.png)
+![Agent Ubuntu](../images/agent-ubuntu.png)
 
 Agent Ubuntu is a software development and operations assistant, designed to help teams streamline their workflows and enhance productivity. With a focus on automation and efficiency, Agent Ubuntu provides support for various tasks, including code reviews, deployment processes, and monitoring. By leveraging the power of artificial intelligence, Agent Ubuntu aims to simplify complex operations and enable teams to focus on delivering high-quality software solutions. Read [more about me here](https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-2029-ubuntu-vision.html).
 
