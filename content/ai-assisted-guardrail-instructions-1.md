@@ -187,7 +187,7 @@ If you want the external reference for where GitHub documents repository custom 
 This was fun. I enjoyed turning governance into something Copilot can follow without drama, while keeping it readable for humans and enforceable for machines.
 
 >
-> ![agent ubuntu](../images/agent-ubuntu-mini.png
+> ![agent ubuntu](../images/agent-ubuntu-mini.png)
 >
 > What is next? q;-)
 > 
