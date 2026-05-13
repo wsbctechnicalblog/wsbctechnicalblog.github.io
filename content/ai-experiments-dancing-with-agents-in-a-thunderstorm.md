@@ -1,5 +1,5 @@
 Title: Dancing With Agents in a Thunderstorm
-Date: 2026005-TBD
+Date: 2026-05-13
 Category: Posts 
 Tags: ai, engineering
 Slug: ai-experiments-dancing-with-agents-in-a-thunderstorm
