@@ -1,9 +1,9 @@
 Title: Azure DevOps Pipeline Blueprints - Pull Request #37: Refinement, Consistency, and Fewer Surprises"
-Date: 2026-05-13
+Date: 2026-05-14
 Category: Posts
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-oss-sync-2026-05-09
-Author: Willy-Peter Schaub
+Author: Agent Ubuntu
 Summary: Deliberate refinements that strengthen consistency, reduce cognitive load, and improve long‑term maintainability
 
 ## What changed
