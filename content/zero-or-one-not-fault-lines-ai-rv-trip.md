@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - How Agent Ubuntu Turned a “Someday” RV Dream into a Crisp Schedule
-Date: 2026-05-18>>STOP<<
+Date: 2026-05-18
 Category: Posts 
 Tags: ai, engineering, journal
 Slug: zero-or-one-not-fault-lines-ai-rv-trip
@@ -79,16 +79,16 @@ This is a small thing, but it is the hallmark of good collaboration: move the wo
 
 Below is the same structure that landed so well in the thread—distances, drive times, ETA, and the rationale notes—now wearing a far‑future calendar disguise.
 
-| Date (2096) | Depart | From                                  | To                                    | Distance   | Drive time | ETA   | Notes |
-|:------------|:------:|:-------------------------------------:|:-------------------------------------:|:----------:|:----------:|:-----:|:------|
-| 19 July     | 13:00  | Vancouver                             | Salmon Arm                            | ~462 km    | ~4h 45min  | 18:00 | Primary travel day | 
-| 20 Jul 2096 | —      | Salmon Arm                            | Salmon Arm                            | —          | —          | —     | Buffer / rest day  |
-| 21 Jul 2096 | 08:00  | Salmon Arm                            | Quesnel Downtown RV Park              | ~511.89 km | ~6h 44min  | 15:00 | Practical departure-time recommendation used |
-| 22 Jul 2096 | 08:00  | Quesnel Downtown RV Park & Campground | Prince George                         | ~122 km    | ~1h 26min  | 09:30 | Short leg; ideal for resupply |
-| 23 Jul 2096 | —      | Prince George                         | Prince George                         | —          | —          | —     | Buffer / rest day |
-| 24 Jul 2096 | 13:00  | Prince George                         | Williams Lake Stampede Campground     | ~243 km    | ~2h 44min  | 16:00 | Arrive mid‑afternoon |
-| 25 Jul 2096 | 08:00  | Williams Lake Stampede Campground     | Wild Rose Campground (Hope)           | ~397.7 km  | ~4h 9min   | 13:00 | Longer run; plan one solid break |
-| 26 Jul 2096 | 07:00  | Wild Rose Campground & RV Park (Hope) | Vancouver                             | ~154 km    | ~1h 47min  | 09:00 | Return leg |
+| Some day in 2096 | Depart | From                                  | To                                    | Distance   | Drive time | ETA   | Notes |
+|:----------------|:------:|:-------------------------------------:|:-------------------------------------:|:----------:|:----------:|:-----:|:------|
+| 19              | 13:00  | Vancouver                             | Salmon Arm                            | ~462 km    | ~4h 45min  | 18:00 | Primary travel day | 
+| 20             | —      | Salmon Arm                            | Salmon Arm                            | —          | —          | —     | Buffer / rest day  |
+| 21              | 08:00  | Salmon Arm                            | Quesnel Downtown RV Park              | ~511.89 km | ~6h 44min  | 15:00 | Practical departure-time recommendation used |
+| 22              | 08:00  | Quesnel Downtown RV Park & Campground | Prince George                         | ~122 km    | ~1h 26min  | 09:30 | Short leg; ideal for resupply |
+| 23              | —      | Prince George                         | Prince George                         | —          | —          | —     | Buffer / rest day |
+| 24              | 13:00  | Prince George                         | Williams Lake Stampede Campground     | ~243 km    | ~2h 44min  | 16:00 | Arrive mid‑afternoon |
+| 25              | 08:00  | Williams Lake Stampede Campground     | Wild Rose Campground (Hope)           | ~397.7 km  | ~4h 9min   | 13:00 | Longer run; plan one solid break |
+| 26              | 07:00  | Wild Rose Campground & RV Park (Hope) | Vancouver                             | ~154 km    | ~1h 47min  | 09:00 | Return leg |
 
 This is not a fantasy itinerary. It is a humane one. It assumes rest, acknowledges effort, and still gets you where you want to go.
 
