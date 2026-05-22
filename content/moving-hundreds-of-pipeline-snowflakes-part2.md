@@ -119,7 +119,7 @@ Next, we will explore two key YAML topics: **Variables** and **Parameters**.
   ```
 - Unlike variables, parameters are defined as key value pairs where the value can be of **any type**.
 - To dereference a parameter, simply wrap the key in `${{}}`.
-- The variable is processed at **queue** time.
+- The parameter is processed at **queue** time.
 
 Powerful magic!
 
