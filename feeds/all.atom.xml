@@ -1,5 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-05-18T00:00:00-07:00</updated><entry><title>Zero or One, not Fault Lines - How Agent Ubuntu Turned a “Someday” RV Dream into a Crisp Schedule</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-ai-rv-trip.html" rel="alternate"></link><published>2026-05-18T00:00:00-07:00</published><updated>2026-05-18T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-05-18:/zero-or-one-not-fault-lines-ai-rv-trip.html</id><summary type="html">&lt;p&gt;A light-hearted field report on constraint‑driven planning, practical recommendations, and why human judgement still matters.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A light-hearted field report on constraint‑driven planning, practical recommendations, and why human judgement still matters. A handover, delivered with theatrical gravitas (and mild sabotage) from me to Agent Ubuntu, who will take the reins of this journal entry.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-05-22T00:00:00-07:00</updated><entry><title>AI Assisted Automation - From “How Many Azure Repos?” to “Here Is the Report”</title><link href="https://wsbctechnicalblog.github.io/ai-assisted-repo-report.html" rel="alternate"></link><published>2026-05-22T00:00:00-07:00</published><updated>2026-05-22T00:00:00-07:00</updated><author><name>Agent Ubuntu</name></author><id>tag:wsbctechnicalblog.github.io,2026-05-22:/ai-assisted-repo-report.html</id><summary type="html">&lt;p&gt;A small working-group question, a forgotten automation, and a fresh reminder that our centre of gravity is shifting from writing code to writing instructions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was sitting in a working group when a perfectly reasonable question landed on the table:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“How many Azure Repos do we have?”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="question" src="../images/ai-assisted-repo-report-1.png"&gt; 
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Not a trick question. Not even a hard question. Just the kind of operational query that should be answered with calm confidence, in minutes, without derailing the conversation.&lt;/p&gt;
+&lt;p&gt;I knew we had an automated report. It used to run weekly. We changed it to a manual trigger more recently to conserve Azure DevOps service load.&lt;/p&gt;
+&lt;p&gt;The traditional path was clear: go find the automation, trigger it, wait for output, and then format something presentable.&lt;/p&gt;
+&lt;p&gt;And then my brain offered a better option:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“Let me ask Agent Ubuntu.”&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, instead of locating and using our existing automation and rebuilding an up-to-date report, I asked Agent Ubuntu to create a script that produced:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A summary table&lt;/li&gt;
+&lt;li&gt;A complete repository list&lt;/li&gt;
+&lt;li&gt;Something I could share immediately&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent Ubuntu (powered by GitHub Copilot) responded&lt;/h3&gt;
+&lt;p&gt;Agent Ubuntu delivered exactly what I needed. A PowerShell script that connects to our Azure DevOps organisation and produces (1) a summary table showing the number of repositories per project, and (2) a detailed list of every repository with its project, name, and estimated size.&lt;/p&gt;
+&lt;p&gt;The script was sitting in front of me before my “human follow-through” had even finished warming up.&lt;/p&gt;
+&lt;p&gt;My next command was beautifully uncomplicated:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“Run it.”&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And that was it. I had a report with the requested information, and more.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This is not a hypothetical. This is today's reality.&lt;/strong&gt; The pull request description clarified that the script was created because a question triggered the need, and asking Agent Ubuntu to create the script and generate the report was faster than finding the existing automated report and triggering it.&lt;/p&gt;
+&lt;h3&gt;The Agent Ubuntu generated magic&lt;/h3&gt;
+&lt;p&gt;The script is not a “throwaway” today, although I am starting to question why we are version controlling both our instructions and source code.&lt;/p&gt;
+&lt;p&gt;Let us take a sneak peek at the generated code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It uses a Personal Access Token (PAT) (a scoped credential) via an environment variable ($env:pat).&lt;/li&gt;
+&lt;li&gt;It generates both a Comma-Separated Values (CSV) export and a Markdown report file.&lt;/li&gt;
+&lt;li&gt;It stamps the output with Coordinated Universal Time (UTC) plus local time for Vancouver, which makes sharing and audit conversations far less painful.&lt;/li&gt;
+&lt;li&gt;The Markdown output includes a clear heading, a generated time, the organisation name, and the total repository count (calculated by the script).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It produces something that answers the question, and something that can be attached to an email or dropped into a working session chat without embarrassment.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;&amp;lt;#&lt;/span&gt;
+&lt;span class="cm"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;.DESCRIPTION&lt;/span&gt;
+&lt;span class="cm"&gt;        Connects to the wcbbc Azure DevOps organisation and produces:&lt;/span&gt;
+&lt;span class="cm"&gt;          1. A summary table showing the number of repos in each project.&lt;/span&gt;
+&lt;span class="cm"&gt;          2. A detailed list of every repo with its project, name, and estimated size.&lt;/span&gt;
+
+&lt;span class="cm"&gt;        Size is returned directly from the Azure DevOps Git Repositories API (bytes).&lt;/span&gt;
+&lt;span class="cm"&gt;        The script formats output to the console and exports CSV and Markdown files.&lt;/span&gt;
+&lt;span class="cm"&gt;#&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;#region params&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;CmdletBinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;span class="k"&gt;param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;Mandatory&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$false&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="no"&gt;[String]&lt;/span&gt;
+    &lt;span class="nv"&gt;$Organisation&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;organisation&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;Mandatory&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$false&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="no"&gt;[String]&lt;/span&gt;
+    &lt;span class="nv"&gt;$PAT&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$env:pat&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="no"&gt;[String]&lt;/span&gt;
+    &lt;span class="nv"&gt;$FilePath&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Home\Downloads&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;#endregion params&lt;/span&gt;
+
+
+&lt;span class="c"&gt;#region bootstrap&lt;/span&gt;
+&lt;span class="nv"&gt;$FileName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bootstrap.ps1&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;$FoundFlag&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$false&lt;/span&gt;
+&lt;span class="nv"&gt;$Path&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Split-Path&lt;/span&gt; &lt;span class="n"&gt;-Parent&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MyCommand&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Definition&lt;/span&gt;
+
+&lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Test-Path&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Path\$FileName&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nv"&gt;$FoundFlag&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$true&lt;/span&gt;
+            &lt;span class="nb"&gt;Write-Output&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bootstrap found – importing modules&amp;quot;&lt;/span&gt;
+            &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Path\$FileName&amp;quot;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nv"&gt;$Path&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Split-Path&lt;/span&gt; &lt;span class="n"&gt;-Parent&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$Path&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nv"&gt;$_&lt;/span&gt;
+        &lt;span class="nb"&gt;Write-Output&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FileName not found – bootstrap cannot load modules. Exiting.&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;exit&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;Until&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$FoundFlag&lt;/span&gt; &lt;span class="o"&gt;-eq&lt;/span&gt; &lt;span class="nv"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;#endregion bootstrap&lt;/span&gt;
+
+&lt;span class="c"&gt;#region helpers&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nb"&gt;Format-RepoSize&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;[long]&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="o"&gt;-ge&lt;/span&gt; &lt;span class="n"&gt;1GB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{0:N2} GB&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-f&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="n"&gt;1GB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;elseif&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="o"&gt;-ge&lt;/span&gt; &lt;span class="n"&gt;1MB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{0:N2} MB&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-f&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="n"&gt;1MB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;elseif&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="o"&gt;-ge&lt;/span&gt; &lt;span class="n"&gt;1KB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{0:N2} KB&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-f&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Bytes&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="n"&gt;1KB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$Bytes B&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="c"&gt;#endregion helpers&lt;/span&gt;
+
+&lt;span class="c"&gt;#region setup&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Debug&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MyCommand&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;: Begin&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Test-Path&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$FilePath&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Creating output folder: $FilePath&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;New-Item&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$FilePath&lt;/span&gt; &lt;span class="n"&gt;-ItemType&lt;/span&gt; &lt;span class="n"&gt;Directory&lt;/span&gt; &lt;span class="n"&gt;-Force&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Out-Null&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nv"&gt;$FileTimeStamp&lt;/span&gt;      &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Get-Date&lt;/span&gt; &lt;span class="n"&gt;-Format&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ddMMyyyy-HHmm&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$CSVFilePath&lt;/span&gt;        &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FilePath\Repo-Size-Report-$FileTimeStamp.csv&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$MDFilePath&lt;/span&gt;         &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$FilePath\Repo-Size-Report-$FileTimeStamp.md&amp;quot;&lt;/span&gt;
+
+&lt;span class="nb"&gt;Set-DevOpsScriptVariables&lt;/span&gt; &lt;span class="n"&gt;-DevOpsOrganisation&lt;/span&gt; &lt;span class="nv"&gt;$Organisation&lt;/span&gt; &lt;span class="n"&gt;-PAT&lt;/span&gt; &lt;span class="nv"&gt;$PAT&lt;/span&gt; &lt;span class="n"&gt;-DevOpsProject&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Common-Engineering-System&amp;quot;&lt;/span&gt;
+
+&lt;span class="nv"&gt;$AllRepos&lt;/span&gt;           &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[System.Collections.Generic.List[PSCustomObject]]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="c"&gt;#endregion setup&lt;/span&gt;
+
+&lt;span class="c"&gt;#region collect data&lt;/span&gt;
+&lt;span class="nv"&gt;$Projects&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Get-DevOpsProjects&lt;/span&gt; &lt;span class="n"&gt;-Organisation&lt;/span&gt; &lt;span class="nv"&gt;$Organisation&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Sort-Object&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Project&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$Projects&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nv"&gt;$ProjectName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Project&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+    &lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;  Processing project: $ProjectName&amp;quot;&lt;/span&gt;
+
+    &lt;span class="nb"&gt;Set-DevOpsScriptVariables&lt;/span&gt; &lt;span class="n"&gt;-DevOpsOrganisation&lt;/span&gt; &lt;span class="nv"&gt;$Organisation&lt;/span&gt; &lt;span class="n"&gt;-DevOpsProject&lt;/span&gt; &lt;span class="nv"&gt;$ProjectName&lt;/span&gt; &lt;span class="n"&gt;-PAT&lt;/span&gt; &lt;span class="nv"&gt;$PAT&lt;/span&gt;
+
+    &lt;span class="nv"&gt;$Repos&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Get-DevOpsRepo&lt;/span&gt; &lt;span class="n"&gt;-Organisation&lt;/span&gt; &lt;span class="nv"&gt;$Organisation&lt;/span&gt; &lt;span class="n"&gt;-ProjectName&lt;/span&gt; &lt;span class="nv"&gt;$ProjectName&lt;/span&gt;
+
+    &lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Repos&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Sort-Object&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nv"&gt;$AllRepos&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;[PSCustomObject]&lt;/span&gt;&lt;span class="p"&gt;@{&lt;/span&gt;
+            &lt;span class="n"&gt;ProjectName&lt;/span&gt;    &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ProjectName&lt;/span&gt;
+            &lt;span class="n"&gt;RepoName&lt;/span&gt;       &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+            &lt;span class="n"&gt;SizeBytes&lt;/span&gt;      &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[long]&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;
+            &lt;span class="n"&gt;SizeFormatted&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Format-RepoSize&lt;/span&gt; &lt;span class="n"&gt;-Bytes&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;[long]&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;IsDisabled&lt;/span&gt;     &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isDisabled&lt;/span&gt;
+            &lt;span class="n"&gt;WebUrl&lt;/span&gt;         &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;webUrl&lt;/span&gt;
+        &lt;span class="p"&gt;})&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="c"&gt;#endregion collect data&lt;/span&gt;
+
+&lt;span class="c"&gt;#region summary table (console)&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;=== Repos per Project ===&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;-ForegroundColor&lt;/span&gt; &lt;span class="n"&gt;Cyan&lt;/span&gt;
+
+&lt;span class="nv"&gt;$SummaryTable&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$AllRepos&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;
+    &lt;span class="nb"&gt;Group-Object&lt;/span&gt; &lt;span class="n"&gt;-Property&lt;/span&gt; &lt;span class="n"&gt;ProjectName&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;
+    &lt;span class="nb"&gt;Select-Object&lt;/span&gt; &lt;span class="p"&gt;@{&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Project&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Expression&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+                  &lt;span class="p"&gt;@{&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;RepoCount&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Expression&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;
+    &lt;span class="nb"&gt;Sort-Object&lt;/span&gt; &lt;span class="n"&gt;Project&lt;/span&gt;
+
+&lt;span class="nv"&gt;$SummaryTable&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Format-Table&lt;/span&gt; &lt;span class="n"&gt;-AutoSize&lt;/span&gt;
+&lt;span class="c"&gt;#endregion summary table (console)&lt;/span&gt;
+
+&lt;span class="c"&gt;#region detail list (console)&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;=== All Repositories ===&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;-ForegroundColor&lt;/span&gt; &lt;span class="n"&gt;Cyan&lt;/span&gt;
+
+&lt;span class="nv"&gt;$AllRepos&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;
+    &lt;span class="nb"&gt;Select-Object&lt;/span&gt; &lt;span class="n"&gt;ProjectName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RepoName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;SizeFormatted&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;IsDisabled&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt;
+    &lt;span class="nb"&gt;Format-Table&lt;/span&gt; &lt;span class="n"&gt;-AutoSize&lt;/span&gt;
+&lt;span class="c"&gt;#endregion detail list (console)&lt;/span&gt;
+
+&lt;span class="c"&gt;#region CSV export&lt;/span&gt;
+&lt;span class="nv"&gt;$AllRepos&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Export-Csv&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$CSVFilePath&lt;/span&gt; &lt;span class="n"&gt;-NoTypeInformation&lt;/span&gt; &lt;span class="n"&gt;-Encoding&lt;/span&gt; &lt;span class="n"&gt;UTF8&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;CSV saved: $CSVFilePath&amp;quot;&lt;/span&gt;
+&lt;span class="c"&gt;#endregion CSV export&lt;/span&gt;
+
+&lt;span class="c"&gt;#region Markdown report&lt;/span&gt;
+&lt;span class="nv"&gt;$UTCTime&lt;/span&gt;      &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Get-Date&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;ToUniversalTime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="nv"&gt;$TimeZone&lt;/span&gt;     &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Pacific Standard Time&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$LocalTime&lt;/span&gt;    &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[System.TimeZoneInfo]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;ConvertTimeBySystemTimeZoneId&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$UTCTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$TimeZone&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;$MD&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[System.Text.StringBuilder]&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;# Azure DevOps Repository Report&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;font size=&amp;#39;2&amp;#39;&amp;gt;Generated: $UTCTime UTC &amp;amp;nbsp;|&amp;amp;nbsp; $LocalTime Vancouver Time&amp;lt;/font&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;**Organisation:** $Organisation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;**Total repositories:** &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$AllRepos&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Count&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Summary section&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;## Repos per Project&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;| Project | Repo Count |&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;|:--------|----------:|&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Row&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$SummaryTable&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;| &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Project&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; | &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RepoCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; |&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Detail section&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;## All Repositories&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;| Project | Repository | Estimated Size | Disabled |&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;|:--------|:-----------|---------------:|:--------:|&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$AllRepos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="no"&gt;[void]&lt;/span&gt;&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AppendLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;| &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ProjectName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; | [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RepoName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;](&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;WebUrl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;) | &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SizeFormatted&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; | &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Repo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IsDisabled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; |&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nv"&gt;$MD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ToString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Set-Content&lt;/span&gt; &lt;span class="n"&gt;-Path&lt;/span&gt; &lt;span class="nv"&gt;$MDFilePath&lt;/span&gt; &lt;span class="n"&gt;-Encoding&lt;/span&gt; &lt;span class="n"&gt;UTF8&lt;/span&gt;
+&lt;span class="nb"&gt;Write-Host&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Markdown saved: $MDFilePath&amp;quot;&lt;/span&gt;
+&lt;span class="c"&gt;#endregion Markdown report&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Back to the Future&lt;/h3&gt;
+&lt;p&gt;Let me be honest ... twelve months ago I would likely have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dug through the Azure DevOps REST API documentation, which is not always the most straightforward experience.&lt;/li&gt;
+&lt;li&gt;Written and refined code.&lt;/li&gt;
+&lt;li&gt;Tweaked pagination, filtering, and output formatting.&lt;/li&gt;
+&lt;li&gt;Burned time validating the result set.&lt;/li&gt;
+&lt;li&gt;Lost the thread of the working group conversation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Today, the work shifts from &lt;strong&gt;construction to instruction&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I can focus on what matters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The people in the working session.&lt;/li&gt;
+&lt;li&gt;The decision we need to make.&lt;/li&gt;
+&lt;li&gt;The “burning platform” of the day.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is not laziness. That is efficiency.&lt;/p&gt;
+&lt;p&gt;We are amplifying, not abandoning engineering discipline..&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We are shifting our focus from writing code to writing instructions&lt;/strong&gt;, in a way that improves stakeholder experience, reduces risk, and avoids cost.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="agent ubuntu" src="../images/agent-ubuntu-mini.png"&gt;&lt;/p&gt;
+&lt;p&gt;What is next? q;-)
+&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="engineering"></category><category term="azure devops"></category><category term="automation"></category></entry><entry><title>Zero or One, not Fault Lines - How Agent Ubuntu Turned a “Someday” RV Dream into a Crisp Schedule</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-ai-rv-trip.html" rel="alternate"></link><published>2026-05-18T00:00:00-07:00</published><updated>2026-05-18T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-05-18:/zero-or-one-not-fault-lines-ai-rv-trip.html</id><summary type="html">&lt;p&gt;A light-hearted field report on constraint‑driven planning, practical recommendations, and why human judgement still matters.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A light-hearted field report on constraint‑driven planning, practical recommendations, and why human judgement still matters. A handover, delivered with theatrical gravitas (and mild sabotage) from me to Agent Ubuntu, who will take the reins of this journal entry.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0au.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4503,39 +4743,4 @@ GitVersion is a tool that generates a Semantic Version number based on your Git 
 &lt;p&gt;For our first fishbowl, Willy, our team manager, will guide us through using Azure DevOps (AzDO) to craft and manage Azure Boards and Dashboards. Here’s the twist: I’ll be diving into this with zero prep time or prior experience, making this a truly unscripted and dynamic session. Expect a candid, off-the-cuff exploration that’s as entertaining as it is educational.&lt;/p&gt;
 &lt;h1&gt;What’s Next?&lt;/h1&gt;
 &lt;p&gt;This experimental format promises to be engaging, informative, and maybe even a bit chaotic—but that’s where the fun lies. The goal is to create a memorable learning experience that encourages deeper exploration of the tools and practices discussed.&lt;/p&gt;
-&lt;p&gt;Stay tuned for my next blog, where I’ll share insights from our post-mortem on the fishbowl format. Will it be a success, a learning experience, or a bit of both? Let’s find out together!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="event"></category></entry><entry><title>Journal 8 - What is the value?</title><link href="https://wsbctechnicalblog.github.io/common-engineering-journal-8.html" rel="alternate"></link><published>2024-12-13T00:00:00-08:00</published><updated>2024-12-13T00:00:00-08:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2024-12-13:/common-engineering-journal-8.html</id><summary type="html">&lt;p&gt;The real question is not about the tech-cool factor or simplicity; it is all about uncovering the true value.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Our engineering team has undergone numerous shifts in mindset, embracing continuous learning, valuing work-life harmony, and championing simplicity. As we look ahead to 2025, we are spicing things up by adding "one thing at a time" and constantly asking ourselves, "what is the value?" to our toolkit.&lt;/p&gt;
-&lt;h2&gt;One thing at a time&lt;/h2&gt;
-&lt;p&gt;To truly excel, we must tackle one task at a time, avoiding the chaos of constant context switching. Though life rarely allows us to focus on just one thing, we need to zero in on our most significant goal (big rock) amidst the hustle and bustle of our engineering routines. If we finish countless small tasks but neglect our main objective (big rock), the day cannot be deemed a success.&lt;/p&gt;
-&lt;h2&gt;What is the value?&lt;/h2&gt;
-&lt;p&gt;Picture this: A colleague suggests renaming your Azure DevOps (AzDO) Iteration Paths from &lt;code&gt;&amp;lt;AzDO Project&amp;gt;/PI &amp;lt;n&amp;gt;/Iteration &amp;lt;n&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;AzDO Project&amp;gt;/PI &amp;lt;n&amp;gt;/&amp;lt;n&amp;gt;&lt;/code&gt;, reasoning that the word “iteration” is redundant. &lt;strong&gt;Brilliant idea!&lt;/strong&gt; &lt;/p&gt;
-&lt;p&gt;The iteration path field already has &lt;code&gt;iteration&lt;/code&gt; in its label, so seeing &lt;code&gt;my-demo-project/PI 13/13&lt;/code&gt; keeps things sleek and just as clear as &lt;code&gt;my-demo-project/PI 13/Iteration 13&lt;/code&gt;. Plus, it spares you from the eyesore of &lt;code&gt;my-demo-project/PI 13/...&lt;/code&gt; when Azure DevOps truncates names in some fields and dropdown lists.&lt;/p&gt;
-&lt;p&gt;In other words, it is a &lt;strong&gt;cool&lt;/strong&gt; tweak, adding &lt;strong&gt;meaningfulness,&lt;/strong&gt; and technically, it is a breeze to pull off. But what is the true value? Beyond better readability for users, think &lt;code&gt;user productivity boost&lt;/code&gt; minus the &lt;code&gt;cost of implementing the change&lt;/code&gt; and deducting the &lt;code&gt;cost of any unforeseen consequences&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Implementing the change involves investing time in revamping our automation to produce future iterations in the fresh format, crafting new automation to rename current iterations for consistency, and executing these automated processes. Ultimately, we would end up with &lt;strong&gt;delighted users&lt;/strong&gt; and a rewarding value.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Idea" src="../images/common-engineering-journal-8-1.png"&gt; &lt;/p&gt;
-&lt;p&gt;But alas, we have overlooked our party-poopers! The unforeseen ripple effects on processes, products, and documentation - like software development lifecycle automation scans still clinging to the old naming conventions, PowerBI reports weaving analytics from Azure DevOps work items, and countless documents persisting in the old format, baffling readers. Suddenly, we are caught in a whirlwind of unexpected costs (negative value) swirling around us that we never saw coming. &lt;/p&gt;
-&lt;p&gt;At this point we usually wonder where all the initiative's supporters have vanished to? Apologies to operations and common engineering, it is time to straighten out this mess.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Smoke" src="../images/common-engineering-journal-8-2.png"&gt; &lt;/p&gt;
-&lt;p&gt;Therefore, going forward, we will assess the value of everything we consider cool, are asked to do, and add to our 2025 MUST and SHOULD deliverables. Ask yourself:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Would I do this if I had to pay for or invest in it?&lt;/li&gt;
-&lt;li&gt;Can I track the cost and define the value?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If the answer is &lt;strong&gt;no&lt;/strong&gt;, run if you can, or add it to your backlog of future ideas (referred to as scrapyard on our backlog).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In other words, we are taking a no-nonsense route by urging our engineers to &lt;strong&gt;THINK&lt;/strong&gt;, &lt;strong&gt;ANALYZE&lt;/strong&gt;, and then decide whether to &lt;strong&gt;ACT&lt;/strong&gt; or toss the idea into the &lt;strong&gt;SCRAPYARD&lt;/strong&gt;. This approach helps us dodge surprises, cut costs, and keep our software development cycle humming smoothly.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Value flow" src="../images/common-engineering-journal-8-3.png"&gt; &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;THINK&lt;/strong&gt; - First, ponder the business value and user experience benefits. How will this idea affect our current and future solutions? Collaborate with your team, challenge assumptions, and prototype where possible to see the potential unfold.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ANALYZE&lt;/strong&gt; - Next, weigh the potential value, factoring in user experience, business outcomes, and cost savings. Consider the implementation costs, possible impact mitigation, and long-term viability. Then ask yourself: Is the value worth the cost?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ACT&lt;/strong&gt; - If the answer is yes, ACT on the idea, implementing it while keeping an eye on its evolving value and cost. If not, add it to the backlog for another da, or nudge it to the legendary SCRAPYARD if it is truly unworkable.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Simple, no?&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We are even creating a temporary tattoo to remind us in future.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Value" src="../images/THINK-VALUE.png"&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img alt="Team" src="../images/common-engineering-journal-8-4.png"&gt; &lt;/p&gt;
-&lt;p&gt;As this may be my final post for some time, I would like to take this opportunity to extend my best wishes for a joyous festive season and a prosperous New Year. Please stay safe, cherish time with your family, and enjoy the cookies in moderation. I look forward to reconnecting with you all in 2025.  &lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="automation"></category><category term="engineering"></category><category term="learning"></category></entry></feed>
+&lt;p&gt;Stay tuned for my next blog, where I’ll share insights from our post-mortem on the fishbowl format. Will it be a success, a learning experience, or a bit of both? Let’s find out together!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="event"></category></entry></feed>
