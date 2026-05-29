@@ -12,7 +12,7 @@ I find myself standing in a fascinating tension field. On one side are thoughtfu
 
 I do not think either side is irrational. In fact, both are responding to something real. One side is protecting trust. The other is chasing leverage. The result is a pendulum swing between certainty and acceleration, between artefact control and outcome control, between what we can inspect line by line and what we can evaluate through intent, policy, and results.
 
-** The challenge is not just technical**
+## The challenge is not just technical
 
 Where I stand, where I believe most engineers stand, and where I suspect our internal audit community stands are not yet the same place. That distance matters. It tells us this is not merely a tooling debate. It is a systems-of-trust debate.
 
@@ -20,7 +20,7 @@ Where I stand, where I believe most engineers stand, and where I suspect our int
 
 So what is really swinging the pendulum? **Trust** is part of it. **Auditability** is part of it. **Awareness** is part of it. **Economic practicality** is part of it. I would add one more: **cognitive comfort**. Source code has been our anchor for decades. It is reviewable, diffable, searchable, and culture-forming. Instructions for Artificial Intelligence agents can be powerful, but they still feel softer, more fluid, and less settled as an accountability artefact.
 
-** We have seen this pattern before**
+## We have seen this pattern before
 
 This is not the first epic shift humans have navigated. Industrial revolutions reshaped labour and identity. Whale oil gave way to alternatives when economics, scale, and innovation moved. Integrated Development Environments changed how software engineers thought about editing, compiling, and debugging. Each shift felt disruptive until it became normal.
 
@@ -34,21 +34,22 @@ As inhabitants of Terra, we have a stubborn habit of adapting. Evolution has not
 > - When did you decide that object code was no longer the centre of your confidence model?
 >
 
-At some point, most of us trusted the machine enough to delegate. We did not lose discipline. We shifted focus. We realised the higher-value questions lived above the raw execution detail: what problem are we solving, what guardrails apply, what evidence proves quality, what risks remain, and how do we change safely?
+At some point, most of us trusted the machine enough to delegate. We did not lose discipline. We shifted focus. We realised the higher-value questions lived above the raw execution detail. What problem are we solving, what guardrails apply, what evidence proves quality, what risks remain, and how do we change safely?
 
 That is why I remain curious about our current attachment to source code as the final sacred layer. It is undeniably important today. Yet history suggests that every generation defends its chosen level of abstraction until a better accountability model emerges.
 
-And yet, I am not ready to abandon source code
+## And yet, I am not ready to abandon source code
+
 Here is the counterweight. I am not yet convinced by the fully Artificial Intelligence Native future where source code becomes incidental and everything can be regenerated from instructions and prompts. In theory, perhaps. In practice, the economics are brutal. Regenerating entire systems repeatedly through token-heavy context digestion is unlikely to be cheap, predictable, or governable at enterprise scale.
 
 More importantly, source code still gives us a durable and efficient control surface. It is compact compared with constant full regeneration. It anchors repeatability. It makes local changes possible without re-explaining the universe to a model. It remains a practical bridge between human intent, system behaviour, and enterprise assurance.
 
-So perhaps the real answer is not source code or prompts. Perhaps it is layered accountability: intent and policy at the top, source code as an efficient control artefact in the middle, and automated evidence below. That feels less ideological and more survivable.
+So perhaps the real answer is not source code or prompts. Perhaps it is layered accountability. Intent and policy at the top, source code as an efficient control artefact in the middle, and automated evidence below. That feels less ideological and more survivable.
 
 >
 > **The uncomfortable takeaway**
 >
-> The future will not be won by people who worship source code, nor by people who dismiss it too early. It will be won by those who can build trust across abstraction layers: from instructions to generated artefacts, from source code to runtime evidence, from human judgement to machine execution.
+> The future will not be won by people who worship source code, nor by people who dismiss it too early. It will be won by those who can build trust across abstraction layers. From instructions to generated artefacts, from source code to runtime evidence, from human judgement to machine execution.
 >
 
 That is the challenge I see. Not whether Artificial Intelligence will change software engineering. It already is. The challenge is whether our trust model, our audit model, and our awareness model can evolve fast enough to meet it.
@@ -57,7 +58,7 @@ That is the challenge I see. Not whether Artificial Intelligence will change sof
 
 ### Traditional Software Development Life Cycle
 
-A software delivery model centred on human-written source code as the primary system artefact, with explicit design, build, test, release, and support stages. Auditability is anchored in repositories, change history, approvals, and repeatable builds.
+A software delivery model centred on human-written source code as the primary system artefact, with explicit design, build, test, release, and support stages. Auditability is anchored in repositories, change history, approvals, and repeatable builds. Let us divert our attention to a few definitions to ensure we speak a common language, and then we will explore how the artefacts evolve as we move up the abstraction ladder.
 
 ### AI First thinking
 
@@ -65,15 +66,18 @@ A delivery mindset that starts by asking where Artificial Intelligence can accel
 
 ### AI Native thinking
 
-A future-oriented model where instructions, policies, examples, and evaluation loops become the dominant artefacts, and source code may become just one generated representation rather than the centre of gravity. Refer to [Agentic SDLC Handbook](https://denielmeppiel.github.io/apm-handbook/) for a great read on this mindset.
+A future-oriented model where instructions, policies, examples, and evaluation loops become the dominant artefacts, and source code may become just one generated representation rather than the centre of gravity. Refer to [Agentic SDLC Handbook](https://github.com/danielmeppiel/agentic-sdlc-handbook) for a great read on this mindset.
 
 ### Source Code Abstraction Levels
 
-let us explore and compare abstraction layers, starting with the actual C# source code to say "Hello terra". We then look at the Common Intermediate Language example which reflects the kind of output a C# compiler emits. The 8086 and 80486 sections are illustrative lower-level equivalents, not direct output from modern C# compilation.
+OK, now that we share a common language, let us explore and compare abstraction layers, starting with the actual C# source code to say "Hello terra". We then look at the Common Intermediate Language example which reflects the kind of output a C# compiler emits. The 8086 and 80486 sections are illustrative lower-level equivalents, not direct output from modern C# compilation.
 
 >
 > **Hello Terra C# Sample Code**
 >
+
+We start with the familiar. This is the source code we write, review, and commit. It is the artefact we trust for intent, logic, and structure. It is the layer where we feel most comfortable applying human judgement and where we have the most established tools for auditability.
+
 ``` csharp
 using System;
 
@@ -89,6 +93,8 @@ public class Program
 >
 > **Hello Terra IDL Sample Code**
 >
+
+Next, the C# compiler (Roslyn / csc.exe) compiles the source code into an Intermediate Language (IL) which is a lower-level, platform-agnostic representation. This is the layer that the .NET runtime executes after Just-In-Time compilation. It is more detailed and closer to machine instructions, but it is not typically human-friendly for direct editing or review.
 
 ``` csharp
 .assembly extern System.Console
@@ -127,6 +133,8 @@ public class Program
 >
 > **Hello Terra 80586 Assembler Sample Code**
 >
+
+The ILDASM (Disassembler) output is even closer to the metal. It shows the actual instructions that the .NET runtime will execute after JIT compilation. This is the layer where we start to see the raw operations, register usage, and memory access patterns. It is powerful for understanding performance and debugging at a low level, but it is not practical for day-to-day development or high-level reasoning.
 
 This, by the way, is similar to what I wrote and debugged in the early 1980s on a 16-bit 8086 processor. And yes, it was both scary and exciting!
 
@@ -168,6 +176,8 @@ _start:
 >
 > **Hello Terra 8086 Object Sample Code**
 >
+
+The Just-In-Time (JIT) compiler converts IL to machine code. This is the actual binary instructions that the CPU executes. It is the lowest level of abstraction and is specific to the processor architecture. It is not human-readable and is not intended for direct interaction, but it is the ultimate layer that determines performance and behaviour.
 
 ```
 org 100h
@@ -213,11 +223,9 @@ We once stared at instructions close to the processor. Then we trusted compilers
 
 That is it for today. Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.
 
-As always, thank you agent ubuntu for your patience, your insights, and your exceptional copy-editing.
-
 >
 > ![Agent Ubuntu](../images/agent-ubuntu-mini.png)
 >
-> Thank you [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) for the copy editing and the inspiration. The future is not written. We write it together.
+> As always, thank you agent ubuntu for your patience, your insights, and your exceptional copy-editing..
 >
 
