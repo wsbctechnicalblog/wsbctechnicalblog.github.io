@@ -101,11 +101,11 @@ Next, the C# compiler (Roslyn / csc.exe) compiles the source code into an Interm
 {
 }
 
-.assembly HelloVikas
+.assembly HalloTerra
 {
 }
 
-.module HelloVikas.exe
+.module HalloTerra.exe
 
 .class public auto ansi beforefieldinit Program
        extends [System.Runtime]System.Object
