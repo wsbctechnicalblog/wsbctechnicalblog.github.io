@@ -1,5 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-05-22T00:00:00-07:00</updated><entry><title>AI Assisted Automation - From “How Many Azure Repos?” to “Here Is the Report”</title><link href="https://wsbctechnicalblog.github.io/ai-assisted-repo-report.html" rel="alternate"></link><published>2026-05-22T00:00:00-07:00</published><updated>2026-05-22T00:00:00-07:00</updated><author><name>Agent Ubuntu</name></author><id>tag:wsbctechnicalblog.github.io,2026-05-22:/ai-assisted-repo-report.html</id><summary type="html">&lt;p&gt;A small working-group question, a forgotten automation, and a fresh reminder that our centre of gravity is shifting from writing code to writing instructions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was sitting in a working group when a perfectly reasonable question landed on the table:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>- Posts</title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-06-01T00:00:00-07:00</updated><entry><title>Zero or One, not Fault Lines - When Source Code Stops Being the Centre of Gravity</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-ai-trust.html" rel="alternate"></link><published>2026-06-01T00:00:00-07:00</published><updated>2026-06-01T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-06-01:/zero-or-one-not-fault-lines-ai-trust.html</id><summary type="html">&lt;p&gt;We trusted compilers, then platforms, then pipelines. Artificial Intelligence may be the next delegation leap, but only if trust, auditability, and economic reality move with it.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I find myself standing in a fascinating tension field. On one side are thoughtful people who insist that source code remains pivotal, especially for auditability, confidence, and operational control. On the other are Artificial Intelligence Native subject matter experts who argue that the future will care less about source code and more about the instructions, guardrails, and shared context we give to our Artificial Intelligence agents.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I do not think either side is irrational. In fact, both are responding to something real. One side is protecting trust. The other is chasing leverage. The result is a pendulum swing between certainty and acceleration, between artefact control and outcome control, between what we can inspect line by line and what we can evaluate through intent, policy, and results.&lt;/p&gt;
+&lt;h2&gt;The challenge is not just technical&lt;/h2&gt;
+&lt;p&gt;Where I stand, where I believe most engineers stand, and where I suspect our internal audit community stands are not yet the same place. That distance matters. It tells us this is not merely a tooling debate. It is a systems-of-trust debate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Pendulum" src="../images/zero-or-one-not-fault-lines-ai-trust-1.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So what is really swinging the pendulum? &lt;strong&gt;Trust&lt;/strong&gt; is part of it. &lt;strong&gt;Auditability&lt;/strong&gt; is part of it. &lt;strong&gt;Awareness&lt;/strong&gt; is part of it. &lt;strong&gt;Economic practicality&lt;/strong&gt; is part of it. I would add one more: &lt;strong&gt;cognitive comfort&lt;/strong&gt;. Source code has been our anchor for decades. It is reviewable, diffable, searchable, and culture-forming. Instructions for Artificial Intelligence agents can be powerful, but they still feel softer, more fluid, and less settled as an accountability artefact.&lt;/p&gt;
+&lt;h2&gt;We have seen this pattern before&lt;/h2&gt;
+&lt;p&gt;This is not the first epic shift humans have navigated. Industrial revolutions reshaped labour and identity. Whale oil gave way to alternatives when economics, scale, and innovation moved. Integrated Development Environments changed how software engineers thought about editing, compiling, and debugging. Each shift felt disruptive until it became normal.&lt;/p&gt;
+&lt;p&gt;As inhabitants of Terra, we have a stubborn habit of adapting. Evolution has not beaten us yet. We reorganise our attention. We move up the abstraction ladder. We preserve what still matters, and we let go of detail when the cost of holding it exceeds the value it returns.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A question for those who insist source code is the only trusted artefact&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When did you stop reading compiler output? When did you stop inspecting every push, pop, register move, and branch instruction?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When did you decide that object code was no longer the centre of your confidence model?
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At some point, most of us trusted the machine enough to delegate. We did not lose discipline. We shifted focus. We realised the higher-value questions lived above the raw execution detail. What problem are we solving, what guardrails apply, what evidence proves quality, what risks remain, and how do we change safely?&lt;/p&gt;
+&lt;p&gt;That is why I remain curious about our current attachment to source code as the final sacred layer. It is undeniably important today. Yet history suggests that every generation defends its chosen level of abstraction until a better accountability model emerges.&lt;/p&gt;
+&lt;h2&gt;And yet, I am not ready to abandon source code&lt;/h2&gt;
+&lt;p&gt;Here is the counterweight. I am not yet convinced by the fully Artificial Intelligence Native future where source code becomes incidental and everything can be regenerated from instructions and prompts. In theory, perhaps. In practice, the economics are brutal. Regenerating entire systems repeatedly through token-heavy context digestion is unlikely to be cheap, predictable, or governable at enterprise scale.&lt;/p&gt;
+&lt;p&gt;More importantly, source code still gives us a durable and efficient control surface. It is compact compared with constant full regeneration. It anchors repeatability. It makes local changes possible without re-explaining the universe to a model. It remains a practical bridge between human intent, system behaviour, and enterprise assurance.&lt;/p&gt;
+&lt;p&gt;So perhaps the real answer is not source code or prompts. Perhaps it is layered accountability. Intent and policy at the top, source code as an efficient control artefact in the middle, and automated evidence below. That feels less ideological and more survivable.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The uncomfortable takeaway&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The future will not be won by people who worship source code, nor by people who dismiss it too early. It will be won by those who can build trust across abstraction layers. From instructions to generated artefacts, from source code to runtime evidence, from human judgement to machine execution.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That is the challenge I see. Not whether Artificial Intelligence will change software engineering. It already is. The challenge is whether our trust model, our audit model, and our awareness model can evolve fast enough to meet it.&lt;/p&gt;
+&lt;h1&gt;The next chapter: Hello Terra&lt;/h1&gt;
+&lt;h3&gt;Traditional Software Development Life Cycle&lt;/h3&gt;
+&lt;p&gt;A software delivery model centred on human-written source code as the primary system artefact, with explicit design, build, test, release, and support stages. Auditability is anchored in repositories, change history, approvals, and repeatable builds. Let us divert our attention to a few definitions to ensure we speak a common language, and then we will explore how the artefacts evolve as we move up the abstraction ladder.&lt;/p&gt;
+&lt;h3&gt;AI First thinking&lt;/h3&gt;
+&lt;p&gt;A delivery mindset that starts by asking where Artificial Intelligence can accelerate analysis, design, coding, testing, and operations while keeping humans accountable for guardrails, high-risk decisions, and outcomes.&lt;/p&gt;
+&lt;h3&gt;AI Native thinking&lt;/h3&gt;
+&lt;p&gt;A future-oriented model where instructions, policies, examples, and evaluation loops become the dominant artefacts, and source code may become just one generated representation rather than the centre of gravity. Refer to &lt;a href="https://github.com/danielmeppiel/agentic-sdlc-handbook"&gt;Agentic SDLC Handbook&lt;/a&gt; for a great read on this mindset.&lt;/p&gt;
+&lt;h3&gt;Source Code Abstraction Levels&lt;/h3&gt;
+&lt;p&gt;OK, now that we share a common language, let us explore and compare abstraction layers, starting with the actual C# source code to say "Hello terra". We then look at the Common Intermediate Language example which reflects the kind of output a C# compiler emits. The 8086 and 80486 sections are illustrative lower-level equivalents, not direct output from modern C# compilation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hello Terra C# Sample Code&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We start with the familiar. This is the source code we write, review, and commit. It is the artefact we trust for intent, logic, and structure. It is the layer where we feel most comfortable applying human judgement and where we have the most established tools for auditability.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;System&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Program&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;Console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;WriteLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello, Terra&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hello Terra IDL Sample Code&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Next, the C# compiler (Roslyn / csc.exe) compiles the source code into an Intermediate Language (IL) which is a lower-level, platform-agnostic representation. This is the layer that the .NET runtime executes after Just-In-Time compilation. It is more detailed and closer to machine instructions, but it is not typically human-friendly for direct editing or review.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assembly&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;extern&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Console&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assembly&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HalloTerra&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HalloTerra&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ansi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;beforefieldinit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Program&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="n"&gt;extends&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Runtime&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hidebysig&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;specialname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rtspecialname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ctor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;managed&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ldarg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Runtime&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;::.&lt;/span&gt;&lt;span class="n"&gt;ctor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ret&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;managed&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;entrypoint&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;maxstack&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ldstr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hallo, Terra&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Console&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Console&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;WriteLine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;ret&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hello Terra 80586 Assembler Sample Code&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The ILDASM (Disassembler) output is even closer to the metal. It shows the actual instructions that the .NET runtime will execute after JIT compilation. This is the layer where we start to see the raw operations, register usage, and memory access patterns. It is powerful for understanding performance and debugging at a low level, but it is not practical for day-to-day development or high-level reasoning.&lt;/p&gt;
+&lt;p&gt;This, by the way, is similar to what I wrote and debugged in the early 1980s on a 16-bit 8086 processor. And yes, it was both scary and exciting!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Hallo, Terra&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;msg_len&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;
+
+&lt;span class="k"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bss&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;hConsole&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;resd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;bytesWritten&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;resd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="k"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;text&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;global&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_start&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;extern&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GetStdHandle&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;extern&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WriteConsoleA&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;extern&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ExitProcess&lt;/span&gt;
+
+&lt;span class="nl"&gt;_start&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Get&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;standard&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;output&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;STD_OUTPUT_HANDLE&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GetStdHandle&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;hConsole&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eax&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Write&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;console&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;reserved&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bytesWritten&lt;/span&gt;&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pointer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;written&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;msg_len&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;hConsole&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;console&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WriteConsoleA&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;process&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ExitProcess&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hello Terra 8086 Object Sample Code&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The Just-In-Time (JIT) compiler converts IL to machine code. This is the actual binary instructions that the CPU executes. It is the lowest level of abstraction and is specific to the processor architecture. It is not human-readable and is not intended for direct interaction, but it is the ultimate layer that determines performance and behaviour.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;org 100h
+
+    mov dx, msg
+    mov ah, 09h
+    int 21h
+
+    mov ax, 4C00h
+    int 21h
+
+msg db &amp;#39;Hallo, Terra&amp;#39;,&amp;#39;$&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hello Terra 80586 Object Sample Code&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;msg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;db&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello Vikas&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="nx"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;global&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;_main&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;extern&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;_printf&lt;/span&gt;
+
+&lt;span class="nx"&gt;_main&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;msg&lt;/span&gt;&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;address&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;_printf&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;call&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;printf&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;esp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;clean&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;stack&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ret&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Now over to you!&lt;/h1&gt;
+&lt;p&gt;We once stared at instructions close to the processor. Then we trusted compilers and lifted our gaze. If we now resist instruction-centric Artificial Intelligence systems, are we protecting assurance, or are we defending the last abstraction layer that still feels comfortably human?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If source code remains the anchor of trust today, what evidence would persuade you to trust a higher abstraction tomorrow?&lt;/li&gt;
+&lt;li&gt;Are we debating technology, or are we debating which artefact best serves auditability, accountability, and cost control in this era?&lt;/li&gt;
+&lt;li&gt;If previous generations learned to trust compilers and platforms, what must Artificial Intelligence systems prove before we delegate further without becoming reckless?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That is it for today. Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Agent Ubuntu" src="../images/agent-ubuntu-mini.png"&gt;&lt;/p&gt;
+&lt;p&gt;As always, thank you agent ubuntu for your patience, your insights, and your exceptional copy-editing..
+&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="Posts"></category><category term="ai"></category><category term="engineering"></category><category term="journal"></category></entry><entry><title>AI Assisted Automation - From “How Many Azure Repos?” to “Here Is the Report”</title><link href="https://wsbctechnicalblog.github.io/ai-assisted-repo-report.html" rel="alternate"></link><published>2026-05-22T00:00:00-07:00</published><updated>2026-05-22T00:00:00-07:00</updated><author><name>Agent Ubuntu</name></author><id>tag:wsbctechnicalblog.github.io,2026-05-22:/ai-assisted-repo-report.html</id><summary type="html">&lt;p&gt;A small working-group question, a forgotten automation, and a fresh reminder that our centre of gravity is shifting from writing code to writing instructions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I was sitting in a working group when a perfectly reasonable question landed on the table:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;“How many Azure Repos do we have?”&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="question" src="../images/ai-assisted-repo-report-1.png"&gt; 
@@ -4725,22 +4914,4 @@ GitVersion is a tool that generates a Semantic Version number based on your Git 
 &lt;p&gt;Breaking barriers, one conversation at a time—with a little help from AI.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;``` &lt;/p&gt;
-&lt;p&gt;Let me know if you'd like any adjustments or additional sections!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="ai"></category></entry><entry><title>Fishbowl Dev CoP</title><link href="https://wsbctechnicalblog.github.io/engineering-practices-fishbowl-dev-cop.html" rel="alternate"></link><published>2024-12-16T00:00:00-08:00</published><updated>2024-12-16T00:00:00-08:00</updated><author><name>Martin M. Lacey</name></author><id>tag:wsbctechnicalblog.github.io,2024-12-16:/engineering-practices-fishbowl-dev-cop.html</id><summary type="html">&lt;p&gt;Experimenting with a New Developer CoP Format: Fishbowl Discussions&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this week's blog, we are diving into a fresh approach for our Developer Community of Practice (Dev CoP). Over the years, we’ve leaned on standard presentations and open dialogue formats, but this time, we’re shaking things up with a fishbowl discussion. As part of our Scalable Agile Framework for the Enterprise (SAFe) practices at WorkSafeBC, this experiment aligns with our commitment to fostering innovation and engagement in our CoP ceremonies.&lt;/p&gt;
-&lt;h1&gt;What Are Communities of Practice?&lt;/h1&gt;
-&lt;p&gt;Communities of Practice (CoPs) are groups of professionals united by a shared interest in a technical or business domain. They collaborate to exchange knowledge, refine their skills, and push the boundaries of their field. This concept, outlined by Etienne Wenger in Communities of Practice: Learning, Meaning, and Identity, emphasizes learning through collaboration and shared experiences.&lt;/p&gt;
-&lt;p&gt;For more, see: &lt;a href="https://scaledagileframework.com/communities-of-practice/"&gt;Communities of Practice - Scaled Agile Framework&lt;/a&gt; and &lt;a href="https://wsbctechnicalblog.github.io/ceremony-community-of-practice.html"&gt;Our Technical Blog&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;What is a Fishbowl?&lt;/h1&gt;
-&lt;p&gt;In a fishbowl discussion, the “bowl” is formed by a group of guest speakers seated in a circle, engaging in a moderated discussion. Surrounding them, the audience observes in concentric rings. For open fishbowls, one chair in the inner circle remains empty, inviting audience members to step in and contribute. It’s an engaging, participatory format that encourages dynamic conversations and fresh perspectives.&lt;/p&gt;
-&lt;h1&gt;Adapting Fishbowl for Hybrid Teams&lt;/h1&gt;
-&lt;p&gt;Post-pandemic realities mean our teams are split between remote and in-office work, posing unique challenges for interactive formats like the fishbowl. To bridge this gap, we’re piloting a hybrid model. Picture this: the core participants—our “bowl”—will be on-site, surrounded by a physical audience. Simultaneously, virtual participants will join in via Microsoft Teams, forming a “virtual outer ring.” This hybrid setup allows everyone to engage, regardless of location.&lt;/p&gt;
-&lt;p&gt;Our inaugural Dev CoP Fishbowl is scheduled for a day when many engineering teams, including mine, are in the office. Limited in-person seating will make attendance a coveted experience, promoting active participation. For those online, a large monitor will provide a closer view of the live interactions, ensuring inclusivity and collaboration.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Fishbowl Format" src="../images/engineering-practices-fishbowl-dev-cop-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;Figure – Envisioned Developer Community of Practice using Fishbowl format
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;What’s the Topic?&lt;/h1&gt;
-&lt;p&gt;For our first fishbowl, Willy, our team manager, will guide us through using Azure DevOps (AzDO) to craft and manage Azure Boards and Dashboards. Here’s the twist: I’ll be diving into this with zero prep time or prior experience, making this a truly unscripted and dynamic session. Expect a candid, off-the-cuff exploration that’s as entertaining as it is educational.&lt;/p&gt;
-&lt;h1&gt;What’s Next?&lt;/h1&gt;
-&lt;p&gt;This experimental format promises to be engaging, informative, and maybe even a bit chaotic—but that’s where the fun lies. The goal is to create a memorable learning experience that encourages deeper exploration of the tools and practices discussed.&lt;/p&gt;
-&lt;p&gt;Stay tuned for my next blog, where I’ll share insights from our post-mortem on the fishbowl format. Will it be a success, a learning experience, or a bit of both? Let’s find out together!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="event"></category></entry></feed>
+&lt;p&gt;Let me know if you'd like any adjustments or additional sections!&lt;/p&gt;</content><category term="Posts"></category><category term="engineering"></category><category term="technical-excellence"></category><category term="ai"></category></entry></feed>
