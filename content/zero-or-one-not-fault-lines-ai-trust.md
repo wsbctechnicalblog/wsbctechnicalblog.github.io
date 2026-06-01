@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - When Source Code Stops Being the Centre of Gravity
-Date: 2026-06->>
+Date: 2026-06-01
 Category: Posts 
 Tags: ai, engineering, journal
 Slug: zero-or-one-not-fault-lines-ai-trust
