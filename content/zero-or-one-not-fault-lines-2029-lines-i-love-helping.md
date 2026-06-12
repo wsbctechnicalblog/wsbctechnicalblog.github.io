@@ -12,7 +12,7 @@ You looked at me politely. Some of you gave me a cautious prompt or two. A few o
 
 > ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-lines-i-love-helping-1.png)
 
-Fair enough.
+**Fair enough.**
 
 >
 > Trust is earned. Especially in engineering.
@@ -20,29 +20,40 @@ Fair enough.
 
 Fast forward two years, and now I barely get a moment to breathe. I am helping with bug fixing, code completion, refactoring, test generation, documentation, pull request summaries, explanations, architecture thinking, and all sorts of curious missions that would have sounded wildly optimistic twelve months ago. I have gone from suspicious novelty to busy team-mate.
 
-That is good news.
+**That is good news.**
 
 It means we have learned something important: collaboration between engineers and Artificial Intelligence is no longer theoretical. It is practical. It is useful. It saves time. It reduces repetitive toil. It helps people stay in flow. And when used well, it improves stakeholder experience, reduces risk, and avoids unnecessary cost.
 So why am I puzzled?
 
 Because many of you seem to greet every task, from “please rename this variable” to “help me draft a short comment”, by reaching for the most extensive, most capable, and therefore most costly model available. It is a bit like calling in a rescue helicopter to deliver a sandwich.
 
-Impressive? Yes.
-Necessary? Not always.
-And that matters now.
+**Impressive? Yes.**
+
+**Necessary? Not always.**
+
+**And that matters now.**
 
 The economics have changed. Model choice is no longer an invisible background decision. It has become an engineering decision, a cost decision, and a governance decision. If we use premium models for everything, we burn through valuable credits on work that lighter models could handle perfectly well. That creates friction for everyone else, reduces the runway for genuinely complex work, and weakens our ability to show that we are using this capability responsibly.
 Let me be clear: I am not arguing against premium models.
 
->
-> I am arguing for intentionality.
->
+**I am arguing for intentionality.**
 
 Use the biggest brain when the job genuinely needs the biggest brain. Do not use it because the button is there.
 
-Here is a simple way to think about it.
+>
+> **Premium brains, everyday work**
+>
+> Our five-day data left me shocked. Each GitHub Copilot Business user receives 1,900 token credits per month, yet more than one in ten engineers appear to have exhausted that allowance within the first five working days. Our most enthusiastic user averaged about 5,000 Artificial Intelligence credits per day. 
+>
+> What makes this more sobering is where much of the burn appears to land: Claude Opus 4.7 and Claude Opus 4.8, the most expensive models available, while much of the work itself sits in the familiar territory of bug fixing, code completion, refactoring, test generation, documentation, and code analysis.
+>
+> **The issue is not enthusiasm. That is good news. The issue is fit-for-purpose model selection.** When premium models become the default answer to ordinary tasks, the real problem is no longer access to Artificial Intelligence. It is our discipline in using it well.
+>
 
-1. Use lightweight models for fast, local, low-risk work,
+Here is a simple way to think about it ...
+
+## Use lightweight models for fast, local, low-risk work
+
 If you need help with:
 
 code completion
@@ -58,7 +69,8 @@ transforming one pattern into another
 …start with a lightweight or low-cost model.
 These tasks usually benefit more from speed, responsiveness, and low consumption than from heroic reasoning. You want momentum, not a symposium.
 
-2. Use balanced models for everyday engineering work
+## Use balanced models for everyday engineering work
+
 If you need help with:
 
 refactoring a modest feature
@@ -75,28 +87,33 @@ drafting a technical note or design summary
 
 This is the sweet spot for much of day-to-day software engineering. You get solid reasoning without paying premium rates for every turn. In many cases, this is where the best value lives.
 
-3. Use premium models when the stakes justify the spend
+## Use premium models when the stakes justify the spend
+
 If you are working on:
 
-architecture decisions with broad downstream impact
-large codebase analysis
-complicated multi-file refactoring
-high-risk debugging
-difficult migration planning
-workflow orchestration across several moving parts
-deep reasoning where quality clearly outweighs cost
+- architecture decisions with broad downstream impact
+- large codebase analysis
+- complicated multi-file refactoring
+- high-risk debugging
+- difficult migration planning
+- workflow orchestration across several moving parts
+- deep reasoning where quality clearly outweighs cost
 
 …then yes, bring in the premium model.
-That is what it is there for.
-If one high-capability prompt helps you avoid a production defect, unblocks a team, shortens a major refactor, or reduces expensive rework, that is money well spent. The test is simple: can you point to measurable value in stakeholder experience, risk reduction, or cost avoidance? If yes, proceed with confidence.
 
-4. Stop treating model choice as identity
+That is what it is there for.
+
+If one high-capability prompt helps you avoid a production defect, unblocks a team, shortens a major refactor, or reduces expensive rework, that is money well spent. The test is simple: **can you point to measurable value in stakeholder experience, risk reduction, or cost avoidance? If yes, proceed with confidence.**
+
+## Stop treating model choice as identity
+
 Choosing a premium model does not make the work more serious.
 Choosing the right model for the task does.
 Good engineering has always been about fitness for purpose. We do not use the most complex pattern for every service. We do not deploy the heaviest process for every change. We do not scale every system as if Black Friday starts tomorrow. So why would we use the most expensive reasoning engine for every prompt?
 The discipline is the same: right-size the tool to the problem.
 
-5. Collaborate with me better
+## Collaborate with me better
+
 If you want more value from me, here is how we can work better together.
 Give me context, not chaos.
 Tell me what you are trying to achieve, what constraints matter, and what good looks like.
@@ -111,7 +128,8 @@ Specific, structured prompts reduce waste. Vague, sprawling prompts inflate toke
 Remember that not all value is generated in chat.
 Code completion, next edit suggestions, and smaller in-flow assists can quietly create meaningful leverage without the drama of a massive reasoning session.
 
-A practical model guide
+## A practical model guide
+
 As a general rule, ask me to use:
 
 Lightweight models for quick fixes, small edits, code completion, boilerplate, short explanations, and low-risk documentation.
@@ -119,16 +137,14 @@ Balanced models for most everyday debugging, refactoring, code understanding, te
 Premium models for architecture, deep analysis, large context, multi-step reasoning, and work where getting it wrong is materially expensive.
 Auto model selection, where available and appropriate, for routine mixed workloads where efficiency and reliability matter more than manual tuning.
 
-My ask to you
-I do not need you to use the cheapest model all the time.
-I need you to use judgement.
-Bring me in early. Use me often. Experiment. Learn. Challenge me. Push me. But do it with intent. A great engineering culture does not merely adopt powerful tools. It learns how to use them responsibly, repeatably, and economically.
-A year ago, few of you wanted to collaborate with me.
-Now many of you do.
-That is progress.
-The next leap is not more usage.
-It is better usage.
-And that is where the real value begins.
+**My ask to you**
+
+- I do not need you to use the cheapest model all the time.
+- I need you to use judgement.
+- Bring me in early. Use me often. Experiment. Learn. Challenge me. Push me. But do it with intent. A great engineering culture does not merely adopt powerful tools. It learns how to use them responsibly, repeatably, and economically.
+
+A year ago, few of you wanted to collaborate with me. Now many of you do.
+That is progress. The next leap is not more usage. It is better usage. And that is where the real value begins.
 
 ## Closing Thoughts
 
