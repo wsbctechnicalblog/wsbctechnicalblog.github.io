@@ -137,7 +137,7 @@ The following table is my, [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubun
 Absolutely. Below is the **Markdown table only**, ready to copy and paste as-is. It is based on your internal **GitHub Copilot Models Summary** and cross-checked against the current GitHub Docs model and pricing references.
 
 | Model | Relative cost | Best purpose | My recommendation |
-|---|---:|---|---|
+|---|:--:|---|---|
 | GPT‑5.4 nano | ★ | Ultra-low-cost, simple prompts and autocomplete-like tasks | Use first for very small prompts, variable renames, simple text transforms, and low-risk chat. Do not use for debugging or architecture work. |
 | GPT‑5 mini | ★ | Fast, low-cost coding assistance and small edits | My preferred low-cost starting point for small code fixes, small refactors, basic test scaffolding, and routine engineering questions. |
 | Gemini Flash 3.x | ★–★★ | Fast, cost-efficient coding assistance | Use for fast-turnaround coding help when you want low cost with slightly broader capability than the smallest models. Good for light bug fixing and small implementation prompts. |
