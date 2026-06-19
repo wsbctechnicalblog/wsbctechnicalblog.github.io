@@ -1,5 +1,5 @@
 Title: Humanoid #13 and the Instruction-First Experiment for Operational Support
-Date: 2026-06-17
+Date: 2026-06-18
 Category: Posts 
 Tags: ai, learning
 Slug: ai-fundamentals-operational-support
