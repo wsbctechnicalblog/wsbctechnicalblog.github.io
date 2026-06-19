@@ -1,0 +1,439 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/foundation.min.css" media="all">
+        <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
+        <title>Humanoid #13 and the Instruction-First Experiment for Operational Support - </title>
+        <meta charset="utf-8" />
+        
+</head>
+<body>
+    <div class="pages">
+        <ul>
+            <li class="home"><a href="https://wsbctechnicalblog.github.io/index.html">Home</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/about.html">About</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Authors</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/copyright.html">Copyright</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/privacy.html">Privacy and Security</a></li>
+            <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
+        </ul>
+    </div>
+<div class="hp-header-inner">
+    <div class="page-header">
+        <div class="content-header">
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="data-holder">
+        <div class="row">
+           <div class="large-10 content-column column">
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/ai-fundamentals-operational-support.html" rel="bookmark"
+            title="Permalink to Humanoid #13 and the Instruction-First Experiment for Operational Support">Humanoid #13 and the Instruction-First Experiment for Operational Support</a></h1>
+
+<img src="/theme/img/Logo-blogsize.png"><br />
+<div class="content-article">
+    <header class="header-article">
+        <div class="read-more">Posted by Willy-Peter Schaub on Thu 18 June 2026</div>
+ 
+   </header>
+    <section class='article'>
+        
+        <div class="entry-summary">
+            <p>What began as a simple support task, became a small but meaningful pivot: stop obsessing over how the work is done, and start preserving the context and intent that make the work repeatable.</p>
+        </div>
+    
+        <div class="entry-content">
+            <p>I spend a fair amount of time with <a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html">agent ubuntu</a>, but the latest experiment felt different from the start. The idea sounded deceptively ordinary ... standardise operational support tasks. Naturally, the opening move involved a careful explanation of context, expectations, and the simple-but-sacred rules of engagement, such as no contractions, no vague shorthand, and no acronym left wandering around without an introduction. To be honest, I am getting tired of reminding agent ubuntu, copilot, and all its companions about the importance of clarity and avoiding acronymns and contractions at all cost, but I am not giving up on it. Clarity is the foundation of trust, and trust is the foundation of value.</p>
+<blockquote>
+<p>Organisation and Project names replaces with &lt;&gt; placeholders for privacy and security reasons.</p>
+<p><img alt="Markdown" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0au.png"> </p>
+</blockquote>
+<p>Then something more interesting happened. Instead of treating the support task as a one-time transaction, we shaped a reusable operating pattern and defined it in the <code>operational-support-template-instructions.md</code> file. The instruction-first approach captured the guidelines and expectations, asked the user to elaborate on the INTENT, collaborated on the intent until it was clear and bounded, executed the work with the user, and then asked whether the session should be preserved as a new instruction file for future reuse. That workflow is visible throughout the document: </p>
+<ul>
+<li>intent first,</li>
+<li>actions second,</li>
+<li>satisfaction check third,</li>
+<li>and persistence only after approval.</li>
+</ul>
+<p>The test case itself was practical and gloriously operational. Enumerate all Azure DevOps projects in our Azure DevOps organisation, count the Git repositories in each project, and produce a ranked Markdown report highlighting the project with the highest repository count. The session captured the assumptions, risks, dependencies, and expected output up front. It then proposed actions before processing anything, created the local output folder, generated a PowerShell script, corrected an encoding issue when the first script run failed, reran the script, and produced a ranked report showing 90+ projects, with our I-A-T Azure DevOps project leading on repository count as expected.</p>
+<blockquote>
+<p><img alt="Markdown" src="../images/ai-fundamentals-operational-support-1.png"></p>
+</blockquote>
+<p>That alone would have made this a useful support session. But the real experiment was not the report. The experiment was the shift in emphasis. The document shows that the durable artefact was not the generated PowerShell script. The durable artefact was the new instruction file <code>instructions/operational-support/operational-support-azdo-project-repo-audit.md</code>. The PowerShell script was saved locally as a reference and execution aid. The instruction file was the item created in the repository, staged, and committed on a feature branch with an associated work item. That is a subtle but important move.</p>
+<blockquote>
+<p><img alt="Instructions" src="../images/ai-fundamentals-operational-support-2.png"></p>
+</blockquote>
+<ul>
+<li>preserve the context, </li>
+<li>the boundaries, </li>
+<li>the quality gate, </li>
+<li>and the repeatable intent. </li>
+</ul>
+<blockquote>
+<p>Treat the implementation as disposable when appropriate.
+</p>
+</blockquote>
+<p>This is why I find the experiment so interesting. It is an early step toward caring more about context and outcome than about the exact mechanics of implementation. The new instruction file codifies the operational objective, the safe handling of the Personal Access Token (PAT), the local output expectations, the repeat process, the quality gate, and the governance around secrets and review. It even makes room for a modest amount of humour, which I wholeheartedly LOVE when it does not interfere with the work. The associated copilot session shows a branch was created, the instruction file was added, and a commit was made, while the script remained a local aid rather than a version-controlled product.</p>
+<p>There is also something quietly important here for operational support at scale. A recipe like this reduces repeated explanation, improves consistency, and lowers the cost of future support work. It transforms a support conversation from “please do this task again” into “here is the pattern, here is the intent, now let us execute cleanly.” The new instruction file explicitly documents how to repeat the process, the required permission scopes, the expected outputs, and the quality checks before closure. That is not just convenience. That is operational memory with guardrails.</p>
+<p>And now, a direct callout to Andre Kaminski: Are we on track with your vision for the future horizon? If the horizon includes preserving institutional knowledge as executable guidance, reducing friction through reusable instructions, and enabling engineers to focus on outcomes rather than ceremony, this experiment feels like a meaningful step in that direction. That question is mine, but the evidence for why I am asking it is sitting plainly in the copilot's session record.</p>
+<p>In short, I approached <a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html">agent ubuntu</a> for support with a task. We left behind something better. A reusable operational support recipe, an instruction-file pattern that starts with intent and ends with traceable value, and a gentle reminder that sometimes the most strategic artefact is not the script you ran, but the instruction that teaches others how to think and act next time. That is a good day’s work for a humanoid and an android.</p>
+<hr>
+<blockquote>
+<p><strong>Instruction first. Outcome always. Implementation when needed.</strong> The latest experiment suggests that the future of operational support may not be a library of scripts, but a library of well-crafted intent patterns.
+</p>
+</blockquote>
+<p>Here is the full <code>operational-support-azdo-project-repo-audit.md</code> file from the experiment:</p>
+<div class="highlight"><pre><span></span><code>Operational Support - Azure DevOps Project and Repository Audit
+Description
+
+Use this instruction file for the following operational support task in the inno-tech-ai.prompts repository within the Azure DevOps (ADO) Project:
+Common Engineering System
+
+Copy this file into GitHub Copilot chat in Visual Studio Code and collaborate until the intended output is complete, reviewed, and approved.
+
+Intent
+
+Enumerate all Azure DevOps (ADO) projects in the XYZ organisation, retrieve the Git repository count for each project, and produce a ranked Markdown report that highlights the project with the most repositories.
+
+Scope
+
+<span class="k">-</span><span class="w"> </span>Repository: inno-tech-ai.prompts
+<span class="k">-</span><span class="w"> </span>Area: instructions/operational-support
+<span class="k">-</span><span class="w"> </span>Related work item:908961EDO Ce would like to deliver exceptional operational support for Azure DevOps Services to enable all users and reduce bugs and WASTE (2026)
+
+Active
+
+Execution rules
+
+<span class="k">-</span><span class="w"> </span>Follow all rules in the operational support template instruction file.
+<span class="k">-</span><span class="w"> </span>Never expose or store secrets, including Personal Access Tokens (PATs).
+<span class="k">-</span><span class="w"> </span>Propose changes before processing any action.
+<span class="k">-</span><span class="w"> </span>Save generated outputs locally to c:\_T\ for user review.
+<span class="k">-</span><span class="w"> </span>Prefer Markdown and comma-separated values (CSV) outputs.
+Deliverables
+<span class="k">-</span><span class="w"> </span>c:\_T\Get-AzDoProjects.ps1 — PowerShell script that queries the ADO REST Application Programming Interface (API) and generates the report.
+<span class="k">-</span><span class="w"> </span>c:\_T\azdo-projects-ORG-YYYY-MM-DD.md — Ranked Markdown report of all projects and their repository counts.
+
+How to repeat this process
+
+<span class="k">1.</span> Open Visual Studio Code and start a new GitHub Copilot chat.
+<span class="k">2.</span> Paste the contents of operational-support/operational-support-template-instructions.md into the chat.
+<span class="k">3.</span> When prompted for intent, state: &quot;Enumerate all Azure DevOps projects in the XYZ organisation, count Git repositories per project, and produce a ranked Markdown report highlighting the project with the most repositories.&quot;
+<span class="k">4.</span> Review the proposed actions presented by GitHub Copilot before approving.
+<span class="k">5.</span> When prompted to enter your Personal Access Token (PAT), type it directly into the terminal. The PAT will not be echoed, stored, or logged.
+<span class="k">6.</span> Review the generated report at c:\_T\azdo-projects-XYZ-YYYY-MM-DD.md.
+<span class="k">7.</span> Alternatively, run the previously generated script directly:
+<span class="k">8.</span> powershell.exe -ExecutionPolicy Bypass -File &quot;c:\_T\Get-AzDoProjects.ps1&quot;
+
+Update the $OutputFile parameter in the script to reflect the current date before re-running.
+
+Script summary
+
+The PowerShell script Get-AzDoProjects.ps1 performs the following steps:
+
+<span class="k">1.</span> Prompts for a PAT using Read-Host -AsSecureString — the value is never echoed or stored.
+<span class="k">2.</span> Calls GET https://dev.azure.com/{org}/_apis/projects?$top=500&amp;api-version=7.1 to retrieve all projects.
+<span class="k">3.</span> For each project, calls GET https://dev.azure.com/{org}/{project}/_apis/git/repositories?api-version=7.1 to count repositories.
+<span class="k">4.</span> Sorts projects by repository count in descending order.
+<span class="k">5.</span> Writes a Markdown report to c:\_T\azdo-projects-XYZ-YYYY-MM-DD.md.
+<span class="k">6.</span> Prints a ranked console summary.
+
+PAT permission requirements
+
+The PAT must have at minimum the following scope granted:
+<span class="k">-</span><span class="w"> </span>Project and Team — Read — to list projects.
+<span class="k">-</span><span class="w"> </span>Code — Read — to list repositories within each project.
+
+Projects for which the PAT lacks permission will appear in the report with a count of N/A (restricted).
+
+Notes
+
+<span class="k">-</span><span class="w"> </span>The script was validated against 92 projects in the XYZ organisation on 2026-06-14.
+<span class="k">-</span><span class="w"> </span>Projects prefixed with ZDEPRECATE, zDEPRECATE, xREADONLY, or yBLACKHOLE are administrative or deprecated projects and may be excluded from future audits if desired.
+<span class="k">-</span><span class="w"> </span>The $top=500 parameter in the projects query is a safe upper bound; adjust if the organisation grows beyond 500 projects.
+<span class="k">-</span><span class="w"> </span>Repository counts reflect only Git repositories; Team Foundation Version Control (TFVC) repositories are not included in the ADO REST API git/repositories endpoint.
+
+Quality gate checklist
+
+Before closing this instruction file, verify that:
+<span class="k">-</span><span class="w"> </span>No contractions were used.
+<span class="k">-</span><span class="w"> </span>No acronym was left undefined.
+<span class="k">-</span><span class="w"> </span>All outputs are professional.
+<span class="k">-</span><span class="w"> </span>Comments are light-touch and humorous only where appropriate.
+<span class="k">-</span><span class="w"> </span>The change list was shown before action.
+<span class="k">-</span><span class="w"> </span>Outputs were saved locally for review.
+<span class="k">-</span><span class="w"> </span>Secrets were not stored or displayed.
+<span class="k">-</span><span class="w"> </span>Branch, file name, and commit message follow the agreed conventions.
+<span class="k">-</span><span class="w"> </span>The user confirmed satisfaction with the outputs.
+</code></pre></div>
+
+<p>And for those who want to see interim PowerShell script that was generated during the copilot session:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Get-AzDoProjects.ps1</span>
+<span class="c"># Lists all Azure DevOps projects in the {org} organisation,</span>
+<span class="c"># counts Git repositories per project, and produces a ranked Markdown report.</span>
+<span class="c"># The PAT never leaves your keyboard -- we pinky-promise.</span>
+
+<span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+<span class="k">param</span><span class="p">(</span>
+    <span class="no">[string]</span><span class="nv">$Organisation</span> <span class="p">=</span> <span class="s2">&quot;{org}&quot;</span><span class="p">,</span>
+    <span class="no">[string]</span><span class="nv">$ApiVersion</span>   <span class="p">=</span> <span class="s2">&quot;7.1&quot;</span><span class="p">,</span>
+    <span class="no">[string]</span><span class="nv">$OutputFile</span>   <span class="p">=</span> <span class="s2">&quot;c:\_T\azdo-projects-{org}-2026-06-14.md&quot;</span>
+<span class="p">)</span>
+
+<span class="c"># Securely prompt for the Personal Access Token (PAT)</span>
+<span class="nv">$securePat</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s2">&quot;Enter your Azure DevOps PAT (input is hidden)&quot;</span> <span class="n">-AsSecureString</span>
+<span class="nv">$bstr</span>      <span class="p">=</span> <span class="no">[System.Runtime.InteropServices.Marshal]</span><span class="p">::</span><span class="n">SecureStringToBSTR</span><span class="p">(</span><span class="nv">$securePat</span><span class="p">)</span>
+<span class="nv">$pat</span>       <span class="p">=</span> <span class="no">[System.Runtime.InteropServices.Marshal]</span><span class="p">::</span><span class="n">PtrToStringBSTR</span><span class="p">(</span><span class="nv">$bstr</span><span class="p">)</span>
+<span class="no">[System.Runtime.InteropServices.Marshal]</span><span class="p">::</span><span class="n">ZeroFreeBSTR</span><span class="p">(</span><span class="nv">$bstr</span><span class="p">)</span>
+
+<span class="c"># Build the Basic authorisation header</span>
+<span class="nv">$encodedPat</span> <span class="p">=</span> <span class="no">[Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="no">[Text.Encoding]</span><span class="p">::</span><span class="n">ASCII</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="s2">&quot;:$pat&quot;</span><span class="p">))</span>
+<span class="nv">$headers</span>    <span class="p">=</span> <span class="p">@{</span> <span class="n">Authorization</span> <span class="p">=</span> <span class="s2">&quot;Basic $encodedPat&quot;</span> <span class="p">}</span>
+<span class="nv">$pat</span>        <span class="p">=</span> <span class="nv">$null</span>
+
+<span class="nv">$baseUrl</span> <span class="p">=</span> <span class="s2">&quot;https://dev.azure.com/$Organisation&quot;</span>
+
+<span class="c"># Step 1: Retrieve all projects</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;</span><span class="se">`n</span><span class="s2">Retrieving projects from $baseUrl ...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$projectsResponse</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="p">`</span>
+        <span class="n">-Uri</span>     <span class="s2">&quot;$baseUrl/_apis/projects?</span><span class="se">`$</span><span class="s2">top=500&amp;api-version=$ApiVersion&quot;</span> <span class="p">`</span>
+        <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="p">`</span>
+        <span class="n">-Method</span>  <span class="n">Get</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="nb">Write-Error</span> <span class="s2">&quot;Failed to retrieve projects. Verify that your PAT has the Read scope for the Project and Team permission. Error: $_&quot;</span>
+    <span class="n">exit</span> <span class="n">1</span>
+<span class="p">}</span>
+
+<span class="nv">$projects</span> <span class="p">=</span> <span class="nv">$projectsResponse</span><span class="p">.</span><span class="n">value</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;Found </span><span class="p">$(</span><span class="nv">$projects</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span><span class="s2"> project(s).&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+
+<span class="c"># Step 2: Count repositories per project</span>
+<span class="nv">$results</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[PSCustomObject]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$project</span> <span class="k">in</span> <span class="nv">$projects</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Write-Host</span> <span class="s2">&quot;  Counting repos in: </span><span class="p">$(</span><span class="nv">$project</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="s2">&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nv">$reposResponse</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="p">`</span>
+            <span class="n">-Uri</span>     <span class="s2">&quot;$baseUrl/</span><span class="p">$(</span><span class="no">[uri]</span><span class="p">::</span><span class="n">EscapeDataString</span><span class="p">(</span><span class="nv">$project</span><span class="p">.</span><span class="n">name</span><span class="p">))</span><span class="s2">/_apis/git/repositories?api-version=$ApiVersion&quot;</span> <span class="p">`</span>
+            <span class="n">-Headers</span> <span class="nv">$headers</span> <span class="p">`</span>
+            <span class="n">-Method</span>  <span class="n">Get</span>
+        <span class="nv">$repoCount</span> <span class="p">=</span> <span class="nv">$reposResponse</span><span class="p">.</span><span class="n">count</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nv">$repoCount</span> <span class="p">=</span> <span class="p">-</span><span class="n">1</span>
+        <span class="nb">Write-Warning</span> <span class="s2">&quot;  Could not retrieve repositories for project &#39;</span><span class="p">$(</span><span class="nv">$project</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="s2">&#39;. It may be restricted.&quot;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$results</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="no">[PSCustomObject]</span><span class="p">@{</span>
+        <span class="n">ProjectName</span>     <span class="p">=</span> <span class="nv">$project</span><span class="p">.</span><span class="n">name</span>
+        <span class="n">ProjectState</span>    <span class="p">=</span> <span class="nv">$project</span><span class="p">.</span><span class="n">state</span>
+        <span class="n">Visibility</span>      <span class="p">=</span> <span class="nv">$project</span><span class="p">.</span><span class="n">visibility</span>
+        <span class="n">RepositoryCount</span> <span class="p">=</span> <span class="nv">$repoCount</span>
+        <span class="n">ProjectId</span>       <span class="p">=</span> <span class="nv">$project</span><span class="p">.</span><span class="n">id</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c"># Step 3: Sort descending by repository count</span>
+<span class="nv">$ranked</span> <span class="p">=</span> <span class="nv">$results</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">RepositoryCount</span> <span class="n">-Descending</span>
+<span class="nv">$leader</span> <span class="p">=</span> <span class="nv">$ranked</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span>
+
+<span class="c"># Step 4: Build Markdown report</span>
+<span class="nv">$timestamp</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>
+<span class="nv">$reportLines</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[string]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;# Azure DevOps Projects - {org} Organisation&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;**Organisation:** </span><span class="se">``</span><span class="s2">{org}</span><span class="se">``</span><span class="s2">  &quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;**Report generated:** $timestamp  &quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;**Total projects found:** </span><span class="p">$(</span><span class="nv">$projects</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span><span class="s2">  &quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;**API version:** $ApiVersion  &quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;## Summary&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;The project with the most Azure Repos (Git Repositories) is:&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&gt; ### </span><span class="p">$(</span><span class="nv">$leader</span><span class="p">.</span><span class="n">ProjectName</span><span class="p">)</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&gt; **Repository count:** </span><span class="p">$(</span><span class="nv">$leader</span><span class="p">.</span><span class="n">RepositoryCount</span><span class="p">)</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;## All Projects - Ranked by Repository Count&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;| Rank | Project Name | Repositories | State | Visibility |&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;| ---- | ------------ | :----------: | ----- | ---------- |&quot;</span><span class="p">)</span>
+
+<span class="nv">$rank</span> <span class="p">=</span> <span class="n">1</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$row</span> <span class="k">in</span> <span class="nv">$ranked</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$repoDisplay</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$row</span><span class="p">.</span><span class="n">RepositoryCount</span> <span class="o">-eq</span> <span class="p">-</span><span class="n">1</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;N/A (restricted)&quot;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">RepositoryCount</span><span class="p">)</span><span class="s2">&quot;</span> <span class="p">}</span>
+    <span class="nv">$highlight</span>   <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$row</span><span class="p">.</span><span class="n">ProjectName</span> <span class="o">-eq</span> <span class="nv">$leader</span><span class="p">.</span><span class="n">ProjectName</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot; *&quot;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="s2">&quot;&quot;</span> <span class="p">}</span>
+    <span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;| $rank | </span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">ProjectName</span><span class="p">)</span><span class="s2">$highlight | $repoDisplay | </span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">ProjectState</span><span class="p">)</span><span class="s2"> | </span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">Visibility</span><span class="p">)</span><span class="s2"> |&quot;</span><span class="p">)</span>
+    <span class="nv">$rank</span><span class="p">++</span>
+<span class="p">}</span>
+
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;## Notes&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;- A repository count of </span><span class="se">``</span><span class="s2">N/A (restricted)</span><span class="se">``</span><span class="s2"> indicates that the PAT did not have sufficient permission to list repositories in that project.&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;- The * symbol marks the project with the highest repository count.&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;- Results reflect the state of the organisation at the time of report generation.&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nv">$reportLines</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;&lt;!-- Report generated by Get-AzDoProjects.ps1 - because spreadsheets are so last decade. --&gt;&quot;</span><span class="p">)</span>
+
+<span class="c"># Step 5: Write the report to disk</span>
+<span class="nv">$reportLines</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="nv">$OutputFile</span> <span class="n">-Encoding</span> <span class="n">UTF8</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;</span><span class="se">`n</span><span class="s2">Report saved to: $OutputFile&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+
+<span class="c"># Step 6: Print a console summary</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;</span><span class="se">`n</span><span class="s2">-------------------------------------------------------&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;  Project with the most repositories: </span><span class="p">$(</span><span class="nv">$leader</span><span class="p">.</span><span class="n">ProjectName</span><span class="p">)</span><span class="s2"> (</span><span class="p">$(</span><span class="nv">$leader</span><span class="p">.</span><span class="n">RepositoryCount</span><span class="p">)</span><span class="s2"> repos)&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;-------------------------------------------------------&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;&quot;</span>
+<span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$row</span> <span class="k">in</span> <span class="nv">$ranked</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$repoDisplay</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$row</span><span class="p">.</span><span class="n">RepositoryCount</span> <span class="o">-eq</span> <span class="p">-</span><span class="n">1</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;N/A&quot;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">RepositoryCount</span><span class="p">)</span><span class="s2">&quot;</span> <span class="p">}</span>
+    <span class="nb">Write-Host</span> <span class="s2">&quot;  $i. </span><span class="p">$(</span><span class="nv">$row</span><span class="p">.</span><span class="n">ProjectName</span><span class="p">)</span><span class="s2"> - $repoDisplay repo(s)&quot;</span>
+    <span class="nv">$i</span><span class="p">++</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>C U next time.</p>
+        </div>
+
+    </section>
+    <footer class="footer-article">
+        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a>
+        | <a href="https://wsbctechnicalblog.github.io/ai-fundamentals-operational-support.html" rel="bookmark"
+         title="Permalink to Humanoid #13 and the Instruction-First Experiment for Operational Support">Permalink</a>            
+        </div>
+        <!-- metaldata 
+        -->
+    </footer>
+        <hr>
+        <div id="gisqus_thread"></div>
+        <script src="https://giscus.app/client.js"
+            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
+            data-repo-id="R_kgDOIGjt-Q"
+            data-category="Technical Blog"
+            data-category-id="DIC_kwDOIGjt-c4CU007"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script></div>
+            </div>
+            <div class="large-2 aside column">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="https://www.worksafebc.com/en">WorkSafeBC</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/news-events/campaigns/2019/September/connect-to-an-it-career-with-a-difference">WorkSafeBC IT is hiring</a></li>
+                    <li><a href="https://www.worksafebc.com/en/about-us/careers">Careers</a></li>
+                    <li><a href="https://wsbctechnicalblog.github.io/feeds/posts.atom.xml">ATOM/RSS Feed</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+</div>
+    <div class="footer">
+        <div class="data-holder">
+        <div class="row">
+            <div class="large-3 column">
+<div class="credits">
+    <h3>WorkSafeBC</h3>
+    <p><a href="/pages/copyright.html">Copyright</a>&nbsp;|<br /><a href="/pages/terms-of-use.html">Terms&nbsp;and&nbsp;Conditions</a></p>
+</div>           </div>
+           <div class="large-6 tag-cloud column">
+                <h3>Tags</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai</a>(33)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning</a>(56)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering</a>(92)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal</a>(22)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure devops</a>(101)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/automation.html">automation</a>(28)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines</a>(67)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/prompts.html">prompts</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/version-control.html">version-control</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/books.html">books</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/coop.html">coop</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips</a>(30)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/feature-flags.html">feature-flags</a>(4)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops</a>(55)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/agile.html">agile</a>(36)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/code.html">code</a>(27)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence</a>(21)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/event.html">event</a>(10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/posters.html">posters</a>(11)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/101.html">101</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/eliminate-waste.html">eliminate-waste</a>(24)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/ceremony.html">ceremony</a>(8)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/quality.html">quality</a>(19)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/oss.html">oss</a>(6)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/github.html">github</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/standards.html">standards</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/azure.html">azure</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/innovation.html">innovation</a>(7)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/design.html">design</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testing.html">testing</a>(15)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/release.html">release</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code</a>(16)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/book.html">book</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/continuous-delivery.html">continuous-delivery</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/delivery-on-demand.html">delivery-on-demand</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/architecture.html">architecture</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/collaboration.html">collaboration</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/team-building.html">team-building</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/no-estimates.html">no-estimates</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/tdd.html">TDD</a>(12)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/estimates.html">estimates</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/strategy.html">strategy</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/planning.html">planning</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/value.html">value</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/process.html">process</a>(2)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/flow.html">flow</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/lean.html">lean</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/customer-centric.html">customer-centric</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/psychological-safety.html">psychological-safety</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/dojo.html">dojo</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/testability.html">testability</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/system-programming.html">system-programming</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/xp.html">xp</a>(5)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/events.html">events</a>(3)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/security.html">security</a>(1)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/tag/workflow.html">workflow</a>(1)</li>
+                </ul>
+            </div>
+            <div class="large-3 category-column column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
+                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (258)</li>
+                </ul>
+             
+            </div>
+        </row>
+        </div>
+    </div>
+</body>
+</html>
