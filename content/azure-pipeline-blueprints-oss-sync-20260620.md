@@ -1,12 +1,12 @@
 Title: OSS SYNC 20260620 - Self Hosted Flexibility Production Guard Rails
-Date: 2026-06-20
+Date: 2026-06-30
 Category: Posts 
 Tags: azure-devops, pipelines, engineering
 Slug: azure-pipeline-blueprints-oss-sync-20260620
 Author: Willy-Peter Schaub
 Summary: Stage-level pool control, backward-compatible configuration, and stronger production deployment protection across the v2 blueprints.
 
-With Pull request [#38](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/38) merged, we are pleased to share the latest update to our Azure DevOps Pipeline Blueprints. Version 2.2.0 strengthens two areas that matter in practice: deployment flexibility and production safety.
+Ten days late, but here we are. With Pull request [#38](https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/38) merged, we are pleased to share the latest update to our Azure DevOps Pipeline Blueprints. Version 2.2.0 strengthens two areas that matter in practice: deployment flexibility and production safety.
 
 This release introduces support for both Microsoft-hosted and self-hosted agents across the blueprint stages, while also tightening protection around production deployments. The result is a more adaptable blueprint set that helps teams work within their operational constraints without weakening delivery guard-rails.
 
