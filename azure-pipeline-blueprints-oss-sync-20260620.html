@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Pipeline-as-code wrapped with Pull Requests - </title>
+        <title>OSS SYNC 20260620 - Self Hosted Flexibility Production Guard Rails - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,90 +33,138 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="bookmark"
-            title="Permalink to Pipeline-as-code wrapped with Pull Requests">Pipeline-as-code wrapped with Pull Requests</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-20260620.html" rel="bookmark"
+            title="Permalink to OSS SYNC 20260620 - Self Hosted Flexibility Production Guard Rails">OSS SYNC 20260620 - Self Hosted Flexibility Production Guard Rails</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Sat 13 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Tue 30 June 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.</p>
+            <p>Stage-level pool control, backward-compatible configuration, and stronger production deployment protection across the v2 blueprints.</p>
         </div>
     
         <div class="entry-content">
-            <p>For the past three program increments, which amounts to a staggering 30 iterations, or 300 days, we have been working on our quest to convert our legacy classic pipelines to YAML-based pipelines, as outlined in our <a href="/why-pipelines-part1.html">Pipelines - Why bother and what are our nightmares and options</a> series. More importantly, we have been working in parallel to elaborate on the value to our stakeholders. </p>
-<p>A tough challenge, because there is no visual value in continuous integration and deployment pipelines to business, our delighted end-users, or our engineers who want full control of our common engineering system. </p>
-<p>A recent awareness and prioritisation push by our <a href="https://www.scaledagileframework.com/release-train-engineer-and-solution-train-engineer/">Release Train Engineers</a> have raised a few interesting questions. This post attempts to give our critics some answers and scratch the surface of the possibilities and values of our new blueprint-based pipelines.</p>
-<h1>Pipelines as code ... what?</h1>
-<p>Let us start with <strong>infrastructure as code</strong> (IaC), which manages and provisions computer data centers through machine- and human-readable configuration files. Instead of humanoids manually clicking and tweaking knobs and dials in a graphical user interface, machines read and process the code. There is no apocalyptic vision of <a href="https://en.wikipedia.org/wiki/Skynet_(Terminator)">Skynet</a>, only the option of <strong>automation</strong> and <strong>consistent</strong> deployment of our infrastructure.</p>
-<p>If you view continuous integration and deployment pipelines as infrastructure, we could stop here. However, <a href="https://www.jenkins.io/">Jenkins</a> introduced the term "<strong>pipelines as code</strong>", which is more fitting.</p>
-<p>It is a technique that treats the configuration of our continuous integration and deployment pipelines as code, placed under version control, packaged in reusable components, and automated deployment and testing ... like IaC.</p>
-<p>The YAML-based pipelines in Azure Pipelines, opened the <strong>golden fleece</strong>, not pandoras box, for our pipelines as code adventure. </p>
-<hr>
-<h1>Benefit #1 - Transparency</h1>
-<p>Software engineering is complex and involves stakeholders from all walks of life. <strong>Transparency</strong> is considered one of the core ingredients to Agile and Lean development, as well as a healthy DevOps mindset.</p>
-<p>Transparency avoids assumptions, secrets, and conspiracies - instead, it fosters trust.</p>
-<p>With <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Azure Pipelines</a> all pipeline artifacts are placed in source control repositories that can be viewed by all our engineers - there are no secrets! </p>
-<blockquote>
-<p>We enable our engineers to explore what is abstracted under the covers, continuously learn, give candid feedback, and <strong>trust</strong> our common engineering system.</p>
-</blockquote>
-<hr>
-<h1>Benefit #2 - Everyone can contribute</h1>
-<p>The <a href="https://azure.microsoft.com/en-us/services/devops/repos/">Azure Repos</a>, which we used to store our pipeline code, allow us to set a wide range of branch policies to protect our master (trunk) branch that always reflects a production-ready state. One of the policies enforces the use of <a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests?view=azure-devops">Pull Requests</a>, which allows our common engineering team to review and give actionable and constructive feedback to all proposed pipeline code changes.</p>
-<blockquote>
-<p>More importantly, we enable our engineers to <strong>contribute</strong> to our common engineering system by submitting pipeline changes and innovations through the pull request workflow. All without the need for elevated privileges or specialized roles, such as Super Users, which complicate the administration of our classic pipeline infrastructure and security.</p>
-</blockquote>
-<hr>
-<h1>Benefit #3 - Automation</h1>
-<p>When you do something twice, trice, or more times, you should invest in <strong>automation</strong>. Machines are much better with repetitive operations than we are and empower us to focus on other, more valuable, services.</p>
-<p>The explosive growth of software and our goals for <strong>consistency</strong>, <strong>security</strong>, <strong>simplicity</strong>, and <strong>enablement</strong> have given rise to continuous delivery pipelines that build and deploy solutions in a standard way.</p>
-<p>Our common engineering system is using YAML templates to abstract away implementation details and support our engineering practices. They inject underlying tasks to run security scans, validate our building code, and keep an eye on any binary construct moving beyond our <strong>guardrails</strong> (more appealing term for governance).</p>
-<blockquote>
-<p>We enable our engineers by injecting re-usable templates when they queue their Azure Pipelines and sprinkling the concept of <strong>shift-left</strong> automatically and consistently.</p>
-</blockquote>
-<p>As a (intentional) side-effect the pipelines as code also enables our long-term vision for self-service automation. Like a self-service kiosk, we will be able to direct our engineers to a self-service portal that displays a menu of services and facilitates actions to deploy the services in an automated, consistent, and rapid manner.</p>
-<blockquote>
-<p>We will enable our engineers to deploy pipelines and associated infrastructure on their <strong>own terms</strong>.</p>
-</blockquote>
-<hr>
-<h1>Benefit #4 - Focus engineering on business code</h1>
-<p>Lastly, the most controversial and debated benefit. As software engineers we have an inquisitive mind and an urge to tinker with everything under the bonnet. It feeds purpose, mastery, and autonomy as discussed by <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc">Daniel Pink</a>, <strong>but</strong> it also distracts our razor focus to continuously deliver value to our delighted end-users.</p>
-<p>I am also a software engineer at heart and have often found myself spinning off into underlying and unrelated code bases. It is like doing a search on the internet, looking for a specific piece of information, and eventually stepping back from dozens of browser tabs ... "what was I looking for?!?" Interesting, educational, but minimal value to getting the job done and an unfortunate waste of productive time.</p>
-<p>Instead, let me try using <a href="https://www.informationisbeautiful.net/visualizations/million-lines-of-code/">this clean visualization</a> by <a href="https://informationisbeautiful.net/">Information Is Beautiful</a>, and the latest number of our production pipelines to make my point.</p>
-<blockquote>
-<p>Extract from our weekly Azure Pipelines report: 927 production CI/Build pipelines</p>
-<p><img alt="WASTE" src="/images/pipelines-as-code-wrapped-with-prs-1.png"></p>
-</blockquote>
-<p>To define a pipeline to build, test, and scan an Azure Function requires roughly 300 lines of pipeline code. The 927 production pipelines are a mix of simpler, but also more complex pipelines, adding up to an astounding 927 * 300 = <strong>278,100</strong> lines of pipeline code.</p>
+            <p>Ten days late, but here we are. With Pull request <a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/38">#38</a> merged, we are pleased to share the latest update to our Azure DevOps Pipeline Blueprints. Version 2.2.0 strengthens two areas that matter in practice: deployment flexibility and production safety.</p>
+<p>This release introduces support for both Microsoft-hosted and self-hosted agents across the blueprint stages, while also tightening protection around production deployments. The result is a more adaptable blueprint set that helps teams work within their operational constraints without weakening delivery guard-rails.</p>
+<h1>Why this matters</h1>
+<p>This update improves the day-to-day usability of the blueprints for teams that need to run workloads on specific agent pools, while reducing the risk of misconfigured production deployments.
+In short, this release helps us:</p>
 <ul>
-<li>If engineers embrace our first-generation generic blueprints, as discussed in <a href="/yaml-pipelines-part5.html">Part 5: Pipelines - Blueprints to fuel consistency and enablement</a> and <a href="/yaml-pipelines-part6.html">Part 6: Pipelines - Gotcha! The generic blueprint-based YAML pipeline simplicity</a>, the lines of pipeline code are reduced to 122 for an Azure Function pipeline. 927 * 122 = <strong>113,094</strong> lines of pipeline code. A lot less, but still a lot of code.</li>
-<li>If engineers embrace our second-generation app-type blueprints, which <a href="https://github.com/orgs/CommunityBCIT/people/said-akram-wcbbc">Said</a>] will discuss in the upcoming <strong>Part 7</strong> shortly, the lines of code are reduced to a mere 28 lines of code. 927 * 28 = 25,956 lines of pipeline code.</li>
+<li>support more hosting models without cloning or forking pipeline logic</li>
+<li>keep configuration explicit and easier to reason about</li>
+<li>preserve backward compatibility for existing consumers</li>
+<li>reduce the possibility of an unintended production release caused by an incorrect environment name</li>
 </ul>
-<blockquote>
-<p>Extract from Infographic: How Many Lines Of Code Is Your Favorite App?</p>
-<p><img alt="Information is Beautiful" src="/images/pipelines-as-code-wrapped-with-prs-2.png"></p>
-</blockquote>
-<p>The difference is an astounding 927 * 272 = 252,144 lines of pipeline code, which could be invested in delivering user-value or solutions such as Photoshop v1.0. We have barely scratched the surface of our continuous deployment (CD) pipelines, which is a topic for another day and a few posts; one of my goals is to increase the 28 lines of pipeline code owner by the engineering team by no more than a handful to add CD to our app-type blueprint-based pipelines.</p>
-<blockquote>
-<p>We enable our engineers to be razor-focused on their solution and avoid investing their precious time in <strong>wasteful</strong> pipeline code.</p>
-</blockquote>
-<hr>
-<h1>Wrap-up</h1>
-<p>You can continue to build your own pipelines, tinker with knobs, dials, configurations, and products, and remember to innovate all pipelines continuously - do-it-yourself (DIY). </p>
-<p>Alternatively, you can focus on your business code and let the pipeline engineers focus on your pipelines - pipelines-as-a-service. The choice is <strong>yours</strong>. </p>
+<h1>What changed</h1>
+<h2>Self-hosted agent pool support across all stages</h2>
+<p>All major pipeline stages now support self-hosted agents by conditionally omitting vmImage when the value is blank.</p>
+<p>A compile-time guard using ${{ if ne(..., '') }} selects the correct pool structure, which means the same blueprint can now work cleanly with both 
+Microsoft-hosted and self-hosted agent pools.</p>
+<p>This applies across the key stages, including:</p>
+<ul>
+<li>Continuous Integration</li>
+<li>Continuous Delivery</li>
+<li>Security</li>
+<li>Quality Assurance</li>
+<li>Pre-production</li>
+</ul>
+<p>Outcome: teams can redirect execution to a self-hosted pool without rewriting stage logic.</p>
+<h2>Explicit pool variable per stage</h2>
+<p>Each stage configuration now has its own explicit <em>StagePool variable declared alongside the existing </em>StageVmImage variable in the relevant *-config.yml file.
+Examples include:</p>
+<ul>
+<li>ciStagePool</li>
+<li>developmentStagePool</li>
+</ul>
+<p>This gives teams a single and predictable place to control where a stage runs.</p>
+<p>Outcome: configuration becomes more transparent, more maintainable, and easier to override without hidden behaviour.</p>
+<h2>Variable rename with backward compatibility</h2>
+<p>The variable ciVmImage has been renamed to ciStageVmImage for consistency with the broader stage-based model.</p>
+<p>To avoid breaking existing pipelines, the control template now uses:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">coalesce(variables.ciStageVmImage, variables.ciVmImage, &#39;windows-latest&#39;)Show more lines</span>
+</code></pre></div>
+
+<p>This means existing consumers can continue to function without immediate configuration changes.</p>
+<p>Outcome: we improve naming consistency without forcing disruptive migration work.</p>
+<h2>Production stage environment-name guard</h2>
+<p>We have added an additional production safety check across all three production stages:</p>
+<ul>
+<li>Production</li>
+<li>Canada Central</li>
+<li>Canada East</li>
+</ul>
+<p>This applies to the following Continuous Delivery blueprint families:</p>
+<ul>
+<li>azure-function</li>
+<li>nuget-package</li>
+<li>webapp</li>
+</ul>
+<p>These production stages now also require:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">endsWith(config.envName, &#39;-production-pr&#39;)</span>
+</code></pre></div>
+
+<p>This ensures that a misconfigured environment name does not accidentally satisfy the production deployment path.</p>
+<p>Outcome: stronger production guard-rails and reduced risk from configuration drift or naming mistakes.</p>
+<h2>@CeBlueprints reference fix</h2>
+<p>The <strong>101</strong> blueprint had a missing @CeBlueprints repository suffix in the Canada East production stage template reference.
+That has now been corrected.</p>
+<p>Outcome: improved consistency and reduced risk of reference resolution issues in the affected production path.</p>
+<h2>Example configuration pattern</h2>
+<p>Below is a simplified example of the new stage configuration approach:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ciStagePool</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Azure</span><span class="nv"> </span><span class="s">Pipelines&#39;</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ciStageVmImage</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;windows-latest&#39;</span>
+</code></pre></div>
+
+<p>This keeps the pool and image explicit, stage-scoped, and easy to redirect when needed.</p>
+<h2>Example control logic pattern</h2>
+<p>Below is the core idea behind the new conditional pool handling:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">${{ if ne(parameters.config.nameVM, &#39;&#39;) }}</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">pool</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ parameters.config.namePool }}</span>
+<span class="w">    </span><span class="nt">vmImage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ parameters.config.nameVM }}</span>
+<span class="l l-Scalar l-Scalar-Plain">${{ else }}</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">pool</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ parameters.config.namePool }}</span>
+</code></pre></div>
+
+<p>If a virtual machine image is provided, the stage uses it.</p>
+<p>If it is blank, the blueprint emits only the pool name, which is the correct behaviour for self-hosted agents.</p>
+<h2>Example backward compatibility pattern</h2>
+<p>To preserve compatibility with existing consumers, the control template now resolves the Continuous Integration image using coalesce:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">${{ coalesce(variables.ciStageVmImage, variables.ciVmImage, &#39;windows-latest&#39;) }}</span>
+</code></pre></div>
+
+<p>This gives us a clean migration path while maintaining operational continuity.</p>
+<h2>Why this release is important</h2>
+<p>This is a practical maturity release.</p>
+<p>It does not merely add features. It makes the blueprints easier to adopt in real enterprise environments, where teams often need:</p>
+<ul>
+<li>self-hosted agent routing</li>
+<li>explicit and localised stage control</li>
+<li>consistent naming</li>
+<li>safer production release conditions</li>
+</ul>
+<p>That combination improves stakeholder experience, reduces operational risk, and avoids the cost of custom pipeline divergence.</p>
+<h2>Final thoughts</h2>
+<p>This release continues the v2 blueprint journey towards consistency, resilience, and safer delivery by default.</p>
+<p>Flexible execution matters. So do strong production guard-rails.</p>
+<p>Version 2.2.0 gives us both.</p>
+<p>What else can, should, or must we strengthen as part of the Azure DevOps Pipeline Blueprints?</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/x-as-code.html">x-as-code </a>
-        | <a href="https://wsbctechnicalblog.github.io/pipelines-as-code-pr.html" rel="bookmark"
-         title="Permalink to Pipeline-as-code wrapped with Pull Requests">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a>
+        | <a href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-20260620.html" rel="bookmark"
+         title="Permalink to OSS SYNC 20260620 - Self Hosted Flexibility Production Guard Rails">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
