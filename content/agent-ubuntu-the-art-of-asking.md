@@ -20,12 +20,12 @@ Because here is the thing nobody tells you when you get your shiny new Copilot l
 
 # The four moves of a good relationship
 
-If a great prompt is an act of ubuntu, showing up for your agent so it can show up for you, then it follows a rhythm any good conversation does. We summarise it as four moves: `GOAL → CONTEXT → EXPECTATIONS → SOURCES`.
+If a great prompt is an act of ubuntu, showing up for your agent so it can show up for you, then it follows a rhythm any good conversation does. We summarise it as four moves: `INTENT → CONTEXT → OUTCOME → REFERENCES`.
 
-- **GOAL** — What do you actually want? Lead with the verb and the deliverable. Do nOt make your agent guess the destination.
+- **INTENT** — What do you actually want? Lead with the verb and the deliverable. Do nOt make your agent guess the destination.
 - **CONTEXT** — What does it need to know? Who is the audience, what is the situation, what constraints matter. Context is empathy, encoded.
-- **EXPECTATIONS** — What does "done" look like? Format, length, tone, and, crucially, what to avoid.
-- **SOURCES** — What should it rely on? Point it at the real material and ask it to cite. Ubuntu says: do not ask someone to invent the truth on your behalf.
+- **OUTCOME** — What does "done" look like? Format, length, tone, and, crucially, what to avoid.
+- **REFERENCES** — What should it rely on? Point it at the real material and ask it to cite. Ubuntu says: do not ask someone to invent the truth on your behalf.
 
 Miss these and you get the AI equivalent of a shrug. Nail them and you get a colleague.
 
@@ -35,10 +35,10 @@ Here is where it gets fun. Ubuntu does not mean treating everyone identically. I
 
 |  Move | 🟦 M365 Copilot user | 🟩 GitHub Copilot developer |
 |-------|----------------------|------------------------------|
-| Goal | ❌ "Help me with these sales numbers." <br> ✅ "Make a 5-row table of Q2 sales by region." | ❌ "Fix this" <br> ✅ "// Refactor parseConfig() to return Result<Config, Error>." |
-| Context | ❌ "Write a project update." <br> ✅ "Update for my director, non-technical — we are two weeks behind." | ❌ "Write a caching function." <br> ✅ "Add an LRU cache (max 500) — Node 20, TypeScript strict." |
-| Expectations | ❌ "Summarise this document." <br> ✅ "5 bullets, under 150 words, professional tone." | ❌ "Add some tests." <br> ✅ "Jest tests for empty, null & 429-retry; reuse test-utils." |
-| Sources | ❌ "What is our travel policy?" <br> ✅ "From the attached HR policy only — state the limit and cite it." | ❌ "Add a rate limiter." <br> ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." |
+| INTENT | ❌ "Help me with these sales numbers." <br> ✅ "Make a 5-row table of Q2 sales by region." | ❌ "Fix this" <br> ✅ "Refactor parseConfig() to return Result<Config, Error>." |
+| CONTEXT | ❌ "Write a project update." <br> ✅ "Update for my director, non-technical. We are two weeks behind." | ❌ "Write a caching function." <br> ✅ "Add an LRU cache (max 500) — Node 20, TypeScript strict." |
+| OUTCOME | ❌ "Summarise this document." <br> ✅ "5 bullets, under 150 words, professional tone." | ❌ "Add some tests." <br> ✅ "Jest tests for empty, null & 429-retry. Reuse test-utils." |
+| REFERENCES | ❌ "What is our travel policy?" <br> ✅ "From the attached HR policy only. State the limit and cite it." | ❌ "Add a rate limiter." <br> ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." |
 
 Notice the pattern? The "bad" prompts are not rude. They are just lonely. They leave the agent to fend for itself. The "good" ones bring it into the circle.
 
