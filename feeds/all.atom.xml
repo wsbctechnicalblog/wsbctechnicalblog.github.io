@@ -53,9 +53,9 @@
 &lt;tr&gt;
 &lt;td&gt;REFERENCES&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;❌ "What is our travel policy?" &lt;br&gt; ✅ "From the attached HR policy only. State the limit and cite it."&lt;/td&gt;
+&lt;td&gt;❌ "What is our travel policy?" &lt;br&gt; ✅ "From the attached HR policy only. State the limit and cite it." &lt;br&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;❌ "Add a rate limiter." &lt;br&gt; ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps."&lt;/td&gt;
+&lt;td&gt;❌ "Add a rate limiter." &lt;br&gt; ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." &lt;br&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
