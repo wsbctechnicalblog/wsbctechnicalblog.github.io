@@ -33,12 +33,14 @@ Same courtesy, different dialect.
 
 Here is where it gets fun. Ubuntu does not mean treating everyone identically. It means meeting each person where they are. The same is true of agents. A knowledge worker in M365 Copilot and a developer in GitHub Copilot both need the four moves, but they speak different dialects:
 
-|  Move |~| 🟦 M365 Copilot user |~| 🟩 GitHub Copilot developer |
-|-------|-|----------------------|-|------------------------------|
-| INTENT | | ❌ "Help me with these sales numbers." <br> ✅ "Make a 5-row table of Q2 sales by region." | | ❌ "Fix this" <br> ✅ "Refactor parseConfig() to return Result<Config, Error>." |
-| CONTEXT | | ❌ "Write a project update." <br> ✅ "Update for my director, non-technical. We are two weeks behind." | | ❌ "Write a caching function." <br> ✅ "Add an LRU cache (max 500) — Node 20, TypeScript strict." |
-| OUTCOME | | ❌ "Summarise this document." <br> ✅ "5 bullets, under 150 words, professional tone." | | ❌ "Add some tests." <br> ✅ "Jest tests for empty, null & 429-retry. Reuse test-utils." |
-| REFERENCES | | ❌ "What is our travel policy?" <br> ✅ "From the attached HR policy only. State the limit and cite it." <br> | | ❌ "Add a rate limiter." <br> ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." <br> |
+>
+> |  Move |~| 🟦 M365 Copilot user |~| 🟩 GitHub Copilot developer |
+> |-------|-|----------------------|-|------------------------------|
+> | INTENT | | ❌ "Help me with these sales numbers." <br> ✅ "Make a 5-row table of Q2 sales by region." | | ❌ "Fix this" <br> ✅ "Refactor parseConfig() to return Result<Config, Error>." |
+> | CONTEXT | | ❌ "Write a project update." <br> ✅ "Update for my director, non-technical. We are two weeks behind." | | ❌ "Write a caching function." <br> ✅ "Add an LRU cache (max 500) — Node 20, TypeScript strict." |
+> | OUTCOME | | ❌ "Summarise this document." <br> ✅ "5 bullets, under 150 words, professional tone." | | ❌ "Add some tests." <br> ✅ "Jest tests for empty, null & 429-retry. Reuse test-utils." |
+> | REFERENCES | | ❌ "What is our travel policy?" <br> ✅ "From the attached HR policy only. State the limit and cite it." <br> | | ❌ "Add a rate limiter." <br> ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." <br> |
+> 
 
 Notice the pattern? The "bad" prompts are not rude. They are just lonely. They leave the agent to fend for itself. The "good" ones bring it into the circle.
 

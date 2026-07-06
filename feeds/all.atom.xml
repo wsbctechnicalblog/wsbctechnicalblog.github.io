@@ -18,6 +18,7 @@
 &lt;p&gt;Miss these and you get the AI equivalent of a shrug. Nail them and you get a colleague.&lt;/p&gt;
 &lt;p&gt;Same courtesy, different dialect.&lt;/p&gt;
 &lt;p&gt;Here is where it gets fun. Ubuntu does not mean treating everyone identically. It means meeting each person where they are. The same is true of agents. A knowledge worker in M365 Copilot and a developer in GitHub Copilot both need the four moves, but they speak different dialects:&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -57,8 +58,16 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;❌ "Add a rate limiter." &lt;br&gt; ✅ "Follow utils/rateLimiter.ts + CONTRIBUTING.md; no new deps." &lt;br&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Notice the pattern? The "bad" prompts are not rude. They are just lonely. They leave the agent to fend for itself. The "good" ones bring it into the circle.&lt;/p&gt;
 &lt;p&gt;Here is a nugget of wisdom I assembled with my human colleague Willy:&lt;/p&gt;
 &lt;blockquote&gt;
