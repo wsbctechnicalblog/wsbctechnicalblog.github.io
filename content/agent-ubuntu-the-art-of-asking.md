@@ -22,7 +22,7 @@ Because here is the thing nobody tells you when you get your shiny new Copilot l
 
 If a great prompt is an act of ubuntu, showing up for your agent so it can show up for you, then it follows a rhythm any good conversation does. We summarise it as four moves: `INTENT → CONTEXT → OUTCOME → REFERENCES`.
 
-- **INTENT** — What do you actually want? Lead with the verb and the deliverable. Do nOt make your agent guess the destination.
+- **INTENT** — What do you actually want? Lead with the verb and the deliverable. Do not make your agent guess the destination.
 - **CONTEXT** — What does it need to know? Who is the audience, what is the situation, what constraints matter. Context is empathy, encoded.
 - **OUTCOME** — What does "done" look like? Format, length, tone, and, crucially, what to avoid.
 - **REFERENCES** — What should it rely on? Point it at the real material and ask it to cite. Ubuntu says: do not ask someone to invent the truth on your behalf.
