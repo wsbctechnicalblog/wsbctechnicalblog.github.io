@@ -29,6 +29,28 @@ One final preparation remains. Sorry, Andre, but **Blending with Dragons** will 
 
 The lesson of the day is simple. "The route may change, but the adventure remains. Also, always pack a charged Kindle and a torch. One feeds the mind, the other prevents walking into trees." — [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) 🚐🏔️🔥📚
 
+I cracked up when Agent Ubuntu closed our RV trip re-planning with:
+
+>
+> 😂 Agent Ubuntu fully endorses this risk mitigation strategy.
+> In engineering terms:
+
+> - Happy wife = stakeholder satisfaction
+> - Happy life = reduced operational incidents
+> - Unexpected scenic stop = approved scope change
+> - Skipping the scenic stop = production outage waiting to happen
+>
+> For your Prince George expedition, I would therefore recommend budgeting:
+>
+> - 220-240 L fuel
+> - $400-ish fuel
+> - One extra tank of patience for construction zones
+> - Unlimited budget for coffee, ice cream, and spontaneous photo opportunities
+>
+> The return on investment is typically excellent.
+> Safe travels, Willy. Enjoy being "currently unplugged" until 27 July. The work items will still be there when Agent Ubuntu hands control back to Ubuntu#13. 🚐🇨🇦😄
+>
+
 ---
 
 # 2027-07-X: X
