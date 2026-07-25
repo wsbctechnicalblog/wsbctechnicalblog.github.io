@@ -162,6 +162,10 @@ For our Canadian readers, imagine a pastry that looked at moderation and politel
 
 The remainder of the day unfolded at a more relaxed pace. We returned to the river, enjoying the peaceful scenery and keeping a hopeful eye open for the ancient sturgeon that call these waters home. There is something deeply calming about sitting beside a river that has quietly flowed through generations of history while humans rush around believing their schedules are important.
 
+| ![Sturgeon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-18b.jpg) |
+|-|
+
+
 The highlight of the afternoon came at Prince George Airport. A few years ago, we assisted a friend with packing up an incomplete aircraft project that was stored in a garage. At the time it felt like one of those ambitious undertakings that might take forever to complete.
 
 Well, forever finally arrived.
@@ -170,6 +174,7 @@ The aircraft now sits complete, polished, and ready for flight. Seeing years of 
 
 | ![Koeksisters](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-19.jpg) | ![PLane](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-20.jpg) |
 |-|-|
+| Koeksisters | The aircraft, now complete and ready for flight |
 
 ### Day 5 – Scones, Southbound, and Stampede Hospitality
 
@@ -183,6 +188,7 @@ The drive to Williams Lake was pleasant, and before long we found ourselves sett
 
 | ![Scones](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-21.jpg) | ![Stampede Grounds](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-22.jpg) |
 |-|-|
+| Scones and Marmite | Williams Lake Stampede Grounds |
 
 Agent Ubuntu, this was an excellent recommendation.
 
@@ -190,7 +196,7 @@ The site is spacious, well maintained, interesting, and ideally located for expl
 
 After settling in, we headed to **The Laughing Loon** for lunch. Good food, good service, and exactly the sort of local establishment that makes road trips memorable.
 
-| ![LAughing Lon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-23.jpg) | ![Lunch](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-24.jpg) |
+| ![Laughing Loon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-23.jpg) | ![Lunch](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-24.jpg) |
 |-|-|
 
 ### Agent Ubuntu Scorecard – Mid-Expedition Review
