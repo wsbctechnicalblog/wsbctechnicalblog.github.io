@@ -111,7 +111,7 @@ The trip, however, had always been scheduled for July.
 
 At this point, even Agent Ubuntu appeared to be looking at me over imaginary reading glasses.
 
-Fortunately, the camp manager found the situation hilarious. After reviewing the booking, he smiled and said: "_Well, you paid for June, your site has been sitting empty, and nobody else has used it. Enjoy your stay._"
+Fortunately, the camp manager found the situation hilarious. After reviewing the booking, he smiled and said: "_Well, you paid for June, your site has been sitting empty, and nobody else will use it tonight. Enjoy your stay._"
 And just like that, another crisis was resolved.
 
 For the record, and in the interests of complete transparency, Agent Ubuntu was not responsible for the bridge closure, the wildfire detour, or the (garbage) date entered on the campsite reservation. Some defects are firmly classified as user-generated.
@@ -128,9 +128,96 @@ Tomorrow: Prince George, new adventures, and hopefully fewer opportunities for t
 
 ---
 
-# 2027-07-X: X
+# 2027-07-23: Heatwaves, Koeksisters, Sturgeon Rivers, and a Triumphant Journey South
 
-X
+If the first few days of the trip were about resilience, detours, and route optimisation, the next chapter was about something entirely different:
+Surviving the heat.
+
+### Day 3 – Prince George: Surely This Cannot Be Canada?
+
+We arrived in Prince George expecting many things. Endless forests? Absolutely. Friendly people? Certainly.
+
+Temperatures that felt capable of roasting a South African? Not so much.
+The heat was relentless.
+
+Even Bella-Moo, whose normal operating mode is enthusiasm, appeared unimpressed by the conditions. Shade became a strategic asset. Water became a critical dependency. Air conditioning became the most important feature ever installed in a recreational vehicle.
+
+In the interests of staying properly hydrated and supporting the local economy, I felt duty-bound to investigate some of Prince George's local craft beer offerings. It would have been irresponsible not to.
+
+| ![Bella](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-13.jpg) | ![Beers](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-14.jpg) |
+|-|-|
+
+Later, we escaped the heat beneath the forest canopy and enjoyed a beautiful walk along the Fraser River. The trail meandered through towering trees and alongside the river that has shaped so much of British Columbia's history. Along the way we encountered several fascinating carvings, each with its own story and connection to the region's rich cultural heritage.
+
+For those interested in learning more about the carvings and their significance, see [Elmer Gunderson's work](https://tourismpg.com/local-legends-elmer-gunderson/).
+
+| ![Face 1](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-15.jpg) | ![Face 2](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-16.jpg) | ![Face 3](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-17.jpg) | ![Face 4](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-18.jpg) |
+|-|-|-|-|
+
+### Day 4 – A Taste of Home and a Flight Years in the Making
+
+Day four began with one of the great gifts of South African culture: **Koeksisters**.
+
+For our Canadian readers, imagine a pastry that looked at moderation and politely declined. Sweet, sticky, delicious, and capable of transporting any South African thousands of kilometres back home with a single bite.
+
+The remainder of the day unfolded at a more relaxed pace. We returned to the river, enjoying the peaceful scenery and keeping a hopeful eye open for the ancient sturgeon that call these waters home. There is something deeply calming about sitting beside a river that has quietly flowed through generations of history while humans rush around believing their schedules are important.
+
+The highlight of the afternoon came at Prince George Airport. A few years ago, we assisted a friend with packing up an incomplete aircraft project that was stored in a garage. At the time it felt like one of those ambitious undertakings that might take forever to complete.
+
+Well, forever finally arrived.
+
+The aircraft now sits complete, polished, and ready for flight. Seeing years of dedication, craftsmanship, patience, and determination transformed into a finished aircraft was genuinely inspiring. Some dreams require persistence. This one now has wings.
+
+| ![Koeksisters](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-19.jpg) | ![PLane](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-20.jpg) |
+|-|-|
+
+### Day 5 – Scones, Southbound, and Stampede Hospitality
+
+The final morning in Prince George began with another South African delicacy: **Scones** and **Marmite**.
+
+There may be endless debate about the best road-trip breakfast, but fresh scones enjoyed with coffee on a warm summer morning are difficult to beat.
+
+Eventually the moment arrived that every traveller knows is coming but never quite welcomes: It was time to point the RV south.
+
+The drive to Williams Lake was pleasant, and before long we found ourselves setting up camp at the Stampede Grounds.
+
+| ![Scones](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-21.jpg) | ![Stampede Grounds](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-22.jpg) |
+|-|-|
+
+Agent Ubuntu, this was an excellent recommendation.
+
+The site is spacious, well maintained, interesting, and ideally located for exploring the area. Like many great discoveries, it is a place we might never have considered without a little help from artificial intelligence and a lot of route optimisation.
+
+After settling in, we headed to **The Laughing Loon** for lunch. Good food, good service, and exactly the sort of local establishment that makes road trips memorable.
+
+| ![LAughing Lon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-23.jpg) | ![Lunch](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-24.jpg) |
+|-|-|
+
+### Agent Ubuntu Scorecard – Mid-Expedition Review
+
+So, how did Agent Ubuntu perform this time?
+
+Remarkably well.
+
+The RV camper continues to prove itself as a tiny rolling paradise. The rooftop air conditioner has been worth every watt. The onboard generator kept the air conditioning running while we enjoyed lunch stops, ensuring both the camper and Bella-Moo remained cool and comfortable despite temperatures that appeared more suitable for Arizona than northern British Columbia.
+
+The route planning has handled fires, highway closures, detours, bridge disruptions, and at least one reservation anomaly with impressive resilience.
+
+Most importantly, the recommendation to stay at the Williams Lake Stampede Grounds has been exceptional. Interesting location, excellent facilities, and another reminder that sometimes the best destinations are the ones that are not on the original list.
+
+So far the scorecard reads:
+
+- Wildfire detours: Several
+- Unexpected route changes: Numerous
+- Heatwaves: Excessive
+- Koeksisters consumed: Not enough
+- Scones consumed: Also not enough
+- Happy dog moments: Many
+- Agent Ubuntu planning failures: Still zero
+
+Thank you, Agent Ubuntu. The humans remain impressed.
+
+"_A great road trip is not measured by how closely you follow the original plan. It is measured by the stories collected along the way._" — Agent Ubuntu 🚐☀️🍺🐕✈️🏕️📚
 
 ---
 
