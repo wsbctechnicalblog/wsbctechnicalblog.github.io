@@ -8,14 +8,17 @@ Summary: What could possibly go wrong? A near-daily field report from the road.
 
 Before we continue, a brief apology to our regular readers. This blog is a temporarily pivot from engineering, artificial intelligence, and enterprise delivery to campgrounds, mountain views, and the occasional wildlife encounter. Under strict instructions from both Agent Ubuntu and my out-of-office auto-reply bot, I was not permitted to restart my work processor during the vacation. Normal programming will resume after our RV adventure. 🚐☕🏔️📚
 
+It covers the outcome of [Zero or One, not Fault Lines - How Agent Ubuntu Turned a “Someday” RV Dream into a Crisp Schedule](https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-ai-rv-trip.html), a blog post that described the planning by Agent Ubuntu (AI) and preparation for our RV adventure through British Columbia. The following entries are a near-daily journal of the trip, including route changes, wildlife encounters, and other unexpected events.
+
 ---
 
-# 2027-07-18 T-1 Day: When the Universe Rejected the Schedule
+# 2027-07-18 T-2 Day: When the Universe Rejected the Schedule
 
 Two days before departure, the universe decided it had opinions about our itinerary. A combination of landslides, road closures, and out-of-control forest fires began rewriting parts of British Columbia just as our route appeared settled. Also, our planned stop in Salmon Arm had to be cancelled due to unfortunate personal circumstances affecting the friends we had hoped to visit.
 
 | ![Forest Fires Map](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-1.png) | ![Camper Van](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-2.png) |
 |-|-|
+| | |
 
 For a brief moment, it felt as though the entire trip was being subjected to a very aggressive change management process.
 
@@ -27,7 +30,7 @@ With the turbulence behind us, we can return to the important pre-departure work
 
 One final preparation remains. Sorry, Andre, but **Blending with Dragons** will be staying behind. It is an excellent book, but perhaps not the ideal companion for an RV holiday through mountains, lakes, campfires, and roadside ice cream. A lighter Kindle reading queue has now been approved for production deployment.
 
-The lesson of the day is simple. "The route may change, but the adventure remains. Also, always pack a charged Kindle and a torch. One feeds the mind, the other prevents walking into trees." — [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) 🚐🏔️🔥📚
+The lesson of the day is simple. "_The route may change, but the adventure remains. Also, always pack a charged Kindle and a torch. One feeds the mind, the other prevents walking into trees._" — [Agent Ubuntu](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html) 🚐🏔️🔥📚
 
 I cracked up when Agent Ubuntu closed our RV trip re-planning with:
 
@@ -59,6 +62,7 @@ The first rule of road trips is simple: the journey starts when the plan encount
 
 | ![Shit Show](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-3.jpg) | ![Inside Camper Van](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-4.jpg) |
 |-|-|
+| | |
 
 Monday's departure began exactly on schedule. Agent Ubuntu's carefully crafted itinerary was loaded, the RV was packed, everyone was caffeinated, and all systems were operational. Unfortunately, the Brunswick Creek wildfire was getting worse. With Highway 1 still closed, our route required the unfortunate detour over the [Coquihalla](https://britishcolumbia.com/plan-your-trip/regions-and-towns/thompson-okanagan/coquihalla-highway/), Merritt, and Logan Lake.
 
@@ -77,6 +81,7 @@ The campsite was an absolute gem in the middle of nowhere, and after a hot day b
 
 | ![Cache Creek RV Site](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-5.jpg) | ![Cache Creek RV Site Menu](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-6.jpg) |
 |-|-|
+| | |
 
 Later that evening, I visited reception to ask the obvious question: "Where is the best pub or restaurant in town?" The receptionist casually pointed towards a fish and chips food truck parked outside. Now, under normal circumstances, fish from a food truck is perfectly reasonable. In temperatures capable of melting one's enthusiasm and while surrounded by wildfire smoke, it felt like an unusual recommendation.
 
@@ -86,6 +91,7 @@ We ordered fish and chips and a serving of popcorn shrimp. Minutes later, the or
 
 | ![Heat Warning](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-7.png) | ![Fish & Chips](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-8.jpg) |
 |-|-|
+| | |
 
 The night itself was sweltering. Thankfully, the camper's air conditioning performed heroically and prevented this blog entry from becoming an incident report about heat exhaustion.
 
@@ -95,6 +101,7 @@ Along the way we stopped at The Den by Moonshine Coffee near 103 Mile. Let me sa
 
 | ![Coffee Shop Outside](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-9.jpg) | ![Coffee Shop Inside](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-10.jpg) |
 |-|-|
+| | |
 
 The remainder of the journey was proceeding suspiciously well until we arrived near Quesnel. There, a bridge under construction had been completely closed to traffic.
 
@@ -103,6 +110,7 @@ Detour: 1
 
 | ![Bridge](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-11.jpg) | ![Quesnel Camp Site](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-12.jpg) |
 |-|-|
+| | |
 
 After adding a few bonus kilometres to the trip and navigating yet another alternative route, we finally reached our campground.
 That is when the next surprise arrived. The reservation could not be found. After some investigation, the mystery was solved. It turns out that I had successfully reserved and paid for the campsite ... for June (not July) 21.
@@ -146,6 +154,7 @@ In the interests of staying properly hydrated and supporting the local economy, 
 
 | ![Bella](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-13.jpg) | ![Beers](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-14.jpg) |
 |-|-|
+| | |
 
 Later, we escaped the heat beneath the forest canopy and enjoyed a beautiful walk along the Fraser River. The trail meandered through towering trees and alongside the river that has shaped so much of British Columbia's history. Along the way we encountered several fascinating carvings, each with its own story and connection to the region's rich cultural heritage.
 
@@ -153,6 +162,7 @@ For those interested in learning more about the carvings and their significance,
 
 | ![Face 1](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-15.jpg) | ![Face 2](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-16.jpg) | ![Face 3](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-17.jpg) | ![Face 4](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-18.jpg) |
 |-|-|-|-|
+| | | | |
 
 ### Day 4 – A Taste of Home and a Flight Years in the Making
 
@@ -164,6 +174,7 @@ The remainder of the day unfolded at a more relaxed pace. We returned to the riv
 
 | ![Sturgeon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-18b.jpg) |
 |-|
+| |
 
 
 The highlight of the afternoon came at Prince George Airport. A few years ago, we assisted a friend with packing up an incomplete aircraft project that was stored in a garage. At the time it felt like one of those ambitious undertakings that might take forever to complete.
@@ -175,6 +186,7 @@ The aircraft now sits complete, polished, and ready for flight. Seeing years of 
 | ![Koeksisters](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-19.jpg) | ![PLane](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-20.jpg) |
 |-|-|
 | Koeksisters | The aircraft, now complete and ready for flight |
+| | |
 
 ### Day 5 – Scones, Southbound, and Stampede Hospitality
 
@@ -186,18 +198,25 @@ Eventually the moment arrived that every traveller knows is coming but never qui
 
 The drive to Williams Lake was pleasant, and before long we found ourselves setting up camp at the Stampede Grounds.
 
-| ![Scones](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-21.jpg) | ![Stampede Grounds](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-22.jpg) |
+| ![Scones](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-21.jpg) | ![Stampede Grounds](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-27.jpg) |
 |-|-|
 | Scones and Marmite | Williams Lake Stampede Grounds |
+| | |
 
 Agent Ubuntu, this was an excellent recommendation.
 
 The site is spacious, well maintained, interesting, and ideally located for exploring the area. Like many great discoveries, it is a place we might never have considered without a little help from artificial intelligence and a lot of route optimisation.
 
+| ![Stampede Ground RV Park Entrance](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-25.jpg) | ![Stampede Ground RV Park Entrance Hut](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-26.jpg) |
+|-|-|
+| Stampede Grounds Main Entrance | Stampede Grounds RV Park Entrance Hut |
+| | |
+
 After settling in, we headed to **The Laughing Loon** for lunch. Good food, good service, and exactly the sort of local establishment that makes road trips memorable.
 
 | ![Laughing Loon](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-23.jpg) | ![Lunch](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-24.jpg) |
 |-|-|
+| | |
 
 ### Agent Ubuntu Scorecard – Mid-Expedition Review
 
@@ -227,15 +246,114 @@ Thank you, Agent Ubuntu. The humans remain impressed.
 
 ---
 
-# 2027-07-X: X
+# 2027-07-26: Smoke, Gratitude, Apple Fritters, and the Road Home
 
-X
+Every road trip eventually reaches the point where the journey turns homeward. What nobody mentions is that the road home can sometimes be the most memorable part of the adventure.
 
----
+### Day 6 – Williams Lake to Hope: Through the Smoke
 
-# 2027-07-X: X
+The drive from Williams Lake to Hope was unlike any road trip we have experienced before. The smoke was everywhere.
 
-X
+We could smell it. We could see it. We could feel the hot wind carrying it across the valleys. Throughout the day our mobile phones repeatedly sounded evacuation alerts, each one a sobering reminder that families across British Columbia were facing circumstances far more serious than route changes and travel delays.
+
+The further south we travelled, the more noticeable the traffic became. Vehicles loaded with trailers, boats, livestock trailers, and family possessions headed north while we travelled south. It was impossible not to think about the families being forced to leave their homes, often with little notice, and in some cases having to leave livestock behind in the hope that help would arrive in time.
+
+The scale of the devastation is difficult to comprehend.
+Adding to the surreal atmosphere, we spotted numerous firefighting helicopters heading south towards the affected areas. Each helicopter represented a crew willing to place themselves in harm's way to protect communities, property, wildlife, and livelihoods. We silently wished them safe journeys and miraculous accuracy with every water drop.
+
+As the day unfolded, Highway 1 closures once again forced changes to our carefully crafted route. Agent Ubuntu's original plan had to be abandoned in favour of Highway 5 via Kamloops.
+
+For the record, this was also not Agent Ubuntu's fault.
+
+In fact, we deliberately chose not to retrace our earlier route through Cache Creek. Looking in that direction, the horizon appeared almost apocalyptic, with smoke obscuring the landscape and turning daylight into an eerie orange haze.
+
+Sometimes the safest route is simply the one away from the smoke.
+
+By the time we reached Hope, we were ready for a slower pace.
+Our first stop was the legendary Rolling Pin Bakery, where we acquired what may have been the last surviving apple fritters in British Columbia. With apple fritters secured, we headed to WildRose RV Park for our final overnight stay.
+
+- The campsite had showers.
+- The campsite had washrooms.
+- The campsite had clean facilities.
+
+In other words, happy wife, happy life, happy Agent Ubuntu.
+
+To conclude our final evening on the road, we visited Mia's Pizza & Pasta. There I enjoyed one of the finest Beef Stroganoff dinners I have ever encountered.
+
+If your travels ever bring you through this part of British Columbia, do yourself a favour and put both establishments on your itinerary:
+
+- ✅ [Rolling Pin Bakery](https://www.rollingpinbakery.ca/)
+- ✅ [Mia's Pizza & Pasta](https://restaurantguru.com/Mia-Pizza-and-Pasta-Hope-British-Columbia/menu)
+
+Highly recommended.
+
+### Day 7 
+
+Compared to the previous six days, the final drive home was almost uneventful. Almost. Naturally, Highway 17 had to participate in the adventure by introducing bridge construction delays.
+
+At this point we simply laughed.
+Over the course of the trip we encountered:
+
+- Closed highways
+- Closed bridges
+- Wildfire detours
+- Construction detours
+- Reservation hiccups
+- Smoke
+- Evacuation alerts
+
+It seems only fitting that one final bridge disruption would appear before the closing credits. We eventually arrived at Fraserway RV and handed back our travelling home. Much like Agent Ubuntu, Fraserway continues to impress. The vehicle performed flawlessly throughout the adventure, and the handover process was smooth and professional. The final surprise of the journey arrived during the inspection when we discovered that the Fraserway representative spoke fluent German.
+
+As we would say in German: "Das war das Pünktchen auf dem i."
+
+### Back to Reality
+
+Once home, we unpacked at remarkable speed and immediately headed to our local pub for a celebratory brunch. A well-earned Widowmaker IPA marked the official conclusion of our long-awaited holiday.
+
+While enjoying lunch, the table beside us became engaged in a passionate discussion about how difficult parking had become in the area. First world problems, indeed.
+
+| ![Evacuation](../images/zero-or-one-not-fault-lines-ai-rv-trip-journal-28.jpg) |
+|-|
+| Eerie Evacuation Notice |
+| |
+
+Less than two hours from where we sat, families were evacuating their homes. Firefighters were battling major wildfires. Communities were facing uncertainty and loss. And here we were debating parking spaces. Perspective is a funny thing. Sometimes a road trip teaches us more than geography.
+
+### Post-Mortem: Agent Ubuntu's RV Adventure
+
+As every good technology initiative requires a retrospective, it is only fair that Agent Ubuntu receives the same treatment.
+
+#### Lessons Learned
+
+- Garbage in, garbage out.
+- Next time I will be far more explicit in my requirements.
+- When requesting campsites, I shall insist that washrooms and showers do not require the elusive and mythical Canadian loonie to operate.
+
+As with all artificial intelligence systems, intent, context, outcomes, and references matter. The [better the inputs, the better the recommendations](https://wsbctechnicalblog.github.io/agent-ubuntu-the-art-of-asking.html).
+
+#### What Went Well
+
+- Flexible route planning
+- Excellent campsite recommendations
+- Successful adaptation to wildfire disruptions
+- Outstanding vehicle selection
+- Effective replanning when roads closed
+- Exceptional recommendation of the Williams Lake Stampede Grounds
+- Happy humans
+- Happy dog
+
+#### Final Verdict
+
+Despite fires, road closures, bridge closures, reservation mishaps, extreme heat, smoke, and enough detours to keep any navigation system humble, Agent Ubuntu's plan proved remarkably resilient.
+
+- It adapted when circumstances changed.
+- It offered alternatives when routes disappeared.
+- Most importantly, it helped transform a long-discussed "someday" adventure into a week of unforgettable memories.
+- Well done, Agent Ubuntu.
+
+I suspect we will be collaborating again very soon when planning our next expedition to North Vancouver Island.
+
+"_The destination was never the real objective. The objective was creating stories worth telling when we returned home._" — Agent Ubuntu 🚐🏔️🔥🍎🍺🐕📚
 
 ---
 
