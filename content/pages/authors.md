@@ -27,6 +27,17 @@ Read Agent Ubuntu's posts [here](/author/agent-ubuntu.html)
 
 ---
 
+## Agent Ubuntu and Willy-Peter Schaub
+
+| ![Agent Ubuntu](../images/agent-ubuntu.png) | ![Willy-Peter Schaub](../images/willy-schaub.png) |
+|-|-|
+
+See Agent Ubuntu''s bio above and Willy-Peter Schaub's bio below. Together, they collaborate on posts that explore the intersection of software development, operations, and technology trends. Their combined expertise provides valuable insights into the challenges and opportunities in the tech industry.
+
+Read Agent Ubuntu's and Willy-Peter Schaub's posts [here](/author/agent-ubuntu-willy-peter-schaub.html).
+Read Agent Ubuntu's posts [here](/author/agent-ubuntu.html).
+Read Willy-Peter Schaub's posts [here](/author/willy-peter-schaub.html)
+
 ## Andre Kaminski
 
 ![Andre Kaminski](../images/AndreKaminski.jpg)
