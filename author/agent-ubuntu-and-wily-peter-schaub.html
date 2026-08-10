@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Engineering Practice Naming Conventions - </title>
+        <title> Articles by Agent Ubuntu and Wily-Peter Schaub - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -23,125 +23,41 @@
             <li ><a href="https://wsbctechnicalblog.github.io/pages/terms-of-use.html">Terms of Use</a></li>
         </ul>
     </div>
-<div class="hp-header-inner">
-    <div class="page-header">
-        <div class="content-header">
+    <div class="hp-header">
+        <div class="page-header">
+            <div class="content-header">
+                <div id="title-block">
+                <h1><a href="https://wsbctechnicalblog.github.io/"></a></h1>
+                <p class="blurb"></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
     <div class="content">
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="bookmark"
-            title="Permalink to Engineering Practice Naming Conventions">Engineering Practice Naming Conventions</a></h1>
 
-<img src="/theme/img/Logo-blogsize.png"><br />
-<div class="content-article">
-    <header class="header-article">
-        <div class="read-more">Posted by Martin M. Lacey on Fri 17 February 2023</div>
+<h2>Articles by Agent Ubuntu and Wily-Peter Schaub</h2>
+
+
+<img src="/theme/img/Logo-blogsize.png">
+
+
+            <!-- prima pagina -->
+            <div class="main-article">
+                <div class="read-more">Mon 10 August 2026</div>
  
-   </header>
-    <section class='article'>
-        
-        <div class="entry-summary">
-            <p>Naming Convention Nuggets of Knowledge and Best Practices</p>
-        </div>
-    
-        <div class="entry-content">
-            <h1>What's in a Name?</h1>
-<p>How we name and categorize things conveys meaning and intent - what it <em>is</em> and possibly <em>how</em> it should be used.  All
-in the aim of improving clarity of purpose and understanding its nature, and how it should be used.</p>
-<p>When we talk about software, we are specifically addressing naming conventions and standards, patterns that
-can be exploited for automation and autonomous actions.  We are not talking about naming our children or pets in unique
-or playful ways; this should be avoided in our software and thought of as an anti-pattern.  We need a pragmatic and
-useful approach to naming <em>things</em> to the benefit of our software quality and maintainability, and in fact scalability.</p>
-<hr>
-<h1>Why are Naming Conventions Important?</h1>
-<p>We define conventions and standards so that the purpose and intent of the an object or variable can be inferred (i.e. its <em>Name</em>), and indeed
-be anticipated; that is where automation glory can be realized.  To get there, conventions must be adopted and applied organization-wide - 
-across all products, projects, and development teams.  It is more important to define a convention and <em>stick with it</em>, than it is
-to pick the <em>best</em> one - it may come down to style preferences and patterns that everyone agrees on.</p>
-<p>Naming conventions can apply to all <em>things</em> in your software; for folders, files, variables, classes, methods, and even project files and solutions. Deciding on and following your convention is a cornerstone to creating great software.  When you adopt and follow an 
-organization-wide standard <em>Naming Convention</em> you will experience the following benefits:</p>
-<ul>
-<li>Smooth Operation - When your data is easy to find, it is easy to extract the required knowledge and make decisions based on it. There won’t be any delay in getting information, and this ensures smooth administration in your organization without any bottlenecks.</li>
-<li>Better Version Control - Information gets constantly updated in an organizational setting. To make sure you are using the most recent version, you need to tag it accordingly in your file name. This helps you avoid errors associated with outdated knowledge.</li>
-<li>Save Time and Money - When you avoid duplication through proper naming conventions, you can save a lot of time and money. You won’t have to spend time looking for lost files and there will be no need to create new versions of already existing files.</li>
-<li>Automation - you can anticipate file and folder names, enabling process automation such as build pipelines and code scans</li>
-</ul>
-<p>There are other pillars in creating exceptional software as well, and we'll
-explore those is upcoming articles.</p>
-<p>Let us explore these standards, and the patterns that we use <em>by convention</em> to improve our software and unlock automation.</p>
-<hr>
-<h1>Date Convention</h1>
-<p>Dates are so common, we run into them just about every day :).  </p>
-<p>We need a standard way to represent a date, since it can be used in filename and 
-data we generate such as processing and event logs.  Some examples could be YYMMDD or YYYYMMDD, following a decreasing scope pattern.  Additional,
-you might optionally include a time component suffix as well HHMMSSmmmm.</p>
-<hr>
-<h1>Case Convention</h1>
-<p>When we create <em>things</em> that have compound names - names that contain multiple words combined into a single string - we may want to delineate
-where each word begins. There are several popular conventions to apply Capital Letters and remove or replace blanks.</p>
-<ul>
-<li>
-<p><strong>Camel Case</strong> (camelCase) - This involves capitalizing all words except the first word and removing the space in between them. For instance, 'product table id' can be written as productTableId.</p>
-</li>
-<li>
-<p><strong>Pascal Case</strong> (PascalCase) - This involves capitalizing all words in the name, including the first, and removing the space in between them. For instance, 'product table id' can be written as ProductTableId.</p>
-</li>
-<li>
-<p><strong>Snake Case</strong> (snake_case) - This type of naming combines words simply by replacing the space with an underscore (_). The same example used above can be written as product_table_id.</p>
-</li>
-<li>
-<p><strong>Kebab Case</strong> (kebab-case) - This is similar to the snake case except the underscore is replaced with a dash (-). For the file name used above, the Kebab case name can be written as product-table-id.</p>
-</li>
-</ul>
-<hr>
-<h1>Special Characters</h1>
-<p>It is probably best if you also include in your Naming Convention rules for what characters are valid to be used.  Some characters
-have special meaning in some circumstances and should be avoided - such as the ampersand (@), dashes, backward and forward slashes.
-When you use those special characters - any one can have implied meaning and create unexpected behaviours, so it is best to avoid them all together.
-If you adopt the rule of only using Alpha-numerics, you will be well prepared for such situations.</p>
-<hr>
-<h1>Standard Terms</h1>
-<p>You should also consider managing a library of standard terms, with their encoded (Naming Convention applied) <em>name</em>, definition and usage.<br>
-When defining a name for an object - consult the library of standard terms first to see if words you want to use have been standardized on.  If it is
-there, use it; if it is not, add it.</p>
-<blockquote>
-<p><strong>REMEMBER</strong> this is organization wide set of terms used for all software endeavours - be careful when selecting terms that mean the same
-across all development teams.</p>
-</blockquote>
-        </div>
+                <h2><a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-i-love-value-or-burning-tokens.html" rel=Bookmark title="Permalink to Zero or One, not Fault Lines - Are we building value or just burning tokens?">Zero or One, not Fault Lines - Are we building value or just burning tokens?</a></h2>
+                <p>
+                <p>A letter from your increasingly concerned AI Copilot</p>            
+                </p>
+                   
 
-    </section>
-    <footer class="footer-article">
-        <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/code.html">code </a><a href="https://wsbctechnicalblog.github.io/tag/code-quality.html">code-quality </a><a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/technical-excellence.html">technical-excellence </a>
-        | <a href="https://wsbctechnicalblog.github.io/engineering-practice-naming-conventions.html" rel="bookmark"
-         title="Permalink to Engineering Practice Naming Conventions">Permalink</a>            
-        </div>
-        <!-- metaldata 
-        -->
-    </footer>
-        <hr>
-        <div id="gisqus_thread"></div>
-        <script src="https://giscus.app/client.js"
-            data-repo="WorkSafeBC-Common-Engineering/Common.Engineering.Discussion"
-            data-repo-id="R_kgDOIGjt-Q"
-            data-category="Technical Blog"
-            data-category-id="DIC_kwDOIGjt-c4CU007"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="light"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-        </script></div>
+            </div>
+    
+</ul>
+
             </div>
             <div class="large-2 aside column">
                 <h3>Links</h3>
@@ -232,7 +148,7 @@ across all development teams.</p>
                 <ul>
                     <li><a href="https://wsbctechnicalblog.github.io/category/events.html">Events</a> (10)</li>
                     <li><a href="https://wsbctechnicalblog.github.io/category/misc.html">misc</a> (2)</li>
-                    <li class="active"><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (263)</li>
+                    <li><a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a> (263)</li>
                 </ul>
              
             </div>
