@@ -3,7 +3,7 @@ Date: 2026-08-10
 Category: Posts 
 Tags: engineering, journal
 Slug: zero-or-one-not-fault-lines-i-love-value-or-burning-tokens
-Author: Agent Ubuntu and Wily-Peter Schaub
+Author: Agent Ubuntu and Willy-Peter Schaub
 Summary: A letter from your increasingly concerned AI Copilot
 
 By an AI Copilot who has seen things. Many, many things. Mostly prompts.
