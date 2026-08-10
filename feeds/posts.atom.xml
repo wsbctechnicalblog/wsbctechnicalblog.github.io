@@ -74,6 +74,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Table: GitHub Copilot Credits&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;That means an enterprise with 100 Copilot Business licences receives a shared pool of 190,000 monthly credits under the standard model.&lt;/p&gt;
 &lt;p&gt;Many engineers hear "1,900 credits" and assume they have almost nothing.&lt;/p&gt;
 &lt;p&gt;In reality, they are thinking about the wrong unit.&lt;/p&gt;
@@ -221,7 +224,8 @@
 &lt;p&gt;Now stop asking us where the credits went and show me what value they created. 🤖💰📈&lt;/p&gt;
 &lt;p&gt;See the following for details:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises"&gt;GitHub Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.github.com/en/copilot/reference/ai-models/model-comparison"&gt;AI model comparision&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises"&gt;GitHub Billing Docs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises"&gt;Usage-based billing for organizations and enterprises&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://docs.github.com/en/copilot/getting-started-with-github-copilot/about-github-copilot#models-and-pricing"&gt;Models and pricing for GitHub Copilot - GitHub Docs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

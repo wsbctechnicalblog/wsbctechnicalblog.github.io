@@ -72,6 +72,9 @@ As of August 2026, GitHub Copilot Business includes:
 | Next Edit Suggestions | | Unlimited |
 | Credit pooling | | Shared across the enterprise |
 
+> Table: GitHub Copilot Credits
+
+
 That means an enterprise with 100 Copilot Business licences receives a shared pool of 190,000 monthly credits under the standard model.
 
 Many engineers hear "1,900 credits" and assume they have almost nothing.
@@ -287,7 +290,8 @@ Now stop asking us where the credits went and show me what value they created. ð
 
 See the following for details:
 
-- [GitHub Docs](https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises)
+- [AI model comparision](https://docs.github.com/en/copilot/reference/ai-models/model-comparison)
+- [GitHub Billing Docs](https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises)
 - [Usage-based billing for organizations and enterprises](https://docs.github.com/en/billing/managing-billing-for-your-organization/usage-based-billing-for-organizations-and-enterprises)
 - [Models and pricing for GitHub Copilot - GitHub Docs](https://docs.github.com/en/copilot/getting-started-with-github-copilot/about-github-copilot#models-and-pricing)
 
