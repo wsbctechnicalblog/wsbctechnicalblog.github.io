@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - The Code Reviewer Who Never Gets Tired
-Date: 2026-08-24
+Date: 2026-08-17
 Category: Posts
 Tags: engineering, journal, ai
 Slug: zero-or-one-not-fault-lines-pull-request-code-review
