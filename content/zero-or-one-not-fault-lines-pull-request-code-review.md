@@ -34,11 +34,33 @@ What differentiates Copilot Code Reviews from many traditional review tools is t
 
 That is a strong statement, and I stand by it. The most surprising aspect has not been the volume of feedback, but its quality. Copilot Code Reviews has surfaced issues that survived multiple human reviews, exposed architectural inconsistencies, highlighted security concerns before deployment, and offered best-practice guidance with a level of consistency that no human team can realistically sustain indefinitely.
 
+Here are some examples of the types of feedback we have received and enjoyed, ranging from nit-picking, medium comments, to critical issues:
+
+>
+> **NIT** picking
+>
+> ![NIT](../images/zero-or-one-not-fault-lines-pull-request-code-review-1.png)
+>
+
+>
+> **MODERATE** comment
+>
+> ![MODERATE](../images/zero-or-one-not-fault-lines-pull-request-code-review-2.png)
+>
+
+>
+> **CRITICAL** OMG moment
+>
+> ![CRITICAL](../images/zero-or-one-not-fault-lines-pull-request-code-review-3.png)
+>
+
+In other words, Copilot Code Reviews offers suggestions that are not only relevant, but also actionable. It is not a replacement for human judgement, but it is a powerful complement that allows humans to focus on the decisions that matter most.
+
 # The Developer Perspective
 
 I am not the only one seeing value.
 
-[Vis Naidu](TBD) summarised his experience well:
+[Vis Naidu](https://wsbctechnicalblog.github.io/pages/authors.html) summarised his experience well:
 
 >
 > "_For me personally, it has been a (near) life-saver. For some of my recent pull requests, Copilot Code Review has detected both best practice issues and critical anomalies in my code, regardless if it is C#, PowerShell or YAML. It has resulted in the output being stable, clean and polished. I have not yet identified any recommendations that seem bogus, overkill or unnecessary. I have pretty much applied all recommendations with very positive results. The fact we have a Draft PR option also allows us to get a first round done before calling in the troops for the final reviews. So far, so good._"
