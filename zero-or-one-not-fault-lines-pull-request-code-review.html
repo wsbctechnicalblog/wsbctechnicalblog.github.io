@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>DevOps Analytics Strategy - </title>
+        <title>Zero or One, not Fault Lines - The Code Reviewer Who Never Gets Tired - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,103 +33,92 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/devops-analytics-strategy.html" rel="bookmark"
-            title="Permalink to DevOps Analytics Strategy">DevOps Analytics Strategy</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-pull-request-code-review.html" rel="bookmark"
+            title="Permalink to Zero or One, not Fault Lines - The Code Reviewer Who Never Gets Tired">Zero or One, not Fault Lines - The Code Reviewer Who Never Gets Tired</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Aditya Chourasiya on Fri 25 February 2022</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Mon 17 August 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>Objective, Method and Maturity model for business analytics across an enterprise.</p>
+            <p>What if the most valuable reviewer on your pull request is not a person?</p>
         </div>
     
         <div class="entry-content">
-            <p>As a business user, I want to make sense of all the data coming from my production system and make sure my product meets business requirements. This article summarizes different maturity model and action-sequence to achieve snow-ball effect for typical organization.</p>
-<p><img alt="Vision" src="../images/vision.png"></p>
-<hr>
-<h1>Let's start with Why</h1>
+            <p>What if the most valuable reviewer on your pull request is not a person? What if it is an Artificial Intelligence teammate that never loses context, never gets distracted, and never skips a line because it is Friday afternoon?</p>
+<p>That sounds provocative, perhaps even uncomfortable. Good!</p>
+<blockquote>
+<p><img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"></p>
+</blockquote>
+<p>A few months ago, in <a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html">Dancing With Agents in a Thunderstorm</a>, we asked whether Artificial Intelligence could become an execution layer operating under strong human accountability rather than another productivity toy. We deliberately challenged assumptions about how engineering work is performed, validated, and governed.
+The newly announced <a href="TBD">GitHub Copilot Code Reviews for Azure Repos</a> preview offers another opportunity to test those assumptions. Microsoft is bringing GitHub Copilot-powered pull request reviews directly into Azure Repos, enabling teams to request an automated review that analyses proposed changes and provides feedback before peers step in.</p>
 <ul>
-<li>To continue DevOps and Agile development and leverage one of the DevOps principles – “to measure”</li>
-<li>To understand the current baseline and be able to measure progress</li>
-<li>To answer common question of - how close we are to 'done'?</li>
-<li>To raise awareness and instill team wide 'measure' from the very inception</li>
-<li>To give stakeholders and senior management on-demand visibility into systems dev and ops</li>
+<li>The interesting question is not <strong>whether Artificial Intelligence can review code</strong>.</li>
+<li>The interesting question is <strong>whether we are finally ready to change who performs the first review</strong>.</li>
 </ul>
-<p><img alt="Objective" src="../images/objective.png"></p>
-<ul>
-<li>To promote Business objectives of measurements and organization wide 'manifesto'</li>
-<li>To define metrics for each group of stakeholders</li>
-<li>To develop best practices for measurements</li>
-<li>To define delivery methods for metrics</li>
-<li>To define measurement and metric delivery cadence</li>
-</ul>
-<p><img alt="Methods" src="../images/methods.png"></p>
+<h1>The Hidden Cost of Traditional Code Reviews</h1>
+<p>Most engineering teams know this pattern: a pull request arrives, reviewers are busy, context switching is costly, and timelines are tight. To review well, they must quickly understand the changed code, surrounding architecture, established patterns, dependencies, security implications, and long-term maintainability risks. Sometimes they find the defects, and sometimes they do not.</p>
+<p>The issue is not capability; it is scale. As systems grow, so does the context required for a high-quality review. Humans are strong at judgement, but less suited to maintaining perfect awareness across thousands of files, hundreds of dependencies, and years of accumulated implementation decisions. That is where Artificial Intelligence begins to create value.</p>
+<h1>Not Just Another Reviewer</h1>
+<p>What differentiates Copilot Code Reviews from many traditional review tools is that it does not simply examine the changed lines. It analyses the pull request within the wider repository context and provides feedback directly in the review workflow. My experience has been remarkable:</p>
+<blockquote>
+<p>"<em>I love the GitHub Copilot Code Review preview feature because it goes far beyond reviewing the changed lines in a pull request. It performs a deep analysis of both the proposed changes and the surrounding codebase, bringing context that is often difficult for human reviewers to maintain. It has repeatedly identified critical defects, security concerns, and design issues that remained unnoticed through months of traditional peer reviews. By providing fast, consistent, and insightful feedback, it significantly improves both the speed and quality of code reviews. In fact, I now consider a Copilot review to be a mandatory first step and generally do not respond to a pull request review request until the Copilot review has been completed and its findings have been addressed.</em>"
+</p>
+</blockquote>
+<p>That is a strong statement, and I stand by it. The most surprising aspect has not been the volume of feedback, but its quality. Copilot Code Reviews has surfaced issues that survived multiple human reviews, exposed architectural inconsistencies, highlighted security concerns before deployment, and offered best-practice guidance with a level of consistency that no human team can realistically sustain indefinitely.</p>
+<p>Here are some examples of the types of feedback we have received and enjoyed, ranging from nit-picking, medium comments, to critical issues:</p>
+<blockquote>
+<p><strong>NIT</strong> picking</p>
+<p><img alt="NIT" src="../images/zero-or-one-not-fault-lines-pull-request-code-review-1.png">
+</p>
+<p><strong>MODERATE</strong> comment</p>
+<p><img alt="MODERATE" src="../images/zero-or-one-not-fault-lines-pull-request-code-review-2.png">
+</p>
+<p><strong>CRITICAL</strong> OMG moment</p>
+<p><img alt="CRITICAL" src="../images/zero-or-one-not-fault-lines-pull-request-code-review-3.png">
+</p>
+</blockquote>
+<p>In other words, Copilot Code Reviews offers suggestions that are not only relevant, but also actionable. It is not a replacement for human judgement, but it is a powerful complement that allows humans to focus on the decisions that matter most.</p>
+<h1>The Developer Perspective</h1>
+<p>I am not the only one seeing value.</p>
+<p><a href="https://wsbctechnicalblog.github.io/pages/authors.html">Vis Naidu</a> summarised his experience well:</p>
+<blockquote>
+<p>"<em>For me personally, it has been a (near) life-saver. For some of my recent pull requests, Copilot Code Review has detected both best practice issues and critical anomalies in my code, regardless if it is C#, PowerShell or YAML. It has resulted in the output being stable, clean and polished. I have not yet identified any recommendations that seem bogus, overkill or unnecessary. I have pretty much applied all recommendations with very positive results. The fact we have a Draft PR option also allows us to get a first round done before calling in the troops for the final reviews. So far, so good.</em>"
+</p>
+</blockquote>
+<p>The real value is not that Artificial Intelligence finds issues, as static analysis tools have done that for years; it is the breadth of feedback across technologies and the ability to obtain it before consuming scarce peer-review capacity, shifting human reviewers toward business intent, architectural direction, risk trade-offs, and stakeholder outcomes.</p>
+<h1>Why This Matters</h1>
+<p>The value extends beyond developer convenience.</p>
+<h3>Stakeholder Experience</h3>
+<p>**Faster feedback means faster learning. **</p>
+<p>Teams can identify issues earlier, refine solutions sooner, and reduce delays caused by review cycles. Engineers spend less time waiting and more time delivering value.</p>
+<h3>Risk Reduction</h3>
+<p>**Every defect found before production is a risk avoided. **</p>
+<p>Early identification of security, maintainability, architectural consistency, and implementation quality issues reduces the likelihood of downstream incidents, lowers remediation cost, and improves outcomes.</p>
+<h3>Cost Avoidance</h3>
+<p>**Perhaps the most overlooked benefit is cost avoidance. **</p>
+<p>Cost avoidance comes from reducing scarce engineering review time, rework, and production support overhead by moving quality assurance left. When Copilot identifies issues before human reviewers engage, organisations preserve expert attention for higher-value decisions and create practical leverage, not merely efficiency.</p>
+<h1>The Emerging Pattern</h1>
+<p>In <a href="/zero-or-one-not-fault-lines-2029-ubuntu-vision.html">Dancing With Agents in a Thunderstorm</a>, we argued that engineers should increasingly focus on judgement, governance, and accountability while delegating repetitive execution activities to Artificial Intelligence.</p>
+<p>Copilot Code Reviews does not replace the reviewer; it improves the starting position by allowing Artificial Intelligence to analyse, identify patterns, and accelerate execution while the engineer applies judgement, makes decisions, and remains accountable. Ubuntu remains intact: I am, because we are.</p>
+<h2>Closing thought</h2>
+<p>If you have access to the preview, use Copilot Code Reviews as the first reviewer, not as an optional extra or novelty. Let it perform the initial pass, address the findings, and then invite peer reviewers so that human attention is focused on the decisions that matter most.</p>
+<p>The future of engineering is not humans versus Artificial Intelligence; it is humans and Artificial Intelligence working together where each creates the greatest value. The thunderstorm is still here, and the question is no longer whether we should dance with the agents, but whether we can afford not to.</p>
 <hr>
-<h1>Phase 1 of 4 (Awareness)</h1>
-<p>This phase is focused on developing Descriptive analytics capabilities, which can help answer: “What has happened?"</p>
-<ul>
-<li>Release Dashboard- Showing all releases went/going to prod</li>
-<li>Teams assessment / DoD dashboard- Are teams doing well in assessment/ meeting DoD </li>
-<li>Data Stewards rollout - Identifying who is responsible for keeping data updated/correct</li>
-<li>Standard Team dashboards - Same dashboards across teams with auto login and rotation enable</li>
-<li>Analytics Strategy awareness - CoPs, Demo, micro learnings and Lunch and Learns about Analytics in DevOps</li>
-<li>CoP - PowerBI - PowerBI CoP establish and monthly meeting scheduled</li>
-<li>Team Business Objectives [PI/Sprint Goals] Dashboard - PI and Sprint goal dashboards from AzDo Enabler to experimental releases</li>
-<li>Business value dashboard requirement gathering - Need to gather requirement for business value reporting (Enabler for business value)</li>
-</ul>
-<hr>
-<h1>Phase 2 of 4 (Desire)</h1>
-<p>This phase is focused on developing Diagnostic analytics capabilities, which can help answer the question, “Why did it happen?"</p>
-<ul>
-<li>Experimental release support</li>
-<li>SAFe Metrics rollout</li>
-<li>Focus on and communication of DevOps Strategy</li>
-<li>Gamification of Team's matrices</li>
-<li>Analytics as a code</li>
-<li>Business value delivery prediction</li>
-<li>Make data accessible so people can play with it freely and innovate</li>
-<li>Relevant messaging and alerts through reports</li>
-<li>ROAMing Risks and Risk Registry</li>
-</ul>
-<hr>
-<h1>Phase 3 of 4 (Knowledge)</h1>
-<p>This phase is focused on developing Predictive Analytics capabilities, which can help answer the question, “What could happen?”</p>
-<ul>
-<li>Business value delivery confirmation</li>
-<li>Continuous analytics delivery through automated pipelines</li>
-<li>DevOps Program Risk (ROAM) analytics</li>
-<li>Building people skills for digital transformation based on Risk area</li>
-<li>Establish Standards and Practices for Analytics</li>
-<li>Skill requirement based recruitment</li>
-<li>Big Data integration for better analytics</li>
-</ul>
-<hr>
-<h1>Phase 4 of 4 (Ability)</h1>
-<p>This phase is focused on developing Prescriptive Analytics capabilities, which can help advise on possible outcomes and answer: “What should we do?”</p>
-<ul>
-<li>Skill based resource movement</li>
-<li>Machine learning integration to other then business value delivery</li>
-<li>Analytics Governance body</li>
-<li>Business requirement generation through analytics</li>
-<li>Measure how analytics is changing business</li>
-<li>Strategic decision making through automation</li>
-</ul>
-<hr>
-<h1>Summary and invite</h1>
-<p>This article was intended to be written in <a href="https://www.salesforce.com/blog/how-to-create-alignment-within-your-company/">V2MoM</a> format, however due to different organizational structure and needs, it will vary a lot. Based on my experience in different government and non-government organizations, the above holds true. Please feel free to submit a pull request to suggest any changes. Thank you for reading.</p>
+<p>That is it for today!</p>
+<p>Enjoy your favourite brew. I will savour my hot chocolate and raise it to disciplined engineering, sound judgement, and value‑driven progress.</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/learning.html">learning </a><a href="https://wsbctechnicalblog.github.io/tag/metrics.html">metrics </a><a href="https://wsbctechnicalblog.github.io/tag/devops.html">devops </a>
-        | <a href="https://wsbctechnicalblog.github.io/devops-analytics-strategy.html" rel="bookmark"
-         title="Permalink to DevOps Analytics Strategy">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/engineering.html">engineering </a><a href="https://wsbctechnicalblog.github.io/tag/journal.html">journal </a><a href="https://wsbctechnicalblog.github.io/tag/ai.html">ai </a>
+        | <a href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-pull-request-code-review.html" rel="bookmark"
+         title="Permalink to Zero or One, not Fault Lines - The Code Reviewer Who Never Gets Tired">Permalink</a>            
         </div>
         <!-- metaldata 
         -->
