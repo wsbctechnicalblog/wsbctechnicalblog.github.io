@@ -13,7 +13,15 @@ That sounds provocative, perhaps even uncomfortable. Good!
 > ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png)
 
 A few months ago, in [Dancing With Agents in a Thunderstorm](/zero-or-one-not-fault-lines-2029-ubuntu-vision.html), we asked whether Artificial Intelligence could become an execution layer operating under strong human accountability rather than another productivity toy. We deliberately challenged assumptions about how engineering work is performed, validated, and governed.
-The newly announced [GitHub Copilot Code Reviews for Azure Repos](TBD) preview offers another opportunity to test those assumptions. Microsoft is bringing GitHub Copilot-powered pull request reviews directly into Azure Repos, enabling teams to request an automated review that analyses proposed changes and provides feedback before peers step in.
+
+The newly announced [GitHub Copilot Code Reviews for Azure Repos](https://devblogs.microsoft.com/devops/copilot-code-reviews-for-azure-repos/) preview offers another opportunity to test those assumptions. Microsoft is bringing GitHub Copilot-powered pull request reviews directly into Azure Repos, enabling teams to request an automated review that analyses proposed changes and provides feedback before peers step in.
+
+Also peruse:
+
+ - [Get started with Copilot code review for pull requests](https://learn.microsoft.com/en-us/azure/devops/repos/git/copilot-code-reviews?view=azure-devops)
+ - [Roadmap](https://learn.microsoft.com/en-us/azure/devops/release-notes/features-timeline#copilot-code-reviews-for-azure-devops) 
+
+ So, ...
 
 - The interesting question is not **whether Artificial Intelligence can review code**.
 - The interesting question is **whether we are finally ready to change who performs the first review**.
