@@ -31,7 +31,7 @@ Principles such as abstraction, layering, testability, maintainability, observab
 
 # The Question
 
-This brings us to a question I hear often: "Is a software engineering degree still worth pursuing?"
+This brings us to a question I hear often. "Is a software engineering degree still worth pursuing?"
 
 My answer is simple: yes, absolutely. Not because a degree teaches a specific programming language, framework, or toolchain, as these have always changed, but because it provides the foundation that outlasts them.
 
