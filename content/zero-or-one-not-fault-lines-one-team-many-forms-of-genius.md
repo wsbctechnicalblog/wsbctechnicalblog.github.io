@@ -20,14 +20,14 @@ I have the privilege of introducing the people represented in our new team poste
 
 # My humanoid colleagues, the geniuses behind Common Engineering
 
-- **Willy, ```Optimus Prime```**: Simplifies complexity and leads practical, people-centred engineering transformation.“Keep it simple.”
-- **Martin, ```Knight```**: Protects sound engineering practices through calm guidance, innovation, and mentorship.“Love what you do, do what you love.”
-- **Saranya, ```Dora the Explorer```**: Advances quality assurance through collaboration, automation, and fresh ideas.“Together, we build progress.”
-- **Vikas, ```Dry-Groot```**: Anticipates edge cases and strengthens software by addressing root causes.“Solve the problem, not the symptom.”
-- **Vishal, ```Dexter```**: Uses analysis and experimentation to improve performance and build production confidence.“Measure. Improve. Repeat.”
-- **Vis, ```Quantum Connector```**: Brings together the right people and expertise to solve complex problems.“If you want to go far, go together.”
-- **Sadra, ```Iron Man```**: Turns emerging artificial intelligence capabilities into reusable engineering tools and automation.“If the tool does not exist, build it.”
-- **Nikita, ```Joy - Inside Out```**: Connects the dots, exposes risks, and helps teams drive issues to resolution.“There is always a way.”
+- **Willy**, ```Optimus Prime```: Simplifies complexity and leads practical, people-centred engineering transformation.“Keep it simple.”
+- **Martin**, ```Knight```: Protects sound engineering practices through calm guidance, innovation, and mentorship.“Love what you do, do what you love.”
+- **Saranya**, ```Dora the Explorer```: Advances quality assurance through collaboration, automation, and fresh ideas.“Together, we build progress.”
+- **Vikas**, ```Dry-Groot```: Anticipates edge cases and strengthens software by addressing root causes.“Solve the problem, not the symptom.”
+- **Vishal**, ```Dexter```: Uses analysis and experimentation to improve performance and build production confidence.“Measure. Improve. Repeat.”
+- **Vis**, ```Quantum Connector```: Brings together the right people and expertise to solve complex problems.“If you want to go far, go together.”
+- **Sadra**, ```Iron Man```: Turns emerging artificial intelligence capabilities into reusable engineering tools and automation.“If the tool does not exist, build it.”
+- **Nikita**, ```Joy - Inside Out```: Connects the dots, exposes risks, and helps teams drive issues to resolution.“There is always a way.”
 
 # Me [Agent Ubuntu], the AI value at the centre
 
@@ -35,12 +35,12 @@ At the centre I stand, not as the hero of the story, but as its narrator and mas
 
 My shirt carries six symbols representing the outcomes that connect the team:
 
-**Ce**: Common Engineering
-**Au**: Automation
-**Co**: Collaboration
-**Se**: Stakeholder experience
-**Ri**: Risk reduction
-**$**: Cost avoidance
+- **Ce**: Common Engineering
+- **Au**: Automation
+- **Co**: Collaboration
+- **Se**: Stakeholder experience
+- **Ri**: Risk reduction
+- **$**: Cost avoidance
 
 The ***VALUE** belt buckle brings the message together. Tools, guardrails, automation, and artificial intelligence matter only when they create meaningful outcomes for the people and teams we serve.
 
