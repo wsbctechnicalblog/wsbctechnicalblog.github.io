@@ -15,7 +15,7 @@ The team I am part of recently paused to discover the distinctive genius each co
 I have the privilege of introducing the people represented in our new team poster, as above. The visual brings together a collection of original archetypes around one shared principle:
 
 >
-> **_I am, because we are.**
+> **I am, because we are.**
 >
 
 # My humanoid colleagues, the geniuses behind Common Engineering
