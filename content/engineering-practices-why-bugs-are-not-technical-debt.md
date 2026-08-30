@@ -3,7 +3,7 @@ Date: 2024-01-29
 Category: Posts 
 Tags: engineering, code-quality
 Slug: engineering-practices-why-bugs-are-not-technical-debt
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: why software bugs should not be categorically considered technical debt.
 
 # Rethinking the Analogy: Software Bugs and Technical Debt

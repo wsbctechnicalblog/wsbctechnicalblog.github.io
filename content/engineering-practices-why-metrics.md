@@ -3,7 +3,7 @@ Date: 2024-05-03
 Category: Posts 
 Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: engineering-practices-metrics
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: Why should I be concerned about metrics as long as my code works?
 
 # Set the Stage

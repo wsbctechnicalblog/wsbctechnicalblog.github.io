@@ -3,7 +3,7 @@ Date: 2023-12-04
 Category: Posts 
 Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: engineering-practices-pull-request-v2
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: How to implement a pull request workflow within the context of a trunk-based development.
 
 In the ever-evolving landscape of software development, choosing the right development workflow is crucial for ensuring efficiency, collaboration, and code quality. One such strategy gaining prominence is the Trunk-Based Development (T-B-Dev) strategy, and in this blog post, we will explore how to implement a pull request workflow within the context of T-B-Dev.

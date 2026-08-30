@@ -3,7 +3,7 @@ Date: 2023-12-18
 Category: Posts 
 Tags: engineering, code-quality
 Slug: engineering-practices-dependency-injection
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: Dependency Injection aligns seamlessly with the **SOLID** principles.
 
 As a seasoned software engineer with over four decades of experience, I've witnessed the evolution of software development methodologies and practices. One concept that has proven its worth time and again is Dependency Injection (DI). In this blog post, we'll delve into the merits of Dependency Injection, its seamless integration with Test-Driven Development (TDD), and its pivotal role in adhering to the SOLID principles.

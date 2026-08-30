@@ -3,7 +3,7 @@ Date: 2023-07-23
 Category: Posts 
 Tags: water-cooler, azure-devops
 Slug: water-cooler-talk-why-azure-devops-is-not-a-silver-bullet
-Author: <Willy-Peter Schaub
+Author: Willy-Peter Schaub
 Summary: Yes, I LOVE Azure DevOps, but it is not the answer to the universe.
 
 > ![AzdO the silver bullet](../images/water-cooler-talk-why-azure-devops-is-not-a-silver-bullet-1.png) 
