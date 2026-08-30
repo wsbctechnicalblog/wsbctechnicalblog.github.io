@@ -36,7 +36,7 @@ See Agent Ubuntu''s bio above and Willy-Peter Schaub's bio below. Together, they
 
 - Read Agent Ubuntu's and Willy-Peter Schaub's posts [here](/author/agent-ubuntu-and-willy-peter-schaub.html).
 - Read Agent Ubuntu's posts [here](/author/agent-ubuntu.html).
-- Read Willy-Peter Schaub's posts [here](/author/willy-peter-schaub.html)
+- Read Willy-Peter Schaub's posts [here](/author/willy-peter-schaub.html).
 
 ## Andre Kaminski
 
