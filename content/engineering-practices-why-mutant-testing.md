@@ -3,7 +3,7 @@ Date: 2024-01-24
 Category: Posts 
 Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: engineering-practices-why-mutant-testing
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: What is Mutant testing and why is it so valuable?
 
 # Understanding Mutant Testing

@@ -44,7 +44,7 @@ See Agent Ubuntu''s bio above and Willy-Peter Schaub's bio below. Together, they
 
 Andre Kaminski is a technology leader with a passion for creating high performing teams for rapid delivery of business solutions. Currently, as Director at WorkSafeBC (WSBC), Andre is responsible for setting up and leading Agile DevOps functional teams to deliver business value. An entrepreneur with proven track record of successful software projects and products, Andre has worked in engineering, product development, project and program management and held consulting advisory roles across industries in both public and private sectors over a 30-year career. While he’s no stranger to working hands-on directly with his teams “in the trenches”, Andre has held several executive-level positions at global companies, including VP of Product Development, Director of Product Development and Services Director. Andre is a passionate advocate for Agile and DevOps. His solid Agile DevOps experience is supported by a foundation of extensive study and certifications. He has over 25 years of experience in information technology and holds several certifications, including PMP, CSPO, CSM, SAFe Advanced Scrum Master and SAFe Program Consultant.
 
-Read Andre's posts [here](/author/andre-kaminski.html)
+Read Andre's posts [here](/author/andre-kaminski.html).
 
 ---
 
@@ -54,7 +54,7 @@ Read Andre's posts [here](/author/andre-kaminski.html)
 
 Andreas Mertens, known to colleagues by his well‑earned nickname “Bob The Builder,” is a hands‑on .NET and C# developer.He is actively involved in technical reviews, build reliability, and reference application work, contributing practical engineering judgement that strengthens application health, reduces delivery risk, and avoids unnecessary rework and cost. Trusted for his ability to turn complex requirements into solid, working solutions, Andreas consistently helps teams move from intent to execution with confidence.
 
-Read Andreas' posts [here](/author/andreas-mertens.html)
+Read Andreas' posts [here](/author/andreas-mertens.html).
 
 ---
 
@@ -68,7 +68,7 @@ In order to make sure that software we are building is flexible, we must evolve 
 
 > _Move fast to delight customers!_
 
-Read Alex's posts [here](/author/alex-bunardzic.html)
+Read Alex's posts [here](/author/alex-bunardzic.html).
 
 ---
 
@@ -82,7 +82,7 @@ Daniel has worked on numerous projects for large North American companies migrat
 
 When not working in IT Daniel enjoy getting out and about, skiing hiking, mountain bike riding and generally exploring new places, looking for that next adventure. 
 
-Read Daniel's posts [here](/author/daniel-broderick.html)
+Read Daniel's posts [here](/author/daniel-broderick.html).
 
 ---
 
@@ -94,7 +94,7 @@ Kevin has been working in cybersecurity for the past nine years, attacking and d
 
 > _“The purpose and intent of DevSecOps, is to build on the mindset that ‘everyone is responsible for security’ with the goal of safely distributing security decisions at speed and scale to those who hold the highest level of context without sacrificing the safety required.” - Shannon Lietz_
 
-Read Kevin's posts [here](/author/kevin-schwantje.html)
+Read Kevin's posts [here](/author/kevin-schwantje.html).
 
 ---
 
@@ -104,7 +104,7 @@ Read Kevin's posts [here](/author/kevin-schwantje.html)
 
 Laurent joined WorkSafeBC in 2011 as the Manager of Enterprise Application Architecture and has since played a role in the evolution of the architecture function across a variety of assignments, most notably Cloud Architecture in the early days of Cloud DevOps (CDO). Laurent now manages the Enterprise Architecture function under Business Engagement Services, which is tasked with the elaboration and evergreening of portfolio roadmaps. 
 
-Read Laurent's posts [here](../author/laurent-blain.html)
+Read Laurent's posts [here](../author/laurent-blain.html).
 
 ---
 
@@ -114,7 +114,7 @@ Read Laurent's posts [here](../author/laurent-blain.html)
 
 Innovative, solutions-driven Software Specialist with over 40 years leading and contributing to the planning, architecture, and development of n-tiered object-oriented software and mission-critical business and engineering applications in a wide range of industries. Involved in research, planning, design architecture, and development of n-tiered mission-critical business and engineering applications, using Waterfall and Agile methods with the latest technologies and best practices.
 
-Read Martin's posts [here](../author/martin-m-lacey.html)
+Read Martin's posts [here](../author/martin-m-lacey.html).
 
 ---
 
@@ -124,7 +124,7 @@ Read Martin's posts [here](../author/martin-m-lacey.html)
 
 Nicholas Januar is a Computer Science student at the University of British Columbia, graduating in May 2026. He has experience in quality assurance, bioinformatics, and full-stack development, and is now exploring DevOps—containers, infrastructure, pipelines, and cloud systems. Outside of work, Nicholas enjoys badminton, volleyball, playing pool, and electric guitar.
 
-Read Nicholas' posts [here](../author/nicholas-januar.html)
+Read Nicholas' posts [here](../author/nicholas-januar.html).
 
 ---
 
@@ -138,7 +138,7 @@ At WorkSafeBC, Said works on legacy systems maintenance, cloud migration, cloud 
 
 > _“Truth can only be found in one place: the code.” - Robert C. Martin_
 
-Read Said's posts [here](../author/said-akram.html)
+Read Said's posts [here](../author/said-akram.html).
 
 ---
 
@@ -148,7 +148,7 @@ Read Said's posts [here](../author/said-akram.html)
 
 Helps organizations streamline their software delivery. Talk to him about Site Reliability, DevOps, Agile-at-scale and Cooking.
 
-Read Shay's posts [here](../author/shay-vannery.html)
+Read Shay's posts [here](../author/shay-vannery.html).
 
 ---
 
@@ -158,7 +158,7 @@ Read Shay's posts [here](../author/shay-vannery.html)
 
 Vikas is a Software/QA Engineer with a proven history of designing, developing, and maintaining web applications based on Microsoft technologies. Adept at solving complex technical challenges and mentoring junior developers. Committed to keeping pace with the latest industry trends and technological advancements while delivering high-quality solutions that drive business success.
  
-Read Vikas' posts [here](../author/vikas-jawa.html)
+Read Vikas' posts [here](../author/vikas-jawa.html).
 
 ---
 
@@ -168,7 +168,7 @@ Read Vikas' posts [here](../author/vikas-jawa.html)
 
 Vis Naidu is a seasoned technology specialist with expertise in analyzing, designing, developing, and implementing cutting-edge solutions across diverse platforms. Recognized for transforming clients' businesses through top-tier enterprise-scale solutions, excelling in usability, business process enhancement, enterprise integration, and scalability. Passionate about driving innovation and delivering impactful results that elevate operational efficiency and performance.
  
-Read Vis' posts [here](../author/vis-naidu.html)
+Read Vis' posts [here](../author/vis-naidu.html).
 
 ---
 
@@ -182,5 +182,5 @@ If you would like to discuss or share feedback on his posts, please ping him on 
 
 > _Encourage everyone's creativity, passion, purpose, and strengths!_
 
-Read Willy's posts [here](/author/willy-peter-schaub.html)
+Read Willy's posts [here](/author/willy-peter-schaub.html).
 

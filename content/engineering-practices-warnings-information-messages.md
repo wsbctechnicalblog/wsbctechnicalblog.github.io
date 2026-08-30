@@ -3,7 +3,7 @@ Date: 2024-01-16
 Category: Posts 
 Tags: azure-devops, tips, engineering, code-quality, automation
 Slug: engineering-practices-warnings-information-messages
-Author: Martin Lacey
+Author: Martin M. Lacey
 Summary: Reasons why is it important to pay attention to all the warning and information message generated when compiling your code.
 
 In my fourth decades of experience as a software engineer, paying close attention to warnings and information messages generated during the compile step has proven to be immensely important. Here are some reasons why I find it crucial:
