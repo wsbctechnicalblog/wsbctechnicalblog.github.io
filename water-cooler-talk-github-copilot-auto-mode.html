@@ -8,7 +8,7 @@
         <script type="text/javascript" src="https://wsbctechnicalblog.github.io/theme/js/modernizr.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://wsbctechnicalblog.github.io/theme/css/lamboz.css" media="all">
-        <title>Find the capabilities and IP addresses of an Azure DevOps agent - </title>
+        <title>Water Cooler Talk - GitHub Copilot Auto. Trust the Robot? Not So Fast. - </title>
         <meta charset="utf-8" />
         
 </head>
@@ -33,105 +33,102 @@
         <div class="data-holder">
         <div class="row">
            <div class="large-10 content-column column">
-    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="bookmark"
-            title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Find the capabilities and IP addresses of an Azure DevOps agent</a></h1>
+    <h1 style="font-size:2em;"><a href="https://wsbctechnicalblog.github.io/water-cooler-talk-github-copilot-auto-mode.html" rel="bookmark"
+            title="Permalink to Water Cooler Talk - GitHub Copilot Auto. Trust the Robot? Not So Fast.">Water Cooler Talk - GitHub Copilot Auto. Trust the Robot? Not So Fast.</a></h1>
 
 <img src="/theme/img/Logo-blogsize.png"><br />
 <div class="content-article">
     <header class="header-article">
-        <div class="read-more">Posted by Willy-Peter Schaub on Fri 12 March 2021</div>
+        <div class="read-more">Posted by Willy-Peter Schaub on Thu 03 September 2026</div>
  
    </header>
     <section class='article'>
         
         <div class="entry-summary">
-            <p>How to find more information on hosted Azure DevOps agents, such as capabilities and IP addresses.</p>
+            <p>A recent watercooler conversation sparked a healthy debate around GitHub Copilot's Auto model selection capability.</p>
         </div>
     
         <div class="entry-content">
-            <h1>Why should we care about an Azure DevOps Agent?</h1>
-<p>To use our <a href="https://wsbctechnicalblog.github.io/index.html">Azure Pipelines</a>, we need the agents. Every time one of our pipelines is triggered, it comes to life on one or more jobs, which are hosted and run an agent.</p>
-<p>Azure DevOps offers two types of agents. <strong>Microsoft-hosted</strong> agents are a software as a service (SaaS) offering, where maintenance and upgrades are taken care of for you. Our recommended type of agents!</p>
-<p><strong>Self-hosted agents</strong> give you more control of access and installed software needed for special builds and deployments. For example, we have a self-hosted pool to service our good old <strong>Cobol</strong> builds.</p>
-<hr>
-<h1>How to determine the capabilities of an Azure DevOps Agent</h1>
-<p>We often get the question: "What software is installed on the agent?" In other words, how do we determine the capabilities of each Azure DevOPs agent.</p>
-<p>For self-hosted agents you can go to your Azure DevOps <strong>organizational</strong> setting, Agent pools, select <strong>pool</strong>, select <strong>Agents</strong>, select an <strong>agent</strong>, and finally, select <strong>Capabilities</strong>. You will be presented with the agent's system capabilities, variables, paths, and installed software, as shown below.</p>
-<blockquote>
-<p>Capabilities of a <strong>self-hosted</strong> agent</p>
-<p><img alt="AzDO Agent Details" src="/images/azuredevops-agent-info-1.png"></p>
+            <blockquote>
+<p>Reporting from our water cooler ...</p>
+<p><img alt="water cooler" src="../images/water-cooler-talk-github-copilot-auto-mode-1.png"> </p>
 </blockquote>
-<p>When you select a Microsoft-hosted agent and pool, the presented capabilities are less exciting.</p>
+<p>On paper, <strong>Auto</strong> sounds like the obvious choice. Let GitHub Copilot determine the best model for the task, optimise credit consumption, reduce unnecessary premium model usage, and remove one more decision from an engineer's day. GitHub positions Auto as an intelligent routing mechanism that balances task complexity, model capability, reliability, and efficiency.</p>
 <blockquote>
-<p>Capabilities of a <strong>Microsoft-hosted</strong> agent</p>
-<p><img alt="AzDO Agent LAck of Details" src="/images/azuredevops-agent-info-2.png"></p>
+<p>See <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">Supported AI models in GitHub Copilot</a> and <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection">About Copilot auto model selection</a> for more info.
+</p>
 </blockquote>
-<p>You need to visit the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation and scroll down to the <strong>Software</strong> section. Peruse a list of hosted agents, classic pipeline editor specifications, YAML image labels, and links to software available on each type of agent.</p>
+<p>Yet many engineers remain hesitant. The question is not whether Auto works. The question is whether we <strong>trust</strong> it enough to let go of the steering wheel.</p>
+<h1>Why the Hesitation?</h1>
+<p>Engineers are problem-solvers.</p>
+<p>We tune, optimise, configure, and continuously seek control over our environments. For many of us, manually selecting Claude, GPT, Gemini, or another model feels like making an informed engineering decision.</p>
+<p>There is also history involved.</p>
+<p>Most engineers have at least one story about a specific model delivering an exceptional outcome, helping solve a complex defect, generating a useful design, or identifying a solution nobody else considered. Those experiences create loyalty.</p>
+<p>The result is predictable: "<em>I know Auto exists, but I would rather choose the model myself.</em>"</p>
+<p>That sentiment is both understandable and healthy. <strong>Trust should be earned, not assumed.</strong></p>
+<h1>What We Are Seeing</h1>
+<p>As AI credits become visible and accountable, model selection matters more than ever. Internal guidance has consistently highlighted model choice as one of the biggest drivers of GitHub Copilot consumption and recommends Auto as the default approach where appropriate.</p>
+<p>The interesting observation is what our usage data appears to be telling us.</p>
 <blockquote>
-<p>Azure DevOps Agent Documentation</p>
-<p><img alt="AzDO Agent Documentation" src="/images/azuredevops-agent-info-3.png"></p>
+<p>While we have moved from <strong>12%</strong> to <strong>18%</strong> to <strong>26.5%</strong> for Auto share of credits over the past three months, we still have a way to go to reach the 80%+ Auto adoption that many of us expected. The data suggests that engineers are still not trusting Auto.</p>
+<p><img alt="water cooler" src="../images/water-cooler-talk-github-copilot-auto-mode-2.png"> </p>
 </blockquote>
-<p>Select your agent, click on the included software hyperlink, and voila, you have a detailed report of the agent's capabilities.</p>
-<blockquote>
-<p>Azure DevOps Agent Capabilities Documentation</p>
-<p><img alt="AzDO Agent Capabilties Documentation" src="/images/azuredevops-agent-info-4.png"></p>
-</blockquote>
-<hr>
-<h1>How to determine the IP addresses of an Azure DevOps Agent</h1>
-<p>The <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted Agents</a> documentation also gives you information on how to identify possible IP ranges for Microsoft-hosted agents. This information is pivotal if you need to allow the agents to make their way from the public internet, through your firewall, to collaborate with one of your services.</p>
-<p>Unfortunately, you will also find some small print ... well, it is the same sized font and the note is placed on a prominent Indigo background. It is easy to miss the highlighted part, as shown below, that mentions that the IP addresses for the macOS agents are not included.</p>
-<blockquote>
-<p>macOS Addresses are a mystery</p>
-<p><img alt="macOS Address Mystery" src="/images/azuredevops-agent-info-5.png"></p>
-</blockquote>
-<p>First thought is to queue a investigative pipeline on one of the macOS agents and run the <strong>ipconfig getifaddr en0</strong> command. That only returns the private IP address of the agent, which is interesting, but not very useful to the firewall engineers.</p>
-<p>Try this:</p>
-<div class="highlight"><pre><span></span><code><span class="p">-</span> <span class="nf">task:</span><span class="w"> </span><span class="n">PowerShell</span><span class="mi">@2</span>
-<span class="w">  </span><span class="nl">inputs</span><span class="p">:</span>
-<span class="w">    </span><span class="nl">targetType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kr">inline</span><span class="err">&#39;</span>
-<span class="w">    </span><span class="nl">script</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">curl</span><span class="w"> </span><span class="n">ipecho</span><span class="p">.</span><span class="n">net</span><span class="err">&#39;</span>
-<span class="w">    </span><span class="nl">errorActionPreference</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="k">continue</span><span class="err">&#39;</span>
-<span class="w">    </span><span class="nl">pwsh</span><span class="p">:</span><span class="w"> </span><span class="nb">true</span>
-</code></pre></div>
-
-<p>It reveals the public IP address:</p>
-<div class="highlight"><pre><span></span><code>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
-100  2090  100  2090    0     0  32656      0 --:--:-- --:--:-- --:--:-- 32153
-
-... SNIPPED FOR BLOG POST ...
-
-<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center; flex: 1; &quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Your IP is 13.105.49.13<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-
-...SNIPPED FOR BLOG POST...
-</code></pre></div>
-
-<p>Lastly, who owns the IP address we just found?</p>
-<p>Visit <a href="https://ipinfo.io/13.105.49.13">13.105.49.13 IP Address Details - IPinfo.io</a> for the answer:</p>
-<blockquote>
-<p>IP address "BINGO!"</p>
-<p><img alt="IPinfo.io" src="/images/azuredevops-agent-info-6.png"></p>
-</blockquote>
-<hr>
-<p>A big thank you to <a href="https://www.linkedin.com/in/lukas-wilson-8792ba172/">Lukas Wilson</a>, one of our resident Azure gurus, who helped with the IP address exploration. </p>
-<h1>Reference Information</h1>
+<p>But, what we are also seeing is that Auto is not simply selecting the cheapest available model.</p>
+<p>When a task requires deeper reasoning, larger context windows, or more advanced analysis, Auto frequently selects the same families of premium models that many engineers would have chosen manually. When the task is relatively straightforward, it routes to more efficient models without requiring the engineer to make that decision themselves.</p>
+<p>That is exactly what we should want. Use the right tool for the job. Not the most expensive tool for every job.</p>
+<h1>The Real Opportunity</h1>
+<p>The bigger discussion is not about model selection. It is about stewardship.</p>
+<p>Every organisation adopting Artificial Intelligence eventually reaches the same point. Initial excitement gives way to accountability. Usage grows. Costs become visible. Leadership starts asking questions.</p>
+<p>The easy response is to focus on consumption. The better response is to focus on <strong>value</strong>.</p>
+<p>The goal is not to minimise AI usage. The goal is to maximise <strong>value</strong> delivered for every AI credit consumed.</p>
+<p>That means understanding when premium models genuinely create better outcomes and when they merely create larger invoices.</p>
+<p>Are We Measuring the Wrong Things?</p>
+<p>I increasingly worry that the industry is celebrating the wrong metrics.</p>
+<p>In the past, we proudly reported:</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">Microsoft-hosted agents</a></li>
-<li><a href="https://wsbctechnicalblog.github.io/index.html">Part 1: Pipelines - Why bother and what are our nightmares and options?</a></li>
+<li>Lines of code generated</li>
+<li>Pull requests reviewed</li>
+<li>Prompts submitted</li>
+<li>Chats initiated</li>
 </ul>
+<p>Those metrics are easy to collect. They are also largely meaningless. Nobody receives a promotion because an AI generated ten thousand lines of code. Nobody funds an initiative because an AI reviewed more pull requests. What matters is <strong>value</strong>.</p>
+<p>Did Artificial Intelligence:</p>
+<ul>
+<li>Reduce delivery risk?</li>
+<li>Accelerate remediation of technology debt?</li>
+<li>Improve software quality?</li>
+<li>Shorten lead time?</li>
+<li>Reduce operational effort?</li>
+<li>Improve stakeholder experience?</li>
+<li>Avoid cost?</li>
+<li>Enable an engineer to solve a problem faster or better?</li>
+</ul>
+<p>Those are the stories worth telling. Those are the outcomes leadership cares about. Those are the outcomes that justify continued investment.</p>
+<h1>Share the Good, the Bad, and the Ugly</h1>
+<p>This is where we need <strong>your help</strong>. If you are using Auto model selection, share your experiences.</p>
+<p>Add a comment to this post and tell us:</p>
+<ul>
+<li>Where Auto made the right decision.</li>
+<li>Where Auto surprised you.</li>
+<li>Where Auto saved credits without sacrificing quality.</li>
+<li>Where Auto selected a model you would never have chosen.</li>
+<li>Where Auto failed.</li>
+<li>Where manual model selection remains essential.</li>
+</ul>
+<p>The intent is not to prove that Auto is perfect. The intent is to learn.</p>
+<p>As engineers, we improve systems through evidence, feedback, experimentation, and transparency. The same applies to Artificial Intelligence.</p>
+<p>If we want to get GitHub Copilot costs under control without reducing value, we need to understand what is actually working in the real world. Not the marketing slides or vendor promises.</p>
+<p>Because the question we should be asking is not: "<em>How many lines of code did Artificial Intelligence write for us?</em>"</p>
+<p>The question we should be asking is: "<em>Where did Artificial Intelligence help us deliver better outcomes?</em>"</p>
+<p>That is the conversation worth having!</p>
         </div>
 
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed under <a href="https://wsbctechnicalblog.github.io/category/posts.html">Posts</a>
-        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/azure-devops.html">azure-devops </a><a href="https://wsbctechnicalblog.github.io/tag/pipelines.html">pipelines </a><a href="https://wsbctechnicalblog.github.io/tag/tips.html">tips </a>
-        | <a href="https://wsbctechnicalblog.github.io/azure-devops-agent-capabilities.html" rel="bookmark"
-         title="Permalink to Find the capabilities and IP addresses of an Azure DevOps agent">Permalink</a>            
+        | Tagged: <a href="https://wsbctechnicalblog.github.io/tag/water-cooler.html">water-cooler </a>
+        | <a href="https://wsbctechnicalblog.github.io/water-cooler-talk-github-copilot-auto-mode.html" rel="bookmark"
+         title="Permalink to Water Cooler Talk - GitHub Copilot Auto. Trust the Robot? Not So Fast.">Permalink</a>            
         </div>
         <!-- metaldata 
         -->

@@ -1,5 +1,5 @@
 Title: Water Cooler Talk - GitHub Copilot Auto. Trust the Robot? Not So Fast.
-Date: 2023-09-02
+Date: 2026-09-03
 Category: Posts 
 Tags: water-cooler
 Slug: water-cooler-talk-github-copilot-auto-mode
