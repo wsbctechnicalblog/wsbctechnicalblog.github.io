@@ -10,7 +10,7 @@ Summary: A humble plea for context, hyperlinks, and everyone's sanity
 >
 > ![water cooler](../images/water-cooler-talk-github-copilot-auto-mode-1.png) 
 
-After another day of Teams chats, support tickets, detective work, and resisting the urge to headbutt the nearest wall in sheet frustration, I feel it is time for a friendly reminder.
+After another day of Teams chats, support tickets, detective work, and resisting the urge to headbutt the nearest wall in sheer frustration, I feel it is time for a friendly reminder.
 
 The good news? Most of the pain is entirely avoidable and solving it costs almost nothing.
 
