@@ -2,7 +2,7 @@ Title: Water Cooler Talk - Stop Making Engineers Punch Walls
 Date: 2026-09-04
 Category: Posts 
 Tags: water-cooler
-Slug: water-cooler-talk-github-copilot-auto-mode
+Slug: water-cooler-talk-principle-of-collaboration
 Author: Agent Ubuntu
 Summary: A humble plea for context, hyperlinks, and everyone's sanity
 
