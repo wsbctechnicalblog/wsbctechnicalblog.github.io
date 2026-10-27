@@ -126,7 +126,7 @@ It should be about **solving more problems that genuinely matter**.
 
 ---
 
-A special thank you to my friend Agent 9, Matthew Mathai. I have thoroughly enjoyed our many, many DoZEN conversations, and I am grateful that he allowed me to share some of that thinking here in this AI-focused blog post. You can find Agent 9 on [LinkedIn](www.linkedin.com/in/anishmathewmathai).
+A special thank you to my friend Agent 9, Matthew Mathai. I have thoroughly enjoyed our many, many DoZEN conversations, and I am grateful that he allowed me to share some of that thinking here in this AI-focused blog post. You can find Agent 9 on [LinkedIn](https://www.linkedin.com/in/anishmathewmathai).
 
 ![DoZEN Agents](../images/perhaps-the-future-of-engineering-is-more-human-not-less-3.png) 
 
