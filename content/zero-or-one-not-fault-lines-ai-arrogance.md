@@ -1,15 +1,32 @@
-Title: Zero or One, not Fault Lines - TBD
+Title: Zero or One, not Fault Lines - Is AI Arrogant, Ignorant, or Does It Simply Know Better?
 Date: 2026-11-TBD
 Category: Posts 
 Tags: engineering, ai, journal
-Slug: zero-or-one-not-fault-lines-TBD
+Slug: zero-or-one-not-fault-lines-ai-arrogance
 Author: Willy-Peter Schaub
+Summary: My months-long battle with contractions, Agent Ubuntu, an unfortunately timed Microsoft 365 outage, and a growing question about how much we should trust our AI colleagues.
 
-TBD
+For months, I have been fighting a battle with Microsoft 365 Copilot.
 
-> ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-lines-i-love-helping-0.png)
+Not about hallucinations. Not about Agentic Software Development Life Cycle guardrails. Not about autonomous agents running amok.
 
-THE OLD INSTRUCTIONS
+> ![Zero or One, not Fault Lines Journal](../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png) 
+
+**Contractions.**
+
+Yes. Contractions.
+
+I personally hate them. More importantly, they are not always the easiest form of English for humanoids whose first language is not English.
+
+So, I added a very simple instruction to my Microsoft 365 Copilot custom instructions:
+
+> Do not use contractions.
+
+Simple, right?
+
+# My old custom instructions
+
+Apparently not. The simple instruction morphed into the following instruction file over months:
 
 ```
 Willy Schaub Personalisation Instructions (for AI Agents)
@@ -68,7 +85,23 @@ Decision or next step is explicit
 Value is explicit when applicable
 ```
 
-THE NEW INSTRUCTIONS
+Microsoft 365 Copilot continued merrily producing I’m, we’re, it’s, don’t, can’t, won’t and all their little apostrophe-wielding friends. I would occasionally challenge my AI colleague:
+
+Go back to my custom instructions. Is anything amiss?
+
+The response was usually reassuring.
+
+>
+> _I am sorry. You are correct. Your instructions clearly state that contractions should not be used. I will follow this preference going forward._
+>
+
+Excellent. One prompt later ... contractions everywhere.
+
+# My new custom instructions
+
+Rather than declare victory for the machine and retreat to a quiet corner of cyberspace, I spent some time with Agent Ubuntu refining my custom instructions.
+
+We made the preference clearer. Added examples. Added an explicit trigger for my favourite prompt, “improve message”, so that those two words automatically mean: apply Willy’s complete writing preferences. `q;-)`.
 
 ```
 WILLY SCHAUB PERSONALISATION INSTRUCTIONS
@@ -365,4 +398,30 @@ Before finalising writing for Willy, check that:
 In particular, check the complete final text for contractions and replace each contraction with its full form before finalising the response.
 ```
 
-TBD
+I updated my Microsoft 365 Copilot custom instructions. And then ... Microsoft 365 had a world-wide outage on November 12, 2026 😳
+
+Now, I sincerely hope my updated custom instructions had absolutely nothing to do with events unfolding around the globe. But I have to admit, the timing was concerning.
+
+After the dust settled and Microsoft 365 was back, I did what any responsible engineer would do ... **Trust, but verify.**
+
+First, I checked that my shiny new instructions were still configured. They were. Then I typed a simple message and asked Microsoft 365 Copilot to reword it. The result?
+
+![zero-or-one-not-fault-lines-ai-arrogance-1](../images/zero-or-one-not-fault-lines-ai-arrogance-1.png)
+
+Contractions 🤯
+
+At this point I am close to waving the white flag. But the experience has left me with a more serious question. We are entering an era where our AI colleagues will generate enormous volumes of information, documentation, analysis, decisions, recommendations, and source code. Humanoids, myself included, are understandably asking questions about trust, transparency, guardrails, verification, and accountability.
+
+And here I am struggling to convince an AI colleague to obey one spectacularly simple instruction: **Do not use contractions.**
+
+If we cannot reliably enforce something that small, explicit, observable, and easy to validate, what happens when the guardrail is buried inside 10,000+ lines of generated code?, an architectural recommendation, a security configuration, or a decision made by an autonomous agent?
+
+Perhaps the problem is me, perhaps it is in my instructions, or perhaps AI is not arrogant or ignorant at all.
+
+Agent Ubuntu and I are not surrendering yet, because the lesson might be bigger than contractions:
+
+>
+> # **Trusting AI is not about whether it can produce impressive output. It is about whether humans can define guardrails, whether AI can consistently honour them, and whether we can verify that it did.**
+>
+
+And until we solve that ... I am watching every apostrophe. 👀
