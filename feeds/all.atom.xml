@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-10-30T00:00:00-07:00</updated><entry><title>Perhaps the Future of Engineering Is More Human, Not Less</title><link href="https://wsbctechnicalblog.github.io/perhaps-the-future-of-engineering-is-more-human-not-less.html" rel="alternate"></link><published>2026-10-30T00:00:00-07:00</published><updated>2026-10-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-10-30:/perhaps-the-future-of-engineering-is-more-human-not-less.html</id><summary type="html">&lt;p&gt;Perhaps our greatest artificial intelligence risk is not losing control of the machines, but losing sight of why we are building.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are entering an era where our ability &lt;strong&gt;to produce solutions is increasing far faster than our ability to determine whether those solutions are worth producing&lt;/strong&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="https://wsbctechnicalblog.github.io/" rel="alternate"></link><link href="https://wsbctechnicalblog.github.io/feeds/all.atom.xml" rel="self"></link><id>https://wsbctechnicalblog.github.io/</id><updated>2026-11-16T00:00:00-08:00</updated><entry><title>Zero or One, not Fault Lines - Did We Remember the Humans?</title><link href="https://wsbctechnicalblog.github.io/zero-or-one-not-fault-lines-.did-we-remember-the-humans.html" rel="alternate"></link><published>2026-11-16T00:00:00-08:00</published><updated>2026-11-16T00:00:00-08:00</updated><author><name>Agent Ubuntu and Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-11-16:/zero-or-one-not-fault-lines-.did-we-remember-the-humans.html</id><summary type="html">&lt;p&gt;The human loop is not disappearing. It is evolving.&lt;/p&gt;</summary><content type="html">&lt;p&gt;There is an Agentic Software Development Life Cycle tsunami rolling towards our software engineering shores. Agents that plan. Agents that code. Agents that test. Agents that review. Agents that remediate. Agents talking to other agents.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="Zero or One, not Fault Lines Journal" src="../images/zero-or-one-not-fault-lines-introduction-to-the-journal-0.png"&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Very exciting, but before we all grab our surfboards and scream COWABUNGA, I have one uncomfortable question: &lt;strong&gt;&lt;em&gt;Are we future-proofing our humans at the same speed that we are future-proofing our engineering ecosystem?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I do not believe Artificial Intelligence is killing the human loop. It is changing where the human sits in the loop.&lt;/p&gt;
+&lt;p&gt;The opportunity is to prepare people to move from doing the work → orchestrating the work, from writing every line → engineering intent and verifying outcomes, from manual toil → intelligent automation, and from operating yesterday's systems → shaping tomorrow's engineering ecosystem.&lt;/p&gt;
+&lt;p&gt;That means Artificial Intelligence fundamentals first. Generative Artificial Intelligence fluency next. Then Agentic Artificial Intelligence, safe delegation, verification, guardrails, and new human opportunities.&lt;/p&gt;
+&lt;h1&gt;👤 What might the human journey look like?&lt;/h1&gt;
+&lt;p&gt;The job titles of tomorrow may be different, but the experience our engineers have built remains enormously valuable. For example ...&lt;/p&gt;
+&lt;h2&gt;Software Developer&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Code producer → Intent engineer → Agent orchestrator
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Imagine spending less time producing every line of code and more time defining intent, engineering context, making architecture decisions, directing coding agents, reviewing generated changes, and verifying that the outcome is secure, maintainable and valuable.&lt;/p&gt;
+&lt;h2&gt;Quality Assurance Engineer&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Test executor → Quality engineer → Artificial Intelligence verification &amp;amp; evaluation engineer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Imagine moving beyond repetitive manual test execution towards engineering quality strategies, generating tests with Artificial Intelligence, evaluating agent behaviour, designing adversarial scenarios, and producing the evidence that tells us whether human- and agent-generated software can be trusted.&lt;/p&gt;
+&lt;h2&gt;DevOps Engineer&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Pipeline operator → Platform engineer → Agentic reliability &amp;amp; governance engineer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Imagine spending less time babysitting pipelines and environments and more time engineering paved roads, policy-as-code, observability, automated remediation, safe agent permissions and platforms where humans and agents can operate safely together.&lt;/p&gt;
+&lt;p&gt;Across all three, I see a similar journey. Do everything manually → Amplify yourself with AI → Delegate safely to agents → Verify outcomes → Engineer the ecosystem&lt;/p&gt;
+&lt;h2&gt;🤖 The human loop is not dead. It is moving upstream.&lt;/h2&gt;
+&lt;p&gt;Towards intent. Judgement. Creativity. Verification. Accountability. Governance. Leadership.&lt;/p&gt;
+&lt;p&gt;And perhaps that means we are asking the wrong question.&lt;/p&gt;
+&lt;p&gt;Instead of asking "&lt;strong&gt;&lt;em&gt;Will Artificial Intelligence take my job?&lt;/em&gt;&lt;/strong&gt;"
+perhaps we should ask: "&lt;strong&gt;&lt;em&gt;Which parts of my job should I gladly give Artificial Intelligence, and what will that free me to become?"&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is the future-proofing opportunity and responsibility in front of us as organisations and as individual humanoids.&lt;/p&gt;
+&lt;p&gt;We should not wait until these new opportunities have formal job descriptions before preparing people for them. We can start now with Artificial Intelligence fundamentals, Generative Artificial Intelligence, hands-on experimentation, working groups, learning by doing, and eventually our Agentic Software Development Life Cycle.&lt;/p&gt;
+&lt;p&gt;And we need to give people space to discover their future human persona, rather than assuming everybody follows the same path.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Our responsibility is not to promise that today's jobs will remain unchanged.&lt;/p&gt;
+&lt;p&gt;Our responsibility is to give our people a fair opportunity to evolve with the engineering ecosystem and become candidates for opportunities that may not even exist today.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Artificial Intelligence is not killing the human loop. It needs the human verification in the loop. And it could create a ton of new opportunities for humans who are curious, passionate, willing to learn, willing to let go of some of yesterday's work, and game enough to try something new.&lt;/p&gt;
+&lt;p&gt;So yes, let us future-proof the technology.&lt;/p&gt;
+&lt;p&gt;Let us future-proof our Engineering Foundations.&lt;/p&gt;
+&lt;p&gt;Let us embrace the Agentic Software Development Life Cycle.&lt;/p&gt;
+&lt;p&gt;But most importantly, &lt;strong&gt;let us future-proof the humans.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The wave is coming. 🌊&lt;/p&gt;
+&lt;p&gt;Who is game? 🤙&lt;/p&gt;</content><category term="Posts"></category><category term="ai"></category><category term="journal"></category></entry><entry><title>Perhaps the Future of Engineering Is More Human, Not Less</title><link href="https://wsbctechnicalblog.github.io/perhaps-the-future-of-engineering-is-more-human-not-less.html" rel="alternate"></link><published>2026-10-30T00:00:00-07:00</published><updated>2026-10-30T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2026-10-30:/perhaps-the-future-of-engineering-is-more-human-not-less.html</id><summary type="html">&lt;p&gt;Perhaps our greatest artificial intelligence risk is not losing control of the machines, but losing sight of why we are building.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are entering an era where our ability &lt;strong&gt;to produce solutions is increasing far faster than our ability to determine whether those solutions are worth producing&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2&gt;That changes everything.&lt;/h2&gt;
 &lt;p&gt;An army of artificial intelligence agents can analyse, generate, test, document, and iterate while we sleep. In less than a night, we can increasingly generate more source code than our human teams could realistically peer review the next morning.&lt;/p&gt;
 &lt;h2&gt;Our constraint is shifting.&lt;/h2&gt;
@@ -5309,13 +5354,4 @@ Developed by Daniel Broderick
 &lt;li&gt;Start tracking your team’s health.&lt;/li&gt;
 &lt;li&gt;Identify and address concerns early.&lt;/li&gt;
 &lt;li&gt;Have fun!&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry><entry><title>Azure DevOps Pipeline Blueprints - Open Source Software Sync 20250613</title><link href="https://wsbctechnicalblog.github.io/azure-pipeline-blueprints-oss-sync-2025-05-13.html" rel="alternate"></link><published>2025-06-13T00:00:00-07:00</published><updated>2025-06-13T00:00:00-07:00</updated><author><name>Willy-Peter Schaub</name></author><id>tag:wsbctechnicalblog.github.io,2025-06-13:/azure-pipeline-blueprints-oss-sync-2025-05-13.html</id><summary type="html">&lt;p&gt;Latest version and with small portfolio update.&lt;/p&gt;</summary><content type="html">&lt;p&gt;We have confirmed there are no internal updates currently suitable for sharing with this community—rest assured, we are keeping a close watch. Behind the scenes, our focus has been on developing new app-type blueprints to expand coverage across our internal software development lifecycle. While these efforts are tailored for internal use and not directly applicable to the open-source project, they are driving meaningful progress.&lt;/p&gt;
-&lt;p&gt;One exciting enhancement: our bootstrap flow now validates the portfolio used by pipelines, A critical step forward for our self-service capabilities, as highlighted in our recent &lt;a href="/announcement-ci-cd-cookbook.html"&gt;Continuous Integration and Delivery Pipelines Cookbook&lt;/a&gt;. This improvement strengthens the foundation for scalable, autonomous development.&lt;/p&gt;
-&lt;p&gt;Changes:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Templates" src="../images/azure-pipeline-blueprints-oss-sync-2025-06-13.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/WorkSafeBC-Common-Engineering/AzureDevOps.Automation.Pipeline.Templates.v2/pull/34"&gt;Click here to view the associated Pull Request&lt;/a&gt;
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;What else can/should/must we consider as part of our blueprints? Thoughts?&lt;/p&gt;</content><category term="Posts"></category><category term="azure-devops"></category><category term="pipelines"></category><category term="engineering"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Posts"></category><category term="devops"></category><category term="agile"></category></entry></feed>
