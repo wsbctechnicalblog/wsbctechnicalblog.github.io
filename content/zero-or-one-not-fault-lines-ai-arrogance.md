@@ -1,5 +1,5 @@
 Title: Zero or One, not Fault Lines - Is AI Arrogant, Ignorant, or Does It Simply Know Better?
-Date: 2026-11-TBD
+Date: 2026-11-20
 Category: Posts 
 Tags: engineering, ai, journal
 Slug: zero-or-one-not-fault-lines-ai-arrogance
