@@ -21,7 +21,7 @@ Our first step into the Agentic SDLC should therefore be deliberately grounded:
 and underneath everything sits one principle that must remain non-negotiable:
 
 >
-> **Accountability never transfers to the AI agent.**
+> **Accountability never transfers to the agent.**
 >
 
 # First, remember the humans
@@ -83,7 +83,7 @@ This gives us a practical principle for increasing agent autonomy. Authority sho
 The objective is therefore not maximum autonomy, it is appropriate autonomy backed by evidence, and regardless of how sophisticated agents become, who performs the verification, or how much of the SDLC eventually becomes autonomous:
 
 >
-> **Accountability never transfers to the AI agent.**
+> **Accountability never transfers to the agent.**
 >
 
 # Our first step
@@ -112,7 +112,7 @@ The future of engineering is not simply about how quickly agents can create. It 
 And throughout that radically different future, our North Star remains unchanged as we roll up our sleeves for subsequent steps to collaboratively experiment, listen to vendor recommendations, and continuously refine our approach:
 
 >
-> **Accountability never transfers to the AI agent.**
+> **Accountability never transfers to the agent.**
 >
 
 ---
